@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -21,7 +23,24 @@ public class ModEntities {
                         .sized(4.0f, 2.9f)
         );
 
+        public static final RegistryObject<EntityType<KA50Entity>> KA50 = register("ka50",
+                EntityType.Builder.<KA50Entity>of(KA50Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.9f)
+        );
+
+        public static final RegistryObject<EntityType<T80Entity>> T80 = register("t80",
+                EntityType.Builder.<T80Entity>of(T80Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.9f)
+        );
+
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
                 return REGISTRY.register(name, () -> entityTypeBuilder.build(name));
         }
+
 }

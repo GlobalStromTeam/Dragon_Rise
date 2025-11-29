@@ -19,7 +19,9 @@ public class ModTabs {
                         .title(Component.translatable("item_group.dragonrise_reforge.title"))
                         .icon(() -> new ItemStack(ModItems.CONTAINER.get()))
                         .displayItems((param, output) -> {
-                                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
+                            output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
+                            output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
+                            output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                                 }
                         ).build()
         );
