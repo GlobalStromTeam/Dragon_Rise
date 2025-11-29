@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.atsuishio.superbwarfare.entity.vehicle.A10Entity;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.entities.J10Entity;
 import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
 import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
@@ -37,6 +39,14 @@ public class ModEntities {
                         .setUpdateInterval(2)
                         .fireImmune()
                         .sized(4.0f, 2.9f)
+        );
+
+        public static final RegistryObject<EntityType<J10Entity>> J10 = register("j10",
+                EntityType.Builder.<J10Entity>of(J10Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(1)
+                        .fireImmune()
+                        .sized(4.5f, 3.5f)
         );
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
