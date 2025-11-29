@@ -1,7 +1,7 @@
 {
   "item_group.dragonrise.title": "巨龙崛起",
 
-  "entity.dragonrise.ztz99a": "ZTZ-99A 主战坦克",
+  "entity.dragonrise_reforge.ztz99a": "ZTZ-99A 主战坦克",
 
   "superbwarfare.entry.vehicle.ztz99a": "ZTZ-99A 主战坦克",
   "superbwarfare.page.vehicle.ztz99a1": "$(thing)ZTZ-99A$()是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。$(p)战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
