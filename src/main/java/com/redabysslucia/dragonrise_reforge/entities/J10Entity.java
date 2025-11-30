@@ -6,10 +6,9 @@ import com.atsuishio.superbwarfare.init.ModKeyMappings;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
+public class J10Entity extends GeoVehicleEntity {
 
-public class KA50Entity extends GeoVehicleEntity {
-
-        public KA50Entity(EntityType<KA50Entity> type, Level world) {
+        public J10Entity(EntityType<J10Entity> type, Level world) {
                 super(type, world);
         }
 

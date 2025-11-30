@@ -1,9 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.atsuishio.superbwarfare.entity.vehicle.A10Entity;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
-import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
-import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -33,6 +32,22 @@ public class ModEntities {
 
         public static final RegistryObject<EntityType<T80Entity>> T80 = register("t80",
                 EntityType.Builder.<T80Entity>of(T80Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.9f)
+        );
+
+        public static final RegistryObject<EntityType<J10Entity>> J10 = register("j10",
+                EntityType.Builder.<J10Entity>of(J10Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(1)
+                        .fireImmune()
+                        .sized(4.5f, 3.5f)
+        );
+
+        public static final RegistryObject<EntityType<AA625EEntity>> AA625E = register("625e",
+                EntityType.Builder.<AA625EEntity>of(AA625EEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)
                         .setUpdateInterval(2)
                         .fireImmune()
