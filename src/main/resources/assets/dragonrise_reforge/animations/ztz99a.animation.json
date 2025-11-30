@@ -2,20 +2,18 @@
   "format_version": "1.8.0",
   "animations": {
     "animation.ztz99a.idle": {
-      "animation_length": 0.25,
+      "loop": true,
       "bones": {
         "flare": {
           "scale": 0
         },
         "flare2": {
           "scale": 0
-        },
-        "bone20": {
-          "scale": 0
         }
       }
     },
     "animation.ztz99a.fire": {
+      "loop": "hold_on_last_frame",
       "animation_length": 2,
       "bones": {
         "bone18": {
