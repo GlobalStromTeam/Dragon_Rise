@@ -4,39 +4,39 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [1.96875, 0.54, 4.5],
-      "Position": [0, 1.203125, -0.2625]
+      "Size": [2.0390625, 0.5390, 0.75],
+      "Position": [0, 1.203125, 2.78125]
     },
     {
-      "Size": [1.96875, 0.09375, 2.7421875],
-      "Position": [0, 1.8, -2.0225]
+      "Size": [2.0390625, 0.6796875, 2.765625],
+      "Position": [0, 1.15625, -0.734375]
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.3375, 0.6328125, 4.1015625],
-      "Position": [-1.6640625, 0.84375, -0.025]
+      "Size": [0.421875, 0.6328125, 4.1015625],
+      "Position": [-1.6640625, 0.59375, -0.8984375]
     },
     {
       "Part": "WheelRight",
-      "Size": [0.3375, 0.6328125, 4.1015625],
-      "Position": [1.6640625, 0.84375, -0.025]
+      "Size": [0.421875, 0.6328125, 4.1015625],
+      "Position": [1.6640625, 0.59375, -0.8984375]
     },
     {
       "Part": "MainEngine",
-      "Size": [1.9921875, 0.5625, 1.4],
-      "Position": [0, 1.55, -3.525]
+      "Size": [1.9921875, 0.7734375, 1.0078125],
+      "Position": [0, 1.296875, -4.5078125]
     },
     {
       "Part": "Turret",
-      "Size": [1.5, 0.515625, 1.64],
-      "Position": [0, 0.335, -1.125],
+      "Size": [1.5, 0.421875, 0.75],
+      "Position": [0, 0.2578125, 0.34375],
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Part": "Turret",
-      "Size": [1.3125, 0.38, 0.4453125],
-      "Position": [0, 0.175, 0.95625],
+      "Size": [1.5, 0.4921875, 1.4296875],
+      "Position": [0, 0.421875, -1.8359375],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -50,11 +50,11 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8, -0.7, 0.3],
+      "Position": [0.8125, -0.175, 0.84375],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -7,
-      "MaxPitch": 15,
+      "MinPitch": -10,
+      "MaxPitch": 30,
       "Sensitivity": [0.52, 0.72, 0.9]
     },
     {
@@ -65,46 +65,38 @@
         "ZoomPosition": [0, 0.1, 0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.63, 0.1, -0.21579375],
+      "Position": [-0.75805625, 0.3, -0.57275625],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -30,
+      "MinPitch": -10,
       "MaxPitch": 60,
       "Sensitivity": [0.57, 0.75, 0.9]
     },
     {
-      "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.475,0.5,2.1],
+      "Position": [1.125, 0.8, -5],
       "MinYaw": -95,
       "MaxYaw": 95
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.625, 0.5, -5.125],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625, 0.5, -5.125],
+      "Position": [-1.125, 0.8, -5],
       "MinYaw": -95,
       "MaxYaw": 95
     }
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
+      "Icon": "superbwarfare:textures/screens/vehicle_weapon/ap_shell.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 120,
+      "EmptyReloadTime": 70,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -113,7 +105,7 @@
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
-      "ShootAnimationTime": 40,
+      "ShootAnimationTime": 10,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
       "Name": "weapon.superbwarfare.cannon_ap",
@@ -122,7 +114,7 @@
         {
           "Ammo": "superbwarfare:he_5_inches",
           "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
+            "Icon": "superbwarfare:textures/screens/vehicle_weapon/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
@@ -135,7 +127,7 @@
         {
           "Ammo": "superbwarfare:cm_5_inches",
           "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cm_shell.png",
+            "Icon": "superbwarfare:textures/screens/vehicle_weapon/cm_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsClusterMunitionsProjectile": true,
             "SparedAmount": 18,
@@ -150,7 +142,7 @@
         {
           "Ammo": "superbwarfare:gs_5_inches",
           "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/grape_shell.png",
+            "Icon": "superbwarfare:textures/screens/vehicle_weapon/grape_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsGrapeShotProjectile": true,
             "SparedAmount": 36,
@@ -164,14 +156,14 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
-        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "Fire1P": "superbwarfare:yx_100_fire_1p",
+        "Fire3P": "superbwarfare:yx_100_fire_3p",
+        "Fire3PFar": "superbwarfare:yx_100_far",
+        "Fire3PVeryFar": "superbwarfare:yx_100_veryfar",
+        "VehicleReload": "superbwarfare:yx_100_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
+          "superbwarfare:yx_100_reload"
         ]
       },
       "SoundRadius": 32,
@@ -182,7 +174,7 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "Icon": "superbwarfare:textures/screens/vehicle_weapon/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -216,7 +208,7 @@
       "SoundRadius": 16
     },
     "PassengerMachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "Icon": "superbwarfare:textures/screens/vehicle_weapon/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -235,7 +227,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, -0.01, 1.8]],
+        "Positions": [[0, 0.01, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -266,18 +258,18 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 0.6
   },
-  "TurretPos": [0, 2.1059375, 0.1225],
-  "BarrelPos": [0, 0.05, 0.6477125],
-  "TurretTurnSpeed": [5, 5],
-  "TurretPitchRange": [-7, 15],
-  "PassengerWeaponStationPos": [-0.75, 1.1, -0.45],
-  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.05],
+  "TurretPos": [0, 2.1059375, -0.43125],
+  "BarrelPos": [0, 0.56345, 0.6477125],
+  "TurretTurnSpeed": [7, 6],
+  "TurretPitchRange": [-10, 30],
+  "PassengerWeaponStationPos": [-0.75805625, 1.1446375, -0.57275625],
+  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.0551625],
   "PassengerWeaponStationTurnSpeed": [15, 15],
-  "PassengerWeaponStationPitchRange": [-30, 60],
+  "PassengerWeaponStationPitchRange": [-10, 60],
   "HasDecoy": true,
   "UpStep": 2.25,
-  "RotateOffsetHeight": 0.5,
-  "Mass": 55,
+  "RotateOffsetHeight": 3.5,
+  "Mass": 70,
   "DamageModifiers": [
     "minecraft:lava - -20",
     "minecraft:lava * 10",
@@ -315,7 +307,7 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
+  "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz99a_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
@@ -329,7 +321,7 @@
     ]
   },
   "EngineSound": "superbwarfare:yx_100_engine",
-  "HudType": "@Land",
+  "MainWeaponHudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
     [2, 0, 3.0625], [-2, 0, 3.0625],

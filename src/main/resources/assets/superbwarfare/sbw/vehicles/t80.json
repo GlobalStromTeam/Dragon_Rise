@@ -1,8 +1,0 @@
-{
-  "ID": "dragonrise_reforge:t80",
-  "Model": {
-    "Animation": "dragonrise_reforge:animations/t80.animation.json",
-    "Model": "dragonrise_reforge:geo/t80.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/t80.png"
-  }
-}
