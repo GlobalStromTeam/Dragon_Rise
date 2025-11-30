@@ -19,7 +19,7 @@
   "superbwarfare.page.vehicle.zhi10mea4": "",
   "superbwarfare.page.vehicle.zhi10mea5": "",
 
-  "entity.dragonrise_reforge.ka50": "卡-50 主战坦克",
+  "entity.dragonrise_reforge.ka50": "卡-50 武装直升机",
   "superbwarfare.entry.vehicle.ka50": "卡-50 武装直升机",
 
   "entity.dragonrise_reforge.625e": "625弹炮结合野战防空系统",
@@ -32,5 +32,11 @@
   "superbwarfare.entry.vehicle.zbl08": "ZBL-08 轮式步兵战车",
 
   "entity.dragonrise_reforge.j10": "歼-10早期型 战斗机",
-  "superbwarfare.entry.vehicle.zbl08": "歼-10早期型 战斗机"
+  "superbwarfare.entry.vehicle.zbl08": "歼-10早期型 战斗机",
+
+  "entity.dragonrise_reforge.ztz99bh": "ZTZ99B 主战坦克（附加装甲，重型武器站）",
+  "superbwarfare.entry.vehicle.zbl08": "ZTZ99B 主战坦克（附加装甲，重型武器站）",
+
+  "entity.dragonrise_reforge.m1a2sepv2": "M1A2 主战坦克（SEPv2套件）",
+  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 主战坦克（SEPv2套件）"
 }
