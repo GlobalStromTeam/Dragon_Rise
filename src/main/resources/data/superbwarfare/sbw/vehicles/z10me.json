@@ -9,61 +9,48 @@
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [1.25, 0.75, 2.75],
-      "Position": [0, 1.75, -0.5625]
+      "Size": [0.59375, 0.53125, 0.59375],
+      "Position": [0, 1.40625, 1.90625]
     },
     {
-      "Size": [0.9375, 0.65625, 1.875],
-      "Position": [0, 1.84375, 4.0625]
+      "Size": [0.75, 0.875, 0.84375],
+      "Position": [0, 1.75, 0.46875]
     },
     {
-      "Size": [0.75, 0.65625, 3.6875],
-      "Position": [0, 3.15625, -0.3125]
+      "Size": [0.875, 1.25, 1.489375],
+      "Position": [0, 2.125, -1.71875]
     },
     {
-      "Size": [0.75, 0.40625, 0.96875],
-      "Position": [0, 2.90625, 4.34375]
+      "Size": [2.71875, 0.1875, 0.84375],
+      "Position": [0, 1.625, -2.40625]
     },
     {
-      "Size": [1.8125, 0.53125, 3.28125],
-      "Position": [0, 3.28125, 0.09375]
+      "Size": [0.6875, 0.84375, 3.5],
+      "Position": [0, 1.71875, -6.5625]
     },
     {
-      "Size": [0.625, 0.90625, 4.375],
-      "Position": [0, 1.90625, -7.6875]
+      "Size": [0.25, 1.03125, 0.84375],
+      "Position": [0, 3.09375, -10.03125]
     },
     {
-      "Size": [0.75, 0.375, 0.75],
-      "Position": [0, 0.8125, 4.1875],
-      "Part": "Turret"
+      "Part": "MainEngine",
+      "Size": [0.625, 0.625, 1.375],
+      "Position": [0.625, 2.6875, -3.4375]
     },
     {
-      "Size": [0.96875, 0.875, 1.1875],
-      "Position": [2.46875, 2.125, -0.0625]
-    },
-    {
-      "Size": [0.96875, 0.875, 1.1875],
-      "Position": [-2.46875, 2.125, -0.0625]
-    },
-    {
-      "Size": [0.375, 0.84375, 1.09375],
-      "Position": [0, 3.65625, -11.71875],
-      "Part": "SubEngine"
-    },
-    {
-      "Size": [0.625, 0.8125, 0.625],
-      "Position": [0, 4.625, 0.5],
-      "Part": "MainEngine"
+      "Part": "SubEngine",
+      "Size": [0.625, 0.625, 1.375],
+      "Position": [-0.625, 2.6875, -3.4375]
     }
   ],
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [0, 1.9625, 2.25],
+      "Position": [0, 1.35, -0.8125],
       "Sensitivity": [0, 0, 0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0, 3.5625, 2.25],
+        "Position": [0, 3.0625, -0.8125],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
         "AircraftCameraPos": [-3.8, 3.5, -15]
@@ -81,13 +68,13 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [0, 1.3375, 3.8125],
+      "Position": [0, 0.8225, 0.875],
       "Sensitivity": [0.59, 0.8, 0.9],
       "CameraPos": {
         "Transform": "Vehicle",
         "UseFixedCameraPos": true,
-        "Position": [0, 2.9375, 3.8125],
-        "ZoomPosition": [0, 1.0625, 5.625],
+        "Position": [0, 2.25, 3.8125],
+        "ZoomPosition": [0, 1.0625, 0.625],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,
@@ -97,7 +84,7 @@
       "Weapons": ["Cannon", "PassengerMissile", "SeekMissile"],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [-2.5, 0.5, 3.5625]
+        "Position": [-2.5, 0.3, 3.5625]
       }
     }
   ],
@@ -108,7 +95,7 @@
       "Projectile": "superbwarfare:small_cannon_shell",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultZoom": 3,
-      "RPM": 300,
+      "RPM": 400,
       "Velocity": 30,
       "Damage": 55,
       "ExplosionDamage": 15,
@@ -132,7 +119,7 @@
       "AmmoType": "superbwarfare:small_shell",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, 0.102, 3.013]],
+        "Positions": [[0, -0.05, -0.675]],
         "Directions": ["Barrel"]
       }
     },
@@ -329,12 +316,12 @@
   "EngineType": "Helicopter",
   "EngineInfo": {
     "EnergyCostRate": 320,
-    "Increment": 0.8,
-    "Decrement": 0.8,
-    "PitchSpeed": 0.75,
-    "YawSpeed": 0.85,
-    "RollSpeed": 0.6,
-    "LiftSpeed": 0.8,
+    "Increment": 0.6,
+    "Decrement": 0.6,
+    "PitchSpeed": 0.4,
+    "YawSpeed": 0.5,
+    "RollSpeed": 0.4,
+    "LiftSpeed": 0.65,
     "EngineStartSound": "superbwarfare:mi_28_engine_start",
     "EngineSoundVolume" : 2
   },
@@ -342,7 +329,7 @@
   "ThirdPersonCameraPos": [2.7, 4, 12],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.8,
-  "Mass": 1.2,
+  "Mass": 8.2,
   "AllowFreeCam": true,
   "HasDecoy": true,
   "DamageModifiers": [

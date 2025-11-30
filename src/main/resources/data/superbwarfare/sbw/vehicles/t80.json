@@ -4,39 +4,39 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [2.0390625, 0.5390, 0.75],
-      "Position": [0, 1.203125, 2.78125]
+      "Size": [1.8125, 0.4375, 0.5625],
+      "Position": [0, 0.984375, 2.515625]
     },
     {
-      "Size": [2.0390625, 0.6796875, 2.765625],
-      "Position": [0, 1.15625, -0.734375]
-    },
-    {
-      "Part": "WheelLeft",
-      "Size": [0.421875, 0.6328125, 4.1015625],
-      "Position": [-1.6640625, 0.59375, -0.8984375]
-    },
-    {
-      "Part": "WheelRight",
-      "Size": [0.421875, 0.6328125, 4.1015625],
-      "Position": [1.6640625, 0.59375, -0.8984375]
+      "Size": [1.8125, 0.625, 1.9375],
+      "Position": [0, 1.046875, 0.015625]
     },
     {
       "Part": "MainEngine",
-      "Size": [1.9921875, 0.7734375, 1.0078125],
-      "Position": [0, 1.296875, -4.5078125]
+      "Size": [1.8125, 0.5625, 0.9375],
+      "Position": [0, 1.109375, -2.859375]
+    },
+    {
+      "Part": "WheelLeft",
+      "Size": [0.40625, 0.59375, 3.53125],
+      "Position": [-1.59375, 0.578125, -0.140625]
+    },
+    {
+      "Part": "WheelRight",
+      "Size": [0.40625, 0.59375, 3.53125],
+      "Position": [1.59375, 0.578125, -0.140625]
     },
     {
       "Part": "Turret",
-      "Size": [1.5, 0.421875, 0.75],
-      "Position": [0, 0.2578125, 0.34375],
+      "Size": [1.6875, 0.3125, 1.21875],
+      "Position": [0, -0.10, 0.4],
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Part": "Turret",
-      "Size": [1.5, 0.4921875, 1.4296875],
-      "Position": [0, 0.421875, -1.8359375],
+      "Size": [1.03125, 0.40625, 0.90625],
+      "Position": [0, 0.0, -0.475],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -55,7 +55,7 @@
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 30,
-      "Sensitivity": [0.52, 0.72, 0.9]
+      "Sensitivity": [0.32, 0.40, 0.5]
     },
     {
       "HidePassenger": true,
@@ -70,19 +70,19 @@
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 60,
-      "Sensitivity": [0.57, 0.75, 0.9]
+      "Sensitivity": [0.57, 0.55, 0.9]
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125, 0.8, -5],
+      "Position": [1.625, -0.0625, -4.25],
       "MinYaw": -95,
       "MaxYaw": 95
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.125, 0.8, -5],
+      "Position": [-1.625, -0.0625, -4.25],
       "MinYaw": -95,
       "MaxYaw": 95
     }
@@ -96,7 +96,7 @@
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 70,
+      "EmptyReloadTime": 120,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -105,7 +105,7 @@
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
-      "ShootAnimationTime": 10,
+      "ShootAnimationTime": 40,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
       "Name": "weapon.superbwarfare.cannon_ap",
@@ -156,14 +156,14 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "superbwarfare:yx_100_fire_1p",
-        "Fire3P": "superbwarfare:yx_100_fire_3p",
-        "Fire3PFar": "superbwarfare:yx_100_far",
-        "Fire3PVeryFar": "superbwarfare:yx_100_veryfar",
-        "VehicleReload": "superbwarfare:yx_100_reload",
+        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
+        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p",
+        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p",
+        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "superbwarfare:yx_100_reload"
+          "dragonrise_reforge:ztz99a_reload"
         ]
       },
       "SoundRadius": 32,
@@ -227,7 +227,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, 0.01, 1.8]],
+        "Positions": [[0, -0.01, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -320,8 +320,8 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "superbwarfare:yx_100_engine",
-  "MainWeaponHudType": "@Land",
+  "EngineSound": "dragonrise_reforge:t80_engine",
+  "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
     [2, 0, 3.0625], [-2, 0, 3.0625],
