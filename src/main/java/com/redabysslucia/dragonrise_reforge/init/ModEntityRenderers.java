@@ -16,6 +16,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AA625E.get(), AA625ERenderer::new);
                 event.registerEntityRenderer(ModEntities.J10.get(), J10Renderer::new);
                 event.registerEntityRenderer(ModEntities.Z10ME.get(), Z10MERenderer::new);
+                event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
         }
 
 }

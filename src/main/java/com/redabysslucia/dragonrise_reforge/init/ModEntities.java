@@ -61,6 +61,14 @@ public class ModEntities {
                         .sized(4.0f, 2.9f)
         );
 
+        public static final RegistryObject<EntityType<ZBL08Entity>> ZBL08 = register("zbl08",
+                EntityType.Builder.<ZBL08Entity>of(ZBL08Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.9f)
+        );
+
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
                 return REGISTRY.register(name, () -> entityTypeBuilder.build(name));
         }
