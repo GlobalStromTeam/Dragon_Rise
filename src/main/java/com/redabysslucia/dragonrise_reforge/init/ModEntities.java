@@ -49,9 +49,9 @@ public class ModEntities {
         public static final RegistryObject<EntityType<AA625EEntity>> AA625E = register("625e",
                 EntityType.Builder.<AA625EEntity>of(AA625EEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)
-                        .setUpdateInterval(2)
+                        .setUpdateInterval(1)
                         .fireImmune()
-                        .sized(4.0f, 2.9f)
+                        .sized(4.5f, 3.5f)
         );
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

@@ -1,0 +1,8 @@
+{
+  "ID": "dragonrise_reforge:ka50",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/ka50.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ka50.png"
+  },
+  "MouseSpeed": [0.5, 0.5]
+}

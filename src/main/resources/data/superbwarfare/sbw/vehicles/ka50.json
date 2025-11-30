@@ -73,31 +73,10 @@
       "MaxPitch": 80,
       "MinYaw": -80,
       "MaxYaw": 80,
-      "Weapons": ["Rocket", "DriverMissile", "DriverAAMissile"],
+      "Weapons": ["Cannon","Rocket","DriverAAMissile"],
       "DismountInfo": {
         "Transform": "Vehicle",
         "Position": [-2.5, 0.5, 2.5]
-      }
-    },
-    {
-      "Transform": "Vehicle",
-      "Position": [0, 1.3375, 3.8125],
-      "Sensitivity": [0.59, 0.8, 0.9],
-      "CameraPos": {
-        "Transform": "Vehicle",
-        "UseFixedCameraPos": true,
-        "Position": [0, 2.9375, 3.8125],
-        "ZoomPosition": [0, 1.0625, 5.625],
-        "ZoomDirection": "Barrel"
-      },
-      "MinPitch": -60,
-      "MaxPitch": 10,
-      "MinYaw": -110,
-      "MaxYaw": 110,
-      "Weapons": ["Cannon", "PassengerMissile", "SeekMissile"],
-      "DismountInfo": {
-        "Transform": "Vehicle",
-        "Position": [-2.5, 0.5, 3.5625]
       }
     }
   ],
@@ -131,9 +110,8 @@
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:small_shell",
       "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [[0, 0.102, 3.013]],
-        "Directions": ["Barrel"]
+        "Transform": "Vehicle",
+        "Positions": [[0, 0.102, 3.013]]
       }
     },
     "Rocket": {
@@ -169,119 +147,6 @@
       },
       "Crosshair": "@Empty",
       "SoundRadius": 12
-    },
-    "@Missile": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png",
-      "DefaultFireMode": "Semi",
-      "AvailableFireModes": "Semi",
-      "RPM": 12,
-      "EmptyReloadTime": 240,
-      "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Projectile": "superbwarfare:wire_guide_missile",
-      "Name": "weapon.superbwarfare.9m_120_missile",
-      "Damage": 650,
-      "ExplosionDamage": 80,
-      "ExplosionRadius": 7,
-      "Velocity": 3,
-      "CrosshairColor": "0xFFC700",
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:bomb_release",
-        "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile"
-      },
-      "SoundRadius": 8
-    },
-    "DriverMissile": {
-      "DefaultZoom": 2,
-      "Magazine": 4,
-      "Crosshair": "@AirCraftMissile",
-      "Template": "@Missile",
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 3.5625, 2.25],
-        "Positions": [[-2.258, 1.932, 0], [-2.258, 1.67, 0], [-2.446, 1.932, 0], [-2.446, 1.67, 0]],
-        "BoundUpWithAmmoAmount": true
-      }
-    },
-    "PassengerMissile": {
-      "DefaultZoom": 3,
-      "Magazine": 8,
-      "Template": "@Missile",
-      "Crosshair": "@VehicleCommonMissile",
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[2.258, 1.932, 0], [2.258, 1.67, 0], [2.446, 1.932, 0], [2.446, 1.67, 0], [2.806, 1.932, 0], [2.806, 1.67, 0], [2.993, 1.932, 0], [2.993, 1.67, 0]],
-        "BoundUpWithAmmoAmount": true,
-        "ViewDirection": "Barrel"
-      }
-    },
-    "SeekMissile": {
-      "AmmoType": [
-        {
-          "Ammo": "superbwarfare:large_anti_ground_missile",
-          "ShouldUnload": false
-        },
-        {
-          "Ammo": "superbwarfare:large_anti_ground_missile",
-          "ShouldUnload": false,
-          "Override": {
-            "Name": "weapon.superbwarfare.kh_39_missile_block",
-            "SeekWeaponInfo": {
-              "SeekDirection": "Barrel",
-              "SeekRange": 384,
-              "SeekAngle": 20,
-              "SeekTime": 20,
-              "MaxTargetHeight": 32,
-              "MinTargetSize": 0.9,
-              "OnlyLockBlock": true
-            }
-          }
-        }
-      ],
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/kh_39.png",
-      "DefaultZoom": 3,
-      "DefaultFireMode": "Semi",
-      "Magazine": 2,
-      "EmptyReloadTime": 260,
-      "Projectile": "superbwarfare:kh_39",
-      "Name": "weapon.superbwarfare.kh_39_missile_entity",
-      "Damage": 1100,
-      "ExplosionDamage": 180,
-      "ExplosionRadius": 12,
-      "Velocity": 3,
-      "SeekWeaponInfo": {
-        "SeekDirection": "Barrel",
-        "SeekRange": 384,
-        "SeekAngle": 20,
-        "SeekTime": 20,
-        "MaxTargetHeight": 32,
-        "MinTargetSize": 0.9,
-        "OnlyLockEntity": true
-      },
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[-2.641, 1.1875, 0], [2.641, 1.1875, 0]],
-        "ViewDirection": "Barrel",
-        "BoundUpWithAmmoAmount": true
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:bomb_release",
-        "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
-        "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locked"
-      },
-      "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleCommonMissile",
-      "CrosshairZooming": "@VehicleCommonSeekMissile",
-      "SoundRadius": 8,
-      "AvailableFireModes": ["Semi"]
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",

@@ -53,7 +53,7 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0, 2.125, 3.7],
+    "Position": [0, 1.125, 1.7],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
     "CameraPos": {
@@ -283,7 +283,7 @@
     "ExplosionRadius": 16,
     "CrashPassengers": true
   },
-  "VehicleIcon": "superbwarfare:textures/vehicle_icon/a_10a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/j10_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",

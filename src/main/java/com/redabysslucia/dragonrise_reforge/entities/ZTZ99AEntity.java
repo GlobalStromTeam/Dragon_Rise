@@ -11,43 +11,45 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 public class ZTZ99AEntity extends GeoVehicleEntity {
-        public ZTZ99AEntity(EntityType<?> pEntityType, Level pLevel) {
-                super(pEntityType, pLevel);
-        }
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
-        }
-        private PlayState cannonFirePredicate(AnimationState<ZTZ99AEntity> event) {
-                if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.ztz99a.fire"));
-                }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
-        }
+    public ZTZ99AEntity(EntityType<?> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
 
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-        }
+    @Override
+    public DamageModifier getDamageModifier() {
+        return super.getDamageModifier()
+                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+    }
 
-        @Override
-        public int getTrackAnimationLength() {
-                return 80;
+    private PlayState cannonFirePredicate(AnimationState<ZTZ99AEntity> event) {
+        if (getShootAnimationTimer(0, 0) > 0) {
+            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("animation.ztz99a.fire"));
         }
+        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
+    }
 
-        @Override
-        public float getTurretMaxHealth() {
-                return 100;
-        }
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
+    }
 
-        @Override
-        public float getWheelMaxHealth() {
-                return 100;
-        }
+    @Override
+    public int getTrackAnimationLength() {
+        return 80;
+    }
 
-        @Override
-        public float getEngineMaxHealth() {
-                return 150;
-        }
+    @Override
+    public float getTurretMaxHealth() {
+        return 100;
+    }
+
+    @Override
+    public float getWheelMaxHealth() {
+        return 100;
+    }
+
+    @Override
+    public float getEngineMaxHealth() {
+        return 150;
+    }
 }
