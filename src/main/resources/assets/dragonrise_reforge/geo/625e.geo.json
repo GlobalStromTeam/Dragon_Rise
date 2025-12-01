@@ -16,13 +16,13 @@
 					"pivot": [-1, 0, -29]
 				},
 				{
-					"name": "main",
+					"name": "base",
 					"parent": "root",
 					"pivot": [-1, 0, -29]
 				},
 				{
 					"name": "body",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [-1, 0, -29]
 				},
 				{
@@ -1421,7 +1421,7 @@
 				},
 				{
 					"name": "turret",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [-0.75381, 45.85663, -1.01425]
 				},
 				{
@@ -3658,7 +3658,7 @@
 				},
 				{
 					"name": "bone3",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [-1, -1.8, -52],
 					"cubes": [
 						{

@@ -16,13 +16,13 @@
 					"pivot": [0, -3, -61]
 				},
 				{
-					"name": "main",
+					"name": "base",
 					"parent": "root",
 					"pivot": [0, -3, -61]
 				},
 				{
 					"name": "body",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [0, -3, -61]
 				},
 				{
@@ -1713,7 +1713,7 @@
 				},
 				{
 					"name": "turret",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [1.05, 34.35, -0.025]
 				},
 				{
@@ -3280,7 +3280,7 @@
 				},
 				{
 					"name": "Wheel",
-					"parent": "main",
+					"parent": "root",
 					"pivot": [0, -3, -61]
 				},
 				{

@@ -62,7 +62,7 @@
       "RPM": 1200,
       "Velocity": 30,
       "Damage": 45,
-      "RecoilTime": 40,
+      "RecoilTime": 20,
       "RecoilForce": 0.85,
       "Spread": 1,
       "HeatPerShoot": 5,

@@ -21,8 +21,14 @@ public class T80Entity extends GeoVehicleEntity {
         }
         private PlayState cannonFirePredicate(AnimationState<T80Entity> event) {
                 if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.t80.fire"));
+                        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("animation.ztz99a.fire"));
                 }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.t80.idle"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
         }
+
+        @Override
+        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+                data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
+        }
+
 }
