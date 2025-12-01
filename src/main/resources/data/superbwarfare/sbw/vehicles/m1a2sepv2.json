@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:m1a2sepv2",
-  "MaxHealth": 400,
+  "MaxHealth": 450,
   "MaxEnergy": 20000000,
   "OBB": [
     {
@@ -47,22 +47,22 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8125, -0.175, 0.84375],
+      "Position": [-1.03, 1, 0.784],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -10,
+      "MinPitch": -7,
       "MaxPitch": 30,
-      "Sensitivity": [0.52, 0.72, 0.9]
+      "Sensitivity": [0.52, 0.75, 0.9]
     },
     {
       "HidePassenger": true,
-      "Transform": "Turret",
+      "Transform": "WeaponStationBarrel",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0, 0.1, 0],
+        "ZoomPosition": [0, 0.0, 0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.75805625, 0.3, -0.57275625],
+      "Position": [0, 0.6, 0],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
       "MinPitch": -10,
@@ -86,14 +86,14 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/screens/vehicle_weapon/ap_shell.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 70,
+      "EmptyReloadTime": 120,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -102,65 +102,35 @@
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
-      "ShootAnimationTime": 10,
+      "ShootAnimationTime": 40,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
-      "Name": "weapon.superbwarfare.cannon_ap",
+      "Name": "M829A1",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
           "Ammo": "superbwarfare:he_5_inches",
           "Override": {
-            "Icon": "superbwarfare:textures/screens/vehicle_weapon/he_shell.png",
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "weapon.superbwarfare.cannon_he"
-          }
-        },
-        {
-          "Ammo": "superbwarfare:cm_5_inches",
-          "Override": {
-            "Icon": "superbwarfare:textures/screens/vehicle_weapon/cm_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsClusterMunitionsProjectile": true,
-            "SparedAmount": 18,
-            "SparedAngle": 8,
-            "Velocity": 25,
-            "Damage": 300,
-            "ExplosionDamage": 180,
-            "ExplosionRadius": 6,
-            "Name": "weapon.superbwarfare.cannon_cm"
-          }
-        },
-        {
-          "Ammo": "superbwarfare:gs_5_inches",
-          "Override": {
-            "Icon": "superbwarfare:textures/screens/vehicle_weapon/grape_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsGrapeShotProjectile": true,
-            "SparedAmount": 36,
-            "SparedAngle": 5,
-            "Velocity": 15,
-            "Damage": 1000,
-            "ExplosionDamage": 180,
-            "ExplosionRadius": 6,
-            "Name": "weapon.superbwarfare.cannon_gs"
+            "Name": "M908"
           }
         }
       ],
       "SoundInfo": {
-        "Fire1P": "superbwarfare:yx_100_fire_1p",
-        "Fire3P": "superbwarfare:yx_100_fire_3p",
-        "Fire3PFar": "superbwarfare:yx_100_far",
-        "Fire3PVeryFar": "superbwarfare:yx_100_veryfar",
-        "VehicleReload": "superbwarfare:yx_100_reload",
+        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
+        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p",
+        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p",
+        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "superbwarfare:yx_100_reload"
+          "dragonrise_reforge:ztz99a_reload"
         ]
       },
       "SoundRadius": 32,
@@ -171,7 +141,7 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/screens/vehicle_weapon/gun_12_7mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -205,7 +175,7 @@
       "SoundRadius": 16
     },
     "PassengerMachineGun": {
-      "Icon": "superbwarfare:textures/screens/vehicle_weapon/gun_12_7mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -224,7 +194,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, 0.01, 1.8]],
+        "Positions": [[0, 0.6, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -255,12 +225,12 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 0.6
   },
-  "TurretPos": [0, 2.1059375, -0.43125],
+  "TurretPos": [0, 0.75, 0],
   "BarrelPos": [0, 0.56345, 0.6477125],
   "TurretTurnSpeed": [7, 6],
   "TurretPitchRange": [-10, 30],
-  "PassengerWeaponStationPos": [-0.75805625, 1.1446375, -0.57275625],
-  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.0551625],
+  "PassengerWeaponStationPos": [-0.93, 1.25, 0.062],
+  "PassengerWeaponStationBarrelPos": [0, 0.5, 0],
   "PassengerWeaponStationTurnSpeed": [15, 15],
   "PassengerWeaponStationPitchRange": [-10, 60],
   "HasDecoy": true,

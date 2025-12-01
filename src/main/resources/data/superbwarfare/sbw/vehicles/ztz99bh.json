@@ -50,12 +50,12 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8, -0.6, 0.45],
+      "Position": [0.8, 1.5, 0.45],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
-      "Sensitivity": [0.52, 0.72, 0.9]
+      "Sensitivity": [0.52, 0.75, 0.9]
     },
     {
       "HidePassenger": true,
@@ -65,7 +65,7 @@
         "ZoomPosition": [0, 0.7, 0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-1.04, 0.5, -1.72],
+      "Position": [-1.04, 2.25, -1.72],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
@@ -205,7 +205,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, 0.01, 1.8]],
+        "Positions": [[0, 1.4, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -236,7 +236,7 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 0.6
   },
-  "TurretPos": [0, 1.93, 0.25],
+  "TurretPos": [0, 0, 0.25],
   "BarrelPos": [0, 0.05, 0.6477125],
   "TurretTurnSpeed": [5, 5],
   "TurretPitchRange": [-7, 15],
