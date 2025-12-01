@@ -2418,7 +2418,6 @@
 					"name": "MG2",
 					"parent": "passengerWeaponStationPitch",
 					"pivot": [-16.43954, 58.50074, 26.95453],
-					"rotation": [-8.66258, 0, 0],
 					"cubes": [
 						{
 							"origin": [-17.71936, 57.83997, 16.80339],

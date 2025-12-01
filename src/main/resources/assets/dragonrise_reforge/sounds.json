@@ -30,5 +30,13 @@
         "stream": false
       }
     ]
+  },
+  "cn_light_mg": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ztz99a/ztz99a_fire_3p",
+        "stream": false
+      }
+    ]
   }
 }

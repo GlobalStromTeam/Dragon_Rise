@@ -131,36 +131,6 @@
             "ExplosionRadius": 10,
             "Name": "weapon.superbwarfare.cannon_he"
           }
-        },
-        {
-          "Ammo": "superbwarfare:cm_5_inches",
-          "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cm_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsClusterMunitionsProjectile": true,
-            "SparedAmount": 18,
-            "SparedAngle": 8,
-            "Velocity": 25,
-            "Damage": 300,
-            "ExplosionDamage": 180,
-            "ExplosionRadius": 6,
-            "Name": "weapon.superbwarfare.cannon_cm"
-          }
-        },
-        {
-          "Ammo": "superbwarfare:gs_5_inches",
-          "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/grape_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsGrapeShotProjectile": true,
-            "SparedAmount": 36,
-            "SparedAngle": 5,
-            "Velocity": 15,
-            "Damage": 1000,
-            "ExplosionDamage": 180,
-            "ExplosionRadius": 6,
-            "Name": "weapon.superbwarfare.cannon_gs"
-          }
         }
       ],
       "SoundInfo": {
