@@ -1,7 +1,7 @@
 {
   "item_group.dragonrise_reforge.title": "巨龙崛起",
 
-  "entity.dragonrise_reforge.ztz99a": "ZTZ-99A 主战坦克",
+  "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
 
   "superbwarfare.entry.vehicle.ztz99a": "装甲-坦克-主战-99A式",
   "superbwarfare.page.vehicle.ztz99a1": "$(thing)ZTZ-99A$()是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。$(p)战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
@@ -28,13 +28,13 @@
   "entity.dragonrise_reforge.t80": "T-80",
   "superbwarfare.entry.vehicle.625e": "特-80 主战坦克",
 
-  "entity.dragonrise_reforge.zbl08": "ZBL-08 轮式步兵战车",
+  "entity.dragonrise_reforge.zbl08": "ZBL-08",
   "superbwarfare.entry.vehicle.zbl08": "装甲-步兵战车-轮式-08式",
 
   "entity.dragonrise_reforge.j10": "J-10",
   "superbwarfare.entry.vehicle.zbl08": "歼-10早期型 战斗机",
 
-  "entity.dragonrise_reforge.ztz99bh": "ZTZ99B",
+  "entity.dragonrise_reforge.ztz99bh": "ZTZ-99B",
   "superbwarfare.entry.vehicle.zbl08": "装甲-坦克-主战-99B式 主战坦克（附加装甲，重型武器站）",
 
   "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
