@@ -21,9 +21,9 @@ public class M1A2SEPV2Entity extends GeoVehicleEntity {
         }
         private PlayState cannonFirePredicate(AnimationState<M1A2SEPV2Entity> event) {
                 if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.ztz99a.fire"));
+                        return event.setAndContinue(RawAnimation.begin().thenPlay("m1a2sepv2.fire"));
                 }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
+                return event.setAndContinue(RawAnimation.begin().thenLoop("m1a2sepv2.animation"));
         }
 
         @Override

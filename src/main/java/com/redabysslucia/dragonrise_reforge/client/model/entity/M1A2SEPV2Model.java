@@ -6,7 +6,6 @@ import com.redabysslucia.dragonrise_reforge.entities.M1A2SEPV2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import net.minecraft.resources.ResourceLocation;
 
-@SuppressWarnings("removal")
 public class M1A2SEPV2Model extends VehicleModel<M1A2SEPV2Entity> {
 
         @Override
@@ -14,18 +13,18 @@ public class M1A2SEPV2Model extends VehicleModel<M1A2SEPV2Entity> {
                 return true;
         }
 
-        @Override
-        public ResourceLocation getAnimationResource(M1A2SEPV2Entity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID,"animations/m1a2sepv2.animation.json");
-        }
-
-        @Override
-        public ResourceLocation getModelResource(M1A2SEPV2Entity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/m1a2sepv2.geo.json");
-        }
-
-        @Override
-        public ResourceLocation getTextureResource(M1A2SEPV2Entity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/m1a2sepv2.png");
-        }
+//        @Override
+//        public ResourceLocation getAnimationResource(M1A2SEPV2Entity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID,"animations/m1a2sepv2.animation.json");
+//        }
+//
+//        @Override
+//        public ResourceLocation getModelResource(M1A2SEPV2Entity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/m1a2sepv2.geo.json");
+//        }
+//
+//        @Override
+//        public ResourceLocation getTextureResource(M1A2SEPV2Entity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/m1a2sepv2.png");
+//        }
 }
