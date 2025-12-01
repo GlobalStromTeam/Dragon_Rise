@@ -16,7 +16,7 @@
 					"pivot": [0, 34.07622, -71.45247]
 				},
 				{
-					"name": "verticalTail",
+					"name": "weiyiR",
 					"parent": "root",
 					"pivot": [0, 60.68416, 127.00235],
 					"cubes": [
@@ -80,7 +80,7 @@
 					]
 				},
 				{
-					"name": "LeftFlap",
+					"name": "wingLB",
 					"parent": "root",
 					"pivot": [31.70572, 26.58822, 88.38318],
 					"rotation": [0, 5, 0],
@@ -128,7 +128,7 @@
 					]
 				},
 				{
-					"name": "RightFlap",
+					"name": "wingRB",
 					"parent": "root",
 					"pivot": [-31.70572, 26.58822, 88.38318],
 					"rotation": [0, -5, 0],
@@ -176,7 +176,7 @@
 					]
 				},
 				{
-					"name": "LeftTailPlane",
+					"name": "wingLR",
 					"parent": "root",
 					"pivot": [9.38493, 37.12496, -5.57216],
 					"rotation": [0, 1.5, 0],
@@ -226,7 +226,7 @@
 					]
 				},
 				{
-					"name": "RightTailPlane",
+					"name": "wingRR",
 					"parent": "root",
 					"pivot": [-9.38493, 37.12496, -5.57216],
 					"rotation": [0, -1.5, 0],
@@ -605,7 +605,7 @@
 								"east": {"uv": [230, 148], "uv_size": [90, 30]},
 								"south": {"uv": [263, 474], "uv_size": [12.5, 30]},
 								"west": {"uv": [0, 232], "uv_size": [90, 30]},
-								"up": {"uv": [1003, 233], "uv_size": [-344.5, 47.5], "uv_rotation": 270},
+								"up": {"uv": [1008.5, 965.5], "uv_size": [-134.9, 47.5], "uv_rotation": 270},
 								"down": {"uv": [194, 412], "uv_size": [12.5, -90]}
 							}
 						},
@@ -666,7 +666,7 @@
 								"east": {"uv": [90, 232], "uv_size": [-90, 30]},
 								"south": {"uv": [275.5, 474], "uv_size": [-12.5, 30]},
 								"west": {"uv": [320, 148], "uv_size": [-90, 30]},
-								"up": {"uv": [1003, 280.5], "uv_size": [-344.5, -47.5], "uv_rotation": 270},
+								"up": {"uv": [1012, 1013.5], "uv_size": [-81.5, -48.5], "uv_rotation": 270},
 								"down": {"uv": [206.5, 412], "uv_size": [-12.5, -90]}
 							}
 						}

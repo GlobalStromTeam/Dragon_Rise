@@ -21,6 +21,7 @@ public class J10Entity extends GeoVehicleEntity {
                 .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
     }
 
+
 //    @Override
 //    public boolean useAircraftCamera(int seatIndex) {
 //        return ModKeyMappings.FREE_CAMERA.isDown() && !ClientEventHandler.zoom;
