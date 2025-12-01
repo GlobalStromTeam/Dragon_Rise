@@ -25,24 +25,4 @@ public class T80Entity extends GeoVehicleEntity {
                 }
                 return event.setAndContinue(RawAnimation.begin().thenLoop("animation.t80.idle"));
         }
-
-        @Override
-        public int getTrackAnimationLength() {
-                return 80;
-        }
-
-        @Override
-        public float getTurretMaxHealth() {
-                return 100;
-        }
-
-        @Override
-        public float getWheelMaxHealth() {
-                return 100;
-        }
-
-        @Override
-        public float getEngineMaxHealth() {
-                return 150;
-        }
 }

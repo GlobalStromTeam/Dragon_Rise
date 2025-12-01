@@ -2,10 +2,16 @@ package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.Mi28Entity;
+import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
+import com.atsuishio.superbwarfare.entity.vehicle.A10Entity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import net.minecraft.resources.ResourceLocation;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
+
 
 public class KA50Model extends VehicleModel<KA50Entity> {
     @Override
@@ -15,23 +21,24 @@ public class KA50Model extends VehicleModel<KA50Entity> {
 
     @Override
     public @Nullable TransformContext<KA50Entity> collectTransform(String boneName) {
-        if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
-        }
+        return switch (boneName) {
+            case "propeller0" -> (bone, vehicle, state) ->
+                    bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-        if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
-        }
+            case "propeller1" -> (bone, vehicle, state) ->
+                    bone.setRotY(-1 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-        if (boneName.equals("missile1")) {
-            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 2));
-        }
+            case "tailPropeller" -> (bone, vehicle, state) ->
+                    bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-        if (boneName.equals("missile2")) {
-            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));
-        }
+            case "missile1" -> (bone, vehicle, state) ->
+                    bone.setHidden(shouldHideMissile(vehicle, 2));
 
-        return super.collectTransform(boneName);
+            case "missile2" -> (bone, vehicle, state) ->
+                    bone.setHidden(shouldHideMissile(vehicle, 1));
+
+            default -> null;
+        };
     }
 
     public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
