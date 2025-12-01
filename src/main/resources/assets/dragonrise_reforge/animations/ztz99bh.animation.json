@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"ztz99bh.animation.fire": {
+			"animation_length": 0.25,
+			"bones": {
+				"bone18": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, 4],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

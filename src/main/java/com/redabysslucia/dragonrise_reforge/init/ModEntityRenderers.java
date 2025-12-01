@@ -1,9 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.J10Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.KA50Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.T80Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ZTZ99ARenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,9 +11,14 @@ public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event){
                 event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ARenderer::new);
+                event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
+                event.registerEntityRenderer(ModEntities.M1A2SEPV2.get(), M1A2SEPV2Renderer::new);
                 event.registerEntityRenderer(ModEntities.KA50.get(), KA50Renderer::new);
                 event.registerEntityRenderer(ModEntities.T80.get(), T80Renderer::new);
+                event.registerEntityRenderer(ModEntities.AA625E.get(), AA625ERenderer::new);
                 event.registerEntityRenderer(ModEntities.J10.get(), J10Renderer::new);
+                event.registerEntityRenderer(ModEntities.Z10ME.get(), Z10MERenderer::new);
+                event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
         }
 
 }

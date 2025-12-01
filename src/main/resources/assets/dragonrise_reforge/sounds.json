@@ -1,4 +1,12 @@
 {
+  "t80_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:t80/t80_engine",
+        "stream": false
+      }
+    ]
+  },
   "ztz99a_reload": {
     "sounds": [
       {
