@@ -287,8 +287,8 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "superbwarfare:yx_100_engine",
-  "MainWeaponHudType": "@Land",
+  "EngineSound": "dragonrise_reforge:t80_engine",
+  "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
     [2, 0, 3.0625], [-2, 0, 3.0625],

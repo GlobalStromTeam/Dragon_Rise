@@ -55,7 +55,7 @@
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 30,
-      "Sensitivity": [0.32, 0.40, 0.5]
+      "Sensitivity": [0.52, 0.72, 0.9]
     },
     {
       "HidePassenger": true,
@@ -236,11 +236,11 @@
     "WheelDifferential": 0.75,
     "TrackRotSpeed": 1.3,
     "TrackDifferential": 0.6,
-    "MaxForwardSpeedRate": 1.1,
-    "MaxBackwardSpeedRate": 0.55,
+    "MaxForwardSpeedRate": 0.45,
+    "MaxBackwardSpeedRate": 0.2,
     "Increment": 0.02,
     "Decrement": 0.01,
-    "SteeringSpeed": 0.1,
+    "SteeringSpeed": 0.35,
     "EngineSoundVolume" : 0.6
   },
   "TurretPos": [0, 2.1059375, -0.43125],
@@ -254,7 +254,7 @@
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 3.5,
-  "Mass": 70,
+  "Mass": 48,
   "DamageModifiers": [
     "minecraft:lava - -20",
     "minecraft:lava * 10",
