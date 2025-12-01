@@ -158,7 +158,7 @@
       "SoundRadius": 12
     },
     "@Missile": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd9.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "RPM": 12,
@@ -196,7 +196,7 @@
       "DefaultZoom": 3,
       "Magazine": 8,
       "Template": "@Missile",
-      "Crosshair": "@VehicleCommonMissile",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.0625, 5.625],
@@ -265,8 +265,7 @@
         "Locked": "superbwarfare:javelin_locked"
       },
       "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleCommonMissile",
-      "CrosshairZooming": "@VehicleCommonSeekMissile",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "SoundRadius": 8,
       "AvailableFireModes": ["Semi"]
     },

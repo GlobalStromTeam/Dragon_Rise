@@ -14,18 +14,18 @@ public class ZTZ99BHModel extends VehicleModel<ZTZ99BHEntity> {
                 return true;
         }
 
-        @Override
-        public ResourceLocation getAnimationResource(ZTZ99BHEntity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID,"animations/ztz99bh.animation.json");
-        }
-
-        @Override
-        public ResourceLocation getModelResource(ZTZ99BHEntity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/ztz99bh.geo.json");
-        }
-
-        @Override
-        public ResourceLocation getTextureResource(ZTZ99BHEntity entity) {
-                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/ztz99bh.png");
-        }
+//        @Override
+//        public ResourceLocation getAnimationResource(ZTZ99BHEntity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID,"animations/ztz99bh.animation.json");
+//        }
+//
+//        @Override
+//        public ResourceLocation getModelResource(ZTZ99BHEntity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/ztz99bh.geo.json");
+//        }
+//
+//        @Override
+//        public ResourceLocation getTextureResource(ZTZ99BHEntity entity) {
+//                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/ztz99bh.png");
+//        }
 }

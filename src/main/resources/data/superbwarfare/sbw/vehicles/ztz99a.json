@@ -50,7 +50,7 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8, -0.7, 0.3],
+      "Position": [0.8, -0.6, 0.45],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
@@ -114,9 +114,9 @@
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "@VehicleUsTank",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "weapon.superbwarfare.cannon_ap",
+      "Name": "DTC-10-125",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -129,7 +129,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "weapon.superbwarfare.cannon_he"
+            "Name": "DTB-10-125"
           }
         }
       ],
@@ -152,35 +152,35 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "RPM": 450,
-      "Damage": 40,
+      "RPM": 600,
+      "Damage": 10,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
-      "HeatPerShoot": 5,
+      "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
-      "AmmoType": "@HeavyAmmo",
+      "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.12, 0.15, 0]],
+        "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
+      "Name": "QJT 5.8mm",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
+        "Fire1P": "superbwarfare:qbz_191_fire_1p",
+        "Fire3P": "superbwarfare:qbz_191_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 16
@@ -236,7 +236,7 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 0.6
   },
-  "TurretPos": [0, 2.1059375, 0.1225],
+  "TurretPos": [0, 1.93, 0.19375],
   "BarrelPos": [0, 0.05, 0.6477125],
   "TurretTurnSpeed": [5, 5],
   "TurretPitchRange": [-7, 15],
@@ -261,7 +261,7 @@
     "minecraft:player_attack 0",
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile 0",
-    "All * 0.2",
+    "All * 0.3",
     "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
