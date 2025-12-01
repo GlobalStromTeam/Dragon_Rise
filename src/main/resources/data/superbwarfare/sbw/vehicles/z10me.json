@@ -215,7 +215,7 @@
           "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "weapon.superbwarfare.kh_39_missile_block",
+            "Name": "weapon.dragonrise_reforge.missile_akd10",
             "SeekWeaponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
@@ -228,7 +228,7 @@
           }
         }
       ],
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/kh_39.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd10.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 2,
@@ -271,14 +271,14 @@
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ru_9m336.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.superbwarfare.9m_336_missile",
+      "Name": "weapon.dragonrise_reforge.missile_ty90",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
