@@ -29,14 +29,14 @@
     {
       "Part": "Turret",
       "Size": [1.6875, 0.3125, 1.21875],
-      "Position": [0, -0.10, 0.4],
+      "Position": [0, 0.5, 0.4],
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Part": "Turret",
       "Size": [1.03125, 0.40625, 0.90625],
-      "Position": [0, 0.0, -0.475],
+      "Position": [0, 0.5, -0.475],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -50,7 +50,7 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8125, -0.175, 0.84375],
+      "Position": [0.8125, -0.7, 0.84375],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -10,
@@ -123,21 +123,6 @@
             "ExplosionRadius": 10,
             "Name": "3OF46"
           }
-        },
-        {
-          "Ammo": "superbwarfare:gs_5_inches",
-          "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/grape_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsGrapeShotProjectile": true,
-            "SparedAmount": 36,
-            "SparedAngle": 5,
-            "Velocity": 15,
-            "Damage": 1000,
-            "ExplosionDamage": 180,
-            "ExplosionRadius": 6,
-            "Name": "weapon.superbwarfare.cannon_gs"
-          }
         }
       ],
       "SoundInfo": {
@@ -159,35 +144,35 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "#da2d2d",
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "RPM": 450,
-      "Damage": 40,
+      "RPM": 600,
+      "Damage": 10,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
-      "HeatPerShoot": 5,
+      "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
-      "AmmoType": "@HeavyAmmo",
+      "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.12, 0.15, 0]],
+        "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
+      "Name": "ПКТ 7.62mm",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
+        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire3P": "superbwarfare:m_60_fire_3p",
+        "Fire3PFar": "superbwarfare:m_60_far",
+        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 16
@@ -243,7 +228,7 @@
     "SteeringSpeed": 0.16,
     "EngineSoundVolume" : 0.8
   },
-  "TurretPos": [0, 2.1059375, -0.43125],
+  "TurretPos": [0, 1.67, -0.43125],
   "BarrelPos": [0, 0.56345, 0.6477125],
   "TurretTurnSpeed": [5, 5],
   "TurretPitchRange": [-10, 30],
