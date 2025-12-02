@@ -1,21 +1,40 @@
 {
-  "item_group.dragonrise.title": "Dragon Rise Tab",
+  "item_group.dragonrise_reforge.title": "Dragon Rise Tab",
 
-  "entity.dragonrise.ztz99a": "ZTZ-99A MBT",
+  "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
+  "superbwarfare.entry.vehicle.ztz99a": "Type-99A Main Battle Tank",
+  "superbwarfare.page.vehicle.ztz99a1": "The $(thing)ZTZ-99A$() is a Main Battle Tank that can carry 3 crew members. It features powerful armor protection but lacks amphibious capabilities. $(p)The vehicle is equipped with a smoke generator that can disrupt guided targeting, with smoke grenades automatically replenished at regular intervals.",
+  "superbwarfare.page.vehicle.ztz99a2": "Requires a minimum space of 7 x 7 x 4 blocks to be placed.",
+  "superbwarfare.page.vehicle.ztz99a3": "$(l)Basic Attributes:$()$(p)Health - 500$(br)Max Crew - 3$(br)Climbing Height - 2.25m$(br)Max Energy - 20,000,000 FE$(br)Energy Consumption - 128 FE/tick$(br)Enclosed Vehicle (Seats 1 & 2)",
+  "superbwarfare.page.vehicle.ztz99a4": "$(l)Weapon Attributes:$()$(br)Seat 1:$(br)(1) Large Caliber Railgun$(br)Fire Rate - 15 RPM$(br)Direct Hit Damage - 500$(br)Explosion Damage - 100$(br)Blast Radius - 4m$(br)Ammunition - $(item)Armor-Piercing Shell$()$(br)(2) Large Caliber Railgun$(br)Fire Rate - 15 RPM$(br)Direct Hit Damage - 150$(br)Explosion Damage - 150$(br)Blast Radius - 10m$(br)Ammunition - $(item)High-Explosive Shell$()$(br)(3) 12.7mm Heavy Machine Gun$(br)Fire Rate - 500 RPM$(br)Damage - 25$(br)Ammunition - $(item)Heavy Ammunition$()",
+  "superbwarfare.page.vehicle.ztz99a5": "Seat 2:$(p)(1) 12.7mm Heavy Machine Gun$(br)Fire Rate - 500 RPM$(br)Damage - 25$(br)Ammunition - $(item)Heavy Ammunition$()",
 
-  "superbwarfare.entry.vehicle.ztz99a": "ZTZ-99A MBT",
-  "superbwarfare.page.vehicle.ztz99a1": "",
-  "superbwarfare.page.vehicle.ztz99a2": "",
-  "superbwarfare.page.vehicle.ztz99a3": "",
-  "superbwarfare.page.vehicle.ztz99a4": "",
-  "superbwarfare.page.vehicle.ztz99a5": "",
-
-  "entity.dragonrise.zhi10me": "Z10-ME",
+  "entity.dragonrise_reforge.z10me": "Z-10ME",
+  "superbwarfare.entry.vehicle.zhi10me": "Z-10ME Attack Helicopter",
   "superbwarfare.page.vehicle.zhi10mea1": "",
   "superbwarfare.page.vehicle.zhi10mea2": "",
   "superbwarfare.page.vehicle.zhi10mea3": "",
   "superbwarfare.page.vehicle.zhi10mea4": "",
   "superbwarfare.page.vehicle.zhi10mea5": "",
 
-  "superbwarfare.entry.vehicle.zhi10me": "Z10-ME"
+  "entity.dragonrise_reforge.ka50": "Ka-50",
+  "superbwarfare.entry.vehicle.ka50": "Kamov-50 Attack Helicopter",
+
+  "entity.dragonrise_reforge.625e": "625",
+  "superbwarfare.entry.vehicle.625e": "625 Gun-Missile Combined Field Air Defense System",
+
+  "entity.dragonrise_reforge.t80": "T-80",
+  "superbwarfare.entry.vehicle.t80": "T-80 Main Battle Tank",
+
+  "entity.dragonrise_reforge.zbl08": "ZBL-08",
+  "superbwarfare.entry.vehicle.zbl08": "Type-08 Infantry Fighting Vehicle",
+
+  "entity.dragonrise_reforge.j10": "J-10",
+  "superbwarfare.entry.vehicle.j10": "J-10 Early Variant Fighter Jet",
+
+  "entity.dragonrise_reforge.ztz99bh": "ZTZ-99B",
+  "superbwarfare.entry.vehicle.ztz99bh": "Type-99B Main Battle Tank (With Add-on ERA, Heavy Weapon Station)",
+
+  "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
+  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)"
 }
