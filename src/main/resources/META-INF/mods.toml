@@ -37,7 +37,7 @@ authors = "${mod_authors}" #optional
 # NONE means that no display test is set on your mod. You need to do this yourself, see IExtensionPoint.DisplayTest for more information. You can define any scheme you wish with this value.
 # IMPORTANT NOTE: this is NOT an instruction as to which environments (CLIENT or DEDICATED SERVER) your mod loads on. Your mod should load (and maybe do nothing!) whereever it finds itself.
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
-
+logoFile = "logo.jpg"
 # The description text for the mod (multi line!) (#mandatory)
 description = '''${mod_description}'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
@@ -54,10 +54,18 @@ versionRange = "${forge_version_range}" #mandatory
 ordering = "NONE"
 # Side this dependency is applied on - BOTH, CLIENT, or SERVER
 side = "BOTH"# Here's another dependency
+
 [[dependencies."${mod_id}"]]
 modId = "minecraft"
 mandatory = true
-# This version range declares a minimum of the current minecraft version up to but not including the next major version
 versionRange = "${minecraft_version_range}"
 ordering = "NONE"
+side = "BOTH"
+
+# Don't forget to add SuperbWarfare as a mandatory dependency mod
+[[dependencies."${mod_id}"]]
+modId = "superbwarfare"
+mandatory = true
+versionRange = "[0.8.8,)"
+ordering = "AFTER"
 side = "BOTH"
