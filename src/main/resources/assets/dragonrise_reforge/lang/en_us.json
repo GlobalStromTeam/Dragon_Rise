@@ -1,6 +1,16 @@
 {
   "item_group.dragonrise_reforge.title": "Dragon Rise Tab",
 
+  "info.dragonrise_reforge.ztz99a": "The ZTZ-99A is a Main Battle Tank that can carry 3 crew members, it features powerful armor protection but lacks amphibious capabilities.The vehicle is equipped with a smoke generator that can disrupt guided targeting, with smoke grenades automatically replenished at regular intervals.",
+  "info.dragonrise_reforge.zhi10me": "Z-10ME Attack Helicopter",
+  "info.dragonrise_reforge.ka50": "Kamov-50 Attack Helicopter",
+  "info.dragonrise_reforge.625e": "625 Gun-Missile Combined Field Air Defense System",
+  "info.dragonrise_reforge.t80": "T-80 Main Battle Tank",
+  "info.dragonrise_reforge.zbl08": "Type-08 Infantry Fighting Vehicle",
+  "info.dragonrise_reforge.j10": "J-10 Early Variant Fighter Jet",
+  "info.dragonrise_reforge.ztz99bh": "Type-99B Main Battle Tank (With Add-on ERA, Heavy Weapon Station)",
+  "info.dragonrise_reforge.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)",
+
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "superbwarfare.entry.vehicle.ztz99a": "Type-99A Main Battle Tank",
   "superbwarfare.page.vehicle.ztz99a1": "The $(thing)ZTZ-99A$() is a Main Battle Tank that can carry 3 crew members. It features powerful armor protection but lacks amphibious capabilities. $(p)The vehicle is equipped with a smoke generator that can disrupt guided targeting, with smoke grenades automatically replenished at regular intervals.",
