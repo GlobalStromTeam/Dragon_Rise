@@ -6,6 +6,11 @@ import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.init.ModKeyMappings;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
@@ -20,7 +25,6 @@ public class J10Entity extends GeoVehicleEntity {
         return super.getDamageModifier()
                 .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
     }
-
 
 //    @Override
 //    public boolean useAircraftCamera(int seatIndex) {
