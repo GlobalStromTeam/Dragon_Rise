@@ -1,4 +1,12 @@
 {
+  "radio": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:radio/high_way_to_hell",
+        "stream": false
+      }
+    ]
+  },
   "t80_engine": {
     "sounds": [
       {
