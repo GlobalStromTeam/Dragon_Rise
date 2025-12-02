@@ -1,4 +1,12 @@
 {
+  "wheel": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:radio/wheel",
+        "stream": false
+      }
+    ]
+  },
   "radio": {
     "sounds": [
       {

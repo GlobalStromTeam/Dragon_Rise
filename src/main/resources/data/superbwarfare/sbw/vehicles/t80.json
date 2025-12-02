@@ -148,7 +148,8 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
+      "CrosshairColor": "#da2d2d",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
@@ -166,7 +167,6 @@
         "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
       "Name": "ПКТ 7.62mm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",

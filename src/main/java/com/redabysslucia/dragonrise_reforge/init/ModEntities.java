@@ -93,6 +93,14 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
         );
 
+        public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",
+            EntityType.Builder.<SX1Entity>of(SX1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(255)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+        );
+
 
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
