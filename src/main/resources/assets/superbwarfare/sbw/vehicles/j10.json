@@ -2,7 +2,7 @@
   "ID": "dragonrise_reforge:j10",
   "Model": {
     "Model": "dragonrise_reforge:geo/j10.geo.json",
-    "animations": "dragonrise_reforge:animations/j10.animations.json",
+    "Animation": "dragonrise_reforge:animations/j10.animation.json",
     "Texture": "dragonrise_reforge:textures/entity/j10.png"
   },
   "MouseSpeed": [0.8, 0.8]
