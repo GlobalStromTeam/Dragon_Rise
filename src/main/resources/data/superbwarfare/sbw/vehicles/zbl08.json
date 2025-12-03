@@ -52,7 +52,7 @@
         "ZoomPosition": [0.1, 0.0517, 0],
         "Direction": "Barrel"
       },
-      "Weapons": ["Cannon", "MachineGun"],
+      "Weapons": ["Cannon", "MachineGun","Missile"],
       "Transform": "Turret",
       "Position": [0.36, -0.65, 0.56],
       "CanRotateHead": false,
@@ -129,6 +129,42 @@
         "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 12
+    },
+    "Missile": {
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "DefaultZoom": 3,
+      "HeatPerShoot": 0.5,
+      "Spread": 0.5,
+      "RPM": 30,
+      "CrosshairColor": "0xFFC700",
+      "Name": "红箭-73C 反坦克导弹",
+      "AmmoType": "superbwarfare:medium_anti_ground_missile",
+      "Projectile": "superbwarfare:wire_guide_missile",
+      "Magazine": 2,
+      "EmptyReloadTime": 360,
+      "Damage": 400,
+      "ExplosionDamage": 120,
+      "ExplosionRadius": 2,
+      "Velocity": 3,
+      "RecoilTime": 18,
+      "RecoilForce": 0.65,
+      "ShootPos": {
+        "Transform": "Turret",
+        "Positions": [[-1.217, 0.619, -0.221],[1.217, 0.619, -0.221]],
+        "Directions": ["Turret"],
+        "ViewDirection": "Barrel"
+      },
+      "Crosshair": "@VehicleCommonMissile",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
+        "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
+        "VehicleReload3p": "superbwarfare:medium_missile_reload",
+        "VehicleReloadSoundTime": 28,
+        "Change": "superbwarfare:into_missile"
+      },
+      "SoundRadius": 12,
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_hj-73c.png"
     }
   },
   "EngineType": "Wheel",
