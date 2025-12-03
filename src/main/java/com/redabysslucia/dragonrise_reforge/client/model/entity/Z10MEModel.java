@@ -23,12 +23,52 @@ public class Z10MEModel extends VehicleModel<Z10MEEntity> {
             return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
         }
 
-        if (boneName.equals("missile1")) {
+        if (boneName.equals("LJ11-1")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));
+        }
+
+        if (boneName.equals("LJ11-2")) {
             return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 2));
         }
 
-        if (boneName.equals("missile2")) {
-            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));
+        if (boneName.equals("LJ11-3")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 3));
+        }
+
+        if (boneName.equals("LJ11-4")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 4));
+        }
+
+        if (boneName.equals("AKD10-1")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 1));
+        }
+
+        if (boneName.equals("AKD10-2")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 2));
+        }
+
+        if (boneName.equals("AKD10-3")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 3));
+        }
+
+        if (boneName.equals("AKD10-4")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 4));
+        }
+
+        if (boneName.equals("TY90-1")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 1));
+        }
+
+        if (boneName.equals("TY90-2")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 2));
+        }
+
+        if (boneName.equals("TY90-3")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 3));
+        }
+
+        if (boneName.equals("TY90-4")) {
+            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 4));
         }
 
         return super.collectTransform(boneName);
@@ -36,6 +76,24 @@ public class Z10MEModel extends VehicleModel<Z10MEEntity> {
 
     public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("SeekMissile");
+        if (gunData == null) {
+            return false;
+        } else {
+            return gunData.ammo.get() < ammo;
+        }
+    }
+
+    public boolean shouldHideMissile2(VehicleEntity vehicle, int ammo) {
+        var gunData = vehicle.getGunData("PassengerMissile");
+        if (gunData == null) {
+            return false;
+        } else {
+            return gunData.ammo.get() < ammo;
+        }
+    }
+
+    public boolean shouldHideMissileAA(VehicleEntity vehicle, int ammo) {
+        var gunData = vehicle.getGunData("DriverAAMissile");
         if (gunData == null) {
             return false;
         } else {

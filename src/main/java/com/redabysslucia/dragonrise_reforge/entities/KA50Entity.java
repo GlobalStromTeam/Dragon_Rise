@@ -10,8 +10,8 @@ public class KA50Entity extends GeoVehicleEntity {
                 super(type, world);
         }
 
-        @Override
-        public double getMouseSensitivity() {
-                return 0.25;
-        }
+//        @Override
+//        public double getMouseSensitivity() {
+//                return 0.25;
+//        }
 }

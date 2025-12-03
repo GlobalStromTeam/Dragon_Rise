@@ -10,8 +10,8 @@ public class Z10MEEntity extends GeoVehicleEntity {
                 super(type, world);
         }
 
-        @Override
-        public double getMouseSensitivity() {
-                return 0.25;
-        }
+//        @Override
+//        public double getMouseSensitivity() {
+//                return 0.25;
+//        }
 }
