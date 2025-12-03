@@ -2,10 +2,10 @@
   "ID": "dragonrise_reforge:z10me",
   "MaxHealth": 350,
   "MaxEnergy": 10000000,
-  "TurretPos": [0, 1.107375, 4.2125],
+  "TurretPos": [0, 0.625, 2.09],
   "TurretTurnSpeed": [15, 15],
   "TurretPitchRange": [-40, 10],
-  "BarrelPos": [0, -0.55, -0.051],
+  "BarrelPos": [0, -0.14, 0],
   "TurretControllerIndex": 1,
   "OBB": [
     {
@@ -60,7 +60,7 @@
       "MaxPitch": 80,
       "MinYaw": -80,
       "MaxYaw": 80,
-      "Weapons": ["Rocket", "DriverMissile", "DriverAAMissile"],
+      "Weapons": ["Rocket", "DriverAAMissile"],
       "DismountInfo": {
         "Transform": "Vehicle",
         "Position": [-2.5, 0.5, 2.5]
@@ -105,7 +105,7 @@
       "RecoilTime": 31,
       "RecoilForce": 0.62,
       "Spread": 0.25,
-      "Name": "weapon.superbwarfare.30mm_2a42",
+      "Name": "23mm 23L机炮",
       "SoundInfo": {
         "Fire1P": "superbwarfare:mi_28_cannon_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
@@ -119,7 +119,7 @@
       "AmmoType": "superbwarfare:small_shell",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, -0.05, -0.675]],
+        "Positions": [[0, 0, -0.675]],
         "Directions": ["Barrel"]
       }
     },
@@ -133,7 +133,7 @@
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:small_rocket",
       "Spread": 0.25,
-      "Name": "weapon.superbwarfare.80mm_rocket",
+      "Name": "火发7D",
       "RPM": 450,
       "Damage": 85,
       "ExplosionDamage": 42,
@@ -144,8 +144,8 @@
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 0.62, 0.8],
         "ShootDirectionForHud": [0, 0.018, 1],
-        "Positions": [[-1.787, 1.548, -0.151], [1.787, 1.548, -0.151]],
-        "Directions": [[0.003, 0.025, 1], [-0.003, 0.025, 1]]
+        "Positions": [[-1.787, 1.548, -0.151]],
+        "Directions": [[0, 0, 1]]
       },
       "SoundInfo": {
         "Fire1P": "superbwarfare:small_rocket_fire_1p",
@@ -158,14 +158,14 @@
       "SoundRadius": 12
     },
     "@Missile": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd9.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd10.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "RPM": 12,
       "EmptyReloadTime": 240,
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
-      "Name": "weapon.superbwarfare.9m_120_missile",
+      "Name": "AKD-10",
       "Damage": 650,
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,
@@ -180,27 +180,15 @@
       },
       "SoundRadius": 8
     },
-    "DriverMissile": {
-      "DefaultZoom": 2,
-      "Magazine": 4,
-      "Crosshair": "@AirCraftMissile",
-      "Template": "@Missile",
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 3.5625, 2.25],
-        "Positions": [[-2.258, 1.932, 0], [-2.258, 1.67, 0], [-2.446, 1.932, 0], [-2.446, 1.67, 0]],
-        "BoundUpWithAmmoAmount": true
-      }
-    },
     "PassengerMissile": {
       "DefaultZoom": 3,
-      "Magazine": 8,
+      "Magazine": 4,
       "Template": "@Missile",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[2.258, 1.932, 0], [2.258, 1.67, 0], [2.446, 1.932, 0], [2.446, 1.67, 0], [2.806, 1.932, 0], [2.806, 1.67, 0], [2.993, 1.932, 0], [2.993, 1.67, 0]],
+        "Positions": [[-2.19, 1, 2.29], [-2.19, 0.64, 2.29], [-2.59, 1, 2.29], [-2.59, 0.64, 2.29]],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
       }
@@ -228,13 +216,13 @@
           }
         }
       ],
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd10.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ba11.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
-      "Magazine": 2,
+      "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
-      "Name": "weapon.superbwarfare.kh_39_missile_entity",
+      "Name": "蓝剑-11",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
@@ -251,7 +239,7 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[-2.641, 1.1875, 0], [2.641, 1.1875, 0]],
+        "Positions": [[2.19, 1, 2.29], [2.19, 0.64, 2.29], [2.59, 1, 2.29], [2.59, 0.64, 2.29]],
         "ViewDirection": "Barrel",
         "BoundUpWithAmmoAmount": true
       },
@@ -278,7 +266,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.dragonrise_reforge.missile_ty90",
+      "Name": "天燕-90",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
@@ -295,7 +283,7 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[-2.806, 1.932, 0], [-2.806, 1.67, 0], [-2.993, 1.932, 0], [-2.993, 1.67, 0]],
+        "Positions": [[1.006, 1.932, 0], [1.006, 1.67, 0], [1.193, 1.932, 0], [1.193, 1.67, 0]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
