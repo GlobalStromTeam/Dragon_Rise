@@ -229,12 +229,12 @@
     "WheelDifferential": 0.75,
     "TrackRotSpeed": 1.3,
     "TrackDifferential": 0.6,
-    "MaxForwardSpeedRate": 1.18,
+    "MaxForwardSpeedRate": 0.885,
     "MaxBackwardSpeedRate": 0.54,
-    "Increment": 0.0044,
+    "Increment": 0.0059,
     "Decrement": 0.008,
     "SteeringSpeed": 0.13,
-    "EngineSoundVolume" : 0.65
+    "EngineSoundVolume" : 0.7
   },
   "TurretPos": [0, 1.93, 0.19375],
   "BarrelPos": [0, 0.05, 0.6477125],
