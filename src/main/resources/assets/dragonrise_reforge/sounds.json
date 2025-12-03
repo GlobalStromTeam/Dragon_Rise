@@ -15,6 +15,110 @@
       }
     ]
   },
+  "m1a2_reload": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/common_reload",
+        "stream": false
+      }
+    ]
+  },
+  "m1a2_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/common_fire_1p",
+        "stream": false
+      }
+    ]
+  },
+  "m1a2_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_3",
+        "stream": false
+      }
+    ]
+  },
+  "m1a2_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_fire_3p_far_3",
+        "stream": false
+      }
+    ]
+  },
+  "m1a2_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m1a2/m1a2_engine",
+        "stream": false
+      }
+    ]
+  },
+  "t80_reload": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/common_reload_autoloader_short",
+        "stream": false
+      }
+    ]
+  },
+  "t80_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/common_fire_1p",
+        "stream": false
+      }
+    ]
+  },
+  "t80_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_3",
+        "stream": false
+      }
+    ]
+  },
+  "t80_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:t80/t80_fire_3p_far_3",
+        "stream": false
+      }
+    ]
+  },
   "t80_engine": {
     "sounds": [
       {
@@ -26,7 +130,7 @@
   "ztz99a_reload": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:ztz99a/ztz99a_reload",
+        "name": "dragonrise_reforge:common/common_reload_autoloader_short",
         "stream": false
       }
     ]
@@ -34,7 +138,7 @@
   "ztz99a_fire_1p": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:ztz99a/ztz99a_fire_1p",
+        "name": "dragonrise_reforge:common/common_fire_1p",
         "stream": false
       }
     ]
@@ -42,7 +146,31 @@
   "ztz99a_fire_3p": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:ztz99a/ztz99a_fire_3p",
+        "name": "dragonrise_reforge:common/common_fire_3p",
+        "stream": false
+      }
+    ]
+  },
+  "ztz99a_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/common_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/common_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/common_fire_3p_far_3",
+        "stream": false
+      }
+    ]
+  },
+  "ztz99a_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ztz99a/ztz99a_engine",
         "stream": false
       }
     ]
@@ -50,7 +178,7 @@
   "cn_light_mg": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:ztz99a/ztz99a_fire_3p",
+        "name": "dragonrise_reforge:common/common_fire_3p",
         "stream": false
       }
     ]

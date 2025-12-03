@@ -123,14 +123,14 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
-        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "Fire1P": "dragonrise_reforge:m1a2_fire_1p",
+        "Fire3P": "dragonrise_reforge:m1a2_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m1a2_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m1a2_fire_3p_far",
+        "VehicleReload": "dragonrise_reforge:m1a2_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
+          "dragonrise_reforge:m1a2_reload"
         ]
       },
       "SoundRadius": 32,
@@ -221,7 +221,7 @@
     "MaxForwardSpeedRate": 1.07,
     "MaxBackwardSpeedRate": 0.57,
     "Increment": 0.004,
-    "Decrement": 0.004,
+    "Decrement": 0.0075,
     "SteeringSpeed": 0.12,
     "EngineSoundVolume" : 1.0
   },
@@ -287,7 +287,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:t80_engine",
+  "EngineSound": "dragonrise_reforge:m1a2_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
