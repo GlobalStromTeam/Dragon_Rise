@@ -59,6 +59,56 @@
       "MinPitch": -10,
       "MaxPitch": 35.5,
       "Sensitivity": [0.55, 0.83, 1]
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.2, -1],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.2, -1],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.2, -1],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.2, -1],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.2, -1],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
     }
   ],
   "Weapons": {
@@ -98,21 +148,22 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Spread": 0.5,
-      "CrosshairColor": "0x66FF00",
+      "Spread": 0.25,
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
-      "RPM": 600,
-      "Damage": 9.5,
-      "BypassesArmor": 0.3,
-      "Velocity": 30,
-      "RecoilTime": 22,
-      "RecoilForce": 0.1,
-      "HeatPerShoot": 4,
+      "DefaultZoom": 3,
+      "RPM": 800,
+      "Damage": 10,
+      "BypassesArmor": 0.2,
+      "Velocity": 25,
+      "RecoilTime": 16,
+      "RecoilForce": 0.05,
+      "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
-      "ShootAnimationTime": 2,
+      "ShootAnimationTime": 1,
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
@@ -120,15 +171,15 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.7_62mm_coax",
+      "Name": "QJT 5.8mm",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
+        "Fire1P": "superbwarfare:qbz_191_fire_1p",
+        "Fire3P": "superbwarfare:qbz_191_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 12
+      "SoundRadius": 16
     },
     "Missile": {
       "DefaultFireMode": "Semi",
