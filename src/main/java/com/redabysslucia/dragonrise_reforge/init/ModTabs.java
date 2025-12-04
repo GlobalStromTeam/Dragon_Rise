@@ -22,13 +22,14 @@ public class ModTabs {
                             output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
+                            output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL11.get()));
+                            output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.Z10ME.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.J10.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
-                            output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL11.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
                             output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
                                 }

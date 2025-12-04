@@ -175,6 +175,130 @@
       }
     ]
   },
+  "zbd04a_100mm_reload": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_reload",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_1p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_1p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_1p_3",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_1p_4",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_3",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_4",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_far_3",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_fire_3p_far_4",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_30mm_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_1p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_1p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_1p_3",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_30mm_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_3",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_30mm_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:zbd04a/30mm/zbd04a_30mm_fire_3p_far_3",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:zbd04a/zbd04a_engine",
+        "stream": false
+      }
+    ]
+  },
   "cn_light_mg": {
     "sounds": [
       {
