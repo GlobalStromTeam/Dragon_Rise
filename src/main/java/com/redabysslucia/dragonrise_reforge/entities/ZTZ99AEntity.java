@@ -23,7 +23,7 @@ public class ZTZ99AEntity extends GeoVehicleEntity {
 
     private PlayState cannonFirePredicate(AnimationState<ZTZ99AEntity> event) {
         if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("animation.ztz99a.fire"));
+            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.ztz99a.fire"));
         }
         return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
     }

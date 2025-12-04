@@ -234,7 +234,7 @@
     "Increment": 0.0054,
     "Decrement": 0.0076,
     "SteeringSpeed": 0.12,
-    "EngineSoundVolume" : 0.7
+    "EngineSoundVolume" : 1.0
   },
   "TurretPos": [0, 1.93, 0.25],
   "BarrelPos": [0, 0.05, 0.6477125],
