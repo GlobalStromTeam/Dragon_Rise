@@ -4,7 +4,6 @@ import com.atsuishio.superbwarfare.client.ICustomCamera;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.mixins.CameraMixin;
-import com.redabysslucia.dragonrise_reforge.client.shader.BWShader;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundSource;
@@ -67,6 +66,13 @@ public class F14Entity extends GeoVehicleEntity {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
                     ("animation.f14.highspeed_off"));
         }
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        data.add(new AnimationController<>(this, "f14a", 0, this::F14A));
+        data.add(new AnimationController<>(this, "f14b", 0, this::F14B));
+        data.add(new AnimationController<>(this, "f14c", 0, this::F14C));
     }
     //    @Override
 //    public boolean useAircraftCamera(int seatIndex) {
