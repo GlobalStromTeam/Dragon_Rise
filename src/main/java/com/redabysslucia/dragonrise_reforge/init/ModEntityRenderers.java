@@ -23,6 +23,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZBD04A.get(), ZBD04ARenderer::new);
                 event.registerEntityRenderer(ModEntities.SX1.get(), SX1Renderer::new);
                 event.registerEntityRenderer(ModEntities.STRV103.get(), STRV103Renderer::new);
+                event.registerEntityRenderer(ModEntities.F14.get(), F14Renderer::new);
         }
 
 }

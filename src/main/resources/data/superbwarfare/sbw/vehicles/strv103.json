@@ -50,11 +50,11 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8125, 1.7, 0.84375],
+      "Position": [0.8125, -0.6, 0.84375],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -6,
-      "MaxPitch": 18,
+      "MinPitch": -10,
+      "MaxPitch": 10,
       "Sensitivity": [0.52, 0.72, 0.9]
     },
     {
@@ -68,8 +68,8 @@
       "Position": [-0.5805625, 0.3, -0.47275625],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -5,
-      "MaxPitch": 60,
+      "MinPitch": -10,
+      "MaxPitch": -10,
       "Sensitivity": [0.57, 0.55, 0.9]
     },
     {
@@ -232,9 +232,9 @@
   "BarrelPos": [0, 0.56345, 0.6477125],
   "TurretYawRange": [0, 0],
   "TurretTurnSpeed": [1, 0],
-  "TurretPitchRange": [-10, 20],
+  "TurretPitchRange": [-10, 10],
   "PassengerWeaponStationPos": [-0.75805625, 1.1446375, -0.57275625],
-  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.0551625],
+  "PassengerWeaponStationBarrelPos": [0, 3.0625, 0.3125],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
   "PassengerWeaponStationPitchRange": [-5, 60],
   "HasDecoy": true,
