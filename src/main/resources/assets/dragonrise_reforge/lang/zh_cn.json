@@ -42,5 +42,7 @@
   "superbwarfare.entry.vehicle.ztz99bh": "装甲-坦克-主战-99B式 主战坦克（附加装甲，重型武器站）",
   "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
   "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）",
-  "entity.dragonrise_reforge.sx1": "SX-1"
+  "entity.dragonrise_reforge.sx1": "SX-1",
+  "entity.dragonrise_reforge.amx56": "AMX56",
+  "superbwarfare.entry.vehicle.amx56": "AMX56 勒克莱尔主战坦克"
 }

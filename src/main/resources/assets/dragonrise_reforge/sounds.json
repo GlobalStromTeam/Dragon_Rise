@@ -306,5 +306,13 @@
         "stream": false
       }
     ]
+  },
+  "amx56_reload": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:amx56/amx56_reload",
+        "stream": false
+      }
+    ]
   }
 }

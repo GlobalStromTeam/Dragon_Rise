@@ -37,6 +37,14 @@ public class ModEntities {
                       .sized(4.0f, 2.9f)
       );
 
+      public static final RegistryObject<EntityType<AMX56Entity>> AMX56 = register("amx56",
+              EntityType.Builder.of(AMX56Entity::new, MobCategory.MISC)
+                      .setTrackingRange(512)
+                      .setUpdateInterval(1)
+                      .fireImmune()
+                      .sized(4.0f, 2.9f)
+      );
+
         public static final RegistryObject<EntityType<KA50Entity>> KA50 = register("ka50",
                 EntityType.Builder.of(KA50Entity::new, MobCategory.MISC)
                         .setTrackingRange(512)

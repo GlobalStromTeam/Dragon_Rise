@@ -54,5 +54,8 @@
   "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
   "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)",
 
+  "entity.dragonrise_reforge.amx56": "AMX56",
+  "superbwarfare.entry.vehicle.m1a2sepv2": "AMX56 Leclerc Main Battle Tank (SEPv2 Package)",
+
   "entity.dragonrise_reforge.sx1": "SX-1"
 }
