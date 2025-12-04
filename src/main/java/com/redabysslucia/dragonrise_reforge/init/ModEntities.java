@@ -85,8 +85,8 @@ public class ModEntities {
                         .sized(4.0f, 2.9f)
         );
 
-        public static final RegistryObject<EntityType<ZBL11Entity>> ZBL11 = register("zbl11",
-            EntityType.Builder.of(ZBL11Entity::new, MobCategory.MISC)
+        public static final RegistryObject<EntityType<ZLT11Entity>> ZLT_11 = register("zlt11",
+            EntityType.Builder.of(ZLT11Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

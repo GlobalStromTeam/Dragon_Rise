@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:zbl11",
+  "ID": "dragonrise_reforge:zlt11",
   "MaxHealth": 270,
   "MaxEnergy": 5000000,
   "OBB": [
@@ -56,8 +56,8 @@
       "Position": [0.8, -0.6, 0.65],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -7,
-      "MaxPitch": 15,
+      "MinPitch": -5,
+      "MaxPitch": 18,
       "Sensitivity": [0.52, 0.72, 0.9]
     },
     {
@@ -71,9 +71,59 @@
       "Position": [-0.58, 0.1, -0.0020625],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -10,
+      "MinPitch": -6,
       "MaxPitch": 85,
       "Sensitivity": [0.57, 0.75, 0.9]
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
     }
   ],
   "Weapons": {
@@ -95,7 +145,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "105mm_cannon",
+      "Name": "105MM ZPL98A",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -107,8 +157,7 @@
             "Velocity": 25,
             "Damage": 200,
             "ExplosionDamage": 40,
-            "ExplosionRadius": 6,
-            "Name": "105mm_cannon"
+            "ExplosionRadius": 6
           }
         }
       ],
@@ -206,24 +255,24 @@
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.3,
     "MaxForwardSpeedRate": 1.1,
-    "MaxBackwardSpeedRate": 0.4,
-    "Increment": 0.012,
-    "Decrement": 0.03,
+    "MaxBackwardSpeedRate": 0.11,
+    "Increment": 0.0036,
+    "Decrement": 0.036,
     "SteeringSpeed": 0.1
   },
   "TurretPos": [0, 2.4003, 0],
-  "TurretTurnSpeed": [12.5, 10],
-  "TurretPitchRange": [-15, 32.5],
+  "TurretTurnSpeed": [1.2, 2.445],
+  "TurretPitchRange": [-5, 18],
   "BarrelPos": [0.0234375, 0.33795, 0.825],
   "PassengerWeaponStationPos": [-0.58, 1.0963625, -0.0020625],
   "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.05],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
-  "PassengerWeaponStationPitchRange": [-10, 85],
+  "PassengerWeaponStationPitchRange": [-6, 85],
   "ThirdPersonCameraPos": [0, 1, 3],
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
-  "Mass": 13.6,
+  "Mass": 23,
   "DamageModifiers": [
     "minecraft:lava - -11",
     "minecraft:lava * 10",

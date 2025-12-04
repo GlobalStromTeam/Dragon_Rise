@@ -1,18 +1,17 @@
 {
   "item_group.dragonrise_reforge.title": "巨龙崛起",
-
   "info.dragonrise_reforge.ztz99a": "ZTZ-99A是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
   "info.dragonrise_reforge.zhi10me": "Z-10ME 武装直升机",
   "info.dragonrise_reforge.ka50": "卡莫夫-50 武装直升机",
   "info.dragonrise_reforge.625e": "625 弹炮结合野战防空系统",
   "info.dragonrise_reforge.t80": "T-80 主战坦克",
   "info.dragonrise_reforge.zbl08": "装甲-步兵战车-轮式-08式",
-  "info.dragonrise_reforge.zbl11": "装甲-步兵战车-轮式-11式",
+  "info.dragonrise_reforge.zlt11": "装甲-轮式-突击-11式",
   "info.dragonrise_reforge.zbd04a": "装甲-步兵战车-履带-04A式",
   "info.dragonrise_reforge.j10": "歼-10早期型 战斗机",
   "info.dragonrise_reforge.ztz99bh": "装甲-坦克-主战-99B式 主战坦克（附加装甲，重型武器站）",
   "info.dragonrise_reforge.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）",
-
+  "info.dragonrise_reforge.sx1": "SX-1",
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "superbwarfare.entry.vehicle.ztz99a": "装甲-坦克-主战-99A式",
   "superbwarfare.page.vehicle.ztz99a1": "$(thing)ZTZ-99A$()是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。$(p)战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
@@ -20,7 +19,6 @@
   "superbwarfare.page.vehicle.ztz99a3": "$(l)基础属性：$()$(p)耐久值 - 500$(br)最大乘员数 - 3$(br)爬坡高度 - 2.25m$(br)最大能量 - 20,000,000FE$(br)能耗 - 128FE/tick$(br)封闭载具（1/2号位）",
   "superbwarfare.page.vehicle.ztz99a4": "$(l)武器属性：$()$(br)1号位：$(br)(1) 大口径电磁炮$(br)射速 - 15RPM$(br)直击伤害 - 500$(br)爆炸伤害 - 100$(br)爆炸半径 - 4m$(br)弹药 - $(item)穿甲弹$()$(br)(2) 大口径电磁炮$(br)射速 - 15RPM$(br)直击伤害 - 150$(br)爆炸伤害 - 150$(br)爆炸半径 - 10m$(br)弹药 - $(item)高爆弹$()$(br)(3) 12.7mm重机枪$(br)射速 - 500RPM$(br)伤害 - 25$(br)弹药 - $(item)重型弹药$()",
   "superbwarfare.page.vehicle.ztz99a5": "2号位：$(p)(1) 12.7mm重机枪$(br)射速 - 500RPM$(br)伤害 - 25$(br)弹药 - $(item)重型弹药$()",
-
   "entity.dragonrise_reforge.z10me": "Z-10ME",
   "superbwarfare.entry.vehicle.zhi10me": "Z10-ME 武装直升机",
   "superbwarfare.page.vehicle.zhi10mea1": "",
@@ -28,7 +26,6 @@
   "superbwarfare.page.vehicle.zhi10mea3": "",
   "superbwarfare.page.vehicle.zhi10mea4": "",
   "superbwarfare.page.vehicle.zhi10mea5": "",
-
   "entity.dragonrise_reforge.ka50": "卡-50",
   "superbwarfare.entry.vehicle.ka50": "卡莫夫50式武装直升机",
   "entity.dragonrise_reforge.625e": "625",
@@ -37,12 +34,13 @@
   "superbwarfare.entry.vehicle.t80": "特-80 主战坦克",
   "entity.dragonrise_reforge.zbl08": "ZBL-08",
   "superbwarfare.entry.vehicle.zbl08": "装甲-步兵战车-轮式-08式",
-  "entity.dragonrise_reforge.zbl11": "ZBL-11",
+  "entity.dragonrise_reforge.zlt11": "ZLT-11",
   "entity.dragonrise_reforge.zbd04a": "ZBD-04A",
   "entity.dragonrise_reforge.j10": "J-10",
   "superbwarfare.entry.vehicle.j10": "歼-10早期型 战斗机",
   "entity.dragonrise_reforge.ztz99bh": "ZTZ-99B",
   "superbwarfare.entry.vehicle.ztz99bh": "装甲-坦克-主战-99B式 主战坦克（附加装甲，重型武器站）",
   "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
-  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）"
+  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）",
+  "entity.dragonrise_reforge.sx1": "SX-1"
 }

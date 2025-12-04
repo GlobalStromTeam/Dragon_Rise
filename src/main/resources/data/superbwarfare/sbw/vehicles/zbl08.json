@@ -64,7 +64,7 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.2, -1],
+      "Position": [0, 0.5, -1.5],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6, 1]
@@ -74,7 +74,7 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.2, -1],
+      "Position": [0, 0.5, -1.5],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6, 1]
@@ -84,7 +84,7 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.2, -1],
+      "Position": [0, 0.5, -1.5],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6, 1]
@@ -94,7 +94,7 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.2, -1],
+      "Position": [0, 0.5, -1.5],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6, 1]
@@ -104,7 +104,17 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.2, -1],
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6, 1]
@@ -113,12 +123,12 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 3,
-      "RPM": 300,
+      "RPM": 380,
       "Velocity": 20,
       "Damage": 45,
       "ExplosionDamage": 12,
@@ -126,12 +136,12 @@
       "RecoilTime": 29,
       "RecoilForce": 0.55,
       "Spread": 0.5,
-      "HeatPerShoot": 7,
+      "HeatPerShoot": 6,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.20mm_cannon",
+      "Name": "30MM ZPT-99",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -224,11 +234,11 @@
     "EnergyCostRate": 64,
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.3,
-    "MaxForwardSpeedRate": 1,
-    "MaxBackwardSpeedRate": 0.5,
-    "Increment": 0.03,
-    "Decrement": 0.02,
-    "SteeringSpeed": 0.07
+    "MaxForwardSpeedRate": 1.1,
+    "MaxBackwardSpeedRate": 0.11,
+    "Increment": 0.0036,
+    "Decrement": 0.036,
+    "SteeringSpeed": 0.1
   },
   "TurretPos": [0, 2.4003, 0],
   "TurretTurnSpeed": [12.5, 10],
@@ -238,7 +248,7 @@
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
-  "Mass": 13.6,
+  "Mass": 21,
   "DamageModifiers": [
     "minecraft:lava - -11",
     "minecraft:lava * 10",
