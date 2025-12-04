@@ -21,6 +21,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZBL11.get(), ZBL11Renderer::new);
                 event.registerEntityRenderer(ModEntities.SX1.get(), SX1Renderer::new);
+                event.registerEntityRenderer(ModEntities.STRV103.get(), STRV103Renderer::new);
         }
 
 }

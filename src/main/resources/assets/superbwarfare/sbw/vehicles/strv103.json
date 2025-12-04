@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:strv103",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/strv103.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/strv103.png"
+  }
+}

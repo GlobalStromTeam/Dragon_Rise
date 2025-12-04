@@ -1,0 +1,40 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 1024,
+				"texture_height": 1024,
+				"visible_bounds_width": 13,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [20, 1, -66], "size": [9, 24, 153], "uv": [0, 185]},
+						{"origin": [-29, 1, -66], "size": [9, 24, 153], "uv": [324, 185]}
+					]
+				},
+				{
+					"name": "turret",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "barrel",
+					"parent": "turret",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-31, 25.30317, -70.66433], "size": [62, 7, 86], "pivot": [5, 14.30317, -18.66433], "rotation": [10, 0, 0], "uv": [0, 362]},
+						{"origin": [-2.5, 29, -101], "size": [5, 5, 110], "uv": [296, 362]},
+						{"origin": [-31, 12, -73], "size": [62, 11, 167], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}
