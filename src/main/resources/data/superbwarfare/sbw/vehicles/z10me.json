@@ -360,6 +360,6 @@
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
-  "TerrainCompat": [[-1.284, 0, 1.728], [1.284, 0, 1.728], [0, 0.58, -11.1]],
-  "TerrainCompatRotateRate" : 0.18
+  "TerrainCompat": [[-1.284, 0, 1.728], [1.284, 0, 1.728], [0, 0, -11.1]],
+  "TerrainCompatRotateRate" : 0
 }

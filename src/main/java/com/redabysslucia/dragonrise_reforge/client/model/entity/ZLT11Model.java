@@ -1,9 +1,9 @@
 package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
-import com.redabysslucia.dragonrise_reforge.entities.ZBL11Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZLT11Entity;
 
-public class ZBL11Model extends VehicleModel<ZBL11Entity> {
+public class ZLT11Model extends VehicleModel<ZLT11Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

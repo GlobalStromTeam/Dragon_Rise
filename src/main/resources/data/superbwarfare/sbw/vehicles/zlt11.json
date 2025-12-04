@@ -1,43 +1,43 @@
 {
-  "ID": "dragonrise_reforge:zbl11",
+  "ID": "dragonrise_reforge:zlt11",
   "MaxHealth": 270,
   "MaxEnergy": 5000000,
   "OBB": [
     {
       "Size": [1.546875, 0.4453125, 0.703125],
-      "Position": [0, 1.3828125, 5.421875]
+      "Position": [0, 1.3828125, 3.421875]
     },
     {
       "Size": [1.5, 0.8203125, 3.75],
-      "Position": [0, 1.2890625, 1.015625]
+      "Position": [0, 1.2890625, -0.984375]
     },
     {
       "Size": [0.796875, 0.421875, 1.21875],
-      "Position": [-0.796875, 1.828125, 3.21875],
+      "Position": [-0.796875, 1.828125, 1.21875],
       "Part": "MainEngine"
     },
     {
       "Size": [0.234375, 0.65625, 1.453125],
-      "Position": [-1.40625, 0.609375, 3.5],
+      "Position": [-1.40625, 0.609375, 1.5],
       "Part": "WheelRight"
     },
     {
       "Size": [0.234375, 0.65625, 1.453125],
-      "Position": [-1.40625, 0.609375, -0.296875],
+      "Position": [-1.40625, 0.609375, -2.296875],
       "Part": "WheelRight"
     },
     {
       "Size": [0.234375, 0.65625, 1.453125],
-      "Position": [1.40625, 0.609375, 3.5],
+      "Position": [1.40625, 0.609375, 1.5],
       "Part": "WheelLeft"
     },
     {
       "Size": [0.234375, 0.65625, 1.453125],
-      "Position": [1.40625, 0.609375, -0.296875],
+      "Position": [1.40625, 0.609375, -2.296875],
       "Part": "WheelLeft"
     },
     {
-      "Size": [1.0546875, 0.3828125, 1.125],
+      "Size": [1.0546875, 0.5828125, 1.125],
       "Position": [0, 0, -0.15625],
       "Part": "Turret",
       "Transform": "Turret",
@@ -56,9 +56,74 @@
       "Position": [0.8, -0.6, 0.65],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -7,
-      "MaxPitch": 15,
+      "MinPitch": -5,
+      "MaxPitch": 18,
       "Sensitivity": [0.52, 0.72, 0.9]
+    },
+    {
+      "HidePassenger": true,
+      "Transform": "Turret",
+      "CameraPos": {
+        "Transform": "WeaponStationBarrel",
+        "ZoomPosition": [0, 0.1, 0],
+        "Direction": "WeaponStationBarrel"
+      },
+      "Position": [-0.58, 0.1, -0.0020625],
+      "Weapons": ["PassengerMachineGun"],
+      "CanRotateHead": false,
+      "MinPitch": -6,
+      "MaxPitch": 85,
+      "Sensitivity": [0.57, 0.75, 0.9]
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
     }
   ],
   "Weapons": {
@@ -80,7 +145,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "105mm_cannon",
+      "Name": "105MM ZPL98A",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -92,8 +157,7 @@
             "Velocity": 25,
             "Damage": 200,
             "ExplosionDamage": 40,
-            "ExplosionRadius": 6,
-            "Name": "105mm_cannon"
+            "ExplosionRadius": 6
           }
         }
       ],
@@ -116,21 +180,22 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Spread": 0.5,
-      "CrosshairColor": "0x66FF00",
+      "Spread": 0.25,
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
-      "RPM": 600,
-      "Damage": 9.5,
-      "BypassesArmor": 0.3,
-      "Velocity": 30,
-      "RecoilTime": 22,
-      "RecoilForce": 0.1,
-      "HeatPerShoot": 4,
+      "DefaultZoom": 3,
+      "RPM": 800,
+      "Damage": 10,
+      "BypassesArmor": 0.2,
+      "Velocity": 25,
+      "RecoilTime": 16,
+      "RecoilForce": 0.05,
+      "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
-      "ShootAnimationTime": 2,
+      "ShootAnimationTime": 1,
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
@@ -138,15 +203,49 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.7_62mm_coax",
+      "Name": "QJT 5.8mm",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
+        "Fire1P": "superbwarfare:qbz_191_fire_1p",
+        "Fire3P": "superbwarfare:qbz_191_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 12
+      "SoundRadius": 16
+    },
+    "PassengerMachineGun": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Spread": 0.25,
+      "CrosshairColor": "0x00ff66",
+      "Projectile": "superbwarfare:projectile",
+      "DefaultZoom": 3,
+      "RPM": 600,
+      "Damage": 40,
+      "BypassesArmor": 0.2,
+      "Velocity": 25,
+      "RecoilTime": 16,
+      "RecoilForce": 0.05,
+      "HeatPerShoot": 3.75,
+      "NaturalCooldown": 1,
+      "ShootAnimationTime": 1,
+      "AmmoType": "@HeavyAmmo",
+      "ShootPos": {
+        "Transform": "WeaponStationBarrel",
+        "Positions": [[0, -0.01, 1.8]],
+        "Directions": ["WeaponStationBarrel"]
+      },
+      "Crosshair": "@VehicleCommonGun",
+      "Name": "weapon.superbwarfare.50_cal_gun",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
+        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
+        "Fire3PFar": "superbwarfare:m_2_hb_far",
+        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
+        "Change": "superbwarfare:into_cannon"
+      },
+      "SoundRadius": 16
     }
   },
   "EngineType": "Wheel",
@@ -156,20 +255,24 @@
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.3,
     "MaxForwardSpeedRate": 1.1,
-    "MaxBackwardSpeedRate": 0.4,
-    "Increment": 0.012,
-    "Decrement": 0.03,
+    "MaxBackwardSpeedRate": 0.11,
+    "Increment": 0.0036,
+    "Decrement": 0.036,
     "SteeringSpeed": 0.1
   },
   "TurretPos": [0, 2.4003, 0],
-  "TurretTurnSpeed": [12.5, 10],
-  "TurretPitchRange": [-15, 32.5],
+  "TurretTurnSpeed": [1.2, 2.445],
+  "TurretPitchRange": [-5, 18],
   "BarrelPos": [0.0234375, 0.33795, 0.825],
+  "PassengerWeaponStationPos": [-0.58, 1.0963625, -0.0020625],
+  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.05],
+  "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
+  "PassengerWeaponStationPitchRange": [-6, 85],
   "ThirdPersonCameraPos": [0, 1, 3],
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
-  "Mass": 13.6,
+  "Mass": 23,
   "DamageModifiers": [
     "minecraft:lava - -11",
     "minecraft:lava * 10",

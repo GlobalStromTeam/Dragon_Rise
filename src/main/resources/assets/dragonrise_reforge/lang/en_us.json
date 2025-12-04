@@ -7,11 +7,12 @@
   "info.dragonrise_reforge.625e": "625 Gun-Missile Combined Field Air Defense System",
   "info.dragonrise_reforge.t80": "T-80 Main Battle Tank",
   "info.dragonrise_reforge.zbl08": "ZBL-08 Infantry Fighting Vehicle",
-  "info.dragonrise_reforge.zbl11": "ZBL-11 Infantry Fighting Vehicle",
+  "info.dragonrise_reforge.zlt11": "ZLT-11 Infantry Fighting Vehicle",
   "info.dragonrise_reforge.zbd04a": "ZBD-04A Infantry Fighting Vehicle",
   "info.dragonrise_reforge.j10": "J-10 Early Variant Fighter Jet",
   "info.dragonrise_reforge.ztz99bh": "Type-99B Main Battle Tank (With Add-on ERA, Heavy Weapon Station)",
   "info.dragonrise_reforge.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)",
+  "info.dragonrise_reforge.sx1": "SX-1",
 
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "superbwarfare.entry.vehicle.ztz99a": "Type-99A Main Battle Tank",
@@ -41,7 +42,7 @@
   "entity.dragonrise_reforge.zbl08": "ZBL-08",
   "superbwarfare.entry.vehicle.zbl08": "Type-08 Infantry Fighting Vehicle",
 
-  "entity.dragonrise_reforge.zbl11": "ZBL-11",
+  "entity.dragonrise_reforge.zlt11": "ZLT-11",
   "entity.dragonrise_reforge.zbd04a": "ZBD-04A",
 
   "entity.dragonrise_reforge.j10": "J-10",
@@ -51,5 +52,10 @@
   "superbwarfare.entry.vehicle.ztz99bh": "Type-99B Main Battle Tank (With Add-on ERA, Heavy Weapon Station)",
 
   "entity.dragonrise_reforge.m1a2sepv2": "M1A2",
-  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)"
+  "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 Abrams Main Battle Tank (SEPv2 Package)",
+
+  "entity.dragonrise_reforge.amx56": "AMX56",
+  "superbwarfare.entry.vehicle.m1a2sepv2": "AMX56 Leclerc Main Battle Tank (SEPv2 Package)",
+
+  "entity.dragonrise_reforge.sx1": "SX-1"
 }

@@ -59,16 +59,76 @@
       "MinPitch": -10,
       "MaxPitch": 35.5,
       "Sensitivity": [0.55, 0.83, 1]
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0, 0.5, -1.5],
+      "CameraPos": {
+        "UseSimulate3P": true,
+        "Simulate3PPos": [6, 1]
+      }
     }
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 3,
-      "RPM": 300,
+      "RPM": 380,
       "Velocity": 20,
       "Damage": 45,
       "ExplosionDamage": 12,
@@ -76,12 +136,12 @@
       "RecoilTime": 29,
       "RecoilForce": 0.55,
       "Spread": 0.5,
-      "HeatPerShoot": 7,
+      "HeatPerShoot": 6,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.20mm_cannon",
+      "Name": "30MM ZPT-99",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -98,21 +158,22 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Spread": 0.5,
-      "CrosshairColor": "0x66FF00",
+      "Spread": 0.25,
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
-      "RPM": 600,
-      "Damage": 9.5,
-      "BypassesArmor": 0.3,
-      "Velocity": 30,
-      "RecoilTime": 22,
-      "RecoilForce": 0.1,
-      "HeatPerShoot": 4,
+      "DefaultZoom": 3,
+      "RPM": 800,
+      "Damage": 10,
+      "BypassesArmor": 0.2,
+      "Velocity": 25,
+      "RecoilTime": 16,
+      "RecoilForce": 0.05,
+      "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
-      "ShootAnimationTime": 2,
+      "ShootAnimationTime": 1,
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
@@ -120,15 +181,15 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.7_62mm_coax",
+      "Name": "QJT 5.8mm",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
+        "Fire1P": "superbwarfare:qbz_191_fire_1p",
+        "Fire3P": "superbwarfare:qbz_191_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
-      "SoundRadius": 12
+      "SoundRadius": 16
     },
     "Missile": {
       "DefaultFireMode": "Semi",
@@ -173,11 +234,11 @@
     "EnergyCostRate": 64,
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.3,
-    "MaxForwardSpeedRate": 1,
-    "MaxBackwardSpeedRate": 0.5,
-    "Increment": 0.03,
-    "Decrement": 0.02,
-    "SteeringSpeed": 0.07
+    "MaxForwardSpeedRate": 1.1,
+    "MaxBackwardSpeedRate": 0.11,
+    "Increment": 0.0036,
+    "Decrement": 0.036,
+    "SteeringSpeed": 0.1
   },
   "TurretPos": [0, 2.4003, 0],
   "TurretTurnSpeed": [12.5, 10],
@@ -187,7 +248,7 @@
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
-  "Mass": 13.6,
+  "Mass": 21,
   "DamageModifiers": [
     "minecraft:lava - -11",
     "minecraft:lava * 10",

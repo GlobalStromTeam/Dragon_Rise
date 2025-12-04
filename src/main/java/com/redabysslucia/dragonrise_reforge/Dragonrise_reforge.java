@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge;
 
 import com.mojang.logging.LogUtils;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
+import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
@@ -32,37 +33,18 @@ import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
 @SuppressWarnings("removal")
-// The value here should match an entry in the META-INF/mods.toml file
+
 @Mod(Dragonrise_reforge.MODID)
 public class Dragonrise_reforge {
 
-        // Define mod id in a common place for everything to reference
         public static final String MODID = "dragonrise_reforge";
-        // Directly reference a slf4j logger
+
         private static final Logger LOGGER = LogUtils.getLogger();
-        // Create a Deferred Register to hold Blocks which will all be registered under the "dragonrise_reforge" namespace
-        public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
-        // Create a Deferred Register to hold Items which will all be registered under the "dragonrise_reforge" namespace
-        public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-        // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "dragonrise_reforge" namespace
-        public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
-
-        // Creates a new Block with the id "dragonrise_reforge:example_block", combining the namespace and path
-        public static final RegistryObject<Block> EXAMPLE_BLOCK = BLOCKS.register("example_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE)));
-        // Creates a new BlockItem with the id "dragonrise_reforge:example_block", combining the namespace and path
-        public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties()));
-
-        // Creates a new food item with the id "dragonrise_reforge:example_id", nutrition 1 and saturation 2
-        public static final RegistryObject<Item> EXAMPLE_ITEM = ITEMS.register("example_item", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().alwaysEat().nutrition(1).saturationMod(2f).build())));
-
-        // Creates a creative tab with the id "dragonrise_reforge:example_tab" for the example item, that is placed after the combat tab
-        public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder().withTabsBefore(CreativeModeTabs.COMBAT).icon(() -> EXAMPLE_ITEM.get().getDefaultInstance()).displayItems((parameters, output) -> {
-                output.accept(EXAMPLE_ITEM.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
-        }).build());
 
         public Dragonrise_reforge() {
                 IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+                ModItems.register(bus);
                 ModEntities.REGISTRY.register(bus);
                 ModTabs.TABS.register(bus);
 
@@ -77,27 +59,4 @@ public class Dragonrise_reforge {
                 LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
         }
 
-        // Add the example block item to the building blocks tab
-        private void addCreative(BuildCreativeModeTabContentsEvent event) {
-                if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) event.accept(EXAMPLE_BLOCK_ITEM);
-        }
-
-        // You can use SubscribeEvent and let the Event Bus discover methods to call
-        @SubscribeEvent
-        public void onServerStarting(ServerStartingEvent event) {
-                // Do something when the server starts
-                LOGGER.info("HELLO from server starting");
-        }
-
-        // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-        @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-        public static class ClientModEvents {
-
-                @SubscribeEvent
-                public static void onClientSetup(FMLClientSetupEvent event) {
-                        // Some client setup code
-                        LOGGER.info("HELLO FROM CLIENT SETUP");
-                        LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
-                }
-        }
 }

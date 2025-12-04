@@ -2974,9 +2974,9 @@
 					"pivot": [-9.97712, 44.76375, -0.37708],
 					"cubes": [
 						{
-							"origin": [-12.225, 48.4918, -1.6563],
+							"origin": [-11.475, 48.4918, -1.96696],
 							"size": [3, 4.5, 3],
-							"pivot": [-9.975, 47.7418, 0.5937],
+							"pivot": [-9.975, 50.7418, -0.46696],
 							"rotation": [0, -45, 0],
 							"uv": {
 								"north": {"uv": [189, 599], "uv_size": [4, 4]},
@@ -2992,6 +2992,11 @@
 				{
 					"name": "passengerWeaponStationYaw",
 					"parent": "passengerWeaponStation",
+					"pivot": [-10.20211, 53.01375, 0.22293]
+				},
+				{
+					"name": "passengerWeaponStationPitch",
+					"parent": "passengerWeaponStationYaw",
 					"pivot": [-10.20211, 53.01375, 0.22293],
 					"cubes": [
 						{

@@ -24,10 +24,10 @@ public class ZBD04AEntity extends GeoVehicleEntity {
 
         private PlayState cannonShootPredicate(AnimationState<ZBD04AEntity> event) {
 
-                if (getShootAnimationTimer(0, 3) > 0) {
+                if (getShootAnimationTimer(0, 2) > 0) {
                         return event.setAndContinue(RawAnimation.begin().thenPlay("zbd04a.animation.subcannon.new"));
                 }
-                if (getShootAnimationTimer(0, 0) > 0 || getShootAnimationTimer(0, 1) > 0) {
+                if (getShootAnimationTimer(0, 0) > 0) {
                         return event.setAndContinue(RawAnimation.begin().thenPlay("zbd04a.animation.minecannon.new"));
                 }
 

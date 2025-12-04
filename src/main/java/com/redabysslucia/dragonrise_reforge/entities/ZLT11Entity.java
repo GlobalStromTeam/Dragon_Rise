@@ -5,9 +5,9 @@ import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-public class ZBL11Entity extends GeoVehicleEntity {
+public class ZLT11Entity extends GeoVehicleEntity {
 
-        public ZBL11Entity(EntityType<ZBL11Entity> type, Level world) {
+        public ZLT11Entity(EntityType<ZLT11Entity> type, Level world) {
                 super(type, world);
         }
 
