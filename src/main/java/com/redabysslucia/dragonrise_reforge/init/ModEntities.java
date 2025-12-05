@@ -134,19 +134,19 @@ public class ModEntities {
         );
 
     public static final RegistryObject<EntityType<STRV103Entity>> STRV103 = register("strv103",
-            EntityType.Builder.<STRV103Entity>of(STRV103Entity::new, MobCategory.MISC)
+            EntityType.Builder.of(STRV103Entity::new, MobCategory.MISC)
                     .setTrackingRange(255)
                     .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(2.0f, 1.7f)
+                    .sized(4.0f, 2.5f)
     );
 
     public static final RegistryObject<EntityType<F14Entity>> F14 = register("f14",
-            EntityType.Builder.<F14Entity>of(F14Entity::new, MobCategory.MISC)
+            EntityType.Builder.of(F14Entity::new, MobCategory.MISC)
                     .setTrackingRange(255)
                     .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(2.0f, 1.7f)
+                    .sized(5.0f, 3.5f)
     );
 
 
