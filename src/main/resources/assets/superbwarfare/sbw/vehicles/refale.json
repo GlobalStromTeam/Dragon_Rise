@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:refale",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/rafale.geo.json",
+    "Animation": "dragonrise_reforge:animations/refale.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/rafale.png"
+  },
+  "MouseSpeed": [0.8, 0.8]
+}

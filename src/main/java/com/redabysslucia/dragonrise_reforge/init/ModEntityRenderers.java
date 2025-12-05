@@ -14,10 +14,12 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
                 event.registerEntityRenderer(ModEntities.M1A2SEPV2.get(), M1A2SEPV2Renderer::new);
                 event.registerEntityRenderer(ModEntities.AMX56.get(), AMX56Renderer::new);
+                event.registerEntityRenderer(ModEntities.CV90.get(), CV90Renderer::new);
                 event.registerEntityRenderer(ModEntities.KA50.get(), KA50Renderer::new);
                 event.registerEntityRenderer(ModEntities.T80.get(), T80Renderer::new);
                 event.registerEntityRenderer(ModEntities.AA625E.get(), AA625ERenderer::new);
                 event.registerEntityRenderer(ModEntities.J10.get(), J10Renderer::new);
+                event.registerEntityRenderer(ModEntities.REFALE.get(), REFALERenderer::new);
                 event.registerEntityRenderer(ModEntities.Z10ME.get(), Z10MERenderer::new);
                 event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZLT_11.get(), ZLT11Renderer::new);

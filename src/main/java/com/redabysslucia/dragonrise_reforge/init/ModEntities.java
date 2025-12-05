@@ -77,6 +77,14 @@ public class ModEntities {
                         .sized(4.5f, 2.9f)
         );
 
+      public static final RegistryObject<EntityType<REFALEEntity>> REFALE = register("refale",
+              EntityType.Builder.of(REFALEEntity::new, MobCategory.MISC)
+                      .setTrackingRange(512)
+                      .setUpdateInterval(2)
+                      .fireImmune()
+                      .sized(4.5f, 2.9f)
+    );
+
         public static final RegistryObject<EntityType<Z10MEEntity>> Z10ME = register("z10me",
                 EntityType.Builder.of(Z10MEEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)
@@ -108,6 +116,14 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.5f)
         );
+
+       public static final RegistryObject<EntityType<CV90Entity>> CV90 = register("cv90",
+               EntityType.Builder.of(CV90Entity::new, MobCategory.MISC)
+                       .setTrackingRange(512)
+                       .setUpdateInterval(2)
+                       .fireImmune()
+                       .sized(4.0f, 2.5f)
+       );
 
         public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",
             EntityType.Builder.of(SX1Entity::new, MobCategory.MISC)

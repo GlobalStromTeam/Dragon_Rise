@@ -44,5 +44,17 @@
   "superbwarfare.entry.vehicle.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）",
   "entity.dragonrise_reforge.sx1": "SX-1",
   "entity.dragonrise_reforge.amx56": "AMX56",
-  "superbwarfare.entry.vehicle.amx56": "AMX56 勒克莱尔主战坦克"
+  "superbwarfare.entry.vehicle.amx56": "AMX56 勒克莱尔主战坦克",
+
+  "dragonrise_reforge:500kg":"500kg航空炸弹",
+  "dragonrise_reforge:pl8": "霹雳-8 红外空对空导弹",
+  "dragonrise_reforge:23mm": "23mm 23L航空机炮",
+  "dragonrise_reforge:huo_fa6":"火发6 火箭弹",
+
+  "dragonrise_reforge:ref_cannon": "30mm NEXTER 30M791 航空机炮",
+  "dragonrise_reforge:gbu24": "GBU24 航空炸弹",
+  "dragonrise_reforge:aasm": "AASM 制导炸弹",
+  "dragonrise_reforge:mgi2": "魔术-2 红外空对空导弹"
+
+
 }
