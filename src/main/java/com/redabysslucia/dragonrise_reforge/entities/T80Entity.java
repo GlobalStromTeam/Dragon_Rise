@@ -2,7 +2,11 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -30,5 +34,21 @@ public class T80Entity extends GeoVehicleEntity {
         public void registerControllers(AnimatableManager.ControllerRegistrar data) {
                 data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
         }
+        @Override
+        public void addPassenger(Entity passenger) {
+                super.addPassenger(passenger);
+                super.tick();
 
+                if (passenger instanceof Player) {
+                        ((Player) passenger).addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, Integer.MAX_VALUE, 0, false, false));
+                }
+        }
+        @Override
+        public void removePassenger(Entity passenger) {
+                super.removePassenger(passenger);
+
+                if (passenger instanceof Player) {
+                        ((Player) passenger).removeEffect(MobEffects.NIGHT_VISION);
+                }
+        }
 }
