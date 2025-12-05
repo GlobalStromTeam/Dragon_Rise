@@ -42,26 +42,33 @@ public class REFALEModel extends VehicleModel<REFALEEntity> {
                         case "qianzhou", "qianzhou2" ->
                                 (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-                        case "bomb1" -> (bone, vehicle, state) ->
+                        case "missle7" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideBomb(vehicle, 1));
 
-                        case "bomb2" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideBomb(vehicle, 2));
-
-//                        case "bomb3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideBomb(vehicle, 1));
-
-                        case "missile1" -> (bone, vehicle, state) ->
+                        case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 1));
 
-                        case "missile2" -> (bone, vehicle, state) ->
+                        case "missile3" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
-//                        case "missile3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 2));
+                        case "1" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 1));
+
+                        case "2" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 2));
+
+                        case "3" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 3));
+
+                        case "4" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 4));
+
+                        case "5" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 5));
+
+                        case "6" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissileAT(vehicle, 6));
 //
-//                        case "missile4" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 1));
 
                         default -> null;
                 };
@@ -82,6 +89,15 @@ public class REFALEModel extends VehicleModel<REFALEEntity> {
                 } else {
                         return gunData.ammo.get() < ammo;
                 }
+        }
+
+        public boolean shouldHideMissileAT(VehicleEntity vehicle, int ammo) {
+               var gunData = vehicle.getGunData("SeekMissile");
+               if (gunData == null) {
+                       return false;
+               } else {
+                       return gunData.ammo.get() < ammo;
+               }
         }
 
 }
