@@ -67,7 +67,7 @@
   "HudType": "@Aircraft",
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cannon_23mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "AmmoType": "superbwarfare:small_shell",
@@ -132,7 +132,7 @@
     },
     "Bomb": {
       "AmmoType": "superbwarfare:medium_aerial_bomb",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/mk_82.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/bomb_500kg.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
@@ -168,15 +168,15 @@
       "SoundRadius": 8
     },
     "Missile": {
-      "AmmoType": "dragonrise_reforge:pl5b",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+      "AmmoType": "superbwarfare:medium_anti_air_missile",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl_8.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 2,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.dragonrise_reforge.missile_ty90",
+      "Name": "dragonrise_reforge:pl8",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
@@ -185,8 +185,8 @@
         "SeekDirection": "Default",
         "SeekRange": 384,
         "SeekAngle": 20,
-        "SeekTime": 20,
-        "MinTargetHeight": 32,
+        "SeekTime": 5,
+        "MinTargetHeight": 10,
         "MinTargetSize": 0.1,
         "OnlyLockEntity": true
       },

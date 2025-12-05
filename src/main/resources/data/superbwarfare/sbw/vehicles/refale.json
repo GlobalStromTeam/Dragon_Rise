@@ -81,7 +81,7 @@
       "HeatPerShoot": 1.5,
       "NaturalCooldown": 0.5,
       "Spread": 0.5,
-      "Name": "dragonrise_reforge:23mm",
+      "Name": "dragonrise_reforge:ref_cannon",
       "SoundInfo": {
         "FireSoundInstances": "superbwarfare:a_10a_fire",
         "Change": "superbwarfare:into_cannon"
@@ -106,7 +106,7 @@
       "Projectile": "superbwarfare:mk_82",
       "Gravity": 0.06,
       "Spread": 0.5,
-      "Name": "dragonrise_reforge:500kg",
+      "Name": "dragonrise_reforge:gbu24",
       "ExplosionDamage": 450,
       "ExplosionRadius": 10,
       "AddShooterDeltaMovement": true,
@@ -161,7 +161,7 @@
       "Magazine": 6,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
-      "Name": "AASM",
+      "Name": "dragonrise_reforge:aasm",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
@@ -198,7 +198,7 @@
       "AvailableFireModes": ["Semi"]
     },
     "Missile": {
-      "AmmoType": "dragonrise_reforge:pl5b",
+      "AmmoType": "superbwarfare:medium_anti_air_missile",
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
@@ -206,7 +206,7 @@
       "Magazine": 2,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.dragonrise_reforge.missile_ty90",
+      "Name": "dragonrise_reforge:mgi2",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
@@ -216,7 +216,7 @@
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 20,
-        "MinTargetHeight": 32,
+        "MinTargetHeight": 5,
         "MinTargetSize": 0.1,
         "OnlyLockEntity": true
       },
