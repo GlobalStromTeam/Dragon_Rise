@@ -45,10 +45,10 @@ public class REFALEModel extends VehicleModel<REFALEEntity> {
                         case "missle7" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideBomb(vehicle, 1));
 
-                        case "missile2" -> (bone, vehicle, state) ->
+                        case "missile1" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 1));
 
-                        case "missile3" -> (bone, vehicle, state) ->
+                        case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
                         case "1" -> (bone, vehicle, state) ->

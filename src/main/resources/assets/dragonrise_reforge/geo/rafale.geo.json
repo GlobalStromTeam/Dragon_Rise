@@ -3964,7 +3964,7 @@
 					"pivot": [30.988, -4.607, 63.036]
 				},
 				{
-					"name": "missle3",
+					"name": "missile1",
 					"parent": "aa",
 					"pivot": [-102.30683, 22.05976, 60.86275],
 					"cubes": [
@@ -4083,7 +4083,7 @@
 					]
 				},
 				{
-					"name": "missle2",
+					"name": "missile2",
 					"parent": "aa",
 					"pivot": [87.02515, 25.85453, 71.66569],
 					"cubes": [

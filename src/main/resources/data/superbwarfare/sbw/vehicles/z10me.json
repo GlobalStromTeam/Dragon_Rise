@@ -276,7 +276,7 @@
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 20,
-        "MinTargetHeight": 32,
+        "MinTargetHeight": 5,
         "MinTargetSize": 0.1,
         "OnlyLockEntity": true
       },
