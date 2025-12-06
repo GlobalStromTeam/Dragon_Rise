@@ -101,14 +101,14 @@
       "Damage": 500,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
-      "RecoilTime": 42,
+      "RecoilTime": 40,
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "CrosshairColor": "#da2d2d",
-      "Name": "3BM60",
+      "Name": "dragonrise_reforge:m80_105mm_ap_cannon",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -118,10 +118,23 @@
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
-            "Damage": 250,
-            "ExplosionDamage": 120,
-            "ExplosionRadius": 10,
-            "Name": "3OF46"
+            "Damage": 340,
+            "ExplosionDamage": 150,
+            "ExplosionRadius": 6,
+            "Name": "dragonrise_reforge:m61_105mm_he_cannon"
+          }
+        },
+        {
+          "Ammo": "superbwarfare:m18_smoke_grenade",
+          "Override": {
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
+            "IsArmorPiercingProjectile": false,
+            "IsHighExplosiveProjectile": true,
+            "Velocity": 10,
+            "Damage": 40,
+            "ExplosionDamage": 50,
+            "ExplosionRadius": 1,
+            "Name": "dragonrise_reforge:m61_105mm_smoke_cannon"
           }
         }
       ],
@@ -215,6 +228,7 @@
   "HUDColor": "#da2d2d",
   "EngineType": "WheelChair",
   "EngineInfo": {
+    "BodyRollRate": 0,
     "Buoyancy": 0,
     "EnergyCostRate": 128,
     "WheelRotSpeed": 1.25,
@@ -223,8 +237,8 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.825,
     "MaxBackwardSpeedRate": 0.175,
-    "Increment": 0.0067,
-    "Decrement": 0.025,
+    "Increment": 0.008,
+    "Decrement": 0.035,
     "SteeringSpeed": 0.8,
     "EngineSoundVolume" : 0.8
   },

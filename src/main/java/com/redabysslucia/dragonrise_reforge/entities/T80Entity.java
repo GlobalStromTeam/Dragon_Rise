@@ -55,5 +55,4 @@ public class T80Entity extends NightVisionVehicle {
         public ResourceLocation getNightVisionShader() {
                 return new ResourceLocation("shaders/post/night-vision-wp.json");
         }
-
 }
