@@ -116,7 +116,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/fr_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "OFL-120-F1",
+      "Name": "dragonrise_reforge:ofl120f1",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -129,7 +129,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "OCC-120-F1"
+            "Name": "dragonrise_reforge:occ120f1"
           }
         }
       ],
@@ -175,7 +175,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
+      "Name": "dragonrise_reforge:crcf1",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",

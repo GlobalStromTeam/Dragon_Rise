@@ -105,7 +105,7 @@
       "RecoilTime": 31,
       "RecoilForce": 0.62,
       "Spread": 0.25,
-      "Name": "23mm 23L机炮",
+      "Name": "dragonrise_reforge:23mm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:mi_28_cannon_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
@@ -133,7 +133,7 @@
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:small_rocket",
       "Spread": 0.25,
-      "Name": "火发7D",
+      "Name": "dragonrise_reforge:huo_fa6",
       "RPM": 450,
       "Damage": 85,
       "ExplosionDamage": 42,
@@ -203,7 +203,7 @@
           "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "weapon.dragonrise_reforge.missile_akd10",
+            "Name": "dragonrise_reforge:ba11_1",
             "SeekWeaponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
@@ -222,7 +222,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
-      "Name": "蓝剑-11",
+      "Name": "dragonrise_reforge:ba11_2",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
@@ -266,7 +266,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "天燕-90",
+      "Name": "dragonrise_reforge:ty90",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
@@ -276,7 +276,7 @@
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 20,
-        "MinTargetHeight": 32,
+        "MinTargetHeight": 5,
         "MinTargetSize": 0.1,
         "OnlyLockEntity": true
       },

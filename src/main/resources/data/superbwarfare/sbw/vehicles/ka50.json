@@ -143,7 +143,7 @@
       "Spread": 0.5,
       "RPM": 120,
       "CrosshairColor": "0xFFC700",
-      "Name": "weapon.superbwarfare.9m113_missile",
+      "Name": "dragonrise_reforge:9m127",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 12,
@@ -169,7 +169,7 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 12,
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m113.png"
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_9m127.png"
     }
   },
   "EngineType": "Helicopter",

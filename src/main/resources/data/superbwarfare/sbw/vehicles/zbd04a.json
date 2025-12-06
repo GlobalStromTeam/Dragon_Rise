@@ -137,7 +137,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "100MM ZPL04",
+      "Name": "dragonrise_reforge:3of70",
       "AmmoType": [
         "superbwarfare:he_5_inches",
         {
@@ -145,7 +145,7 @@
           "Override": {
             "Spread": 0.5,
             "CrosshairColor": "0xFFC700",
-            "Name": "APS03",
+            "Name": "dragonrise_reforge:aps03",
             "Projectile": "superbwarfare:wire_guide_missile",
             "IsArmorPiercingProjectile": true,
             "Damage": 600,
@@ -209,7 +209,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "QJT 5.8mm",
+      "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -237,7 +237,7 @@
       "Spread": 0.5,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0xFFC700",
-      "Name": "30MM ZPL02",
+      "Name": "dragonrise_reforge:04mc",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
         "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",

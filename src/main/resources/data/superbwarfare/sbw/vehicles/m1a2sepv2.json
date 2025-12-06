@@ -105,7 +105,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
-      "Name": "M829A1",
+      "Name": "dragonrise_reforge:M829A1",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -118,7 +118,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "M908"
+            "Name": "dragonrise_reforge:M908"
           }
         }
       ],
@@ -164,7 +164,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
+      "Name": "dragonrise_reforge:m2hb",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
