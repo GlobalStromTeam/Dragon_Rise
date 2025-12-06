@@ -108,7 +108,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "CrosshairColor": "#da2d2d",
-      "Name": "3BM60",
+      "Name": "dragonrise_reforge:3BM60",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -121,7 +121,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "3OF46"
+            "Name": "dragonrise_reforge:3OF46"
           }
         }
       ],
@@ -167,7 +167,7 @@
         "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Name": "ПКТ 7.62mm",
+      "Name": "darognrise_reforge:ПКТ",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:m_60_fire_3p",

@@ -141,7 +141,7 @@
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "30MM ZPT-99",
+      "Name": "dragonrise_reforge:04mc",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -181,7 +181,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "QJT 5.8mm",
+      "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -199,7 +199,7 @@
       "Spread": 0.5,
       "RPM": 30,
       "CrosshairColor": "0xFFC700",
-      "Name": "红箭-73C 反坦克导弹",
+      "Name": "dragonrise_reforge:hj73c",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 2,

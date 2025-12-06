@@ -53,7 +53,7 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:grapeshot",
@@ -70,7 +70,7 @@
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.20mm_cannon",
+      "Name": "dargonrise_refroge:pgz625",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -105,7 +105,7 @@
       "Magazine": 8,
       "EmptyReloadTime": 320,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.dragonrise_reforge.missile_fb10",
+      "Name": "dragonrise_reforge.missile_fb10",
       "Damage": 300,
       "ExplosionDamage": 90,
       "ExplosionRadius": 2,

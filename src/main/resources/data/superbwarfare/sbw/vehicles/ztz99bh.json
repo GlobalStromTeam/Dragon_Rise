@@ -116,7 +116,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "DTC-10-125",
+      "Name": "dragonrise_reforge:dtc10125",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -129,7 +129,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "DTB-10-125"
+            "Name": "dragonrise_reforge:dtb10125"
           }
         }
       ],
@@ -175,7 +175,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "QJT 5.8mm",
+      "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",

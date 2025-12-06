@@ -62,12 +62,12 @@
       "EjectDirection": "Up",
       "EjectForce": 4
     },
-    "Weapons": ["Cannon", "Rocket", "Bomb", "Missile"]
+    "Weapons": ["Cannon", "Missile"]
   },
   "HudType": "@Aircraft",
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "AmmoType": "superbwarfare:small_shell",
@@ -81,7 +81,7 @@
       "HeatPerShoot": 1.5,
       "NaturalCooldown": 0.5,
       "Spread": 0.5,
-      "Name": "dragonrise_reforge:23mm",
+      "Name": "drgonrise_reforge:m61a4",
       "SoundInfo": {
         "FireSoundInstances": "superbwarfare:a_10a_fire",
         "Change": "superbwarfare:into_cannon"
@@ -95,105 +95,55 @@
         "ShootDirectionForHud": [0, -0.03, 1]
       }
     },
-    "Rocket": {
-      "AmmoType": "superbwarfare:small_rocket",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
-      "DefaultZoom": 2,
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Semi",
-      "Magazine": 28,
-      "EmptyReloadTime": 160,
-      "Projectile": "superbwarfare:small_rocket",
-      "Spread": 0.4,
-      "Name": "dragonrise_reforge:huo_fa6",
-      "RPM": 450,
-      "Damage": 80,
-      "ExplosionDamage": 40,
-      "ExplosionRadius": 5,
-      "Gravity": 0.02,
-      "Velocity": 16,
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.579, 0.128],
-        "ShootDirectionForHud": [0, -0.03, 1],
-        "Positions": [[-2.6, 1.03, 4.21], [2.6, 1.03, 4.21]],
-        "Directions": [[0.02, 0, 8.21], [-0.02, 0, 8.21]]
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:small_rocket_fire_1p",
-        "Fire3P": "superbwarfare:small_rocket_fire_3p",
-        "VehicleReload3p": "superbwarfare:missile_reload",
-        "VehicleReloadSoundTime": 7,
-        "Change": "superbwarfare:into_missile"
-      },
-      "Crosshair": "@AirCraftCommon",
-      "CrosshairColor": "0x66FF00",
-      "SoundRadius": 12
-    },
-    "Bomb": {
-      "AmmoType": "superbwarfare:medium_aerial_bomb",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/mk_82.png",
-      "DefaultZoom": 2,
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Semi",
-      "Magazine": 2,
-      "EmptyReloadTime": 200,
-      "Projectile": "superbwarfare:mk_82",
-      "Gravity": 0.06,
-      "Spread": 0.5,
-      "Name": "dragonrise_reforge:500kg",
-      "ExplosionDamage": 450,
-      "ExplosionRadius": 10,
-      "AddShooterDeltaMovement": true,
-      "Velocity": 0.95,
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.171875, 0.0625],
-        "ShootDirectionForHud": "Bomb",
-        "Positions": [[-1.6, 1.03, 4.21], [1.6, 1.03, 4.21]],
-        "BoundUpWithAmmoAmount": true,
-        "Directions": ["DeltaMovement"],
-        "ViewPosition": [0, 1.171875, 0.0625],
-        "ViewDirection": "Bomb"
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:bomb_release",
-        "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile"
-      },
-      "Crosshair": "@AirBomb",
-      "CrosshairColor": "0x66FF00",
-      "SoundRadius": 8
-    },
     "Missile": {
-      "AmmoType": "dragonrise_reforge:pl5b",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/agm_65.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 2,
-      "EmptyReloadTime": 260,
-      "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "weapon.dragonrise_reforge.missile_ty90",
-      "Damage": 260,
-      "ExplosionDamage": 90,
-      "ExplosionRadius": 6,
-      "Velocity": 3,
+      "Magazine": 4,
+      "EmptyReloadTime": 200,
+      "Projectile": "superbwarfare:agm_65",
+      "Name": "weapon.superbwarfare.agm_65_missile_entity",
+      "Damage": 1100,
+      "ExplosionDamage": 180,
+      "ExplosionRadius": 12,
+      "AddShooterDeltaMovement": true,
+      "Velocity": 1.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
         "SeekRange": 384,
         "SeekAngle": 20,
-        "SeekTime": 20,
-        "MinTargetHeight": 32,
-        "MinTargetSize": 0.1,
+        "SeekTime": 10,
+        "MaxTargetHeight": 32,
+        "MinTargetSize": 0.9,
         "OnlyLockEntity": true
       },
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "ShouldUnload": false
+        },
+        {
+          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "ShouldUnload": false,
+          "Override": {
+            "Name": "weapon.superbwarfare.agm_65_missile_block",
+            "SeekWeaponInfo": {
+              "SeekDirection": "Default",
+              "SeekRange": 384,
+              "SeekAngle": 20,
+              "SeekTime": 10,
+              "MaxTargetHeight": 32,
+              "MinTargetSize": 0.9,
+              "OnlyLockBlock": true
+            }
+          }
+        }
+      ],
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[3.24, 1.03, 4.21], [-3.24, 1.03, 4.21]],
+        "ShootPositionForHud": [0, 1.53, 0],
+        "Positions": [[-6.625, 1.5825, 0], [-5.28125, 1.4888, 0], [5.28125, 1.4888, 0], [6.625, 1.5825, 0]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -202,11 +152,11 @@
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
         "Change": "superbwarfare:into_missile",
-        "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locking": "superbwarfare:missile_locking",
+        "Locked": "superbwarfare:missile_locked"
       },
-      "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleCommonSeekMissile",
+      "Crosshair": "@AirCraftMissile",
+      "CrosshairColor": "0x66FF00",
       "SoundRadius": 8
     }
   },

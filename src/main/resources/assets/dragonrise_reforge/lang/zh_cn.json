@@ -45,6 +45,13 @@
   "entity.dragonrise_reforge.sx1": "SX-1",
   "entity.dragonrise_reforge.amx56": "AMX56",
   "superbwarfare.entry.vehicle.amx56": "AMX56 勒克莱尔主战坦克",
+  "entity.dragonrise_reforge.f14": "F14",
+  "superbwarfare.entry.vehicle.f14": "F14 雄猫 战斗机",
+  "entity.dragonrise_reforge.strv103": "STRV103",
+  "superbwarfare.entry.vehicle.strv103": "STRV103 宜家拖鞋 主战坦克",
+  "entity.dragonrise_reforge.cv90": "CV90",
+  "superbwarfare.entry.vehicle.cv90": "CV90 步兵战车",
+
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
   "dragonrise_reforge:pl8": "霹雳-8 红外空对空导弹",
@@ -54,7 +61,50 @@
   "dragonrise_reforge:ref_cannon": "30mm NEXTER 30M791 航空机炮",
   "dragonrise_reforge:gbu24": "GBU24 航空炸弹",
   "dragonrise_reforge:aasm": "AASM 制导炸弹",
-  "dragonrise_reforge:mgi2": "魔术-2 红外空对空导弹"
+  "dragonrise_reforge:mgi2": "魔术-2 红外空对空导弹",
+
+  "dargonrise_refroge:pgz625": "30mm PGZ-625机炮",
+  "dragonrise_reforge.missile_fb10": "FB-10 地对空导弹",
+
+  "dragonrise_reforge:ofl120f1": "OFL-120-F1 穿甲弹",
+  "dragonrise_reforge:occ120f1": "OCC-120-F1 预制破片破甲弹",
+  "dragonrise_reforge:crcf1": "12.7mm CRC-F1 同轴机枪",
+
+  "drgonrise_reforge:mk44": "30mm MK44 巨蝮 II 机炮",
+  "dragonrise_reforge:m39c": "7.62mm m/39C 同轴机枪",
+  "dragon_rise:spike": "长钉 LR 反坦克导弹",
+
+  "drgonrise_reforge:m61a4":"20MM m61a4 机炮",
+
+  "dragonrise_reforge:9m127": "9m127 涡流 反坦克导弹",
+
+  "dragonrise_reforge:M829A1": "120mm M892A1 穿甲弹",
+  "dragonrise_reforge:M908": "120mm M908 预制破片破甲弹",
+  "dragonrise_reforge:m2hb": "12.7mm M2HB 同轴机枪",
+
+  "dragonrise_reforge:m66": "105mm M66 穿甲弹",
+  "dragonrise_reforge:m61a": "105mm M61A 高爆弹",
+  "dragonrise_reforge:58mg": "7.62mm 58型 机枪",
+
+  "dragonrise_reforge:3BM60": "125mm 3BM60 穿甲弹",
+  "dragonrise_reforge:3OF46": "125mm 3OF46 高爆弹",
+  "darognrise_reforge:ПКТ": "7.62mm ПКТ 同轴机枪",
+
+  "dragonrise_reforge:ba11_2": "蓝剑11 空对地导弹 (实体模式)",
+  "dragonrise_reforge:ba11_1": "蓝剑11 空对地导弹 (地板模式)",
+  "dragonrise_reforge:ty90": "天燕-90 空对空导弹",
+
+  "dragonrise_reforge:3of70": "100mm 3OF70 杀爆弹",
+  "dragonrise_reforge:aps03": "100mm APS03 串破炮射导弹",
+  "dragonrise_reforge:QJT": "5.8mm QJT 同轴机枪",
+  "dragonrise_reforge:04mc": "30mm DTY-02 破片杀伤弹",
+
+  "dragonrise_reforge:hj73c": "红箭-73C 反坦克导弹",
+
+  "dragonrise_dtc10105": "105mm DTC-10 穿甲弹",
+  "dragonrise_reforge:dtb10105": "105mm DTB-10 杀爆弹",
+  "dragonrise_reforge:dtc10125": "125mm DTC-10 穿甲弹",
+  "dragonrise_reforge:dtb10125": "125mm DTB-10 杀爆弹"
 
 
 }

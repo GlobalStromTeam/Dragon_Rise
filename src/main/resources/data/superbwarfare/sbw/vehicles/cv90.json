@@ -134,7 +134,7 @@
       "Spread": 0.5,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0xFFC700",
-      "Name": "30MM ZPL02",
+      "Name": "drgonrise_reforge:mk44",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
         "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
@@ -154,7 +154,7 @@
       }
     },
     "MainMachineGun": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -177,7 +177,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "QJT 5.8mm",
+      "Name": "dragonrise_reforge:m39c",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -221,7 +221,7 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 12,
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_hj-73c.png"
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_spike-lr.png"
     }
   },
   "HUDColor": "0xFFC700",
