@@ -7,6 +7,14 @@
       }
     ]
   },
+  "type100_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:type100/type100_engine",
+        "stream": false
+      }
+    ]
+  },
   "radio": {
     "sounds": [
       {
