@@ -31,7 +31,7 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0, 1.125, 1.7],
+    "Position": [0.0, 1, 5.15308125],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
     "CameraPos": {
