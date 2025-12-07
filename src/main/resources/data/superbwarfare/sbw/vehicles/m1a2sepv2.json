@@ -275,7 +275,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz99a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m1a2sepv2_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {
