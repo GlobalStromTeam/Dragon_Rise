@@ -27,22 +27,22 @@ public class REFALEEntity extends GeoVehicleEntity {
     private PlayState Sb(AnimationState<REFALEEntity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.ground_idle"));
+                    ("animation.j10.ONground_idle2"));
         }
         else {
         return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                ("animation.j10.fly_idle"));
+                ("animation.j10.OFFground_idle"));
         }
     }
 
     private PlayState Sb1(AnimationState<REFALEEntity> event) {
         if (this.sprintInputDown()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.sprinting_on"));
+                    ("animation.j10.engon"));
         }
         else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.sprinting_off"));
+                    ("animation.j10.engoFF"));
         }
     }
 
