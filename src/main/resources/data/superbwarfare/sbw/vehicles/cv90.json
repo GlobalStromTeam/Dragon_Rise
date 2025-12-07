@@ -132,7 +132,7 @@
       "RecoilForce": 0.62,
       "ShootAnimationTime": 3,
       "Spread": 0.5,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cv90_cross.png",
       "CrosshairColor": "0xFFC700",
       "Name": "drgonrise_reforge:mk44",
       "SoundInfo": {
@@ -285,7 +285,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/zbd04a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cv90_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "APC",
   "CollisionLevel": {

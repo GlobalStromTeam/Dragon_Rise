@@ -108,7 +108,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "CrosshairColor": "#da2d2d",
-      "Name": "dragonrise_reforge:m80_105mm_ap_cannon",
+      "Name": "dragonrise_reforge:m66",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -121,7 +121,7 @@
             "Damage": 340,
             "ExplosionDamage": 150,
             "ExplosionRadius": 6,
-            "Name": "dragonrise_reforge:m61_105mm_he_cannon"
+            "Name": "dragonrise_reforge:m61a"
           }
         },
         {
@@ -180,7 +180,7 @@
         "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Name": "ПКТ 7.62mm",
+      "Name": "dragonrise_reforge:58mg",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:m_60_fire_3p",

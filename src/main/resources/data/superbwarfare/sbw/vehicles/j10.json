@@ -132,7 +132,7 @@
     },
     "Bomb": {
       "AmmoType": "superbwarfare:medium_aerial_bomb",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/bomb_500kg.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/500kg.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",

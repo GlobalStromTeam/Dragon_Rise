@@ -97,7 +97,7 @@
     },
     "Bomb": {
       "AmmoType": "superbwarfare:medium_aerial_bomb",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/mk_82.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/500kg.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
@@ -142,7 +142,7 @@
           "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "weapon.dragonrise_reforge.missile_akd10",
+            "Name": "dragonrise_reforge:aasmg",
             "SeekWeaponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
@@ -155,7 +155,7 @@
           }
         }
       ],
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ba11.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_aasm.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 6,
@@ -199,7 +199,7 @@
     },
     "Missile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_r550.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
