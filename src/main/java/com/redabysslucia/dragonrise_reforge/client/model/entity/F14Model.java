@@ -41,32 +41,34 @@ public class F14Model extends VehicleModel<F14Entity> {
                         case "qianzhou", "qianzhou2" ->
                                 (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-                        case "bomb1" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideBomb(vehicle, 1));
-
-                        case "bomb2" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideBomb(vehicle, 2));
-
-//                        case "bomb3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideBomb(vehicle, 1));
-
                         case "missile1" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 1));
 
                         case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
-//                        case "missile3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 2));
-//
-//                        case "missile4" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 1));
+                    case "cow1" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 1));
 
+                    case "cow2" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 2));
+
+                    case "cow3" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 3));
+
+                    case "cow4" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 4));
+
+                    case "cow5" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 5));
+
+                    case "cow6" -> (bone, vehicle, state) ->
+                            bone.setHidden(shouldHideCow(vehicle, 6));
                         default -> null;
                 };
         }
-        public boolean shouldHideBomb(VehicleEntity vehicle, int ammo) {
-                var gunData = vehicle.getGunData("Bomb");
+        public boolean shouldHideCow(VehicleEntity vehicle, int ammo) {
+                var gunData = vehicle.getGunData("Missile");
                 if (gunData == null) {
                         return false;
                 } else {
@@ -75,7 +77,7 @@ public class F14Model extends VehicleModel<F14Entity> {
         }
 
         public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
-                var gunData = vehicle.getGunData("Missile");
+                var gunData = vehicle.getGunData("Missile2");
                 if (gunData == null) {
                         return false;
                 } else {
