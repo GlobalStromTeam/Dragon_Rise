@@ -22,4 +22,14 @@ public class AA625EEntity extends GeoVehicleEntity {
                         .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
 
+    private PlayState radar(AnimationState<AA625EEntity> event) {
+
+        return event.setAndContinue(RawAnimation.begin().thenLoop("625.animation.radar"));
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        data.add(new AnimationController<>(this, "radar", 0, this::radar));
+    }
+
 }
