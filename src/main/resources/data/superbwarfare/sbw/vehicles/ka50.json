@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:ka50",
-  "MaxHealth": 350,
+  "MaxHealth": 300,
   "MaxEnergy": 10000000,
   "TurretPos": [0, 1.107375, 4.2125],
   "TurretTurnSpeed": [15, 15],
