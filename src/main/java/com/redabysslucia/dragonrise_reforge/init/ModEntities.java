@@ -157,6 +157,14 @@ public class ModEntities {
                     .sized(4.0f, 2.7f)
     );
 
+    public static final RegistryObject<EntityType<J20Entity>> J20 = register("j20",
+            EntityType.Builder.of(J20Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
 
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
