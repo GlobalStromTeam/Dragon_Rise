@@ -106,8 +106,8 @@
       "EmptyReloadTime": 320,
       "Projectile": "superbwarfare:ru_9m336_missile",
       "Name": "dragonrise_reforge.missile_fb10",
-      "Damage": 300,
-      "ExplosionDamage": 90,
+      "Damage": 100,
+      "ExplosionDamage": 390,
       "ExplosionRadius": 2,
       "Velocity": 3,
       "SeekWeaponInfo": {
@@ -146,8 +146,8 @@
     "WheelDifferential": 0.3,
     "MaxForwardSpeedRate": 1,
     "MaxBackwardSpeedRate": 0.5,
-    "Increment": 0.03,
-    "Decrement": 0.02,
+    "Increment": 0.01,
+    "Decrement": 0.01,
     "SteeringSpeed": 0.07
   },
   "TurretPos": [0, 2.4003, 0],
