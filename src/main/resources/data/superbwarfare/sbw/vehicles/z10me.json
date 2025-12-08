@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:z10me",
-  "MaxHealth": 350,
+  "MaxHealth": 300,
   "MaxEnergy": 10000000,
   "TurretPos": [0, 0.625, 2.09],
   "TurretTurnSpeed": [15, 15],
@@ -345,8 +345,6 @@
     "@superbwarfare:hand_grenade * 5",
     "@superbwarfare:mortar_shell * 3",
     "@#superbwarfare:at_rocket * 1.5",
-    "All * 0.77",
-    "All - 10",
     "@#superbwarfare:aerial_bomb * 2"
   ],
   "DestroyInfo": {

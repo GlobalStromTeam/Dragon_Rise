@@ -27,23 +27,6 @@ public class TYPE100Entity extends NightVisionVehicle {
         }
 
         @Override
-        public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
-                super.vehicleShoot(living, uuid, targetPos);
-                beforeShoot(living);
-        }
-        public void beforeShoot(LivingEntity living) {
-                getGunData("Cannon");
-                if (this.getGunData("Cannon") == null) {
-                        return;
-                }
-                if (living.level() instanceof ServerLevel level ) {
-                        ParticleTool.spawnBigCannonMuzzleParticles(
-                                getShootVec("Cannon", 1),
-                                getShootPos("Cannon", 1), level, this);
-                }
-        }
-
-        @Override
         public ResourceLocation getNightVisionShader() {
                 return new ResourceLocation("shaders/post/night-vision-wp.json");
         }

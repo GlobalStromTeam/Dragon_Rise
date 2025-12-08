@@ -33,23 +33,6 @@ public class T80Entity extends NightVisionVehicle {
         public void registerControllers(AnimatableManager.ControllerRegistrar data) {
                 data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
         }
-//        @Override
-//        public void addPassenger(Entity passenger) {
-//                super.addPassenger(passenger);
-//                super.tick();
-//
-//                if (passenger instanceof Player player) {
-//                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, Integer.MAX_VALUE, 0, false, false));
-//                }
-//        }
-//        @Override
-//        public void removePassenger(Entity passenger) {
-//                super.removePassenger(passenger);
-//
-//                if (passenger instanceof Player player) {
-//                        player.removeEffect(MobEffects.NIGHT_VISION);
-//                }
-//        }
 
         @Override
         public ResourceLocation getNightVisionShader() {

@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:j10",
-  "MaxHealth": 350,
+  "MaxHealth": 250,
   "MaxEnergy": 10000000,
   "OBB": [
     {
@@ -241,9 +241,7 @@
     "@superbwarfare:mortar_shell * 5",
     "@superbwarfare:igla_9k38_missile * 1.3",
     "@superbwarfare:gun_grenade * 1.5",
-    "@#superbwarfare:at_rocket * 3",
-    "All * 0.75",
-    "All - 7"
+    "@#superbwarfare:at_rocket * 3"
   ],
   "RotateOffsetHeight": 2.375,
   "DestroyInfo": {
