@@ -63,6 +63,46 @@
       "MaxPitch": 60,
       "MinYaw": -95,
       "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [
+        0.5,
+        0.5,
+        -3.3195375
+      ],
+      "CanRotateBody":true
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [
+        -0.5,
+        0.5,
+        -3.3195375
+      ],
+      "CanRotateBody":true
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [
+        0.5,
+        0.5,
+        -4.1495375
+      ],
+      "CanRotateBody":true
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [
+        -0.5,
+        0.5,
+        -4.1495375
+      ],
+      "CanRotateBody":true
     }
   ],
   "EngineType": "Wheel",
@@ -82,7 +122,6 @@
   "Mass": 0.8,
   "RotateOffsetHeight": 2.2,
   "DamageModifiers": [
-    "All * 0.5",
     "minecraft:arrow * 0.2",
     "minecraft:trident * 0.4",
     "minecraft:mob_attack * 0.4",
@@ -99,7 +138,7 @@
     "superbwarfare:grapeshot_hit * 0.2",
     "@#superbwarfare:aerial_bomb * 1.4",
     "#superbwarfare:projectile * 0.16",
-    "superbwarfare:vehicle_strike * 12",
+    "superbwarfare:vehicle_strike * 10",
     "@superbwarfare:cannon_shell * 0.6",
     "@superbwarfare:small_cannon_shell * 0.8",
     "@superbwarfare:gun_grenade * 1.4",

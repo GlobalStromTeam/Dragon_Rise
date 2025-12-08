@@ -96,7 +96,7 @@
       "Spread": 0.5,
       "Name": "dragonrise_reforge:30mm",
       "SoundInfo": {
-        "FireSoundInstances": "superbwarfare:a_10a_fire",
+        "FireSoundInstances":"dragonrise_reforge:30mm",
         "Change": "superbwarfare:into_cannon"
       },
       "Crosshair": "@AirCraftCommon",
@@ -182,7 +182,7 @@
     },
     "Missile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl_5.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl_8.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",

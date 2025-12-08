@@ -25,20 +25,6 @@
       "Part": "WheelRight",
       "Size": [0.40625, 0.59375, 3.53125],
       "Position": [1.59375, 0.578125, -0.140625]
-    },
-    {
-      "Part": "Turret",
-      "Size": [1.6875, 0.3125, 1.21875],
-      "Position": [0, 0.5, 0.4],
-      "Transform": "Turret",
-      "Rotation": "Turret"
-    },
-    {
-      "Part": "Turret",
-      "Size": [1.03125, 0.40625, 0.90625],
-      "Position": [0, 0.5, -0.475],
-      "Transform": "Turret",
-      "Rotation": "Turret"
     }
   ],
   "Seats": [
@@ -66,25 +52,10 @@
         "Direction": "WeaponStationBarrel"
       },
       "Position": [-0.5805625, 0.3, -0.47275625],
-      "Weapons": ["PassengerMachineGun"],
-      "CanRotateHead": false,
+      "BanHand": true,
       "MinPitch": -10,
       "MaxPitch": -10,
       "Sensitivity": [0.57, 0.55, 0.9]
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [1.625, -0.0625, -4.25],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625, -0.0625, -4.25],
-      "MinYaw": -95,
-      "MaxYaw": 95
     }
   ],
   "Weapons": {
@@ -122,19 +93,6 @@
             "ExplosionDamage": 150,
             "ExplosionRadius": 6,
             "Name": "dragonrise_reforge:m61a"
-          }
-        },
-        {
-          "Ammo": "superbwarfare:m18_smoke_grenade",
-          "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
-            "IsArmorPiercingProjectile": false,
-            "IsHighExplosiveProjectile": true,
-            "Velocity": 10,
-            "Damage": 40,
-            "ExplosionDamage": 50,
-            "ExplosionRadius": 1,
-            "Name": "dragonrise_reforge:m61_105mm_smoke_cannon"
           }
         }
       ],

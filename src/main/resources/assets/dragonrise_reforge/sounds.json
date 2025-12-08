@@ -7,6 +7,14 @@
       }
     ]
   },
+  "30mm": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/30mm",
+        "stream": false
+      }
+    ]
+  },
   "type100_engine": {
     "sounds": [
       {
