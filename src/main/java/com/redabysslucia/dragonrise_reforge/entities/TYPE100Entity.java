@@ -1,15 +1,23 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
+import com.atsuishio.superbwarfare.init.ModDamageTypes;
+import com.atsuishio.superbwarfare.tools.ParticleTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import net.minecraft.world.level.entity.EntityTypeTest;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
+import org.joml.Math;
+
+import java.util.UUID;
+
+import static com.atsuishio.superbwarfare.entity.vehicle.base.ArtilleryEntity.BARREL_ANIM;
 
 @SuppressWarnings("removal")
 public class TYPE100Entity extends NightVisionVehicle {
@@ -18,23 +26,22 @@ public class TYPE100Entity extends NightVisionVehicle {
                 super(pEntityType, pLevel);
         }
 
-//        @Override
-//        public void addPassenger(Entity passenger) {
-//                super.addPassenger(passenger);
-//                super.tick();
-//
-//                if (passenger instanceof Player player) {
-//                        player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, Integer.MAX_VALUE, 0, false, false));
-//                }
-//        }
-//        @Override
-//        public void removePassenger(Entity passenger) {
-//                super.removePassenger(passenger);
-//
-//                if (passenger instanceof Player player) {
-//                        player.removeEffect(MobEffects.NIGHT_VISION);
-//                }
-//        }
+        @Override
+        public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
+                super.vehicleShoot(living, uuid, targetPos);
+                beforeShoot(living);
+        }
+        public void beforeShoot(LivingEntity living) {
+                getGunData("Cannon");
+                if (this.getGunData("Cannon") == null) {
+                        return;
+                }
+                if (living.level() instanceof ServerLevel level ) {
+                        ParticleTool.spawnBigCannonMuzzleParticles(
+                                getShootVec("Cannon", 1),
+                                getShootPos("Cannon", 1), level, this);
+                }
+        }
 
         @Override
         public ResourceLocation getNightVisionShader() {

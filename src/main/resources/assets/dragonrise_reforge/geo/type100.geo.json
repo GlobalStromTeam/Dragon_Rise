@@ -3837,13 +3837,8 @@
 				},
 				{
 					"name": "passengerWeaponStationPitch",
-					"parent": "passengerWeaponStation",
-					"pivot": [-0.22054, 62.18332, 29.87211]
-				},
-				{
-					"name": "MG2",
-					"parent": "passengerWeaponStationPitch",
-					"pivot": [0.14337, 61.96753, 30.40397],
+					"parent": "passengerWeaponStationYaw",
+					"pivot": [-0.22054, 62.18332, 29.87211],
 					"cubes": [
 						{
 							"origin": [-1.33552, 61.20397, 18.67376],
@@ -5936,7 +5931,7 @@
 					]
 				},
 				{
-					"name": "octagon",
+					"name": "octagon5",
 					"parent": "turret",
 					"pivot": [8.775, 49.64375, 2.05772],
 					"cubes": [
