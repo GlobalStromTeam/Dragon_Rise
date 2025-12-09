@@ -48,28 +48,17 @@ public class Q5Model extends VehicleModel<Q5Entity> {
                         case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
-                    case "cow1" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 1));
+                        case "bomb1" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideBomb(vehicle, 1));
 
-                    case "cow2" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 2));
+                        case "bomb2" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideBomb(vehicle, 2));
 
-                    case "cow3" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 3));
-
-                    case "cow4" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 4));
-
-                    case "cow5" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 5));
-
-                    case "cow6" -> (bone, vehicle, state) ->
-                            bone.setHidden(shouldHideCow(vehicle, 6));
                         default -> null;
                 };
         }
-        public boolean shouldHideCow(VehicleEntity vehicle, int ammo) {
-                var gunData = vehicle.getGunData("Missile");
+        public boolean shouldHideBomb(VehicleEntity vehicle, int ammo) {
+                var gunData = vehicle.getGunData("Bomb");
                 if (gunData == null) {
                         return false;
                 } else {
@@ -78,7 +67,7 @@ public class Q5Model extends VehicleModel<Q5Entity> {
         }
 
         public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
-                var gunData = vehicle.getGunData("Missile2");
+                var gunData = vehicle.getGunData("Missile");
                 if (gunData == null) {
                         return false;
                 } else {

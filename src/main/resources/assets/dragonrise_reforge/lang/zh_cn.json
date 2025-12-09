@@ -53,6 +53,12 @@
   "superbwarfare.entry.vehicle.cv90": "CV90 步兵战车",
   "entity.dragonrise_reforge.refale": "阵风",
   "superbwarfare.entry.vehicle.refale": "阵风 战斗机",
+  "entity.dragonrise_reforge.j20": "J-20",
+  "superbwarfare.entry.vehicle.j20": "成都 歼-20 战斗机",
+  "entity.dragonrise_reforge.type100": "ZTZ-100",
+  "superbwarfare.entry.vehicle.type100": "装甲-坦克-主战-100式 主战坦克",
+  "entity.dragonrise_reforge.q5": "Q-5",
+  "superbwarfare.entry.vehicle.q5": "洪都 强-5 强击机",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",

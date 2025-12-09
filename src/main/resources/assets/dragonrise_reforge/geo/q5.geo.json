@@ -1940,7 +1940,7 @@
 					]
 				},
 				{
-					"name": "missle2",
+					"name": "missile1",
 					"parent": "lw",
 					"pivot": [61.58506, 17.85764, 46.71755],
 					"cubes": [
@@ -2031,7 +2031,7 @@
 					]
 				},
 				{
-					"name": "missle5",
+					"name": "bomb1",
 					"parent": "lw",
 					"pivot": [34.85943, 16.59531, 6.96029],
 					"cubes": [
@@ -4276,7 +4276,7 @@
 					]
 				},
 				{
-					"name": "missle3",
+					"name": "missile2",
 					"parent": "rw",
 					"pivot": [-61.58506, 17.85764, 46.71755],
 					"cubes": [
@@ -4367,7 +4367,7 @@
 					]
 				},
 				{
-					"name": "missle4",
+					"name": "bomb2",
 					"parent": "rw",
 					"pivot": [-34.85943, 16.59531, 6.96029],
 					"cubes": [
