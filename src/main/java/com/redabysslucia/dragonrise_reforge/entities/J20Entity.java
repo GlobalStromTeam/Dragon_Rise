@@ -27,22 +27,22 @@ public class J20Entity extends GeoVehicleEntity {
     private PlayState Sb(AnimationState<J20Entity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.ground_idle"));
+                    ("lay down"));
         }
         else {
         return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                ("animation.j10.fly_idle"));
+                ("pack up"));
         }
     }
 
     private PlayState Sb1(AnimationState<J20Entity> event) {
         if (this.sprintInputDown()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.sprinting_on"));
+                    ("Engineon"));
         }
         else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.sprinting_off"));
+                    ("EngineoFF "));
         }
     }
 

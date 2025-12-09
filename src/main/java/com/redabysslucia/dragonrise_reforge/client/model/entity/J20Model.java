@@ -42,26 +42,12 @@ public class J20Model extends VehicleModel<J20Entity> {
                         case "qianzhou", "qianzhou2" ->
                                 (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-                        case "bomb1" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideBomb(vehicle, 1));
-
-                        case "bomb2" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideBomb(vehicle, 2));
-
-//                        case "bomb3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideBomb(vehicle, 1));
-
                         case "missile1" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 1));
 
                         case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
-//                        case "missile3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 2));
-//
-//                        case "missile4" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile(vehicle, 1));
 
                         default -> null;
                 };

@@ -114,5 +114,8 @@
   "dragonrise_reforge:aim54": "思想90 主动雷达空对空导弹",
   "dragonrise_reforge:30mm": "30mm机关炮",
   "dragonrise_reforge:hs70": "火蛇70mm火箭弹",
-  "dragonrise_reforge:pl5": "霹雳5 空对空导弹"
+  "dragonrise_reforge:pl5": "霹雳5 空对空导弹",
+
+  "dragonrise_reforge:pl10": "霹雳10 红外空对空导弹",
+  "dragonrise_reforge:pl15": "霹雳15 雷达空对空导弹"
 }
