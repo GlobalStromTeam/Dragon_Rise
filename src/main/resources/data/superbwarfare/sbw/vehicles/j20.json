@@ -204,7 +204,7 @@
     "ExplosionRadius": 16,
     "CrashPassengers": true
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/j10_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/j20_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",
