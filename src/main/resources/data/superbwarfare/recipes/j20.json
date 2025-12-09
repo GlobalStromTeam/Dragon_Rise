@@ -1,0 +1,16 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "15 #superbwarfare:storage_blocks/steel",
+    "superbwarfare:heavy_armament_module",
+    "3 superbwarfare:large_battery_pack",
+    "2 superbwarfare:jet_engine",
+    "superbwarfare:advanced_radar_system",
+    "superbwarfare:avionics_system",
+    "superbwarfare:stealth_coating"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:j20"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "land",
+  "inputs": [
+    "13 #superbwarfare:storage_blocks/steel",
+    "superbwarfare:heavy_armament_module",
+    "superbwarfare:large_battery_pack",
+    "2 superbwarfare:track",
+    "superbwarfare:large_motor",
+    "superbwarfare:advanced_armor_plating",
+    "superbwarfare:advanced_radar_system",
+    "superbwarfare:reactive_armor"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:ztz99bh"
+  }
+}
