@@ -7,8 +7,8 @@
 				"texture_width": 1024,
 				"texture_height": 1024,
 				"visible_bounds_width": 22,
-				"visible_bounds_height": 8.5,
-				"visible_bounds_offset": [0, 3.75, 0]
+				"visible_bounds_height": 9,
+				"visible_bounds_offset": [0, 3.5, 0]
 			},
 			"bones": [
 				{
@@ -3556,6 +3556,18 @@
 								"up": {"uv": [559, 682], "uv_size": [1, 1]},
 								"down": {"uv": [616, 683], "uv_size": [1, -1]}
 							}
+						},
+						{
+							"origin": [-4.81812, 48.044, 21.54117],
+							"size": [9.945, 2.55255, 9.945],
+							"uv": {
+								"north": {"uv": [609, 13], "uv_size": [15, 4]},
+								"east": {"uv": [662, 318], "uv_size": [15, 4]},
+								"south": {"uv": [662, 322], "uv_size": [15, 4]},
+								"west": {"uv": [563, 662], "uv_size": [15, 4]},
+								"up": {"uv": [166, 604], "uv_size": [15, 15]},
+								"down": {"uv": [346, 619], "uv_size": [15, -15]}
+							}
 						}
 					]
 				},
@@ -3569,18 +3581,6 @@
 					"parent": "passengerWeaponStation",
 					"pivot": [-0.22054, 49.83332, 26.29711],
 					"cubes": [
-						{
-							"origin": [-4.81812, 48.044, 21.54117],
-							"size": [9.945, 2.55255, 9.945],
-							"uv": {
-								"north": {"uv": [609, 13], "uv_size": [15, 4]},
-								"east": {"uv": [662, 318], "uv_size": [15, 4]},
-								"south": {"uv": [662, 322], "uv_size": [15, 4]},
-								"west": {"uv": [563, 662], "uv_size": [15, 4]},
-								"up": {"uv": [166, 604], "uv_size": [15, 15]},
-								"down": {"uv": [346, 619], "uv_size": [15, -15]}
-							}
-						},
 						{
 							"origin": [-5.92313, 50.475, 21.20967],
 							"size": [12.155, 1.82325, 9.503],
