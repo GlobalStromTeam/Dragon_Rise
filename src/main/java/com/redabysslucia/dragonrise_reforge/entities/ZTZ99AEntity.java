@@ -2,6 +2,8 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
+import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -9,8 +11,8 @@ import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-
-public class ZTZ99AEntity extends GeoVehicleEntity {
+@SuppressWarnings("removal")
+public class ZTZ99AEntity extends NightVisionVehicle {
     public ZTZ99AEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -31,6 +33,11 @@ public class ZTZ99AEntity extends GeoVehicleEntity {
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
         data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
+    }
+
+    @Override
+    public ResourceLocation getNightVisionShader() {
+        return new ResourceLocation("shaders/post/night-vision-wp.json");
     }
 
     @Override
