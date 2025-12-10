@@ -307,7 +307,7 @@
     "ExplosionDamage": 120,
     "ExplosionRadius": 7
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/zlt11_icon.png",
+  "VehicleIcon": "superbwarfare:textures/vehicle_icon/ztl11_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "APC",
   "CollisionLevel": {

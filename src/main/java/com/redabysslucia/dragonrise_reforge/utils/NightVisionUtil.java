@@ -39,12 +39,12 @@ public class NightVisionUtil {
 //    }
     public static void onEntityMount(EntityMountEvent event) {
 
-        if (event.getEntityMounting() instanceof Player player && event.getEntityBeingMounted() instanceof INightVisionVehicle vehicle) {
+        if (event.getEntityMounting() instanceof Player && event.getEntityBeingMounted() instanceof INightVisionVehicle vehicle) {
             var mc = Minecraft.getInstance();
-            Player localPlayer = mc.player;
+
             //if (player.isSpectator()) return;
 
-            if (player == localPlayer && vehicle.getNVEnable()) {
+            if (vehicle.getNVEnable()) {
 
                 if (event.isMounting()) {
                     mc.gameRenderer.loadEffect(vehicle.getNightVisionShader());
