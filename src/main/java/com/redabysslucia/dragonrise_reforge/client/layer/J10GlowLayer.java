@@ -1,11 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.client.layer;
 
 
-
 import com.atsuishio.superbwarfare.client.renderer.ModRenderTypes;
-import com.redabysslucia.dragonrise_reforge.entities.J20Entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.redabysslucia.dragonrise_reforge.entities.J10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J20Entity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -14,16 +14,16 @@ import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
-public class J20GlowLayer extends GeoRenderLayer<J20Entity> {
+public class J10GlowLayer extends GeoRenderLayer<J10Entity> {
 
-    private static final ResourceLocation LAYER = new ResourceLocation("dragonrise_reforge", "textures/entity/glow/j20_glow.png");
+    private static final ResourceLocation LAYER = new ResourceLocation("dragonrise_reforge", "textures/entity/glow/j10_glow.png");
 
-    public J20GlowLayer(GeoRenderer<J20Entity> entityRenderer) {
+    public J10GlowLayer(GeoRenderer<J10Entity> entityRenderer) {
         super(entityRenderer);
     }
 
     @Override
-    public void render(PoseStack poseStack, J20Entity animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
+    public void render(PoseStack poseStack, J10Entity animatable, BakedGeoModel bakedModel, RenderType renderType, MultiBufferSource bufferSource, VertexConsumer buffer, float partialTick, int packedLight, int packedOverlay) {
         RenderType glowRenderType = ModRenderTypes.LASER.apply(LAYER);
         getRenderer().reRender(getDefaultBakedModel(animatable), poseStack, bufferSource, animatable, glowRenderType, bufferSource.getBuffer(glowRenderType), partialTick, packedLight, OverlayTexture.NO_OVERLAY, 1, 1, 1, 1);
     }
