@@ -231,8 +231,8 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.885,
     "MaxBackwardSpeedRate": 0.54,
-    "Increment": 0.0059,
-    "Decrement": 0.008,
+    "Increment": 0.0087,
+    "Decrement": 0.01,
     "SteeringSpeed": 0.13,
     "EngineSoundVolume" : 1.0
   },

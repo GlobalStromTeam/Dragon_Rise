@@ -66,6 +66,6 @@ public class J10Entity extends GeoVehicleEntity {
 
     @Override
     public double getMouseSensitivity() {
-        return zoomVehicle ? 0.1 : 0.25;
+        return zoomVehicle ? 0.03 : 0.07;
     }
 }

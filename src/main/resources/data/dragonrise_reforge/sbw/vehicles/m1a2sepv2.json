@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:m1a2sepv2",
-  "MaxHealth": 450,
+  "MaxHealth": 400,
   "MaxEnergy": 20000000,
   "OBB": [
     {
@@ -220,8 +220,8 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.8025,
     "MaxBackwardSpeedRate": 0.57,
-    "Increment": 0.0054,
-    "Decrement": 0.0075,
+    "Increment": 0.0087,
+    "Decrement": 0.01,
     "SteeringSpeed": 0.12,
     "EngineSoundVolume" : 0.8
   },
