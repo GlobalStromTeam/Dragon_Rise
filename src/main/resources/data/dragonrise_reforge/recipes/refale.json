@@ -5,9 +5,7 @@
     "11 #superbwarfare:storage_blocks/steel",
     "superbwarfare:heavy_armament_module",
     "2 superbwarfare:large_battery_pack",
-    "2 superbwarfare:jet_engine",
-    "superbwarfare:advanced_radar_system",
-    "superbwarfare:avionics_system"
+    "2 superbwarfare:large_propeller"
   ],
   "result": {
     "entity": "dragonrise_reforge:refale"

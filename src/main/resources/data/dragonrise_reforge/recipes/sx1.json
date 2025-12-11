@@ -5,7 +5,7 @@
     "5 #superbwarfare:storage_blocks/steel",
     "superbwarfare:light_armament_module",
     "4 superbwarfare:wheel",
-    "superbwarfare:medium_motor"
+    "superbwarfare:motor"
   ],
   "result": {
     "entity": "dragonrise_reforge:sx1"

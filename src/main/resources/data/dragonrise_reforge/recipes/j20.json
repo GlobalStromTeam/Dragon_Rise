@@ -5,11 +5,8 @@
     "15 #superbwarfare:storage_blocks/steel",
     "superbwarfare:heavy_armament_module",
     "3 superbwarfare:large_battery_pack",
-    "2 superbwarfare:jet_engine",
-    "superbwarfare:advanced_radar_system",
-    "3 superbwarfare:wheel",
-    "superbwarfare:avionics_system",
-    "superbwarfare:stealth_coating"
+    "2 superbwarfare:large_propeller",
+    "3 superbwarfare:wheel"
   ],
   "result": {
     "entity": "dragonrise_reforge:j20"

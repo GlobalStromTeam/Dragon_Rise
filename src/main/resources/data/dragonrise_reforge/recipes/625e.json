@@ -7,7 +7,7 @@
     "superbwarfare:medium_battery_pack",
     "8 superbwarfare:wheel",
     "superbwarfare:large_motor",
-    "superbwarfare:armor_plating"
+    "superbwarfare:armor_plate"
   ],
   "result": {
     "entity": "dragonrise_reforge:625e"
