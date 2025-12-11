@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.layer;
 
 
+import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.client.renderer.ModRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -16,7 +17,7 @@ import software.bernie.geckolib.renderer.layer.GeoRenderLayer;
 
 public class J10GlowLayer extends GeoRenderLayer<J10Entity> {
 
-    private static final ResourceLocation LAYER = new ResourceLocation("dragonrise_reforge", "textures/entity/glow/j10_glow.png");
+        private static final ResourceLocation LAYER = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge","textures/entity/glow/j10_glow.png");
 
     public J10GlowLayer(GeoRenderer<J10Entity> entityRenderer) {
         super(entityRenderer);

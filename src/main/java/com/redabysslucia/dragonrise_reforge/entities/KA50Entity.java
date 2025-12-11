@@ -14,12 +14,7 @@ public class KA50Entity extends NightVisionVehicle {
 
         @Override
         public ResourceLocation getNightVisionShader() {
-                return new ResourceLocation("shaders/post/night-vision-bw.json");
+                return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "shaders/post/night-vision-bw.json");
         }
 
-
-//        @Override
-//        public double getMouseSensitivity() {
-//                return 0.25;
-//        }
 }
