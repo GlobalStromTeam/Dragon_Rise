@@ -1,6 +1,6 @@
 {
-  "ID": "dragonrise_reforge:strv103",
-  "MaxHealth": 400,
+  "ID": "dragonrise_reforge:t80",
+  "MaxHealth": 380,
   "MaxEnergy": 20000000,
   "OBB": [
     {
@@ -25,6 +25,20 @@
       "Part": "WheelRight",
       "Size": [0.40625, 0.59375, 3.53125],
       "Position": [1.59375, 0.578125, -0.140625]
+    },
+    {
+      "Part": "Turret",
+      "Size": [1.6875, 0.3125, 1.21875],
+      "Position": [0, 0.5, 0.4],
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Part": "Turret",
+      "Size": [1.03125, 0.40625, 0.90625],
+      "Position": [0, 0.5, -0.475],
+      "Transform": "Turret",
+      "Rotation": "Turret"
     }
   ],
   "Seats": [
@@ -36,11 +50,11 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8125, -0.6, 0.84375],
+      "Position": [0.8125, -0.7, 0.84375],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -10,
-      "MaxPitch": 10,
+      "MinPitch": -6,
+      "MaxPitch": 18,
       "Sensitivity": [0.52, 0.72, 0.9]
     },
     {
@@ -52,10 +66,25 @@
         "Direction": "WeaponStationBarrel"
       },
       "Position": [-0.5805625, 0.3, -0.47275625],
-      "BanHand": true,
-      "MinPitch": -10,
-      "MaxPitch": -10,
+      "Weapons": ["PassengerMachineGun"],
+      "CanRotateHead": false,
+      "MinPitch": -5,
+      "MaxPitch": 60,
       "Sensitivity": [0.57, 0.55, 0.9]
+    },
+    {
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [1.625, -0.0625, -4.25],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-1.625, -0.0625, -4.25],
+      "MinYaw": -95,
+      "MaxYaw": 95
     }
   ],
   "Weapons": {
@@ -72,14 +101,14 @@
       "Damage": 500,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
-      "RecoilTime": 40,
+      "RecoilTime": 42,
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "CrosshairColor": "#da2d2d",
-      "Name": "dragonrise_reforge:m66",
+      "Name": "dragonrise_reforge:3BM60",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -89,10 +118,10 @@
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
-            "Damage": 340,
-            "ExplosionDamage": 150,
-            "ExplosionRadius": 6,
-            "Name": "dragonrise_reforge:m61a"
+            "Damage": 250,
+            "ExplosionDamage": 120,
+            "ExplosionRadius": 10,
+            "Name": "dragonrise_reforge:3OF46"
           }
         }
       ],
@@ -138,7 +167,7 @@
         "Positions": [[-0.22, -0.04, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Name": "dragonrise_reforge:58mg",
+      "Name": "darognrise_reforge:ПКТ",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:m_60_fire_3p",
@@ -184,9 +213,8 @@
     }
   },
   "HUDColor": "#da2d2d",
-  "EngineType": "WheelChair",
+  "EngineType": "Track",
   "EngineInfo": {
-    "BodyRollRate": 0,
     "Buoyancy": 0,
     "EnergyCostRate": 128,
     "WheelRotSpeed": 1.25,
@@ -195,18 +223,17 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.825,
     "MaxBackwardSpeedRate": 0.175,
-    "Increment": 0.008,
-    "Decrement": 0.035,
-    "SteeringSpeed": 0.8,
+    "Increment": 0.0087,
+    "Decrement": 0.006,
+    "SteeringSpeed": 0.15,
     "EngineSoundVolume" : 0.8
   },
   "TurretPos": [0, 1.67, -0.23625],
   "BarrelPos": [0, 0.56345, 0.6477125],
-  "TurretYawRange": [0, 0],
-  "TurretTurnSpeed": [1, 0],
-  "TurretPitchRange": [-10, 10],
+  "TurretTurnSpeed": [7, 3.765],
+  "TurretPitchRange": [-6, 18],
   "PassengerWeaponStationPos": [-0.75805625, 1.1446375, -0.57275625],
-  "PassengerWeaponStationBarrelPos": [0, 3.0625, 0.3125],
+  "PassengerWeaponStationBarrelPos": [0, 0.35984375, 0.0551625],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
   "PassengerWeaponStationPitchRange": [-5, 60],
   "HasDecoy": true,
@@ -251,7 +278,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/strv103_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/t80_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {

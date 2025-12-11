@@ -5,5 +5,5 @@
     "Animation": "dragonrise_reforge:animations/q5.animation.json",
     "Texture": "dragonrise_reforge:textures/entity/q5.png"
   },
-  "MouseSpeed": [0.8, 0.8]
+  "MouseSpeed": [0.23, 0.23]
 }

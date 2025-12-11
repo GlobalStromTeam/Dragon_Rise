@@ -1,42 +1,39 @@
 {
-  "ID": "dragonrise_reforge:amx56",
+  "ID": "dragonrise_reforge:m1a2sepv2",
   "MaxHealth": 400,
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [1.59, 0.625, 3.81],
-      "Position": [0, 1.06, 0]
+      "Size": [2, 0.40625, 0.78125],
+      "Position": [0, 1.15625, 3.34375]
     },
     {
-      "Size": [1.59, 0.185, 1.28],
-      "Position": [0, 1.8, -2.0225]
+      "Size": [2, 0.625, 1.34375],
+      "Position": [0, 1.0625, 1.28125]
+    },
+    {
+      "Size": [2, 0.71875, 1.375],
+      "Position": [0, 1.15625, -1.125]
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.40, 0.68, 3.68],
-      "Position": [1.53, 0.68, -0.025]
+      "Size": [0.40625, 0.6875, 4.40625],
+      "Position": [-1.65625, 0.6875, -0.46875]
     },
     {
       "Part": "WheelRight",
-      "Size": [-0.40, 0.68, 3.68],
-      "Position": [-1.53, 0.68, -0.025]
+      "Size": [0.40625, 0.6875, 4.40625],
+      "Position": [1.65625, 0.6875, -0.46875]
     },
     {
       "Part": "MainEngine",
-      "Size": [1.5, 0.71, 0.65],
-      "Position": [0, 1.55, -3.525]
+      "Size": [1.9375, 0.75, 1.34375],
+      "Position": [0, 1.3125, -3.71875]
     },
     {
       "Part": "Turret",
-      "Size": [1.71, 0.40, 1.78],
-      "Position": [0, 0.40, -0.96],
-      "Transform": "Turret",
-      "Rotation": "Turret"
-    },
-    {
-      "Part": "Turret",
-      "Size": [1.71, 0.38, 0.53],
-      "Position": [0, 0.46, 1.34],
+      "Size": [2, 0.5, 2.6875],
+      "Position": [0, 0.2, -1.0625],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -50,12 +47,12 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [-0.5625, -0.73, 1.812],
+      "Position": [-1.03, -0.575, 0.784],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -7,
-      "MaxPitch": 15,
-      "Sensitivity": [0.52, 0.72, 0.9]
+      "MinPitch": -10,
+      "MaxPitch": 20,
+      "Sensitivity": [0.52, 0.75, 0.9]
     },
     {
       "HidePassenger": true,
@@ -65,32 +62,24 @@
         "ZoomPosition": [0, 0.1, 0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-1.0546875, 0.5, -0.978],
+      "Position": [-0.93, 0.3, 0.062],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
-      "MinPitch": -10,
-      "MaxPitch": 60,
+      "MinPitch": -9,
+      "MaxPitch": 65,
       "Sensitivity": [0.57, 0.75, 0.9]
     },
     {
-      "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.475,0.5,2.1],
+      "Position": [1.625, 0.8, -5.5],
       "MinYaw": -95,
       "MaxYaw": 95
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.625, 0.5, -5.125],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625, 0.5, -5.125],
+      "Position": [-1.625, 0.8, -5.5],
       "MinYaw": -95,
       "MaxYaw": 95
     }
@@ -104,7 +93,7 @@
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 120,
+      "EmptyReloadTime": 110,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -114,9 +103,9 @@
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/fr_tank_cannon_cross.png",
+      "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:ofl120f1",
+      "Name": "dragonrise_reforge:M829A1",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -129,7 +118,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "dragonrise_reforge:occ120f1"
+            "Name": "dragonrise_reforge:M908"
           }
         }
       ],
@@ -138,16 +127,16 @@
         "Fire3P": "dragonrise_reforge:m1a2_fire_3p",
         "Fire3PFar": "dragonrise_reforge:m1a2_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:m1a2_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "VehicleReload": "dragonrise_reforge:m1a2_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
+          "dragonrise_reforge:m1a2_reload"
         ]
       },
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, 0, 5.5]],
+        "Positions": [[0, 0, 5]],
         "Directions": ["Barrel"]
       }
     },
@@ -171,11 +160,11 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.40, 0.15, 0.85]],
+        "Positions": [[-0.12, 0.15, 0]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:crcf1",
+      "Name": "dragonrise_reforge:m2hb",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
@@ -193,23 +182,23 @@
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "RPM": 600,
+      "RPM": 575,
       "Damage": 40,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
-      "HeatPerShoot": 3.75,
+      "HeatPerShoot": 4,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, -0.01, 1.8]],
+        "Positions": [[0, 0.01, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "CRC F1 12,7mm",
+      "Name": "weapon.superbwarfare.50_cal_gun",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
@@ -229,25 +218,25 @@
     "WheelDifferential": 0.75,
     "TrackRotSpeed": 1.3,
     "TrackDifferential": 0.6,
-    "MaxForwardSpeedRate": 0.885,
-    "MaxBackwardSpeedRate": 0.54,
-    "Increment": 0.0059,
-    "Decrement": 0.008,
-    "SteeringSpeed": 0.13,
-    "EngineSoundVolume" : 1.0
+    "MaxForwardSpeedRate": 0.8025,
+    "MaxBackwardSpeedRate": 0.57,
+    "Increment": 0.0087,
+    "Decrement": 0.01,
+    "SteeringSpeed": 0.12,
+    "EngineSoundVolume" : 0.8
   },
-  "TurretPos": [-0.0078, 1.91, 0.23],
-  "BarrelPos": [0, 0.36, 1.265625],
-  "TurretTurnSpeed": [2.625, 3.575],
-  "TurretPitchRange": [-7, 15],
-  "PassengerWeaponStationPos": [-1.0546875, 0.95, -0.978],
-  "PassengerWeaponStationBarrelPos": [-0.05, 0.5375, 0.018],
+  "TurretPos": [0, 2.1059375, 0],
+  "BarrelPos": [0, 0.1, 0.6477125],
+  "TurretTurnSpeed": [3.765, 4.2],
+  "TurretPitchRange": [-10, 20],
+  "PassengerWeaponStationPos": [-0.93, 1.25, 0.062],
+  "PassengerWeaponStationBarrelPos": [0, 0.5, 0],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
-  "PassengerWeaponStationPitchRange": [-10, 60],
+  "PassengerWeaponStationPitchRange": [-9, 65],
   "HasDecoy": true,
   "UpStep": 2.25,
-  "RotateOffsetHeight": 0.5,
-  "Mass": 55,
+  "RotateOffsetHeight": 3.5,
+  "Mass": 67.4,
   "DamageModifiers": [
     "minecraft:lava - -20",
     "minecraft:lava * 10",
@@ -261,7 +250,7 @@
     "minecraft:player_attack 0",
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile 0",
-    "All * 0.3",
+    "All * 0.25",
     "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
@@ -285,8 +274,8 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cv90_icon.png",
+  "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m1a2sepv2_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {
@@ -298,7 +287,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz99a_engine",
+  "EngineSound": "dragonrise_reforge:m1a2_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [

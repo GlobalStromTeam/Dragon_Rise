@@ -236,8 +236,8 @@
     "WheelDifferential": 0.3,
     "MaxForwardSpeedRate": 1.1,
     "MaxBackwardSpeedRate": 0.11,
-    "Increment": 0.0036,
-    "Decrement": 0.036,
+    "Increment": 0.01,
+    "Decrement": 0.012,
     "SteeringSpeed": 0.1
   },
   "TurretPos": [0, 2.4003, 0],
