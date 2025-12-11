@@ -1,5 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.atsuishio.superbwarfare.entity.vehicle.TowEntity;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import net.minecraft.world.entity.Entity;
@@ -172,6 +173,12 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.7f)
     );
+
+    public static final RegistryObject<EntityType<MK19Entity>> MK19 = register("mk19",
+            EntityType.Builder.of(MK19Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune().sized(0.5f, 1.35f));
 
 
 

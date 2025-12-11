@@ -30,6 +30,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TYPE100.get(), TYPE100Renderer::new);
                 event.registerEntityRenderer(ModEntities.J20.get(), J20Renderer::new);
                 event.registerEntityRenderer(ModEntities.Q5.get(), Q5Renderer::new);
+                event.registerEntityRenderer(ModEntities.MK19.get(), MK19Renderer::new);
         }
 
 }
