@@ -7,8 +7,7 @@
     "superbwarfare:large_battery_pack",
     "2 superbwarfare:track",
     "superbwarfare:large_motor",
-    "superbwarfare:cemented_carbide_block",
-    "superbwarfare:reactive_armor"
+    "2 superbwarfare:cemented_carbide_block"
   ],
   "result": {
     "entity": "dragonrise_reforge:ztz99bh"
