@@ -35,32 +35,32 @@ public class Q5Entity extends GeoVehicleEntity {
         }
     }
 
-    //private PlayState Q5B(AnimationState<Q5Entity> event) {
-    //    if (this.sprintInputDown()) {
-    //        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-    //           ("animation.q5.sb1"));
-    //    }
-    //   else {
-    //       return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-    //                ("animation.q5.sb1"));
-    //    }
-    //}
+    private PlayState Q5B(AnimationState<Q5Entity> event) {
+        if (this.sprintInputDown()) {
+            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
+               ("animation.q5.sb1"));
+        }
+       else {
+           return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
+                    ("animation.q5.sb1"));
+        }
+    }
 
     private PlayState Q5C(AnimationState<Q5Entity> event) {
-        if (this.getPower()>= 0.7) {//这个值是节流阀我操
+        if (this.getPower()>= 0.8) {//这个值是节流阀我操
             return event.setAndContinue(RawAnimation.begin().thenLoop
-                    ("animation.q5.sb1"));
+                    ("animation.q5.engon"));
         }
         else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.q5.sb1"));
+                    ("animation.q5.engoff"));
         }
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
         data.add(new AnimationController<>(this, "q5a", 0, this::Q5A));
-        //data.add(new AnimationController<>(this, "q5b", 0, this::Q5B));
+        data.add(new AnimationController<>(this, "q5b", 0, this::Q5B));
         data.add(new AnimationController<>(this, "q5c", 0, this::Q5C));
     }
     //    @Override

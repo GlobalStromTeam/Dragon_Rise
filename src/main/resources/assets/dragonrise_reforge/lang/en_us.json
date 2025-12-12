@@ -74,6 +74,8 @@
   "superbwarfare.entry.vehicle.type100": "ZTZ-100 Main Battle Tank",
   "entity.dragonrise_reforge.q5": "Q-5",
   "superbwarfare.entry.vehicle.q5": "Hongdu Q-5 Attack Aircraft",
+  "entity.dragonrise_reforge.ec665": "EC665",
+  "superbwarfare.entry.vehicle.ec665": "EC665 tiger",
 
   "dragonrise_reforge:500kg": "500kg Aerial Bomb",
   "dragonrise_reforge:pl8": "PL-8 IR AAM",
@@ -140,5 +142,9 @@
   "dragonrise_reforge:pl15": "PL-15 ARH AAM",
 
   "dragonrise_reforge:newcnap": "105mm ??? APFSDS",
-  "dragonrise_reforge:newcnhe": "105mm ??? HE"
+  "dragonrise_reforge:newcnhe": "105mm ??? HE",
+
+  "dragonrise_reforge:m871cannon": "30mm GIAT M781 Cannon",
+  "dragonrise_reforge:dyh": "AGM-114K ATMG",
+  "dragonrise_reforge:23sneb": "type23 SNEB rocket"
 }
