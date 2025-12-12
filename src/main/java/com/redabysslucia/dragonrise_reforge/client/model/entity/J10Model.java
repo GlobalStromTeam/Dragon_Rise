@@ -35,7 +35,7 @@ public class J10Model extends VehicleModel<J10Entity> {
                         case "wingRB" -> (bone, vehicle, state) ->
                                 bone.setRotX(Mth.lerp(state.getPartialTick(), vehicle.flap2RRotO, vehicle.getFlap2RRot()) * Mth.DEG_TO_RAD);
 
-                        case "weiyiL", "weiyiR" -> (bone, vehicle, state) ->
+                        case "weiyiR" -> (bone, vehicle, state) ->
                                 bone.setRotY(Mth.clamp(Mth.lerp(state.getPartialTick(), vehicle.flap3RotO, vehicle.getFlap3Rot()), -20f, 20f) * Mth.DEG_TO_RAD);
 
                         case "gear", "gear2", "gear3" ->

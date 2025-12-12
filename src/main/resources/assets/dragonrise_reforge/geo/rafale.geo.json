@@ -5763,10 +5763,15 @@
 					]
 				},
 				{
-					"name": "weiyiR",
+					"name": "sbwy",
 					"parent": "verticalTail",
 					"pivot": [0, 54.87491, 116.01538],
-					"rotation": [-27.5, 0, 0],
+					"rotation": [-27.5, 0, 0]
+				},
+				{
+					"name": "weiyiR",
+					"parent": "sbwy",
+					"pivot": [0, 54.87491, 116.01538],
 					"cubes": [
 						{
 							"origin": [-1.20178, 34.0849, 104.86569],
