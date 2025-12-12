@@ -1,21 +1,21 @@
 {
-  "ID": "dragonrise_reforge:mk19",
+  "ID": "dragonrise_reforge:zu23",
   "MaxHealth": 40,
   "MaxEnergy": 0,
-  "TurretPos": [0, 0.9689, 0],
+  "TurretPos": [0, 0.5389, -0.12],
   "TurretTurnSpeed": [10, 10],
-  "TurretPitchRange": [-40, 40],
-  "BarrelPos": [0, 0.206, 0],
+  "TurretPitchRange": [-5, 70],
+  "BarrelPos": [0, 0.6, 0.25],
   "Seats": {
     "Transform": "Turret",
-    "Position": [0, -1.3689, -1],
+    "Position": [0.8, -0.689, -1.1],
     "MinPitch": -40,
     "MaxPitch": 60,
     "CameraPos": {
-      "Transform": "Turret",
+      "Transform": "Barrel",
       "UseFixedCameraPos": true,
       "Position": [
-        0, 0.35, 0
+        0, 0.6, 0.3
       ],
       "Direction": "Barrel"
     },
@@ -31,21 +31,19 @@
     "Cannon": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:gun_grenade",
+      "Projectile": "superbwarfare:cannon_shell",
       "DefaultZoom": 3,
-      "RPM": 280,
-      "Magazine": 20,
+      "RPM": 800,
+      "Magazine": 120,
       "EmptyReloadTime": 100,
-      "Velocity": 4.5,
-      "Damage": 55,
-      "ExplosionDamage": 10,
-      "ExplosionRadius": 5,
+      "Velocity": 25,
+      "Damage": 20,
       "HeatPerShoot": 6,
-      "NaturalCooldown": 1,
+      "NaturalCooldown": 2.0,
       "RecoilTime": 31,
       "RecoilForce": 1.62,
       "ShootAnimationTime": 3,
-      "Spread": 1.2,
+      "Spread": 0.2,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/Non.png",
       "CrosshairColor": "0xFFC700",
       "Name": "drgonrise_reforge:mk19",
@@ -57,7 +55,7 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 24,
-      "AmmoType": "superbwarfare:grenade_40mm",
+      "AmmoType": "@HeavyAmmo",
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "ShootPos": {
         "Transform": "Barrel",

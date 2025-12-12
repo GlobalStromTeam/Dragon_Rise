@@ -1,8 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.atsuishio.superbwarfare.item.ArmorPlate;
-import com.atsuishio.superbwarfare.item.BatteryItem;
-import com.atsuishio.superbwarfare.item.ElectricBaton;
 import com.atsuishio.superbwarfare.item.common.container.ContainerBlockItem;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.core.registries.Registries;
@@ -11,8 +8,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
-
-import static com.atsuishio.superbwarfare.init.ModTabs.AMMO_TAB;
 
 @SuppressWarnings("unused")
 public class ModTabs {
@@ -45,6 +40,7 @@ public class ModTabs {
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.J20.get()));
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
                                 output.accept(ModItems.MK19_DEPLOYER.get());
+                                output.accept(ModItems.ZU23_DEPLOYER.get());
                             }
                     ).build()
     );

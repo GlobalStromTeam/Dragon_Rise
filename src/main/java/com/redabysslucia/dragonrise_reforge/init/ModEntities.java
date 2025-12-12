@@ -186,7 +186,15 @@ public class ModEntities {
             EntityType.Builder.of(MK19Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
-                    .fireImmune().sized(0.5f, 1.35f));
+                    .fireImmune().sized(0.5f, 1.35f)
+    );
+
+    public static final RegistryObject<EntityType<ZU23Entity>> ZU23 = register("zu23",
+            EntityType.Builder.of(ZU23Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune().sized(0.5f, 1.35f)
+    );
 
 
 
