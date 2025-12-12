@@ -76,6 +76,13 @@
   "superbwarfare.entry.vehicle.q5": "Hongdu Q-5 Attack Aircraft",
   "entity.dragonrise_reforge.ec665": "EC665",
   "superbwarfare.entry.vehicle.ec665": "EC665 tiger",
+  "item.dragonrise_reforge.zu23": "ZU23 Twin Anti-Aircraft Gun",
+  "superbwarfare.entry.vehicle.zu23": "ZU23 Twin Anti-Aircraft Gun",
+  "drgonrise_reforge:zu23": "ZU23 Twin Anti-Aircraft Gun",
+  "entity.dragonrise_reforge.mk19": "MK19",
+  "item.dragonrise_reforge.mk19": "MK19 Grenade Launcher",
+  "superbwarfare.entry.vehicle.mk19": "MK19 Grenade Launcher",
+  "drgonrise_reforge:mk19": "MK19 Grenade Launcher",
 
   "dragonrise_reforge:500kg": "500kg Aerial Bomb",
   "dragonrise_reforge:pl8": "PL-8 IR AAM",
