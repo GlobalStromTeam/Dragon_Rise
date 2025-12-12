@@ -19,6 +19,6 @@ public class ModItems {
     public static final RegistryObject<Item> TAB_ICON = REGISTRY.register("tab_icon", () -> new Item(new Item.Properties()));
 
 
-    public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19_deployer", MK19Deployer::new);
+    public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
 
 }

@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:mk19",
-  "MaxHealth": 60,
+  "MaxHealth": 40,
   "MaxEnergy": 0,
   "TurretPos": [0, 0.9689, 0],
   "TurretTurnSpeed": [10, 10],
@@ -10,62 +10,80 @@
     "Transform": "Turret",
     "Position": [0, -1.3689, -1],
     "MinPitch": -40,
-    "MaxPitch": 40,
+    "MaxPitch": 60,
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
       "Position": [
-        0.2535875, 0.36360625, 0.121875
+        0, 0.35, 0
       ],
       "Direction": "Barrel"
     },
-    "Weapons": ["Missile"],
+    "Weapons": ["Cannon"],
     "Sensitivity": [0.55, 0.75, 1],
     "DismountInfo": {
       "Transform": "Turret",
-      "Position": [0.3, -0.8, -0.6]
+      "Position": [0, 0.25, 0]
     }
   },
   "UsePassengerCreativeAmmoBox": false,
   "Weapons": {
-    "Missile": {
-      "DefaultFireMode": "Semi",
-      "AvailableFireModes": "Semi",
-      "Name": "weapon.superbwarfare.tow_missile",
-      "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Projectile": "superbwarfare:wire_guide_missile",
+    "Cannon": {
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "superbwarfare:gun_grenade",
       "DefaultZoom": 3,
-      "Magazine": 1,
-      "Damage": 600,
-      "ExplosionDamage": 60,
-      "ExplosionRadius": 6,
-      "RPM": 8,
-      "Velocity": 3,
-      "ShootShake": [6, 6, 14],
+      "RPM": 280,
+      "Magazine": 20,
+      "EmptyReloadTime": 100,
+      "Velocity": 4.5,
+      "Damage": 55,
+      "ExplosionDamage": 10,
+      "ExplosionRadius": 5,
+      "HeatPerShoot": 6,
+      "NaturalCooldown": 1,
+      "RecoilTime": 31,
+      "RecoilForce": 1.62,
+      "ShootAnimationTime": 3,
+      "Spread": 1.2,
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/Non.png",
+      "CrosshairColor": "0xFFC700",
+      "Name": "drgonrise_reforge:mk19",
+      "SoundInfo": {
+        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
+        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Change": "superbwarfare:into_missile"
+      },
+      "SoundRadius": 24,
+      "AmmoType": "superbwarfare:grenade_40mm",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, 0.035, 0]],
-        "Directions": ["Barrel"]
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_missile_fire_3p"
-      },
-      "SoundRadius": 12,
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
-      "Crosshair": "@Custom"
+        "Positions": [
+          [
+            0,
+            -0.2,
+            0
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      }
     }
   },
   "ThirdPersonCameraPos": [-0.3, 1, -1],
   "Mass": 0.05,
   "DamageModifiers": [
     "minecraft:lava * 2.667",
-    "All * 0.75",
+    "All * 1.75",
     "@minecraft:tnt * 3",
     "@minecraft:tnt_minecart * 3"
   ],
+  "VehicleContainerType": "Mini",
   "EngineType": "Fixed",
-  "VehicleContainerType": "Empty",
   "HasLowHealthWarning": false,
   "SelfHurtPercent": 0,
   "VehicleIcon": "superbwarfare:textures/vehicle_icon/tow_icon.png",
