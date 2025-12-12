@@ -63,6 +63,8 @@
   "superbwarfare.entry.vehicle.type100": "装甲-坦克-主战-100式 主战坦克",
   "entity.dragonrise_reforge.q5": "Q-5",
   "superbwarfare.entry.vehicle.q5": "洪都 强-5 强击机",
+  "entity.dragonrise_reforge.ec665": "EC665",
+  "superbwarfare.entry.vehicle.ec665": "EC665 虎 直升机",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
@@ -130,5 +132,9 @@
   "dragonrise_reforge:pl15": "霹雳15 雷达空对空导弹",
 
   "dragonrise_reforge:newcnap": "105mm ??? 穿甲弹",
-  "dragonrise_reforge:newcnhe": "105mm ??? 高爆弹"
+  "dragonrise_reforge:newcnhe": "105mm ??? 高爆弹",
+
+  "dragonrise_reforge:m871cannon": "30mm GIAT M781 旋转炮塔",
+  "dragonrise_reforge:dyh": "地狱火 空对地导弹",
+  "dragonrise_reforge:23sneb": "23型 SNEB 火箭弹"
 }
