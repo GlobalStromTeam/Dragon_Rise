@@ -160,6 +160,32 @@
             "ExplosionRadius": 6,
             "Name": "dragonrise_reforge:dtb10105"
           }
+        },
+        {
+          "Ammo": "superbwarfare:medium_anti_ground_missile",
+          "Override": {
+            "Spread": 0.5,
+            "CrosshairColor": "0xFFC700",
+            "Name": "dragonrise_reforge:gp105",
+            "Projectile": "superbwarfare:wire_guide_missile",
+            "IsArmorPiercingProjectile": true,
+            "Damage": 600,
+            "ExplosionDamage": 60,
+            "ExplosionRadius": 5,
+            "Velocity": 10,
+            "RecoilTime": 18,
+            "RecoilForce": 0.05,
+            "Crosshair": "@VehicleCommonMissile",
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
+              "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
+              "VehicleReload3p": "superbwarfare:medium_missile_reload",
+              "VehicleReloadSoundTime": 28,
+              "Change": "superbwarfare:into_missile"
+            },
+            "SoundRadius": 12,
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_105.png"
+          }
         }
       ],
       "SoundInfo": {
