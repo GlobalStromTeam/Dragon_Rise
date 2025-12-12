@@ -78,7 +78,7 @@
       "AmmoType": "superbwarfare:small_shell",
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 2,
-      "RPM": 900,
+      "RPM": 1200,
       "Velocity": 35,
       "Damage": 35,
       "ExplosionDamage": 10,
@@ -88,7 +88,7 @@
       "Spread": 0.5,
       "Name": "dragonrise_reforge:ref_cannon",
       "SoundInfo": {
-        "FireSoundInstances": "superbwarfare:a_10a_fire",
+        "FireSoundInstances": "dragonrise_reforge:30mm",
         "Change": "superbwarfare:into_cannon"
       },
       "Crosshair": "@AirCraftCommon",
