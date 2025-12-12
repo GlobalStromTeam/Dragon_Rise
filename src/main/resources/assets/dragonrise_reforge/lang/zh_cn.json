@@ -65,6 +65,14 @@
   "superbwarfare.entry.vehicle.q5": "洪都 强-5 强击机",
   "entity.dragonrise_reforge.ec665": "EC665",
   "superbwarfare.entry.vehicle.ec665": "EC665 虎 直升机",
+  "entity.dragonrise_reforge.zu23": "ZU23",
+  "item.dragonrise_reforge.zu23": "ZU23 双管机炮",
+  "superbwarfare.entry.vehicle.zu23": "ZU23 双管机炮",
+  "drgonrise_reforge:zu23": "ZU23 双管机炮",
+  "entity.dragonrise_reforge.mk19": "MK19",
+  "item.dragonrise_reforge.mk19": "MK19 榴弹发射器",
+  "superbwarfare.entry.vehicle.mk19": "MK19 榴弹发射器",
+  "drgonrise_reforge:mk19": "MK19 榴弹发射器",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",

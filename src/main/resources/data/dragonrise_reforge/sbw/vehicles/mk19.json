@@ -9,7 +9,7 @@
   "Seats": {
     "Transform": "Turret",
     "Position": [0, -1.3689, -1],
-    "MinPitch": -40,
+    "MinPitch": -4,
     "MaxPitch": 60,
     "CameraPos": {
       "Transform": "Turret",
@@ -46,7 +46,7 @@
       "RecoilForce": 1.62,
       "ShootAnimationTime": 3,
       "Spread": 1.2,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/Non.png",
+      "Crosshair": "@VehicleCommonGun",
       "CrosshairColor": "0xFFC700",
       "Name": "drgonrise_reforge:mk19",
       "SoundInfo": {
