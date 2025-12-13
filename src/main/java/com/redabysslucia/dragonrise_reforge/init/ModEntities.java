@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.atsuishio.superbwarfare.entity.vehicle.TowEntity;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import net.minecraft.world.entity.Entity;
@@ -223,6 +222,13 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<ZU23Entity>> ZU23 = register("zu23",
             EntityType.Builder.of(ZU23Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune().sized(0.5f, 1.35f)
+    );
+
+    public static final RegistryObject<EntityType<SHIELDEntity>> SHIELD = register("shield",
+            EntityType.Builder.of(com.redabysslucia.dragonrise_reforge.entities.SHIELDEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune().sized(0.5f, 1.35f)

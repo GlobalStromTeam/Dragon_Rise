@@ -45,6 +45,7 @@ public class ModTabs {
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
                                 output.accept(ModItems.MK19_DEPLOYER.get());
                                 output.accept(ModItems.ZU23_DEPLOYER.get());
+                                output.accept(ModItems.SHIELD_DEPLOYER.get());
                             }
                     ).build()
     );

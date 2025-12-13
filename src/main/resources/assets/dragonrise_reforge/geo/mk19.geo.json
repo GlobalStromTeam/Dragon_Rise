@@ -6,7 +6,7 @@
 				"identifier": "geometry.unknown",
 				"texture_width": 64,
 				"texture_height": 64,
-				"visible_bounds_width": 3,
+				"visible_bounds_width": 4,
 				"visible_bounds_height": 2.5,
 				"visible_bounds_offset": [0, 0.75, 0]
 			},
@@ -646,9 +646,9 @@
 							}
 						},
 						{
-							"origin": [-0.6, 9, 4.9],
+							"origin": [-0.6, 18.89104, 8.65753],
 							"size": [1.2, 2.3, 1.1],
-							"pivot": [0, 14.95, 5.4],
+							"pivot": [0, 17.95, 12.4],
 							"rotation": [88, 0, 0],
 							"uv": {
 								"north": {"uv": [27, 51], "uv_size": [1, 2]},

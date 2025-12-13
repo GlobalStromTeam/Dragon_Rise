@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.item.MK19Deployer;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.item.SHIELDDeployer;
 import com.redabysslucia.dragonrise_reforge.item.ZU23Deployer;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,5 +22,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
     public static final RegistryObject<Item> ZU23_DEPLOYER = REGISTRY.register("zu23", ZU23Deployer::new);
+    public static final RegistryObject<Item> SHIELD_DEPLOYER = REGISTRY.register("shield", SHIELDDeployer::new);
 
 }

@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:shield",
+  "MaxHealth": 40,
+  "MaxEnergy": 0,
+  "TurretPitchRange": [20, 89],
+  "EngineType": "Fixed",
+  "Mass": 0.05,
+  "HasLowHealthWarning": false,
+  "SelfHurtPercent": 0,
+  "VehicleContainerType": "One",
+  "SendHitParticles": false,
+  "Type": "Artillery"
+}
