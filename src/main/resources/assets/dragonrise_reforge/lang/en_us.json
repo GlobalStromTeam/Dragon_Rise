@@ -83,11 +83,18 @@
   "item.dragonrise_reforge.mk19": "MK19 Grenade Launcher",
   "superbwarfare.entry.vehicle.mk19": "MK19 Grenade Launcher",
   "drgonrise_reforge:mk19": "MK19 Grenade Launcher",
+  "entity.dragonrise_reforge.j16": "J-16",
+  "superbwarfare.entry.vehicle.j16": "J-16 Fighter",
+  "entity.dragonrise_reforge.vt4a1": "VT4A1",
+  "superbwarfare.entry.vehicle.j16": "VT4A1 Main Battle Tank - NORINCO Zhuhai Airshow Display Camouflage",
+  "entity.dragonrise_reforge.vt4b": "VT4B",
+  "superbwarfare.entry.vehicle.vt4b": "VT4B Main Battle Tank - Algeria",
 
   "dragonrise_reforge:500kg": "500kg Aerial Bomb",
   "dragonrise_reforge:pl8": "PL-8 IR AAM",
   "dragonrise_reforge:23mm": "23mm 23L Autocannon",
   "dragonrise_reforge:huo_fa6": "Huo Fa-6 Rocket",
+  "dragonrise_reforge:yj88c": "KD-88 ATGM",
 
   "dragonrise_reforge:ref_cannon": "30mm NEXTER 30M791 Autocannon",
   "dragonrise_reforge:gbu24": "GBU24 Aerial Bomb",

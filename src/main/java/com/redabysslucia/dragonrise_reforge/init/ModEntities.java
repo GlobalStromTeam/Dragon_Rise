@@ -30,6 +30,22 @@ public class ModEntities {
                        .sized(4.0f, 2.9f)
        );
 
+    public static final RegistryObject<EntityType<VT4A1Entity>> VT4A1 = register("vt4a1",
+            EntityType.Builder.of(VT4A1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<VT4BEntity>> VT4B = register("vt4b",
+            EntityType.Builder.of(VT4BEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
       public static final RegistryObject<EntityType<M1A2SEPV2Entity>> M1A2SEPV2 = register("m1a2sepv2",
               EntityType.Builder.of(M1A2SEPV2Entity::new, MobCategory.MISC)
                       .setTrackingRange(512)
