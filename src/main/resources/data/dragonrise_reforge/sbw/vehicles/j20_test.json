@@ -69,7 +69,7 @@
     },
     "Weapons": ["Missile","Missile2"]
   },
-  "HudType": "@Helicopter",
+  "HudType": "@Aircraft",
   "Weapons": {
     "Missile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
