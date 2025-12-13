@@ -46,6 +46,14 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
+    public static final RegistryObject<EntityType<ZTQ15Entity>> ZTQ15 = register("ztq15",
+            EntityType.Builder.of(ZTQ15Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
       public static final RegistryObject<EntityType<M1A2SEPV2Entity>> M1A2SEPV2 = register("m1a2sepv2",
               EntityType.Builder.of(M1A2SEPV2Entity::new, MobCategory.MISC)
                       .setTrackingRange(512)

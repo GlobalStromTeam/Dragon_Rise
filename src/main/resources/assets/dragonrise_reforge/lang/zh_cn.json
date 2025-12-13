@@ -76,10 +76,11 @@
   "entity.dragonrise_reforge.j16": "J-16",
   "superbwarfare.entry.vehicle.j16": "J16 重型战斗机",
   "entity.dragonrise_reforge.vt4a1": "VT4A1",
-  "superbwarfare.entry.vehicle.j16": "VT4A1 主战坦克 北方工业珠海航展展品涂装",
+  "superbwarfare.entry.vehicle.vt4a1": "VT4A1 主战坦克 北方工业珠海航展展品涂装",
   "entity.dragonrise_reforge.vt4b": "VT4B",
   "superbwarfare.entry.vehicle.vt4b": "VT4B 主战坦克 阿尔及利亚",
-
+  "entity.dragonrise_reforge.ztq15": "ZTQ-15",
+  "superbwarfare.entry.vehicle.ztq15": "ZTQ-15 轻量化主战坦克 无附加装甲",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
@@ -87,6 +88,7 @@
   "dragonrise_reforge:23mm": "23mm 23L航空机炮",
   "dragonrise_reforge:huo_fa6":"火发6 火箭弹",
   "dragonrise_reforge:yj88c": "空地-88 反坦克导弹",
+  "drgonrise_reforge:87": "87式 榴弹发射器",
 
   "dragonrise_reforge:ref_cannon": "30mm NEXTER 30M791 航空机炮",
   "dragonrise_reforge:gbu24": "GBU24 航空炸弹",
