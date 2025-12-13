@@ -39,6 +39,7 @@ public class ModTabs {
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.TYPE100.get()));
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.J20.get()));
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
                                 output.accept(ModItems.MK19_DEPLOYER.get());
                                 output.accept(ModItems.ZU23_DEPLOYER.get());
                             }

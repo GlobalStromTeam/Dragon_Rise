@@ -10,7 +10,7 @@
     "Transform": "Turret",
     "Position": [0, -1.3689, -1],
     "MinPitch": -4,
-    "MaxPitch": 60,
+    "MaxPitch": 40,
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
