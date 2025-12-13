@@ -27,7 +27,7 @@ public abstract class VariableEngineVehicle extends GeoVehicleEntity {
         super(pEntityType, pLevel);
     }
 
-    public void toggleChangeMode(){
+    public void toggleChangeMode() {
         engineTypeIndex = (engineTypeIndex + 1) % engineTypeList.size();
         var newMode = engineTypeList.get(engineTypeIndex);
         updateEngineCache(newMode);
@@ -40,7 +40,10 @@ public abstract class VariableEngineVehicle extends GeoVehicleEntity {
             this.variableEngineCache = switch (pEngineType) {
                 case WHEEL -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.Wheel.class);
                 case TRACK -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.Track.class);
-                case HELICOPTER -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.Helicopter.class);
+                case HELICOPTER -> {
+                    entityData.set(POWER, entityData.get(POWER) * 0.12f);
+                    yield DataLoader.GSON.fromJson(engineInfo, EngineInfo.Helicopter.class);
+                }
                 case SHIP -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.Ship.class);
                 case AIRCRAFT -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.Aircraft.class);
                 case WHEELCHAIR -> DataLoader.GSON.fromJson(engineInfo, EngineInfo.WheelChair.class);
@@ -54,7 +57,7 @@ public abstract class VariableEngineVehicle extends GeoVehicleEntity {
     }
 
     @Override
-    public void travel(){
+    public void travel() {
         var computed = computed();
 
         var engineType = computed.engineType;
@@ -84,7 +87,7 @@ public abstract class VariableEngineVehicle extends GeoVehicleEntity {
             }
         } else {
             //if(this.getFlyMode().equals("VTOL"))
-                this.variableEngineCache.work(this);
+            this.variableEngineCache.work(this);
 //            else{
 //                this.engineCacheMode2.work(this);
 //            }
