@@ -18,73 +18,7 @@ import java.util.Objects;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class NightVisionUtil {
 
-    @SubscribeEvent
-//    public static void onClientTick(TickEvent.ClientTickEvent event) {
-//
-//        var mc = Minecraft.getInstance();
-//        Player player = mc.player;
-//        if (player == null) return;
-//        if (player.isSpectator()) return;
-//
-//        if (player.getVehicle() instanceof INightVisionVehicle vehicle && vehicle.getNVEnable()) {
-//            Dragonrise_reforge.LOGGER.debug("1");
-//
-//            Minecraft.getInstance().gameRenderer.loadEffect(vehicle.getNightVisionShader());
-//        } else {
-//            if(mc.gameRenderer.currentEffect()!= null && mc.gameRenderer.currentEffect().getName().contains("night-vision")) {
-//                Minecraft.getInstance().gameRenderer.shutdownEffect();
-//            }
-//
-//        }
-//    }
-    public static void onEntityMount(EntityMountEvent event) {
 
-        if (event.getEntityMounting() instanceof Player player && event.getEntityBeingMounted() instanceof INightVisionVehicle vehicle) {
-            var mc = Minecraft.getInstance();
-            Player localPlayer = mc.player;
-            //if (player.isSpectator()) return;
 
-            if (player == localPlayer && vehicle.getNVEnable()) {
 
-                if (event.isMounting()) {
-                    mc.gameRenderer.loadEffect(vehicle.getNightVisionShader());
-                } else {
-                    if (mc.gameRenderer.currentEffect() != null && mc.gameRenderer.currentEffect().getName().contains("night-vision")) {
-                        mc.gameRenderer.shutdownEffect();
-                    }
-                }
-            }
-        }
-
-    }
-
-    @SubscribeEvent
-    public static void onKeyPressed(InputEvent.Key event) {
-        var mc = Minecraft.getInstance();
-        Player player = mc.player;
-        if (player == null) return;
-        if (player.isSpectator()) return;
-        int key = event.getKey();
-        if (key < 0) return;
-
-        if (event.getAction() == GLFW.GLFW_PRESS) {
-
-            if (player.getVehicle() instanceof INightVisionVehicle vehicle) {
-                if (ModKeyMappings.NIGHT_VISION.isPressed()) {
-
-                    vehicle.setNVEnable(!vehicle.getNVEnable());
-
-                    if (vehicle.getNVEnable()) {
-                        mc.gameRenderer.loadEffect(vehicle.getNightVisionShader());
-                    } else {
-                        if (mc.gameRenderer.currentEffect() != null && mc.gameRenderer.currentEffect().getName().contains("night-vision")) {
-                            mc.gameRenderer.shutdownEffect();
-                        }
-                    }
-
-                }
-            }
-
-        }
-    }
 }

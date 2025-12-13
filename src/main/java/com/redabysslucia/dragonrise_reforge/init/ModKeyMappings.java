@@ -16,7 +16,8 @@ import java.util.function.BiConsumer;
 @Mod.EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public enum ModKeyMappings {
 
-    NIGHT_VISION("nightvisionkey",GLFW.GLFW_KEY_X,"Toggle Realistic Night Vision Mode")
+    NIGHT_VISION("nightvisionkey",GLFW.GLFW_KEY_X,"Toggle Realistic Night Vision Mode"),
+    ENGINE_CHANGE_MODE_TOGGLE("enginechangekey",GLFW.GLFW_KEY_V,"Toggle Engine Change Mode")
     ;
 
     private final String description;

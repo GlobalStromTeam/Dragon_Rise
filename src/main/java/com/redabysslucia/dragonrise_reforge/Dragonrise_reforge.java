@@ -6,6 +6,7 @@ import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
+import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.PostChain;
@@ -52,6 +53,7 @@ public class Dragonrise_reforge {
                 // Some common setup code
                 LOGGER.info("HELLO FROM COMMON SETUP");
                 LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
+                ModNetwork.register();
         }
 
         //夜的视
