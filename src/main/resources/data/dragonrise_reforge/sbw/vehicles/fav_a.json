@@ -1,7 +1,13 @@
 {
   "ID": "dragonrise_reforge:fav_a",
-  "MaxHealth": 250,
+  "MaxHealth": 100,
   "MaxEnergy": 5000000,
+  "UpStep": 2.1,
+  "TurretPos": [-0.2051, 2.266825, -2.20038125],
+  "TurretTurnSpeed": [12, 11.5],
+  "TurretPitchRange": [-3, 45],
+  "BarrelPos": [-0.2051,2.40430625, -2.197475],
+  "TurretControllerIndex": 2,
   "OBB": [
     {
       "Size": [1.3125, 0.34375, 1.28125],
@@ -17,22 +23,22 @@
     },
     {
       "Size": [0.21875, 0.53125, 0.53125],
-      "Position": [-1.15625, 0.53125, 0.5625],
+      "Position": [-1.15625, 0.53125, 0.3625],
       "Part": "WheelLeft"
     },
     {
       "Size": [0.21875, 0.53125, 0.53125],
-      "Position": [-1.15625, 0.53125, -3.6875],
+      "Position": [-1.15625, 0.53125, -3.9875],
       "Part": "WheelLeft"
     },
     {
       "Size": [0.21875, 0.53125, 0.53125],
-      "Position": [1.15625, 0.53125, 0.5625],
+      "Position": [1.15625, 0.53125, 0.3625],
       "Part": "WheelRight"
     },
     {
       "Size": [0.21875, 0.53125, 0.53125],
-      "Position": [1.15625, 0.53125, -3.6875],
+      "Position": [1.15625, 0.53125, -3.9875],
       "Part": "WheelRight"
     }
   ],
@@ -41,11 +47,7 @@
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [
-        0.4375,
-        0.225,
-        -1.5625
-      ],
+      "Position": [0.4375, 0.225, -1.5625],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -53,24 +55,47 @@
     },
     {
       "IsEnclosed": false,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.4375, 0.225, -1.5625],
+      "MinPitch": -3,
+      "MaxPitch": 45,
+      "Sensitivity": [0.42, 0.55, 0.9]
+    },
+    {
+      "IsEnclosed": false,
+      "BanHand": false,
+      "Transform": "Vehicle",
+      "CameraPos": {
+        "Position": [0.0, 0.0, 0.0],
+        "Transform": "Barrel",
+        "Direction": "Barrel"
+      },
+      "Position": [0.2, 1.10, -2.9375],
+      "MinPitch": -5,
+      "MaxPitch": 45,
+      "MinYaw": -30,
+      "MaxYaw": 30,
+      "Sensitivity": [0.60, 0.95, 1.25],
+      "Weapons": ["Cannon"]
+    },
+    {
+      "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [
-        -0.4375,
-        0.225,
-        -1.5625
+        -0.5,
+        1.0,
+        -3.0
       ],
-      "MinPitch": -60,
-      "MaxPitch": 60,
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "CanRotateBody":true
     },
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [
         0.5,
-        0.5,
-        -3.3195375
+        1.0,
+        -3.9
       ],
       "CanRotateBody":true
     },
@@ -79,32 +104,53 @@
       "Transform": "Vehicle",
       "Position": [
         -0.5,
-        0.5,
-        -3.3195375
-      ],
-      "CanRotateBody":true
-    },
-    {
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [
-        0.5,
-        0.5,
-        -4.1495375
-      ],
-      "CanRotateBody":true
-    },
-    {
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [
-        -0.5,
-        0.5,
-        -4.1495375
+        1.0,
+        -3.9
       ],
       "CanRotateBody":true
     }
   ],
+  "Weapons": {
+    "Cannon": {
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "superbwarfare:projectile",
+      "DefaultZoom": 2,
+      "RPM": 450,
+      "Magazine": 120,
+      "EmptyReloadTime": 100,
+      "Velocity": 15,
+      "Damage": 5,
+      "HeatPerShoot": 6,
+      "NaturalCooldown": 1,
+      "RecoilTime": 31,
+      "RecoilForce": 1.62,
+      "ShootAnimationTime": 3,
+      "Spread": 0.6,
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0xFFC700",
+      "Name": "drgonrise_reforge:mk19",
+      "SoundInfo": {
+        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
+        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Change": "superbwarfare:into_missile"
+      },
+      "SoundRadius": 24,
+      "AmmoType": "superbwarfare:grenade_40mm",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [0.6051,-2.3430625, 2.097475]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      }
+    }
+  },
   "EngineType": "Wheel",
   "EngineInfo": {
     "Buoyancy": 0,
@@ -118,9 +164,9 @@
     "SteeringSpeed": 0.12,
     "EngineSoundVolume" : 0.6
   },
-  "UpStep": 1.5,
-  "Mass": 0.8,
-  "RotateOffsetHeight": 2.2,
+  "HasDecoy": true,
+  "RotateOffsetHeight": 0.5,
+  "Mass": 55,
   "DamageModifiers": [
     "minecraft:arrow * 0.2",
     "minecraft:trident * 0.4",
@@ -137,15 +183,14 @@
     "superbwarfare:projectile_hit * 0.8",
     "superbwarfare:grapeshot_hit * 0.2",
     "@#superbwarfare:aerial_bomb * 1.4",
-    "#superbwarfare:projectile * 0.16",
+    "#superbwarfare:projectile * 1.0",
     "superbwarfare:vehicle_strike * 10",
-    "@superbwarfare:cannon_shell * 0.6",
-    "@superbwarfare:small_cannon_shell * 0.8",
+    "@superbwarfare:cannon_shell * 1.6",
+    "@superbwarfare:small_cannon_shell * 1.8",
     "@superbwarfare:gun_grenade * 1.4",
     "@superbwarfare:rgo_grenade * 3",
     "@superbwarfare:hand_grenade * 2.5",
-    "@superbwarfare:mortar_shell * 2",
-    "All - 4"
+    "@superbwarfare:mortar_shell * 2"
   ],
   "VehicleContainerType": "Huge",
   "DestroyInfo": {
