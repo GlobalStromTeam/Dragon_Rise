@@ -361,7 +361,7 @@
     "CrashPassengers": true
   },
   "HUDColor": "0xFFC700",
-  "VehicleIcon": "superbwarfare:textures/vehicle_icon/mi_28_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ec665_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
