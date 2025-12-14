@@ -206,7 +206,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.03515625, 0.08308125, 1.73164375]],
+        "Positions": [[-0.4759125, 0.0478875, 0.740625]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",

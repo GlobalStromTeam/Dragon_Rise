@@ -330,5 +330,21 @@
         "stream": false
       }
     ]
+  },
+  "jet_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:j20/jet_engine",
+        "stream": false
+      }
+    ]
+  },
+  "jet_engine_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:j20/jet_engine_start",
+        "stream": false
+      }
+    ]
   }
 }

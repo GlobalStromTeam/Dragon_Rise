@@ -74,56 +74,6 @@
       "MinPitch": -6,
       "MaxPitch": 85,
       "Sensitivity": [0.57, 0.75, 0.9]
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0, 0.5, -1.5],
-      "CameraPos": {
-        "UseSimulate3P": true,
-        "Simulate3PPos": [6, 1]
-      }
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0, 0.5, -1.5],
-      "CameraPos": {
-        "UseSimulate3P": true,
-        "Simulate3PPos": [6, 1]
-      }
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0, 0.5, -1.5],
-      "CameraPos": {
-        "UseSimulate3P": true,
-        "Simulate3PPos": [6, 1]
-      }
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0, 0.5, -1.5],
-      "CameraPos": {
-        "UseSimulate3P": true,
-        "Simulate3PPos": [6, 1]
-      }
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0, 0.5, -1.5],
-      "CameraPos": {
-        "UseSimulate3P": true,
-        "Simulate3PPos": [6, 1]
-      }
     }
   ],
   "Weapons": {

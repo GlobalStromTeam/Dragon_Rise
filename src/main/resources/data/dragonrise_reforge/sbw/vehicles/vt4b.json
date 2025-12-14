@@ -4,27 +4,27 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [2.36875, 0.54, 4.5],
-      "Position": [0, 1.203125, -0.0625]
+      "Size": [1.96875, 0.54, 4.2],
+      "Position": [0, 1.203125, 0.23]
     },
     {
-      "Size": [2.36875, 0.09375, 2.7421875],
-      "Position": [0, 1.8, -1.5225]
+      "Size": [1.96875, 0.09375, 2.7421875],
+      "Position": [0, 1.8, -1.0225]
     },
     {
       "Part": "WheelLeft",
       "Size": [0.3375, 0.6328125, 4.1015625],
-      "Position": [-1.6640625, 1.04375, -0.025]
+      "Position": [-1.6640625, 0.84375, 0.1]
     },
     {
       "Part": "WheelRight",
       "Size": [0.3375, 0.6328125, 4.1015625],
-      "Position": [1.6640625, 1.04375, -0.025]
+      "Position": [1.6640625, 0.84375, 0.1]
     },
     {
       "Part": "MainEngine",
       "Size": [1.9921875, 0.5625, 1.4],
-      "Position": [0, 1.55, -3.025]
+      "Position": [0, 1.55, -2.425]
     },
     {
       "Part": "Turret",
@@ -156,7 +156,7 @@
               "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
               "VehicleReload3p": "superbwarfare:medium_missile_reload",
               "VehicleReloadSoundTime": 28,
-              "Change": "superbwarfare:into_missile"
+              "Change": "dragonrise_reforge:ztz99a_reload"
             },
             "SoundRadius": 12,
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_125.png"
