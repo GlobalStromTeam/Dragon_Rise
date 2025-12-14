@@ -81,6 +81,8 @@
   "superbwarfare.entry.vehicle.vt4b": "VT4B 主战坦克 阿尔及利亚",
   "entity.dragonrise_reforge.ztq15": "ZTQ-15",
   "superbwarfare.entry.vehicle.ztq15": "ZTQ-15 轻量化主战坦克 无附加装甲",
+  "entity.dragonrise_reforge.jas39e": "JAS39E",
+  "superbwarfare.entry.vehicle.jas39e": "JAS39E 鹰狮 战斗机",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
@@ -157,5 +159,8 @@
   "dragonrise_reforge:23sneb": "23型 SNEB 火箭弹",
 
   "dragonrise_reforge:gp105": "GP105 炮射反坦克导弹",
-  "dragonrise_reforge:gp125": "GP125 炮射反坦克导弹"
+  "dragonrise_reforge:gp125": "GP125 炮射反坦克导弹",
+
+  "dragonrise_reforge:27mm": "27mm Mauser BK27 航空机炮",
+  "dragonrise_reforge:aim120": "AIM120 主动雷达空对空导弹"
 }
