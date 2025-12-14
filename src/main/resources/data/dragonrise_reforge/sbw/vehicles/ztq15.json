@@ -49,8 +49,8 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.65324375, 0.92984375, 0.94730625],
-        "Transform": "Barrel",
+        "Position": [0.65324375, 0.92984375, 0.9],
+        "Transform": "Turret",
         "ZoomPosition": [0.0, 0.0, 0.0],
         "Direction": "Barrel"
       },
