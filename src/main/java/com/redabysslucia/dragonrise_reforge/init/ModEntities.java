@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
+import com.redabysslucia.dragonrise_reforge.entities.utils.JAS39EEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -155,6 +156,14 @@ public class ModEntities {
                        .setUpdateInterval(2)
                        .fireImmune()
                        .sized(4.0f, 2.5f)
+       );
+
+       public static final RegistryObject<EntityType<JAS39EEntity>> JAS39E = register("jas39e",
+              EntityType.Builder.of(JAS39EEntity::new, MobCategory.MISC)
+                       .setTrackingRange(512)
+                       .setUpdateInterval(2)
+                       .fireImmune()
+                      .sized(4.0f, 2.5f)
        );
 
         public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",

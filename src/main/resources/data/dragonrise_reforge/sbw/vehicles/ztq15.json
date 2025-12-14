@@ -49,8 +49,8 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.65324375, 0.92984375, 0.94730625],
-        "Transform": "Barrel",
+        "Position": [0.65324375, 0.92984375, 0.9],
+        "Transform": "Turret",
         "ZoomPosition": [0.0, 0.0, 0.0],
         "Direction": "Barrel"
       },
@@ -358,7 +358,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz99a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztq15_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {
