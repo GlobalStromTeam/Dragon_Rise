@@ -42,7 +42,7 @@ public class JAS39EEntity extends GeoVehicleEntity {
         }
         else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("EngineoFF "));
+                    ("EngineoFF"));
         }
     }
 
