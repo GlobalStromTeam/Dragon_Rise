@@ -280,9 +280,9 @@
     "LiftSpeed": 1,
     "SpeedRate": 0.6,
     "GearRotateAngle": 85,
-    "EngineStartSound": "dragonrise_reforge:jet_engine",
+    "EngineStartSound": "dragonrise_reforge:jet_engine_start",
     "EngineSoundVolume" : 0.8
   },
   "TerrainCompat": [[-0.243, 0, 4.63], [-2.58, 0, -0.74], [2.58, 0, -0.74]],
-  "EngineSound": "dragonrise_reforge:jet_engine_start"
+  "EngineSound": "dragonrise_reforge:jet_engine"
 }

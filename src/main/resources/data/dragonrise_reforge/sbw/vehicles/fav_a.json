@@ -3,10 +3,10 @@
   "MaxHealth": 100,
   "MaxEnergy": 5000000,
   "UpStep": 2.1,
-  "TurretPos": [-0.2051, 2.266825, -2.20038125],
+  "TurretPos": [0.19840625, 2.266825, -2.20038125],
   "TurretTurnSpeed": [12, 11.5],
   "TurretPitchRange": [-3, 45],
-  "BarrelPos": [-0.2051,2.40430625, -2.197475],
+  "BarrelPos": [0, 0.15, 0],
   "TurretControllerIndex": 2,
   "OBB": [
     {
@@ -142,12 +142,8 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.6051,-2.3430625, 2.097475]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
+        "Positions": [[0,0, 0]],
+        "Directions": ["Barrel"]
       }
     }
   },
@@ -199,7 +195,7 @@
     "ExplosionRadius": 5
   },
   "ThirdPersonCameraPos": [0, 1, 5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/sx1_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/fav_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "superbwarfare:lav_150_engine",
