@@ -50,7 +50,20 @@ public class ModTabs {
                         output.accept(ModItems.MK19_DEPLOYER.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
-                            }
+                    }
+                    ).build()
+    );
+
+    public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.dragonrise_reforge.misc_tab.title"))
+                    .icon(() -> new ItemStack(ModItems.MISC_ICON.get()))
+                    .displayItems((param, output) -> {
+                        output.accept(ModItems.MK19_DEPLOYER.get());
+                        output.accept(ModItems.ZU23_DEPLOYER.get());
+                        output.accept(ModItems.CNCHEST.get());
+                        output.accept(ModItems.CNFAST.get());
+                    }
                     ).build()
     );
 }

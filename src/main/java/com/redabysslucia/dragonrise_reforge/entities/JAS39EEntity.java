@@ -1,4 +1,4 @@
-package com.redabysslucia.dragonrise_reforge.entities.utils;
+package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;

@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
-import com.redabysslucia.dragonrise_reforge.entities.utils.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

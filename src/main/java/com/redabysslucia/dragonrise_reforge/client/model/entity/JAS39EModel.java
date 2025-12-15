@@ -2,8 +2,7 @@ package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.redabysslucia.dragonrise_reforge.entities.J20Entity;
-import com.redabysslucia.dragonrise_reforge.entities.utils.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 

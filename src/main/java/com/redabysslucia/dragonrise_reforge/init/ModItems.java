@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.item.armor.CNfast;
+import com.redabysslucia.dragonrise_reforge.item.armor.CNchest;
 import com.redabysslucia.dragonrise_reforge.item.MK19Deployer;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.item.SHIELDDeployer;
@@ -20,8 +22,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> TAB_ICON = REGISTRY.register("tab_icon", () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> MISC_ICON = REGISTRY.register("misc_icon", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
     public static final RegistryObject<Item> ZU23_DEPLOYER = REGISTRY.register("zu23", ZU23Deployer::new);
     public static final RegistryObject<Item> SHIELD_DEPLOYER = REGISTRY.register("shield", SHIELDDeployer::new);
+    public static final RegistryObject<Item> CNCHEST = REGISTRY.register("cnchest", CNchest::new);
+    public static final RegistryObject<Item> CNFAST = REGISTRY.register("cnfast", CNfast::new);
 
 }
