@@ -438,7 +438,7 @@
 					"pivot": [0, 0, 14]
 				},
 				{
-					"name": "wheelL0Turn",
+					"name": "wheelR0Turn",
 					"parent": "wheel",
 					"pivot": [-18.55, 8, -9],
 					"cubes": [
@@ -455,7 +455,7 @@
 					]
 				},
 				{
-					"name": "wheelL1",
+					"name": "wheelL2",
 					"parent": "wheel",
 					"pivot": [-18.55, 8, 59],
 					"cubes": [
@@ -472,7 +472,7 @@
 					]
 				},
 				{
-					"name": "wheelR0Turn",
+					"name": "wheelL0Turn",
 					"parent": "wheel",
 					"pivot": [18.55, 8, -9],
 					"cubes": [
@@ -489,7 +489,7 @@
 					]
 				},
 				{
-					"name": "wheelR1",
+					"name": "wheelL1",
 					"parent": "wheel",
 					"pivot": [18.55, 8, 59],
 					"cubes": [

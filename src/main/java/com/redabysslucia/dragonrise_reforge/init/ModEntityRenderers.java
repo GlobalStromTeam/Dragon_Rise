@@ -41,6 +41,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZU23.get(), ZU23Renderer::new);
                 event.registerEntityRenderer(ModEntities.EC665.get(), EC665Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHIELD.get(), SHIELDRenderer::new);
+                event.registerEntityRenderer(ModEntities.TOYOTASEIKI.get(), TOYOTASEIKIRenderer::new);
         }
 
 }
