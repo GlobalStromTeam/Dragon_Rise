@@ -48,9 +48,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
-                        output.accept(ModItems.MK19_DEPLOYER.get());
-                        output.accept(ModItems.ZU23_DEPLOYER.get());
-                        output.accept(ModItems.SHIELD_DEPLOYER.get());
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                     }
                     ).build()
     );
@@ -62,19 +60,10 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         output.accept(ModItems.MK19_DEPLOYER.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
+                        output.accept(ModItems.SHIELD_DEPLOYER.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNFAST.get());
                     }
-                    ).build()
-    );
-
-    public static final RegistryObject<CreativeModeTab> HIGH_TAB = TABS.register("dragonrise_reforge_high",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("high_group.dragonrise_reforge.title"))
-                    .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
-                    .displayItems((param, output) -> {
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
-                            }
                     ).build()
     );
 }
