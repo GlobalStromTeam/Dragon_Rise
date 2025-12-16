@@ -298,7 +298,7 @@
     "superbwarfare:grapeshot_hit * 0.1",
     "#superbwarfare:projectile_absolute * 0.15",
     "@superbwarfare:igla_9k38_missile * 0.3",
-    "@superbwarfare:small_cannon_shell * 0.25",
+    "@superbwarfare:small_cannon_shell * 0.40",
     "@superbwarfare:c4 * 4",
     "@#superbwarfare:at_rocket * 1.1",
     "@superbwarfare:gun_grenade * 1.25",

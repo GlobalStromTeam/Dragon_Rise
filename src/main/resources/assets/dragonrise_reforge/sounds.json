@@ -1,4 +1,20 @@
 {
+  "fire_sound_57mm_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/57mm_far",
+        "stream": false
+      }
+    ]
+  },
+  "fire_sound_57mm": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/57mm",
+        "stream": false
+      }
+    ]
+  },
   "wheel": {
     "sounds": [
       {
@@ -7,7 +23,7 @@
       }
     ]
   },
-  "30mm": {
+  "fire_sound_30mm": {
     "sounds": [
       {
         "name": "dragonrise_reforge:firesound/30mm",

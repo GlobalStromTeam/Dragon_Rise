@@ -189,8 +189,8 @@
   "VehicleContainerType": "Small",
   "DestroyInfo": {
     "ParticleType": "Huge",
-    "ExplosionDamage": 120,
-    "ExplosionRadius": 7
+    "ExplosionDamage": 80,
+    "ExplosionRadius": 4
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/625e_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
