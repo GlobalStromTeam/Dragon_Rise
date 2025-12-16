@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:t90mh",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/t90mhigh.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/t90mhight.png"
+  }
+}
