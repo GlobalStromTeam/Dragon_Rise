@@ -3396,7 +3396,7 @@
 					]
 				},
 				{
-					"name": "bone5",
+					"name": "wingLB",
 					"parent": "wingL",
 					"pivot": [76.15737, 30.7752, 79.39427],
 					"cubes": [
@@ -3599,7 +3599,7 @@
 					]
 				},
 				{
-					"name": "bone6",
+					"name": "wingRB",
 					"parent": "wingR",
 					"pivot": [-76.15737, 30.7752, 79.39427],
 					"cubes": [
@@ -3635,7 +3635,7 @@
 					]
 				},
 				{
-					"name": "flapL2",
+					"name": "wingLR",
 					"parent": "wing",
 					"pivot": [34, 25, 111],
 					"cubes": [
@@ -3710,7 +3710,7 @@
 					]
 				},
 				{
-					"name": "flapR2",
+					"name": "wingRR",
 					"parent": "wing",
 					"pivot": [-34, 25, 111],
 					"cubes": [
