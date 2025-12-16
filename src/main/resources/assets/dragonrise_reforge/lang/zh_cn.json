@@ -85,6 +85,8 @@
   "superbwarfare.entry.vehicle.jas39e": "JAS39E 鹰狮 战斗机",
   "entity.dragonrise_reforge.fav_a": "FAV A",
   "superbwarfare.entry.vehicle.fav_a": "FAV 运动越野车",
+  "entity.dragonrise_reforge.2s38": "2S38",
+  "superbwarfare.entry.vehicle.2s38": "2S38 偏流 火力支援车",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
@@ -164,5 +166,9 @@
   "dragonrise_reforge:gp125": "GP125 炮射反坦克导弹",
 
   "dragonrise_reforge:27mm": "27mm Mauser BK27 航空机炮",
-  "dragonrise_reforge:aim120": "AIM120 主动雷达空对空导弹"
+  "dragonrise_reforge:aim120": "AIM120 主动雷达空对空导弹",
+
+  "dragonrise_reforge:3UBM22": "57mm 3UBM22 穿甲弹",
+  "dragonrise_reforge:OR-281U": "57mm OR-281U 榴弹",
+  "dragonrise_reforge:pktm": "7.62mm PKTM 同轴机枪"
 }

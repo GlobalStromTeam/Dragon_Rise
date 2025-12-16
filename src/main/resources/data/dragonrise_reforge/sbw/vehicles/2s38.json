@@ -1,34 +1,30 @@
 {
   "ID": "dragonrise_reforge:2s38",
-  "MaxHealth": 300,
+  "MaxHealth": 200,
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.625, 0.8, 3.375],
-      "Position": [0, 1.37, -1.12]
+      "Size": [1.8125, 0.5625, 3.15625],
+      "Position": [0.0, 1.1875, 0.03125]
     },
     {
-      "Size": [1.625, 0.46, 1],
-      "Position": [0, 1.28, 3]
-    },
-    {
-      "Size": [0.28, 0.7, 4.03],
-      "Position": [1.53, 0.843, -0.74],
+      "Size": [0.21875, 0.375, 3.0],
+      "Position": [-1.28125, 0.375, 0.125],
       "Part": "WheelLet"
     },
     {
-      "Size": [0.28, 0.7, 4.03],
-      "Position": [-1.53, 0.843, -0.74],
+      "Size": [0.21875, 0.375, 3.0],
+      "Position": [1.28125, 0.375, 0.125],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.71, 0.53, 0.90],
-      "Position": [-0.84, 1.67, 1.28],
+      "Size": [1.3125, 0.59375, 0.875],
+      "Position": [0.0, 1.21875, -2.25],
       "Part": "MainEngine"
     },
     {
-      "Size": [1.125, 0.31, 1.43],
-      "Position": [0, 0.46875, 0],
+      "Size": [0.625, 0.40625, 0.9375],
+      "Position": [0.0, 0.2, -0.3125],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -42,10 +38,12 @@
         "Position": [0.3796875, 0.9835125, -0.4790625],
         "Transform": "Turret",
         "ZoomPosition": [0.0, 0.0, 0.0],
-        "Direction": "Barrel"
+        "Direction": "Barrel",
+        "MinPitch": -7,
+        "MaxPitch": 75
       },
       "Transform": "Turret",
-      "Position": [0.77734375, 0.64138125, 1.8851125],
+      "Position": [0, 0, 0],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
@@ -61,20 +59,21 @@
       "Projectile": "superbwarfare:cannon_shell",
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
-      "Magazine": 1,
+      "Magazine": 60,
       "EmptyReloadTime": 10,
       "Velocity": 40,
-      "Damage": 500,
+      "Damage": 350,
+      "RPM": 60,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "RecoilTime": 42,
       "RecoilForce": 1.0,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
-      "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
+      "ShootAnimationTime": 20,
+      "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_dtc10105",
+      "Name": "dragonrise_reforge:3UBM22",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -85,12 +84,22 @@
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
             "Damage": 250,
-            "ExplosionDamage": 120,
-            "ExplosionRadius": 10,
-            "Name": "dragonrise_reforge:dtb10105"
+            "ExplosionDamage": 60,
+            "ExplosionRadius": 4,
+            "Name": "dragonrise_reforge:OR-281U"
           }
         }
       ],
+      "SeekWeaponInfo": {
+        "SeekDirection": "Barrel",
+        "SeekRange": 384,
+        "SeekAngle": 20,
+        "SeekTime": 20,
+        "MinTargetHeight": 3,
+        "MinTargetSize": 0.1,
+        "OnlyLockEntity": true,
+        "CalculateTrajectory": true
+      },
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
         "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
@@ -109,7 +118,7 @@
       }
     },
     "MachineGun": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -132,7 +141,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:QJT",
+      "Name": "dragonrise_reforge:pktm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -204,7 +213,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/zbd04a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/2s38_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "APC",
   "CollisionLevel": {
