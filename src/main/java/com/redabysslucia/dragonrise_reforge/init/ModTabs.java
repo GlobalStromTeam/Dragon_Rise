@@ -49,6 +49,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                     }
                     ).build()
     );
@@ -66,14 +67,4 @@ public class ModTabs {
                     }
                     ).build()
     );
-
-    public static final RegistryObject<CreativeModeTab> UNREAL_TAB = TABS.register("unreal_tab",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("item_group.dragonrise_reforge.unreal_tab.title"))
-                    .icon(() -> new ItemStack(ModItems.MISC_ICON.get()))
-                    .displayItems((param, output) -> {
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
-                    }
-                    ).build()
-            );
 }
