@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -280,6 +281,14 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune().sized(0.5f, 1.35f)
+    );
+
+    public static final RegistryObject<EntityType<CyborgTankEntity>> CYBORG_TANK = register("cyborg_tank",
+            EntityType.Builder.of(CyborgTankEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.5f, 2.4f)
     );
 
 

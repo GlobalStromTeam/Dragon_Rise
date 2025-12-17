@@ -1,9 +1,13 @@
 {
   "dragonrise_reforge": "卓越前线：巨龙崛起",
 
+
   "dragonrise_reforge.keyinfo.nightvisionkey": "开关夜视仪",
 
   "item_group.dragonrise_reforge.title": "巨龙崛起",
+  "item_group.dragonrise_reforge.misc_tab.title": "龙勃物品",
+  "item_group.dragonrise_reforge.unreal_tab.title": "龙勃彩蛋",
+
   "info.dragonrise_reforge.ztz99a": "ZTZ-99A是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
   "info.dragonrise_reforge.zhi10me": "Z-10ME 武装直升机",
   "info.dragonrise_reforge.ka50": "卡莫夫-50 武装直升机",
@@ -16,6 +20,8 @@
   "info.dragonrise_reforge.ztz99bh": "装甲-坦克-主战-99B式 主战坦克（附加装甲，重型武器站）",
   "info.dragonrise_reforge.m1a2sepv2": "M1A2 艾布拉姆斯主战坦克（SEPv2套件）",
   "info.dragonrise_reforge.sx1": "SX-1",
+  "info.dragonrise_reforge.cyborg_tank": "这款机器人坦克厚颜无耻地抄袭了超级地球坦克的设计，其在众多方面的缺陷显而易见，以至于在此一一列举都显得不切实际。",
+
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "superbwarfare.entry.vehicle.ztz99a": "装甲-坦克-主战-99A式",
   "superbwarfare.page.vehicle.ztz99a1": "$(thing)ZTZ-99A$()是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。$(p)战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",
@@ -87,6 +93,7 @@
   "superbwarfare.entry.vehicle.fav_a": "FAV 运动越野车",
   "entity.dragonrise_reforge.2s38": "2S38",
   "superbwarfare.entry.vehicle.2s38": "2S38 偏流 火力支援车",
+  "entity.dragonrise_reforge.cyborg_tank": "湮灭坦克",
 
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
@@ -170,5 +177,10 @@
 
   "dragonrise_reforge:3UBM22": "57mm 3UBM22 穿甲弹",
   "dragonrise_reforge:OR-281U": "57mm OR-281U 榴弹",
-  "dragonrise_reforge:pktm": "7.62mm PKTM 同轴机枪"
+  "dragonrise_reforge:pktm": "7.62mm PKTM 同轴机枪",
+
+  "dragonrise_reforge:fusion_battle_cannon_beam": "聚变能束炮",
+  "dragonrise_reforge:fusion_battle_cannon_explosive": "聚变电浆炮",
+  "dragonrise_reforge:coax_fusion_cycler": "同轴激光炮",
+  "dragonrise_reforge:heavy_fusion_repeater": "重型双管离子炮"
 }

@@ -362,5 +362,85 @@
         "stream": false
       }
     ]
+  },
+  "cyborg_tank_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_engine",
+        "stream": false
+      }
+    ]
+  },
+    "cyborg_tank_fire_1p": {
+        "sounds": [
+        {
+            "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_1p",
+            "stream": false
+        }
+        ]
+    },
+    "cyborg_tank_fire_3p": {
+        "sounds": [
+        {
+            "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_3p",
+            "stream": false
+        }
+        ]
+    },
+    "cyborg_tank_fire_3p_far": {
+        "sounds": [
+        {
+            "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_3p_far",
+            "stream": false
+        }
+        ]
+    },
+  "cyborg_tank_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_3p_very_far",
+        "stream": false
+      }
+    ]
+  },
+  "cyborg_tank_fire_coax": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_coax",
+        "stream": false
+      }
+    ]
+  },
+  "cyborg_tank_fire_coax_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_coax_far",
+        "stream": false
+      }
+    ]
+  },
+  "cyborg_tank_fire_station": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_station",
+        "stream": false
+      }
+    ]
+  },
+  "cyborg_tank_fire_station_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_fire_station_far",
+        "stream": false
+      }
+    ]
+  },
+  "cyborg_tank_reload": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_reload",
+        "stream": false
+      }
+    ]
   }
 }

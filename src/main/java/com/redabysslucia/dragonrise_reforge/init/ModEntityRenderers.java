@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -44,6 +45,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.EC665.get(), EC665Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHIELD.get(), SHIELDRenderer::new);
                 event.registerEntityRenderer(ModEntities.TOYOTASEIKI.get(), TOYOTASEIKIRenderer::new);
+                event.registerEntityRenderer(ModEntities.CYBORG_TANK.get(), CyborgTankRenderer::new);
         }
 }
 
