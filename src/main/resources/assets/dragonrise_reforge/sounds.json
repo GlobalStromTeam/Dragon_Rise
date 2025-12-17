@@ -450,5 +450,13 @@
         "stream": false
       }
     ]
+  },
+    "57_cannon_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/57mm",
+        "stream": false
+      }
+    ]
   }
 }
