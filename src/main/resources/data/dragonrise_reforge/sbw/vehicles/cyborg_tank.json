@@ -43,7 +43,7 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8, 0.6, 0.45],
+      "Position": [0.8, 0.4, 0.75],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -10,
