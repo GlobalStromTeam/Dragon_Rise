@@ -1,10 +1,10 @@
-package com.redabysslucia.dragonrise_reforge.client.layer.special;
+package com.redabysslucia.dragonrise_reforge.client.layer;
 
 
 import com.atsuishio.superbwarfare.client.renderer.ModRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-
+import com.redabysslucia.dragonrise_reforge.entities.J20Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;

@@ -1515,7 +1515,7 @@
 					]
 				},
 				{
-					"name": "bone6",
+					"name": "pg1989",
 					"parent": "barrel",
 					"pivot": [0, 30.25, -1.75],
 					"cubes": [
@@ -1585,12 +1585,12 @@
 				},
 				{
 					"name": "octagon19",
-					"parent": "bone6",
+					"parent": "pg1989",
 					"pivot": [0, 30.25, -1.75]
 				},
 				{
 					"name": "octagon18",
-					"parent": "bone6",
+					"parent": "pg1989",
 					"pivot": [0, 30.25, -80.5],
 					"cubes": [
 						{

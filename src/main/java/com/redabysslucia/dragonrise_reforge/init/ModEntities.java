@@ -299,6 +299,14 @@ public class ModEntities {
                     .sized(4.5f, 2.4f)
     );
 
+    public static final RegistryObject<EntityType<Project640Entity>> PROJECT640 = register("project640",
+            EntityType.Builder.of(Project640Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.5f, 2.4f)
+    );
+
 
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

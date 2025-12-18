@@ -23,7 +23,8 @@
 				{
 					"name": "main",
 					"parent": "base",
-					"pivot": [20.25, 23.4918, 15.1937]
+					"pivot": [6.125, 13.6135, -7.86756],
+					"rotation": [-2, 0, 0]
 				},
 				{
 					"name": "lm",
@@ -3152,7 +3153,8 @@
 				{
 					"name": "Wheel",
 					"parent": "root",
-					"pivot": [21, 7.625, -45]
+					"pivot": [6.125, 13.6135, -7.86756],
+					"rotation": [-2, 0, 0]
 				},
 				{
 					"name": "WheelL",
@@ -3727,7 +3729,8 @@
 				{
 					"name": "TrackL",
 					"parent": "root",
-					"pivot": [0, 17.375, -18.75]
+					"pivot": [6.125, 13.6135, -7.86756],
+					"rotation": [-2, 0, 0]
 				},
 				{
 					"name": "bone15",
@@ -3835,7 +3838,8 @@
 				{
 					"name": "TrackR",
 					"parent": "root",
-					"pivot": [0, 17.375, -18.75]
+					"pivot": [6.125, 13.6135, -7.86756],
+					"rotation": [-2, 0, 0]
 				},
 				{
 					"name": "bone16",

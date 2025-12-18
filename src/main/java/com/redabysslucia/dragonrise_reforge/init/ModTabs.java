@@ -51,6 +51,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
                     }
                     ).build()
     );
