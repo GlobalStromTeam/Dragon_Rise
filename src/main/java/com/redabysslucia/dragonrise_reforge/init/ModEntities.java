@@ -133,6 +133,14 @@ public class ModEntities {
                       .setUpdateInterval(2)
                       .fireImmune()
                       .sized(4.5f, 2.9f)
+      );
+
+    public static final RegistryObject<EntityType<AV8BEntity>> AV8B = register("av8b",
+            EntityType.Builder.of(AV8BEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.5f, 2.9f)
     );
 
         public static final RegistryObject<EntityType<Z10MEEntity>> Z10ME = register("z10me",
