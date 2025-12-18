@@ -127,6 +127,14 @@ public class ModEntities {
                         .sized(4.5f, 2.9f)
         );
 
+    public static final RegistryObject<EntityType<J35Entity>> J35 = register("j35",
+            EntityType.Builder.of(J35Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.5f, 2.9f)
+    );
+
       public static final RegistryObject<EntityType<REFALEEntity>> REFALE = register("refale",
               EntityType.Builder.of(REFALEEntity::new, MobCategory.MISC)
                       .setTrackingRange(512)
@@ -137,6 +145,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<AV8BEntity>> AV8B = register("av8b",
             EntityType.Builder.of(AV8BEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.5f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<J8Entity>> J8 = register("j8",
+            EntityType.Builder.of(J8Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
