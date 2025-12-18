@@ -60,7 +60,6 @@
       },
       "Position": [-0.63, 0.7, 3],
       "Weapons": ["PassengerMachineGun"],
-      "Orientation": 0,
       "MinPitch": -5,
       "MaxPitch": 7,
       "MinYaw": -15,
@@ -78,7 +77,7 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cyborg/fusion_battle_cannon.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",
@@ -86,7 +85,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 120,
-      "Velocity": 40,
+      "Velocity": 25,
       "Damage": 1500,
       "ExplosionDamage": 100,
       "ExplosionRadius": 6,
@@ -103,7 +102,6 @@
         {
           "Ammo": "superbwarfare:he_5_inches",
           "Override": {
-            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
@@ -133,17 +131,17 @@
       }
     },
     "MachineGun": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cyborg/coax_fusion_cycler.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Spread": 0.25,
+      "Spread": 1.0,
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 1200,
       "Damage": 35,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 20,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 2.5,
@@ -152,7 +150,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.22, -0.04, 0.85]],
+        "Positions": [[-0.5, 0.2, 0.85]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -167,17 +165,17 @@
       "SoundRadius": 16
     },
     "PassengerMachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cyborg/heavy_fusion_repeater.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Spread": 0.25,
+      "Spread": 1.0,
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 2,
       "RPM": 400,
       "Damage": 60,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 20,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 4.5,
@@ -186,7 +184,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, 0, 1]],
+        "Positions": [[-0.1, 0, 1],[0.1, 0, 1]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
