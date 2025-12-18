@@ -18,38 +18,45 @@ public class ModTabs {
                     .title(Component.translatable("item_group.dragonrise_reforge.title"))
                     .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
                     .displayItems((param, output) -> {
+                        //cn
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4B.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTQ15.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TYPE100.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10ME.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J10.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J20.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J35.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
+
+                        //ru
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
+
+                        //nato
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AMX56.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.TYPE100.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J20.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
+
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                                 output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
                     }
