@@ -307,9 +307,18 @@ public class ModEntities {
                     .sized(4.5f, 2.4f)
     );
 
+    public static final RegistryObject<EntityType<TESTEntity>> TEST = register("test",
+            EntityType.Builder.of(TESTEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(10)
+                    .fireImmune()
+                    .sized(40.5f, 20.4f)
+    );
 
 
-        private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
+
+
+    private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
                 return REGISTRY.register(name, () -> entityTypeBuilder.build(name));
         }
 

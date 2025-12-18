@@ -48,6 +48,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TOYOTASEIKI.get(), TOYOTASEIKIRenderer::new);
                 event.registerEntityRenderer(ModEntities.CYBORG_TANK.get(), CyborgTankRenderer::new);
                 event.registerEntityRenderer(ModEntities.PROJECT640.get(), Project640Renderer::new);
+                event.registerEntityRenderer(ModEntities.TEST.get(), TESTRenderer::new);
         }
 }
 
