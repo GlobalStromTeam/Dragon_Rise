@@ -1,11 +1,11 @@
 {
-  "dragonrise_reforge": "卓越前线：巨龙崛起",
+  "dragonrise_reforge": "巨龙崛起",
 
+  "dragonrise_reforge.keyinfo.nightvisionkey": "夜视仪",
+  "dragonrise_reforge.keyinfo.enginechangekey": "切换垂直起降",
 
-  "dragonrise_reforge.keyinfo.nightvisionkey": "开关夜视仪",
-
-  "item_group.dragonrise_reforge.title": "巨龙崛起",
-  "item_group.dragonrise_reforge.misc_tab.title": "龙勃物品",
+  "item_group.dragonrise_reforge.title": "巨龙崛起:载具",
+  "item_group.dragonrise_reforge.misc_tab.title": "巨龙崛起:物品",
   "item_group.dragonrise_reforge.unreal_tab.title": "龙勃彩蛋",
 
   "info.dragonrise_reforge.ztz99a": "ZTZ-99A是一款主战坦克，可搭载3人，拥有强大的装甲防护但不具备浮渡能力。战车配备了能够干扰制导锁定的烟雾发生器，每隔一段时间能自动补充烟雾弹。",

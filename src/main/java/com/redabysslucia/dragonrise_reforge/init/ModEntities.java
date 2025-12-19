@@ -331,7 +331,13 @@ public class ModEntities {
                     .sized(40.5f, 20.4f)
     );
 
-
+    public static final RegistryObject<EntityType<SpacebagEntity>> SPACEBAG = register("spacebag",
+            EntityType.Builder.of(SpacebagEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(10)
+                    .fireImmune()
+                    .sized(40.5f, 20.4f)
+    );
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

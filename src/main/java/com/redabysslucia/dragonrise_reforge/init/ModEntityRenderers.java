@@ -51,6 +51,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.CYBORG_TANK.get(), CyborgTankRenderer::new);
                 event.registerEntityRenderer(ModEntities.PROJECT640.get(), Project640Renderer::new);
                 event.registerEntityRenderer(ModEntities.TEST.get(), TESTRenderer::new);
+                event.registerEntityRenderer(ModEntities.SPACEBAG.get(), SpacebagRenderer::new);
         }
 }
 
