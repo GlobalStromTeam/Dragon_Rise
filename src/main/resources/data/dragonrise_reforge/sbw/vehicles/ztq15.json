@@ -113,7 +113,7 @@
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 60,
+      "EmptyReloadTime": 80,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -157,11 +157,12 @@
             "RecoilForce": 0.05,
             "Crosshair": "@VehicleCommonMissile",
             "SoundInfo": {
-              "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
-              "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
-              "VehicleReload3p": "superbwarfare:medium_missile_reload",
-              "VehicleReloadSoundTime": 28,
-              "Change": "superbwarfare:into_missile"
+              "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
+              "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
+              "Fire3PFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+              "Fire3PVeryFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+              "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
+              "Change": "superbwarfare:into_cannon"
             },
             "SoundRadius": 12,
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_105.png"
@@ -169,14 +170,14 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
-        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+        "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
+          "dragonrise_reforge:zbd04a_100mm_reload"
         ]
       },
       "SoundRadius": 32,

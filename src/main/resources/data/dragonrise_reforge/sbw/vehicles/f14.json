@@ -102,7 +102,7 @@
       "Spread": 0.5,
       "Name": "drgonrise_reforge:m61a4",
       "SoundInfo": {
-        "FireSoundInstances": "dragonrise_reforge:30mm",
+        "FireSoundInstances": "superbwarfare:a_10a_fire",
         "Change": "superbwarfare:into_cannon"
       },
       "Crosshair": "@AirCraftCommon",
