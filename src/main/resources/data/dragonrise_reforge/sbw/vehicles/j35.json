@@ -5,56 +5,39 @@
   "OBB": [
     {
       "Part": "MainEngine",
-      "Size": [0.84375, 0.625, 6.5625],
-      "Position": [0.8125, 1.75, -0.5625]
+      "Size": [1.4375, 0.40625, 0.96875],
+      "Position": [0.0, 1.71875, -7.28125]
     },
     {
-      "Part": "SubEngine",
-      "Size": [0.84375, 0.625, 6.5625],
-      "Position": [-0.8125, 1.75, -0.5625]
+      "Size": [0.90625, 0.53125, 2.3359375],
+      "Position": [0.0, 1.71875, 4.7890625]
     },
     {
-      "Size": [0.78125, 0.625, 2.09375],
-      "Position": [0, 1.75, 7.90625]
+      "Size": [2.125, 0.53125, 4.375],
+      "Position": [0.0, 1.71875, -1.9375]
     },
     {
-      "Size": [2.125, 0.15625, 1.625],
-      "Position": [-2.09375, 2.15625, -0.6875]
+      "Size": [3.90625, 0.0625, 0.75],
+      "Position": [0.0, 1.8125, -0.4375]
     },
     {
-      "Size": [0.40625, 1.28125, 1.1875],
-      "Position": [2.5625, 3.28125, -5.3125]
+      "Size": [6.78125, 0.0625, 1.4375],
+      "Position": [0.0, 1.8125, -2.625]
     },
     {
-      "Size": [0.40625, 1.28125, 1.1875],
-      "Position": [-2.5625, 3.28125, -5.3125]
-    },
-    {
-      "Size": [3.1875, 0.15625, 1.5625],
-      "Position": [-3.15625, 2.15625, -3.8125]
-    },
-    {
-      "Size": [3.1875, 0.15625, 1.5625],
-      "Position": [3.15625, 2.15625, -3.8125]
-    },
-    {
-      "Size": [2.125, 0.15625, 1.625],
-      "Position": [2.09375, 2.15625, -0.6875]
-    },
-    {
-      "Size": [3.53125, 0.15625, 1.21875],
-      "Position": [0, 2.15625, 3.53125]
+      "Size": [4.5625, 0.0625, 0.625],
+      "Position": [0.0, 1.8125, -4.6875]
     }
   ],
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0.0, 1.0, 6.483425],
+    "Position": [0.0, 0.9445875, 3.97381875],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 2.605, 6.483425],
+      "Position": [0.0, 2.665625, 3.9375],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
       "AircraftCameraPos": [0, 2.75, -14]
@@ -67,59 +50,16 @@
       "EjectDirection": "Up",
       "EjectForce": 4
     },
-    "Weapons": ["Missile","Missile2"]
+    "Weapons": ["Missile2"]
   },
   "HudType": "@Aircraft",
   "Weapons": {
-    "Missile": {
-      "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl10.png",
-      "DefaultZoom": 2,
-      "DefaultFireMode": "Semi",
-      "AvailableFireModes": "Semi",
-      "Magazine": 2,
-      "EmptyReloadTime": 260,
-      "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:pl10",
-      "Damage": 260,
-      "ExplosionDamage": 90,
-      "ExplosionRadius": 6,
-      "Velocity": 3,
-      "SeekWeaponInfo": {
-        "SeekDirection": "Default",
-        "SeekRange": 384,
-        "SeekAngle": 20,
-        "SeekTime": 5,
-        "MinTargetHeight": 10,
-        "MinTargetSize": 0.1,
-        "OnlyLockEntity": true
-      },
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ViewDirection": "Default",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[1.74385625, 1.43651875, 4.2063375],[-1.74385625, 1.43651875, 4.2063375],[1.74385625, 1.43651875, 4.2063375],[-1.74385625, 1.43651875, 4.2063375]],
-        "BoundUpWithAmmoAmount": true
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:bomb_release",
-        "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
-        "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
-      },
-      "CrosshairColor": "0xFFC700",
-      "Crosshair": "@VehicleCommonSeekMissile",
-      "SoundRadius": 8
-    },
     "Missile2": {
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl15.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 4,
+      "Magazine": 6,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:agm_65",
       "Name": "dragonrise_reforge:pl15",
@@ -147,14 +87,13 @@
         "Transform": "Vehicle",
         "ViewDirection": "Default",
         "ShootPositionForHud": [0, 1.53, 0],
-        "Positions": [[0.981075, 1.1622125, 1.8364625],
-          [0.481075, 1.1622125, 1.8364625],
-          [-0.481075, 1.1622125, 1.8364625],
-          [-0.981075, 1.1622125, 1.8364625],
-          [0.981075, 1.1622125, 1.8364625],
-          [0.481075, 1.1622125, 1.8364625],
-          [-0.481075, 1.1622125, 1.8364625],
-          [-0.981075, 1.1622125, 1.8364625]],
+        "Positions": [[1.1, 1.02431875, -0.90486875],
+          [0.9, 1.02431875, -0.90486875],
+          [0.6, 1.02431875, -0.90486875],
+          [-1.1, 1.02431875, -0.90486875],
+          [-0.9, 1.02431875, -0.90486875],
+          [-0.6, 1.02431875, -0.90486875]
+          ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
