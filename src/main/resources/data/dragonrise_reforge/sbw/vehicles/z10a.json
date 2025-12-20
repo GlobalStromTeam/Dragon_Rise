@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:z10me",
+  "ID": "dragonrise_reforge:z10a",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
   "TurretPos": [0, 0.625, 2.09],
@@ -46,7 +46,7 @@
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [0, 1.35, -0.8125],
+      "Position": [0, 1.2, -0.8125],
       "Sensitivity": [0, 0, 0],
       "CameraPos": {
         "Transform": "Vehicle",
@@ -60,7 +60,7 @@
       "MaxPitch": 80,
       "MinYaw": -80,
       "MaxYaw": 80,
-      "Weapons": ["Rocket", "DriverAAMissile"],
+      "Weapons": ["Rocket"],
       "DismountInfo": {
         "Transform": "Vehicle",
         "Position": [-2.5, 0.5, 2.5]
@@ -68,7 +68,7 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [0, 0.8225, 0.875],
+      "Position": [0, 0.6, 0.875],
       "Sensitivity": [0.59, 0.8, 0.9],
       "CameraPos": {
         "Transform": "Vehicle",
@@ -81,7 +81,7 @@
       "MaxPitch": 10,
       "MinYaw": -110,
       "MaxYaw": 110,
-      "Weapons": ["Cannon", "PassengerMissile", "SeekMissile"],
+      "Weapons": ["Cannon", "PassengerMissile"],
       "DismountInfo": {
         "Transform": "Vehicle",
         "Position": [-2.5, 0.3, 3.5625]
@@ -129,7 +129,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Magazine": 21,
+      "Magazine": 42,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:small_rocket",
       "Spread": 0.25,
@@ -144,7 +144,7 @@
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 0.62, 0.8],
         "ShootDirectionForHud": [0, 0.018, 1],
-        "Positions": [[-1.787, 1.548, -0.151]],
+        "Positions": [[-1.787, 1.548, -0.151],[1.787, 1.548, -0.151]],
         "Directions": [[0, 0, 1]]
       },
       "SoundInfo": {
@@ -182,13 +182,20 @@
     },
     "PassengerMissile": {
       "DefaultZoom": 3,
-      "Magazine": 4,
+      "Magazine": 8,
       "Template": "@Missile",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[-2.19, 1, 2.29], [-2.19, 0.64, 2.29], [-2.59, 1, 2.29], [-2.59, 0.64, 2.29]],
+        "Positions": [[2.434725, 0.946925, -1.97293125],
+          [2.059725, 0.946925, -1.97293125],
+          [2.059725, 0.553175, -1.97293125],
+          [2.422225, 0.553175, -1.97293125],
+          [-2.046525, 0.946925, -1.97293125],
+          [-2.421525, 0.946925, -1.97293125],
+          [-2.421525, 0.553175, -1.97293125],
+          [-2.059025, 0.553175, -1.97293125]],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
       }
@@ -339,7 +346,7 @@
     "superbwarfare:vehicle_strike * 6",
     "superbwarfare:laser * 0.35",
     "@superbwarfare:cannon_shell * 1.5",
-    "@superbwarfare:small_cannon_shell * 0.70",
+    "@superbwarfare:small_cannon_shell * 0.95",
     "@superbwarfare:gun_grenade * 2.2",
     "@superbwarfare:rgo_grenade * 6",
     "@superbwarfare:hand_grenade * 5",
@@ -354,7 +361,7 @@
     "CrashPassengers": true
   },
   "HUDColor": "0xFFC700",
-  "VehicleIcon": "superbwarfare:textures/vehicle_icon/mi_28_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/z10a_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",

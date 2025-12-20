@@ -30,6 +30,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.Z10A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10ME.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
@@ -42,6 +43,7 @@ public class ModTabs {
                         //ru
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
 
@@ -58,7 +60,7 @@ public class ModTabs {
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
+
                     }
                     ).build()
     );

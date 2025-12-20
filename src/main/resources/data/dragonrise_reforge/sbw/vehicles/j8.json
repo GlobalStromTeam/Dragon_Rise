@@ -95,7 +95,7 @@
         "Transform": "Vehicle",
         "Positions": [[0.02955625, 1.03115625, 3.23783125]],
         "Directions": [[0, 0.02, 1]],
-        "ShootDirectionForHud": [0, -0.03, 1]
+        "ShootDirectionForHud": [0, 0.01, 1]
       }
     },
     "Missile": {
