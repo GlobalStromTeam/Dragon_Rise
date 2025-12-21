@@ -4606,11 +4606,18 @@
 				{
 					"name": "barrel",
 					"parent": "turret",
-					"pivot": [0, 33.5418, -27.5563]
+					"pivot": [0, 33.5418, -27.5563],
+					"rotation": [-2.5, 0, 0]
+				},
+				{
+					"name": "sdf",
+					"parent": "barrel",
+					"pivot": [-1.6875, 33.53907, 7.06616],
+					"rotation": [2.5, 0, 0]
 				},
 				{
 					"name": "125mmcannon",
-					"parent": "barrel",
+					"parent": "sdf",
 					"pivot": [-1.6875, 33.53907, 7.06616],
 					"cubes": [
 						{
@@ -4753,7 +4760,7 @@
 				},
 				{
 					"name": "deco5",
-					"parent": "barrel",
+					"parent": "sdf",
 					"pivot": [0, 33.5418, -27.5563],
 					"cubes": [
 						{

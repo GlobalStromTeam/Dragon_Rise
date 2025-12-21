@@ -4579,6 +4579,13 @@
 					"name": "barrel",
 					"parent": "bone",
 					"pivot": [0, 33.5418, -28.5563],
+					"rotation": [-2.5, 0, 0]
+				},
+				{
+					"name": "sdf",
+					"parent": "barrel",
+					"pivot": [-1.6875, 33.53907, -18.93384],
+					"rotation": [2.5, 0, 0],
 					"cubes": [
 						{
 							"origin": [-6.6, 33.575, -39.25],
@@ -4598,7 +4605,7 @@
 				},
 				{
 					"name": "125mmcannon",
-					"parent": "barrel",
+					"parent": "sdf",
 					"pivot": [-1.6875, 33.53907, -18.93384],
 					"cubes": [
 						{
