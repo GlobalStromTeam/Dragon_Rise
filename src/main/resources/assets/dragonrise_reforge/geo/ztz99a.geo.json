@@ -23,8 +23,7 @@
 				{
 					"name": "main",
 					"parent": "base",
-					"pivot": [0, 30.5, -3],
-					"rotation": [-2.5, 0, 0]
+					"pivot": [0, 30.5, -3]
 				},
 				{
 					"name": "lm",
@@ -1886,8 +1885,7 @@
 				{
 					"name": "turretA",
 					"parent": "turret",
-					"pivot": [0, 30.5, -3],
-					"rotation": [-2.5, 0, 0]
+					"pivot": [0, 30.5, -3]
 				},
 				{
 					"name": "pz",
@@ -2672,7 +2670,6 @@
 					"name": "ba",
 					"parent": "barrel",
 					"pivot": [-1.6875, 34.5141, -16.4338],
-					"rotation": [2.5, 0, 0],
 					"cubes": [
 						{
 							"origin": [-6, 33.125, -30],
