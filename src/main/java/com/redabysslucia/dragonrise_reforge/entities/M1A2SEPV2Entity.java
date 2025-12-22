@@ -49,6 +49,21 @@ public class M1A2SEPV2Entity extends NightVisionVehicle {
     }
 
     @Override
+    protected void clampRotation(Entity entity) {
+        super.clampRotation(entity);
+
+        int index = getSeatIndex(entity);
+        var seats = computed().seats();
+        if (index < 0 || index >= seats.size()) return;
+        var seat = seats.get(index);
+
+        if (seat.transform.equals("WeaponStation") && !seat.canRotateBody) {
+            super.passengerPitchOnTurret(entity, seat.minPitch, seat.maxPitch);
+            super.passengerYawOnTurret(entity, seat.minYaw, seat.maxYaw, seat.orientation, false);
+        }
+    }
+
+    @Override
     public void passengerPitchOnTurret(Entity entity, float turretMinPitch, float turretMaxPitch) {
         PitchAdjustUtil.adjustedPassengerPitchOnTurret(entity, turretMinPitch, turretMaxPitch, this, PitchAdjustments);
     }

@@ -56,13 +56,13 @@
     },
     {
       "HidePassenger": true,
-      "Transform": "Turret",
+      "Transform": "WeaponStation",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
         "ZoomPosition": [0, 0.1, 0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.93, 0.3, 0.062],
+      "Position": [0, 0, 0],
       "Weapons": ["PassengerMachineGun"],
       "CanRotateHead": false,
       "MinPitch": -9,
