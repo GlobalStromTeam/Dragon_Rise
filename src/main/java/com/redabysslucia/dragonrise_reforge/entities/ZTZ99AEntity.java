@@ -17,8 +17,8 @@ import software.bernie.geckolib.core.object.PlayState;
 public class ZTZ99AEntity extends NightVisionVehicle {
 
     private final Float[][] PitchAdjustments = {
-            {180f, 180f, 180f, -4f, -4f},
-            {-180f, -180f, 180f, -4f, -4f},
+            {180f, 180f, 180f, 4f, -4f},
+            {-180f, -180f, 180f, 4f, -4f},
     };
 
     public ZTZ99AEntity(EntityType<?> pEntityType, Level pLevel) {

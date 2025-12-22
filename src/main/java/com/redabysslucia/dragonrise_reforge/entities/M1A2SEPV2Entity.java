@@ -17,8 +17,8 @@ import software.bernie.geckolib.core.object.PlayState;
 public class M1A2SEPV2Entity extends NightVisionVehicle {
 
     private final Float[][] PitchAdjustments = {
-            {150f, 180f, 13f, 0f, -10f},
-            {-150f, -180f, 13f, 0f, -10f},
+            {150f, 180f, 17f, 0f, -10f},
+            {-150f, -180f, 17f, 0f, -10f},
     };
 
     public M1A2SEPV2Entity(EntityType<?> pEntityType, Level pLevel) {

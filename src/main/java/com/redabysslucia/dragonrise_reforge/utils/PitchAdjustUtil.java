@@ -6,7 +6,7 @@ import net.minecraft.world.entity.Entity;
 
 public class PitchAdjustUtil {
     /**
-     * Adjustment格式：{{yawStart,yawEnd,move,minAdjust,maxAdjust},...}
+     * Adjustment格式：{{yawStart,yawEnd,move,maxAdjust,minAdjust},...}
      * 需要调整pitch的yaw区间（前两个），yaw过渡值，pitch在区间内的调整值（下限和上限，加算）
      * 以{120f, 180f, 5f, 2f, -10f}举例
      * 当yaw为120~180时，最大仰角增加2，最大俯角增加-10，即减少10
@@ -40,20 +40,20 @@ public class PitchAdjustUtil {
             float maxAdjust = adjust[4];
             if (yaw >= 0) {
                 if (yaw >= yawStart && yaw <= yawEnd) {
-                    min += minAdjust;
+                    min -= minAdjust;
                     max += maxAdjust;
                 } else if (yaw >= yawStart - move && yaw < yawStart) {
                     float factor = Mth.lerp((yawStart-yaw)/move,1,0 );
-                    min += minAdjust * factor;
+                    min -= minAdjust * factor;
                     max += maxAdjust * factor;
                 }
             }else {
                 if (yaw <= yawStart && yaw >= yawEnd) {
-                    min += minAdjust;
+                    min -= minAdjust;
                     max += maxAdjust;
                 } else if (yaw <= yawStart + move && yaw > yawStart) {
                     float factor = Mth.lerp((yawStart - yaw) / (-move), 1, 0);
-                    min += minAdjust * factor;
+                    min -= minAdjust * factor;
                     max += maxAdjust * factor;
                 }
             }
