@@ -68,11 +68,7 @@ public class CyborgTankModel extends VehicleModel<CyborgTankEntity> {
                 return (bone, vehicle, state) -> {
                     bone.setRotY(turretYRot * Mth.DEG_TO_RAD);
 
-                    var turretLaser = getAnimationProcessor().getBone("turretLaser");
 
-                    if (turretLaser != null) {
-                        turretLaser.setRotY(bone.getRotY());
-                    }
                 };
             }
 
