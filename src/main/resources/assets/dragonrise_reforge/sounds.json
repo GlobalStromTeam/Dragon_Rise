@@ -1,4 +1,28 @@
 {
+  "plane_start1": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:jetengine/plane_start1",
+        "stream": false
+      }
+    ]
+  },
+  "plane_loop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:jetengine/plane_loop",
+        "stream": false
+      }
+    ]
+  },
+  "25mm400rpm1": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/25mm400rpm1",
+        "stream": false
+      }
+    ]
+  },
   "fire_sound_57mm_far": {
     "sounds": [
       {

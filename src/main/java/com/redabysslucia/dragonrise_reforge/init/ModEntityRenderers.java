@@ -53,6 +53,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.PROJECT640.get(), Project640Renderer::new);
                 event.registerEntityRenderer(ModEntities.TEST.get(), TESTRenderer::new);
                 event.registerEntityRenderer(ModEntities.SPACEBAG.get(), SpacebagRenderer::new);
+                event.registerEntityRenderer(ModEntities.CAMEL.get(), CamelRenderer::new);
         }
 }
 

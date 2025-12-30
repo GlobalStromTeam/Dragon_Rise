@@ -334,9 +334,9 @@ public class ModEntities {
     public static final RegistryObject<EntityType<TESTEntity>> TEST = register("test",
             EntityType.Builder.of(TESTEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
-                    .setUpdateInterval(10)
+                    .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(40.5f, 20.4f)
+                    .sized(2.5f, 2.4f)
     );
 
     public static final RegistryObject<EntityType<SpacebagEntity>> SPACEBAG = register("spacebag",
@@ -345,6 +345,14 @@ public class ModEntities {
                     .setUpdateInterval(10)
                     .fireImmune()
                     .sized(40.5f, 20.4f)
+    );
+
+    public static final RegistryObject<EntityType<CamelEntity>> CAMEL = register("camel",
+            EntityType.Builder.of(CamelEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2f, 2f)
     );
 
 
