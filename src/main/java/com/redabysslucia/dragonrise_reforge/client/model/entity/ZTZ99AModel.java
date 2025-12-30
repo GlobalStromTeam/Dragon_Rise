@@ -81,8 +81,9 @@ public class ZTZ99AModel extends VehicleModel<ZTZ99AEntity> {
                         }
                     }
 
-                    bone.setRotX(Mth.clamp(-turretXRot - r * pitch - r2 * roll, vehicle.getTurretMinPitch(), vehicle.getTurretMaxPitch()) * Mth.DEG_TO_RAD);
-
+                    //两倍于车体倾斜
+                    bone.setRotX(Mth.clamp(-turretXRot - r * pitch - r2 * roll+5 -(5 * Math.abs(turretYRot/180)), vehicle.getTurretMinPitch(), vehicle.getTurretMaxPitch()) * Mth.DEG_TO_RAD);
+                    //bone.setRotX((float) (Mth.clamp(-turretXRot - r * pitch - r2 * roll -(5 * Math.abs(turretYRot/180)), -180,180) * Mth.DEG_TO_RAD));
                 };
             }
 
