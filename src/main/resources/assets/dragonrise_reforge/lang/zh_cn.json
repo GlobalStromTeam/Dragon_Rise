@@ -61,6 +61,8 @@
   "superbwarfare.entry.vehicle.strv103": "STRV103 宜家拖鞋 主战坦克",
   "entity.dragonrise_reforge.cv90": "CV90",
   "superbwarfare.entry.vehicle.cv90": "CV90 步兵战车",
+  "entity.dragonrise_reforge.hyr0": "超级公民 HYR0",
+  "superbwarfare.entry.vehicle.hyr0": "超级公民 HYR0",
   "entity.dragonrise_reforge.refale": "阵风",
   "superbwarfare.entry.vehicle.refale": "阵风 战斗机",
   "entity.dragonrise_reforge.j20": "J-20",
@@ -202,5 +204,10 @@
   "dragonrise_reforge:fusion_battle_cannon_beam": "聚变能束炮",
   "dragonrise_reforge:fusion_battle_cannon_explosive": "聚变电浆炮",
   "dragonrise_reforge:coax_fusion_cycler": "同轴激光炮",
-  "dragonrise_reforge:heavy_fusion_repeater": "重型双管离子炮"
+  "dragonrise_reforge:heavy_fusion_repeater": "重型双管离子炮",
+
+  "dragonrise_reforge:hyr0ap": "334mm ??? AP",
+  "dragonrise_reforge:hyr0he": "334mm ??? HY",
+  "drgonrise_reforge:hyr020": "20mm ???",
+  "dragonrise_reforge:hyr030": "76mm ???"
 }
