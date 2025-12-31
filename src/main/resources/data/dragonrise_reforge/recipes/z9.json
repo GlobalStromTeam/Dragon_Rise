@@ -1,0 +1,12 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "6 #superbwarfare:storage_blocks/steel",
+    "2 superbwarfare:propeller",
+    "superbwarfare:large_motor"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:z9"
+  }
+}

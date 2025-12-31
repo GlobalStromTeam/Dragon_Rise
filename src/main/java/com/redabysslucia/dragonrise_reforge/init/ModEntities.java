@@ -95,6 +95,14 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
+    public static final RegistryObject<EntityType<Z9Entity>> Z9 = register("z9",
+            EntityType.Builder.of(Z9Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
     public static final RegistryObject<EntityType<HYR0Entity>> HYR0 = register("hyr0",
             EntityType.Builder.of(HYR0Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)

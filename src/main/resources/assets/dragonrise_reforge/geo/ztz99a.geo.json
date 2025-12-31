@@ -2664,7 +2664,7 @@
 					"name": "ba",
 					"parent": "barrel",
 					"pivot": [-1.6875, 34.5141, -16.4338],
-					"rotation": [5, 0, 0],
+					"rotation": [2.5, 0, 0],
 					"cubes": [
 						{
 							"origin": [-6, 33.125, -30],
