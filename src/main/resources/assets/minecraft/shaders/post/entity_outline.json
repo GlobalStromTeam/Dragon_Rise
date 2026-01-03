@@ -1,8 +1,0 @@
-{
-    "targets": [
-        "swap",
-        "final"
-    ],
-    "passes": [
-    ]
-}
