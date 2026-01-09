@@ -30,6 +30,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.HYR0.get(), HYR0Renderer::new);
                 event.registerEntityRenderer(ModEntities.J8.get(), J8Renderer::new);
                 event.registerEntityRenderer(ModEntities.J10.get(), J10Renderer::new);
+                event.registerEntityRenderer(ModEntities.J10C.get(), J10CRenderer::new);
                 event.registerEntityRenderer(ModEntities.J16.get(), J16Renderer::new);
                 event.registerEntityRenderer(ModEntities.J35.get(), J35Renderer::new);
                 event.registerEntityRenderer(ModEntities.REFALE.get(), REFALERenderer::new);
