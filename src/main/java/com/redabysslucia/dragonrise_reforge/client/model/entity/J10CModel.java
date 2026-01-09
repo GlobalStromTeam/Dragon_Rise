@@ -12,9 +12,6 @@ public class J10CModel extends VehicleModel<J10CEntity> {
         @Override
         public @Nullable TransformContext<J10CEntity> collectTransform(String boneName) {
                 return switch (boneName) {
-                        case "root" -> (bone, vehicle, state) ->
-                                bone.setHidden(hideForTurretControllerWhileZooming && vehicle.getWeaponIndex(0) == 2);
-
                         case "wingLR" -> (bone, vehicle, state) ->
                                 bone.setRotX(1.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1LRotO, vehicle.getFlap1LRot()) * Mth.DEG_TO_RAD);
 

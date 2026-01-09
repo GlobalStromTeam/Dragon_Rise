@@ -91,6 +91,8 @@
   "superbwarfare.entry.vehicle.ztq15": "ZTQ-15 轻量化主战坦克 无附加装甲",
   "entity.dragonrise_reforge.jas39e": "JAS39E",
   "superbwarfare.entry.vehicle.jas39e": "JAS39E 鹰狮 战斗机",
+  "entity.dragonrise_reforge.j10c": "J-10C",
+  "superbwarfare.entry.vehicle.j10c": "成都 J-10C 战斗机",
   "entity.dragonrise_reforge.z9": "Z-9",
   "superbwarfare.entry.vehicle.z9": "哈尔滨 Z-9 直升机",
   "entity.dragonrise_reforge.fav_a": "FAV A",
@@ -184,7 +186,9 @@
   "dragonrise_reforge:pl5": "霹雳5 空对空导弹",
 
   "dragonrise_reforge:pl10": "霹雳10 红外空对空导弹",
+  "dragonrise_reforge:pl12": "霹雳12 雷达空对空导弹",
   "dragonrise_reforge:pl15": "霹雳15 雷达空对空导弹",
+
 
   "dragonrise_reforge:newcnap": "105mm ??? 穿甲弹",
   "dragonrise_reforge:newcnhe": "105mm ??? 高爆弹",

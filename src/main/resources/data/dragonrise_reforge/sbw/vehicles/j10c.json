@@ -140,14 +140,14 @@
       "SoundRadius": 8
     },
     "Missile2": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl15.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl12.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 6,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:agm_65",
-      "Name": "dragonrise_reforge:pl15",
+      "Name": "dragonrise_reforge:pl12",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
@@ -155,7 +155,7 @@
       "Velocity": 1.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
-        "SeekRange": 512,
+        "SeekRange": 400,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MinTargetHeight": 15,
