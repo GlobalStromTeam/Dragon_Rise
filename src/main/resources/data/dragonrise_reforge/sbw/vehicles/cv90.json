@@ -125,7 +125,7 @@
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,
       "RecoilTime": 31,
-      "RecoilForce": 0.62,
+      "RecoilForce": 0.1,
       "ShootAnimationTime": 3,
       "Spread": 0.5,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cv90_cross.png",

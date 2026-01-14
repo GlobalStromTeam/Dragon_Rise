@@ -134,7 +134,7 @@
       "ExplosionDamage": 12,
       "ExplosionRadius": 4,
       "RecoilTime": 29,
-      "RecoilForce": 0.55,
+      "RecoilForce": 0.1,
       "Spread": 0.5,
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,

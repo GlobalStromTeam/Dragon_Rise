@@ -110,7 +110,7 @@
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "RecoilTime": 42,
-      "RecoilForce": 1.0,
+      "RecoilForce": 0.1,
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
@@ -286,7 +286,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cv90_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/amx56_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {

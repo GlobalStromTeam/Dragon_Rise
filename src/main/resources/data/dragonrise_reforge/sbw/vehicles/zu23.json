@@ -41,7 +41,7 @@
       "HeatPerShoot": 6,
       "NaturalCooldown": 2.0,
       "RecoilTime": 31,
-      "RecoilForce": 2.62,
+      "RecoilForce": 0.2,
       "ShootAnimationTime": 1,
       "Spread": 0.2,
       "Crosshair": "@VehicleCommonGun",
