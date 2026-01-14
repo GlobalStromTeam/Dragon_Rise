@@ -8,6 +8,6 @@ public class VT4A1Model extends VehicleModel<VT4A1Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

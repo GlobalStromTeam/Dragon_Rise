@@ -44,14 +44,10 @@
       "MaxPitch": 60,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [
-          -0.4,
-          0.4,
-          0
-        ],
+        "ZoomPosition": [-0.7134, 0.97814375, 0.3800375],
         "Direction": "Barrel"
       },
-      "Weapons": ["Cannon", "MainMachineGun", "Missile"],
+      "Weapons": ["Cannon", "Missile" ,"MainMachineGun"],
       "Sensitivity": [0.53, 0.71, 0.9]
     },
     {

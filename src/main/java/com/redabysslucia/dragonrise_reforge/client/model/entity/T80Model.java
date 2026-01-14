@@ -10,7 +10,7 @@ public class T80Model extends VehicleModel<T80Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
 }

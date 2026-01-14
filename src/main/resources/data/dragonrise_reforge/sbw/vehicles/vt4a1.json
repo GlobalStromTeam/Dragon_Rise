@@ -47,7 +47,7 @@
       "CameraPos": {
         "Position": [0.6375, 1.07053125, 0.35355625],
         "Transform": "Barrel",
-        "ZoomPosition": [0.0, 0.0, 0.0],
+        "ZoomPosition": [0.6375, 1.07053125, 0.35355625],
         "Direction": "Barrel"
       },
       "Transform": "Turret",

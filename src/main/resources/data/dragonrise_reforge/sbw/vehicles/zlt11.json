@@ -49,7 +49,7 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.0, 0.0, 0.0],
+        "ZoomPosition": [0.6598625, 0.844525, 0.85841875],
         "Direction": "Barrel"
       },
       "Transform": "Turret",

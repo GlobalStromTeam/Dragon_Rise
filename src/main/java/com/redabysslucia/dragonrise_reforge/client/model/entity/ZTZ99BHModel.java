@@ -11,7 +11,7 @@ public class ZTZ99BHModel extends VehicleModel<ZTZ99BHEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
 //        @Override

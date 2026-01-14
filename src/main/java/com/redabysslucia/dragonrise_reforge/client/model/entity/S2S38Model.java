@@ -8,6 +8,6 @@ public class S2S38Model extends VehicleModel<S2S38Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

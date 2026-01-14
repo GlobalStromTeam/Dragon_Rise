@@ -8,6 +8,6 @@ public class ZTQ15Model extends VehicleModel<ZTQ15Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

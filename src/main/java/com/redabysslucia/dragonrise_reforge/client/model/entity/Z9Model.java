@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 public class Z9Model extends VehicleModel<Z9Entity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
-        return true;
+        return false;
     }
 
     @Override

@@ -8,7 +8,7 @@ public class TYPE100Model extends VehicleModel<TYPE100Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
 }

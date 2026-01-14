@@ -49,7 +49,7 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.1, 0.0517, 0],
+        "ZoomPosition": [0.4109875, 0.85089375, 0.35025625],
         "Direction": "Barrel"
       },
       "Weapons": ["Cannon", "MachineGun","Missile"],

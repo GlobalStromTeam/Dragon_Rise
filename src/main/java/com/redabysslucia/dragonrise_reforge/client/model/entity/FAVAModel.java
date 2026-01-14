@@ -7,6 +7,6 @@ public class FAVAModel extends VehicleModel<FAVAEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

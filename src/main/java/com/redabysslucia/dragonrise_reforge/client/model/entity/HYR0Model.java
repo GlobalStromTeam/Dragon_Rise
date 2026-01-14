@@ -14,7 +14,7 @@ public class HYR0Model extends VehicleModel<HYR0Entity> {
 
     @Override
     public boolean hideForTurretControllerWhileZooming() {
-        return true;
+        return false;
     }
 
     public @Nullable TransformContext<HYR0Entity> collectTransform(String boneName) {

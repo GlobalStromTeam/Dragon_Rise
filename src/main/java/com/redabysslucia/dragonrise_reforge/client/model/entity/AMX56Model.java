@@ -8,6 +8,6 @@ public class AMX56Model extends VehicleModel<AMX56Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

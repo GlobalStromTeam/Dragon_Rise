@@ -11,7 +11,7 @@ public class ZBL08Model extends VehicleModel<ZBL08Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
     @Override

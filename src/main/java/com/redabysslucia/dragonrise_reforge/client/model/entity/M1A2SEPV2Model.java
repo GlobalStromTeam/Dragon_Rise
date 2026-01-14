@@ -10,7 +10,7 @@ public class M1A2SEPV2Model extends VehicleModel<M1A2SEPV2Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
 //        @Override

@@ -7,6 +7,6 @@ public class SX1Model extends VehicleModel<SX1Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

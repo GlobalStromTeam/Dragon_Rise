@@ -44,7 +44,7 @@
         "UseFixedCameraPos": true,
         "Position": [-0.6959125, 0.708925, 0.65234375],
         "Transform": "Turret",
-        "ZoomPosition": [0.0, 0.1, 0.0],
+        "ZoomPosition": [-0.6959125, 0.708925, 0.68359375],
         "Direction": "Barrel"
       },
       "Transform": "Turret",

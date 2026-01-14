@@ -7,6 +7,6 @@ public class Project640Model extends VehicleModel<Project640Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 }

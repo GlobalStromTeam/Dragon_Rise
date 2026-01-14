@@ -11,7 +11,7 @@ public class CV90Model extends VehicleModel<CV90Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
     @Override

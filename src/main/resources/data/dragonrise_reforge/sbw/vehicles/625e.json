@@ -39,7 +39,7 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.1, 0.0517, 0],
+        "ZoomPosition": [0.8653125, 0.68609375, -0.61625],
         "Direction": "Barrel"
       },
       "Weapons": ["Cannon", "DriverAAMissile"],
@@ -63,9 +63,9 @@
       "Velocity": 30,
       "Damage": 40,
       "RecoilTime": 20,
-      "RecoilForce": 0.85,
+      "RecoilForce": 0.3,
       "Spread": 1,
-      "HeatPerShoot": 5,
+      "HeatPerShoot": 0.1,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",

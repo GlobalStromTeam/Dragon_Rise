@@ -12,7 +12,7 @@ public class ZTZ99AModel extends VehicleModel<ZTZ99AEntity> {
 
     @Override
     public boolean hideForTurretControllerWhileZooming() {
-        return true;
+        return false;
     }
 
     public @Nullable TransformContext<ZTZ99AEntity> collectTransform(String boneName) {

@@ -13,7 +13,7 @@ public class AA625EModel extends VehicleModel<AA625EEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
-                return true;
+                return false;
         }
 
     @Override
