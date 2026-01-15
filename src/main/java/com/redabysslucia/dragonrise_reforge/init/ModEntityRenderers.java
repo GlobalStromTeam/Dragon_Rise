@@ -38,6 +38,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZLT_11.get(), ZLT11Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZBD04A.get(), ZBD04ARenderer::new);
+                event.registerEntityRenderer(ModEntities.PANZER4.get(), PANZER4Renderer::new);
                 event.registerEntityRenderer(ModEntities.SX1.get(), SX1Renderer::new);
                 event.registerEntityRenderer(ModEntities.FAVA.get(), FAVARenderer::new);
                 event.registerEntityRenderer(ModEntities.STRV103.get(), STRV103Renderer::new);
