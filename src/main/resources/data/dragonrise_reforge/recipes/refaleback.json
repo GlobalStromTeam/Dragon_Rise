@@ -1,0 +1,10 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "dragonrise_reforge:refaleaa"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:refale"
+  }
+}

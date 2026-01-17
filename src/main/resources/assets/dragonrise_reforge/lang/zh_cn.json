@@ -131,6 +131,7 @@
 
   "dragonrise_reforge:ref_cannon": "30mm NEXTER 30M791 航空机炮",
   "dragonrise_reforge:gbu24": "GBU24 航空炸弹",
+  "dragonrise_reforge:mica": "MIKA 雷达空对空导弹",
   "dragonrise_reforge:aasm": "AASM 制导炸弹",
   "dragonrise_reforge:aasmg": "AASM 制导炸弹(锁地板)",
   "dragonrise_reforge:mgi2": "魔术-2 红外空对空导弹",
@@ -188,7 +189,6 @@
   "dragonrise_reforge:pl10": "霹雳10 红外空对空导弹",
   "dragonrise_reforge:pl12": "霹雳12 雷达空对空导弹",
   "dragonrise_reforge:pl15": "霹雳15 雷达空对空导弹",
-
 
   "dragonrise_reforge:newcnap": "105mm ??? 穿甲弹",
   "dragonrise_reforge:newcnhe": "105mm ??? 高爆弹",
