@@ -104,6 +104,8 @@
   "entity.dragonrise_reforge.j8": "歼-8B 截击机",
   "superbwarfare.entry.vehicle.j35": "J-35",
   "entity.dragonrise_reforge.j35": "沈阳 歼-35 舰载战斗机",
+  "superbwarfare.entry.vehicle.cm34": "CM-34",
+  "entity.dragonrise_reforge.cm34": "CM-34 雲豹甲車",
   "superbwarfare.entry.vehicle.t90mh": "T-90M",
   "entity.dragonrise_reforge.t90mh": "T-90M 突破 主战坦克",
   "superbwarfare.entry.vehicle.av8b": "AV8B（测试）",
@@ -206,6 +208,8 @@
   "dragonrise_reforge:3UBM22": "57mm 3UBM22 穿甲弹",
   "dragonrise_reforge:OR-281U": "57mm OR-281U 榴弹",
   "dragonrise_reforge:pktm": "7.62mm PKTM 同轴机枪",
+
+  "dragonrise_reforge:t74": "7.62公厘 74式 機槍",
 
   "dragonrise_reforge:fusion_battle_cannon_beam": "聚变能束炮",
   "dragonrise_reforge:fusion_battle_cannon_explosive": "聚变电浆炮",

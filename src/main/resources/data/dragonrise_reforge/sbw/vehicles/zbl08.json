@@ -136,6 +136,8 @@
       "RecoilTime": 29,
       "RecoilForce": 0.1,
       "Spread": 0.5,
+      "Magazine": 250,
+      "EmptyReloadTime": 20,
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 3,

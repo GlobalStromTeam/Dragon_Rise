@@ -28,7 +28,7 @@
     },
     {
       "Size": [1.125, 0.31, 1.43],
-      "Position": [0, 0.46875, 0],
+      "Position": [0, -0.3, 0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
