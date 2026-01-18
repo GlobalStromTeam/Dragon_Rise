@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:cm34",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/cm34.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cm34.png"
+  }
+}

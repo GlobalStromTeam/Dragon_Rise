@@ -45,8 +45,8 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "Transform": "Barrel",
-        "ZoomPosition": [0.0, 0.0, 0.0],
+        "Transform": "Turret",
+        "ZoomPosition": [0.8125, 0.7855875, 0.84375],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -102,8 +102,8 @@
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "RecoilTime": 42,
-      "RecoilForce": 1.0,
-      "ShootShake": [8, 10, 60],
+      "RecoilForce": 0.1,
+      "ShootShake": [0.5, 0.5, 0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
