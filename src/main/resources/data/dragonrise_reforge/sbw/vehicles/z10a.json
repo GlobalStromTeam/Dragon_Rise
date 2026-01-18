@@ -102,6 +102,8 @@
       "ExplosionRadius": 4,
       "HeatPerShoot": 7,
       "NaturalCooldown": 1,
+      "Magazine": 350,
+      "EmptyReloadTime": 160,
       "RecoilTime": 31,
       "RecoilForce": 0.62,
       "Spread": 0.25,

@@ -160,6 +160,8 @@
       "Damage": 40,
       "BypassesArmor": 0.2,
       "Velocity": 25,
+      "Magazine": 1000,
+      "EmptyReloadTime": 160,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 3.2,

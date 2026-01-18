@@ -192,6 +192,8 @@
       "RPM": 800,
       "Damage": 10,
       "BypassesArmor": 0.2,
+      "Magazine": 2600,
+      "EmptyReloadTime": 160,
       "Velocity": 25,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -232,6 +234,8 @@
       "HeatPerShoot": 3.75,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
+      "Magazine": 600,
+      "EmptyReloadTime": 100,
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",

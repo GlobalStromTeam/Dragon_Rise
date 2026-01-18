@@ -3,7 +3,7 @@
 	"animations": {
 		"zbd04a.animation.minecannon.new": {
 			"loop": "hold_on_last_frame",
-			"animation_length": 1.25,
+			"animation_length": 1,
 			"bones": {
 				"minecannon": {
 					"position": {
@@ -25,6 +25,21 @@
 						"0.5833": [0, -90, 0],
 						"0.9167": [0, -90, 0],
 						"1.0": [0, -2.5, 0]
+					}
+				},
+				"main": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0833": [0, 0, 2],
+						"0.3333": [0, 0, 0]
+					}
+				},
+				"bone3": {
+					"rotation": {
+						"0.25": [0, 0, 0],
+						"0.4167": [0, -90, 0],
+						"0.75": [0, -90, 0],
+						"1.0": [0, 0, 0]
 					}
 				},
 				"shell": {
@@ -74,7 +89,8 @@
 			}
 		},
 		"zbd04a.animation.subcannon.new": {
-			"animation_length": 0.25,
+			"loop": true,
+			"animation_length": 0.1667,
 			"bones": {
 				"subcannon": {
 					"position": {
@@ -88,6 +104,13 @@
 							"post": [0, 0, 0],
 							"lerp_mode": "catmullrom"
 						}
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, 1],
+						"0.125": [0, 0, 0]
 					}
 				}
 			}

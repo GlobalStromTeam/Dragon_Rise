@@ -167,6 +167,8 @@
       "DefaultZoom": 3,
       "RPM": 800,
       "Damage": 10,
+      "Magazine": 2600,
+      "EmptyReloadTime": 160,
       "BypassesArmor": 0.2,
       "Velocity": 25,
       "RecoilTime": 16,

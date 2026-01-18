@@ -98,6 +98,8 @@
       "RPM": 750,
       "Velocity": 30,
       "Damage": 55,
+      "Magazine": 450,
+      "EmptyReloadTime": 160,
       "ExplosionDamage": 15,
       "ExplosionRadius": 4,
       "HeatPerShoot": 3,
