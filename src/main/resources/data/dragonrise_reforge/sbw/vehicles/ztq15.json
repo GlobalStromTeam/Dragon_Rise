@@ -223,79 +223,8 @@
       },
       "SoundRadius": 16
     },
-    "PassengerMachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
-      "Projectile": "superbwarfare:projectile",
-      "DefaultZoom": 3,
-      "RPM": 600,
-      "Damage": 40,
-      "BypassesArmor": 0.2,
-      "Velocity": 25,
-      "RecoilTime": 16,
-      "RecoilForce": 0.05,
-      "HeatPerShoot": 3.75,
-      "NaturalCooldown": 1,
-      "ShootAnimationTime": 1,
-      "Magazine": 600,
-      "EmptyReloadTime": 100,
-      "AmmoType": "@HeavyAmmo",
-      "ShootPos": {
-        "Transform": "WeaponStationBarrel",
-        "Positions": [[0.16198125, 0.21915, 1.4301875]],
-        "Directions": ["WeaponStationBarrel"]
-      },
-      "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
-      },
-      "SoundRadius": 16
-    },
-    "AutoCannon": {
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:gun_grenade",
-      "DefaultZoom": 3,
-      "RPM": 280,
-      "Magazine": 20,
-      "EmptyReloadTime": 100,
-      "Velocity": 4.5,
-      "Damage": 55,
-      "ExplosionDamage": 10,
-      "ExplosionRadius": 5,
-      "HeatPerShoot": 6,
-      "NaturalCooldown": 1,
-      "RecoilTime": 1,
-      "RecoilForce": 0.05,
-      "ShootAnimationTime": 3,
-      "Spread": 1.2,
-      "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
-      "Name": "drgonrise_reforge:87",
-      "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
-        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
-      },
-      "SoundRadius": 24,
-      "AmmoType": "superbwarfare:grenade_40mm",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
-      "ShootPos": {
-        "Transform": "WeaponStationBarrel",
-        "Positions": [[-0.13801875, 0.134775, 0.7926875]],
-        "Directions": ["WeaponStationBarrel"]
-      }
-    }
+    "UseFixedCameraPos": true,
+    "Position": [0.73629375, -0.398225, 0.2659]
   },
   "HUDColor": "0x00ff66",
   "EngineType": "Track",

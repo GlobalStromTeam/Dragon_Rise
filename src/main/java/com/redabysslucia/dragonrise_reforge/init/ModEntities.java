@@ -3,6 +3,9 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
+import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -425,6 +428,30 @@ public class ModEntities {
                         .setUpdateInterval(2)
                         .fireImmune()
                         .sized(2f, 2f)
+        );
+
+        public static final RegistryObject<EntityType<qjz89Entity>> qjz89 = register("qjz89",
+                EntityType.Builder.of(qjz89Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(0.5f, 0.5f)
+        );
+
+        public static final RegistryObject<EntityType<M2Entity>> M2 = register("m2",
+                EntityType.Builder.of(M2Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(0.5f, 0.5f)
+        );
+
+        public static final RegistryObject<EntityType<DSHKEntity>> DSHK = register("dshk",
+                EntityType.Builder.of(DSHKEntity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(0.5f, 0.5f)
         );
 
 

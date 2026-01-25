@@ -127,6 +127,12 @@
   "item.dragonrise_reforge.cnchest":"中国 21式军装上衣与防弹携行具",
   "item.dragonrise_reforge.cnjustchest":"中国 21式防弹携行具",
   "item.dragonrise_reforge.cnfast": "fast 头盔",
+  "item.dragonrise_reforge.qjz89":"QJZ-89 高射机枪（需架设）",
+  "superbwarfare.entry.vehicle.qjz89": "QJZ-89",
+  "item.dragonrise_reforge.m2":"M2HB 重机枪（需架设）",
+  "superbwarfare.entry.vehicle.m2": "M2HB",
+  "item.dragonrise_reforge.dshk":"德什卡 重机枪（需架设）",
+  "superbwarfare.entry.vehicle.qjz89": "德什卡",
 
   "dragonrise_reforge:500kg":"500kg航空炸弹",
   "dragonrise_reforge:pl8": "霹雳-8 红外空对空导弹",

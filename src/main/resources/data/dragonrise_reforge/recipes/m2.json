@@ -1,0 +1,10 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "defense",
+  "inputs": [
+    "1 #superbwarfare:storage_blocks/steel"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:m2"
+  }
+}

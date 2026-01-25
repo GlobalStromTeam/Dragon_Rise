@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:qjz89",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/qjz89.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/qjz89.png"
+  }
+}

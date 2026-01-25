@@ -1,6 +1,9 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -63,6 +66,9 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TEST.get(), TESTRenderer::new);
                 event.registerEntityRenderer(ModEntities.SPACEBAG.get(), SpacebagRenderer::new);
                 event.registerEntityRenderer(ModEntities.CAMEL.get(), CamelRenderer::new);
+                event.registerEntityRenderer(ModEntities.qjz89.get(), qjz89Renderer::new);
+                event.registerEntityRenderer(ModEntities.DSHK.get(), DSHKRenderer::new);
+                event.registerEntityRenderer(ModEntities.M2.get(), M2Renderer::new);
         }
 }
 

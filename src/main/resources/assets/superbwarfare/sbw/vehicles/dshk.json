@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:dshk",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/dshk.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/dshk.png"
+  }
+}

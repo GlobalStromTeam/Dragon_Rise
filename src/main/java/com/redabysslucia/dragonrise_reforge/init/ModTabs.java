@@ -85,6 +85,9 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         output.accept(ModItems.MK19_DEPLOYER.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
+                        output.accept(ModItems.qjz89_DEPLOYER.get());
+                        output.accept(ModItems.DSHK_DEPLOYER.get());
+                        output.accept(ModItems.M2_DEPLOYER.get());
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNJUSTCHEST.get());
