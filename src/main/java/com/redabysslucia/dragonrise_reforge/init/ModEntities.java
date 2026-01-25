@@ -255,6 +255,14 @@ public class ModEntities {
                         .sized(4.0f, 2.5f)
         );
 
+        public static final RegistryObject<EntityType<CSK181Entity>> CSK181 = register("csk181",
+                EntityType.Builder.of(CSK181Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.5f)
+        );
+
         public static final RegistryObject<EntityType<CV90Entity>> CV90 = register("cv90",
                 EntityType.Builder.of(CV90Entity::new, MobCategory.MISC)
                         .setTrackingRange(512)
