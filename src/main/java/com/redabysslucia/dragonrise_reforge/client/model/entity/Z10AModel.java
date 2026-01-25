@@ -15,6 +15,8 @@ public class Z10AModel extends VehicleModel<Z10AEntity> {
 
     @Override
     public @Nullable TransformContext<Z10AEntity> collectTransform(String boneName) {
+
+
         if (boneName.equals("propeller")) {
             return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
         }
@@ -54,6 +56,7 @@ public class Z10AModel extends VehicleModel<Z10AEntity> {
         if (boneName.equals("AKD10-8")) {
             return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 8));
         }
+
 
 
 

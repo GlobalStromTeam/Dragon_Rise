@@ -44,15 +44,15 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0, 1.125, 1.7],
+    "Position": [0.0, 1.20625, 3.5],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0, 2.75, 2.1875],
+      "Position": [0.0, 3.90625, 3.5],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [2, 4, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",

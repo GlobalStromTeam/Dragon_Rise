@@ -40,8 +40,10 @@
   "superbwarfare.entry.vehicle.ka50": "卡莫夫50式武装直升机",
   "entity.dragonrise_reforge.625e": "625",
   "superbwarfare.entry.vehicle.625e": "625弹炮结合野战防空系统",
-  "entity.dragonrise_reforge.t80": "T-80",
-  "superbwarfare.entry.vehicle.t80": "特-80 主战坦克",
+  "entity.dragonrise_reforge.t80": "T-80BVM",
+  "superbwarfare.entry.vehicle.t80": "特-80BVM 主战坦克",
+  "entity.dragonrise_reforge.bmp3": "BMP3",
+  "superbwarfare.entry.vehicle.bmp3": "BMP3 步兵战车",
   "entity.dragonrise_reforge.zbl08": "ZBL-08",
   "superbwarfare.entry.vehicle.zbl08": "装甲-步兵战车-轮式-08式",
   "entity.dragonrise_reforge.zlt11": "ZLT-11",
@@ -152,6 +154,8 @@
   "drgonrise_reforge:m61a4":"20MM m61a4 机炮",
 
   "dragonrise_reforge:9m127": "9m127 涡流 反坦克导弹",
+  "dragonrise_reforge:pkt": "7.62mm PKT 同轴机枪",
+  "dragonrise_reforge:30mmHEI": "30mm HEI 高爆弹链",
 
   "dragonrise_reforge:M829A1": "120mm M892A1 穿甲弹",
   "dragonrise_reforge:M908": "120mm M908 预制破片破甲弹",

@@ -53,7 +53,7 @@
       "Position": [0.0, 2.4015625, 3.453125],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [1, 2.75, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
