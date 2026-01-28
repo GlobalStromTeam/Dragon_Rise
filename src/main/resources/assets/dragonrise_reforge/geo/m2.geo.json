@@ -16,7 +16,7 @@
 					"pivot": [0, 6, -1]
 				},
 				{
-					"name": "bone2",
+					"name": "base",
 					"parent": "root",
 					"pivot": [0, 6, -3],
 					"cubes": [
@@ -360,7 +360,7 @@
 				},
 				{
 					"name": "turret",
-					"parent": "bone2",
+					"parent": "base",
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{

@@ -406,6 +406,14 @@ public class ModEntities {
                         .sized(4.5f, 2.4f)
         );
 
+        public static final RegistryObject<EntityType<AH64Entity>> AH64 = register("ah64",
+                EntityType.Builder.of(AH64Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(1)
+                        .fireImmune()
+                        .sized(4.5f, 2.4f)
+        );
+
         public static final RegistryObject<EntityType<TESTEntity>> TEST = register("test",
                 EntityType.Builder.of(TESTEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)
