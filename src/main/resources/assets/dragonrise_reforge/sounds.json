@@ -1,4 +1,28 @@
 {
+  "mgfire11": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/mgfire11",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:firesound/mgfire12",
+        "stream": false
+      }
+    ]
+  },
+  "mgfire1": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/mgfire1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:firesound/mgfire2",
+        "stream": false
+      }
+    ]
+  },
   "plane_start1": {
     "sounds": [
       {
@@ -11,6 +35,22 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:jetengine/plane_loop",
+        "stream": false
+      }
+    ]
+  },
+  "wheel_loop1": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/wheel_engine_loop_1",
+        "stream": false
+      }
+    ]
+  },
+  "wheel_loop2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/wheel_engine_loop_2",
         "stream": false
       }
     ]

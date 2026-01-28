@@ -54,9 +54,9 @@
       },
       "Name": "weapon.superbwarfare.50_cal_gun",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
+        "Fire1P": "dragonrise_reforge:mgfire11",
+        "Fire3P": "dragonrise_reforge:mgfire11",
+        "Fire3PFar": "dragonrise_reforge:mgfire11",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
@@ -75,7 +75,7 @@
   "EngineType": "Fixed",
   "HasLowHealthWarning": false,
   "SelfHurtPercent": 0,
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/mk19_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m2_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/defense.png",
   "Type": "Defense"
 }
