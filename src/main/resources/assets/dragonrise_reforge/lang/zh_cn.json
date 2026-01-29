@@ -37,6 +37,8 @@
   "superbwarfare.page.vehicle.zhi10mea4": "",
   "superbwarfare.page.vehicle.zhi10mea5": "",
   "entity.dragonrise_reforge.ka50": "卡-50",
+  "superbwarfare.entry.vehicle.ah64": "卡莫夫50式武装直升机",
+  "entity.dragonrise_reforge.ah64": "AH64 长弓 阿帕奇武装直升机",
   "superbwarfare.entry.vehicle.ka50": "卡莫夫50式武装直升机",
   "entity.dragonrise_reforge.625e": "625",
   "superbwarfare.entry.vehicle.625e": "625弹炮结合野战防空系统",
@@ -216,6 +218,9 @@
 
   "dragonrise_reforge:27mm": "27mm Mauser BK27 航空机炮",
   "dragonrise_reforge:aim120": "AIM120 主动雷达空对空导弹",
+  "dragonrise_reforge:30mmM230": "30mm M230 旋转炮塔",
+  "dragonrise_reforge:70 mm Hydra-70 M247 rocket": "70mm M247 火箭弹",
+
 
   "dragonrise_reforge:3UBM22": "57mm 3UBM22 穿甲弹",
   "dragonrise_reforge:OR-281U": "57mm OR-281U 榴弹",

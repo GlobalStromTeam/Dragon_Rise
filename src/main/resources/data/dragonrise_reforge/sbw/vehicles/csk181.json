@@ -63,7 +63,7 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [0.52021875, 0.3482125, -2.17215]
+      "Position": [0.52021875, 0.3482125, -2.47215]
     },
     {
       "HidePassenger": false,
@@ -73,7 +73,12 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [0.52021875, 0.3482125, -2.17215]
+      "Position": [0.52021875, 0.3482125, -1.87215]
+    },
+    {
+      "HidePassenger": false,
+      "Transform": "Vehicle",
+      "Position": [-0.52021875, 0.3482125, -2.47215]
     },
     {
       "HidePassenger": false,
@@ -83,12 +88,7 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [-0.52021875, 0.3482125, -2.17215]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.52021875, 0.3482125, -2.17215]
+      "Position": [-0.52021875, 0.3482125, -1.87215]
     }
   ],
   "Weapons": {

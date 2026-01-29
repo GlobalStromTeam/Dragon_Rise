@@ -133,7 +133,7 @@
       "ShootShake": [0.5, 0.5, 0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
+      "Crosshair": "@Custom",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:3of70",
       "AmmoType": [
