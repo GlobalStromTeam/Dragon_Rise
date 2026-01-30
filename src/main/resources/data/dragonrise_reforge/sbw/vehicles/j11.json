@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:jf17",
+  "ID": "dragonrise_reforge:j11",
   "MaxHealth": 250,
   "MaxEnergy": 10000000,
   "OBB": [
@@ -44,16 +44,16 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0.0, 0.8015625, 3.453125],
+    "Position": [0.0, 1.321875, 4.5],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
     "Weapons": ["Cannon", "Missile", "Missile2"],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 2.4015625, 3.453125],
+      "Position": [0.0, 2.921875, 4.5],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [1, 2.75, -14]
+      "AircraftCameraPos": [2, 4, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
@@ -90,7 +90,7 @@
       "CrosshairColor": "0x66FF00",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[-0.625, 1.625, 0]],
+        "Positions": [[-0.9394625, 2.11869375, 1.60071875]],
         "Directions": [[0, -0.02, 1]],
         "ShootDirectionForHud": [0, -0.03, 1]
       }
@@ -101,7 +101,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 2,
+      "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
       "Name": "dragonrise_reforge:pl8",
@@ -122,8 +122,10 @@
         "Transform": "Vehicle",
         "ViewDirection": "Default",
         "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[4.9003125, 1.6095, -3.15135625],
-          [-4.89938125, 1.6095, -3.15135625]],
+        "Positions": [[-6.46585, 1.5518625, -3.6905375],
+          [-5.137725, 1.2862375, -3.3186625],
+          [6.4594625, 1.5518625, -3.6905375],
+          [5.1313375, 1.3393625, -3.4249125]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -172,10 +174,12 @@
         "Transform": "Vehicle",
         "ViewDirection": "Default",
         "ShootPositionForHud": [0, 1.53, 0],
-        "Positions": [[3.0755375, 0.92905, -2.435275],
-          [3.81079375, 0.92905, -2.435275],
-          [-3.8098625, 0.92905, -2.435275],
-          [-3.0746, 0.92905, -2.435275]],
+        "Positions": [[3.93679375, 1.230075, -2.62364375],
+          [-3.92570625, 1.230075, -2.62364375],
+          [0.96710625, 0.6616375, -2.01270625],
+          [-0.98258125, 0.6616375, -2.01270625],
+          [-0.01570625, 1.336325, -1.12551875],
+          [-0.01570625, 1.336325, -4.89739375]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {

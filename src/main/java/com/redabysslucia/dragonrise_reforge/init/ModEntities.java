@@ -414,6 +414,14 @@ public class ModEntities {
                         .sized(4.5f, 2.4f)
         );
 
+        public static final RegistryObject<EntityType<J11Entity>> J11 = register("j11",
+                EntityType.Builder.of(J11Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(1)
+                        .fireImmune()
+                        .sized(4.5f, 2.4f)
+        );
+
         public static final RegistryObject<EntityType<TESTEntity>> TEST = register("test",
                 EntityType.Builder.of(TESTEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)

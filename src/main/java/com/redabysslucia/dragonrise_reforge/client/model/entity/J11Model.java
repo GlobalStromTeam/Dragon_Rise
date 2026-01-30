@@ -3,14 +3,14 @@ package com.redabysslucia.dragonrise_reforge.client.model.entity;
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.J10CEntity;
-import com.redabysslucia.dragonrise_reforge.entities.JF17Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J11Entity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class JF17Model extends VehicleModel<JF17Entity> {
+public class J11Model extends VehicleModel<J11Entity> {
 
         @Override
-        public @Nullable TransformContext<JF17Entity> collectTransform(String boneName) {
+        public @Nullable TransformContext<J11Entity> collectTransform(String boneName) {
                 return switch (boneName) {
                         case "wingLR" -> (bone, vehicle, state) ->
                                 bone.setRotX(1.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1LRotO, vehicle.getFlap1LRot()) * Mth.DEG_TO_RAD);
@@ -39,29 +39,35 @@ public class JF17Model extends VehicleModel<JF17Entity> {
                         case "qianzhou", "qianzhou2" ->
                                 (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
 
-                        case "PL-5e-1" -> (bone, vehicle, state) ->
+                        case "1" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 1));
 
-                        case "PL-5e-2" -> (bone, vehicle, state) ->
+                        case "2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
 
-                        case "SD-10-1" -> (bone, vehicle, state) ->
+                        case "3" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile(vehicle, 3));
+
+                        case "4" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile(vehicle, 4));
+
+                        case "pl-12-1" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile2(vehicle, 1));
 
-                        case "SD-10-2" -> (bone, vehicle, state) ->
+                        case "pl-12-2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile2(vehicle, 2));
 
-                        case "SD-10-3" -> (bone, vehicle, state) ->
+                        case "pl-12-3" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile2(vehicle, 3));
 
-                        case "SD-10-4" -> (bone, vehicle, state) ->
+                        case "pl-12-4" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile2(vehicle, 4));
 
-//                        case "pl-12-5" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile2(vehicle, 5));
-//
-//                        case "pl-12-6" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideMissile2(vehicle, 6));
+                        case "pl-12-5" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile2(vehicle, 5));
+
+                        case "pl-12-6" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile2(vehicle, 6));
 
                            default -> null;
                 };
