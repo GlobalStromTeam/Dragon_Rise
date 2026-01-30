@@ -274,6 +274,14 @@ public class ModEntities {
                         .sized(4.0f, 2.5f)
         );
 
+        public static final RegistryObject<EntityType<M3A3Entity>> M3A3 = register("m3a3",
+                EntityType.Builder.of(M3A3Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.5f)
+        );
+
         public static final RegistryObject<EntityType<PANZER4Entity>> PANZER4 = register("panzer4",
                 EntityType.Builder.of(PANZER4Entity::new, MobCategory.MISC)
                         .setTrackingRange(512)

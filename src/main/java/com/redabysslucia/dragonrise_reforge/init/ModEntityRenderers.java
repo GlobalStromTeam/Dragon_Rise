@@ -53,6 +53,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.F14.get(), F14Renderer::new);
                 event.registerEntityRenderer(ModEntities.TYPE100.get(), TYPE100Renderer::new);
                 event.registerEntityRenderer(ModEntities.BMP3.get(), BMP3Renderer::new);
+                event.registerEntityRenderer(ModEntities.M3A3.get(), M3A3Renderer::new);
                 event.registerEntityRenderer(ModEntities.J20.get(), J20Renderer::new);
                 event.registerEntityRenderer(ModEntities.J20VTOL.get(), J20VTOLRenderer::new);
                 event.registerEntityRenderer(ModEntities.AV8B.get(), AV8BRenderer::new);

@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:cv90",
+  "ID": "dragonrise_reforge:m3a3",
   "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "OBB": [
@@ -38,13 +38,15 @@
     {
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [-0.710275, -0.4, 0.5066],
+      "Position": [0.6125, 0.084375, -0.240625],
       "CanRotateHead": false,
       "MinPitch": -6,
       "MaxPitch": 60,
       "CameraPos": {
-        "Transform": "Barrel",
-        "ZoomPosition": [-0.7134, 0.97814375, 0.3800375],
+        "UseFixedCameraPos": true,
+        "Position": [0.63125, 1.1, 0.525],
+        "Transform": "Turret",
+        "ZoomPosition": [0.63125, 1.1, 0.525],
         "Direction": "Barrel"
       },
       "Weapons": ["Cannon", "Missile" ,"MainMachineGun"],
@@ -117,22 +119,22 @@
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 3,
-      "RPM": 330,
-      "Velocity": 20,
+      "RPM": 200,
+      "Velocity": 35,
       "Damage": 55,
       "ExplosionDamage": 15,
       "ExplosionRadius": 4,
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,
-      "Magazine": 80,
+      "Magazine": 300,
       "EmptyReloadTime": 200,
-      "RecoilTime": 31,
+      "RecoilTime": 20,
       "RecoilForce": 0.1,
       "ShootAnimationTime": 3,
       "Spread": 0.5,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cv90_cross.png",
+      "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0xFFC700",
-      "Name": "drgonrise_reforge:mk44",
+      "Name": "drgonrise_reforge:m242",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
         "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
@@ -146,7 +148,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.011975, 0.009525, 3.37699375]
+          [0.1016125, 0.01728125, 2.1228875]
         ],
         "Directions": ["Barrel"]
       }
@@ -173,11 +175,11 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.99816875, 0.1945125, 0.5777375]],
+        "Positions": [[-0.371875, 0.109375, 0.396875]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:m39c",
+      "Name": "dragonrise_reforge:m240",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -195,29 +197,8 @@
       "Spread": 0.5,
       "RPM": 30,
       "CrosshairColor": "0xFFC700",
-      "Name": "dragon_rise:spike",
-      "AmmoType": [
-        {
-          "Ammo": "superbwarfare:medium_anti_ground_missile",
-          "ShouldUnload": false
-        },
-        {
-          "Ammo": "superbwarfare:medium_anti_ground_missile",
-          "ShouldUnload": false,
-          "Override": {
-            "Name": "dragon_rise:spike",
-            "SeekWea  ponInfo": {
-              "SeekDirection": "Barrel",
-              "SeekRange": 384,
-              "SeekAngle": 20,
-              "SeekTime": 20,
-              "MaxTargetHeight": 32,
-              "MinTargetSize": 0.9,
-              "OnlyLockBlock": true
-            }
-          }
-        }
-      ],
+      "Name": "dragon_rise:tow",
+      "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 2,
       "EmptyReloadTime": 360,
@@ -229,8 +210,8 @@
       "RecoilForce": 0.65,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-1.5597, 0.91899375, 0.13836875],[-1.87035, 0.91899375, 0.13836875]],
-        "Directions": [[0, 0.1, 0.8], [0, 0.1, 0.8]],
+        "Positions": [[1.3190625, 1.054375, -0.0634375],[1.5990625, 1.054375, -0.0634375]],
+        "Directions": [[0, 0, 0.8], [0, 0, 0.8]],
         "ViewDirection": "Barrel"
       },
       "Crosshair": "@VehicleCommonMissile",
@@ -242,7 +223,7 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 12,
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_spike-lr.png"
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png"
     }
   },
   "HUDColor": "0xFFC700",
@@ -261,10 +242,10 @@
     "SteeringSpeed": 0.195,
     "EngineSoundVolume" : 1.0
   },
-  "TurretPos": [0.2885, 1.89525, 0.022875],
+  "TurretPos": [-0.159375, 2.244375, -0.59375],
   "TurretTurnSpeed": [6.125, 3.295],
   "TurretPitchRange": [-6, 60],
-  "BarrelPos": [-0.090625, 0.4334375, 0.4853125],
+  "BarrelPos": [-0.0875, 0.4375, 1.09375],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -306,7 +287,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cv90_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m3a3_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "APC",
   "CollisionLevel": {

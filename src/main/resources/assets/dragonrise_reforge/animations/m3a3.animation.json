@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"m3a3.animation.maincannon": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"maincannon": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, 2],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"m3a3.nothinghappen.new": {
+			"loop": true
+		}
+	}
+}
