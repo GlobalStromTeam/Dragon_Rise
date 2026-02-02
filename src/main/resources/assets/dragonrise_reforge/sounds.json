@@ -167,6 +167,30 @@
       }
     ]
   },
+  "m3a3_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m3a3/m3a3_engine",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_fire": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m3a3/m3a3_fire",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_fire_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:m3a3/m3a3_fire_far",
+        "stream": false
+      }
+    ]
+  },
   "t80_reload": {
     "sounds": [
       {

@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import lombok.val;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -32,29 +33,33 @@ public class M3A3Entity extends NightVisionVehicle {
         return event.setAndContinue(RawAnimation.begin().thenLoop("m3a3.nothinghappen.new"));
     }
 
-//    public boolean getweaponid(VehicleEntity vehicle, int weaponid) {
-//        var gunData = vehicle.getGunData("Missile");
-//        if (gunData == null) {
-//            return false;
-//        } else {
-//            return gunData.ammo.get() < weaponid;
-//        }
-//    }
+    public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
+        val driver = vehicle.getFirstPassenger();
+        if (driver == null) return false;
 
-//    private PlayState MissileOn(AnimationState<M3A3Entity> event) {
-//        if (countMissile(this,0) || countMissile(this,1)) {
-//            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-//                    ("cv90.missileoff.new"));
-//        }
-//        else {
-//            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-//                    ("cv90.missileon.new"));
-//        }
-//    }
+        val seatIndex = vehicle.getSeatIndex(driver);
+        if (seatIndex < 0) return false;
+
+        val currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
+        if (currentWeaponIndex != missileWeaponIndex) return false;
+
+        val gunData = vehicle.getGunData(seatIndex);
+        return gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0);
+    }
+
+    private PlayState MissileOn(AnimationState<M3A3Entity> event) {
+        if (shouldShowMissileOn(this, 1)) {
+            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
+                    ("m3a3.antimation.missileon"));
+        } else {
+            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
+                    ("m3a3.animation.missileoff"));
+        }
+    }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-//        data.add(new AnimationController<>(this, "missileon", 0, this::MissileOn));
+        data.add(new AnimationController<>(this, "missileon", 0, this::MissileOn));
         data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
     }
 

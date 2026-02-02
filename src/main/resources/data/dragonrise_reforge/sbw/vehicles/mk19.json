@@ -58,7 +58,7 @@
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:grenade_40mm",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_40mm.png",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [

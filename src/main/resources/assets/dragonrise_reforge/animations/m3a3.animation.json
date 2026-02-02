@@ -16,6 +16,40 @@
 		},
 		"m3a3.nothinghappen.new": {
 			"loop": true
+		},
+		"m3a3.animation.missileoff": {
+			"animation_length": 0.5,
+			"bones": {
+				"missile": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 0, 90]
+					}
+				},
+				"bone": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [0, 0, -45]
+					}
+				}
+			}
+		},
+		"m3a3.antimation.missileon": {
+			"animation_length": 0.5,
+			"bones": {
+				"missile": {
+					"rotation": {
+						"0.0": [0, 0, 90],
+						"0.5": [0, 0, 0]
+					}
+				},
+				"bone": {
+					"rotation": {
+						"0.0": [0, 0, -45],
+						"0.5": [0, 0, 0]
+					}
+				}
+			}
 		}
 	}
 }

@@ -16,6 +16,10 @@ public class Z10AModel extends VehicleModel<Z10AEntity> {
     @Override
     public @Nullable TransformContext<Z10AEntity> collectTransform(String boneName) {
 
+        if (boneName.equals("lightboll")) {
+            return(bone, vehicle, state)->
+                    bone.setRotX(getAnimationProcessor().getBone("barrel").getRotX());
+        }
 
         if (boneName.equals("propeller")) {
             return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
