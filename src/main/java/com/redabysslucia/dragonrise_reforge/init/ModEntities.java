@@ -58,6 +58,14 @@ public class ModEntities {
                        .sized(4.0f, 2.9f)
        );
 
+       public static final RegistryObject<EntityType<WLSCEntity>> WLSC = register("wlsc",
+               EntityType.Builder.of(WLSCEntity::new, MobCategory.MISC)
+                       .setTrackingRange(512)
+                       .setUpdateInterval(1)
+                       .fireImmune()
+                       .sized(4.0f, 2.9f)
+       );
+
         public static final RegistryObject<EntityType<M1A2SEPV2Entity>> M1A2SEPV2 = register("m1a2sepv2",
                 EntityType.Builder.of(M1A2SEPV2Entity::new, MobCategory.MISC)
                         .setTrackingRange(512)

@@ -5,20 +5,21 @@ import com.redabysslucia.dragonrise_reforge.entities.AMX56Entity;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("removal")
 public class AMX56Model extends VehicleModel<AMX56Entity> {
 
     private static final ResourceLocation[] MODEL_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge", "geo/amx56.geo.json"),
-            new ResourceLocation("dragonrise_reforge", "geo/amx56nato.geo.json")
+            new ResourceLocation("dragonrise_reforge:geo/amx56.geo.json"),
+            new ResourceLocation("dragonrise_reforge:geo/amx56nato.geo.json")
     };
 
     private static final ResourceLocation[] TEXTURE_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge", "textures/entity/amx56.png"),
-            new ResourceLocation("dragonrise_reforge", "textures/entity/amx56nato.png")
+            new ResourceLocation("dragonrise_reforge:textures/entity/amx56.png"),
+            new ResourceLocation("dragonrise_reforge:textures/entity/amx56nato.png")
     };
 
     private static final ResourceLocation ANIMATION_RESOURCE =
-            new ResourceLocation("dragonrise_reforge", "animations/amx56.animation.json");
+            new ResourceLocation("dragonrise_reforge:animations/amx56.animation.json");
 
     @Override
     public ResourceLocation getModelResource(AMX56Entity entity) {
