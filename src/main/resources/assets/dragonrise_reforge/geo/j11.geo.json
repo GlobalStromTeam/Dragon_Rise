@@ -1782,7 +1782,7 @@
 					]
 				},
 				{
-					"name": "LeftFlap",
+					"name": "wingLR",
 					"parent": "LeftWing",
 					"pivot": [54.28712, 30.30414, 72.24508],
 					"rotation": [0, -20, 0],
@@ -1964,7 +1964,7 @@
 					]
 				},
 				{
-					"name": "RightFlap",
+					"name": "wingRR",
 					"parent": "RightWing",
 					"pivot": [-54.28712, 30.30414, 72.24508],
 					"rotation": [0, 20, 0],
@@ -2026,7 +2026,7 @@
 					]
 				},
 				{
-					"name": "LeftTailPlane",
+					"name": "wingLB",
 					"parent": "wing",
 					"pivot": [27.47956, 24.35355, 110.04061],
 					"cubes": [
@@ -2671,7 +2671,7 @@
 					]
 				},
 				{
-					"name": "RightTailPlane",
+					"name": "wingRB",
 					"parent": "wing",
 					"pivot": [-27.47956, 24.35355, 110.04061],
 					"cubes": [

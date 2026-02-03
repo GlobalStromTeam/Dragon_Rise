@@ -35,7 +35,7 @@
 					"pivot": [0, 37.42191, -91.3691]
 				},
 				{
-					"name": "verticalTail",
+					"name": "weiyiR",
 					"parent": "root",
 					"pivot": [0, 69.27377, 146.19731],
 					"cubes": [
@@ -99,7 +99,7 @@
 					]
 				},
 				{
-					"name": "LeftFlap",
+					"name": "wingLB",
 					"parent": "root",
 					"pivot": [37.9543, 28.45816, 99.96706],
 					"rotation": [0, 5, 0],
@@ -147,7 +147,7 @@
 					]
 				},
 				{
-					"name": "RightFlap",
+					"name": "wingRB",
 					"parent": "root",
 					"pivot": [-37.9543, 28.45816, 99.96706],
 					"rotation": [0, -5, 0],
@@ -195,7 +195,7 @@
 					]
 				},
 				{
-					"name": "LeftTailPlane",
+					"name": "wingLR",
 					"parent": "root",
 					"pivot": [11.23451, 41.0715, -12.50506],
 					"rotation": [0, 1.5, 0],
@@ -259,7 +259,7 @@
 					]
 				},
 				{
-					"name": "RightTailPlane",
+					"name": "wingRR",
 					"parent": "root",
 					"pivot": [-11.23451, 41.0715, -12.50506],
 					"rotation": [0, -1.5, 0],
