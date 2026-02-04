@@ -247,6 +247,13 @@
       }
     ]
   },
+  "bmpt_music": {
+    "sounds": [{
+      "name": "dragonrise_reforge:bmpt/bmpt_music",
+      "stream": false
+    }],
+    "stream": true
+  },
   "ztz99a_reload": {
     "sounds": [
       {

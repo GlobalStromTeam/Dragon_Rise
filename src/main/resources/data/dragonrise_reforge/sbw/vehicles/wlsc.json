@@ -17,7 +17,7 @@
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.54, 0.0, 0.92],
+      "Position": [0.53081875, 0.5936875, 2.3492375],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -26,7 +26,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-0.54, 0.0, 0.92],
+      "Position": [-0.6592, 0.5936875, 2.3492375],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -35,7 +35,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [0.54, 0.0, -0.50],
+      "Position": [0.54, 0.5936875, 1.4493375],
       "CanRotateBody":true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -45,7 +45,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-0.54, 0.0, -0.50],
+      "Position": [-0.54, 0.5936875, 1.4493375],
       "CanRotateBody":true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -55,7 +55,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [0, 0.0, -0.50],
+      "Position": [0, 0.5936875, 1.4493375],
       "CanRotateBody":true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -113,7 +113,7 @@
     "ExplosionRadius": 5
   },
   "ThirdPersonCameraPos": [0, 1, 5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ft_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/wlsc_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "superbwarfare:lav_150_engine",

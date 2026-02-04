@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
 import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
+import com.redabysslucia.dragonrise_reforge.client.layer.JF17GlowLayer;
 import com.redabysslucia.dragonrise_reforge.client.model.entity.J10CModel;
 import com.redabysslucia.dragonrise_reforge.client.model.entity.JF17Model;
 import com.redabysslucia.dragonrise_reforge.entities.J10CEntity;
@@ -11,6 +12,6 @@ public class JF17Renderer extends VehicleRenderer<JF17Entity> {
         public JF17Renderer(EntityRendererProvider.Context renderManager) {
 
             super(renderManager,new JF17Model());
-            //this.addRenderLayer(new J10GlowLayer(this));
+            this.addRenderLayer(new JF17GlowLayer(this));
         }
 }

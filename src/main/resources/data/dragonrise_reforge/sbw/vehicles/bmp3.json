@@ -193,7 +193,7 @@
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "Magazine": 2000,
+      "Magazine": 250,
       "RPM": 800,
       "EmptyReloadTime": 160,
       "Damage": 10,

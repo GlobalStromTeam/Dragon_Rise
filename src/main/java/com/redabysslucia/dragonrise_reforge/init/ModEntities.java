@@ -114,6 +114,14 @@ public class ModEntities {
                         .sized(4.0f, 2.9f)
         );
 
+        public static final RegistryObject<EntityType<BMPT72Entity>> BMPT72 = register("bmpt72",
+                EntityType.Builder.of(BMPT72Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.9f)
+        );
+
         public static final RegistryObject<EntityType<J10CEntity>> J10C = register("j10c",
                 EntityType.Builder.of(J10CEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)
