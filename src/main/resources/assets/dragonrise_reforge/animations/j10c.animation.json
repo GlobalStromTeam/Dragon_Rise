@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"起落架收": {
+		"off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 13.6667,
 			"bones": {
@@ -87,7 +87,7 @@
 				}
 			}
 		},
-		"起落架放": {
+		"on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 13.6667,
 			"bones": {

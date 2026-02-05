@@ -3048,7 +3048,7 @@
 				{
 					"name": "passengerWeaponStationYaw",
 					"parent": "passengerWeaponStation",
-					"pivot": [4.5923, 44.1432, -1.79088],
+					"pivot": [4.5923, 44.1432, -2.4089],
 					"cubes": [
 						{
 							"origin": [-2.08875, 45.08805, -4.73073],

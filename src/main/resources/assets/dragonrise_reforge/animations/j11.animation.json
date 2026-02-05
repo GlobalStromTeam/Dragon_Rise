@@ -95,7 +95,7 @@
 				}
 			}
 		},
-		"起落架收": {
+		"off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {
@@ -209,7 +209,7 @@
 				}
 			}
 		},
-		"起落架放": {
+		"on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {

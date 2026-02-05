@@ -127,7 +127,7 @@
   "superbwarfare.entry.vehicle.jf17": "JF-17",
   "entity.dragonrise_reforge.jf17": "成都 JF-17/FC-1 雷电/枭龙战斗机",
   "superbwarfare.entry.vehicle.bmpt72": "BMPT-72",
-  "entity.dragonrise_reforge.bmpt": "BMPT-72 火力支援战车",
+  "entity.dragonrise_reforge.bmpt72": "BMPT-72 火力支援战车",
   "superbwarfare.entry.vehicle.csk181": "CKS181",
   "entity.dragonrise_reforge.csk181": "东风汽车 CSK181 猛士 装甲突击车",
   "superbwarfare.entry.vehicle.av8b": "AV8B（测试）",
@@ -205,6 +205,7 @@
 
   "dragonrise_reforge:3of70": "100mm 3OF70 杀爆弹",
   "dragonrise_reforge:aps03": "100mm APS03 串破炮射导弹",
+  "dragonrise_reforge:9M117M1": "100mm 9M117M1 串破炮射导弹",
   "dragonrise_reforge:QJT": "5.8mm QJT 同轴机枪",
   "dragonrise_reforge:04mc": "30mm DTY-02 破片杀伤弹",
 

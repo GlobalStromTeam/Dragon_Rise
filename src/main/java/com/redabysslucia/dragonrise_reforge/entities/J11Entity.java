@@ -27,11 +27,11 @@ public class J11Entity extends GeoVehicleEntity {
     private PlayState Sb(AnimationState<J11Entity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("起落架放"));
+                    ("on"));
         }
         else {
         return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                ("起落架收"));
+                ("off"));
         }
     }
 

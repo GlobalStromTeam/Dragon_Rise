@@ -69,7 +69,7 @@
         "UseFixedCameraPos": true,
         "Position":[0.28701875, 0.8, -0.78694375],
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0, 0.1, 0],
+        "ZoomPosition": [0.28701875, 0.8, -0.78694375],
         "Direction": "WeaponStationBarrel",
         "MinPitch": -6,
         "MaxPitch": 60
@@ -317,7 +317,7 @@
   "BarrelPos": [0.0, 0.2364375, 1.17153125],
   "TurretTurnSpeed": [2.625, 3.575],
   "TurretPitchRange": [-7, 15],
-  "PassengerWeaponStationPos": [0.28701875, 0.88395, -0.78694375],
+  "PassengerWeaponStationPos": [0.28701875, 0.8792625, -0.79006875],
   "PassengerWeaponStationBarrelPos": [-0.14386875, 0.41348125, 0.03224375],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
   "PassengerWeaponStationPitchRange": [-6, 85],
