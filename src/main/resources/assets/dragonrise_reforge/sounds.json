@@ -1,4 +1,28 @@
 {
+  "m2a3_engine_loop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/m2a3_engine_loop",
+        "stream": false
+      }
+    ]
+  },
+  "m2a3firefar": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/m2a3firefar",
+        "stream": false
+      }
+    ]
+  },
+  "m2a3fire": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:firesound/m2a3fire",
+        "stream": false
+      }
+    ]
+  },
   "mgfire11": {
     "sounds": [
       {

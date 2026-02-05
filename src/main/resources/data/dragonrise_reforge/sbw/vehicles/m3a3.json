@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:m3a3",
-  "MaxHealth": 300,
+  "MaxHealth": 250,
   "MaxEnergy": 5000000,
   "OBB": [
     {
@@ -40,7 +40,7 @@
       "Transform": "Turret",
       "Position": [0.6125, 0.084375, -0.240625],
       "CanRotateHead": false,
-      "MinPitch": -9,
+      "MinPitch": -10,
       "MaxPitch": 60,
       "CameraPos": {
         "UseFixedCameraPos": true,
@@ -121,7 +121,7 @@
       "DefaultZoom": 3,
       "RPM": 200,
       "Velocity": 35,
-      "Damage": 55,
+      "Damage": 75,
       "ExplosionDamage": 15,
       "ExplosionRadius": 4,
       "HeatPerShoot": 6,
@@ -136,10 +136,10 @@
       "CrosshairColor": "0xFFC700",
       "Name": "drgonrise_reforge:m242",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:m3a3_fire",
-        "Fire3P": "dragonrise_reforge:m3a3_fire",
-        "Fire3PFar": "dragonrise_reforge:m3a3_fire_far",
-        "Fire3PVeryFar": "superbwarfare:m3a3_fire_far",
+        "Fire1P": "dragonrise_reforge:m2a3fire",
+        "Fire3P": "dragonrise_reforge:m2a3fire",
+        "Fire3PFar": "dragonrise_reforge:m2a3firefar",
+        "Fire3PVeryFar": "dragonrise_reforge:m2a3firefar",
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 24,
@@ -235,16 +235,16 @@
     "WheelDifferential": 0.5,
     "TrackRotSpeed": 1.9,
     "TrackDifferential": 0.8,
-    "MaxForwardSpeedRate": 0.82,
+    "MaxForwardSpeedRate": 0.70,
     "MaxBackwardSpeedRate": 0.27,
     "Increment": 0.0087,
     "Decrement": 0.01,
-    "SteeringSpeed": 0.195,
+    "SteeringSpeed": 0.14,
     "EngineSoundVolume" : 1.0
   },
   "TurretPos": [-0.159375, 2.244375, -0.59375],
   "TurretTurnSpeed": [6.125, 3.295],
-  "TurretPitchRange": [-9, 60],
+  "TurretPitchRange": [-10, 60],
   "BarrelPos": [-0.0875, 0.4375, 1.09375],
   "HasDecoy": true,
   "UpStep": 2.25,
@@ -298,7 +298,7 @@
       [0.12, 0.07, false]
     ]
   },
-  "EngineSound": "draognrise_reforge:m3a3_engine",
+  "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "HudType": "@Land",
   "TerrainCompat": [
     [1.875, 0, 2.375], [-1.875, 0, 2.375],
