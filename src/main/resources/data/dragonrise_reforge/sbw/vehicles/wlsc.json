@@ -1,15 +1,39 @@
 {
   "ID": "dragonrise_reforge:wlsc",
-  "MaxHealth": 114514,
+  "MaxHealth": 100,
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.375, 0.46875, 3.65625],
-      "Position": [0, 0.78125, 0.65625]
+      "Size": [0.0613425, 0.4043, 1.96283],
+      "Position": [1.2232525, 1.3980525, -0.947651875]
     },
     {
-      "Size": [1.09375, 0.34375, 1.8125],
-      "Position": [0, 1.53125, 0.375]
+      "Size": [0.0613425, 0.4043, 1.96283],
+      "Position": [-1.2857525, 1.3980525, -0.947651875]
+    },
+    {
+      "Size": [1.21875, 0.4043, 0.09375],
+      "Position": [-0.05684, 1.3980525, -2.879481875]
+    },
+    {
+      "Size": [1.21875, 1.1543, 1.0625],
+      "Position": [0, 1.5855525, 2.089268125]
+    },
+    {
+      "Size": [1.21875, 0.5918, 1.5],
+      "Position": [0, 1.0230525, 2.526768125]
+    },
+    {
+      "Size": [0.53125, 0.31055, 3.28125],
+      "Position": [0, 0.7418025, 0.745518125]
+    },
+    {
+      "Size": [1.28125, 0.4668, 0.46875],
+      "Position": [0, 0.4605525, -1.129481875]
+    },
+    {
+      "Size": [1.28125, 0.4668, 0.46875],
+      "Position": [0, 0.4605525, 3.245518125]
     }
   ],
   "Seats": [
@@ -77,7 +101,7 @@
     "EngineSoundVolume" : 0.6
   },
   "UpStep": 1.5,
-  "Mass": 114514,
+  "Mass": 0.9,
   "RotateOffsetHeight": 0.5,
   "DamageModifiers": [
     "minecraft:arrow * 0.2",
@@ -103,8 +127,7 @@
     "@superbwarfare:rgo_grenade * 3",
     "@superbwarfare:hand_grenade * 2.5",
     "@superbwarfare:mortar_shell * 2",
-    "All - 114514",
-    "All * 0.01"
+    "All * 0.9"
   ],
   "VehicleContainerType": "Huge",
   "DestroyInfo": {
@@ -116,7 +139,7 @@
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/wlsc_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
-  "EngineSound": "superbwarfare:lav_150_engine",
+  "EngineSound": "dragonrise_reforge:wheel_loop1",
   "HornSound": "superbwarfare:truck_horn",
   "TerrainCompat": [[1.1875, 0, 3.1875], [-1.1875, 0, 3.1875], [1.1875, 0, -1.0625], [-1.1875, 0, -1.0625]],
   "InertiaRotateRate": 0.9
