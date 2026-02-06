@@ -87,38 +87,8 @@
   ],
   "Weapons": {
     "Rocket": {
-      "AmmoType": "superbwarfare:small_rocket",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
-      "DefaultZoom": 2,
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Magazine": 1,
-      "EmptyReloadTime": 200,
-      "Projectile": "superbwarfare:small_rocket",
-      "Spread": 0.25,
-      "Name": "dragonrise_reforge:huo_fa6",
-      "RPM": 450,
-      "Damage": 85,
-      "ExplosionDamage": 42,
-      "ExplosionRadius": 6,
-      "Gravity": 0.02,
-      "Velocity": 16,
-      "ShootPos": {
-        "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 0.62, 0.8],
-        "ShootDirectionForHud": [0, 0.018, 1],
-        "Positions": [[-1.787, 1.548, -0.151],[1.787, 1.548, -0.151]],
-        "Directions": [[0, 0, 1]]
-      },
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:small_rocket_fire_1p",
-        "Fire3P": "superbwarfare:small_rocket_fire_3p",
-        "VehicleReload3p": "superbwarfare:missile_reload",
-        "VehicleReloadSoundTime": 7,
-        "Change": "superbwarfare:into_missile"
-      },
-      "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/em.png",
+      "Name": ""
     }
   },
   "EngineType": "Helicopter",
