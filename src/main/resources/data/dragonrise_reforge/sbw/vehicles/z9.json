@@ -87,7 +87,7 @@
   ],
   "Weapons": {
     "Rocket": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/em.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/em.png",
       "Name": ""
     }
   },

@@ -4,13 +4,13 @@
   "MaxEnergy": 0,
   "TurretPos": [0.0, 0.0, 0.0],
   "TurretTurnSpeed": [10, 10],
-  "TurretPitchRange": [-40, 40],
+  "TurretPitchRange": [-40, 60],
   "BarrelPos": [0.0, 0.47551875, -0.0575625],
   "Seats": {
     "Transform": "Turret",
     "Position": [0, -0.8689, -1],
-    "MinPitch": -4,
-    "MaxPitch": 40,
+    "MinPitch": -9,
+    "MaxPitch": 60,
     "CameraPos": {
       "UseFixedCameraPos": true,
       "Position": [0.21875, 0.4375, -0.9375],

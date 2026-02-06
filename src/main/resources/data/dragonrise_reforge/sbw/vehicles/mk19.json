@@ -4,13 +4,13 @@
   "MaxEnergy": 0,
   "TurretPos": [0, 0.9689, 0],
   "TurretTurnSpeed": [10, 10],
-  "TurretPitchRange": [-40, 40],
+  "TurretPitchRange": [-40, 60],
   "BarrelPos": [0, 0.206, 0],
   "Seats": {
     "Transform": "Turret",
     "Position": [0, -1.3689, -1],
-    "MinPitch": -4,
-    "MaxPitch": 40,
+    "MinPitch": -9,
+    "MaxPitch": 60,
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
@@ -58,7 +58,7 @@
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:grenade_40mm",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_40mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/em.png",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
