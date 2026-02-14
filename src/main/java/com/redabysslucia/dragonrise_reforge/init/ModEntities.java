@@ -493,6 +493,13 @@ public class ModEntities {
                         .fireImmune()
                         .sized(0.5f, 0.5f)
         );
+ public static final RegistryObject<EntityType<T3476Entity>> T3476 = register("t3476",
+         EntityType.Builder.of(T3476Entity::new, MobCategory.MISC)
+                 .setTrackingRange(512)
+                 .setUpdateInterval(1)
+                 .fireImmune()
+                 .sized(4.0f, 2.9f)
+ );
 
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
