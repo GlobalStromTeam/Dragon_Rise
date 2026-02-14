@@ -171,7 +171,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change": "dragonrise_reforge:into_cannon"
       },
       "SoundRadius": 16
     }
@@ -250,7 +250,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz99a_engine",
+  "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [

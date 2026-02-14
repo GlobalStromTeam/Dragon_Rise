@@ -257,5 +257,6 @@
   "dragonrise_reforge:hyr0he": "334mm ??? HY",
   "drgonrise_reforge:hyr020": "20mm ???",
   "dragonrise_reforge:hyr030": "76mm ???",
-  "dragonrise_reforge:t3476": "T34 1940/L41"
+  "entity.dragonrise_reforge.t3476": "T34 1940/L41",
+  "superbwarfare.entry.vehicle.t3476": "T34 1940/L41"
 }

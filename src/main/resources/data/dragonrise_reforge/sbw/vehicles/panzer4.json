@@ -95,9 +95,9 @@
         "Fire3PFar": "dragonrise_reforge:m1a2_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:m1a2_fire_3p_far",
         "VehicleReload": "dragonrise_reforge:ztz99a_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Change": "dragonrise_reforge:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
+          "dragonrise_reforge:into_cannon"
         ]
       },
       "SoundRadius": 32,
@@ -250,7 +250,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz99a_engine",
+  "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
