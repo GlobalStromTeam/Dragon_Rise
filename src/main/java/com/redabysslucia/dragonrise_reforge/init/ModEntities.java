@@ -501,6 +501,14 @@ public class ModEntities {
                  .sized(4.0f, 2.9f)
  );
 
+        public static final RegistryObject<EntityType<IS2Entity>> IS2 = register("is2",
+                EntityType.Builder.of(IS2Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.7f)
+        );
+
 
         private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
                     return REGISTRY.register(name, () -> entityTypeBuilder.build(name));

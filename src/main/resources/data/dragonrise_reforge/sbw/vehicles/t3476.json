@@ -194,7 +194,7 @@
   },
   "TurretPos": [0, 1.6584375, 0.2625],
   "BarrelPos": [0, 0.36, 1.0375],
-  "TurretTurnSpeed": [0.325, 0.775],
+  "TurretTurnSpeed": [0.325, 0.675],
   "TurretPitchRange": [-6, 35],
   "HasDecoy": true,
   "UpStep": 2.25,

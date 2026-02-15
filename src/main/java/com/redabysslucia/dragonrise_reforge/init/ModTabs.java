@@ -75,6 +75,7 @@ public class ModTabs {
                         //ww2
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
