@@ -6,8 +6,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class IS2Entity extends GeoVehicleEntity {
-    public IS2Entity(EntityType<?> pEntityType, Level pLevel) {
+public class TigerEntity extends GeoVehicleEntity {
+    public TigerEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -16,7 +16,6 @@ public class IS2Entity extends GeoVehicleEntity {
         return super.getDamageModifier()
                 .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
     }
-
 
     @Override
     public int getTrackAnimationLength() {

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:tiger",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/tiger.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/tiger.png"
+  }
+}
