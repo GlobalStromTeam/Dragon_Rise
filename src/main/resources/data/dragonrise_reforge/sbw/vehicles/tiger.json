@@ -60,7 +60,7 @@
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 220,
+      "EmptyReloadTime": 180,
       "Velocity": 32,
       "Damage": 400,
       "ExplosionDamage": 85,
