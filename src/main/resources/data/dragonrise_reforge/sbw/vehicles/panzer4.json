@@ -72,7 +72,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:88mmAPHE",
+      "Name": "dragonrise_reforge:75mmAPHE",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
