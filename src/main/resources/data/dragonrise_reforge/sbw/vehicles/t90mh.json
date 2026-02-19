@@ -42,13 +42,13 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.65843125, 2.2434375, 0.4554875],
+        "Position": [0.75, 2.625, 0.375],
         "Transform": "Turret",
-        "ZoomPosition": [0.65843125, 2.2434375, 0.4554875],
+        "ZoomPosition": [0.75, 2.625, 0.375],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.47236875, 1.29913125, -0.39580625],
+      "Position": [0.53850625, 0.7294875, -0.51371875],
       "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -6,
@@ -60,9 +60,9 @@
       "Transform": "Turret",
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0, 0.7, 0],
+        "Position": [0.00483125, 3, 0.1647375],
         "Transform": "WeaponStation",
-        "ZoomPosition": [0, 0.7, 0],
+        "ZoomPosition": [0.00483125, 3, 0.1647375],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [-0.67365, 1.24318125, -0.104375],
@@ -139,7 +139,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.010325, 0.00089375, 5.16416875]],
+        "Positions": [[0.0056125, 0.0016625, 5.59251875]],
         "Directions": ["Barrel"]
       }
     },
@@ -166,7 +166,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.197975, -0.022475, 0.77839375]],
+        "Positions": [[-0.23185, -0.02498125, 0.66523125]],
         "Directions": ["Barrel"]
       },
       "Name": "darognrise_reforge:ПКТ",
@@ -201,7 +201,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[0, 0, 0.6]],
+        "Positions": [[0.041075, 0.022975, 1.1514]],
         "Directions": ["WeaponStationBarrel"]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -233,11 +233,11 @@
     "EngineSoundVolume" : 0.8
   },
   "TurretPos": [0, 0, 0],
-  "BarrelPos": [-0.0196, 1.7181875, 1.083125],
+  "BarrelPos": [-0.02234375, 1.95873125, 1.4647625],
   "TurretTurnSpeed": [7, 3.765],
   "TurretPitchRange": [-6, 18],
-  "PassengerWeaponStationPos": [-0.63161875, 2.36005, -1.039225],
-  "PassengerWeaponStationBarrelPos": [0.3404, 0.52673125, -0.21140625],
+  "PassengerWeaponStationPos": [-0.66108125, 0.0, -1.1647375],
+  "PassengerWeaponStationBarrelPos": [0.2985375, 3.28980625, -0.36560625],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
   "PassengerWeaponStationPitchRange": [-5, 60],
   "HasDecoy": true,
