@@ -65,6 +65,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.BMPT72.get(), BMPT72Renderer::new);
                 event.registerEntityRenderer(ModEntities.EC665.get(), EC665Renderer::new);
                 event.registerEntityRenderer(ModEntities.AH64.get(), AH64Renderer::new);
+                event.registerEntityRenderer(ModEntities.UH60.get(), UH60Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHIELD.get(), SHIELDRenderer::new);
                 event.registerEntityRenderer(ModEntities.TOYOTASEIKI.get(), TOYOTASEIKIRenderer::new);
                 event.registerEntityRenderer(ModEntities.CYBORG_TANK.get(), CyborgTankRenderer::new);
