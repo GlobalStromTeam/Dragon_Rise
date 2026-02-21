@@ -162,6 +162,14 @@ public class ModEntities {
                         .sized(4.0f, 2.7f)
         );
 
+        public static final RegistryObject<EntityType<T80BEntity>> T80B = register("t80b",
+                EntityType.Builder.of(T80BEntity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.0f, 2.7f)
+        );
+
         public static final RegistryObject<EntityType<T90MHEntity>> T90MH = register("t90mh",
                 EntityType.Builder.of(T90MHEntity::new, MobCategory.MISC)
                        .setTrackingRange(512)

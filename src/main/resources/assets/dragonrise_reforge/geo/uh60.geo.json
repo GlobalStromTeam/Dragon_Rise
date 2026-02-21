@@ -12,10 +12,6 @@
 			},
 			"bones": [
 				{
-					"name": "bb_main",
-					"pivot": [0, 0, 0]
-				},
-				{
 					"name": "UH-60",
 					"pivot": [0, -7, -5]
 				},
