@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:t80",
+  "ID": "dragonrise_reforge:t80b",
   "Model": {
     "Animation": "dragonrise_reforge:animations/t80.animation.json",
     "Model": "dragonrise_reforge:geo/t80b.geo.json",

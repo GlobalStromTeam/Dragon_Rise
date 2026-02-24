@@ -116,7 +116,7 @@
     "Cannon": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:cannon_shell",
+      "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 3,
       "RPM": 800,
       "Magazine": 120,

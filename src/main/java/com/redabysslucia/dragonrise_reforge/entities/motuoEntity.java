@@ -9,33 +9,53 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("removal")
 public class motuoEntity extends NightVisionVehicle {
 
-        public motuoEntity(EntityType<motuoEntity> type, Level world) {
-                super(type, world);
+    public motuoEntity(EntityType<motuoEntity> type, Level world) {
+        super(type, world);
+    }
+
+    public Vec3 deltaMovement0;
+
+    @Override
+    public void baseTick() {
+        deltaMovement0 = getDeltaMovement();
+        super.baseTick();
+    }
+
+    @Override
+    public void bounceHorizontal(@NotNull Direction direction) {
+
+        double currentSpeed = deltaMovement0.length();
+
+        boolean isDownwardImpact = direction == Direction.DOWN;
+
+        if (isDownwardImpact) {
+            if (currentSpeed > 2.0) {
+                this.setDeltaMovement(this.getDeltaMovement().scale(0.3));
+            }
+            super.bounceHorizontal(direction);
+            return;
         }
 
-        public Vec3 deltaMovement0;
-
-        @Override
-        public void baseTick() {
-            deltaMovement0 = getDeltaMovement();
-            super.baseTick();
+        if (currentSpeed < 0.5) {
+            super.bounceHorizontal(direction);
+            return;
         }
 
-        @Override
-        public void bounceHorizontal(@NotNull Direction direction) {
-            for (Entity entity: getPassengers()) {
-                if(entity != null){
+        if (this.level() instanceof ServerLevel) {
+            for (Entity entity : getPassengers()) {
+                double speed = getDeltaMovement().length();
+                if (speed > 0.4) {
                     entity.stopRiding();
-                    double speed = deltaMovement0.length();
                     Vec3 dir = deltaMovement0.normalize().add(getUpVec(1).scale(0.6));
-                    Mod.queueServerWork(1,()->{
-                        if(entity instanceof Player player && player.level().isClientSide){
+                    Mod.queueServerWork(1, () -> {
+                        if (entity instanceof Player player) {
                             player.setDeltaMovement(dir.normalize().scale(speed));
                         } else {
                             entity.setDeltaMovement(dir.normalize().scale(speed));
@@ -44,14 +64,15 @@ public class motuoEntity extends NightVisionVehicle {
 
                 }
             }
-            super.bounceHorizontal(direction);
         }
+        super.bounceHorizontal(direction);
+    }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.05f) * damage);
-        }
+    @Override
+    public DamageModifier getDamageModifier() {
+        return super.getDamageModifier()
+                .custom((source, damage) -> getSourceAngle(source, 0.05f) * damage);
+    }
 
     @Override
     public ResourceLocation getNightVisionShader() {
