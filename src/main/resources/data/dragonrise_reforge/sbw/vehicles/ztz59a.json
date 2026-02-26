@@ -4,42 +4,28 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [1.875, 0.625, 3.8125],
-      "Position": [0.0, 1.125, 0.3125]
+      "Size": [0.9375, 0.46875, 2.84375],
+      "Position": [0.0, 0.96875, 0.15625]
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.375, 0.5625, 3.6875],
-      "Position": [1.5, 0.5625, 0.375]
+      "Size": [0.375, 0.625, 2.9375],
+      "Position": [1.3125, 0.625, 0.0625]
     },
     {
       "Part": "WheelRight",
-      "Size": [0.375, 0.5625, 3.6875],
-      "Position": [-1.5, 0.5625, 0.375]
+      "Size": [0.375, 0.625, 2.9375],
+      "Position": [-1.3125, 0.625, 0.0625]
     },
     {
       "Part": "MainEngine",
-      "Size": [1.78125, 0.5, 0.75],
-      "Position": [0.0, 1.625, -2.8125]
+      "Size": [1.0, 0.53125, 0.53125],
+      "Position": [0.0, 1.03125, -2.28125]
     },
     {
       "Part": "Turret",
-      "Size": [1.3125, 0.3125, 0.53125],
-      "Position": [0.0, 0.3125, 1.21875],
-      "Transform": "Turret",
-      "Rotation": "Turret"
-    },
-    {
-      "Part": "Turret",
-      "Size": [1.3125, 0.4375, 0.9375],
-      "Position": [0.0, 0.4375, -0.25],
-      "Transform": "Turret",
-      "Rotation": "Turret"
-    },
-    {
-      "Part": "Turret",
-      "Size": [0.9375, 0.34375, 0.84375],
-      "Position": [0.0, 0.53125, -2.03125],
+      "Size": [1.1875, 0.40625, 1.34375],
+      "Position": [0.0, 1, 0.15625],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -113,7 +99,7 @@
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
       "Magazine": 1,
-      "EmptyReloadTime": 80,
+      "EmptyReloadTime": 150,
       "Velocity": 40,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -125,7 +111,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_dtc10105",
+      "Name": "dragonrise_reforge:type59ap",
       "AmmoType": [
         "superbwarfare:ap_5_inches",
         {
@@ -138,46 +124,19 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "dragonrise_reforge:dtb10105"
-          }
-        },
-        {
-          "Ammo": "superbwarfare:medium_anti_ground_missile",
-          "Override": {
-            "Spread": 0.5,
-            "CrosshairColor": "0xFFC700",
-            "Name": "dragonrise_reforge:gp105",
-            "Projectile": "superbwarfare:wire_guide_missile",
-            "IsArmorPiercingProjectile": true,
-            "Damage": 600,
-            "ExplosionDamage": 60,
-            "ExplosionRadius": 5,
-            "Velocity": 10,
-            "RecoilTime": 18,
-            "RecoilForce": 0.05,
-            "Crosshair": "@VehicleCommonMissile",
-            "SoundInfo": {
-              "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
-              "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
-              "Fire3PFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-              "Fire3PVeryFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-              "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
-              "Change": "superbwarfare:into_cannon"
-            },
-            "SoundRadius": 12,
-            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_105.png"
+            "Name": "dragonrise_reforge:type59he"
           }
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
+        "Fire1P": "dragonrise_reforge:ztz59_fire_1p",
+        "Fire3P": "dragonrise_reforge:ztz59_fire_1p",
+        "Fire3PFar": "dragonrise_reforge:ztz59_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:ztz59_fire_3p_far",
+        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:zbd04a_100mm_reload"
+          "dragonrise_reforge:ztz99a_reload"
         ]
       },
       "SoundRadius": 32,
@@ -188,7 +147,7 @@
       }
     },
     "MachineGun": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gun_5_8mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -213,7 +172,7 @@
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:QJT",
+      "Name": "dragonrise_reforge:type54lmg",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
@@ -251,9 +210,9 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "weapon.superbwarfare.50_cal_gun",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
+        "Fire1P": "dragonrise_reforge:mgfire1",
+        "Fire3P": "dragonrise_reforge:mgfire1",
+        "Fire3PFar": "dragonrise_reforge:mgfire1",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
@@ -269,16 +228,16 @@
     "WheelDifferential": 0.75,
     "TrackRotSpeed": 1.3,
     "TrackDifferential": 0.6,
-    "MaxForwardSpeedRate": 0.95,
-    "MaxBackwardSpeedRate": 0.405,
+    "MaxForwardSpeedRate": 0.4,
+    "MaxBackwardSpeedRate": 0.1,
     "Increment": 0.018,
     "Decrement": 0.055,
-    "SteeringSpeed": 0.2,
+    "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 0.8
   },
   "TurretPos": [-0.02404375, 1.4554875, 0.09385625],
   "BarrelPos": [-0.05871875, 0.2890125, 0.93155],
-  "TurretTurnSpeed": [2.625, 3.575],
+  "TurretTurnSpeed": [1, 0.5],
   "TurretPitchRange": [-7, 15],
   "PassengerWeaponStationPos": [-0.50714375, 0.8476375, -0.19113125],
   "PassengerWeaponStationBarrelPos": [0.03125, 0.275, 0.03125],
@@ -326,7 +285,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztq15_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz59a_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {
@@ -338,7 +297,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz99a_engine",
+  "EngineSound": "dragonrise_reforge:ztz59_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [

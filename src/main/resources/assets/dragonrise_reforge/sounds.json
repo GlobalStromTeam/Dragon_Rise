@@ -577,5 +577,45 @@
         "stream": false
       }
     ]
+  },
+  "ztz59_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_d10t_shot_1p_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_d10t_shot_1p_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_d10t_shot_1p_3",
+        "stream": false
+      }
+    ]
+  },
+  "ztz59_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_100mm_d10t_shot_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_100mm_d10t_shot_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:ztz59/cannon_100mm_d10t_shot_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "ztz59_engine": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ztz59/t54_engine",
+        "stream": false
+      }
+    ]
   }
 }
