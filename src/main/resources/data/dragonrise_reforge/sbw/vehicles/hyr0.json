@@ -5,7 +5,7 @@
   "OBB": [
     {
       "Size": [1, 1.1875, 5],
-      "Position": [0, 1.125, -1.3125]
+      "Position": [0, 1.125, 1.3125]
     },
     {
       "Part": "WheelLeft",
@@ -34,10 +34,8 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "UseFixedCameraPos": true,
-        "Position": [0.8656, -0.00456875, 1.51235625],
-        "Transform": "Turret",
-        "ZoomPosition": [0.8656, -0.00456875, 1.51235625],
+        "Transform": "Barrel",
+        "ZoomPosition": [0.0, 0.0, 0.0],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -50,15 +48,12 @@
     },
     {
       "HidePassenger": true,
-      "Transform": "Turret",
+      "Transform": "WeaponStation",
       "CameraPos": {
-        "UseFixedCameraPos": true,
-        "Position":[0.19878125, 0.6862625, 0.483],
+
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0.19878125, 0.6862625, 0.483],
-        "Direction": "WeaponStationBarrel",
-        "MinPitch": -10,
-        "MaxPitch": 60
+        "ZoomPosition": [0, 0.1, 0],
+        "Direction": "WeaponStationBarrel"
       },
       "Position": [0, 0, 0],
       "Weapons": ["PassengerMachineGun"],
@@ -68,24 +63,16 @@
       "Sensitivity": [0.57, 0.75, 0.9]
     },
     {
-      "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.475,0.5,2.1],
+      "Position": [1.625, 0.5, -6.125],
       "MinYaw": -95,
       "MaxYaw": 95
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.625, 0.5, -5.125],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625, 0.5, -5.125],
+      "Position": [-1.625, 0.5, -6.125],
       "MinYaw": -95,
       "MaxYaw": 95
     }
