@@ -232,13 +232,13 @@
 					]
 				},
 				{
-					"name": "bone67",
+					"name": "base",
 					"parent": "root",
 					"pivot": [0, 33, 0]
 				},
 				{
 					"name": "IOOOO",
-					"parent": "bone67",
+					"parent": "base",
 					"pivot": [0, 0, 0]
 				},
 				{
@@ -13420,7 +13420,7 @@
 				},
 				{
 					"name": "IOP",
-					"parent": "bone67",
+					"parent": "base",
 					"pivot": [0, 0.16429, 0]
 				},
 				{
@@ -17723,7 +17723,7 @@
 				},
 				{
 					"name": "IOP1R1",
-					"parent": "bone67",
+					"parent": "base",
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{

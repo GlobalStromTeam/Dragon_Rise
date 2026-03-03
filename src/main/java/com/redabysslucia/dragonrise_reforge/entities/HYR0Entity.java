@@ -16,6 +16,11 @@ import software.bernie.geckolib.core.object.PlayState;
 @SuppressWarnings("removal")
 public class HYR0Entity extends NightVisionVehicle {
 
+    private final Float[][] PitchAdjustments = {
+            {180f, 180f, 180f, 5f, -5f},
+            {-180f, -180f, 180f, 5f, -5f},
+    };
+
     public HYR0Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -56,6 +61,11 @@ public class HYR0Entity extends NightVisionVehicle {
             super.passengerPitchOnTurret(entity, seat.minPitch, seat.maxPitch);
             super.passengerYawOnTurret(entity, seat.minYaw, seat.maxYaw, seat.orientation, false);
         }
+    }
+
+    @Override
+    public void passengerPitchOnTurret(Entity entity, float turretMinPitch, float turretMaxPitch) {
+        PitchAdjustUtil.adjustedPassengerPitchOnTurret(entity, turretMinPitch, turretMaxPitch, this, PitchAdjustments);
     }
 
     @Override
