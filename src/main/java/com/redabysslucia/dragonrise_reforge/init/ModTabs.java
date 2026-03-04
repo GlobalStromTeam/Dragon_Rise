@@ -18,7 +18,7 @@ public class ModTabs {
                     .title(Component.translatable("item_group.dragonrise_reforge.title"))
                     .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
                     .displayItems((param, output) -> {
-                        //cn
+                        //中国
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4A1.get()));
@@ -49,7 +49,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J35.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
 
-                        //ru
+                        //俄罗斯
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80B.get()));
@@ -59,7 +59,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
 
-                        //nato
+                        //北约
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AMX56.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
