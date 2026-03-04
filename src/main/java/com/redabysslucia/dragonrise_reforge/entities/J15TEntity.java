@@ -36,7 +36,7 @@ public class J15TEntity extends GeoVehicleEntity {
     }
 
     private PlayState J15B(AnimationState<J15TEntity> event) {
-        if (this.getPower()>= 0.7) {//这个值是节流阀我操
+        if (this.sprintInputDown()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
                     ("engine on"));
         }
