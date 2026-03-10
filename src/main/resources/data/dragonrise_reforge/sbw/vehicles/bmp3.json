@@ -254,7 +254,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.15361875, -0.0243375, 2.399475]],
+        "Positions": [[-0.15361875, -0.0243375, 0.5]],
         "Directions": ["Barrel"]
       }
     }

@@ -183,7 +183,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.0595875, 0.02865625, 5.22085625]],
+        "Positions": [[0.0595875, 0.02865625, 0.5]],
         "Directions": ["Barrel"]
       }
     },
