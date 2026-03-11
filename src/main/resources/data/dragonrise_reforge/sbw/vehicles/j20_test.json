@@ -210,7 +210,7 @@
     "CrashPassengers": true
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/j20_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",
   "EngineInfo": {

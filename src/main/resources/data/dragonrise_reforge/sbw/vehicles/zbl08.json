@@ -155,8 +155,16 @@
       "AmmoType": "superbwarfare:small_shell",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.02, 0.0517, 3.2]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            0.02,
+            0.0517,
+            3.2
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "MachineGun": {
@@ -287,7 +295,7 @@
     "ExplosionRadius": 7
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/zbl08_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_land.png",
   "Type": "APC",
   "CollisionLevel": {
     "Level": 3,

@@ -364,7 +364,7 @@
   },
   "HUDColor": "0xFFC700",
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ec665_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [[-1.284, 0, 1.728], [1.284, 0, 1.728], [0, 0, -11.1]],
