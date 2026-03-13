@@ -242,6 +242,14 @@ public class ModEntities {
                         .sized(4.5f, 2.9f)
         );
 
+        public static final RegistryObject<EntityType<syy651Entity>> syy651 = register("syy651",
+                EntityType.Builder.of(syy651Entity::new, MobCategory.MISC)
+                        .setTrackingRange(512)
+                        .setUpdateInterval(2)
+                        .fireImmune()
+                        .sized(4.5f, 2.9f)
+        );
+
         public static final RegistryObject<EntityType<REFALEEntity>> REFALE = register("refale",
                 EntityType.Builder.of(REFALEEntity::new, MobCategory.MISC)
                         .setTrackingRange(512)

@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.item.*;
+import com.redabysslucia.dragonrise_reforge.item.armor.CN21;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNJustchest;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNfast;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNchest;
@@ -29,6 +30,7 @@ public class ModItems {
     public static final RegistryObject<Item> DSHK_DEPLOYER = REGISTRY.register("dshk", DSHKDeployer::new);
     public static final RegistryObject<Item> M2_DEPLOYER = REGISTRY.register("m2", M2Deployer::new);
     public static final RegistryObject<Item> SHIELD_DEPLOYER = REGISTRY.register("shield", SHIELDDeployer::new);
+    public static final RegistryObject<Item> CN21 = REGISTRY.register("cn21", CN21::new);
     public static final RegistryObject<Item> CNJUSTCHEST = REGISTRY.register("cnjustchest", CNJustchest::new);
     public static final RegistryObject<Item> CNCHEST = REGISTRY.register("cnchest", CNchest::new);
     public static final RegistryObject<Item> CNFAST = REGISTRY.register("cnfast", CNfast::new);

@@ -218,7 +218,7 @@
       "AddShooterDeltaMovement": true,
       "Velocity": 1.05,
       "SeekWeaponInfo": {
-        "SeekDirection": "Barrel",
+        "SeekDirection": "Vehicle",
         "SeekRange": 512,
         "SeekAngle": 20,
         "SeekTime": 10,
