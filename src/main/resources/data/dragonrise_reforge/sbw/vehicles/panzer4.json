@@ -47,7 +47,7 @@
       "CanRotateHead": false,
       "MinPitch": -9,
       "MaxPitch": 25,
-      "Sensitivity": [0.32, 0.42, 0.9]
+      "Sensitivity": [0.42, 0.7, 0.9]
     }
   ],
   "Weapons": {
