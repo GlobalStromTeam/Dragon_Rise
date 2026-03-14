@@ -70,7 +70,7 @@
       "ShootShake": [9, 12, 65],
       "Spread": 0.025,
       "ShootAnimationTime": 45,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
+      "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:122mmAPHE",
       "AmmoType": [
@@ -130,7 +130,7 @@
         "Positions": [[0.40, 0.15, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:dtm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -164,7 +164,7 @@
         "Positions": [[0, -0.01, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:dshk",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",

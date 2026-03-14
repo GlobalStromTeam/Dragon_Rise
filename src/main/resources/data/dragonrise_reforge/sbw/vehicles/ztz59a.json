@@ -37,8 +37,7 @@
         "UseFixedCameraPos": true,
         "Position": [0.52404375, 0.8413875, -0.09385625],
         "Transform": "Turret",
-        "ZoomPosition": [0.52404375, 0.8413875, -0.09385625],
-        "Direction": "Barrel"
+        "ZoomPosition": [0.52404375, 0.8413875, -0.09385625]
       },
       "Transform": "Turret",
       "Position": [0.5680625, -0.1292625, -0.1235375],
@@ -109,7 +108,7 @@
       "ShootShake": [0.5, 0.5, 0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
+      "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:type59ap",
       "AmmoType": [
@@ -171,7 +170,7 @@
         "Positions": [[-0.29736875, 0.04650625, 0.43343125]],
         "Directions": ["Barrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:type54lmg",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
@@ -207,7 +206,7 @@
         "Positions": [[-0.0308, 0.05198125, 1.28211875]],
         "Directions": ["WeaponStationBarrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "weapon.superbwarfare.50_cal_gun",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:mgfire1",

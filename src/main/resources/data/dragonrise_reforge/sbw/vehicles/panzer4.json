@@ -39,8 +39,7 @@
         "UseFixedCameraPos": true,
         "Position":[0.3125, 0.425, 1.4375],
         "Transform": "Turret",
-        "ZoomPosition": [0.3125, 0.425, 1.4375],
-        "Direction": "Barrel"
+        "ZoomPosition": [0.3125, 0.425, 1.4375]
       },
       "Transform": "Turret",
       "Position": [-0.5625, -0.73, 1.812],
@@ -70,7 +69,7 @@
       "ShootShake": [8, 10, 60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
+      "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:75mmAPHE",
       "AmmoType": [
@@ -130,7 +129,7 @@
         "Positions": [[0.40, 0.15, 0.85]],
         "Directions": ["Barrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:mg42",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -164,7 +163,7 @@
         "Positions": [[0, -0.01, 1.8]],
         "Directions": ["WeaponStationBarrel"]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleDynamicCross",
       "Name": "CRC F1 12,7mm",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",

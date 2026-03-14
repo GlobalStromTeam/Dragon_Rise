@@ -133,6 +133,7 @@ public class ModTabs {
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNJUSTCHEST.get());
+                        output.accept(ModItems.CN21.get());
                         output.accept(ModItems.CNFAST.get());
                     }
                     ).build()
