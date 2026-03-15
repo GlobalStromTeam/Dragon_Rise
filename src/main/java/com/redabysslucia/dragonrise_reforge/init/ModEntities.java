@@ -592,7 +592,7 @@ public class ModEntities {
 
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
-        return REGISTRY.register(name, () -> entityTypeBuilder.build(name));
+        return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }
 
 }

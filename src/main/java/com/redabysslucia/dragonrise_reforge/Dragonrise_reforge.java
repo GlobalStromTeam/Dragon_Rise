@@ -7,6 +7,7 @@ import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
+import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.PostChain;
@@ -43,6 +44,7 @@ public class Dragonrise_reforge {
                 ModItems.register(bus);
                 ModEntities.REGISTRY.register(bus);
                 ModTabs.TABS.register(bus);
+                DragonVehicleDeployer.register(bus);
 
                 bus.addListener(this::commonSetup);
 
