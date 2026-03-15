@@ -12,6 +12,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
+    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -106,7 +107,7 @@ dependencies {
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1:api")
 
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.4.6')
-    implementation fg.deobf("curse.maven:superb-warfare-1218165:7292685")
+    implementation fg.deobf("curse.maven:superb-warfare-1218165:7292685-sources-7292686")
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'

@@ -85,6 +85,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TIGER.get(), TigerRenderer::new);
                 event.registerEntityRenderer(ModEntities.WLHGZU23.get(), WLHGZU23Renderer::new);
                 event.registerEntityRenderer(ModEntities.syy651.get(), syy651Renderer::new);
+
+                event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
         }
 }
 
