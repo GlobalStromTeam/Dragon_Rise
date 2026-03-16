@@ -1,5 +1,7 @@
 package com.rhythm.dragon_vehicle_deployer;
 
+import com.atsuishio.superbwarfare.client.overlay.TowOverlay;
+import com.redabysslucia.dragonrise_reforge.client.overlay.HJ8Overlay;
 import com.rhythm.dragon_vehicle_deployer.block.VehicleDeployerBlock;
 import com.rhythm.dragon_vehicle_deployer.block.entity.VehicleDeployerBlockEntity;
 import com.rhythm.dragon_vehicle_deployer.client.screen.DeployerConfigScreen;
@@ -72,6 +74,11 @@ public class DragonVehicleDeployer {
     @SubscribeEvent
     public static void onServerStarting(ServerStartingEvent event) {
         LOGGER.info("DRAGON VEHICLE DEPLOYER: Server starting");
+    }
+
+    @SubscribeEvent
+    public static void registerOverlays(net.minecraftforge.client.event.RegisterGuiOverlaysEvent event) {
+        event.registerBelowAll(HJ8Overlay.ID, new HJ8Overlay());
     }
 
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
