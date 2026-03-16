@@ -132,6 +132,7 @@ public class ModTabs {
                         output.accept(ModItems.DSHK_DEPLOYER.get());
                         output.accept(ModItems.M2_DEPLOYER.get());
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
+                        output.accept(com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ITEM.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNJUSTCHEST.get());
                         output.accept(ModItems.CN21.get());
