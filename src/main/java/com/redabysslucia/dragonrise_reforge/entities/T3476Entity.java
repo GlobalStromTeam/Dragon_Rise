@@ -18,21 +18,21 @@ public class T3476Entity extends NightVisionVehicle {
                 super(type, world);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
+//        @Override
+//        public DamageModifier getDamageModifier() {
+//                return super.getDamageModifier()
+//                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+//        }
 
-    private PlayState radar(AnimationState<T3476Entity> event) {
-
-        return event.setAndContinue(RawAnimation.begin().thenLoop("625.animation.radar"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "radar", 0, this::radar));
-    }
+//    private PlayState radar(AnimationState<T3476Entity> event) {
+//
+//        return event.setAndContinue(RawAnimation.begin().thenLoop("625.animation.radar"));
+//    }
+//
+//    @Override
+//    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+//        data.add(new AnimationController<>(this, "radar", 0, this::radar));
+//    }
 
     @Override
     public ResourceLocation getNightVisionShader() {

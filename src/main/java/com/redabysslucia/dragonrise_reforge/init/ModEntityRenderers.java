@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
@@ -85,8 +86,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TIGER.get(), TigerRenderer::new);
                 event.registerEntityRenderer(ModEntities.WLHGZU23.get(), WLHGZU23Renderer::new);
                 event.registerEntityRenderer(ModEntities.syy651.get(), syy651Renderer::new);
-
-                event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
+                event.registerEntityRenderer(ModEntities.HJ8.get(), HJ8Renderer::new);
         }
 }
 

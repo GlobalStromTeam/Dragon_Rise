@@ -68,7 +68,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.UH60.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
@@ -76,33 +75,50 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALEAA.get()));
 
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
-                                output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
-
 
 
                     }
                     ).build()
     );
 
-//    public static final RegistryObject<CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
-//            () -> CreativeModeTab.builder()
-//                    .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
-//                    .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
-//                    .displayItems((param, output) -> {
-//                        //ww2
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
-//                            }
-//                    ).build()
-//    );
+    public static final RegistryObject<CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
+                    .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
+                    .displayItems((param, output) -> {
+                        //ww2
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
+                            }
+                    ).build()
+    );
+
+    public static final RegistryObject<CreativeModeTab> SOC_TAB = TABS.register("soctitle_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.dragonrise_reforge.soctitle"))
+                    .icon(() -> new ItemStack(ModItems.SOC_TAB_ICON.get()))
+                    .displayItems((param, output) -> {
+                             output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
+                             output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
+                             output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
+                             output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
+                            }
+                    ).build()
+    );
+
+    public static final RegistryObject<CreativeModeTab> SF_TAB = TABS.register("sf_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.dragonrise_reforge.sftitle"))
+                    .icon(() -> new ItemStack(ModItems.SF_TAB_ICON.get()))
+                    .displayItems((param, output) -> {
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
+                            }
+                    ).build()
+    );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
             () -> CreativeModeTab.builder()
@@ -111,6 +127,7 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         output.accept(ModItems.MK19_DEPLOYER.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
+                        output.accept(ModItems.HJ8_DEPLOYER.get());
                         output.accept(ModItems.qjz89_DEPLOYER.get());
                         output.accept(ModItems.DSHK_DEPLOYER.get());
                         output.accept(ModItems.M2_DEPLOYER.get());
