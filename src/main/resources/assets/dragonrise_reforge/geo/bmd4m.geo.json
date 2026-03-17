@@ -3928,7 +3928,7 @@
 					]
 				},
 				{
-					"name": "cannon",
+					"name": "barrel",
 					"parent": "turret",
 					"pivot": [1.04648, 33.96623, -15.87799],
 					"cubes": [
@@ -3964,7 +3964,7 @@
 				},
 				{
 					"name": "maincannon",
-					"parent": "cannon",
+					"parent": "barrel",
 					"pivot": [-1.35947, 33.60594, -24.06287],
 					"cubes": [
 						{
@@ -4051,7 +4051,7 @@
 				},
 				{
 					"name": "mcannon",
-					"parent": "cannon",
+					"parent": "barrel",
 					"pivot": [1.04648, 33.96623, -20.62799],
 					"cubes": [
 						{

@@ -117,6 +117,7 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS114.get()));
                             }
                     ).build()
     );
