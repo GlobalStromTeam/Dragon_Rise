@@ -22,7 +22,7 @@
     "Weapons": ["Main"]
   },
   "SeekInfo": {
-    "MinSeekRange": 3,
+    "MinSeekRange": 8,
     "MaxSeekRange": 256,
     "ChangeTargetTime": 60,
     "SeekIterative": 20,
@@ -37,13 +37,14 @@
       "Projectile": "superbwarfare:cannon_shell",
       "IsArmorPiercingProjectile": true,
       "DefaultZoom": 3,
-      "Magazine": 1,
+      "RPM": 60,
+      "Magazine": 2,
       "EmptyReloadTime": 20,
-      "Velocity": 40,
+      "Velocity": 10,
       "Damage": 500,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
-      "RecoilTime": 42,
+      "RecoilTime": 20,
       "RecoilForce": 0,
       "ShootShake": [0.5, 0.5, 0.5],
       "Spread": 0.02,
@@ -63,11 +64,11 @@
       },
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-1.29513125, -0.00290625, 3.3485375],[1, -0.00290625, 3.3485375]],
+        "Positions": [[-0.96860625, 0.27979375, 6.1101],[0.96860625, 0.27979375, 6.1101]],
         "Directions": ["Barrel"]
       },
       "SoundInfo": {
-        "FireSoundInstances": "dragonrise_reforge:ztz59_fire_1p"
+        "FireSoundInstances": "dragonrise_reforge:fire_sound_57mm"
       }
     }
   },
