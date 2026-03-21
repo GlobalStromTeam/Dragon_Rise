@@ -7,16 +7,16 @@
   "BarrelPos": [0.0300875, 1.7078125, -0.00625],
   "MaxEnergy": 5000000,
   "Seats": {
-    "HidePassenger": false,
+    "HidePassenger": true,
     "Transform": "Vehicle",
-    "Position": [-2.5, 0, -2.5],
+    "Position": [0, 0, 0],
     "MinPitch": -32.5,
     "MaxPitch": 90,
     "Sensitivity": [0.6, 0.8, 1],
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
-      "Position": [-0.38423125, -0.00431875, 6.10854375],
+      "Position": [0, 2.00431875, 1.10854375],
       "ZoomDirection": "Barrel"
     },
     "Weapons": ["Main"]
