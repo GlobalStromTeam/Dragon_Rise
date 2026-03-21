@@ -63,7 +63,7 @@
       },
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.11875, 0.675, 6.1875]],
+        "Positions": [[0.11875, 0.675, 0.1875]],
         "Directions": ["Barrel"]
       },
       "SoundInfo": {
