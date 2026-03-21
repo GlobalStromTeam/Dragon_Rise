@@ -23,11 +23,11 @@
       "Position": [0.0, 1.625, -2.8125]
     },
     {
-      "Part": "Turret",
       "Size": [1.3125, 0.3125, 0.53125],
       "Position": [0.0, 0.3125, 1.21875],
       "Transform": "Turret",
-      "Rotation": "Turret"
+      "Rotation": "Turret",
+      "Part": "Turret"
     },
     {
       "Part": "Turret",
@@ -316,7 +316,7 @@
   "TurretPos": [0.0, 1.8796875, 0.940625],
   "BarrelPos": [0.0, 0.2364375, 1.17153125],
   "TurretTurnSpeed": [2.625, 3.575],
-  "TurretPitchRange": [-7, 15],
+  "TurretPitchRange": [-10, 25],
   "PassengerWeaponStationPos": [0.28701875, 0.8792625, -0.79006875],
   "PassengerWeaponStationBarrelPos": [-0.14386875, 0.41348125, 0.03224375],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],

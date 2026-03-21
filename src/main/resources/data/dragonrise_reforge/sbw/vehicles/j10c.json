@@ -44,17 +44,17 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0.0, 1.478125, 3.0625],
+    "Position": [0, 1.125, 1.7],
     "CanRotateHead": false,
     "Sensitivity": [0, 0, 0],
-    "Weapons": ["Cannon", "Missile", "Missile2"],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 3.078125, 3.0625],
+      "Position": [0, 2.75, 2.1875],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [2, 4, -14]
+      "AircraftCameraPos": [0, 2.75, -14]
     },
+    "Weapons": ["Cannon", "Missile", "Missile2"],
     "DismountInfo": {
       "Transform": "Vehicle",
       "Position": [1.6, 0.5, 3.8],

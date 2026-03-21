@@ -4,32 +4,43 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [0.9375, 0.46875, 2.84375],
-      "Position": [0.0, 0.96875, 0.15625]
+      "Size": [1.0, 0.5, 1.65625],
+      "Position": [0.0, 1.0, 0.21875]
     },
     {
-      "Part": "WheelLeft",
-      "Size": [0.375, 0.625, 2.9375],
-      "Position": [1.3125, 0.625, 0.0625]
+      "Size": [1.0, 0.28125, 0.6875],
+      "Position": [0.0, 1.03125, 2.375]
     },
     {
-      "Part": "WheelRight",
-      "Size": [0.375, 0.625, 2.9375],
-      "Position": [-1.3125, 0.625, 0.0625]
+      "Size": [1.0, 0.5, 0.78125],
+      "Position": [0.0, 1.0, -2.21875],
+      "Part": "MainEngine"
     },
     {
-      "Part": "MainEngine",
-      "Size": [1.0, 0.53125, 0.53125],
-      "Position": [0.0, 1.03125, -2.28125]
-    },
-    {
-      "Part": "Turret",
-      "Size": [1.1875, 0.40625, 1.34375],
-      "Position": [0.0, 1, 0.15625],
+      "Size": [1.125, 0.375, 1.03125],
+      "Position": [0.0, 0, -0.15625],
       "Transform": "Turret",
-      "Rotation": "Turret"
+      "Rotation": "Turret",
+      "Part": "Turret"
+    },
+    {
+      "Size": [0.75, 0.3125, 0.28125],
+      "Position": [0.0, 0, 1.15625],
+      "Transform": "Turret",
+      "Rotation": "Turret",
+      "Part": "Turret"
+    },
+    {
+      "Size": [0.28125, 0.5625, 2.9375],
+      "Position": [1.34375, 0.5, 0.0625],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.28125, 0.5625, 2.9375],
+      "Position": [-1.34375, 0.5, 0.0625],
+      "Part": "WheelRight"
     }
-  ],
+      ],
   "Seats": [
     {
       "HidePassenger": true,
@@ -37,6 +48,7 @@
         "UseFixedCameraPos": true,
         "Position": [0.52404375, 0.8413875, -0.09385625],
         "Transform": "Turret",
+        "Direction": "Barrel",
         "ZoomPosition": [0.52404375, 0.8413875, -0.09385625]
       },
       "Transform": "Turret",
@@ -65,28 +77,6 @@
       "MinPitch": -6,
       "MaxPitch": 60,
       "Sensitivity": [0.57, 0.75, 0.9]
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0.475,0.5,2.1],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [1.625, 0.5, -5.125],
-      "MinYaw": -95,
-      "MaxYaw": 95
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625, 0.5, -5.125],
-      "MinYaw": -95,
-      "MaxYaw": 95
     }
   ],
   "Weapons": {
@@ -108,7 +98,7 @@
       "ShootShake": [0.5, 0.5, 0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonGun",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:type59ap",
       "AmmoType": [
@@ -170,7 +160,7 @@
         "Positions": [[-0.29736875, 0.04650625, 0.43343125]],
         "Directions": ["Barrel"]
       },
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:type54lmg",
       "SoundInfo": {
         "Fire1P": "superbwarfare:qbz_191_fire_1p",
@@ -229,15 +219,15 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.4,
     "MaxBackwardSpeedRate": 0.1,
-    "Increment": 0.018,
-    "Decrement": 0.055,
-    "SteeringSpeed": 0.1,
+    "Increment": 0.02,
+    "Decrement": 0.07,
+    "SteeringSpeed": 0.15,
     "EngineSoundVolume" : 0.8
   },
-  "TurretPos": [-0.02404375, 1.4554875, 0.09385625],
+  "TurretPos": [-0.02404375, 1.75, 0.09385625],
   "BarrelPos": [-0.05871875, 0.2890125, 0.93155],
-  "TurretTurnSpeed": [1, 0.5],
-  "TurretPitchRange": [-7, 15],
+  "TurretTurnSpeed": [2.625, 3.575],
+  "TurretPitchRange": [-10, 25],
   "PassengerWeaponStationPos": [-0.50714375, 0.8476375, -0.19113125],
   "PassengerWeaponStationBarrelPos": [0.03125, 0.275, 0.03125],
   "PassengerWeaponStationTurnSpeed": [15.75, 8.47],
@@ -296,7 +286,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz59_engine",
+  "EngineSound": "dragonrise_reforge:ztz99a_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
