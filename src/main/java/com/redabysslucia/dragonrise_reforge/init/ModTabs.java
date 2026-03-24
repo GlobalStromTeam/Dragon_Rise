@@ -92,20 +92,20 @@ public class ModTabs {
                     ).build()
     );
 
-//    public static final RegistryObject<CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
-//            () -> CreativeModeTab.builder()
-//                    .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
-//                    .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
-//                    .displayItems((param, output) -> {
-//                        //ww2
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
-//                            }
-//                    ).build()
-//    );
+    public static final RegistryObject<CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
+            () -> CreativeModeTab.builder()
+                    .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
+                    .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
+                    .displayItems((param, output) -> {
+                        //ww2
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
+                            }
+                    ).build()
+    );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
             () -> CreativeModeTab.builder()
