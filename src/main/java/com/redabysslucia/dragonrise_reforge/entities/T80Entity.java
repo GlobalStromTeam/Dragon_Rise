@@ -3,15 +3,11 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.utils.EngineParticleUtil;
-import com.redabysslucia.dragonrise_reforge.utils.TurretLightUtil;
+import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+
 @SuppressWarnings("removal")
 public class T80Entity extends NightVisionVehicle {
 
@@ -25,35 +21,27 @@ public class T80Entity extends NightVisionVehicle {
 				.custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
 	}
 
-	// 用于跟踪需要删除的光源方块
-	private int lightRemovalTimer = 0;
-
 	@Override
 	public void tick() {
 		super.tick();
-		if (tickCount % 5 == 0) {
-			// 在MainEngine obb框位置生成粒子效果
-			EngineParticleUtil.spawnMainEngineParticles(this, level());
-		}
-
-		// 处理光源方块删除
-		if (lightRemovalTimer > 0) {
-			lightRemovalTimer--;
-			if (lightRemovalTimer == 0) {
-				// 删除光源方块
-				TurretLightUtil.handleTurretFireLight(this, level(), 0); // 传入0表示停止开火
-			}
+		if (tickCount % 1 == 0 && hasPlayerOperator()) {
+            GeoBasedParticleUtil.spawnParticlesFromManualPosition(this, 0, 21.4995, 64.7884);
 		}
 	}
 
-	@Override
-	public void vehicleShoot(net.minecraft.world.entity.LivingEntity living, java.util.UUID uuid, net.minecraft.world.phys.Vec3 targetPos) {
-		super.vehicleShoot(living, uuid, targetPos);
-		// 处理炮口火光效果
-		TurretLightUtil.handleTurretFireLight(this, level(), 1); // 传入1表示正在开火
-		// 设置删除计时器
-		lightRemovalTimer = 1; // 1 tick后删除
+	/**
+	 * 检查是否有玩家在操作车辆
+	 * @return 如果有玩家在操作返回true，否则返回false
+	 */
+	private boolean hasPlayerOperator() {
+		// 检查是否有乘客
+		if (!this.getPassengers().isEmpty()) {
+			// 检查第一个乘客是否是玩家
+			return this.getPassengers().get(0) instanceof net.minecraft.world.entity.player.Player;
+		}
+		return false;
 	}
+
 	@Override
 	public ResourceLocation getNightVisionShader() {
 		return new ResourceLocation("shaders/post/night-vision-wp.json");
