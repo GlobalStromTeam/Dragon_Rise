@@ -536,7 +536,7 @@
     "EnergyCostRate": 320,
     "Increment": 0.01,
     "Decrement": 0.01,
-    "Buoyancy": 0.07,
+    "Buoyancy": 0.05,
     "SteeringSpeed": 0.03,
     "MaxForwardSpeedRate": 0.4,
     "MaxBackwardSpeedRate": 0.2,

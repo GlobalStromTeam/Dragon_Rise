@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:sd905",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/sd905.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/sd905.png"
+  }
+}

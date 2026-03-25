@@ -183,7 +183,7 @@
     "EngineSoundVolume" : 1.0
   },
   "TurretPos": [-0.0263625, 2.442625, 0.159425],
-  "TurretTurnSpeed": [6.125, 3.295],
+  "TurretTurnSpeed": [10, 10],
   "TurretPitchRange": [-6, 60],
   "BarrelPos": [-0.01510625, 0.150025, -0.06275625],
   "HasDecoy": true,
