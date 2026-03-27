@@ -125,6 +125,7 @@ public class ModTabs {
                         output.accept(ModItems.CNJUSTCHEST.get());
                         output.accept(ModItems.CN21.get());
                         output.accept(ModItems.CNFAST.get());
+                        output.accept(ModItems.MSV_CHEST.get());
                     }
                     ).build()
     );

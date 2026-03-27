@@ -5,6 +5,7 @@ import com.redabysslucia.dragonrise_reforge.item.armor.CN21;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNJustchest;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNfast;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNchest;
+import com.redabysslucia.dragonrise_reforge.item.armor.MSVChest;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,6 +39,7 @@ public class ModItems {
     public static final RegistryObject<Item> CNJUSTCHEST = REGISTRY.register("cnjustchest", CNJustchest::new);
     public static final RegistryObject<Item> CNCHEST = REGISTRY.register("cnchest", CNchest::new);
     public static final RegistryObject<Item> CNFAST = REGISTRY.register("cnfast", CNfast::new);
+    public static final RegistryObject<Item> MSV_CHEST = REGISTRY.register("msv_chest", MSVChest::new);
 
 
 }

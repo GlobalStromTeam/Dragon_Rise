@@ -127,7 +127,7 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
                         BlockPos pos = new BlockPos((int) Math.floor(finalX), (int) Math.floor(finalY), (int) Math.floor(finalZ));
 
                         if (level.isEmptyBlock(pos)) {
-                            level.setBlock(pos, Blocks.LIGHT.defaultBlockState().setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LEVEL, 8), 3);
+                            level.setBlock(pos, Blocks.LIGHT.defaultBlockState().setValue(net.minecraft.world.level.block.state.properties.BlockStateProperties.LEVEL, 10), 3);
                             // 记录光源信息
                             lightInfoMap.put(this, new LightInfo(pos, level.getGameTime()));
                         }
