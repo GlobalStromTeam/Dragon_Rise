@@ -42,8 +42,8 @@ public class BMD4MEntity extends NightVisionVehicle {
                 data.add(new AnimationController<>(this, "cannon", 0, this::cannonShootPredicate));
         }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
+        @Override
+        public ResourceLocation getNightVisionShader() {
         return new ResourceLocation("shaders/post/night-vision-wp.json");
     }
 }
