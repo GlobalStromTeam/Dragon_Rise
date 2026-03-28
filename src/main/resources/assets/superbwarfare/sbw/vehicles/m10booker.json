@@ -1,0 +1,8 @@
+{
+  "ID": "dragonrise_reforge:m10booker",
+  "Model": {
+    "Animation": "dragonrise_reforge:animations/m10booker.animation.json",
+    "Model": "dragonrise_reforge:geo/m10booker.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m10booker.png"
+  }
+}

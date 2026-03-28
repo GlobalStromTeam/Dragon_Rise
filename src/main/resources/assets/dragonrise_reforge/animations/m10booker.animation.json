@@ -1,0 +1,20 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.m10booker.idle": {
+			"animation_length": 0.5417
+		},
+		"animation.m10booker.fire": {
+			"animation_length": 0.5,
+			"bones": {
+				"barrel": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.0417": [0, 0, 3],
+						"0.25": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

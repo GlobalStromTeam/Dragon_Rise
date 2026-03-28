@@ -1,9 +1,7 @@
-package com.redabysslucia.dragonrise_reforge.client.renderer;
+package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
 import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
-import com.redabysslucia.dragonrise_reforge.client.model.entity.NPDS514Model;
 import com.redabysslucia.dragonrise_reforge.client.model.entity.NPDS810Model;
-import com.redabysslucia.dragonrise_reforge.entities.NPDS514Entity;
 import com.redabysslucia.dragonrise_reforge.entities.NPDS810Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 

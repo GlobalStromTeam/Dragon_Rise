@@ -12,12 +12,12 @@
 			},
 			"bones": [
 				{
-					"name": "ZBD-04A",
+					"name": "base",
 					"pivot": [0.76901, 0, -10]
 				},
 				{
 					"name": "turret",
-					"parent": "ZBD-04A",
+					"parent": "base",
 					"pivot": [2.12581, 47.9968, 11.3696]
 				},
 				{
@@ -2203,7 +2203,7 @@
 				},
 				{
 					"name": "body",
-					"parent": "ZBD-04A",
+					"parent": "base",
 					"pivot": [0.76901, 0, -10]
 				},
 				{
@@ -5318,7 +5318,7 @@
 				},
 				{
 					"name": "track",
-					"parent": "ZBD-04A",
+					"parent": "base",
 					"pivot": [0.76901, 0, -10]
 				},
 				{
@@ -5585,7 +5585,6 @@
 				},
 				{
 					"name": "Wheel",
-					"parent": "ZBD-04A",
 					"pivot": [0.76901, 0, -10]
 				},
 				{

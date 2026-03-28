@@ -80,16 +80,16 @@ public class GeoBasedParticleUtil {
     private static void spawnParticlesAtPosition(Entity entity, Vec3 position) {
         System.out.println("Spawning particles at position: " + position);
         // 生成烟雾粒子
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             // 随机偏移，使粒子效果更自然
             double offsetX = (Math.random() - 0.5) * 0.5;
             double offsetY = (Math.random() - 0.5) * 0.2;
             double offsetZ = (Math.random() - 0.5) * 0.5;
 
             // 粒子速度
-            double velocityX = (Math.random() - 0.3) * 0.1;
+            double velocityX = (Math.random() - 0.2) * 0.2;
             double velocityY = Math.random() * 0.015 + 0.02;
-            double velocityZ = (Math.random() - 0.3) * 0.1;
+            double velocityZ = (Math.random() - 0.2) * 0.2;
 
             // 生成粒子
             entity.level().addParticle(

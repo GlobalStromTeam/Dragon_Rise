@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
@@ -637,6 +638,14 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(2.0f, 1.7f)
+    );
+
+    public static final RegistryObject<EntityType<M10BookerEntity>> M10BOOKER = register("m10booker",
+            EntityType.Builder.of(M10BookerEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

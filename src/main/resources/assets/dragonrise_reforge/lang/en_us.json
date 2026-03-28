@@ -70,6 +70,8 @@
   "entity.dragonrise_reforge.npds514": "NPDS514 Auto Turret",
   "entity.dragonrise_reforge.npds810": "NPDS810 Auto Turret",
   "entity.dragonrise_reforge.j10": "J-10",
+  "entity.dragonrise_reforge.m10booker": "M10 Booker",
+
   "superbwarfare.entry.vehicle.j10": "J-10 Early Variant Fighter Jet",
   "superbwarfare.entry.vehicle.toyota_seiki": "Toyota Century",
   "entity.dragonrise_reforge.toyota_seiki": "Black Premium Sedan Toyota Century",
@@ -79,6 +81,7 @@
   "superbwarfare.entry.vehicle.ah64": "AH-64 Apache Attack Helicopter",
   "superbwarfare.entry.vehicle.j11": "J-11B Fighter",
   "superbwarfare.entry.vehicle.bmp3": "BMP-3 Infantry Fighting Vehicle",
+  "superbwarfare.entry.vehicle.m10booker": "M10 Booker tank, a new American light tank with a 105mm main gun, advanced fire control system, and protective armor, suitable for rapid deployment and various combat environments.",
   "superbwarfare.entry.vehicle.j10c": "J-10C Fighter",
   "superbwarfare.entry.vehicle.wlsc": "Wuling Hongguang Cargo Pickup",
   "superbwarfare.entry.vehicle.z9": "Z-9 Helicopter",
