@@ -94,6 +94,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.NPDS514.get(), NPDS514Renderer::new);
                 event.registerEntityRenderer(ModEntities.NPDS810.get(), NPDS810Renderer::new);
                 event.registerEntityRenderer(ModEntities.SD905.get(), SD905Renderer::new);
+                event.registerEntityRenderer(ModEntities.PZBJY.get(), PZBJYRenderer::new);
                 event.registerEntityRenderer(ModEntities.M10BOOKER.get(), M10BookerRenderer::new);
         }
 }

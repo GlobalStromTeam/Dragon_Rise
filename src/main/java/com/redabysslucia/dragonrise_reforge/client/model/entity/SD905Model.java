@@ -10,6 +10,9 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class SD905Model extends VehicleModel<SD905Entity> {
+
+    private static final float SPEED_FACTOR = 0.5f;
+
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return true;
@@ -18,11 +21,17 @@ public class SD905Model extends VehicleModel<SD905Entity> {
     @Override
     public @Nullable TransformContext<SD905Entity> collectTransform(String boneName) {
         if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> {
+                float rotation = calculatePropellerRotation(vehicle, state.getPartialTick());
+                bone.setRotY(rotation);
+            };
         }
 
         if (boneName.equals("propeller2")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> {
+                float rotation = calculatePropellerRotation(vehicle, state.getPartialTick());
+                bone.setRotY(rotation);
+            };
         }
 
 //        if (boneName.equals("tailPropeller")) {
@@ -77,7 +86,6 @@ public class SD905Model extends VehicleModel<SD905Entity> {
             return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 8));
         }
 
-
         return super.collectTransform(boneName);
     }
 
@@ -90,8 +98,22 @@ public class SD905Model extends VehicleModel<SD905Entity> {
         }
     }
 
-    public static void printEntitySpeed(Entity entity){
+    private float calculatePropellerRotation(SD905Entity vehicle, float partialTick) {
+
+        double speed = getEntitySpeed(vehicle);
+
+        float maxRotationSpeed = 360.0f;
+        float maxSpeed = 20.0f;
+        float clampedSpeed = (float) Math.min(speed, maxSpeed);
+        float speedRatio = clampedSpeed / maxSpeed;
+        float currentRotationSpeed = maxRotationSpeed * speedRatio * SPEED_FACTOR;
+        float rotationAngle = (System.currentTimeMillis() % 3600) * currentRotationSpeed / 10.0f;
+        return (float) Math.toRadians(rotationAngle);
+    }
+
+    private double getEntitySpeed(Entity entity) {
         Vec3 velocity = entity.getDeltaMovement();
-        double overallSpeed = velocity.length();
+        double speedMetersPerTick = velocity.length();
+        return speedMetersPerTick * 20.0;
     }
 }
