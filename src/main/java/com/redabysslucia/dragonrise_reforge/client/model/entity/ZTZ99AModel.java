@@ -172,4 +172,57 @@ public class ZTZ99AModel extends VehicleModel<ZTZ99AEntity> {
 
         return null;
     }
+    public float getBoneRotX(float t) {
+        if (t <= 34.25) return -4F;
+        if (t <= 34.5833) return Mth.lerp((t - 34.25F) / (34.5833F - 34.25F), -4F, -49F);
+        if (t <= 36.0833) return -49F;
+        if (t <= 36.3333) return Mth.lerp((t - 36.0833F) / (36.3333F - 36.0833F), -49F, -89F);
+        if (t <= 37.5) return -89F;
+        if (t <= 37.6667) return Mth.lerp((t - 37.5F) / (37.6667F - 37.5F), -89F, -134F);
+        if (t <= 38.5833) return -134F;
+        if (t <= 38.6667) return Mth.lerp((t - 38.5833F) / (38.6667F - 38.5833F), -134F, -154F);
+        if (t <= 43.6667) return -154F;
+        if (t <= 43.75) return Mth.lerp((t - 43.6667F) / (43.75F - 43.6667F), -154F, -180F);
+        if (t <= 70.1667) return -180F;
+        if (t <= 70.3333) return Mth.lerp((t - 70.1667F) / (70.3333F - 70.1667F), -180F, -215F);
+        if (t <= 75.5833) return -215F;
+        if (t <= 75.75) return Mth.lerp((t - 75.5833F) / (75.75F - 75.5833F), -215F, -235F);
+        if (t <= 76.9167) return Mth.lerp((t - 75.75F) / (76.9167F - 75.75F), -235F, -260F);
+        if (t <= 77.25) return Mth.lerp((t - 76.9167F) / (77.25F - 76.9167F), -260F, -305F);
+        if (t <= 77.8333) return -305F;
+        if (t <= 77.9167) return -305F;
+        if (t <= 78.9167) return Mth.lerp(t - 77.9167F, -305F, -365F);
+
+        return -365F;
+    }
+        public float getBoneMoveY(float t) {
+            if (t <= 34.25) return Mth.lerp(t / (34.25F - 0F), 0F, -6F);
+            if (t <= 36.0833) return Mth.lerp((t - 34.25F) / (36.0833F - 34.25F), -6F, -11.25F);
+            if (t <= 37.5) return Mth.lerp((t - 36.0833F) / (37.5F - 36.0833F), -11.25F, -16.96F);
+            if (t <= 38.5833) return Mth.lerp((t - 37.5F) / (38.5833F - 37.5F), -16.96F, -19.25F);
+            if (t <= 43.6667) return Mth.lerp((t - 38.5833F) / (43.6667F - 38.5833F), -19.25F, -24F);
+            if (t <= 70.1667) return -24F;
+            if (t <= 75.5833) return Mth.lerp((t - 70.1667F) / (75.5833F - 70.1667F), -24F, -14F);
+            if (t <= 76.25) return Mth.lerp((t - 75.5833F) / (76.25F - 75.5833F), -14F, -9.24F);
+            if (t <= 77) return Mth.lerp((t - 76.25F) / (77F - 76.25F), -9.24F, -5F);
+            if (t <= 78.3333) return Mth.lerp((t - 77F) / (78.3333F - 77F), -5F, -1F);
+
+            return Mth.lerp((t - 78.3333F) / (80.1667F - 78.3333F), -1F, 0F);
+        }
+            public float getBoneMoveZ(float t) {
+                if (t <= 34.25) return Mth.lerp(t / (34.25F - 0F), 0F, 123F);
+                if (t <= 36.0833) return Mth.lerp((t - 34.25F) / (36.0833F - 34.25F), 123F, 128F);
+                if (t <= 37.5) return 128F;
+                if (t <= 38.5833) return Mth.lerp((t - 37.5F) / (38.5833F - 37.5F), 128F, 125F);
+                if (t <= 43.6667) return Mth.lerp((t - 38.5833F) / (43.6667F - 38.5833F), 125F, 110.75F);
+                if (t <= 70.1667) return Mth.lerp((t - 43.6667F) / (70.1667F - 43.6667F), 110.75F, 13.75F);
+                if (t <= 75.5833) return Mth.lerp((t - 70.1667F) / (75.5833F - 70.1667F), 13.75F, -1F);
+                if (t <= 76.25) return Mth.lerp((t - 75.5833F) / (76.25F - 75.5833F), -1F, -4.65F);
+                if (t <= 77) return Mth.lerp((t - 76.25F) / (77F - 76.25F), -4.65F, -5F);
+                if (t <= 78.3333) return Mth.lerp((t - 77F) / (78.3333F - 77F), -5F, -2.5F);
+
+                return Mth.lerp((t - 78.3333F) / (80.1667F - 78.3333F), -2.5F, 0F);
+
+
+            }
 }
