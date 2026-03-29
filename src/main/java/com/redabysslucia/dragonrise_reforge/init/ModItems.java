@@ -6,6 +6,9 @@ import com.redabysslucia.dragonrise_reforge.item.armor.CNJustchest;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNfast;
 import com.redabysslucia.dragonrise_reforge.item.armor.CNchest;
 import com.redabysslucia.dragonrise_reforge.item.armor.MSVChest;
+import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3;
+import com.redabysslucia.dragonrise_reforge.item.armor.AljinHelmet;
+import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3Leggings;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -40,6 +43,9 @@ public class ModItems {
     public static final RegistryObject<Item> CNCHEST = REGISTRY.register("cnchest", CNchest::new);
     public static final RegistryObject<Item> CNFAST = REGISTRY.register("cnfast", CNfast::new);
     public static final RegistryObject<Item> MSV_CHEST = REGISTRY.register("msv_chest", MSVChest::new);
+    public static final RegistryObject<Item> GORKA3 = REGISTRY.register("gorka3", Gorka3::new);
+    public static final RegistryObject<Item> ALJIN_HELMET = REGISTRY.register("aljin_helmet", AljinHelmet::new);
+    public static final RegistryObject<Item> GORKA3_LEGGINGS = REGISTRY.register("gorka3_leggings", Gorka3Leggings::new);
 
 
 }

@@ -128,6 +128,9 @@ public class ModTabs {
                         output.accept(ModItems.CN21.get());
                         output.accept(ModItems.CNFAST.get());
                         output.accept(ModItems.MSV_CHEST.get());
+                        output.accept(ModItems.ALJIN_HELMET.get());
+                        output.accept(ModItems.GORKA3.get());
+                        output.accept(ModItems.GORKA3_LEGGINGS.get());
                     }
                     ).build()
     );
