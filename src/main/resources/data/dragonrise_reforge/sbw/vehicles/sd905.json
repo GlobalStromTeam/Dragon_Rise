@@ -30,7 +30,7 @@
       "Position": [0.0, 0.625, 2.6875],
       "Sensitivity": [0, 0, 0],
       "CameraPos": {
-        "Transform": "Vehicle",
+        "Transform": "free",
         "UseAircraftCamera": true,
         "AircraftCameraPos": [-3.8, 3.5, -15]
       },
@@ -186,11 +186,7 @@
     "EngineSoundVolume": 1
   },
   "EngineSound": "superbwarfare:mi_28_engine",
-  "ThirdPersonCameraPos": [
-    2.7,
-    4,
-    12
-  ],
+  "ThirdPersonCameraPos": [2.7, 4, 12],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.8,
   "Mass": 8.2,
