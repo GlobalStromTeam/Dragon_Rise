@@ -1,0 +1,57 @@
+package com.redabysslucia.dragonrise_reforge.entities;
+
+import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
+
+@SuppressWarnings("removal")
+public class R2S25MEntity extends NightVisionVehicle {
+
+    public R2S25MEntity(EntityType<?> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (tickCount % 1 == 0 && hasPlayerOperator()) {
+            GeoBasedParticleUtil.spawnParticlesFromManualPosition(this, -28, 21, -4);
+        }
+    }
+
+    private PlayState cannonFirePredicate(AnimationState<R2S25MEntity> event) {
+        if (getShootAnimationTimer(0, 0) > 0) {
+            return event.setAndContinue(RawAnimation.begin().thenPlay("fire"));
+        }
+        return event.setAndContinue(RawAnimation.begin().thenLoop("nothing"));
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
+    }
+    /**
+     * 检查是否有玩家在操作车辆
+     * @return 如果有玩家在操作返回true，否则返回false
+     */
+    private boolean hasPlayerOperator() {
+        // 检查是否有乘客
+        if (!this.getPassengers().isEmpty()) {
+            // 检查第一个乘客是否是玩家
+            return this.getPassengers().get(0) instanceof net.minecraft.world.entity.player.Player;
+        }
+        return false;
+    }
+
+    @Override
+    public ResourceLocation getNightVisionShader() {
+        return new ResourceLocation("shaders/post/night-vision-wp.json");
+    }
+}

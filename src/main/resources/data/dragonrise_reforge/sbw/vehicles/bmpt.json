@@ -1,7 +1,7 @@
 {
   "ID": "dragonrise_reforge:bmpt72",
-  "MaxHealth": 300,
-  "MaxEnergy": 5000000,
+  "MaxHealth": 380,
+  "MaxEnergy": 20000000,
   "OBB": [
     {
       "Size": [1.8125, 0.4375, 0.5625],
@@ -214,7 +214,7 @@
   "HUDColor": "0xFFC700",
   "EngineType": "Track",
   "EngineInfo": {
-    "Buoyancy": 0.052,
+    "Buoyancy": 0.0,
     "EnergyCostRate": 96,
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.5,
