@@ -286,7 +286,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:ztz99a_engine",
+  "EngineSound": "dragonrise_reforge:tank_engine_loop3",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [

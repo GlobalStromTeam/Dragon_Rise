@@ -1,4 +1,28 @@
 {
+  "tank_engine_loop3": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/tank_engine_loop_3",
+        "stream": false
+      }
+    ]
+  },
+  "tank_engine_loop2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/tank_engine_loop_2",
+        "stream": false
+      }
+    ]
+  },
+  "tank_engine_loop1": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:tankengine/tank_engine_loop_1",
+        "stream": false
+      }
+    ]
+  },
   "m2a3_engine_loop": {
     "sounds": [
       {

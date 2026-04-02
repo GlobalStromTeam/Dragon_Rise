@@ -4,11 +4,6 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Part": "Empty",
-      "Size": [0.04453125, 0.22265625, 0.48984375],
-      "Position": [-1.64765625, 1.29140625, 0.2828125]
-    },
-    {
       "Part": "MainEngine",
       "Size": [0.8015625, 0.244921875, 1.11328125],
       "Position": [-0.8015625, 1.313671875, 2.19765625]
@@ -102,7 +97,7 @@
       },
       "Transform": "Turret",
       "Position": [0.8125, 1.2, 0.84375],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Weapons": ["Cannon", "MachineGun","Laser"],
       "CanRotateHead": false,
       "MinPitch": -6,
       "MaxPitch": 18,
@@ -139,6 +134,63 @@
     }
   ],
   "Weapons": {
+    "Laser": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/laser.png",
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Projectile": "ray",
+      "Range": 512,
+      "DefaultZoom": 3,
+      "RPM": 30,
+      "Velocity": 6000000000,
+      "Damage": 350,
+      "ExplosionDamage": 72,
+      "ExplosionRadius": 12,
+      "Spread": 0,
+      "HeatPerShoot": 50,
+      "NaturalCooldown": 0.7,
+      "ShootAnimationTime": 3,
+      "AmmoCostPerShoot": 100000,
+      "AmmoType": [
+        "FE",
+        {
+          "Ammo": "FE",
+          "Override": {
+            "Name": "weapon.superbwarfare.laser_auto",
+            "DefaultFireMode": "Auto",
+            "RPM": 1200,
+            "Velocity": 6000000000,
+            "Damage": 15,
+            "HeatPerShoot": 3,
+            "ShootAnimationTime": 1,
+            "AmmoCostPerShoot": 5000,
+            "ExplosionDamage": 0,
+            "ExplosionRadius": 0,
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:prism_tank_fire_low_1p",
+              "Fire3P": "superbwarfare:prism_tank_fire_low_3p",
+              "Fire3PFar": null,
+              "Fire3PVeryFar": null,
+              "Change": "superbwarfare:into_cannon"
+            }
+          }
+        }
+      ],
+      "Crosshair": "@VehicleCommonMissile",
+      "CrosshairColor": "0x00FFF6",
+      "Name": "weapon.superbwarfare.laser_semi",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:prism_tank_fire_high_1p",
+        "Fire3P": "superbwarfare:prism_tank_fire_high_3p",
+        "Change": "superbwarfare:into_missile"
+      },
+      "SoundRadius": 12,
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [[0, 0.5, 0]],
+        "Directions": ["Barrel"]
+      }
+    },
     "Cannon": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
       "DefaultFireMode": "Semi",
@@ -345,7 +397,7 @@
       [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
+  "EngineSound": "dragonrise_reforge:tank_engine_loop3",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [

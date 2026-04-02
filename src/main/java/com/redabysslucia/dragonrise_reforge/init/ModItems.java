@@ -9,6 +9,7 @@ import com.redabysslucia.dragonrise_reforge.item.armor.MSVChest;
 import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3;
 import com.redabysslucia.dragonrise_reforge.item.armor.AljinHelmet;
 import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3Leggings;
+import com.redabysslucia.dragonrise_reforge.item.armor.MED21Chest;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -46,6 +47,7 @@ public class ModItems {
     public static final RegistryObject<Item> GORKA3 = REGISTRY.register("gorka3", Gorka3::new);
     public static final RegistryObject<Item> ALJIN_HELMET = REGISTRY.register("aljin_helmet", AljinHelmet::new);
     public static final RegistryObject<Item> GORKA3_LEGGINGS = REGISTRY.register("gorka3_leggings", Gorka3Leggings::new);
+    public static final RegistryObject<Item> MED21_CHEST = REGISTRY.register("med21_chest", MED21Chest::new);
 
 
 }
