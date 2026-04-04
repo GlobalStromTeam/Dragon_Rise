@@ -4,6 +4,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.NPDS810Render
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M10BookerRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.R9M133Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
@@ -98,6 +99,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.M10BOOKER.get(), M10BookerRenderer::new);
                 event.registerEntityRenderer(ModEntities.NH90.get(), NH90Renderer::new);
                 event.registerEntityRenderer(ModEntities.R2S25M.get(), R2S25MRenderer::new);
+                event.registerEntityRenderer(ModEntities.R9M133.get(), R9M133Renderer::new);
         }
 }
 

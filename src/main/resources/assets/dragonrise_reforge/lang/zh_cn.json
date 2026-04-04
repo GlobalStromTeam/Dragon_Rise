@@ -81,7 +81,11 @@
   "info.dragonrise_reforge.m10booker": "M10 布克坦克，美国的一款新型中型坦克，主要武器为一门105毫米主炮，配备先进的火控系统，适合多种作战环境。",
 
   "entity.dragonrise_reforge.hj8": "红箭-8 反坦克导弹",
-  "entity.dragonrise_reforge.m10booker": "M10 Booker",
+  "entity.dragonrise_reforge.9m133": "短号 反坦克导弹",
+  "entity.dragonrise_reforge.2s25m": "2s25 章鱼",
+  "entity.dragonrise_reforge.bmd4m": "BMD-4M",
+  "entity.dragonrise_reforge.nh90": "NH90",
+  "entity.dragonrise_reforge.m10booker": "M10 布克",
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "entity.dragonrise_reforge.j15t": "J-15T",
   "entity.dragonrise_reforge.z10me": "Z-10ME",
@@ -254,6 +258,7 @@
   "gui.dragonrise_reforge.disabled": "已禁用",
   "block.dragonrise_reforge.vehicle_deployer": "载具部署器",
 
+  "dragonrise_reforge:9m133": "短号 反坦克导弹",
   "dragonrise_reforge:hj8": "红箭-8 反坦克导弹",
   "dragonrise_reforge:500kg": "500kg航空炸弹",
   "dragonrise_reforge:pl8": "霹雳-8 红外空对空导弹",
