@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 
 import com.atsuishio.superbwarfare.item.common.container.ContainerBlockItem;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -122,12 +123,16 @@ public class ModTabs {
                         output.accept(ModItems.DSHK_DEPLOYER.get());
                         output.accept(ModItems.M2_DEPLOYER.get());
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
-                        output.accept(com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ITEM.get());
+                        output.accept(DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ITEM.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNJUSTCHEST.get());
                         output.accept(ModItems.CN21.get());
                         output.accept(ModItems.CNFAST.get());
                         output.accept(ModItems.MSV_CHEST.get());
+                        output.accept(ModItems.ALJIN_HELMET.get());
+                        output.accept(ModItems.GORKA3.get());
+                        output.accept(ModItems.GORKA3_LEGGINGS.get());
+                        output.accept(ModItems.MED21_CHEST.get());
                     }
                     ).build()
     );

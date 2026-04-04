@@ -82,7 +82,7 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune()
-                    .sized(4.0f, 2.9f)
+                    .sized(3.0f, 2.9f)
     );
 
     public static final RegistryObject<EntityType<AMX56Entity>> AMX56 = register("amx56",
@@ -645,7 +645,7 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(4.0f, 2.7f)
+                    .sized(3.0f, 2.7f)
     );
 
     public static final RegistryObject<EntityType<PZBJYEntity>> PZBJY = register("pzbjy",
