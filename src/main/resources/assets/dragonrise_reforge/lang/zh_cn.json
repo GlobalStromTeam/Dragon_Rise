@@ -80,6 +80,7 @@
   "info.dragonrise_reforge.z20": "直-20 战术通用直升机，别称“入云龙”“神雕-20”，是中国自主研制的第四代中型双发多用途战术通用直升机，由航空工业直升机设计研究所设计、哈尔滨飞机工业集团制造。该机采用单旋翼尾桨、低位后置平尾构型，作为首款应用电传操纵系统的国产直升机，配备国产涡轴发动机，集成低阻气动外形与高性能旋翼气动布局设计，应用旋翼防冰等技术，具备昼夜复杂气象条件下执行机降运输任务的全域全时出动能力，兼具平原与高原使用性能及扩展兼容性",
   "info.dragonrise_reforge.m10booker": "M10 布克坦克，美国的一款新型中型坦克，主要武器为一门105毫米主炮，配备先进的火控系统，适合多种作战环境。",
 
+  "entity.dragonrise_reforge.hj8": "红箭-8 反坦克导弹",
   "entity.dragonrise_reforge.m10booker": "M10 Booker",
   "entity.dragonrise_reforge.ztz99a": "ZTZ-99A",
   "entity.dragonrise_reforge.j15t": "J-15T",
@@ -232,6 +233,7 @@
   "item.dragonrise_reforge.qjz89": "QJZ-89 高射机枪（需架设）",
   "item.dragonrise_reforge.m2": "M2HB 重机枪（需架设）",
   "item.dragonrise_reforge.dshk": "德什卡 重机枪（需架设）",
+  "item.dragonrise_reforge.hj8": "红箭-8 反坦克导弹",
   "item.dragonrise_reforge.vehicle_deployer": "载具部署器",
 
 
@@ -247,6 +249,7 @@
   "gui.dragonrise_reforge.disabled": "已禁用",
   "block.dragonrise_reforge.vehicle_deployer": "载具部署器",
 
+  "dragonrise_reforge:hj8": "红箭-8 反坦克导弹",
   "dragonrise_reforge:500kg": "500kg航空炸弹",
   "dragonrise_reforge:pl8": "霹雳-8 红外空对空导弹",
   "dragonrise_reforge:23mm": "23mm 23L航空机炮",

@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities.atmg;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
@@ -30,6 +31,11 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Math;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,8 +98,6 @@ public class HJ8Entity extends GeoVehicleEntity {
             } else {
                 player.displayClientMessage(Component.literal(FormatTool.format1DZ((double) (coolDown - entityData.get(RELOAD_COOLDOWN)) / 20) + " / " + FormatTool.format1DZ((double) coolDown / 20)), true);
             }
-        } else {
-            entityData.set(LOADED, false);
         }
         return InteractionResult.SUCCESS;
     }
@@ -125,7 +129,7 @@ public class HJ8Entity extends GeoVehicleEntity {
     @Override
     public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
         super.vehicleShoot(living, uuid, targetPos);
-
+        entityData.set(LOADED, false);
         var barrelVector = getBarrelVector(1);
         var pos = getShootPos(living, 1).add(barrelVector.scale(-0.5));
         var ab = new AABB(pos, pos).inflate(0.75).move(barrelVector.scale(-2)).expandTowards(barrelVector.scale(-5));
@@ -148,6 +152,17 @@ public class HJ8Entity extends GeoVehicleEntity {
         }
     }
 
+    private PlayState cannonFirePredicate(AnimationState<HJ8Entity> event) {
+        if (getShootAnimationTimer(0, 0) > 0) {
+            return event.setAndContinue(RawAnimation.begin().thenPlay("fire"));
+        }
+        return event.setAndContinue(RawAnimation.begin().thenLoop("nothinghappen"));
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
+    }
 //    @Override
 //    public void destroy() {
 //        if (this.level() instanceof ServerLevel level) {

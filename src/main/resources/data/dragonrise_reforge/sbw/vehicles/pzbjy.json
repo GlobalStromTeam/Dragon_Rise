@@ -253,7 +253,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/t80_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/pzbjy_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ru_land.png",
   "Type": "Tank",
   "CollisionLevel": {

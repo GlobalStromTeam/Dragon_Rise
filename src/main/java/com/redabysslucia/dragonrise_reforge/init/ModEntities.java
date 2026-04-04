@@ -597,7 +597,7 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(2.0f, 1.7f)
+                    .sized(0.35f, 1f)
     );
 
     public static final RegistryObject<EntityType<BMD4MEntity>> BMD4M = register("bmd4m",
