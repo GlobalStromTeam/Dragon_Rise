@@ -133,6 +133,8 @@ public class ModTabs {
                         output.accept(ModItems.GORKA3.get());
                         output.accept(ModItems.GORKA3_LEGGINGS.get());
                         output.accept(ModItems.MED21_CHEST.get());
+                        output.accept(ModItems.T21_HELMET.get());
+                        output.accept(ModItems.FAST_HELMET.get());
                     }
                     ).build()
     );
