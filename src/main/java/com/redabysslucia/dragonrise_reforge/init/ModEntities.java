@@ -5,6 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
+import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
@@ -597,7 +598,15 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
-                    .sized(2.0f, 1.7f)
+                    .sized(0.35f, 1f)
+    );
+
+    public static final RegistryObject<EntityType<R9M133Entity>> R9M133 = register("9m133",
+            EntityType.Builder.of(R9M133Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(0.35f, 1.5f)
     );
 
     public static final RegistryObject<EntityType<BMD4MEntity>> BMD4M = register("bmd4m",

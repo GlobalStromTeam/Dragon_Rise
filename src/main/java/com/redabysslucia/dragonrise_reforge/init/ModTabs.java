@@ -119,6 +119,7 @@ public class ModTabs {
                         output.accept(ModItems.MK19_DEPLOYER.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
                         output.accept(ModItems.HJ8_DEPLOYER.get());
+                        output.accept(ModItems.R9M133_DEPLOYER.get());
                         output.accept(ModItems.qjz89_DEPLOYER.get());
                         output.accept(ModItems.DSHK_DEPLOYER.get());
                         output.accept(ModItems.M2_DEPLOYER.get());

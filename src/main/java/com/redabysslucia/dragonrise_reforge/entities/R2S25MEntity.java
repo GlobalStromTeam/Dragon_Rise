@@ -22,7 +22,7 @@ public class R2S25MEntity extends NightVisionVehicle {
     public void tick() {
         super.tick();
         if (tickCount % 1 == 0 && hasPlayerOperator()) {
-            GeoBasedParticleUtil.spawnParticlesFromManualPosition(this, -28, 21, -4);
+            GeoBasedParticleUtil.spawnParticlesFromManualPosition(this, -27, 25, 47);
         }
     }
 
@@ -49,6 +49,8 @@ public class R2S25MEntity extends NightVisionVehicle {
         }
         return false;
     }
+
+
 
     @Override
     public ResourceLocation getNightVisionShader() {
