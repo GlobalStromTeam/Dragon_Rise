@@ -257,8 +257,8 @@
   "EngineInfo": {
     "HasGear": false,
     "EnergyCostRate": 512,
-    "Increment": 1.5,
-    "Decrement": 4000.5,
+    "Increment": 0.5,
+    "Decrement": 0.5,
     "PitchSpeed": 1.25,
     "YawSpeed": 1.25,
     "RollSpeed": 1.25,
