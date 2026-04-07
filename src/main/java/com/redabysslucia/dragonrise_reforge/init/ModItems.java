@@ -12,6 +12,9 @@ import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3Leggings;
 import com.redabysslucia.dragonrise_reforge.item.armor.MED21Chest;
 import com.redabysslucia.dragonrise_reforge.item.armor.T21Helmet;
 import com.redabysslucia.dragonrise_reforge.item.armor.FASTHelmet;
+import com.redabysslucia.dragonrise_reforge.item.armor.Sniper21Helmet;
+import com.redabysslucia.dragonrise_reforge.item.armor.Pants21;
+import com.redabysslucia.dragonrise_reforge.item.armor.MSVPants;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -53,6 +56,9 @@ public class ModItems {
     public static final RegistryObject<Item> MED21_CHEST = REGISTRY.register("med21_chest", MED21Chest::new);
     public static final RegistryObject<Item> T21_HELMET = REGISTRY.register("t21_helmet", T21Helmet::new);
     public static final RegistryObject<Item> FAST_HELMET = REGISTRY.register("fast_helmet", FASTHelmet::new);
+    public static final RegistryObject<Item> SNIPER21_HELMET = REGISTRY.register("sniper21_helmet", Sniper21Helmet::new);
+    public static final RegistryObject<Item> PANTS21 = REGISTRY.register("pants21", Pants21::new);
+    public static final RegistryObject<Item> MSV_PANTS = REGISTRY.register("msv_pants", MSVPants::new);
 
 
 }
