@@ -139,6 +139,12 @@ public class ModTabs {
                         output.accept(ModItems.SNIPER21_HELMET.get());
                         output.accept(ModItems.PANTS21.get());
                         output.accept(ModItems.MSV_PANTS.get());
+                        output.accept(ModItems.DESERT07_HELMET.get());
+                        output.accept(ModItems.DESERT07_CHEST.get());
+                        output.accept(ModItems.DESERT07_PANTS.get());
+                        output.accept(ModItems.OCEAN07_HELMET.get());
+                        output.accept(ModItems.OCEAN07_CHEST.get());
+                        output.accept(ModItems.OCEAN07_PANTS.get());
                         output.accept(ModItems.MSV_CHEST.get());
                     }
                     ).build()

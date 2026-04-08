@@ -15,6 +15,12 @@ import com.redabysslucia.dragonrise_reforge.item.armor.FASTHelmet;
 import com.redabysslucia.dragonrise_reforge.item.armor.Sniper21Helmet;
 import com.redabysslucia.dragonrise_reforge.item.armor.Pants21;
 import com.redabysslucia.dragonrise_reforge.item.armor.MSVPants;
+import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Helmet;
+import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Chest;
+import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Pants;
+import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Helmet;
+import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Chest;
+import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Pants;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -59,6 +65,12 @@ public class ModItems {
     public static final RegistryObject<Item> SNIPER21_HELMET = REGISTRY.register("sniper21_helmet", Sniper21Helmet::new);
     public static final RegistryObject<Item> PANTS21 = REGISTRY.register("pants21", Pants21::new);
     public static final RegistryObject<Item> MSV_PANTS = REGISTRY.register("msv_pants", MSVPants::new);
+    public static final RegistryObject<Item> DESERT07_HELMET = REGISTRY.register("desert07_helmet", Desert07Helmet::new);
+    public static final RegistryObject<Item> DESERT07_CHEST = REGISTRY.register("desert07_chest", Desert07Chest::new);
+    public static final RegistryObject<Item> DESERT07_PANTS = REGISTRY.register("desert07_pants", Desert07Pants::new);
+    public static final RegistryObject<Item> OCEAN07_HELMET = REGISTRY.register("ocean07_helmet", Ocean07Helmet::new);
+    public static final RegistryObject<Item> OCEAN07_CHEST = REGISTRY.register("ocean07_chest", Ocean07Chest::new);
+    public static final RegistryObject<Item> OCEAN07_PANTS = REGISTRY.register("ocean07_pants", Ocean07Pants::new);
 
 
 }
