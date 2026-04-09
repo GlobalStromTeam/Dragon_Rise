@@ -1,27 +1,16 @@
 package com.redabysslucia.dragonrise_reforge;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.logging.LogUtils;
+import com.redabysslucia.dragonrise_reforge.client.outline.OutlineThermal;
+import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRenderer;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
-import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
-import net.minecraft.client.KeyMapping;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.PostChain;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.client.event.RegisterKeyMappingsEvent;
-import net.minecraftforge.client.settings.KeyConflictContext;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.Lazy;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -47,6 +36,7 @@ public class Dragonrise_reforge {
                 DragonVehicleDeployer.register(bus);
 
                 bus.addListener(this::commonSetup);
+                bus.addListener(this::setupClient);
 
                 MinecraftForge.EVENT_BUS.register(this);
         }
@@ -73,6 +63,15 @@ public class Dragonrise_reforge {
 
         private void setupClient(final FMLClientSetupEvent event) {
                 event.enqueueWork(() -> {
+                        // Initialize outline rendering system
+                        try {
+                            OutlineRenderer.init();
+                            OutlineRenderer.register(); // 注册到事件总线
+                            OutlineThermal.setupOutlines();
+                            LOGGER.info("Outline rendering system initialized");
+                        } catch (Exception e) {
+                            LOGGER.error("Failed to initialize outline rendering system", e);
+                        }
                 });
         }
 

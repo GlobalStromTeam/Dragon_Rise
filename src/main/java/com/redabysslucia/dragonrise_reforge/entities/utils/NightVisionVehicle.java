@@ -8,6 +8,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,7 @@ import java.util.UUID;
 public abstract class NightVisionVehicle extends GeoVehicleEntity implements INightVisionVehicle {
 
     public static final EntityDataAccessor<Boolean> NV_Enable = SynchedEntityData.defineId(NightVisionVehicle.class, EntityDataSerializers.BOOLEAN);
+    public static final EntityDataAccessor<Boolean> TVG_Enable = SynchedEntityData.defineId(NightVisionVehicle.class, EntityDataSerializers.BOOLEAN);
     
     // 存储实体的光源方块位置和放置时间
     private static final Map<NightVisionVehicle, LightInfo> lightInfoMap = new HashMap<>();
@@ -34,18 +36,21 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(NV_Enable, false);
+        this.entityData.define(TVG_Enable, false);
     }
 
     @Override
     public void readAdditionalSaveData(net.minecraft.nbt.CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.entityData.set(NV_Enable, compound.getBoolean("NV_Enable"));
+        this.entityData.set(TVG_Enable, compound.getBoolean("TVG_Enable"));
     }
 
     @Override
     public void addAdditionalSaveData(net.minecraft.nbt.CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putBoolean("NV_Enable", this.entityData.get(NV_Enable));
+        compound.putBoolean("TVG_Enable", this.entityData.get(TVG_Enable));
     }
 
     @Override
@@ -56,6 +61,34 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
     @Override
     public void setNVEnable(boolean enable) {
         this.entityData.set(NV_Enable, enable);
+        // 确保夜视和热成像互斥
+        if (enable) {
+            this.entityData.set(TVG_Enable, false);
+        }
+    }
+    
+    @Override
+    public boolean getTVGEnable() {
+        return this.entityData.get(TVG_Enable);
+    }
+    
+    @Override
+    public void setTVGEnable(boolean enable) {
+        this.entityData.set(TVG_Enable, enable);
+        // 确保热成像和夜视互斥
+        if (enable) {
+            this.entityData.set(NV_Enable, false);
+        }
+    }
+    
+    @Override
+    public ResourceLocation getNightVisionShader() {
+        return new ResourceLocation("minecraft", "shaders/post/night-vision-wp.json");
+    }
+    
+    @Override
+    public ResourceLocation getThermalVisionShader() {
+        return new ResourceLocation("minecraft", "shaders/post/thermal-vision-wp.json");
     }
 
     @Override

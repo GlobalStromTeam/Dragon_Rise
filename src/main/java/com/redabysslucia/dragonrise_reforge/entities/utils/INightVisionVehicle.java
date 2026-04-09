@@ -5,9 +5,15 @@ import net.minecraft.resources.ResourceLocation;
 public interface INightVisionVehicle {
 
     ResourceLocation getNightVisionShader();
+    
+    ResourceLocation getThermalVisionShader();
 
     boolean getNVEnable();
 
     void setNVEnable(boolean enable);
+    
+    boolean getTVGEnable();
+    
+    void setTVGEnable(boolean enable);
 
 }

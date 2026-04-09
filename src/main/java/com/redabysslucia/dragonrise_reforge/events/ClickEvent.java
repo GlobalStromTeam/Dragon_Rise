@@ -28,17 +28,25 @@ public class ClickEvent {
 
             if (player.getVehicle() instanceof INightVisionVehicle vehicle) {
                 if (ModKeyMappings.NIGHT_VISION.isPressed()) {
-
-                    vehicle.setNVEnable(!vehicle.getNVEnable());
-
+                    // 循环切换模式：夜视 -> 热成像 -> 关闭
                     if (vehicle.getNVEnable()) {
-                        mc.gameRenderer.loadEffect(vehicle.getNightVisionShader());
-                    } else {
-                        if (mc.gameRenderer.currentEffect() != null && mc.gameRenderer.currentEffect().getName().contains("night-vision")) {
+                        // 从夜视切换到热成像
+                        vehicle.setNVEnable(false);
+                        vehicle.setTVGEnable(true);
+                        mc.gameRenderer.loadEffect(vehicle.getThermalVisionShader());
+                    } else if (vehicle.getTVGEnable()) {
+                        // 从热成像切换到关闭
+                        vehicle.setTVGEnable(false);
+                        if (mc.gameRenderer.currentEffect() != null && 
+                            (mc.gameRenderer.currentEffect().getName().contains("night-vision") || 
+                             mc.gameRenderer.currentEffect().getName().contains("thermal-vision"))) {
                             mc.gameRenderer.shutdownEffect();
                         }
+                    } else {
+                        // 从关闭切换到夜视
+                        vehicle.setNVEnable(true);
+                        mc.gameRenderer.loadEffect(vehicle.getNightVisionShader());
                     }
-
                 }
             }
 
