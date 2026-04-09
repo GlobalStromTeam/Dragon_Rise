@@ -14,6 +14,8 @@ uniform sampler2D DiffuseSampler;
 
 uniform sampler2D NoiseSampler;
 
+uniform sampler2D AutoGainSampler;
+
 uniform float Time;
 
 varying vec2 texCoord;
@@ -25,6 +27,9 @@ uniform vec2 InSize;
 uniform float NoiseAmplification;
 
 uniform float IntensityAdjust;
+
+// 自动增益相关 uniforms
+uniform float AutoGainEnabled;
 
 //const float RADIUS = 0.55;
 
@@ -62,7 +67,13 @@ void main() {
         
         intensity = clamp(contrast * (intensity - 0.5) + 0.5, 0.0, 1.0);
         
-        float green = clamp(intensity / 0.59, 0.0, 1.0) * IntensityAdjust;
+        // 从自动增益缓冲区获取增益值
+        float gain = 1.0;
+        if (AutoGainEnabled > 0.5) {
+            gain = texture2D(AutoGainSampler, vec2(0.25, 0.25)).r;
+        }
+        
+        float green = clamp(intensity / 0.59, 0.0, 1.0) * IntensityAdjust * gain;
         
         vec4 visionColor = vec4(green * 0.7, green * 1, green * 1, 1.0);
         
@@ -70,7 +81,9 @@ void main() {
         
         vec4 grayColor = vec4(gray, gray, gray, 1.0);
         
-        texColor = grayColor * visionColor;
+        // 混合原始颜色和夜视颜色
+        vec4 originalColor = grayColor * visionColor;
+        texColor = mix(texColor, originalColor, 1.0);
     }
     
     if(SepiaRatio > 0) {
