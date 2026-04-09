@@ -121,7 +121,7 @@
       "DefaultZoom": 3,
       "RPM": 200,
       "Velocity": 35,
-      "Damage": 75,
+      "Damage": 55,
       "ExplosionDamage": 15,
       "ExplosionRadius": 4,
       "HeatPerShoot": 6,
