@@ -80,6 +80,7 @@
   "info.dragonrise_reforge.z20": "直-20 战术通用直升机，别称“入云龙”“神雕-20”，是中国自主研制的第四代中型双发多用途战术通用直升机，由航空工业直升机设计研究所设计、哈尔滨飞机工业集团制造。该机采用单旋翼尾桨、低位后置平尾构型，作为首款应用电传操纵系统的国产直升机，配备国产涡轴发动机，集成低阻气动外形与高性能旋翼气动布局设计，应用旋翼防冰等技术，具备昼夜复杂气象条件下执行机降运输任务的全域全时出动能力，兼具平原与高原使用性能及扩展兼容性",
   "info.dragonrise_reforge.m10booker": "M10 布克坦克，美国的一款新型中型坦克，主要武器为一门105毫米主炮，配备先进的火控系统，适合多种作战环境。",
 
+  "entity.dragonrise_reforge.m4a2": "M4A2",
   "entity.dragonrise_reforge.hj8": "红箭-8 反坦克导弹",
   "entity.dragonrise_reforge.9m133": "短号 反坦克导弹",
   "entity.dragonrise_reforge.2s25m": "2s25 章鱼",
@@ -269,7 +270,11 @@
   "gui.dragonrise_reforge.disabled": "已禁用",
   "block.dragonrise_reforge.vehicle_deployer": "载具部署器",
 
-  "drgonrise_reforge:m242": "25mm M242 机炮",
+  "dragonrise_reforge:M61": "75mm M61 穿甲弹",
+  "dragonrise_reforge:M48": "75mm M48 高爆弹",
+  "dragonrise_reforge:m1919": "7.62mm M1919 同轴机枪",
+  "dragonrise_reforge:m242": "25mm M242 机炮",
+  "dragonrise_reforge:m2": "12.7mm M2 重机枪",
   "dragon_rise:tow": "陶氏 反坦克导弹",
   "dragonrise_reforge:M900": "105mm M900 穿甲弹",
   "dragonrise_reforge:M393A2": "105mm M393A2 碎甲弹",

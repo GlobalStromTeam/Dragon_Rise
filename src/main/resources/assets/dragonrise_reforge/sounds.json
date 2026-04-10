@@ -641,5 +641,13 @@
         "stream": false
       }
     ]
+  },
+  "us_76_shoot": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:us_76_cannon/us_76_shoot",
+        "stream": false
+      }
+    ]
   }
 }
