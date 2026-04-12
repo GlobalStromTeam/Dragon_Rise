@@ -721,6 +721,31 @@ public class ModEntities {
                     .sized(2.0f, 1.7f)
     );
 
+    public static final RegistryObject<EntityType<type97Entity>> type97 = register("type97",
+            EntityType.Builder.of(type97Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
+    public static final RegistryObject<EntityType<type97QEntity>> type97Q = register("type97q",
+            EntityType.Builder.of(type97QEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
+    public static final RegistryObject<EntityType<type3Entity>> type3 = register("type3",
+            EntityType.Builder.of(type3Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }

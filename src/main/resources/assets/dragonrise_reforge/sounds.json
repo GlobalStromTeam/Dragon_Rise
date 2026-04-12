@@ -665,5 +665,21 @@
         "stream": false
       }
     ]
+  },
+  "hand_reload3s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/handreload3s",
+        "stream": false
+      }
+    ]
+  },
+  "hand_reload5s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/handreload5s",
+        "stream": false
+      }
+    ]
   }
 }

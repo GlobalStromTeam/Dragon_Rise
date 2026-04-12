@@ -111,7 +111,7 @@
         "Fire3P": "dragonrise_reforge:us_76_shoot",
         "Fire3PFar": "dragonrise_reforge:us_76_shoot",
         "Fire3PVeryFar": "dragonrise_reforge:us_76_shoot",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "VehicleReload": "dragonrise_reforge:hand_reload5s",
         "Change": "dragonrise_reforge:into_cannon",
         "CancellableSounds": [
           "dragonrise_reforge:into_cannon"

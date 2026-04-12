@@ -48,16 +48,6 @@
       "MinPitch": -9,
       "MaxPitch": 25,
       "Sensitivity": [0.42, 0.7, 0.9]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Turret",
-      "Position": [-0.45183125, 1.4215625, -0.500475],
-      "Weapons": ["PassengerMachineGun","AutoCannon"],
-      "CanRotateHead": false,
-      "MinPitch": -6,
-      "MaxPitch": 60,
-      "Sensitivity": [0.57, 0.75, 0.9]
     }
   ],
   "Weapons": {
@@ -88,7 +78,7 @@
         "Fire3P": "dragonrise_reforge:us_37_shoot",
         "Fire3PFar": "dragonrise_reforge:us_37_shoot",
         "Fire3PVeryFar": "dragonrise_reforge:us_37_shoot",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "VehicleReload": "dragonrise_reforge:hand_reload3s",
         "Change": "dragonrise_reforge:into_cannon",
         "CancellableSounds": [
           "dragonrise_reforge:into_cannon"

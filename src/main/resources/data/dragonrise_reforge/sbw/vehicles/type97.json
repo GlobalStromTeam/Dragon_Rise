@@ -1,35 +1,40 @@
 {
-  "ID": "dragonrise_reforge:lvt",
+  "ID": "dragonrise_reforge:type97",
   "MaxHealth": 100,
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [1.125, 0.25, 1.15625],
-      "Position": [0.0, 2.125, 0.40625]
+      "Size": [0.6875, 0.59375, 1.125],
+      "Position": [0.0, 0.96875, 0.0]
     },
     {
-      "Size": [0.75, 0.25, 0.53125],
-      "Position": [0.0, 2.125, 2.09375]
+      "Size": [0.6875, 0.40625, 0.4375],
+      "Position": [0.0, 0.78125, 1.5625]
+    },
+    {
+      "Size": [0.6875, 0.375, 0.4375],
+      "Position": [0.0, 0.75, -1.5625]
     },
     {
       "Part": "MainEngine",
-      "Size": [0.625, 0.5625, 0.625],
-      "Position": [0.0, 2.4375, 0.0]
+      "Size": [0.46875, 0.28125, 0.625],
+      "Position": [0.0, 0.28125, 0.0]
     },
     {
-      "Size": [0.53125, 0.59375, 0.625],
-      "Position": [0.0625, 1.71875, 0.0],
+      "Part": "Turret",
+      "Size": [0.46875, 0.28125, 0.625],
+      "Position": [0.0, 1.78125, 0.0],
       "Rotation": "Turret"
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.21875, 0.9375, 3.375],
-      "Position": [1.40625, 0.9375, 0.0]
+      "Size": [0.1875, 0.53125, 2.03125],
+      "Position": [0.875, 0.53125, 0.03125]
     },
     {
       "Part": "WheelRight",
-      "Size": [0.21875, 0.9375, 3.375],
-      "Position": [-1.40625, 0.9375, 0.0]
+      "Size": [0.1875, 0.53125, 2.03125],
+      "Position": [-0.875, 0.53125, 0.03125]
     }
   ],
   "Seats": [
@@ -37,13 +42,13 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position":[0.16128125, -0.0114, 0.3359375],
+        "Position":[0.10299375, -0.00976875, 0.2449125],
         "Transform": "Barrel",
-        "ZoomPosition": [0.16128125, -0.0114, 0.3359375]
+        "ZoomPosition": [0.10299375, -0.00976875, 0.2449125]
       },
       "Transform": "Turret",
-      "Position": [0.1186375, 0.75625, -0.3001125],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Position": [1.45346875, 0.50178125, -0.01460625],
+      "Weapons": ["Cannon","MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -9,
       "MaxPitch": 25,
@@ -71,7 +76,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:M74",
+      "Name": "dragonrise_reforge:type94",
       "Ammo":"superbwarfare:small_cannon_shell",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:us_37_shoot",
@@ -87,7 +92,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.00266875, -0.0114, 1.0]],
+        "Positions": [[-0.031975, 0.0233125, 0.67101875]],
         "Directions": ["Barrel"]
       }
     },
@@ -105,7 +110,7 @@
       "Damage": 5,
       "BypassesArmor": 0.2,
       "Velocity": 25,
-      "RecoilTime": 16,
+      "RecoilTime": 0,
       "RecoilForce": 0.05,
       "HeatPerShoot": 4,
       "NaturalCooldown": 1,
@@ -113,11 +118,11 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.14900625, 0.0018625, 0.3125]],
+        "Positions": [[-0.14816875, 0.03620625, 0.56875]],
         "Directions": ["Barrel"]
       },
       "Crosshair": "@VehicleDynamicCross",
-      "Name": "dragonrise_reforge:m1919",
+      "Name": "dragonrise_reforge:type11",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
@@ -165,7 +170,7 @@
   "HUDColor": "0x00ff66",
   "EngineType": "Track",
   "EngineInfo": {
-    "Buoyancy": 0.01,
+    "Buoyancy": 0,
     "EnergyCostRate": 128,
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.75,
@@ -178,8 +183,8 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume" : 1.0
   },
-  "TurretPos": [0.0, 0.0, 0.0],
-  "BarrelPos": [0.0, 2.6533375, 0.653325],
+  "TurretPos": [-0.25105625, 1.54700625, 0.32345625],
+  "BarrelPos": [-0.04833125, 0.19933125, 0.511425],
   "TurretTurnSpeed": [0.6, 0.675],
   "TurretPitchRange": [-8, 25],
   "PassengerWeaponStationPos": [-0.5, 2.5984875, 0.138825],
