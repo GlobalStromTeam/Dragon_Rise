@@ -2,18 +2,12 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.mojang.math.Axis;
-import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.joml.Matrix4d;
-import org.joml.Vector4d;
 
 @SuppressWarnings("removal")
-public class M4A2Entity extends GeoVehicleEntity {
-    public M4A2Entity(EntityType<?> pEntityType, Level pLevel) {
+public class M2A2Entity extends GeoVehicleEntity {
+    public M2A2Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 

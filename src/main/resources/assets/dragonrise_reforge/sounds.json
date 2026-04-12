@@ -649,5 +649,21 @@
         "stream": false
       }
     ]
+  },
+  "us_105_shoot": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:us_105_cannon/us_105_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "us_37_shoot": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:us_37_cannon/us_37_shoot",
+        "stream": false
+      }
+    ]
   }
 }
