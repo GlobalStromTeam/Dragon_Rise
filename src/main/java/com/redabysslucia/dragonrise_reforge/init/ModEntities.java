@@ -697,6 +697,30 @@ public class ModEntities {
                     .sized(2.0f, 1.7f)
     );
 
+    public static final RegistryObject<EntityType<M4A2105Entity>> M4A2105 = register("m4a2_105",
+            EntityType.Builder.of(M4A2105Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
+    public static final RegistryObject<EntityType<M2A2Entity>> M2A2 = register("m2a2",
+            EntityType.Builder.of(M2A2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
+    public static final RegistryObject<EntityType<LVTEntity>> LVT = register("lvt",
+            EntityType.Builder.of(LVTEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(2.0f, 1.7f)
+    );
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }

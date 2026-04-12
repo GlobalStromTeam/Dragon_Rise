@@ -16,10 +16,7 @@ public class F4UEntity extends GeoVehicleEntity {
     public F4UEntity(EntityType<F4UEntity> type, Level world) {
         super(type, world);
     }
-    //    @Override
-//    public boolean useAircraftCamera(int seatIndex) {
-//        return ModKeyMappings.FREE_CAMERA.isDown() && !ClientEventHandler.zoom;
-//    }
+
     private PlayState F4U(AnimationState<F4UEntity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold

@@ -12,8 +12,8 @@ import org.joml.Matrix4d;
 import org.joml.Vector4d;
 
 @SuppressWarnings("removal")
-public class M4A2Entity extends GeoVehicleEntity {
-    public M4A2Entity(EntityType<?> pEntityType, Level pLevel) {
+public class M4A2105Entity extends GeoVehicleEntity {
+    public M4A2105Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -54,4 +54,5 @@ public class M4A2Entity extends GeoVehicleEntity {
     public float getEngineMaxHealth() {
         return 150;
     }
+
 }

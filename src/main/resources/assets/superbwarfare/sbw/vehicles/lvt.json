@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:lvt",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/lvt.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/lvt.png"
+  }
+}
