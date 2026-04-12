@@ -1628,7 +1628,7 @@
 					"pivot": [5, 22, 0]
 				},
 				{
-					"name": "armorLeftArm2",
+					"name": "armorLeftArm",
 					"parent": "bipedLeftArm",
 					"pivot": [5, 22, 0],
 					"cubes": [

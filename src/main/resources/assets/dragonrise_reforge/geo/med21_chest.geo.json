@@ -60,7 +60,7 @@
 				},
 				{
 					"name": "bone",
-					"parent": "bipedBody",
+					"parent": "armorBody",
 					"pivot": [4.14696, 18.42149, -4.05448],
 					"cubes": [
 						{
