@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-public class SHIELDEntity extends GeoVehicleEntity {
+public class SHIELDEntity extends FireLightVisionVehicle {
 
     private static final EntityDataAccessor<Float> TARGET_YAW =
             SynchedEntityData.defineId(SHIELDEntity.class, EntityDataSerializers.FLOAT);

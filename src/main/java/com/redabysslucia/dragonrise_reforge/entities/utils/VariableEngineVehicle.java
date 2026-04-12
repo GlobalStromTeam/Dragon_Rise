@@ -6,6 +6,7 @@ import com.atsuishio.superbwarfare.data.vehicle.DefaultVehicleData;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import lombok.Setter;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;

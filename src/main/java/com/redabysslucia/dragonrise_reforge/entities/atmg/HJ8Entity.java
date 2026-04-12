@@ -1,15 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.entities.atmg;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
-
-import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.level.Level;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
-import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.atsuishio.superbwarfare.init.ModSounds;
 import com.atsuishio.superbwarfare.tools.FormatTool;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;

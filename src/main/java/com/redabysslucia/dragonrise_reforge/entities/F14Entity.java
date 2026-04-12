@@ -1,9 +1,9 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.client.ICustomCamera;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.mixins.CameraMixin;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundSource;
@@ -18,12 +18,11 @@ import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import com.atsuishio.superbwarfare.mixins.CameraMixin;
 
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
-public class F14Entity extends GeoVehicleEntity {
+public class F14Entity extends FireLightVisionVehicle {
 
     public F14Entity(EntityType<F14Entity> type, Level world) {
         super(type, world);

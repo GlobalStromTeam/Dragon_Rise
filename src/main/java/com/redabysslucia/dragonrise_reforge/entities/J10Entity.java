@@ -1,13 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.init.ModKeyMappings;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
-import net.minecraft.world.entity.Entity;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.AnimationState;
@@ -17,7 +16,7 @@ import software.bernie.geckolib.core.object.PlayState;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
-public class J10Entity extends GeoVehicleEntity {
+public class J10Entity extends FireLightVisionVehicle {
 
     public J10Entity(EntityType<J10Entity> type, Level world) {
         super(type, world);

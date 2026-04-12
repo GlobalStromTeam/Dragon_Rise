@@ -3,11 +3,8 @@ package com.redabysslucia.dragonrise_reforge.entities.utils;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import com.atsuishio.superbwarfare.tools.OBB.Part;
+import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
@@ -20,75 +17,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class NightVisionVehicle extends GeoVehicleEntity implements INightVisionVehicle {
+public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
 
-    public static final EntityDataAccessor<Boolean> NV_Enable = SynchedEntityData.defineId(NightVisionVehicle.class, EntityDataSerializers.BOOLEAN);
-    public static final EntityDataAccessor<Boolean> TVG_Enable = SynchedEntityData.defineId(NightVisionVehicle.class, EntityDataSerializers.BOOLEAN);
-    
     // 存储实体的光源方块位置和放置时间
-    private static final Map<NightVisionVehicle, LightInfo> lightInfoMap = new HashMap<>();
-    
+    private static final Map<FireLightVisionVehicle, LightInfo> lightInfoMap = new HashMap<>();
+
     // 用于跟踪需要删除的光源方块
     private int lightRemovalTimer = 0;
-
-    @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(NV_Enable, false);
-        this.entityData.define(TVG_Enable, false);
-    }
-
-    @Override
-    public void readAdditionalSaveData(net.minecraft.nbt.CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        this.entityData.set(NV_Enable, compound.getBoolean("NV_Enable"));
-        this.entityData.set(TVG_Enable, compound.getBoolean("TVG_Enable"));
-    }
-
-    @Override
-    public void addAdditionalSaveData(net.minecraft.nbt.CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        compound.putBoolean("NV_Enable", this.entityData.get(NV_Enable));
-        compound.putBoolean("TVG_Enable", this.entityData.get(TVG_Enable));
-    }
-
-    @Override
-    public boolean getNVEnable() {
-        return this.entityData.get(NV_Enable);
-    }
-
-    @Override
-    public void setNVEnable(boolean enable) {
-        this.entityData.set(NV_Enable, enable);
-        // 确保夜视和热成像互斥
-        if (enable) {
-            this.entityData.set(TVG_Enable, false);
-        }
-    }
-    
-    @Override
-    public boolean getTVGEnable() {
-        return this.entityData.get(TVG_Enable);
-    }
-    
-    @Override
-    public void setTVGEnable(boolean enable) {
-        this.entityData.set(TVG_Enable, enable);
-        // 确保热成像和夜视互斥
-        if (enable) {
-            this.entityData.set(NV_Enable, false);
-        }
-    }
-    
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("minecraft", "shaders/post/night-vision-wp.json");
-    }
-    
-    @Override
-    public ResourceLocation getThermalVisionShader() {
-        return new ResourceLocation("minecraft", "shaders/post/thermal-vision-wp.json");
-    }
 
     @Override
     public void vehicleShoot(LivingEntity living, String weaponName) {
@@ -111,7 +46,7 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
     @Override
     public void tick() {
         super.tick();
-        
+
         // 处理光源方块删除
         if (lightRemovalTimer > 0) {
             lightRemovalTimer--;
@@ -138,23 +73,23 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
                         Vec3 obbCenter = OBB.vector3dToVec3(obb.center());
                         // 获取OBB的旋转
                         Quaterniond rotation = obb.rotation();
-                        
+
                         // 计算OBB的北方方向（基于OBB的旋转）
                         // 初始北方方向是(0, 0, 1)
                         Vector3d northDirection = new Vector3d(0, 0, 1);
                         // 应用OBB的旋转
                         northDirection.rotate(rotation);
-                        
+
                         // 计算偏移后的位置：往OBB的北方偏移两格，Y轴下降一格
                         double offsetX = northDirection.x * 2;
                         double offsetY = 0;
                         double offsetZ = northDirection.z * 2;
-                        
+
                         // 计算最终位置
                         double finalX = obbCenter.x + offsetX;
                         double finalY = obbCenter.y + offsetY;
                         double finalZ = obbCenter.z + offsetZ;
-                        
+
                         // 转换为方块位置
                         BlockPos pos = new BlockPos((int) Math.floor(finalX), (int) Math.floor(finalY), (int) Math.floor(finalZ));
 
@@ -188,7 +123,7 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
         }
     }
 
-    public NightVisionVehicle(EntityType<?> pEntityType, Level pLevel) {
+    public FireLightVisionVehicle(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 

@@ -1,8 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -13,7 +12,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class PANZER4Entity extends GeoVehicleEntity {
+public class PANZER4Entity extends FireLightVisionVehicle {
     public PANZER4Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -23,18 +22,6 @@ public class PANZER4Entity extends GeoVehicleEntity {
         return super.getDamageModifier()
                 .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
-
-//    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {
-//        if (getShootAnimationTimer(0, 0) > 0) {
-//            return event.setAndContinue(RawAnimation.begin().thenPlay("ztq15.fire.animation"));
-//        }
-//        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztq15.idle"));
-//    }
-//
-//    @Override
-//    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-//        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-//    }
 
     @Override
     public int getTrackAnimationLength() {

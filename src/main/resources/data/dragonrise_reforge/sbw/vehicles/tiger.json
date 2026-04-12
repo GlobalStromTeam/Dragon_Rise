@@ -4,6 +4,7 @@
   "MaxEnergy": 20000000,
   "OBB": [
       {
+        "Part": "Turret",
         "Rotation": "Turret",
         "Size": [1.25, 0.5625, 1.40625],
         "Position": [0, 2.375, 0.21875]

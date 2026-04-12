@@ -1,14 +1,14 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.utils.PitchAdjustUtil;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class WLHGZU23Entity extends GeoVehicleEntity {
+public class WLHGZU23Entity extends FireLightVisionVehicle {
     public WLHGZU23Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }

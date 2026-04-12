@@ -1,8 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.mojang.math.Axis;
+import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -12,7 +12,7 @@ import org.joml.Matrix4d;
 import org.joml.Vector4d;
 
 @SuppressWarnings("removal")
-public class M4A2105Entity extends GeoVehicleEntity {
+public class M4A2105Entity extends FireLightVisionVehicle {
     public M4A2105Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
