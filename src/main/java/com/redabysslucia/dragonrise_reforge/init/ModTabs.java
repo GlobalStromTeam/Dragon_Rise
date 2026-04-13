@@ -60,6 +60,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BMPT72.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AKM.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
 
                         //北约

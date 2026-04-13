@@ -73,7 +73,7 @@
       "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:M74",
-      "Ammo":"superbwarfare:small_cannon_shell",
+      "AmmoType":"superbwarfare:small_shell",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:us_37_shoot",
         "Fire3P": "dragonrise_reforge:us_37_shoot",

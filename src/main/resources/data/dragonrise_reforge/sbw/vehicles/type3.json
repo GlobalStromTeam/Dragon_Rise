@@ -72,7 +72,7 @@
       "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:type11",
-      "Ammo":"superbwarfare:small_cannon_shell",
+      "AmmoType":"superbwarfare:small_shell",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:us_37_shoot",
         "Fire3P": "dragonrise_reforge:us_37_shoot",
@@ -92,7 +92,7 @@
       }
     },
     "MachineGun": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/7_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
@@ -226,8 +226,8 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m2a2_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/type3_icon.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/jp_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,
