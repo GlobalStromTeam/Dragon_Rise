@@ -31,7 +31,7 @@
     "Cannon": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:small_cannon_shell",
+      "Projectile": "dragonrise_reforge:aashell",
       "DefaultZoom": 3,
       "RPM": 800,
       "Magazine": 120,

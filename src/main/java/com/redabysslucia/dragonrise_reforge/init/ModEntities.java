@@ -9,6 +9,8 @@ import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.world.entity.Entity;
@@ -745,6 +747,21 @@ public class ModEntities {
                     .sized(2.0f, 1.7f)
     );
 
+    public static final RegistryObject<EntityType<AirBomb500kgEntity>> AIRBOMB500KG = register("airbomb500kg",
+            EntityType.Builder.of(AirBomb500kgEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.8f, 0.8f)
+    );
+
+    public static final RegistryObject<EntityType<AAshellEntity>> AASHELL = register("aashell",
+            EntityType.Builder.of(AAshellEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.2f, 0.2f)
+    );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
