@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:zsu234",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/zsu234.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/zsu234.png"
+  }
+}

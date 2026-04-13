@@ -108,6 +108,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.type97.get(), type97Renderer::new);
                 event.registerEntityRenderer(ModEntities.type97Q.get(), type97QRenderer::new);
                 event.registerEntityRenderer(ModEntities.type3.get(), type3Renderer::new);
+                event.registerEntityRenderer(ModEntities.AKM.get(), AKMRenderer::new);
+                event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
         }
 }
 
