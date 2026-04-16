@@ -2,11 +2,11 @@ package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.redabysslucia.dragonrise_reforge.entities.AKMEEntity;
+import com.redabysslucia.dragonrise_reforge.entities.L1A2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZSU234EEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class ZSU234Model extends VehicleModel<ZSU234EEntity> {
+public class L1A2Model extends VehicleModel<L1A2Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {
@@ -14,7 +14,7 @@ public class ZSU234Model extends VehicleModel<ZSU234EEntity> {
         }
 
     @Override
-    public @Nullable TransformContext<ZSU234EEntity> collectTransform(String boneName) {
+    public @Nullable TransformContext<L1A2Entity> collectTransform(String boneName) {
 
         if (boneName.equals("missile1")) {
             return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));

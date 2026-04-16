@@ -70,6 +70,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));

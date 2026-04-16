@@ -112,6 +112,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.type3.get(), type3Renderer::new);
                 event.registerEntityRenderer(ModEntities.AKM.get(), AKMRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
+                event.registerEntityRenderer(ModEntities.L1A2.get(), L1A2Renderer::new);
         }
 }
 
