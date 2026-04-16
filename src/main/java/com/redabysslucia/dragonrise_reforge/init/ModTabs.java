@@ -66,6 +66,7 @@ public class ModTabs {
 
                         //北约
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AMX56.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
@@ -78,10 +79,10 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NH90.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.F16C.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALEAA.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
 
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));

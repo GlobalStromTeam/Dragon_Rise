@@ -166,7 +166,7 @@
   "HUDColor": "0x00ff66",
   "EngineType": "Track",
   "EngineInfo": {
-    "Buoyancy": 0.01,
+    "Buoyancy": 0.05,
     "EnergyCostRate": 128,
     "WheelRotSpeed": 1.25,
     "WheelDifferential": 0.75,
