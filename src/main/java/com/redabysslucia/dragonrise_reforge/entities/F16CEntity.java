@@ -27,22 +27,22 @@ public class F16CEntity extends FireLightVisionVehicle {
     private PlayState Sb(AnimationState<F16CEntity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.ONground_idle2"));
+                    ("on"));
         }
         else {
         return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                ("animation.j10.OFFground_idle"));
+                ("off"));
         }
     }
 
     private PlayState Sb1(AnimationState<F16CEntity> event) {
         if (this.sprintInputDown()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.engon"));
+                    ("engine on"));
         }
         else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j10.engoFF"));
+                    ("engine off"));
         }
     }
 

@@ -48,11 +48,32 @@ public class F16CModel extends VehicleModel<F16CEntity> {
                         case "bomb2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideBomb(vehicle, 2));
 
-//                        case "bomb3" -> (bone, vehicle, state) ->
-//                                bone.setHidden(shouldHideBomb(vehicle, 1));
+                        case "aim120-1" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile2(vehicle, 1));
+
+                        case "aim120-2" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideMissile2(vehicle, 2));
+
+                        case "agm65-1" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 1));
+
+                        case "agm65-2" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 2));
+
+                        case "agm65-3" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 3));
+
+                        case "agm65-4" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 4));
+
+                        case "agm65-5" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 5));
+
+                        case "agm65-6" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideSeekMissile(vehicle, 6));
 
                         case "missile1" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideMissile(vehicle, 1));
+                                    bone.setHidden(shouldHideMissile(vehicle, 1));
 
                         case "missile2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile(vehicle, 2));
@@ -84,4 +105,21 @@ public class F16CModel extends VehicleModel<F16CEntity> {
                 }
         }
 
+        public boolean shouldHideMissile2(VehicleEntity vehicle, int ammo) {
+                var gunData = vehicle.getGunData("Missile2");
+                if (gunData == null) {
+                       return false;
+                } else {
+                       return gunData.ammo.get() < ammo;
+                }
+        }
+
+        public boolean shouldHideSeekMissile(VehicleEntity vehicle, int ammo) {
+            var gunData = vehicle.getGunData("SeekMissile");
+            if (gunData == null) {
+                return false;
+            } else {
+                return gunData.ammo.get() < ammo;
+            }
+        }
 }
