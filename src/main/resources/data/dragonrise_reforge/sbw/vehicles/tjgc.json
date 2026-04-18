@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:f16c",
+  "ID": "dragonrise_reforge:tjgc",
   "MaxHealth": 250,
   "MaxEnergy": 10000000,
   "OBB": [
@@ -61,50 +61,56 @@
     "Sensitivity": [0, 0, 0],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 3.1875, 4.125],
+      "Position": [0.0, 3.3125, 3.75],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
       "AircraftCameraPos": [0, 2.75, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
-      "Position": [1.6, 0.5, 3.8],
+      "Position": [0.0, 2.14125625, 3.83578125],
       "CanEject": true,
       "EjectPosition": [0, 4.2, 3.7],
       "EjectDirection": "Up",
       "EjectForce": 4
     },
-    "Weapons": ["Cannon", "Missile","Missile2","Bomb", "SeekMissile"]
+    "Weapons": ["Laser", "Missile","Missile2","SeekMissile","Bomb"]
   },
   "HudType": "@Aircraft",
   "Weapons": {
-    "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_20mm.png",
+    "Laser": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/laser.png",
+      "AvailableFireModes": "Semi",
+      "Projectile": "ray",
+      "Range": 512,
+      "DefaultZoom": 3,
+      "Spread": 0,
+      "NaturalCooldown": 0.7,
       "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "AmmoType": "superbwarfare:small_shell",
-      "Projectile": "superbwarfare:small_cannon_shell",
-      "DefaultZoom": 2,
       "RPM": 1200,
-      "Velocity": 35,
-      "Damage": 35,
-      "ExplosionDamage": 10,
-      "ExplosionRadius": 4,
-      "HeatPerShoot": 1.5,
-      "NaturalCooldown": 0.5,
-      "Spread": 0.5,
-      "Name": "dragonrise_reforge:m61a1",
+      "Velocity": 6000000000,
+      "Damage": 15,
+      "HeatPerShoot": 3,
+      "ShootAnimationTime": 1,
+      "AmmoCostPerShoot": 5000,
+      "ExplosionDamage": 0,
+      "ExplosionRadius": 0,
       "SoundInfo": {
-        "FireSoundInstances": "dragonrise_reforge:fire_sound_30mm",
+        "Fire1P": "superbwarfare:prism_tank_fire_low_1p",
+        "Fire3P": "superbwarfare:prism_tank_fire_low_3p",
+        "Fire3PFar": null,
+        "Fire3PVeryFar": null,
         "Change": "superbwarfare:into_cannon"
       },
-      "Crosshair": "@AirCraftCommon",
-      "CrosshairColor": "0x66FF00",
+      "AmmoType": ["FE"],
+      "Crosshair": "@VehicleCommonMissile",
+      "CrosshairColor": "0x00FFF6",
+      "Name": "weapon.superbwarfare.laser_semi",
+      "SoundRadius": 12,
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[0.7761625, 2.4165125, 2.6100875]],
-        "Directions": [[0, -0.02, 1]],
-        "ShootDirectionForHud": [0, -0.03, 1]
+        "Positions": [[0.0, 1.69675, 7.43605]],
+        "Directions": ["Vehicle"]
       }
     },
     "Bomb": {
@@ -113,7 +119,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
-      "Magazine": 2,
+      "Magazine": 1,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:mk_82",
       "Gravity": 0.06,
@@ -127,8 +133,7 @@
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.171875, 0.0625],
         "ShootDirectionForHud": "Bomb",
-        "Positions": [[2.0455125, 1.51775625, -0.00501875],
-          [-2.0455125, 1.51775625, -0.00501875]],
+        "Positions": [[2.0455125, 1.51775625, -0.00501875]],
         "BoundUpWithAmmoAmount": true,
         "Directions": ["DeltaMovement"],
         "ViewPosition": [-0.94704375, 0.3360875, 0.9743625],
@@ -221,7 +226,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 2,
+      "Magazine": 50,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
       "Name": "dragonrise_reforge:aim9",
@@ -263,7 +268,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 2,
+      "Magazine": 20,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:agm_65",
       "Name": "dragonrise_reforge:aim120",
