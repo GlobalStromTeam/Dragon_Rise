@@ -12,9 +12,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Quaterniond;
 import org.joml.Vector3d;
+import org.joml.Math;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +32,28 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
     
     // 用于跟踪需要删除的光源方块
     private int lightRemovalTimer = 0;
+    // 耕地减速检测计数器
+    private int farmlandCheckTimer = 0;
+
+    // 耕地减速检测方法
+    private void checkFarmlandSlowdown() {
+        // 计算载具底部位置，向上偏移0.5格以适应耕地方块高度
+        net.minecraft.world.phys.Vec3 vehiclePos = this.position();
+        net.minecraft.core.BlockPos blockPos = new net.minecraft.core.BlockPos(
+            (int) Math.floor(vehiclePos.x()),
+            (int) Math.floor(vehiclePos.y() - 0.5), // 向上偏移0.5格
+            (int) Math.floor(vehiclePos.z())
+        );
+        net.minecraft.world.level.block.state.BlockState blockState = this.level().getBlockState(blockPos);
+        if (blockState.is(net.minecraft.world.level.block.Blocks.FARMLAND)) {
+            // 获取当前动力值
+            float currentPower = this.entityData.get(com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity.POWER);
+            if (org.joml.Math.abs(currentPower) > 0.3f) {
+                // 减速50%
+                this.entityData.set(com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity.POWER, currentPower * 0.5f);
+            }
+        }
+    }
 
     @Override
     protected void defineSynchedData() {
@@ -111,6 +135,13 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
     @Override
     public void tick() {
         super.tick();
+        
+        // 耕地减速检测（每10 tick检测一次）
+        farmlandCheckTimer++;
+        if (farmlandCheckTimer >= 10) {
+            checkFarmlandSlowdown();
+            farmlandCheckTimer = 0;
+        }
         
         // 处理光源方块删除
         if (lightRemovalTimer > 0) {

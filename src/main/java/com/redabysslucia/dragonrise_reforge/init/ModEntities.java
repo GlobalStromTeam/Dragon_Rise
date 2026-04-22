@@ -12,10 +12,15 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -802,8 +807,20 @@ public class ModEntities {
                     .sized(2.0f, 1.7f)
     );
 
+    public static final RegistryObject<EntityType<TerroristEntity>> TERRORIST = register("terrorist",
+            EntityType.Builder.of(TerroristEntity::new, MobCategory.MONSTER)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .sized(0.6f, 2f)
+    );
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
+    }
+
+    @SubscribeEvent
+    public static void registerAttributes(EntityAttributeCreationEvent event) {
+        event.put(TERRORIST.get(), TerroristEntity.createAttributes().build());
     }
 
 }

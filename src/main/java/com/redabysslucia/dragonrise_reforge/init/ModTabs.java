@@ -157,7 +157,7 @@ public class ModTabs {
                         output.accept(ModItems.OCEAN07_HELMET.get());
                         output.accept(ModItems.OCEAN07_CHEST.get());
                         output.accept(ModItems.OCEAN07_PANTS.get());
-                        output.accept(ModItems.MSV_CHEST.get());
+                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                     }
                     ).build()
     );

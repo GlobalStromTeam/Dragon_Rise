@@ -5,6 +5,7 @@ import com.redabysslucia.dragonrise_reforge.client.outline.OutlineThermal;
 import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRenderer;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
+import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
@@ -28,18 +29,19 @@ public class Dragonrise_reforge {
         public static final Logger LOGGER = LogUtils.getLogger();
 
         public Dragonrise_reforge() {
-                IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-                ModItems.register(bus);
-                ModEntities.REGISTRY.register(bus);
-                ModTabs.TABS.register(bus);
-                DragonVehicleDeployer.register(bus);
+        ModItems.register(bus);
+        ModEntities.REGISTRY.register(bus);
+        ModTabs.TABS.register(bus);
+        ModSounds.REGISTRY.register(bus);
+        DragonVehicleDeployer.register(bus);
 
-                bus.addListener(this::commonSetup);
-                bus.addListener(this::setupClient);
+        bus.addListener(this::commonSetup);
+        bus.addListener(this::setupClient);
 
-                MinecraftForge.EVENT_BUS.register(this);
-        }
+        MinecraftForge.EVENT_BUS.register(this);
+    }
 
         private void commonSetup(final FMLCommonSetupEvent event) {
                 // Some common setup code

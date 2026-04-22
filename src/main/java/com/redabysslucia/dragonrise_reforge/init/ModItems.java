@@ -1,28 +1,10 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.item.*;
-import com.redabysslucia.dragonrise_reforge.item.armor.CN21;
-import com.redabysslucia.dragonrise_reforge.item.armor.CNJustchest;
-import com.redabysslucia.dragonrise_reforge.item.armor.CNfast;
-import com.redabysslucia.dragonrise_reforge.item.armor.CNchest;
-import com.redabysslucia.dragonrise_reforge.item.armor.MSVChest;
-import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3;
-import com.redabysslucia.dragonrise_reforge.item.armor.AljinHelmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.Gorka3Leggings;
-import com.redabysslucia.dragonrise_reforge.item.armor.MED21Chest;
-import com.redabysslucia.dragonrise_reforge.item.armor.T21Helmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.FASTHelmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.Sniper21Helmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.Pants21;
-import com.redabysslucia.dragonrise_reforge.item.armor.MSVPants;
-import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Helmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Chest;
-import com.redabysslucia.dragonrise_reforge.item.armor.Desert07Pants;
-import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Helmet;
-import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Chest;
-import com.redabysslucia.dragonrise_reforge.item.armor.Ocean07Pants;
+import com.redabysslucia.dragonrise_reforge.item.armor.*;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -72,5 +54,7 @@ public class ModItems {
     public static final RegistryObject<Item> OCEAN07_CHEST = REGISTRY.register("ocean07_chest", Ocean07Chest::new);
     public static final RegistryObject<Item> OCEAN07_PANTS = REGISTRY.register("ocean07_pants", Ocean07Pants::new);
 
+    public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
+        () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
 
 }

@@ -681,5 +681,20 @@
         "stream": false
       }
     ]
+  },
+  "terrorist_idle": {
+    "sounds": ["dragonrise_reforge:terrorist/terrorist_idle"]
+  },
+  "terrorist_step": {
+    "sounds": ["dragonrise_reforge:terrorist/terrorist_step"]
+  },
+  "terrorist_hurt": {
+    "sounds": ["dragonrise_reforge:terrorist/terrorist_hurt"]
+  },
+  "terrorist_death": {
+    "sounds": ["dragonrise_reforge:terrorist/terrorist_death"]
+  },
+  "terrorist_shoot": {
+    "sounds": ["dragonrise_reforge:terrorist/terrorist_shoot"]
   }
 }

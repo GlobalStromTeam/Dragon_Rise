@@ -65,7 +65,8 @@ public class OutlineThermal {
                 // Thermal vision mode - enable glowing
                 System.out.println("Enabling thermal vision overlay");
                 OutlineRenderer.setRenderMode(OutlineRenderer.RenderMode.OVERLAY);
-                OutlineRenderer.setOutlineColor(1.0f, 1.0f, 1.0f, 2.0f);
+                // 调整热成像实体的亮度，将透明度改为 0.5f
+                OutlineRenderer.setOutlineColor(1.0f, 1.0f, 1.0f, 0.5f);
             }
             else if (vehicle.getNVEnable() && Minecraft.getInstance().options.getCameraType().isFirstPerson()) {
                 // Night vision mode - disable glowing
