@@ -72,33 +72,55 @@
   "HudType": "@Aircraft",
   "Weapons": {
     "Laser": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/laser.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/laser.png",
+      "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "ray",
       "Range": 512,
       "DefaultZoom": 3,
-      "Spread": 0,
-      "NaturalCooldown": 0.7,
-      "DefaultFireMode": "Auto",
-      "RPM": 1200,
+      "RPM": 30,
       "Velocity": 6000000000,
-      "Damage": 15,
-      "HeatPerShoot": 0.5,
-      "ShootAnimationTime": 1,
-      "AmmoCostPerShoot": 5000,
-      "ExplosionDamage": 0,
-      "ExplosionRadius": 0,
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:prism_tank_fire_low_1p",
-        "Fire3P": "superbwarfare:prism_tank_fire_low_3p",
-        "Fire3PFar": null,
-        "Fire3PVeryFar": null,
-        "Change": "superbwarfare:into_cannon"
-      },
-      "AmmoType": ["FE"],
+      "Damage": 700,
+      "ExplosionDamage": 72,
+      "ExplosionRadius": 12,
+      "Spread": 0,
+      "HeatPerShoot": 50,
+      "NaturalCooldown": 0.7,
+      "ShootAnimationTime": 3,
+      "AmmoCostPerShoot": 100000,
+      "AmmoType": [
+        "FE",
+        {
+          "Ammo": "FE",
+          "Override": {
+            "Name": "weapon.superbwarfare.laser_auto",
+            "DefaultFireMode": "Auto",
+            "RPM": 1200,
+            "Velocity": 6000000000,
+            "Damage": 100,
+            "HeatPerShoot": 0.7,
+            "ShootAnimationTime": 1,
+            "AmmoCostPerShoot": 5000,
+            "ExplosionDamage": 0,
+            "ExplosionRadius": 0,
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:prism_tank_fire_low_1p",
+              "Fire3P": "superbwarfare:prism_tank_fire_low_3p",
+              "Fire3PFar": null,
+              "Fire3PVeryFar": null,
+              "Change": "superbwarfare:into_cannon"
+            }
+          }
+        }
+      ],
       "Crosshair": "@VehicleCommonMissile",
       "CrosshairColor": "0x00FFF6",
-      "Name": "dragonrise_reforge:laser",
+      "Name": "weapon.superbwarfare.laser_semi",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:prism_tank_fire_high_1p",
+        "Fire3P": "superbwarfare:prism_tank_fire_high_3p",
+        "Change": "superbwarfare:into_missile"
+      },
       "SoundRadius": 12,
       "ShootPos": {
         "Transform": "Vehicle",
@@ -108,7 +130,7 @@
     },
     "Rocket": {
       "AmmoType": "superbwarfare:small_rocket",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/rocket.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
@@ -192,7 +214,7 @@
     },
     "BigRocket": {
       "AmmoType": "superbwarfare:small_rocket",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/rocket.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
@@ -236,13 +258,13 @@
     },
     "Bomb": {
       "AmmoType": "superbwarfare:medium_aerial_bomb",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/500kg.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/nuke.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Semi",
       "Magazine": 1,
       "EmptyReloadTime": 200,
-      "Projectile": "superbwarfare:mk_82",
+      "Projectile": "dragonrise_reforge:nukerbomb",
       "Gravity": 0.06,
       "Spread": 0.5,
       "Name": "dragonrise_reforge:neo",
@@ -272,7 +294,7 @@
       "SoundRadius": 8
     },
     "AAMissile": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_aim120.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/aam.png",
       "DefaultZoom": 2,
       "Magazine": 10,
       "EmptyReloadTime": 200,
@@ -295,7 +317,7 @@
       },
       "AmmoType": [
         {
-          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "Ammo": "dragonrise_reforge:large_anti_ground_missile",
           "ShouldUnload": false
         }
       ],
@@ -352,7 +374,7 @@
           }
         }
       ],
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/agm_65.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/atgm.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 10,
@@ -426,7 +448,7 @@
           }
         }
       ],
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/agm_65.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/atgm2.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 5,

@@ -4,6 +4,7 @@ import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ammo.NukerBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
@@ -809,6 +810,13 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<TerroristEntity>> TERRORIST = register("terrorist",
             EntityType.Builder.of(TerroristEntity::new, MobCategory.MONSTER)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(3)
+                    .sized(0.6f, 2f)
+    );
+
+    public static final RegistryObject<EntityType<NukerBombEntity>> NUKERBOMB = register("nukerbomb",
+            EntityType.Builder.of(NukerBombEntity::new, MobCategory.MONSTER)
                     .setTrackingRange(64)
                     .setUpdateInterval(3)
                     .sized(0.6f, 2f)

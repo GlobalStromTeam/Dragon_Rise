@@ -1,5 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.NPDS810Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M10BookerRenderer;
@@ -11,6 +12,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Rend
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
+import com.redabysslucia.dragonrise_reforge.entities.ammo.NukerBombEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -117,6 +119,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.F16C.get(), F16CRenderer::new);
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
+                event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
         }
 }
 
