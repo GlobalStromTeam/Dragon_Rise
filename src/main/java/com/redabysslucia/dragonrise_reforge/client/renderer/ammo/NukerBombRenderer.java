@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.client.renderer.ammo;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.redabysslucia.dragonrise_reforge.client.model.ammo.NukerBombModel;
-import com.redabysslucia.dragonrise_reforge.entities.ammo.NukerBombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

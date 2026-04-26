@@ -10,9 +10,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRende
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
-import com.redabysslucia.dragonrise_reforge.entities.ammo.NukerBombEntity;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
