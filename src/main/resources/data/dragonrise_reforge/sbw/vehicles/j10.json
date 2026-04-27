@@ -143,9 +143,9 @@
       "Spread": 0.5,
       "Name": "dragonrise_reforge:500kg",
       "ExplosionDamage": 450,
-      "ExplosionRadius": 10,
+      "ExplosionRadius": 50,
       "AddShooterDeltaMovement": true,
-      "Velocity": 0.95,
+      "Velocity": 0.3,
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0, 1.171875, 0.0625],

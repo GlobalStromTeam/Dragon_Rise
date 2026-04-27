@@ -10,6 +10,7 @@ import com.atsuishio.superbwarfare.network.message.receive.ClientIndicatorMessag
 import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import lombok.val;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
@@ -38,7 +39,7 @@ import java.util.List;
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 import static com.atsuishio.superbwarfare.tools.ParticleTool.sendParticle;
 
-public class TJGCEntity extends FireLightVisionVehicle {
+public class TJGCEntity extends VariableEngineVehicle {
 
     public TJGCEntity(EntityType<TJGCEntity> type, Level world) {
         super(type, world);

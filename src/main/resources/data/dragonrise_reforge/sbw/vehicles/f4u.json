@@ -150,7 +150,7 @@
       "AvailableFireModes": "Semi",
       "Magazine": 3,
       "EmptyReloadTime": 200,
-      "Projectile": "dragonrise_reforge:airbomb500kg",
+      "Projectile": "superbwarfare:mk_82",
       "Gravity": 0.06,
       "Spread": 0.5,
       "Name": "dragonrise_reforge:500kg",
