@@ -229,8 +229,8 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
         double dx = target.getX() - this.getX();
         double dy = target.getEyeY() - this.getEyeY();
         double dz = target.getZ() - this.getZ();
-        projectile.shoot(dx, dy, dz, 15.0F, 3F);
-        this.playSound(ModSounds.TERRORIST_SHOOT.get(), 1.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
+        projectile.shoot(dx, dy, dz, 15.0F, 2F);
+        this.playSound(ModSounds.TERRORIST_SHOOT.get(), 5.0F, 1.0F / (this.getRandom().nextFloat() * 0.4F + 0.8F));
         this.level().addFreshEntity(projectile);
     }
 
@@ -275,11 +275,6 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
             this.remove(TerroristEntity.RemovalReason.KILLED);
             this.dropExperience();
         }
-    }
-
-    @Override
-    public boolean canFireProjectileWeapon(net.minecraft.world.item.ProjectileWeaponItem pItem) {
-        return pItem == Items.BOW;
     }
 
     @Override

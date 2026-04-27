@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.model.ammo;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.ammo.NukerBombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;
 

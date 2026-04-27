@@ -60,28 +60,23 @@ public class OutlineThermal {
 
         // Check if player is in a vehicle with night vision or thermal vision
         if (player.getVehicle() instanceof INightVisionVehicle vehicle) {
-            System.out.println("Player in vehicle, NV: " + vehicle.getNVEnable() + ", TVG: " + vehicle.getTVGEnable());
             if (vehicle.getTVGEnable() && Minecraft.getInstance().options.getCameraType().isFirstPerson()) {
                 // Thermal vision mode - enable glowing
-                System.out.println("Enabling thermal vision overlay");
                 OutlineRenderer.setRenderMode(OutlineRenderer.RenderMode.OVERLAY);
                 // 调整热成像实体的亮度，将透明度改为 0.5f
                 OutlineRenderer.setOutlineColor(1.0f, 1.0f, 1.0f, 0.5f);
             }
             else if (vehicle.getNVEnable() && Minecraft.getInstance().options.getCameraType().isFirstPerson()) {
                 // Night vision mode - disable glowing
-                System.out.println("Disabling outline rendering for night vision");
                 OutlineRenderer.setRenderMode(OutlineRenderer.RenderMode.OFF);
             }
             else {
                 // No vision mode enabled
-                System.out.println("Disabling outline rendering");
                 OutlineRenderer.setRenderMode(OutlineRenderer.RenderMode.OFF);
             }
         }
         else {
             // Not in a vehicle
-            System.out.println("Not in vehicle, disabling outline rendering");
             OutlineRenderer.setRenderMode(OutlineRenderer.RenderMode.OFF);
         }
     }
