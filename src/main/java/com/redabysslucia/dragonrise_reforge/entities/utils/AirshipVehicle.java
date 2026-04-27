@@ -5,7 +5,9 @@ import com.atsuishio.superbwarfare.data.DataLoader;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.redabysslucia.dragonrise_reforge.init.ModSpeedSounds;
 import com.redabysslucia.dragonrise_reforge.utils.AirshipInfo;
+import com.redabysslucia.dragonrise_reforge.utils.SpeedSoundUtil;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -36,6 +38,14 @@ public abstract class AirshipVehicle extends GeoVehicleEntity {
 
     public AirshipVehicle(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+    
+    @Override
+    public void tick() {
+        super.tick();
+        
+        // 检查速度并播放音效
+        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get());
     }
 
 }

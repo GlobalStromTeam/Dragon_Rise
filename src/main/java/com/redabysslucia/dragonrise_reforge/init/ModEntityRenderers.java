@@ -10,6 +10,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRende
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -113,6 +114,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AKM.get(), AKMRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
                 event.registerEntityRenderer(ModEntities.AASHELL.get(), AAshellRenderer::new);
+                event.registerEntityRenderer(ModEntities.AIRBOMB500KG.get(), AirBomb500kgRenderer::new);
                 event.registerEntityRenderer(ModEntities.L1A2.get(), L1A2Renderer::new);
                 event.registerEntityRenderer(ModEntities.F16C.get(), F16CRenderer::new);
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
@@ -120,4 +122,3 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
         }
 }
-

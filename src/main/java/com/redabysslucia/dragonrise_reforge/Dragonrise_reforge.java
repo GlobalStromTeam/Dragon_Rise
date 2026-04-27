@@ -6,6 +6,7 @@ import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRendere
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
+import com.redabysslucia.dragonrise_reforge.init.ModSpeedSounds;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
@@ -35,6 +36,7 @@ public class Dragonrise_reforge {
         ModEntities.REGISTRY.register(bus);
         ModTabs.TABS.register(bus);
         ModSounds.REGISTRY.register(bus);
+        ModSpeedSounds.SOUNDS.register(bus);
         DragonVehicleDeployer.register(bus);
 
         bus.addListener(this::commonSetup);

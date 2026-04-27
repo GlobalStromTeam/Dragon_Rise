@@ -57,7 +57,7 @@ public class F14Entity extends FireLightVisionVehicle {
     }
 
     private PlayState F14C(AnimationState<F14Entity> event) {
-        if (this.getPower()>= 0.7) {//这个值是节流阀我操
+        if (this.getPower()>= 0.6) {//这个值是节流阀我操
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
                     ("animation.f14.highspeed_on"));
         }
