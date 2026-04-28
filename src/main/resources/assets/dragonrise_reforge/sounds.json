@@ -697,14 +697,6 @@
   "terrorist_shoot": {
     "sounds": ["dragonrise_reforge:terrorist/terrorist_shoot"]
   },
-  "vehicle_high_speed": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p",
-        "stream": false
-      }
-    ]
-  },
   "plane_high_speed": {
     "sounds": [
       {
@@ -713,18 +705,18 @@
       }
     ]
   },
-  "tank_high_speed": {
+  "plane_supersonic_loop": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:t80/t80_engine",
+        "name": "dragonrise_reforge:jetengine/plane_supersonic_loop",
         "stream": false
       }
     ]
   },
-  "wheeled_high_speed": {
+  "plane_distant_sound": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:tankengine/wheel_engine_loop_1",
+        "name": "dragonrise_reforge:jetengine/plane_distant_sound",
         "stream": false
       }
     ]

@@ -45,7 +45,7 @@ public abstract class AirshipVehicle extends GeoVehicleEntity {
         super.tick();
         
         // 检查速度并播放音效
-        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get());
+        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get(), ModSpeedSounds.PLANE_DISTANT_SOUND.get());
     }
 
 }
