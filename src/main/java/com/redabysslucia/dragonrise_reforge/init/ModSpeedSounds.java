@@ -17,7 +17,4 @@ public class ModSpeedSounds {
     
     public static final RegistryObject<SoundEvent> PLANE_SUPERSONIC_LOOP = SOUNDS.register("plane_supersonic_loop", 
         () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "plane_supersonic_loop")));
-
-    public static final RegistryObject<SoundEvent> PLANE_DISTANT_SOUND = SOUNDS.register("plane_distant_sound", 
-        () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(MODID, "plane_distant_sound")));
 }

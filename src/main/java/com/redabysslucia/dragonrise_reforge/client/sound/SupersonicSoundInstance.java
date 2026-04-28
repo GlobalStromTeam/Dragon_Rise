@@ -45,10 +45,8 @@ public class SupersonicSoundInstance extends AbstractTickableSoundInstance {
             return;
         }
 
-        if (!shouldPlay) {
+        if (!this.shouldPlay) {
             this.die = true;
-        } else {
-            this.die = false;
         }
 
         if (this.die) {

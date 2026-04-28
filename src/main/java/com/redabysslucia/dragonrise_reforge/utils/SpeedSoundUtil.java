@@ -27,26 +27,17 @@ public class SpeedSoundUtil {
     // 存储实体的持续播放音量
     private static final Map<Entity, Float> entityVolumes = new HashMap<>();
 
-    // 存储实体的普通持续声音实例
+    // 存储实体的声音实例
     private static final Map<Entity, SupersonicSoundInstance> soundInstances = new HashMap<>();
-
-    // 存储实体的远距离声音实例
-    private static final Map<Entity, SupersonicSoundInstance> distantSoundInstances = new HashMap<>();
 
     // 存储实体是否正在播放
     private static final Map<Entity, Boolean> isPlaying = new HashMap<>();
-
-    // 存储实体是否正在播放远距离音效
-    private static final Map<Entity, Boolean> isDistantPlaying = new HashMap<>();
 
     // 音爆粒子和单次音效的速度阈值（方块/tick）
     private static final double SONIC_BOOM_THRESHOLD = 3.4;
 
     // 持续音效的速度阈值（方块/tick）
     private static final double LOOP_SOUND_THRESHOLD = 1.5;
-
-    // 远距离音效的速度阈值（方块/tick）
-    private static final double DISTANT_SOUND_THRESHOLD = 2.0;
 
     // 粒子持续时间（tick）- 0.8秒 = 16 tick
     private static final int PARTICLE_DURATION = 16;
@@ -57,34 +48,16 @@ public class SpeedSoundUtil {
     // 音效范围（方块）
     private static final double SOUND_RANGE = 150.0;
 
-    // 远距离音效最小距离（方块）
-    private static final double MIN_DISTANCE = 50.0;
-
-    // 淡入淡出速度
-    private static final float FADE_SPEED = 0.05f;
-
     // 是否启用调试模式
     private static boolean debugMode = true;
-
-    // 用于统计调用次数
-    private static int callCount = 0;
 
     /**
      * 检查实体速度并播放音效
      * @param entity 要检查的实体
      * @param boomSound 音爆单次音效
      * @param loopSound 持续播放的音效
-     * @param distantSound 50格外的音效
      */
-    public static void checkSpeedAndPlaySound(Entity entity, SoundEvent boomSound, SoundEvent loopSound, SoundEvent distantSound) {
-        callCount++;
-
-        if (entity == null || boomSound == null || loopSound == null || distantSound == null) {
-            if (debugMode && callCount % 100 == 0) {
-                LOGGER.info("[SpeedSoundUtil] checkSpeedAndPlaySound called, but entity or soundEvent is null. Call count: {}", callCount);
-            }
-            return;
-        }
+    public static void checkSpeedAndPlaySound(Entity entity, SoundEvent boomSound, SoundEvent loopSound) {
 
         Level level = entity.level();
 
@@ -100,16 +73,9 @@ public class SpeedSoundUtil {
         double currentSpeed = getCurrentSpeed(entity);
         boolean hasSonicBoomSpeed = currentSpeed >= SONIC_BOOM_THRESHOLD;
         boolean hasLoopSoundSpeed = currentSpeed >= LOOP_SOUND_THRESHOLD;
-        boolean hasDistantSoundSpeed = currentSpeed >= DISTANT_SOUND_THRESHOLD;
 
         // 获取计时器
         int timer = entityTimers.getOrDefault(entity, 0);
-
-        // 输出调试信息（每10次调用输出一次，避免日志过多）
-        if (debugMode && callCount % 10 == 0) {
-            LOGGER.info("[SpeedSoundUtil] Entity: {}, Speed: {:.3f}, BoomThresh: {}, LoopThresh: {}, DistantThresh: {}, Timer: {}/{}, Call count: {}",
-                entityTypeName, currentSpeed, SONIC_BOOM_THRESHOLD, LOOP_SOUND_THRESHOLD, DISTANT_SOUND_THRESHOLD, timer, PARTICLE_DURATION, callCount);
-        }
 
         // 处理音爆音效和粒子
         if (hasSonicBoomSpeed) {
@@ -144,21 +110,11 @@ public class SpeedSoundUtil {
             stopContinuousSound(entity);
         }
 
-        // 处理远距离音效
-        if (hasDistantSoundSpeed) {
-            // 播放远距离音效（只给50格外的玩家）
-            playDistantSound(entity, distantSound);
-        } else {
-            // 停止远距离音效
-            stopDistantSound(entity);
-        }
-
         // 清理不再需要的状态
         if (!entity.isAlive()) {
             entityTimers.remove(entity);
             entityVolumes.remove(entity);
             stopContinuousSound(entity);
-            stopDistantSound(entity);
         }
 
         // 清理已停止的声音实例
@@ -197,41 +153,9 @@ public class SpeedSoundUtil {
     }
 
     /**
-     * 播放远距离音效
-     */
-    private static void playDistantSound(Entity entity, SoundEvent soundEvent) {
-        Boolean wasDistantPlaying = isDistantPlaying.getOrDefault(entity, false);
-        SupersonicSoundInstance instance = distantSoundInstances.get(entity);
-
-        if (!wasDistantPlaying) {
-            // 之前没播放，创建新实例
-            instance = new SupersonicSoundInstance(soundEvent, Minecraft.getInstance(), entity);
-            instance.setShouldPlay(true);
-            Minecraft.getInstance().getSoundManager().play(instance);
-            distantSoundInstances.put(entity, instance);
-            isDistantPlaying.put(entity, true);
-        } else if (instance != null) {
-            // 已经在播放了，更新 shouldPlay
-            instance.setShouldPlay(true);
-        }
-    }
-
-    /**
-     * 停止远距离音效
-     */
-    private static void stopDistantSound(Entity entity) {
-        SupersonicSoundInstance instance = distantSoundInstances.get(entity);
-        if (instance != null) {
-            instance.setShouldPlay(false);
-        }
-        isDistantPlaying.put(entity, false);
-    }
-
-    /**
      * 清理已停止的声音实例
      */
     private static void cleanupStoppedSounds() {
-        // 清理普通音效实例
         Iterator<Map.Entry<Entity, SupersonicSoundInstance>> iterator = soundInstances.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<Entity, SupersonicSoundInstance> entry = iterator.next();
@@ -240,52 +164,6 @@ public class SpeedSoundUtil {
                 isPlaying.remove(entry.getKey());
             }
         }
-
-        // 清理远距离音效实例
-        Iterator<Map.Entry<Entity, SupersonicSoundInstance>> distantIterator = distantSoundInstances.entrySet().iterator();
-        while (distantIterator.hasNext()) {
-            Map.Entry<Entity, SupersonicSoundInstance> entry = distantIterator.next();
-            if (entry.getKey().isRemoved()) {
-                distantIterator.remove();
-                isDistantPlaying.remove(entry.getKey());
-            }
-        }
-    }
-
-    /**
-     * 重置实体的状态（当需要重新触发时可以调用）
-     */
-    public static void resetEntityState(Entity entity) {
-        entityTimers.remove(entity);
-        entityVolumes.remove(entity);
-        stopContinuousSound(entity);
-        stopDistantSound(entity);
-        soundInstances.remove(entity);
-        distantSoundInstances.remove(entity);
-        isPlaying.remove(entity);
-        isDistantPlaying.remove(entity);
-    }
-
-    /**
-     * 重置所有实体的状态
-     */
-    public static void resetAllStates() {
-        entityTimers.clear();
-        entityVolumes.clear();
-        for (SupersonicSoundInstance instance : soundInstances.values()) {
-            if (instance != null) {
-                instance.setShouldPlay(false);
-            }
-        }
-        for (SupersonicSoundInstance instance : distantSoundInstances.values()) {
-            if (instance != null) {
-                instance.setShouldPlay(false);
-            }
-        }
-        soundInstances.clear();
-        distantSoundInstances.clear();
-        isPlaying.clear();
-        isDistantPlaying.clear();
     }
 
     /**
@@ -398,40 +276,5 @@ public class SpeedSoundUtil {
                 player.playSound(soundEvent, volume, 6.0f);
             }
         }
-    }
-
-    /**
-     * 设置音爆速度阈值
-     */
-    public static void setSonicBoomThreshold(double threshold) {
-        // 可以通过配置文件或命令修改
-    }
-
-    /**
-     * 设置持续音效速度阈值
-     */
-    public static void setLoopSoundThreshold(double threshold) {
-        // 可以通过配置文件或命令修改
-    }
-
-    /**
-     * 设置远距离音效速度阈值
-     */
-    public static void setDistantSoundThreshold(double threshold) {
-        // 可以通过配置文件或命令修改
-    }
-
-    /**
-     * 设置音效范围
-     */
-    public static void setSoundRange(double range) {
-        // 可以通过配置文件或命令修改
-    }
-
-    /**
-     * 设置调试模式
-     */
-    public static void setDebugMode(boolean enabled) {
-        debugMode = enabled;
     }
 }

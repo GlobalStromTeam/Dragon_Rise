@@ -39,7 +39,7 @@ public abstract class VariableEngineVehicle extends GeoVehicleEntity {
         super.tick();
         
         // 检查速度并播放音效
-        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get(), ModSpeedSounds.PLANE_DISTANT_SOUND.get());
+        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get());
     }
 
     public void setEngineTypeList(List<EngineType> engineTypeList) {

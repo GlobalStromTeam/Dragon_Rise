@@ -155,7 +155,7 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
         }
         
         // 检查速度并播放音效
-        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get(), ModSpeedSounds.PLANE_DISTANT_SOUND.get());
+        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get());
     }
 
     /**

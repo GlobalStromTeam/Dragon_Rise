@@ -75,7 +75,8 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:jetengine/plane_start1",
-        "stream": false
+        "attenuation_distance": 256,
+        "stream": true
       }
     ]
   },
@@ -83,7 +84,8 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:jetengine/plane_loop",
-        "stream": false
+        "attenuation_distance": 256,
+        "stream": true
       }
     ]
   },
@@ -493,16 +495,18 @@
   "jet_engine": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:j20/jet_engine",
-        "stream": false
+        "attenuation_distance": 256,
+        "stream": true,
+        "name": "dragonrise_reforge:jetengine/jet_engine"
       }
     ]
   },
   "jet_engine_start": {
     "sounds": [
       {
-        "name": "dragonrise_reforge:j20/jet_engine_start",
-        "stream": false
+        "attenuation_distance": 256,
+        "stream": true,
+        "name": "dragonrise_reforge:jetengine/jet_engine_start"
       }
     ]
   },
@@ -701,7 +705,8 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:jetengine/plane_high_speed",
-        "stream": false
+        "attenuation_distance": 256,
+        "stream": true
       }
     ]
   },
@@ -709,15 +714,8 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:jetengine/plane_supersonic_loop",
-        "stream": false
-      }
-    ]
-  },
-  "plane_distant_sound": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:jetengine/plane_distant_sound",
-        "stream": false
+        "attenuation_distance": 25,
+        "stream": true
       }
     ]
   }
