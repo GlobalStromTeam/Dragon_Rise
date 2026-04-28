@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
+import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
@@ -43,7 +44,7 @@ public class TJGCEntity extends VariableEngineVehicle {
 
     public TJGCEntity(EntityType<TJGCEntity> type, Level world) {
         super(type, world);
-        this.noCulling = true;
+        this.setEngineTypeList(List.of(EngineType.AIRCRAFT, EngineType.HELICOPTER));
     }
 
     @Override
