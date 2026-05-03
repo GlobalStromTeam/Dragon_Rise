@@ -269,7 +269,7 @@
       "Spread": 0.5,
       "Name": "dragonrise_reforge:neo",
       "ExplosionDamage": 114514,
-      "ExplosionRadius": 450,
+      "ExplosionRadius": 180,
       "AddShooterDeltaMovement": true,
       "Velocity": 0.95,
       "ShootPos": {

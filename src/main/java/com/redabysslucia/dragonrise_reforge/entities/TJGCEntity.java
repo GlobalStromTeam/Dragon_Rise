@@ -11,10 +11,15 @@ import com.atsuishio.superbwarfare.network.message.receive.ClientIndicatorMessag
 import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
+import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import lombok.val;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -194,5 +199,10 @@ public class TJGCEntity extends VariableEngineVehicle {
     @Override
     public double getMouseSensitivity() {
         return zoomVehicle ? 0.1 : 0.25;
+    }
+
+    @Override
+    public ResourceLocation getNightVisionShader() {
+        return new ResourceLocation("shaders/post/night-vision-wp.json");
     }
 }

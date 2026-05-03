@@ -18,7 +18,7 @@ import org.joml.Math;
 import java.util.List;
 
 
-public abstract class VariableEngineVehicle extends GeoVehicleEntity {
+public abstract class VariableEngineVehicle extends NightVisionVehicle {
 
     //public static final EntityDataAccessor<String> FLY_MODE = SynchedEntityData.defineId(VTOLEntity.class, EntityDataSerializers.STRING);
     private EngineInfo variableEngineCache;
