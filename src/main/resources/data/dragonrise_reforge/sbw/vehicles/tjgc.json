@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:tjgc",
-  "MaxHealth": 600,
+  "MaxHealth": 1800,
   "MaxEnergy": 100000000,
   "OBB": [
     {
@@ -264,7 +264,7 @@
       "AvailableFireModes": "Semi",
       "Magazine": 1,
       "EmptyReloadTime": 150,
-      "Projectile": "dragonrise_reforge:nukerbomb",
+      "Projectile": "dragonrise_reforge:airbomb500kg",
       "Gravity": 0.06,
       "Spread": 0.5,
       "Name": "dragonrise_reforge:neo",
@@ -310,7 +310,7 @@
         "SeekDirection": "Default",
         "SeekRange": 512,
         "SeekAngle": 20,
-        "SeekTime": 10,
+        "SeekTime": 5,
         "MinTargetHeight": 15,
         "MinTargetSize": 0.9,
         "OnlyLockEntity": true
@@ -366,7 +366,7 @@
               "SeekDirection": "Barrel",
               "SeekRange": 384,
               "SeekAngle": 20,
-              "SeekTime": 20,
+              "SeekTime": 5,
               "MaxTargetHeight": 32,
               "MinTargetSize": 0.9,
               "OnlyLockBlock": true
@@ -389,7 +389,7 @@
         "SeekDirection": "Vehicle",
         "SeekRange": 384,
         "SeekAngle": 20,
-        "SeekTime": 20,
+        "SeekTime": 5,
         "MaxTargetHeight": 32,
         "MinTargetSize": 0.9,
         "OnlyLockEntity": true
@@ -440,7 +440,7 @@
               "SeekDirection": "Barrel",
               "SeekRange": 384,
               "SeekAngle": 20,
-              "SeekTime": 20,
+              "SeekTime": 5,
               "MaxTargetHeight": 32,
               "MinTargetSize": 0.9,
               "OnlyLockBlock": true
@@ -463,7 +463,7 @@
         "SeekDirection": "Vehicle",
         "SeekRange": 384,
         "SeekAngle": 20,
-        "SeekTime": 20,
+        "SeekTime": 5,
         "MaxTargetHeight": 32,
         "MinTargetSize": 0.9,
         "OnlyLockEntity": true
