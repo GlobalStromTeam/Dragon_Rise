@@ -204,5 +204,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', Tags.Items.DYES_BLUE)
                 .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
                 .save(writer, loc(getItemName(ModItems.OCEAN07_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.UN_HELMET.get())
+                .pattern("KLK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('L', Tags.Items.DYES_LIGHT_BLUE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.UN_HELMET.get())));
     }
 }
