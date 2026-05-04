@@ -57,5 +57,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
+    public static final RegistryObject<Item> SPRAY_CAN = REGISTRY.register("spray_can", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KEVLAR = REGISTRY.register("kevlar", () -> new Item(new Item.Properties()));
 
 }
