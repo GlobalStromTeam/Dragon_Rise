@@ -69,7 +69,7 @@ public class AMX56Entity extends NightVisionVehicle {
         // 延迟加载撬棍物品
         if (crowbarItem == null) {
             crowbarItem = ForgeRegistries.ITEMS.getValue(
-                    new ResourceLocation("superbwarfare", "crowbar")
+                    new ResourceLocation("dragonrise_reforge", "spray_can")
             );
         }
 
