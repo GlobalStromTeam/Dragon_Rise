@@ -5,7 +5,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.STRV103Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class STRV103Model extends VehicleModel<STRV103Entity> {
+public class STRV103Model extends DragonriseVehicleModel<STRV103Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

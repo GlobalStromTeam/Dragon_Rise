@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:q5",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/q5.geo.json",
+    "Animation": "dragonrise_reforge:animations/q5.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/q5.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

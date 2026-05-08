@@ -42,8 +42,8 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
     public NukerBombEntity(EntityType<? extends NukerBombEntity> type, Level level) {
         super(type, level);
         this.noCulling = true;
-        this.explosionRadius = 300.0F;
-        this.explosionDamage = 20000.0F;
+        setExplosionRadius(300.0F);
+        setExplosionDamage(20000.0F);
     }
 
     @Override
@@ -90,8 +90,8 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
         // Damage explosion - NO DEFAULT PARTICLES (we use our own)
         new CustomExplosion.Builder(this)
                 .damageSource(ModDamageTypes.causeCustomExplosionDamage(serverLevel.registryAccess(), this, this.getOwner()))
-                .damage(this.explosionDamage)
-                .radius(this.explosionRadius)
+                .damage(this.getExplosionDamageValue())
+                .radius(this.getExplosionRadiusValue())
                 .position(pos)
                 .damageMultiplier(2.0F)
                 .withParticleType(null) // Disable default SBW particles
@@ -538,10 +538,5 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
     @Override
     public float getVolume() {
         return 1.0F;
-    }
-
-    @Override
-    public boolean shouldSyncMotion() {
-        return true;
     }
 }

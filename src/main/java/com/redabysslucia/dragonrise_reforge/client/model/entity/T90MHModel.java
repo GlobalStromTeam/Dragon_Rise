@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
 import com.redabysslucia.dragonrise_reforge.entities.T90MHEntity;
 
 
-public class T90MHModel extends VehicleModel<T90MHEntity> {
+public class T90MHModel extends DragonriseVehicleModel<T90MHEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

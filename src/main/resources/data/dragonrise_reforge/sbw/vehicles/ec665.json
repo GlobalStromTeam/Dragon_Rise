@@ -2,90 +2,215 @@
   "ID": "dragonrise_reforge:ec665",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
-  "TurretPos": [0.0, 1.125, 2.6875],
-  "TurretTurnSpeed": [15, 15],
-  "TurretPitchRange": [-40, 10],
-  "BarrelPos": [0.0, -0.25, 0.0625],
+  "TurretPos": [
+    0.0,
+    1.125,
+    2.6875
+  ],
+  "TurretTurnSpeed": [
+    15,
+    15
+  ],
+  "TurretPitchRange": [
+    -40,
+    10
+  ],
+  "BarrelPos": [
+    0.0,
+    -0.25,
+    0.0625
+  ],
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [0.59375, 0.53125, 0.59375],
-      "Position": [0, 1.40625, 1.90625]
+      "Size": [
+        0.59375,
+        0.53125,
+        0.59375
+      ],
+      "Position": [
+        0,
+        1.40625,
+        1.90625
+      ]
     },
     {
-      "Size": [0.75, 0.875, 0.84375],
-      "Position": [0, 1.75, 0.46875]
+      "Size": [
+        0.75,
+        0.875,
+        0.84375
+      ],
+      "Position": [
+        0,
+        1.75,
+        0.46875
+      ]
     },
     {
-      "Size": [0.875, 1.25, 1.489375],
-      "Position": [0, 2.125, -1.71875]
+      "Size": [
+        0.875,
+        1.25,
+        1.489375
+      ],
+      "Position": [
+        0,
+        2.125,
+        -1.71875
+      ]
     },
     {
-      "Size": [2.71875, 0.1875, 0.84375],
-      "Position": [0, 1.625, -2.40625]
+      "Size": [
+        2.71875,
+        0.1875,
+        0.84375
+      ],
+      "Position": [
+        0,
+        1.625,
+        -2.40625
+      ]
     },
     {
-      "Size": [0.6875, 0.84375, 3.5],
-      "Position": [0, 1.71875, -6.5625]
+      "Size": [
+        0.6875,
+        0.84375,
+        3.5
+      ],
+      "Position": [
+        0,
+        1.71875,
+        -6.5625
+      ]
     },
     {
-      "Size": [0.25, 1.03125, 0.84375],
-      "Position": [0, 3.09375, -10.03125]
+      "Size": [
+        0.25,
+        1.03125,
+        0.84375
+      ],
+      "Position": [
+        0,
+        3.09375,
+        -10.03125
+      ]
     },
     {
       "Part": "MainEngine",
-      "Size": [0.625, 0.625, 1.375],
-      "Position": [0.625, 2.6875, -3.4375]
+      "Size": [
+        0.625,
+        0.625,
+        1.375
+      ],
+      "Position": [
+        0.625,
+        2.6875,
+        -3.4375
+      ]
     },
     {
       "Part": "SubEngine",
-      "Size": [0.625, 0.625, 1.375],
-      "Position": [-0.625, 2.6875, -3.4375]
+      "Size": [
+        0.625,
+        0.625,
+        1.375
+      ],
+      "Position": [
+        -0.625,
+        2.6875,
+        -3.4375
+      ]
     }
   ],
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [0.0, 0.7, 0.625],
-      "Sensitivity": [0, 0, 0],
+      "Position": [
+        0.0,
+        0.7,
+        0.625
+      ],
+      "Sensitivity": [
+        0,
+        0,
+        0
+      ],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0, 2.3125, 0.625],
+        "Position": [
+          0.0,
+          2.3125,
+          0.625
+        ],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [-3.8, 3.5, -15]
+        "AircraftCameraPos": [
+          -3.8,
+          3.5,
+          -15
+        ]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
       "MaxPitch": 80,
       "MinYaw": -80,
       "MaxYaw": 80,
-      "Weapons": ["Rocket"],
+      "Weapons": [
+        "Rocket"
+      ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [-2.5, 0.5, 2.5]
-      }
+        "Position": [
+          -2.5,
+          0.5,
+          2.5
+        ]
+      },
+      "HasThermalImaging": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.0, 1.375, -0.8],
-      "Sensitivity": [0.59, 0.8, 0.9],
+      "Position": [
+        0.0,
+        1.375,
+        -0.8
+      ],
+      "Sensitivity": [
+        0.59,
+        0.8,
+        0.9
+      ],
       "CameraPos": {
         "Transform": "Vehicle",
         "UseFixedCameraPos": true,
-        "Position": [0.0, 2.875, -0.6875],
-        "ZoomPosition": [0.0, 3.453125, -0.7328125],
+        "Position": [
+          0.0,
+          2.875,
+          -0.6875
+        ],
+        "ZoomPosition": [
+          0.0,
+          3.453125,
+          -0.7328125
+        ],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,
       "MaxPitch": 10,
       "MinYaw": -110,
       "MaxYaw": 110,
-      "Weapons": ["Cannon", "PassengerMissile"],
+      "Weapons": [
+        "Cannon",
+        "PassengerMissile"
+      ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [-2.5, 0.3, 3.5625]
-      }
+        "Position": [
+          -2.5,
+          0.3,
+          3.5625
+        ]
+      },
+      "HasThermalImaging": true
     }
   ],
   "Weapons": {
@@ -118,11 +243,19 @@
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
       "SoundRadius": 24,
-      "AmmoType": "superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, 0, 0.675]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            0,
+            0,
+            0.675
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "Rocket": {
@@ -144,10 +277,35 @@
       "Velocity": 16,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 0.62, 0.8],
-        "ShootDirectionForHud": [0, 0.018, 1],
-        "Positions": [[2.02415, 1.0927, -2.1590625],[-2.02415, 1.0927, -2.1590625]],
-        "Directions": [[0, 0, 1]]
+        "ShootPositionForHud": [
+          0,
+          0.62,
+          0.8
+        ],
+        "ShootDirectionForHud": [
+          0,
+          0.018,
+          1
+        ],
+        "Positions": [
+          [
+            2.02415,
+            1.0927,
+            -2.1590625
+          ],
+          [
+            -2.02415,
+            1.0927,
+            -2.1590625
+          ]
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ]
       },
       "SoundInfo": {
         "Fire1P": "superbwarfare:small_rocket_fire_1p",
@@ -189,15 +347,53 @@
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[1.45974375, 1.2790375, -2.2128125],
-          [1.45974375, 0.8477875, -2.2128125],
-          [1.12224375, 1.2790375, -2.2128125],
-          [1.12224375, 0.8477875, -2.2128125],
-          [-1.45974375, 1.2790375, -2.2128125],
-          [-1.45974375, 0.8477875, -2.2128125],
-          [-1.12224375, 1.2790375, -2.2128125],
-          [-1.12224375, 0.8477875, -2.2128125]],
+        "ShootPositionForHud": [
+          0,
+          1.0625,
+          5.625
+        ],
+        "Positions": [
+          [
+            1.45974375,
+            1.2790375,
+            -2.2128125
+          ],
+          [
+            1.45974375,
+            0.8477875,
+            -2.2128125
+          ],
+          [
+            1.12224375,
+            1.2790375,
+            -2.2128125
+          ],
+          [
+            1.12224375,
+            0.8477875,
+            -2.2128125
+          ],
+          [
+            -1.45974375,
+            1.2790375,
+            -2.2128125
+          ],
+          [
+            -1.45974375,
+            0.8477875,
+            -2.2128125
+          ],
+          [
+            -1.12224375,
+            1.2790375,
+            -2.2128125
+          ],
+          [
+            -1.12224375,
+            0.8477875,
+            -2.2128125
+          ]
+        ],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
       }
@@ -247,8 +443,33 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[2.19, 1, 2.29], [2.19, 0.64, 2.29], [2.59, 1, 2.29], [2.59, 0.64, 2.29]],
+        "ShootPositionForHud": [
+          0,
+          1.0625,
+          5.625
+        ],
+        "Positions": [
+          [
+            2.19,
+            1,
+            2.29
+          ],
+          [
+            2.19,
+            0.64,
+            2.29
+          ],
+          [
+            2.59,
+            1,
+            2.29
+          ],
+          [
+            2.59,
+            0.64,
+            2.29
+          ]
+        ],
         "ViewDirection": "Barrel",
         "BoundUpWithAmmoAmount": true
       },
@@ -264,7 +485,9 @@
       "CrosshairColor": "0xFFC700",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "SoundRadius": 8,
-      "AvailableFireModes": ["Semi"]
+      "AvailableFireModes": [
+        "Semi"
+      ]
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
@@ -291,8 +514,33 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[1.006, 1.932, 0], [1.006, 1.67, 0], [1.193, 1.932, 0], [1.193, 1.67, 0]],
+        "ShootPositionForHud": [
+          0,
+          1.0625,
+          5.625
+        ],
+        "Positions": [
+          [
+            1.006,
+            1.932,
+            0
+          ],
+          [
+            1.006,
+            1.67,
+            0
+          ],
+          [
+            1.193,
+            1.932,
+            0
+          ],
+          [
+            1.193,
+            1.67,
+            0
+          ]
+        ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -312,17 +560,22 @@
   "EngineType": "Helicopter",
   "EngineInfo": {
     "EnergyCostRate": 320,
-    "Increment": 0.6,
-    "Decrement": 0.6,
-    "PitchSpeed": 0.7,
-    "YawSpeed": 0.6,
+    "Increment": 0.8,
+    "Decrement": 0.8,
+    "PitchSpeed": 0.75,
+    "YawSpeed": 0.85,
     "RollSpeed": 0.6,
-    "LiftSpeed": 0.7,
+    "LiftSpeed": 1,
+    "Speed": 0.97,
     "EngineStartSound": "superbwarfare:mi_28_engine_start",
-    "EngineSoundVolume" : 2
+    "EngineSoundVolume": 2
   },
   "EngineSound": "superbwarfare:mi_28_engine",
-  "ThirdPersonCameraPos": [2.7, 4, 12],
+  "ThirdPersonCameraPos": [
+    2.7,
+    4,
+    12
+  ],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.8,
   "Mass": 8.2,
@@ -367,6 +620,22 @@
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
-  "TerrainCompat": [[-1.284, 0, 1.728], [1.284, 0, 1.728], [0, 0, -11.1]],
-  "TerrainCompatRotateRate" : 0
+  "TerrainCompat": [
+    [
+      -1.284,
+      0,
+      1.728
+    ],
+    [
+      1.284,
+      0,
+      1.728
+    ],
+    [
+      0,
+      0,
+      -11.1
+    ]
+  ],
+  "TerrainCompatRotateRate": 0
 }

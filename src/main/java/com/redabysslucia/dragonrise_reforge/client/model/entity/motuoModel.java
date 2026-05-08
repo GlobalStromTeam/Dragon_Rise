@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.motuoEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class motuoModel extends VehicleModel<motuoEntity> {
+public class motuoModel extends DragonriseVehicleModel<motuoEntity> {
 
     @Override
     public boolean hideForTurretControllerWhileZooming() {
@@ -17,7 +17,7 @@ public class motuoModel extends VehicleModel<motuoEntity> {
     @Override
     public @Nullable TransformContext<motuoEntity> collectTransform(String boneName) {
         if (boneName.equals("control")) {
-            return (control, vehicle, state) -> control.setRotY(1 * Mth.lerp(state.getPartialTick(), vehicle.rudderRotO, vehicle.getRudderRot()));
+            return (control, vehicle, state) -> control.setRotY(1 * Mth.lerp(state.getPartialTick(), vehicle.getRudderRotO(), vehicle.getRudderRot()));
         }
 
         return super.collectTransform(boneName);

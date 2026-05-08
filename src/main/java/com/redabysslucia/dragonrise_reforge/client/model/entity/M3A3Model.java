@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.CV90Entity;
 import com.redabysslucia.dragonrise_reforge.entities.M3A3Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class M3A3Model extends VehicleModel<M3A3Entity> {
+public class M3A3Model extends DragonriseVehicleModel<M3A3Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

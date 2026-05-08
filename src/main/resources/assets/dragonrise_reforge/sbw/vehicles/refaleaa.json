@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:refaleaa",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/rafaleaa.geo.json",
+    "Animation": "dragonrise_reforge:animations/refale.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/rafaleaa.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

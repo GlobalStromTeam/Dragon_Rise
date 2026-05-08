@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:f14",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/f14.geo.json",
+    "Animation": "dragonrise_reforge:animations/f14.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/f14.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

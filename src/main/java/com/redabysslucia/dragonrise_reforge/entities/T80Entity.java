@@ -1,16 +1,22 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
+import com.atsuishio.superbwarfare.tools.ParticleTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.utils.EngineParticleUtil;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import java.util.UUID;
 
 @SuppressWarnings("removal")
 public class T80Entity extends NightVisionVehicle implements IVehicleBackground {
@@ -23,6 +29,17 @@ public class T80Entity extends NightVisionVehicle implements IVehicleBackground 
 	public DamageModifier getDamageModifier() {
 		return super.getDamageModifier()
 				.custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+	}
+
+	@Override
+	public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
+		if (living != null) {
+			Level level = living.level();
+			if (level instanceof ServerLevel && living == getFirstPassenger() && getWeaponIndex(0) == 0) {
+				ParticleTool.spawnBigCannonMuzzleParticles(getShootVec(living, 1f), getShootPos(living, 1f), (ServerLevel) level, this);
+			}
+		}
+		super.vehicleShoot(living, uuid, targetPos);
 	}
 
 	@Override

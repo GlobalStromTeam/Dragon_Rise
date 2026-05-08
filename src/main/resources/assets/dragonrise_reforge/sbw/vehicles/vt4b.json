@@ -1,0 +1,8 @@
+{
+  "ID": "dragonrise_reforge:vt4b",
+  "Model": {
+    "Animation": "dragonrise_reforge:animations/vt4b.animation.json",
+    "Model": "dragonrise_reforge:geo/vt4b.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/vt4b.png"
+  }
+}

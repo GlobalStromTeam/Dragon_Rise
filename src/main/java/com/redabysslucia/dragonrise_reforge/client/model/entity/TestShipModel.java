@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class TestShipModel extends VehicleModel<TestShipEntity> {
+public class TestShipModel extends DragonriseVehicleModel<TestShipEntity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return true;
@@ -16,11 +16,11 @@ public class TestShipModel extends VehicleModel<TestShipEntity> {
     @Override
     public @Nullable TransformContext<TestShipEntity> collectTransform(String boneName) {
         if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("1")) {

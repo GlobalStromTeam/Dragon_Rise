@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.AA625EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.AKMEEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class AKMModel extends VehicleModel<AKMEEntity> {
+public class AKMModel extends DragonriseVehicleModel<AKMEEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

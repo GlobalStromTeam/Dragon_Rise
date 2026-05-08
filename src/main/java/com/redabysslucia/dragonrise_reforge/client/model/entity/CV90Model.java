@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class CV90Model extends VehicleModel<CV90Entity> {
+public class CV90Model extends DragonriseVehicleModel<CV90Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

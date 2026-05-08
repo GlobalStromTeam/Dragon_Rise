@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:wlsc",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/wlsc.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/wlsc.png"
+  }
+}

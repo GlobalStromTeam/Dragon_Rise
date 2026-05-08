@@ -2,9 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
-import com.redabysslucia.dragonrise_reforge.utils.PitchAdjustUtil;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -46,26 +44,6 @@ public class HYR0Entity extends NightVisionVehicle {
     @Override
     public ResourceLocation getNightVisionShader() {
         return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
-
-    @Override
-    protected void clampRotation(Entity entity) {
-        super.clampRotation(entity);
-
-        int index = getSeatIndex(entity);
-        var seats = computed().seats();
-        if (index < 0 || index >= seats.size()) return;
-        var seat = seats.get(index);
-
-        if (seat.transform.equals("WeaponStation") && !seat.canRotateBody) {
-            super.passengerPitchOnTurret(entity, seat.minPitch, seat.maxPitch);
-            super.passengerYawOnTurret(entity, seat.minYaw, seat.maxYaw, seat.orientation, false);
-        }
-    }
-
-    @Override
-    public void passengerPitchOnTurret(Entity entity, float turretMinPitch, float turretMaxPitch) {
-        PitchAdjustUtil.adjustedPassengerPitchOnTurret(entity, turretMinPitch, turretMaxPitch, this, PitchAdjustments);
     }
 
     @Override

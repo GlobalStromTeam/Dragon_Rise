@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import com.redabysslucia.dragonrise_reforge.entities.R2S25MEntity;
 import net.minecraft.util.Mth;
 
-public class R2S25MModel extends VehicleModel<R2S25MEntity> {
+public class R2S25MModel extends DragonriseVehicleModel<R2S25MEntity> {
 
     @Override
     public boolean hideForTurretControllerWhileZooming() {

@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.CM34Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class CM34Model extends VehicleModel<CM34Entity> {
+public class CM34Model extends DragonriseVehicleModel<CM34Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

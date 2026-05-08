@@ -6,5 +6,5 @@ import com.redabysslucia.dragonrise_reforge.entities.SpacebagEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class SpacebagModel extends VehicleModel<SpacebagEntity> {
+public class SpacebagModel extends DragonriseVehicleModel<SpacebagEntity> {
 }

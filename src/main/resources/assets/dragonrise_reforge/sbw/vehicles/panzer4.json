@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:panzer4",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/panzer4.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/panzer4.png"
+  }
+}

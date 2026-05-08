@@ -46,7 +46,7 @@ public class HJ8Overlay implements IGuiOverlay {
             RenderSystem.setShaderColor(1, 1, 1, 1);
 
             float deltaFrame = Minecraft.getInstance().getDeltaFrameTime();
-            scopeScale = (float) Mth.lerp(0.5F * deltaFrame, scopeScale, 1.35F + (0.2f * ClientEventHandler.firePos));
+            scopeScale = (float) Mth.lerp(0.5F * deltaFrame, scopeScale, 1.35F + (0.2f * ClientEventHandler.firePosTimer));
             float f = (float) Math.min(screenWidth, screenHeight);
             float f1 = Math.min((float) screenWidth / f, (float) screenHeight / f) * scopeScale;
             float i = Mth.floor(f * f1);

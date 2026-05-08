@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.BMPT72Entity;
 import com.redabysslucia.dragonrise_reforge.entities.CV90Entity;
 import org.jetbrains.annotations.Nullable;
 
-public class BMPT72Model extends VehicleModel<BMPT72Entity> {
+public class BMPT72Model extends DragonriseVehicleModel<BMPT72Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.Z10MEEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class EC665Model extends VehicleModel<EC665Entity> {
+public class EC665Model extends DragonriseVehicleModel<EC665Entity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return true;
@@ -16,11 +16,11 @@ public class EC665Model extends VehicleModel<EC665Entity> {
     @Override
     public @Nullable TransformContext<EC665Entity> collectTransform(String boneName) {
         if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("agL1")) {

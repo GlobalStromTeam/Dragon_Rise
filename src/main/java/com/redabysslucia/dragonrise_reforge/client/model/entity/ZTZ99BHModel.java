@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.ZTZ99BHEntity;
 import net.minecraft.resources.ResourceLocation;
 
 @SuppressWarnings("removal")
-public class ZTZ99BHModel extends VehicleModel<ZTZ99BHEntity> {
+public class ZTZ99BHModel extends DragonriseVehicleModel<ZTZ99BHEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

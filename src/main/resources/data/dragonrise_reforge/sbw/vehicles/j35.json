@@ -5,52 +5,126 @@
   "OBB": [
     {
       "Part": "MainEngine",
-      "Size": [1.4375, 0.40625, 0.96875],
-      "Position": [0.0, 1.71875, -7.28125]
+      "Size": [
+        1.4375,
+        0.40625,
+        0.96875
+      ],
+      "Position": [
+        0.0,
+        1.71875,
+        -7.28125
+      ]
     },
     {
-      "Size": [0.90625, 0.53125, 2.3359375],
-      "Position": [0.0, 1.71875, 4.7890625]
+      "Size": [
+        0.90625,
+        0.53125,
+        2.3359375
+      ],
+      "Position": [
+        0.0,
+        1.71875,
+        4.7890625
+      ]
     },
     {
-      "Size": [2.125, 0.53125, 4.375],
-      "Position": [0.0, 1.71875, -1.9375]
+      "Size": [
+        2.125,
+        0.53125,
+        4.375
+      ],
+      "Position": [
+        0.0,
+        1.71875,
+        -1.9375
+      ]
     },
     {
-      "Size": [3.90625, 0.0625, 0.75],
-      "Position": [0.0, 1.8125, -0.4375]
+      "Size": [
+        3.90625,
+        0.0625,
+        0.75
+      ],
+      "Position": [
+        0.0,
+        1.8125,
+        -0.4375
+      ]
     },
     {
-      "Size": [6.78125, 0.0625, 1.4375],
-      "Position": [0.0, 1.8125, -2.625]
+      "Size": [
+        6.78125,
+        0.0625,
+        1.4375
+      ],
+      "Position": [
+        0.0,
+        1.8125,
+        -2.625
+      ]
     },
     {
-      "Size": [4.5625, 0.0625, 0.625],
-      "Position": [0.0, 1.8125, -4.6875]
+      "Size": [
+        4.5625,
+        0.0625,
+        0.625
+      ],
+      "Position": [
+        0.0,
+        1.8125,
+        -4.6875
+      ]
     }
   ],
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0.0, 0.9445875, 3.97381875],
+    "Position": [
+      0.0,
+      0.9445875,
+      3.97381875
+    ],
     "CanRotateHead": false,
-    "Sensitivity": [0, 0, 0],
+    "Sensitivity": [
+      0,
+      0,
+      0
+    ],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 2.665625, 3.9375],
+      "Position": [
+        0.0,
+        2.665625,
+        3.9375
+      ],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [
+        0,
+        2.75,
+        -14
+      ]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
-      "Position": [1.6, 0.5, 3.8],
+      "Position": [
+        1.6,
+        0.5,
+        3.8
+      ],
       "CanEject": true,
-      "EjectPosition": [0, 4.2, 3.7],
+      "EjectPosition": [
+        0,
+        4.2,
+        3.7
+      ],
       "EjectDirection": "Up",
       "EjectForce": 4
     },
-    "Weapons": ["Missile2"]
+    "Weapons": [
+      "Missile2"
+    ]
   },
   "HudType": "@Aircraft",
   "Weapons": {
@@ -86,14 +160,43 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ViewDirection": "Default",
-        "ShootPositionForHud": [0, 1.53, 0],
-        "Positions": [[1.1, 1.02431875, -0.90486875],
-          [0.9, 1.02431875, -0.90486875],
-          [0.6, 1.02431875, -0.90486875],
-          [-1.1, 1.02431875, -0.90486875],
-          [-0.9, 1.02431875, -0.90486875],
-          [-0.6, 1.02431875, -0.90486875]
+        "ShootPositionForHud": [
+          0,
+          1.53,
+          0
+        ],
+        "Positions": [
+          [
+            1.1,
+            1.02431875,
+            -0.90486875
           ],
+          [
+            0.9,
+            1.02431875,
+            -0.90486875
+          ],
+          [
+            0.6,
+            1.02431875,
+            -0.90486875
+          ],
+          [
+            -1.1,
+            1.02431875,
+            -0.90486875
+          ],
+          [
+            -0.9,
+            1.02431875,
+            -0.90486875
+          ],
+          [
+            -0.6,
+            1.02431875,
+            -0.90486875
+          ]
+        ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -168,8 +271,24 @@
     "SpeedRate": 1.2,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:jet_engine_start",
-    "EngineSoundVolume" : 0.8
+    "EngineSoundVolume": 0.8
   },
-  "TerrainCompat": [[-0.243, 0, 4.63], [-2.58, 0, -0.74], [2.58, 0, -0.74]],
+  "TerrainCompat": [
+    [
+      -0.243,
+      0,
+      4.63
+    ],
+    [
+      -2.58,
+      0,
+      -0.74
+    ],
+    [
+      2.58,
+      0,
+      -0.74
+    ]
+  ],
   "EngineSound": "dragonrise_reforge:jet_engine"
 }

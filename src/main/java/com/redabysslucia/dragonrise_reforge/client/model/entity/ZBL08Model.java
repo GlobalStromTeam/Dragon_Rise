@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class ZBL08Model extends VehicleModel<ZBL08Entity> {
+public class ZBL08Model extends DragonriseVehicleModel<ZBL08Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

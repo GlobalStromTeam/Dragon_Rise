@@ -74,9 +74,9 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
             if (shootTimer > 0) {
                 // 查找Turret obb
                 for (OBB obb : this.getOBBs()) {
-                    if (obb.part() == Part.TURRET) {
+                    if (obb.part == Part.TURRET) {
                         // 获取Turret obb的中心位置
-                        Vec3 obbCenter = OBB.vector3dToVec3(obb.center());
+                        Vec3 obbCenter = OBB.vector3dToVec3(obb.center);
                         // 获取OBB的旋转
                         Quaterniond rotation = obb.rotation();
 

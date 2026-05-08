@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:csk181",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/csk181.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/csk181.png"
+  }
+}

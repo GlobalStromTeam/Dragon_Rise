@@ -6,46 +6,44 @@ import com.redabysslucia.dragonrise_reforge.entities.TJGCEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class TJGCModel extends VehicleModel<TJGCEntity> {
+public class TJGCModel extends DragonriseVehicleModel<TJGCEntity> {
 
     @Override
     public @Nullable TransformContext<TJGCEntity> collectTransform(String boneName) {
         return switch (boneName) {
             case "root" -> (bone, vehicle, state) ->
-                    bone.setHidden(hideForTurretControllerWhileZooming && vehicle.getWeaponIndex(0) == 2);
+                    bone.setHidden(getHideForTurretControllerWhileZooming() && vehicle.getWeaponIndex(0) == 2);
 
             case "wingLR" -> (bone, vehicle, state) ->
-                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1LRotO, vehicle.getFlap1LRot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.getFlap1LRotO(), vehicle.getFlap1LRot()) * Mth.DEG_TO_RAD);
 
             case "wingRR" -> (bone, vehicle, state) ->
-                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1RRotO, vehicle.getFlap1RRot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.getFlap1RRotO(), vehicle.getFlap1RRot()) * Mth.DEG_TO_RAD);
 
             case "wingLR2" -> (bone, vehicle, state) ->
-                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1L2RotO, vehicle.getFlap1L2Rot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.getFlap1L2RotO(), vehicle.getFlap1L2Rot()) * Mth.DEG_TO_RAD);
 
             case "wingRR2" -> (bone, vehicle, state) ->
-                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.flap1R2RotO, vehicle.getFlap1R2Rot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(0.5f * Mth.lerp(state.getPartialTick(), vehicle.getFlap1R2RotO(), vehicle.getFlap1R2Rot()) * Mth.DEG_TO_RAD);
 
             case "wingLB" -> (bone, vehicle, state) ->
-                    bone.setRotX(Mth.lerp(state.getPartialTick(), vehicle.flap2LRotO, vehicle.getFlap2LRot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(Mth.lerp(state.getPartialTick(), vehicle.getFlap2LRotO(), vehicle.getFlap2LRot()) * Mth.DEG_TO_RAD);
 
             case "wingRB" -> (bone, vehicle, state) ->
-                    bone.setRotX(Mth.lerp(state.getPartialTick(), vehicle.flap2RRotO, vehicle.getFlap2RRot()) * Mth.DEG_TO_RAD);
+                    bone.setRotX(Mth.lerp(state.getPartialTick(), vehicle.getFlap2RRotO(), vehicle.getFlap2RRot()) * Mth.DEG_TO_RAD);
 
             case "weiyiR" -> (bone, vehicle, state) ->
-                    bone.setRotY(Mth.clamp(Mth.lerp(state.getPartialTick(), vehicle.flap3RotO, vehicle.getFlap3Rot()), -20f, 20f) * Mth.DEG_TO_RAD);
+                    bone.setRotY(Mth.clamp(Mth.lerp(state.getPartialTick(), vehicle.getFlap3RotO(), vehicle.getFlap3Rot()), -20f, 20f) * Mth.DEG_TO_RAD);
 
             case "gear", "gear2", "gear3" ->
                     (bone, vehicle, state) -> bone.setRotX(vehicle.gearRot(state.getPartialTick()) * Mth.DEG_TO_RAD);
 
             case "qianzhou", "qianzhou2" ->
-                    (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+                    (bone, vehicle, state) -> bone.setRotZ(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
 
-            //核弹
             case "bone355" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideBomb(vehicle, 1));
 
-            // 小火箭
             case "bone9" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));
             case "bone155" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 2));
             case "bone98" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 3));
@@ -97,7 +95,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
             case "bone196" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 49));
             case "bone273" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 50));
 
-            // 大火箭
             case "aim120-16" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 1));
             case "aim120-21" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 2));
             case "aim120-14" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 3));
@@ -109,7 +106,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
             case "aim120-15" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 9));
             case "aim120-20" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissile2(vehicle, 10));
 
-            //对空
             case "aim120-2" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 1));
             case "aim120-7" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 2));
             case "aim120-3" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 3));
@@ -121,7 +117,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
             case "aim120-6" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 9));
             case "aim120-11" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAA(vehicle, 10));
 
-            //对地
             case "agm65-11" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAT(vehicle, 1));
             case "agm65-12" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAT(vehicle, 2));
             case "agm65-13" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAT(vehicle, 3));
@@ -133,7 +128,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
             case "agm65-4" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAT(vehicle, 9));
             case "agm65-5" -> (bone, vehicle, state) -> bone.setHidden(shouldHideMissileAT(vehicle, 10));
 
-            //大对地
             case "gbu24" -> (bone, vehicle, state) -> bone.setHidden(shouldHideBigATMissile(vehicle, 1));
             case "gbu2" -> (bone, vehicle, state) -> bone.setHidden(shouldHideBigATMissile(vehicle, 2));
             case "gbu3" -> (bone, vehicle, state) -> bone.setHidden(shouldHideBigATMissile(vehicle, 3));
@@ -144,7 +138,7 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
             default -> null;
         };
     }
-//核弹
+
     public boolean shouldHideBomb(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("Bomb");
         if (gunData == null) {
@@ -154,7 +148,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
         }
     }
 
-    //小火煎
     public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("Rocket");
         if (gunData == null) {
@@ -164,7 +157,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
         }
     }
 
-    //大火箭
     public boolean shouldHideMissile2(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("BigRocket");
         if (gunData == null) {
@@ -174,7 +166,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
         }
     }
 
-    //对空
     public boolean shouldHideMissileAA(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("AAMissile");
         if (gunData == null) {
@@ -184,7 +175,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
         }
     }
 
-    //对地
     public boolean shouldHideMissileAT(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("ATMissile");
         if (gunData == null) {
@@ -194,7 +184,6 @@ public class TJGCModel extends VehicleModel<TJGCEntity> {
         }
     }
 
-    //大对地
     public boolean shouldHideBigATMissile(VehicleEntity vehicle, int ammo) {
         var gunData = vehicle.getGunData("BigATMissile");
         if (gunData == null) {

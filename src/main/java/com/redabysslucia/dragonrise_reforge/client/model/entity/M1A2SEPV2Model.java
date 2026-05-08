@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.M1A2SEPV2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import net.minecraft.resources.ResourceLocation;
 
-public class M1A2SEPV2Model extends VehicleModel<M1A2SEPV2Entity> {
+public class M1A2SEPV2Model extends DragonriseVehicleModel<M1A2SEPV2Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

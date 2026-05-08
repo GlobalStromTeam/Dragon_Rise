@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.BMD4MEntity;
 import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
 
-public class BMD4MModel extends VehicleModel<BMD4MEntity> {
+public class BMD4MModel extends DragonriseVehicleModel<BMD4MEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

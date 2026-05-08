@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:j20vtol",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/j20.geo.json",
+    "Animation": "dragonrise_reforge:animations/j20.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/j20.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

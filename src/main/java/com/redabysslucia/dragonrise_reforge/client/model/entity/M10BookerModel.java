@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import net.minecraft.util.Mth;
 
-public class M10BookerModel extends VehicleModel<M10BookerEntity> {
+public class M10BookerModel extends DragonriseVehicleModel<M10BookerEntity> {
 
     @Override
     public boolean hideForTurretControllerWhileZooming() {

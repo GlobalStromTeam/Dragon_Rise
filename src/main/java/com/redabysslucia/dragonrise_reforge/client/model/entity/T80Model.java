@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
 import net.minecraft.resources.ResourceLocation;
 
 
-public class T80Model extends VehicleModel<T80Entity> {
+public class T80Model extends DragonriseVehicleModel<T80Entity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

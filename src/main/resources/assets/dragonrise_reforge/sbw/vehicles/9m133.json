@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:9m133",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/9m133.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/9m133.png"
+  }
+}

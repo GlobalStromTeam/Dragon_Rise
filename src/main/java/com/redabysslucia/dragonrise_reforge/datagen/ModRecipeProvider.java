@@ -118,8 +118,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(writer, loc(getItemName(ModItems.T21_HELMET.get())));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.FAST_HELMET.get())
+                .pattern("KKK")
                 .pattern("KDK")
-                .pattern("K K")
                 .define('K', ModItems.KEVLAR.get())
                 .define('D', Tags.Items.DYES_YELLOW)
                 .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
@@ -146,8 +146,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MSV_PANTS.get())
                 .pattern("KDK")
-                .pattern("K K")
-                .pattern("K K")
+                .pattern("KKK")
+                .pattern("KKK")
                 .define('K', ModItems.KEVLAR.get())
                 .define('D', Tags.Items.DYES_YELLOW)
                 .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))

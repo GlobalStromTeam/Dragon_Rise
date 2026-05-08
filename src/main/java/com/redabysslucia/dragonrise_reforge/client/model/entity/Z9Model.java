@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.Z9Entity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class Z9Model extends VehicleModel<Z9Entity> {
+public class Z9Model extends DragonriseVehicleModel<Z9Entity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return false;
@@ -16,11 +16,11 @@ public class Z9Model extends VehicleModel<Z9Entity> {
     @Override
     public @Nullable TransformContext<Z9Entity> collectTransform(String boneName) {
         if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         return super.collectTransform(boneName);

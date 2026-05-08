@@ -1,15 +1,16 @@
 package com.redabysslucia.dragonrise_reforge.client.model.entity.atmg;
 
-import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.TowEntity;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
+import com.redabysslucia.dragonrise_reforge.client.model.entity.DragonriseVehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import org.jetbrains.annotations.Nullable;
 
-public class HJ8Model extends VehicleModel<HJ8Entity> {
+public class HJ8Model extends DragonriseVehicleModel<HJ8Entity> {
+
     @Override
     public @Nullable TransformContext<HJ8Entity> collectTransform(String boneName) {
         return switch (boneName) {

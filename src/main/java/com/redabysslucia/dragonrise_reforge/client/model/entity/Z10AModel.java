@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.entities.Z10AEntity;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
-public class Z10AModel extends VehicleModel<Z10AEntity> {
+public class Z10AModel extends DragonriseVehicleModel<Z10AEntity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return true;
@@ -22,11 +22,11 @@ public class Z10AModel extends VehicleModel<Z10AEntity> {
         }
 
         if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
         }
 
         if (boneName.equals("AKD10-1")) {

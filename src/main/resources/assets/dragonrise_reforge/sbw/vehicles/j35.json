@@ -1,0 +1,9 @@
+{
+  "ID": "dragonrise_reforge:j35",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/j35.geo.json",
+    "Animation": "dragonrise_reforge:animations/j35.animation.json",
+    "Texture": "dragonrise_reforge:textures/entity/j35.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

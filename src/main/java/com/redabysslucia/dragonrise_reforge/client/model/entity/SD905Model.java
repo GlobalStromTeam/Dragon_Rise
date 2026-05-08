@@ -9,7 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
-public class SD905Model extends VehicleModel<SD905Entity> {
+public class SD905Model extends DragonriseVehicleModel<SD905Entity> {
 
     private static final float SPEED_FACTOR = 0.5f;
 
@@ -35,7 +35,7 @@ public class SD905Model extends VehicleModel<SD905Entity> {
         }
 
 //        if (boneName.equals("tailPropeller")) {
-//            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+//            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
 //        }
 
         if (boneName.equals("bomb1")) {

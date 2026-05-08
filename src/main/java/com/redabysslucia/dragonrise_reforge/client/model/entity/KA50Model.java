@@ -13,7 +13,7 @@ import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
 
-public class KA50Model extends VehicleModel<KA50Entity> {
+public class KA50Model extends DragonriseVehicleModel<KA50Entity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return true;
@@ -23,13 +23,13 @@ public class KA50Model extends VehicleModel<KA50Entity> {
     public @Nullable TransformContext<KA50Entity> collectTransform(String boneName) {
         return switch (boneName) {
             case "propeller0" -> (bone, vehicle, state) ->
-                    bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+                    bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
 
             case "propeller1" -> (bone, vehicle, state) ->
-                    bone.setRotY(-1 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+                    bone.setRotY(-1 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
 
             case "tailPropeller" -> (bone, vehicle, state) ->
-                    bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.propellerRotO, vehicle.getPropellerRot()));
+                    bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
 
             case "missile1" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideMissile(vehicle, 2));

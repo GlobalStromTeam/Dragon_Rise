@@ -4,62 +4,162 @@
   "MaxEnergy": 10000000,
   "OBB": [
     {
-      "Size": [0.53125, 0.5, 1.25],
-      "Position": [0, 2.1875, 4.4375]
+      "Size": [
+        0.53125,
+        0.5,
+        1.25
+      ],
+      "Position": [
+        0,
+        2.1875,
+        4.4375
+      ]
     },
     {
-      "Size": [0.625, 0.625, 1.15625],
-      "Position": [0, 2.3125, 2.03125]
+      "Size": [
+        0.625,
+        0.625,
+        1.15625
+      ],
+      "Position": [
+        0,
+        2.3125,
+        2.03125
+      ]
     },
     {
-      "Size": [0.625, 0.8125, 2.03125],
-      "Position": [0, 1.9375, -0.109375]
+      "Size": [
+        0.625,
+        0.8125,
+        2.03125
+      ],
+      "Position": [
+        0,
+        1.9375,
+        -0.109375
+      ]
     },
     {
-      "Size": [4.125, 0.09375, 1.375],
-      "Position": [0, 1.71875, -4.9375]
+      "Size": [
+        4.125,
+        0.09375,
+        1.375
+      ],
+      "Position": [
+        0,
+        1.71875,
+        -4.9375
+      ]
     },
     {
-      "Size": [2.65625, 0.09375, 1.1875],
-      "Position": [0, 1.71875, -2.375]
+      "Size": [
+        2.65625,
+        0.09375,
+        1.1875
+      ],
+      "Position": [
+        0,
+        1.71875,
+        -2.375
+      ]
     },
     {
-      "Size": [2.0625, 0.15625, 0.84375],
-      "Position": [0, 2.34375, 0.21875]
+      "Size": [
+        2.0625,
+        0.15625,
+        0.84375
+      ],
+      "Position": [
+        0,
+        2.34375,
+        0.21875
+      ]
     },
     {
-      "Size": [0.09375, 1.3125, 1.78125],
-      "Position": [0, 2.4375, -6.71875]
+      "Size": [
+        0.09375,
+        1.3125,
+        1.78125
+      ],
+      "Position": [
+        0,
+        2.4375,
+        -6.71875
+      ]
     },
     {
-      "Size": [0.09375, 0.6875, 1.125],
-      "Position": [0, 4.375, -7.9375]
+      "Size": [
+        0.09375,
+        0.6875,
+        1.125
+      ],
+      "Position": [
+        0,
+        4.375,
+        -7.9375
+      ]
     },
     {
       "Part": "MainEngine",
-      "Size": [0.625, 0.71875, 3.875],
-      "Position": [0, 1.90625, -4.625]
+      "Size": [
+        0.625,
+        0.71875,
+        3.875
+      ],
+      "Position": [
+        0,
+        1.90625,
+        -4.625
+      ]
     }
   ],
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [0, 1.125, 1.7],
+    "Position": [
+      0,
+      1.125,
+      1.7
+    ],
     "CanRotateHead": false,
-    "Sensitivity": [0, 0, 0],
+    "Sensitivity": [
+      0,
+      0,
+      0
+    ],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0, 2.75, 2.1875],
+      "Position": [
+        0,
+        2.75,
+        2.1875
+      ],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [
+        0,
+        2.75,
+        -14
+      ]
     },
-    "Weapons": ["Cannon", "Missile", "Missile2"],
+    "Weapons": [
+      "Cannon",
+      "Missile",
+      "Missile2"
+    ],
     "DismountInfo": {
       "Transform": "Vehicle",
-      "Position": [1.6, 0.5, 3.8],
+      "Position": [
+        1.6,
+        0.5,
+        3.8
+      ],
       "CanEject": true,
-      "EjectPosition": [0, 4.2, 3.7],
+      "EjectPosition": [
+        0,
+        4.2,
+        3.7
+      ],
       "EjectDirection": "Up",
       "EjectForce": 4
     }
@@ -70,7 +170,7 @@
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cannon_23mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "AmmoType": "superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 2,
       "RPM": 1200,
@@ -90,9 +190,25 @@
       "CrosshairColor": "0x66FF00",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[-0.625, 1.625, 0]],
-        "Directions": [[0, -0.02, 1]],
-        "ShootDirectionForHud": [0, -0.03, 1]
+        "Positions": [
+          [
+            -0.625,
+            1.625,
+            0
+          ]
+        ],
+        "Directions": [
+          [
+            0,
+            -0.02,
+            1
+          ]
+        ],
+        "ShootDirectionForHud": [
+          0,
+          -0.03,
+          1
+        ]
       }
     },
     "Missile": {
@@ -121,9 +237,23 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ViewDirection": "Default",
-        "ShootPositionForHud": [0, 1.0625, 5.625],
-        "Positions": [[3.88218125, 1.13765625, -4.43699375],
-          [-3.8936375, 1.13765625, -4.43699375]],
+        "ShootPositionForHud": [
+          0,
+          1.0625,
+          5.625
+        ],
+        "Positions": [
+          [
+            3.88218125,
+            1.13765625,
+            -4.43699375
+          ],
+          [
+            -3.8936375,
+            1.13765625,
+            -4.43699375
+          ]
+        ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -171,13 +301,43 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ViewDirection": "Default",
-        "ShootPositionForHud": [0, 1.53, 0],
-        "Positions": [[3.11784375, 0.85363125, -3.139325],
-          [2.4204125, 0.85363125, -3.139325],
-          [-3.12779375, 0.85363125, -3.139325],
-          [-2.41995625, 0.85363125, -3.139325],
-          [0.25525625, 0.60900625, -2.4054625],
-          [-0.223575, 0.60900625, -1.9630625]],
+        "ShootPositionForHud": [
+          0,
+          1.53,
+          0
+        ],
+        "Positions": [
+          [
+            3.11784375,
+            0.85363125,
+            -3.139325
+          ],
+          [
+            2.4204125,
+            0.85363125,
+            -3.139325
+          ],
+          [
+            -3.12779375,
+            0.85363125,
+            -3.139325
+          ],
+          [
+            -2.41995625,
+            0.85363125,
+            -3.139325
+          ],
+          [
+            0.25525625,
+            0.60900625,
+            -2.4054625
+          ],
+          [
+            -0.223575,
+            0.60900625,
+            -1.9630625
+          ]
+        ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -250,8 +410,24 @@
     "SpeedRate": 1.2,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:jet_engine_start",
-    "EngineSoundVolume" : 0.8
+    "EngineSoundVolume": 0.8
   },
-  "TerrainCompat": [[-0.243, 0, 4.63], [-2.58, 0, -0.74], [2.58, 0, -0.74]],
+  "TerrainCompat": [
+    [
+      -0.243,
+      0,
+      4.63
+    ],
+    [
+      -2.58,
+      0,
+      -0.74
+    ],
+    [
+      2.58,
+      0,
+      -0.74
+    ]
+  ],
   "EngineSound": "dragonrise_reforge:jet_engine"
 }

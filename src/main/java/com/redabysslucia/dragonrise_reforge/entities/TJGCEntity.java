@@ -60,7 +60,7 @@ public class TJGCEntity extends VariableEngineVehicle {
 
     public void hitBlock(Vec3 pos, GunData gunData, Entity shooter) {
         if (level() instanceof ServerLevel serverLevel) {
-            if (gunData.compute().explosionRadius > 0) {
+            if (gunData.compute().getExplosionRadius() > 0) {
                 findNearEntity(pos, gunData, shooter);
                 sendParticle(serverLevel, ParticleTypes.END_ROD, pos.x, pos.y, pos.z, 24, 0, 0, 0, 0.2, true);
                 sendParticle(serverLevel, ParticleTypes.LAVA, pos.x, pos.y, pos.z, 8, 0, 0, 0, 0.4, true);
@@ -73,7 +73,7 @@ public class TJGCEntity extends VariableEngineVehicle {
 
     public void hitEntity(Vec3 pos, GunData gunData, Entity shooter) {
         if (this.level() instanceof ServerLevel serverLevel) {
-            if (gunData.compute().explosionRadius > 0) {
+            if (gunData.compute().getExplosionRadius() > 0) {
                 findNearEntity(pos, gunData, shooter);
                 sendParticle(serverLevel, ParticleTypes.END_ROD, pos.x, pos.y, pos.z, 24, 0, 0, 0, 0.2, true);
                 sendParticle(serverLevel, ParticleTypes.LAVA, pos.x, pos.y, pos.z, 8, 0, 0, 0, 0.4, true);
@@ -85,8 +85,8 @@ public class TJGCEntity extends VariableEngineVehicle {
     }
 
     public void findNearEntity(Vec3 vec, GunData gunData, Entity shooter) {
-        double aoeDamage = gunData.compute().explosionDamage;
-        double range = gunData.compute().explosionRadius;
+        double aoeDamage = gunData.compute().getExplosionDamage();
+        double range = gunData.compute().getExplosionRadius();
 
         if (level() instanceof ServerLevel serverLevel) {
             List<Entity> entities = new SeekTool.Builder(this)
@@ -136,7 +136,7 @@ public class TJGCEntity extends VariableEngineVehicle {
     @OnlyIn(Dist.CLIENT)
     @Override
     public Component firstPersonAmmoComponent(GunData data, Player player) {
-        var name = data.compute().name;
+        var name = data.compute().getName();
         if (name == null || name.isBlank()) return Component.empty();
 
         return Component.translatable(name, (int) (25 + data.heat.get()) + " " + "°C");

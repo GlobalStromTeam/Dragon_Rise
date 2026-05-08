@@ -140,7 +140,8 @@
           0.5,
           2.5
         ]
-      }
+      },
+      "HasThermalImaging": true
     },
     {
       "Transform": "Vehicle",
@@ -184,7 +185,8 @@
           0.3,
           3.5625
         ]
-      }
+      },
+      "HasThermalImaging": true
     }
   ],
   "Weapons": {
@@ -217,7 +219,7 @@
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
       "SoundRadius": 24,
-      "AmmoType": "superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [

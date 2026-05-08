@@ -2,24 +2,62 @@
   "ID": "dragonrise_reforge:sd905",
   "MaxHealth": 1000,
   "MaxEnergy": 4000000,
-  "TurretPos": [0.0, 0.48815, 1.85568125],
-  "TurretTurnSpeed": [15, 15],
-  "TurretPitchRange": [-40, 10],
-  "BarrelPos": [-0.0024, -0.20674375, 0.0079],
+  "TurretPos": [
+    0.0,
+    0.48815,
+    1.85568125
+  ],
+  "TurretTurnSpeed": [
+    15,
+    15
+  ],
+  "TurretPitchRange": [
+    -40,
+    10
+  ],
+  "BarrelPos": [
+    -0.0024,
+    -0.20674375,
+    0.0079
+  ],
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [2.25, 2.25, 10.0625],
-      "Position": [0.0, 4.4375, -0.625]
+      "Size": [
+        2.25,
+        2.25,
+        10.0625
+      ],
+      "Position": [
+        0.0,
+        4.4375,
+        -0.625
+      ]
     },
     {
-      "Size": [1.15625, 0.375, 3.71875],
-      "Position": [0.0, 1.0625, 0.09375]
+      "Size": [
+        1.15625,
+        0.375,
+        3.71875
+      ],
+      "Position": [
+        0.0,
+        1.0625,
+        0.09375
+      ]
     },
     {
       "Part": "Turret",
-      "Size": [1, 0.4, 1],
-      "Position": [0, -0.2, 0],
+      "Size": [
+        1,
+        0.4,
+        1
+      ],
+      "Position": [
+        0,
+        -0.2,
+        0
+      ],
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -27,33 +65,68 @@
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [0.0, 0.625, 2.6875],
-      "Sensitivity": [0, 0, 0],
+      "Position": [
+        0.0,
+        0.625,
+        2.6875
+      ],
+      "Sensitivity": [
+        0,
+        0,
+        0
+      ],
       "CameraPos": {
         "Transform": "Vehicle",
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [-3.8, 3.5, -15]
+        "AircraftCameraPos": [
+          -3.8,
+          3.5,
+          -15
+        ]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
       "MaxPitch": 80,
       "MinYaw": -80,
       "MaxYaw": 80,
-      "Weapons": ["Bomb"],
+      "Weapons": [
+        "Bomb"
+      ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [-2.5, 0.5, 2.5]
-      }
+        "Position": [
+          -2.5,
+          0.5,
+          2.5
+        ]
+      },
+      "HasThermalImaging": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.0, 0.625, 1.625],
-      "Sensitivity": [0.59, 0.8, 0.9],
+      "Position": [
+        0.0,
+        0.625,
+        1.625
+      ],
+      "Sensitivity": [
+        0.59,
+        0.8,
+        0.9
+      ],
       "CameraPos": {
         "Transform": "Vehicle",
         "UseFixedCameraPos": true,
-        "Position": [0.0, 2.5625, 4.8125],
-        "ZoomPosition": [0.0, 1.1640625, 7.2171875],
+        "Position": [
+          0.0,
+          2.5625,
+          4.8125
+        ],
+        "ZoomPosition": [
+          0.0,
+          1.1640625,
+          7.2171875
+        ],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,
@@ -66,20 +139,33 @@
       ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [-2.5, 0.3, 3.5625]
-      }
+        "Position": [
+          -2.5,
+          0.3,
+          3.5625
+        ]
+      },
+      "HasThermalImaging": true
     },
     {
       "HidePassenger": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.5625, 0.625, -0.4375]
+      "Position": [
+        -0.5625,
+        0.625,
+        -0.4375
+      ]
     },
     {
       "HidePassenger": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.5625, 0.625, -0.4375]
+      "Position": [
+        0.5625,
+        0.625,
+        -0.4375
+      ]
     }
   ],
   "Weapons": {
@@ -113,12 +199,24 @@
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
       "SoundRadius": 24,
-      "AmmoType": "superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-1.56629375, 1.09230625, 1.85168125],
-          [0.26401875, 0.2738125, 1.85168125]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -1.56629375,
+            1.09230625,
+            1.85168125
+          ],
+          [
+            0.26401875,
+            0.2738125,
+            1.85168125
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "Bomb": {
@@ -140,23 +238,83 @@
       "Velocity": 0.55,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0, 0.1, 0],
+        "ShootPositionForHud": [
+          0,
+          0.1,
+          0
+        ],
         "ShootDirectionForHud": "Bomb",
-        "Positions": [[-1.28681875, 0.42419375, 0.39885],
-          [-0.81806875, 0.42419375, 0.39885],
-          [0.81806875, 0.42419375, 0.39885],
-          [1.28681875, 0.42419375, 0.39885],
-          [-1.28681875, 0.42419375, -1.28681875],
-          [-1.28681875, 0.42419375, -0.4449],
-          [-0.81806875, 0.42419375, -0.4449],
-          [0.81806875, 0.42419375, -0.4449],
-          [1.28681875, 0.42419375, -0.4449],
-          [-1.28681875, 0.42419375, -1.28865],
-          [-0.81806875, 0.42419375, -1.28865],
-          [0.81806875, 0.42419375, -1.28865]],
+        "Positions": [
+          [
+            -1.28681875,
+            0.42419375,
+            0.39885
+          ],
+          [
+            -0.81806875,
+            0.42419375,
+            0.39885
+          ],
+          [
+            0.81806875,
+            0.42419375,
+            0.39885
+          ],
+          [
+            1.28681875,
+            0.42419375,
+            0.39885
+          ],
+          [
+            -1.28681875,
+            0.42419375,
+            -1.28681875
+          ],
+          [
+            -1.28681875,
+            0.42419375,
+            -0.4449
+          ],
+          [
+            -0.81806875,
+            0.42419375,
+            -0.4449
+          ],
+          [
+            0.81806875,
+            0.42419375,
+            -0.4449
+          ],
+          [
+            1.28681875,
+            0.42419375,
+            -0.4449
+          ],
+          [
+            -1.28681875,
+            0.42419375,
+            -1.28865
+          ],
+          [
+            -0.81806875,
+            0.42419375,
+            -1.28865
+          ],
+          [
+            0.81806875,
+            0.42419375,
+            -1.28865
+          ]
+        ],
         "BoundUpWithAmmoAmount": true,
-        "Directions": ["DeltaMovement"],
-        "ViewPosition": [0, 0.1, 0],
+        "Directions": [
+          "DeltaMovement"
+        ],
+        "ViewPosition": [
+          0,
+          0.1,
+          0
+        ],
         "ViewDirection": "Bomb",
         "Crosshair": "@AirBomb",
         "CrosshairColor": "0x66FF00"
@@ -216,7 +374,11 @@
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [-1.284, 0, 1.728],
+    [
+      -1.284,
+      0,
+      1.728
+    ],
     [
       1.284,
       0,

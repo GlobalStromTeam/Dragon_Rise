@@ -25,7 +25,7 @@ public abstract class AirshipVehicle extends GeoVehicleEntity {
         //var engineType = EngineType.AIRSHIP;
 
         if (this.engineCache == null) {
-            var engineInfo = computed.engineInfo;
+            var engineInfo = computed.getEngineInfo();
             try {
                 this.engineCache = DataLoader.GSON.fromJson(engineInfo, AirshipInfo.class);
             } catch (Exception e) {

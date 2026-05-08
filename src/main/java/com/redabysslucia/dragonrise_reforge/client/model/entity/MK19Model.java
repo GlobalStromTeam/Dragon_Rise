@@ -7,5 +7,5 @@ import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import org.jetbrains.annotations.Nullable;
 
-public class MK19Model extends VehicleModel<MK19Entity> {
+public class MK19Model extends DragonriseVehicleModel<MK19Entity> {
 }

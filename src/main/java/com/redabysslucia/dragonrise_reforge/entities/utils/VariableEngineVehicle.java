@@ -55,7 +55,7 @@ public abstract class VariableEngineVehicle extends NightVisionVehicle {
 
     public void updateEngineCache(EngineType pEngineType) {
         var computed = computed();
-        var engineInfo = computed.engineInfo;
+        var engineInfo = computed.getEngineInfo();
         try {
             if (currentEngineType == EngineType.HELICOPTER) {
                 entityData.set(POWER, entityData.get(POWER) / 0.12f);
@@ -84,7 +84,7 @@ public abstract class VariableEngineVehicle extends NightVisionVehicle {
     public void travel() {
         var computed = computed();
 
-        var engineType = computed.engineType;
+        var engineType = computed.getEngineType();
         if (engineType == EngineType.EMPTY) return;
         if (engineType == EngineType.FIXED) {
             this.fixedEngine();
@@ -92,7 +92,7 @@ public abstract class VariableEngineVehicle extends NightVisionVehicle {
         }
 
         if (variableEngineCache == null) {
-            var engineInfo = computed.engineInfo;
+            var engineInfo = computed.getEngineInfo();
             try {
                 //this.variableEngineCache = DataLoader.GSON.fromJson(engineInfo, EngineInfo.Helicopter.class);
                 this.variableEngineCache = switch (engineType) {
@@ -130,10 +130,10 @@ public abstract class VariableEngineVehicle extends NightVisionVehicle {
                 float var10000;
                 switch (engineType) {
                     case TRACK ->
-                            var10000 = Math.max(Mth.abs((Float) this.entityData.get(POWER)), Mth.abs(1.4F * (Float) this.entityData.get(DELTA_ROT))) * engineInfo.engineSoundVolume;
+                            var10000 = Math.max(Mth.abs((Float) this.entityData.get(POWER)), Mth.abs(1.4F * (Float) this.entityData.get(DELTA_ROT))) * engineInfo.getEngineSoundVolume();
                     case HELICOPTER ->
-                            var10000 = (Float) this.entityData.get(POWER) / 0.12f * engineInfo.engineSoundVolume;
-                    default -> var10000 = Mth.abs((Float) this.entityData.get(POWER)) * engineInfo.engineSoundVolume;
+                            var10000 = (Float) this.entityData.get(POWER) / 0.12f * engineInfo.getEngineSoundVolume();
+                    default -> var10000 = Mth.abs((Float) this.entityData.get(POWER)) * engineInfo.getEngineSoundVolume();
                 }
 
                 return var10000;

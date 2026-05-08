@@ -75,9 +75,9 @@ public class AMX56Entity extends NightVisionVehicle {
 
         // 检查是否为撬棍
         if (crowbarItem != null && stack.getItem() == crowbarItem) {
-            // 切换涂装类型（0和1之间切换）
+            // 切换涂装类型（0→1→2→0循环）
             int currentType = this.entityData.get(CAMO_TYPE);
-            int newType = currentType == 0 ? 1 : 0;
+            int newType = (currentType + 1) % 3;
             this.entityData.set(CAMO_TYPE, newType);
 
             // 播放交互音效

@@ -26,9 +26,9 @@ public class EngineParticleUtil {
             // 获取实体的所有obb框
             for (OBB obb : obbEntity.getOBBs()) {
                 // 检查是否是MainEngine
-                if (obb.part() == Part.EMPTY) {  // 修复：使用Part.MAIN_ENGINE
+                if (obb.part == Part.EMPTY) {  // 修复：使用Part.MAIN_ENGINE
                     // 获取obb框的中心位置
-                    Vec3 obbCenter = OBB.vector3dToVec3(obb.center());
+                    Vec3 obbCenter = OBB.vector3dToVec3(obb.center);
 
                     // 获取上一次的位置
                     Vec3 lastPosition = lastEnginePositions.get(entity);
@@ -54,7 +54,7 @@ public class EngineParticleUtil {
      */
     private static void spawnSmokeParticlesAtOBB(Level level, OBB obb) {
         // 获取OBB框的中心位置
-        Vec3 center = OBB.vector3dToVec3(obb.center());
+        Vec3 center = OBB.vector3dToVec3(obb.center);
 
         // 生成烟雾粒子
         for (int i = 0; i < 1; i++) {

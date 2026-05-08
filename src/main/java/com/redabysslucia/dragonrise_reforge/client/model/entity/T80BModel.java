@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.T80BEntity;
 
 
-public class T80BModel extends VehicleModel<T80BEntity> {
+public class T80BModel extends DragonriseVehicleModel<T80BEntity> {
 
         @Override
         public boolean hideForTurretControllerWhileZooming() {

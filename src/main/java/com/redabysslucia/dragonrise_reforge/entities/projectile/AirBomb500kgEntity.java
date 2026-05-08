@@ -37,8 +37,8 @@ public class AirBomb500kgEntity extends DestroyableProjectile implements GeoEnti
     public AirBomb500kgEntity(EntityType<? extends AirBomb500kgEntity> type, Level level) {
         super(type, level);
         this.noCulling = true;
-        this.explosionRadius = 20;
-        this.explosionDamage = 800;
+        setExplosionRadius(20);
+        setExplosionDamage(800);
     }
 
     @Override

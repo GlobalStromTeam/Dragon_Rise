@@ -4,33 +4,81 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [0.75, 0.40625, 0.9375],
-      "Position": [0.0, 0.71875, 0.875]
+      "Size": [
+        0.75,
+        0.40625,
+        0.9375
+      ],
+      "Position": [
+        0.0,
+        0.71875,
+        0.875
+      ]
     },
     {
-      "Size": [1.15625, 0.28125, 0.9375],
-      "Position": [0.0, 1.40625, -0.3125]
+      "Size": [
+        1.15625,
+        0.28125,
+        0.9375
+      ],
+      "Position": [
+        0.0,
+        1.40625,
+        -0.3125
+      ]
     },
     {
       "Part": "MainEngine",
-      "Size": [0.78125, 0.28125, 0.34375],
-      "Position": [0.0, 1.40625, -1.59375]
+      "Size": [
+        0.78125,
+        0.28125,
+        0.34375
+      ],
+      "Position": [
+        0.0,
+        1.40625,
+        -1.59375
+      ]
     },
     {
       "Part": "Turret",
-      "Size": [0.53125, 0.59375, 0.625],
-      "Position": [0.0625, 1.71875, 0.0],
+      "Size": [
+        0.53125,
+        0.59375,
+        0.625
+      ],
+      "Position": [
+        0.0625,
+        1.71875,
+        0.0
+      ],
       "Rotation": "Turret"
     },
     {
       "Part": "WheelLeft",
-      "Size": [0.21875, 0.53125, 2.09375],
-      "Position": [0.96875, 0.53125, -0.09375]
+      "Size": [
+        0.21875,
+        0.53125,
+        2.09375
+      ],
+      "Position": [
+        0.96875,
+        0.53125,
+        -0.09375
+      ]
     },
     {
       "Part": "WheelRight",
-      "Size": [0.21875, 0.53125, 2.09375],
-      "Position": [-0.96875, 0.53125, -0.09375]
+      "Size": [
+        0.21875,
+        0.53125,
+        2.09375
+      ],
+      "Position": [
+        -0.96875,
+        0.53125,
+        -0.09375
+      ]
     }
   ],
   "Seats": [
@@ -38,17 +86,37 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position":[0.208125, 0.01410625, 0.334375],
+        "Position": [
+          0.208125,
+          0.01410625,
+          0.334375
+        ],
         "Transform": "Barrel",
-        "ZoomPosition": [0.208125, 0.01410625, 0.334375]
+        "ZoomPosition": [
+          0.208125,
+          0.01410625,
+          0.334375
+        ]
       },
       "Transform": "Turret",
-      "Position": [0.1186375, 0.75625, -0.3001125],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Position": [
+        0.1186375,
+        0.75625,
+        -0.3001125
+      ],
+      "Weapons": [
+        "Cannon",
+        "MachineGun"
+      ],
       "CanRotateHead": false,
       "MinPitch": -9,
       "MaxPitch": 25,
-      "Sensitivity": [0.42, 0.7, 0.9]
+      "Sensitivity": [
+        0.42,
+        0.7,
+        0.9
+      ],
+      "HasThermalImaging": true
     }
   ],
   "Weapons": {
@@ -67,13 +135,17 @@
       "ExplosionRadius": 4,
       "RecoilTime": 42,
       "RecoilForce": 0.5,
-      "ShootShake": [8, 10, 60],
+      "ShootShake": [
+        8,
+        10,
+        60
+      ],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:M74",
-      "AmmoType":"superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:us_37_shoot",
         "Fire3P": "dragonrise_reforge:us_37_shoot",
@@ -88,8 +160,16 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.0, 0.040625, 0.94375]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            0.0,
+            0.040625,
+            0.94375
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       }
     },
     "MachineGun": {
@@ -114,8 +194,16 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[-0.14816875, 0.03620625, 0.56875]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            -0.14816875,
+            0.03620625,
+            0.56875
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:m1919",
@@ -148,8 +236,16 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [[-0.008925, 0.1546875, 0.4275]],
-        "Directions": ["WeaponStationBarrel"]
+        "Positions": [
+          [
+            -0.008925,
+            0.1546875,
+            0.4275
+          ]
+        ],
+        "Directions": [
+          "WeaponStationBarrel"
+        ]
       },
       "Crosshair": "@VehicleDynamicCross",
       "Name": "dragonrise_reforge:m2",
@@ -177,14 +273,36 @@
     "Increment": 0.015,
     "Decrement": 0.01,
     "SteeringSpeed": 0.1,
-    "EngineSoundVolume" : 1.0
+    "EngineSoundVolume": 1.0
   },
-  "TurretPos": [0.0, -0.015625, -0.034375],
-  "BarrelPos": [0.0, 1.91725625, 0.614425],
-  "TurretTurnSpeed": [0.6, 0.675],
-  "TurretPitchRange": [-8, 25],
-  "PassengerWeaponStationPos": [-0.5, 2.5984875, 0.138825],
-  "PassengerWeaponStationBarrelPos": [0.0, 0.145625, 0.0],
+  "TurretPos": [
+    0.0,
+    -0.015625,
+    -0.034375
+  ],
+  "BarrelPos": [
+    0.0,
+    1.91725625,
+    0.614425
+  ],
+  "TurretTurnSpeed": [
+    0.6,
+    0.675
+  ],
+  "TurretPitchRange": [
+    -8,
+    25
+  ],
+  "PassengerWeaponStationPos": [
+    -0.5,
+    2.5984875,
+    0.138825
+  ],
+  "PassengerWeaponStationBarrelPos": [
+    0.0,
+    0.145625,
+    0.0
+  ],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -226,28 +344,111 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [-0.8669625, 1.5, 4],
+  "ThirdPersonCameraPos": [
+    -0.8669625,
+    1.5,
+    4
+  ],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m2a2_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,
     "PowerLimits": [
-      [0, 0, true],
-      [0, 0, true],
-      [0.1, 0.05, false],
-      [1, 0.3, false]
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.1,
+        0.05,
+        false
+      ],
+      [
+        1,
+        0.3,
+        false
+      ]
     ]
   },
   "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [2, 0, 3.0625], [-2, 0, 3.0625],
-    [2, 0, 1.0625], [-2, 0, 1.0625],
-    [2, 0, 1.125], [-2, 0, 1.125],
-    [2, 0, 0.1875], [-2, 0, 0.1875],
-    [2, 0, -0.8125], [-2, 0, -0.8125],
-    [2, 0, -1.8125], [-2, 0, -1.8125],
-    [2, 0, -2.8125], [-2, 0, -2.8125]
+    [
+      2,
+      0,
+      3.0625
+    ],
+    [
+      -2,
+      0,
+      3.0625
+    ],
+    [
+      2,
+      0,
+      1.0625
+    ],
+    [
+      -2,
+      0,
+      1.0625
+    ],
+    [
+      2,
+      0,
+      1.125
+    ],
+    [
+      -2,
+      0,
+      1.125
+    ],
+    [
+      2,
+      0,
+      0.1875
+    ],
+    [
+      -2,
+      0,
+      0.1875
+    ],
+    [
+      2,
+      0,
+      -0.8125
+    ],
+    [
+      -2,
+      0,
+      -0.8125
+    ],
+    [
+      2,
+      0,
+      -1.8125
+    ],
+    [
+      -2,
+      0,
+      -1.8125
+    ],
+    [
+      2,
+      0,
+      -2.8125
+    ],
+    [
+      -2,
+      0,
+      -2.8125
+    ]
   ]
 }

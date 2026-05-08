@@ -35,13 +35,13 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
     public AAshellEntity(EntityType<? extends AAshellEntity> type, Level level) {
         super(type, level);
         this.noCulling = true;
-        this.explosionDamage = 80f;
-        this.explosionRadius = 15f;
+        setExplosionDamage(80f);
+        setExplosionRadius(15f);
     }
 
     @Override
     protected @NotNull Item getDefaultItem() {
-        return ModItems.SMALL_SHELL.get();
+        return ModItems.SMALL_SHELL_AA.get();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
         if (this.getOwner() != null && this.getOwner().getVehicle() != null && entity == this.getOwner().getVehicle())
             return;
         if (this.level() instanceof ServerLevel) {
-            DamageHandler.doDamage(entity, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), damage);
+            DamageHandler.doDamage(entity, ModDamageTypes.causeProjectileHitDamage(this.level().registryAccess(), this, this.getOwner()), getExplosionDamageValue());
 
             if (entity instanceof LivingEntity) {
                 entity.invulnerableTime = 0;
@@ -95,10 +95,10 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
     private void causeExplode(Vec3 vec3, boolean hitEntity) {
         new CustomExplosion.Builder(this)
                 .attacker(this.getOwner())
-                .damage(explosionDamage)
-                .radius(explosionRadius)
+                .damage(getExplosionDamageValue())
+                .radius(getExplosionRadiusValue())
                 .position(vec3)
-                .withParticleType(explosionParticleType(explosionRadius))
+                .withParticleType(explosionParticleType(getExplosionRadiusValue()))
                 .destroyBlock(() -> hitEntity ? Explosion.BlockInteraction.KEEP : (ExplosionConfig.EXPLOSION_DESTROY.get() ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP))
                 .damageMultiplier(1.25F)
                 .explode();

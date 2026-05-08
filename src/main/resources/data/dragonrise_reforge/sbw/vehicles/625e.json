@@ -4,31 +4,79 @@
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.5, 0.71875, 0.625],
-      "Position": [0, 1.21875, 4.0625]
+      "Size": [
+        1.5,
+        0.71875,
+        0.625
+      ],
+      "Position": [
+        0,
+        1.21875,
+        4.0625
+      ]
     },
     {
-      "Size": [1.5625, 0.9375, 3.25],
-      "Position": [0, 1.4375, 0.1875]
+      "Size": [
+        1.5625,
+        0.9375,
+        3.25
+      ],
+      "Position": [
+        0,
+        1.4375,
+        0.1875
+      ]
     },
     {
-      "Size": [0.21875, 0.53125, 3.34375],
-      "Position": [1.40625, 0.53125, 0.71875],
+      "Size": [
+        0.21875,
+        0.53125,
+        3.34375
+      ],
+      "Position": [
+        1.40625,
+        0.53125,
+        0.71875
+      ],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.21875, 0.53125, 3.34375],
-      "Position": [-1.40625, 0.53125, 0.71875],
+      "Size": [
+        0.21875,
+        0.53125,
+        3.34375
+      ],
+      "Position": [
+        -1.40625,
+        0.53125,
+        0.71875
+      ],
       "Part": "WheelLeft"
     },
     {
-      "Size": [0.75, 0.375, 0.90625],
-      "Position": [0.875, 2.0625, 2.59375],
+      "Size": [
+        0.75,
+        0.375,
+        0.90625
+      ],
+      "Position": [
+        0.875,
+        2.0625,
+        2.59375
+      ],
       "Part": "MainEngine"
     },
     {
-      "Size": [1.71875, 0.46875, 1.65625],
-      "Position": [0, 0.35, 0],
+      "Size": [
+        1.71875,
+        0.46875,
+        1.65625
+      ],
+      "Position": [
+        0,
+        0.35,
+        0
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -39,16 +87,32 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.8653125, 0.68609375, -0.61625],
+        "ZoomPosition": [
+          0.8653125,
+          0.68609375,
+          -0.61625
+        ],
         "Direction": "Barrel"
       },
-      "Weapons": ["Cannon", "DriverAAMissile"],
+      "Weapons": [
+        "Cannon",
+        "DriverAAMissile"
+      ],
       "Transform": "Turret",
-      "Position": [0.36, -0.45, 0.56],
+      "Position": [
+        0.36,
+        -0.45,
+        0.56
+      ],
       "CanRotateHead": false,
       "MinPitch": -5,
       "MaxPitch": 70,
-      "Sensitivity": [0.55, 0.73, 1]
+      "Sensitivity": [
+        0.55,
+        0.73,
+        1
+      ],
+      "HasThermalImaging": true
     }
   ],
   "Weapons": {
@@ -81,11 +145,19 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 24,
-      "AmmoType": "superbwarfare:small_shell",
+      "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.02, 0.0517, 0.5]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            0.02,
+            0.0517,
+            0.5
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
@@ -123,8 +195,51 @@
       },
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[1.5, 0.0517, 3.2],[1.5, 0.0517, 3.2],[1.5, 0.0517, 3.2],[1.5, 0.0517, 3.2],[-1.5, 0.0517, 3.2],[-1.5, 0.0517, 3.2],[-1.5, 0.0517, 3.2],[-1.5, 0.0517, 3.2]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [
+            1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            -1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            -1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            -1.5,
+            0.0517,
+            3.2
+          ],
+          [
+            -1.5,
+            0.0517,
+            3.2
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
@@ -152,11 +267,29 @@
     "Decrement": 0.01,
     "SteeringSpeed": 0.07
   },
-  "TurretPos": [0, 2.4003, 0],
-  "TurretTurnSpeed": [12.5, 10],
-  "TurretPitchRange": [-15, 32.5],
-  "BarrelPos": [0.0234375, 0.33795, 0.825],
-  "ThirdPersonCameraPos": [0, 1, 3],
+  "TurretPos": [
+    0,
+    2.4003,
+    0
+  ],
+  "TurretTurnSpeed": [
+    12.5,
+    10
+  ],
+  "TurretPitchRange": [
+    -15,
+    32.5
+  ],
+  "BarrelPos": [
+    0.0234375,
+    0.33795,
+    0.825
+  ],
+  "ThirdPersonCameraPos": [
+    0,
+    1,
+    3
+  ],
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
@@ -200,13 +333,46 @@
   "CollisionLevel": {
     "Level": 3,
     "PowerLimits": [
-      [0, 0, true],
-      [0, 0, true],
-      [0.15, 0.09, false]
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.15,
+        0.09,
+        false
+      ]
     ]
   },
   "EngineSound": "superbwarfare:lav_150_engine",
   "HudType": "@Land",
-  "TerrainCompat": [[1.156, 0, 1.594], [-1.156, 0, 1.594], [1.156, 0, -1.594], [-1.156, 0, -1.594]],
+  "TerrainCompat": [
+    [
+      1.156,
+      0,
+      1.594
+    ],
+    [
+      -1.156,
+      0,
+      1.594
+    ],
+    [
+      1.156,
+      0,
+      -1.594
+    ],
+    [
+      -1.156,
+      0,
+      -1.594
+    ]
+  ],
   "InertiaRotateRate": 1.25
 }

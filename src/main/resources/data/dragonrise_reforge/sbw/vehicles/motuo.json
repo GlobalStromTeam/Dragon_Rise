@@ -2,14 +2,17 @@
   "ID": "dragonrise_reforge:motuo",
   "MaxHealth": 100,
   "MaxEnergy": 5000000,
-  "OBB": [
-  ],
+  "OBB": [],
   "Seats": [
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0, 0.4402375, -0.1251625],
+      "Position": [
+        0,
+        0.4402375,
+        -0.1251625
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -18,7 +21,11 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-0.7402375, 0.0780375, -0.909175],
+      "Position": [
+        -0.7402375,
+        0.0780375,
+        -0.909175
+      ],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -36,7 +43,7 @@
     "Increment": 0.015,
     "Decrement": 0.02,
     "SteeringSpeed": 0.12,
-    "EngineSoundVolume" : 0.6
+    "EngineSoundVolume": 0.6
   },
   "UpStep": 1.5,
   "Mass": 0.9,
@@ -73,12 +80,37 @@
     "ExplosionDamage": 40,
     "ExplosionRadius": 5
   },
-  "ThirdPersonCameraPos": [0, 1, 5],
+  "ThirdPersonCameraPos": [
+    0,
+    1,
+    5
+  ],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/wlsc_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "dragonrise_reforge:wheel_loop1",
   "HornSound": "superbwarfare:truck_horn",
-  "TerrainCompat": [[1.1875, 0, 3.1875], [-1.1875, 0, 3.1875], [1.1875, 0, -1.0625], [-1.1875, 0, -1.0625]],
+  "TerrainCompat": [
+    [
+      1.1875,
+      0,
+      3.1875
+    ],
+    [
+      -1.1875,
+      0,
+      3.1875
+    ],
+    [
+      1.1875,
+      0,
+      -1.0625
+    ],
+    [
+      -1.1875,
+      0,
+      -1.0625
+    ]
+  ],
   "InertiaRotateRate": 0.9
 }

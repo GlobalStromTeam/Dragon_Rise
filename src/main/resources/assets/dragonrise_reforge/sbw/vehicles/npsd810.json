@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:npds810",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/npds810.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/npds810.png"
+  }
+}

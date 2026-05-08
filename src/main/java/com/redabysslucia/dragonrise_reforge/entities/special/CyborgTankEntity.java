@@ -92,7 +92,7 @@ public class CyborgTankEntity extends NightVisionVehicle {
         );
 
         transformT.translate(worldPosition.x, worldPosition.y, worldPosition.z);
-        transformT.rotate(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, this.gunYRotO, this.getGunYRot())));
+        transformT.rotate(Axis.YP.rotationDegrees(Mth.lerp(partialTicks, this.getGunYRotO(), this.getGunYRot())));
         return transformT;
     }
 
@@ -125,9 +125,9 @@ public class CyborgTankEntity extends NightVisionVehicle {
             }
         }
 
-        float x = Mth.lerp(partialTicks, this.gunXRotO, this.getGunXRot());
+        float x = Mth.lerp(partialTicks, this.getGunXRotO(), this.getGunXRot());
         float xV = Mth.lerp(partialTicks, this.xRotO, this.getXRot());
-        float z = Mth.lerp(partialTicks, this.prevRoll, this.getRoll());
+        float z = Mth.lerp(partialTicks, this.getPrevRoll(), this.getRoll());
 
         transformG.rotate(Axis.XP.rotationDegrees(x + r * xV + r2 * z));
         return transformG;

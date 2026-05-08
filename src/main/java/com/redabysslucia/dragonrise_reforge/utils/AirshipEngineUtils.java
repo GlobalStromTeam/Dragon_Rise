@@ -10,18 +10,17 @@ import static com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity.*;
 public final class AirshipEngineUtils {
     public static void airshipEngine(VehicleEntity vehicle, AirshipInfo engineInfo) {
         // 获取引擎参数
-        double buoyancy = engineInfo.buoyancy;               // 恒定浮力（向上加速度）
-        float liftSpeedRate = engineInfo.liftSpeedRate;      // 上升加速度（按下up时）
-        float sinkSpeedRate = engineInfo.sinkSpeedRate;      // 下降加速度（按下down时）
-        //float thrustCoeff = engineInfo.thrustCoefficient;   // 水平推力系数
-        float steeringSpeed = engineInfo.steeringSpeed;     // 转向速度
-        float maxForwardSpeed = engineInfo.maxForwardSpeedRate; // 最大前进速度
-        float maxBackwardSpeed = engineInfo.maxBackwardSpeedRate; // 最大后退速度
-        float powerAdd = engineInfo.increment;              // 动力增加速率
-        float powerReduce = engineInfo.decrement;           // 动力减少速率
-        float dragHorizontal = engineInfo.dragHorizontal;   // 水平阻尼
-        float dragVertical = engineInfo.dragVertical;       // 垂直阻尼
-        int energyCost = (int) (engineInfo.energyCostRate * Mth.abs(vehicle.getEntityData().get(POWER)));
+        double buoyancy = engineInfo.getBuoyancy();
+        float liftSpeedRate = engineInfo.liftSpeedRate;
+        float sinkSpeedRate = engineInfo.sinkSpeedRate;
+        float steeringSpeed = engineInfo.steeringSpeed;
+        float maxForwardSpeed = engineInfo.maxForwardSpeedRate;
+        float maxBackwardSpeed = engineInfo.maxBackwardSpeedRate;
+        float powerAdd = engineInfo.getIncrement();
+        float powerReduce = engineInfo.getDecrement();
+        float dragHorizontal = engineInfo.dragHorizontal;
+        float dragVertical = engineInfo.dragVertical;
+        int energyCost = (int) (engineInfo.getEnergyCostRate() * Mth.abs(vehicle.getEntityData().get(POWER)));
 
         // 能量不足时重置所有输入并衰减动力
         if (vehicle.getEnergy() < energyCost || (vehicle.getMaxEnergy() > 0 && vehicle.getEnergy() <= 0)) {
