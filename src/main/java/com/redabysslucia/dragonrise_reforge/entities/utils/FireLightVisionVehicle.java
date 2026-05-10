@@ -4,8 +4,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import com.atsuishio.superbwarfare.tools.OBB.Part;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
-import com.redabysslucia.dragonrise_reforge.init.ModSpeedSounds;
-import com.redabysslucia.dragonrise_reforge.utils.SpeedSoundUtil;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EntityType;
@@ -59,8 +58,7 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
             }
         }
         
-        // 检查速度并播放音效
-        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get());
+        
     }
 
     /**

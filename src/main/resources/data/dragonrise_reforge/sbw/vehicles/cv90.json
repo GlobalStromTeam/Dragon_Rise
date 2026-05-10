@@ -237,7 +237,7 @@
       "Spread": 0.5,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cv90_cross.png",
       "CrosshairColor": "0xFFC700",
-      "Name": "drgonrise_reforge:mk44",
+      "Name": "dragonrise_reforge:mk44",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m2a3fire",
         "Fire3P": "dragonrise_reforge:m2a3fire",

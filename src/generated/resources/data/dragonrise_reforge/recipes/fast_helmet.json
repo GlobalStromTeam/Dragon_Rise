@@ -10,8 +10,8 @@
     }
   },
   "pattern": [
-    "KDK",
-    "K K"
+    "KKK",
+    "KDK"
   ],
   "result": {
     "item": "dragonrise_reforge:fast_helmet"

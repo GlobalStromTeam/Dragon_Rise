@@ -3,8 +3,7 @@ package com.redabysslucia.dragonrise_reforge.entities.utils;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import com.atsuishio.superbwarfare.tools.OBB.Part;
-import com.redabysslucia.dragonrise_reforge.init.ModSpeedSounds;
-import com.redabysslucia.dragonrise_reforge.utils.SpeedSoundUtil;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -154,8 +153,7 @@ public abstract class NightVisionVehicle extends GeoVehicleEntity implements INi
             }
         }
         
-        // 检查速度并播放音效
-        SpeedSoundUtil.checkSpeedAndPlaySound(this, ModSpeedSounds.PLANE_HIGH_SPEED.get(), ModSpeedSounds.PLANE_SUPERSONIC_LOOP.get());
+        
     }
 
     /**

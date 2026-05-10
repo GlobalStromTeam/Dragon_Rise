@@ -1,0 +1,120 @@
+{
+  "id": {
+    "namespace": "dragonrise_reforge",
+    "path": "ztz59a"
+  },
+  "pools": [
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 4,
+          "name": "superbwarfare:steel_block"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:medium_armament_module"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:track"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_motor"
+        },
+        {
+          "chance": 0.2,
+          "count": 1,
+          "name": "superbwarfare:medium_battery_pack"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 0.5,
+          "count": 4,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    },
+    {
+      "type": "TURRET_ONLY",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 2,
+          "name": "superbwarfare:steel_block"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:medium_armament_module"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "TURRET_ONLY",
+      "entries": [
+        {
+          "chance": 0.5,
+          "count": 2,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    },
+    {
+      "type": "VEHICLE_ONLY",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 2,
+          "name": "superbwarfare:steel_block"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:track"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_motor"
+        },
+        {
+          "chance": 0.2,
+          "count": 1,
+          "name": "superbwarfare:medium_battery_pack"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "VEHICLE_ONLY",
+      "entries": [
+        {
+          "chance": 0.5,
+          "count": 2,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    }
+  ]
+}

@@ -735,7 +735,7 @@
       },
       "AmmoType": [
         {
-          "Ammo": "dragonrise_reforge:large_anti_ground_missile",
+          "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false
         }
       ],

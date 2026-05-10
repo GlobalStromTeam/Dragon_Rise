@@ -1,0 +1,32 @@
+{
+  "id": {
+    "namespace": "dragonrise_reforge",
+    "path": "npds514"
+  },
+  "pools": [
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 1,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 0.2,
+          "count": 1,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    }
+  ]
+}

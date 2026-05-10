@@ -164,7 +164,7 @@
       "HeatPerShoot": 1.5,
       "NaturalCooldown": 0.5,
       "Spread": 0.5,
-      "Name": "drgonrise_reforge:m61a4",
+      "Name": "dragonrise_reforge:m61a4",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:m_60_fire_3p",

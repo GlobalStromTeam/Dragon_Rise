@@ -1,0 +1,52 @@
+{
+  "id": {
+    "namespace": "dragonrise_reforge",
+    "path": "j10"
+  },
+  "pools": [
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 5,
+          "name": "superbwarfare:steel_block"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:heavy_armament_module"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_propeller"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_motor"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_battery_pack"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 0.5,
+          "count": 5,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    }
+  ]
+}

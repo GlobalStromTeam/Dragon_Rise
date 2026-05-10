@@ -15,5 +15,7 @@ public class DataGenerators {
         var existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput));
+        generator.addProvider(event.includeServer(), new ModWreckageLootProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new GeoOBBDataProvider(packOutput, existingFileHelper));
     }
 }

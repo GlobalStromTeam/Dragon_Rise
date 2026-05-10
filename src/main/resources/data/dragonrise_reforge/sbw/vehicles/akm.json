@@ -5,81 +5,204 @@
   "OBB": [
     {
       "Size": [
-        1.5,
-        0.71875,
-        0.625
+        1.531,
+        0.531,
+        0.813
       ],
       "Position": [
-        0,
-        1.21875,
-        4.0625
+        0.0,
+        1.156,
+        4.125
       ]
     },
     {
       "Size": [
-        1.5625,
-        0.9375,
-        3.25
+        1.563,
+        0.875,
+        3.875
       ],
       "Position": [
-        0,
-        1.4375,
-        0.1875
+        0.0,
+        1.375,
+        -0.312
       ]
     },
     {
       "Size": [
-        0.21875,
-        0.53125,
-        3.34375
+        0.313,
+        0.656,
+        0.656
       ],
       "Position": [
-        1.40625,
-        0.53125,
-        0.71875
+        1.344,
+        0.656,
+        2.906
       ],
       "Part": "WheelRight"
     },
     {
       "Size": [
-        0.21875,
-        0.53125,
-        3.34375
+        0.313,
+        0.656,
+        0.656
       ],
       "Position": [
-        -1.40625,
-        0.53125,
-        0.71875
+        -1.344,
+        0.656,
+        2.906
       ],
       "Part": "WheelLeft"
     },
     {
       "Size": [
-        0.75,
-        0.375,
-        0.90625
+        1.594,
+        0.656,
+        1.531
       ],
       "Position": [
-        0.875,
-        2.0625,
-        2.59375
+        0.0,
+        1.656,
+        -3.531
       ],
       "Part": "MainEngine"
     },
     {
       "Size": [
-        1.71875,
-        0.46875,
-        1.65625
+        1.344,
+        0.5,
+        2.0
       ],
       "Position": [
-        0,
-        0.35,
-        0
+        -0.062,
+        2.25,
+        -0.562
       ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        1.406,
+        0.844,
+        0.531
+      ],
+      "Position": [
+        0.0,
+        3.594,
+        1.156
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        1.75,
+        0.219,
+        0.875
+      ],
+      "Position": [
+        0.0,
+        3.031,
+        -0.812
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        0.469,
+        1.469,
+        0.531
+      ],
+      "Position": [
+        0.0,
+        4.656,
+        -1.281
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        0.625,
+        0.313,
+        1.25
+      ],
+      "Position": [
+        -1.031,
+        3.5,
+        -0.937
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        0.625,
+        0.313,
+        1.25
+      ],
+      "Position": [
+        1.031,
+        3.5,
+        -0.937
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        0.313,
+        0.656,
+        0.656
+      ],
+      "Position": [
+        -1.344,
+        0.656,
+        -0.344
+      ]
+    },
+    {
+      "Size": [
+        0.313,
+        0.656,
+        0.656
+      ],
+      "Position": [
+        1.344,
+        0.656,
+        -0.344
+      ]
+    },
+    {
+      "Size": [
+        0.313,
+        0.656,
+        0.656
+      ],
+      "Position": [
+        -1.344,
+        0.656,
+        -3.219
+      ]
+    },
+    {
+      "Size": [
+        0.313,
+        0.656,
+        0.656
+      ],
+      "Position": [
+        1.344,
+        0.656,
+        -3.219
+      ]
     }
   ],
   "Seats": [
@@ -136,7 +259,7 @@
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "dargonrise_refroge:pgz625",
+      "Name": "dragonrise_reforge:pgz625",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -269,7 +392,7 @@
   },
   "TurretPos": [
     0,
-    2.4003,
+    0,
     0
   ],
   "TurretTurnSpeed": [

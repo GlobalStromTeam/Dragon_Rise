@@ -241,7 +241,7 @@
       "Spread": 0.5,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "CrosshairColor": "0xFFC700",
-      "Name": "drgonrise_reforge:hyr020",
+      "Name": "dragonrise_reforge:hyr020",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
         "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",

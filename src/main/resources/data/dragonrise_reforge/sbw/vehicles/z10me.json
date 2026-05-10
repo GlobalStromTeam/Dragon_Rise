@@ -322,7 +322,7 @@
       "EmptyReloadTime": 240,
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
-      "Name": "AKD-10",
+      "Name": "dragonrise_reforge:akd10",
       "Damage": 650,
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,

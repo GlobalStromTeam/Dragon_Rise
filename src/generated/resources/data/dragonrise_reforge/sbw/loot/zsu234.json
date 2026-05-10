@@ -1,0 +1,47 @@
+{
+  "id": {
+    "namespace": "dragonrise_reforge",
+    "path": "zsu234"
+  },
+  "pools": [
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 1.0,
+          "count": 4,
+          "name": "superbwarfare:steel_block"
+        },
+        {
+          "chance": 0.5,
+          "count": 2,
+          "name": "superbwarfare:cannon_core"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:track"
+        },
+        {
+          "chance": 0.5,
+          "count": 1,
+          "name": "superbwarfare:large_motor"
+        }
+      ],
+      "rolls": 1,
+      "source": "superbwarfare:repair_tool"
+    },
+    {
+      "type": "COMPLETE",
+      "entries": [
+        {
+          "chance": 0.5,
+          "count": 4,
+          "name": "superbwarfare:steel_block"
+        }
+      ],
+      "rolls": 1,
+      "source": "@Default"
+    }
+  ]
+}
