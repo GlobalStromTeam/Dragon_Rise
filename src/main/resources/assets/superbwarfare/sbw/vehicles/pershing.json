@@ -1,0 +1,8 @@
+
+{
+  "ID": "dragonrise_reforge:pershing",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/pershing.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/pershing.png"
+  }
+}

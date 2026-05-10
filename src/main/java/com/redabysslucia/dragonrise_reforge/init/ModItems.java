@@ -61,5 +61,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> SPRAY_CAN = REGISTRY.register("spray_can", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> KEVLAR = REGISTRY.register("kevlar", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> KV1_DEPLOYER = REGISTRY.register("kv1", KV1Deployer::new);
 
 }

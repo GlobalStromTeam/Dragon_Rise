@@ -6021,6 +6021,26 @@
 					"name": "SeatsCameraPos1",
 					"parent": "Obb",
 					"pivot": [-1, 66, 19]
+				},
+				{
+					"name": "TerrainCompatPos4",
+					"parent": "Obb",
+					"pivot": [24, 0, 54]
+				},
+				{
+					"name": "TerrainCompatPos1",
+					"parent": "Obb",
+					"pivot": [24, 0, -56]
+				},
+				{
+					"name": "TerrainCompatPos2",
+					"parent": "Obb",
+					"pivot": [-24, 0, 54]
+				},
+				{
+					"name": "TerrainCompatPos3",
+					"parent": "Obb",
+					"pivot": [-24, 0, -56]
 				}
 			]
 		}

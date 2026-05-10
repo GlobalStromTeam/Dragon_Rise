@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:comet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/comet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/comet.png"
+  }
+}

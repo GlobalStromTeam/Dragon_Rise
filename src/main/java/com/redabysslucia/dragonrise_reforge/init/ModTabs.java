@@ -108,6 +108,7 @@ public class ModTabs {
                         //ww2
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
@@ -117,6 +118,11 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3485.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PERSHING.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
                             }

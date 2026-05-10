@@ -144,4 +144,6 @@ tasks.named('jar', Jar).configure {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+    // 忽略过时 API 的警告，包括 ResourceLocation(String, String) 的警告
+    options.compilerArgs.add('-Xlint:-removal')
 }

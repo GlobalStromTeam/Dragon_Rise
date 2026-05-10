@@ -14,7 +14,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
@@ -68,8 +70,9 @@ public class GeoOBBDataProvider implements DataProvider {
             Map<String, JsonArray> weaponPositions = extractWeaponPositions(geoJson, barrelPivotY, turretPivotY);
             Map<Integer, JsonArray> seatsPositions = extractSeatsPositions(geoJson);
             Map<Integer, JsonArray> seatsCameraPositions = extractSeatsCameraPositions(geoJson);
+            List<JsonArray> terrainCompatPositions = extractTerrainCompatPositions(geoJson);
 
-            if (obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty()) {
+            if (obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty() && terrainCompatPositions.isEmpty()) {
                 return;
             }
 
@@ -172,6 +175,14 @@ public class GeoOBBDataProvider implements DataProvider {
                         seat.add("CameraPos", cameraPos);
                     }
                 }
+            }
+
+            if (!terrainCompatPositions.isEmpty()) {
+                JsonArray terrainCompatArray = new JsonArray();
+                for (JsonArray pos : terrainCompatPositions) {
+                    terrainCompatArray.add(pos);
+                }
+                vehicleJson.add("TerrainCompat", terrainCompatArray);
             }
 
             Files.createDirectories(vehicleFile.getParent());
@@ -441,6 +452,49 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         return seatsCameraPositions;
+    }
+
+    private List<JsonArray> extractTerrainCompatPositions(JsonObject geoJson) {
+        Map<Integer, JsonArray> tempMap = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return new ArrayList<>();
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.startsWith("TerrainCompatPos") && bone.has("pivot")) {
+                    int index = extractIndex(boneName, "TerrainCompatPos");
+                    if (index > 0) {
+                        JsonArray pivot = bone.getAsJsonArray("pivot");
+                        JsonArray position = new JsonArray();
+                        position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                        position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                        tempMap.put(index, position);
+                    }
+                }
+            }
+        }
+
+        List<JsonArray> terrainCompatPositions = new ArrayList<>();
+        int maxIndex = tempMap.keySet().stream().max(Integer::compareTo).orElse(0);
+        for (int i = 1; i <= maxIndex; i++) {
+            if (tempMap.containsKey(i)) {
+                terrainCompatPositions.add(tempMap.get(i));
+            }
+        }
+        return terrainCompatPositions;
     }
 
     private int extractIndex(String boneName, String prefix) {

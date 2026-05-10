@@ -4,6 +4,7 @@ import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
+import com.redabysslucia.dragonrise_reforge.entities.KV1Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
@@ -585,6 +586,46 @@ public class ModEntities {
                     .sized(4.0f, 2.7f)
     );
 
+    public static final RegistryObject<EntityType<ChurchillVIIEntity>> CHURCHILL_VII = register("churchill_vii",
+            EntityType.Builder.of(ChurchillVIIEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<CometEntity>> COMET = register("comet",
+            EntityType.Builder.of(CometEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<MausEntity>> MAUS = register("maus",
+            EntityType.Builder.of(MausEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.5f, 3.0f)
+    );
+
+    public static final RegistryObject<EntityType<T3485Entity>> T3485 = register("t3485",
+            EntityType.Builder.of(T3485Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<PershingEntity>> PERSHING = register("pershing",
+            EntityType.Builder.of(PershingEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
     public static final RegistryObject<EntityType<WLHGZU23Entity>> WLHGZU23 = register("wlhgzu23",
             EntityType.Builder.of(WLHGZU23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -659,6 +700,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<M10BookerEntity>> M10BOOKER = register("m10booker",
             EntityType.Builder.of(M10BookerEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(3.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<KV1Entity>> KV1 = register("kv1",
+            EntityType.Builder.of(KV1Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
