@@ -1169,12 +1169,12 @@
 				{
 					"name": "turret",
 					"parent": "root",
-					"pivot": [0, 0, -5.90625]
+					"pivot": [0, 28, -7.40625]
 				},
 				{
 					"name": "barrel",
 					"parent": "turret",
-					"pivot": [0, 43.2, 5.625]
+					"pivot": [0, 42.2, 5.625]
 				},
 				{
 					"name": "octagon3",
@@ -1921,9 +1921,7 @@
 							"pivot": [-28.24415, 45.22276, 9.37214],
 							"rotation": [0, 0, -45],
 							"uv": {
-								"north": {"uv": [118, 396], "uv_size": [2, 2]},
 								"east": {"uv": [103, 384], "uv_size": [1, 2]},
-								"south": {"uv": [396, 116], "uv_size": [2, 2]},
 								"west": {"uv": [213, 383], "uv_size": [1, 2]},
 								"up": {"uv": [357, 124], "uv_size": [-2, -1]},
 								"down": {"uv": [360, 149], "uv_size": [-2, 1]}
@@ -1935,9 +1933,7 @@
 							"pivot": [-28.24415, 45.22276, -6.37786],
 							"rotation": [0, 0, -45],
 							"uv": {
-								"north": {"uv": [396, 128], "uv_size": [2, 2]},
 								"east": {"uv": [386, 228], "uv_size": [1, 2]},
-								"south": {"uv": [396, 126], "uv_size": [2, 2]},
 								"west": {"uv": [385, 140], "uv_size": [1, 2]},
 								"up": {"uv": [106, 368], "uv_size": [-2, -1]},
 								"down": {"uv": [370, 212], "uv_size": [-2, 1]}
@@ -1949,9 +1945,7 @@
 							"pivot": [-28.24415, 41.56651, 9.37214],
 							"rotation": [0, 0, -45],
 							"uv": {
-								"north": {"uv": [396, 144], "uv_size": [2, 2]},
 								"east": {"uv": [313, 388], "uv_size": [1, 2]},
-								"south": {"uv": [396, 136], "uv_size": [2, 2]},
 								"west": {"uv": [387, 376], "uv_size": [1, 2]},
 								"up": {"uv": [285, 384], "uv_size": [-2, -1]},
 								"down": {"uv": [289, 384], "uv_size": [-2, 1]}
@@ -2741,9 +2735,7 @@
 							"pivot": [28.24415, 45.22276, 9.37214],
 							"rotation": [0, 0, 45],
 							"uv": {
-								"north": {"uv": [396, 183], "uv_size": [2, 2]},
 								"east": {"uv": [322, 396], "uv_size": [1, 2]},
-								"south": {"uv": [182, 396], "uv_size": [2, 2]},
 								"west": {"uv": [321, 396], "uv_size": [1, 2]},
 								"up": {"uv": [393, 27], "uv_size": [-2, -1]},
 								"down": {"uv": [398, 138], "uv_size": [-2, 1]}
@@ -2755,9 +2747,7 @@
 							"pivot": [28.24415, 45.22276, -6.37786],
 							"rotation": [0, 0, 45],
 							"uv": {
-								"north": {"uv": [396, 185], "uv_size": [2, 2]},
 								"east": {"uv": [396, 324], "uv_size": [1, 2]},
-								"south": {"uv": [184, 396], "uv_size": [2, 2]},
 								"west": {"uv": [323, 396], "uv_size": [1, 2]},
 								"up": {"uv": [398, 155], "uv_size": [-2, -1]},
 								"down": {"uv": [398, 168], "uv_size": [-2, 1]}
@@ -2769,9 +2759,7 @@
 							"pivot": [28.24415, 41.56651, 9.37214],
 							"rotation": [0, 0, 45],
 							"uv": {
-								"north": {"uv": [196, 396], "uv_size": [2, 2]},
 								"east": {"uv": [329, 396], "uv_size": [1, 2]},
-								"south": {"uv": [194, 396], "uv_size": [2, 2]},
 								"west": {"uv": [328, 396], "uv_size": [1, 2]},
 								"up": {"uv": [398, 201], "uv_size": [-2, -1]},
 								"down": {"uv": [398, 218], "uv_size": [-2, 1]}
@@ -5868,10 +5856,10 @@
 				{
 					"name": "TurretObb1",
 					"parent": "Obb",
-					"pivot": [0, 39.5, 9],
+					"pivot": [0, 39.5, 3],
 					"cubes": [
 						{
-							"origin": [-13.5, 28, -23],
+							"origin": [-13.5, 28, -29],
 							"size": [27, 23, 64],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5887,10 +5875,10 @@
 				{
 					"name": "TurretObb2",
 					"parent": "Obb",
-					"pivot": [0, 31.5, 1.5],
+					"pivot": [0, 31.5, -4.5],
 					"cubes": [
 						{
-							"origin": [-22.5, 28, -16],
+							"origin": [-22.5, 28, -22],
 							"size": [45, 7, 35],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5906,10 +5894,10 @@
 				{
 					"name": "TurretObb3",
 					"parent": "Obb",
-					"pivot": [0, 43, 7.5],
+					"pivot": [0, 43, 1.5],
 					"cubes": [
 						{
-							"origin": [-28, 38, -9],
+							"origin": [-28, 38, -15],
 							"size": [56, 10, 33],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5925,10 +5913,10 @@
 				{
 					"name": "TurretObb4",
 					"parent": "Obb",
-					"pivot": [0, 54, 20.5],
+					"pivot": [0, 54, 14.5],
 					"cubes": [
 						{
-							"origin": [-7.5, 51, 12],
+							"origin": [-7.5, 51, 6],
 							"size": [15, 6, 17],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5944,10 +5932,10 @@
 				{
 					"name": "TurretObb5",
 					"parent": "Obb",
-					"pivot": [0, 59.5, 35.5],
+					"pivot": [0, 59.5, 29.5],
 					"cubes": [
 						{
-							"origin": [-7.5, 51, 29],
+							"origin": [-7.5, 51, 23],
 							"size": [15, 17, 13],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5963,10 +5951,10 @@
 				{
 					"name": "TurretObb6",
 					"parent": "Obb",
-					"pivot": [0, 40.5, -29.5],
+					"pivot": [0, 40.5, -35.5],
 					"cubes": [
 						{
-							"origin": [-7.5, 33, -36],
+							"origin": [-7.5, 33, -42],
 							"size": [15, 15, 13],
 							"uv": {
 								"north": {"uv": [424, 99], "uv_size": [-2, 2]},
@@ -5978,6 +5966,61 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "CannonPos1",
+					"parent": "Obb",
+					"pivot": [-16.125, 43.0625, -63.5]
+				},
+				{
+					"name": "CannonPos2",
+					"parent": "Obb",
+					"pivot": [16.125, 43.0625, -63.5]
+				},
+				{
+					"name": "MachineGunPos",
+					"parent": "Obb",
+					"pivot": [-16.125, 43.0625, -63.5]
+				},
+				{
+					"name": "MissilePos1",
+					"parent": "Obb",
+					"pivot": [-28.375, 45.0625, -12.5]
+				},
+				{
+					"name": "MissilePos2",
+					"parent": "Obb",
+					"pivot": [-28.375, 41.3125, -12.5]
+				},
+				{
+					"name": "MissilePos3",
+					"parent": "Obb",
+					"pivot": [28.375, 41.3125, -12.5]
+				},
+				{
+					"name": "MissilePos4",
+					"parent": "Obb",
+					"pivot": [28.375, 45.0625, -12.5]
+				},
+				{
+					"name": "SeatsPos1",
+					"parent": "Obb",
+					"pivot": [0, 53, -22]
+				},
+				{
+					"name": "SeatsPos2",
+					"parent": "Obb",
+					"pivot": [11, 28, 77]
+				},
+				{
+					"name": "SeatsPos3",
+					"parent": "Obb",
+					"pivot": [-11, 28, 77]
+				},
+				{
+					"name": "SeatsCameraPos1",
+					"parent": "Obb",
+					"pivot": [-1, 66, 19]
 				}
 			]
 		}

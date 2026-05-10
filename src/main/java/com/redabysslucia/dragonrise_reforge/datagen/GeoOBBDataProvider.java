@@ -14,6 +14,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public class GeoOBBDataProvider implements DataProvider {
@@ -55,8 +57,19 @@ public class GeoOBBDataProvider implements DataProvider {
             String content = Files.readString(geoFile);
             JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
 
-            JsonArray obbList = extractOBBList(geoJson);
-            if (obbList.isEmpty()) {
+            boolean hasSeatsPos1 = checkSeatsPos1(geoJson);
+
+            JsonArray turretPos = hasSeatsPos1 ? extractTurretPos(geoJson) : null;
+            double turretPivotY = turretPos != null ? turretPos.get(1).getAsDouble() * 16.0 : 0.0;
+            JsonArray barrelPos = hasSeatsPos1 ? extractBarrelPos(geoJson) : null;
+            double barrelPosY = barrelPos != null ? barrelPos.get(1).getAsDouble() : 0.0;
+            double barrelPivotY = barrelPosY * 16.0;
+            JsonArray obbList = extractOBBList(geoJson, turretPivotY);
+            Map<String, JsonArray> weaponPositions = extractWeaponPositions(geoJson, barrelPivotY, turretPivotY);
+            Map<Integer, JsonArray> seatsPositions = extractSeatsPositions(geoJson);
+            Map<Integer, JsonArray> seatsCameraPositions = extractSeatsCameraPositions(geoJson);
+
+            if (obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty()) {
                 return;
             }
 
@@ -72,7 +85,94 @@ public class GeoOBBDataProvider implements DataProvider {
                 vehicleJson.addProperty("ID", "dragonrise_reforge:" + baseName);
             }
 
-            vehicleJson.add("OBB", obbList);
+            if (!obbList.isEmpty()) {
+                vehicleJson.add("OBB", obbList);
+            }
+
+            if (hasSeatsPos1 && turretPos != null) {
+                vehicleJson.add("TurretPos", turretPos);
+            }
+
+            if (hasSeatsPos1 && barrelPos != null) {
+                vehicleJson.add("BarrelPos", barrelPos);
+            }
+
+            if (!weaponPositions.isEmpty() && vehicleJson.has("Weapons")) {
+                JsonObject weapons = vehicleJson.getAsJsonObject("Weapons");
+                for (Map.Entry<String, JsonArray> entry : weaponPositions.entrySet()) {
+                    String weaponName = entry.getKey();
+                    JsonArray positions = entry.getValue();
+
+                    if (weapons.has(weaponName)) {
+                        JsonObject weapon = weapons.getAsJsonObject(weaponName);
+
+                        JsonObject shootPos;
+                        if (weapon.has("ShootPos")) {
+                            shootPos = weapon.getAsJsonObject("ShootPos");
+                        } else {
+                            shootPos = new JsonObject();
+                            weapon.add("ShootPos", shootPos);
+                        }
+
+                        String transform = shootPos.has("Transform") ? shootPos.get("Transform").getAsString() : "";
+
+                        JsonArray adjustedPositions = new JsonArray();
+                        for (JsonElement posElement : positions) {
+                            JsonArray pos = posElement.getAsJsonArray();
+                            JsonArray adjustedPos = new JsonArray();
+                            adjustedPos.add(pos.get(0));
+                            adjustedPos.add(pos.get(1));
+                            adjustedPos.add(pos.get(2));
+                            adjustedPositions.add(adjustedPos);
+                        }
+
+                        if (hasSeatsPos1) {
+                            if ("Barrel".equals(transform) && barrelPos != null && turretPos != null) {
+                                double barrelY = barrelPos.get(1).getAsDouble();
+                                double turretY = turretPos.get(1).getAsDouble();
+                                for (int i = 0; i < adjustedPositions.size(); i++) {
+                                    JsonArray pos = adjustedPositions.get(i).getAsJsonArray();
+                                    double y = pos.get(1).getAsDouble();
+                                    y = y - barrelY - turretY;
+                                    pos.set(1, new com.google.gson.JsonPrimitive(round(y, 3)));
+                                }
+                            } else if ("Turret".equals(transform) && turretPos != null) {
+                                double turretY = turretPos.get(1).getAsDouble();
+                                for (int i = 0; i < adjustedPositions.size(); i++) {
+                                    JsonArray pos = adjustedPositions.get(i).getAsJsonArray();
+                                    double y = pos.get(1).getAsDouble();
+                                    y = y - turretY;
+                                    pos.set(1, new com.google.gson.JsonPrimitive(round(y, 3)));
+                                }
+                            }
+                        }
+
+                        shootPos.add("Positions", adjustedPositions);
+                    }
+                }
+            }
+
+            if (!seatsPositions.isEmpty() && vehicleJson.has("Seats")) {
+                JsonArray seats = vehicleJson.getAsJsonArray("Seats");
+                for (int i = 0; i < seats.size(); i++) {
+                    JsonObject seat = seats.get(i).getAsJsonObject();
+                    int index = i + 1;
+
+                    if (seatsPositions.containsKey(index)) {
+                        seat.add("Position", seatsPositions.get(index));
+                    }
+
+                    if (seatsCameraPositions.containsKey(index)) {
+                        JsonObject cameraPos = new JsonObject();
+                        cameraPos.addProperty("UseFixedCameraPos", true);
+                        cameraPos.add("Position", seatsCameraPositions.get(index));
+                        cameraPos.addProperty("Transform", "Turret");
+                        cameraPos.add("ZoomPosition", seatsCameraPositions.get(index));
+                        cameraPos.addProperty("Direction", "Barrel");
+                        seat.add("CameraPos", cameraPos);
+                    }
+                }
+            }
 
             Files.createDirectories(vehicleFile.getParent());
             Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
@@ -82,7 +182,7 @@ public class GeoOBBDataProvider implements DataProvider {
         }
     }
 
-    private JsonArray extractOBBList(JsonObject geoJson) {
+    private JsonArray extractOBBList(JsonObject geoJson, double turretPivotY) {
         JsonArray obbList = new JsonArray();
 
         if (!geoJson.has("minecraft:geometry")) {
@@ -111,7 +211,7 @@ public class GeoOBBDataProvider implements DataProvider {
 
                 JsonObject obbEntry = new JsonObject();
                 obbEntry.add("Size", extractSize(bone));
-                obbEntry.add("Position", extractPosition(bone));
+                obbEntry.add("Position", extractOBBPosition(bone, turretPivotY, boneName));
 
                 if (boneName.equals("MainEngineObb")) {
                     obbEntry.addProperty("Part", "MainEngine");
@@ -132,6 +232,241 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         return obbList;
+    }
+
+    private JsonArray extractOBBPosition(JsonObject bone, double turretPivotY, String boneName) {
+        JsonArray position = new JsonArray();
+        if (bone.has("pivot")) {
+            JsonArray pivot = bone.getAsJsonArray("pivot");
+            double yValue = pivot.get(1).getAsDouble();
+
+            if (boneName.startsWith("TurretObb") && !boneName.equals("TurretObb")) {
+                yValue = yValue - turretPivotY;
+            }
+
+            position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+            position.add(round(yValue / 16.0, 3));
+            position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+        }
+        return position;
+    }
+
+    private JsonArray extractTurretPos(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return null;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.equalsIgnoreCase("turret") && bone.has("pivot")) {
+                    JsonArray pivot = bone.getAsJsonArray("pivot");
+                    JsonArray position = new JsonArray();
+                    position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                    position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                    position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                    return position;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private JsonArray extractBarrelPos(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return null;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.equalsIgnoreCase("barrel") && bone.has("pivot")) {
+                    JsonArray pivot = bone.getAsJsonArray("pivot");
+                    JsonArray position = new JsonArray();
+                    position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                    position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                    position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                    return position;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private Map<String, JsonArray> extractWeaponPositions(JsonObject geoJson, double barrelY, double turretY) {
+        Map<String, JsonArray> weaponPositions = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return weaponPositions;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.startsWith("CannonPos") && bone.has("pivot")) {
+                    addWeaponPosition(weaponPositions, "Cannon", boneName, "CannonPos", bone, barrelY, turretY);
+                } else if (boneName.startsWith("MachineGunPos") && bone.has("pivot")) {
+                    addWeaponPosition(weaponPositions, "MachineGun", boneName, "MachineGunPos", bone, barrelY, turretY);
+                } else if (boneName.startsWith("MissilePos") && bone.has("pivot")) {
+                    addWeaponPosition(weaponPositions, "Missile", boneName, "MissilePos", bone, barrelY, turretY);
+                }
+            }
+        }
+
+        return weaponPositions;
+    }
+
+    private boolean checkSeatsPos1(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.equals("SeatsPos1")) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private Map<Integer, JsonArray> extractSeatsPositions(JsonObject geoJson) {
+        Map<Integer, JsonArray> seatsPositions = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return seatsPositions;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.startsWith("SeatsPos") && bone.has("pivot")) {
+                    int index = extractIndex(boneName, "SeatsPos");
+                    if (index > 0) {
+                        JsonArray pivot = bone.getAsJsonArray("pivot");
+                        JsonArray position = new JsonArray();
+                        position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.65, 3));
+                        position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                        seatsPositions.put(index, position);
+                    }
+                }
+            }
+        }
+
+        return seatsPositions;
+    }
+
+    private Map<Integer, JsonArray> extractSeatsCameraPositions(JsonObject geoJson) {
+        Map<Integer, JsonArray> seatsCameraPositions = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return seatsCameraPositions;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+
+                if (boneName.startsWith("SeatsCameraPos") && bone.has("pivot")) {
+                    int index = extractIndex(boneName, "SeatsCameraPos");
+                    if (index > 0) {
+                        JsonArray pivot = bone.getAsJsonArray("pivot");
+                        JsonArray position = new JsonArray();
+                        position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.65, 3));
+                        position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                        seatsCameraPositions.put(index, position);
+                    }
+                }
+            }
+        }
+
+        return seatsCameraPositions;
+    }
+
+    private int extractIndex(String boneName, String prefix) {
+        try {
+            String numberPart = boneName.substring(prefix.length());
+            return Integer.parseInt(numberPart);
+        } catch (NumberFormatException e) {
+            return -1;
+        }
+    }
+
+    private void addWeaponPosition(Map<String, JsonArray> weaponPositions, String weaponName, String boneName, String prefix, JsonObject bone, double barrelY, double turretY) {
+        JsonArray positions;
+        if (weaponPositions.containsKey(weaponName)) {
+            positions = weaponPositions.get(weaponName);
+        } else {
+            positions = new JsonArray();
+            weaponPositions.put(weaponName, positions);
+        }
+
+        JsonArray pivot = bone.getAsJsonArray("pivot");
+        JsonArray pos = new JsonArray();
+        pos.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+        pos.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+        pos.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+        positions.add(pos);
     }
 
     private JsonArray extractSize(JsonObject bone) {

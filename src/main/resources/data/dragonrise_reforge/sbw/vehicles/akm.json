@@ -74,7 +74,7 @@
       ],
       "Position": [
         -0.062,
-        2.25,
+        -0.156,
         -0.562
       ],
       "Part": "Turret",
@@ -89,7 +89,7 @@
       ],
       "Position": [
         0.0,
-        3.594,
+        1.188,
         1.156
       ],
       "Part": "Turret",
@@ -104,7 +104,7 @@
       ],
       "Position": [
         0.0,
-        3.031,
+        0.625,
         -0.812
       ],
       "Part": "Turret",
@@ -119,7 +119,7 @@
       ],
       "Position": [
         0.0,
-        4.656,
+        2.25,
         -1.281
       ],
       "Part": "Turret",
@@ -134,7 +134,7 @@
       ],
       "Position": [
         -1.031,
-        3.5,
+        1.094,
         -0.937
       ],
       "Part": "Turret",
@@ -149,7 +149,7 @@
       ],
       "Position": [
         1.031,
-        3.5,
+        1.094,
         -0.937
       ],
       "Part": "Turret",
@@ -209,23 +209,28 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "Transform": "Barrel",
+        "UseFixedCameraPos": true,
+        "Position": [
+          -0.062,
+          2.975,
+          -0.187
+        ],
+        "Transform": "Turret",
         "ZoomPosition": [
-          0.8653125,
-          0.68609375,
-          -0.61625
+          -0.062,
+          2.975,
+          -0.187
         ],
         "Direction": "Barrel"
       },
       "Weapons": [
-        "Cannon",
-        "DriverAAMissile"
+        "AAMissile"
       ],
       "Transform": "Turret",
       "Position": [
-        0.36,
-        -0.45,
-        0.56
+        0.563,
+        0.288,
+        3.5
       ],
       "CanRotateHead": false,
       "MinPitch": -5,
@@ -239,61 +244,7 @@
     }
   ],
   "Weapons": {
-    "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:small_cannon_shell",
-      "IsAntiAirProjectile": true,
-      "DefaultZoom": 4,
-      "RPM": 1200,
-      "Velocity": 30,
-      "Damage": 40,
-      "Magazine": 800,
-      "EmptyReloadTime": 800,
-      "RecoilTime": 60,
-      "RecoilForce": 0.3,
-      "Spread": 1,
-      "HeatPerShoot": 0.1,
-      "NaturalCooldown": 1,
-      "ShootAnimationTime": 3,
-      "Crosshair": "@VehicleUsApc",
-      "CrosshairColor": "0x66FF00",
-      "Name": "dragonrise_reforge:pgz625",
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
-        "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:lav_150_cannon_far",
-        "Fire3PVeryFar": "superbwarfare:lav_150_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
-      },
-      "SoundRadius": 24,
-      "AmmoType": "superbwarfare:small_shell_ap",
-      "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [
-            0.02,
-            0.0517,
-            0.5
-          ]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
-      },
-      "SeekWeaponInfo": {
-        "SeekDirection": "Barrel",
-        "SeekRange": 384,
-        "SeekAngle": 20,
-        "SeekTime": 20,
-        "MinTargetHeight": 3,
-        "MinTargetSize": 0.1,
-        "OnlyLockEntity": true,
-        "CalculateTrajectory": true
-      }
-    },
-    "DriverAAMissile": {
+    "AAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_fb10.png",
       "DefaultZoom": 4,
@@ -391,9 +342,9 @@
     "SteeringSpeed": 0.07
   },
   "TurretPos": [
-    0,
-    0,
-    0
+    0.0,
+    2.406,
+    0.0
   ],
   "TurretTurnSpeed": [
     12.5,
@@ -404,9 +355,9 @@
     32.5
   ],
   "BarrelPos": [
-    0.0234375,
-    0.33795,
-    0.825
+    0.0,
+    3.369,
+    0.963
   ],
   "ThirdPersonCameraPos": [
     0,

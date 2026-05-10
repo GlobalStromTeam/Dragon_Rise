@@ -10145,6 +10145,46 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "SeatsPos1",
+					"parent": "Obb",
+					"pivot": [9, 31, -56]
+				},
+				{
+					"name": "SeatsCameraPos1",
+					"parent": "Obb",
+					"pivot": [-1, 74, 3]
+				},
+				{
+					"name": "MissilePos2",
+					"parent": "Obb",
+					"pivot": [-15.375, 71.0625, -3.5]
+				},
+				{
+					"name": "MissilePos3",
+					"parent": "Obb",
+					"pivot": [-9.375, 71.0625, -3.5]
+				},
+				{
+					"name": "MissilePos1",
+					"parent": "Obb",
+					"pivot": [-22.375, 71.0625, -3.5]
+				},
+				{
+					"name": "MissilePos6",
+					"parent": "Obb",
+					"pivot": [22.375, 71.0625, -3.5]
+				},
+				{
+					"name": "MissilePos5",
+					"parent": "Obb",
+					"pivot": [9.375, 71.0625, -3.5]
+				},
+				{
+					"name": "MissilePos4",
+					"parent": "Obb",
+					"pivot": [15.375, 71.0625, -3.5]
 				}
 			]
 		}
