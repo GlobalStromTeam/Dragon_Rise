@@ -1,0 +1,26 @@
+{
+  "type": "superbwarfare:vehicle_assembly",
+  "pattern": [
+    "PPP",
+    "AAA",
+    "BBB"
+  ],
+  "key": {
+    "P": {
+      "item": "superbwarfare:steel_plate"
+    },
+    "A": {
+      "item": "superbwarfare:heavy_armament_module"
+    },
+    "B": {
+      "item": "superbwarfare:engine_module"
+    }
+  },
+  "result": {
+    "item": "superbwarfare:vehicle_item",
+    "nbt": {
+      "EntityType": "dragonrise_reforge:ac130"
+    }
+  },
+  "energyCost": 1000000
+}

@@ -54,6 +54,9 @@ public class ModItems {
     public static final RegistryObject<Item> OCEAN07_CHEST = REGISTRY.register("ocean07_chest", Ocean07Chest::new);
     public static final RegistryObject<Item> OCEAN07_PANTS = REGISTRY.register("ocean07_pants", Ocean07Pants::new);
     public static final RegistryObject<Item> ARMY07HAT = REGISTRY.register("army07hat", Army07Hat::new);
+    public static final RegistryObject<Item> KR06_HELMET = REGISTRY.register("kr06_helmet", KR06Helmet::new);
+    public static final RegistryObject<Item> KR06_CHEST = REGISTRY.register("kr06_chest", KR06Chest::new);
+    public static final RegistryObject<Item> KR06_PANTS = REGISTRY.register("kr06_pants", KR06Pants::new);
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));

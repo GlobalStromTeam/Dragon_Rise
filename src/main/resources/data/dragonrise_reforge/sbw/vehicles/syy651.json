@@ -330,6 +330,7 @@
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",
+  "Gravity": 0.0,
   "EngineInfo": {
     "HasGear": false,
     "EnergyCostRate": 512,
@@ -338,7 +339,7 @@
     "PitchSpeed": 1.25,
     "YawSpeed": 1.25,
     "RollSpeed": 1.25,
-    "LiftSpeed": 1.25,
+    "LiftSpeed": 0,
     "SpeedRate": 1.2,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:jet_engine_start",

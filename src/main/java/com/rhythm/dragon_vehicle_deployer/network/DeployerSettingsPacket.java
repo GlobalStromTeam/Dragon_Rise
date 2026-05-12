@@ -53,7 +53,7 @@ public class DeployerSettingsPacket {
             blockEntity.setChanged();
 
             player.displayClientMessage(
-                    Component.translatable("gui.dragon_vehicle_deployer.save_success").withStyle(ChatFormatting.GREEN), true);
+                    Component.translatable("gui.dragonrise_reforge.save_success").withStyle(ChatFormatting.GREEN), true);
         });
         ctx.get().setPacketHandled(true);
     }

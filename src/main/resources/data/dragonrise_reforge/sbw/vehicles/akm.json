@@ -253,7 +253,7 @@
       "Magazine": 8,
       "EmptyReloadTime": 320,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge.missile_fb10",
+      "Name": "dragonrise_reforge:missile_fb10",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
@@ -401,7 +401,7 @@
     "ExplosionDamage": 80,
     "ExplosionRadius": 4
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/625e_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/akm_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ru_land.png",
   "Type": "APC",
   "CollisionLevel": {

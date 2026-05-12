@@ -626,6 +626,14 @@ public class ModEntities {
                     .sized(4.0f, 2.7f)
     );
 
+    public static final RegistryObject<EntityType<AC130Entity>> AC130 = register("ac130",
+            EntityType.Builder.of(AC130Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(6.0f, 4.0f)
+    );
+
     public static final RegistryObject<EntityType<WLHGZU23Entity>> WLHGZU23 = register("wlhgzu23",
             EntityType.Builder.of(WLHGZU23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)

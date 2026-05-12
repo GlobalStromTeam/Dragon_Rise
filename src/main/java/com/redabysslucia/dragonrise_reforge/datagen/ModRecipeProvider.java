@@ -212,5 +212,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('L', Tags.Items.DYES_LIGHT_BLUE)
                 .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
                 .save(writer, loc(getItemName(ModItems.UN_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.KR06_HELMET.get())
+                .pattern("KNK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('N', Tags.Items.DYES_BLACK)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.KR06_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.KR06_CHEST.get())
+                .pattern("KNK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('N', Tags.Items.DYES_BLACK)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.KR06_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.KR06_PANTS.get())
+                .pattern("KNK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('N', Tags.Items.DYES_BLACK)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.KR06_PANTS.get())));
     }
 }

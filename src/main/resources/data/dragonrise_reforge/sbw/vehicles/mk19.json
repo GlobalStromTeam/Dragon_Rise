@@ -88,7 +88,7 @@
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:grenade_40mm",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/em.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/grenade.png",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [

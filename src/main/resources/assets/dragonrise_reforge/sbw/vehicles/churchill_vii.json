@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:churchill_vii",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/churchill_vii.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
+  }
+}

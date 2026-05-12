@@ -1,0 +1,8 @@
+{
+  "ID": "dragonrise_reforge:ac130",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/ac130.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ac130.png"
+  },
+  "MouseSpeed": [0.23, 0.23]
+}

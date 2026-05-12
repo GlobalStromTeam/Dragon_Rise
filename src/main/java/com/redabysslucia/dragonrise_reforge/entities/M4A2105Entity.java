@@ -13,8 +13,28 @@ import org.joml.Vector4d;
 
 @SuppressWarnings("removal")
 public class M4A2105Entity extends FireLightVisionVehicle {
+    private float prevYRot;
+
     public M4A2105Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        
+        float yRotDelta = this.getYRot() - prevYRot;
+        
+        if (Math.abs(yRotDelta) > 0.01f) {
+            for (Entity passenger : this.getPassengers()) {
+                if (passenger instanceof Player player) {
+                    player.setYHeadRot(player.getYHeadRot() + yRotDelta);
+                    player.setYRot(player.getYRot() + yRotDelta);
+                }
+            }
+        }
+        
+        prevYRot = this.getYRot();
     }
 
     @Override

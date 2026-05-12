@@ -403,22 +403,22 @@
     "CrashPassengers": true
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/camel_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/uk_aircraft.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",
   "EngineInfo": {
     "HasGear": false,
-    "EnergyCostRate": 120,
-    "Increment": 1.8,
-    "Decrement": 0.8,
-    "PitchSpeed": 1.2,
-    "YawSpeed": 1.2,
-    "RollSpeed": 1.2,
-    "LiftSpeed": 1.25,
-    "SpeedRate": 0.32,
+    "EnergyCostRate": 512,
+    "Increment": 0.2,
+    "Decrement": 0.1,
+    "PitchSpeed": 1.25,
+    "YawSpeed": 1.25,
+    "RollSpeed": 1.25,
+    "LiftSpeed": 1.5,
+    "SpeedRate": 0.95,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:plane_start1",
-    "EngineSoundVolume": 1
+    "EngineSoundVolume": 0.8
   },
   "TerrainCompat": [
     [

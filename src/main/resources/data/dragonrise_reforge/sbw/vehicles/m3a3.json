@@ -322,7 +322,7 @@
       "Spread": 0.5,
       "RPM": 30,
       "CrosshairColor": "0xFFC700",
-      "Name": "dragon_rise:tow",
+      "Name": "dragonrise_reforge:tow",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 2,

@@ -107,8 +107,21 @@
   ],
   "Seats": [
     {
+      "Transform": "Vehicle",
+      "Position": [1, 0.8375, 2.656],
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95,
+      "DismountInfo": {
+        "Transform": "Vehicle",
+        "Position": [2.5, 0.375, 2.656]
+      }
+    },
+    {
       "HidePassenger": true,
       "CameraPos": {
+        "Direction": "Barrel",
         "UseFixedCameraPos": true,
         "Position": [
           -0.33113125,
@@ -133,14 +146,13 @@
         "MachineGun"
       ],
       "CanRotateHead": false,
-      "MinPitch": -9,
+      "MinPitch": -10,
       "MaxPitch": 25,
       "Sensitivity": [
-        0.42,
-        0.7,
-        0.9
-      ],
-      "HasThermalImaging": true
+        0.3,
+        0.5,
+        0.7
+      ]
     }
   ],
   "Weapons": {
@@ -311,10 +323,10 @@
   ],
   "TurretTurnSpeed": [
     0.2,
-    0.4
+    0.52
   ],
   "TurretPitchRange": [
-    -8,
+    -10,
     25
   ],
   "PassengerWeaponStationPos": [

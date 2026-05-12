@@ -405,8 +405,8 @@
     1.5,
     4.2
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/amx56_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/dr_land.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/churchill_vii_icon.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/uk_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,

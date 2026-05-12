@@ -330,7 +330,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge.missile_fb10",
+      "Name": "dragonrise_reforge:missile_fb10",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,

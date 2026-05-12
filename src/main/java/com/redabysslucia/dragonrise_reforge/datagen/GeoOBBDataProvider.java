@@ -155,7 +155,7 @@ public class GeoOBBDataProvider implements DataProvider {
                 }
             }
 
-            if (!seatsPositions.isEmpty() && vehicleJson.has("Seats")) {
+            if (hasSeatsPos1 && !seatsPositions.isEmpty() && vehicleJson.has("Seats")) {
                 JsonArray seats = vehicleJson.getAsJsonArray("Seats");
                 for (int i = 0; i < seats.size(); i++) {
                     JsonObject seat = seats.get(i).getAsJsonObject();
@@ -166,13 +166,19 @@ public class GeoOBBDataProvider implements DataProvider {
                     }
 
                     if (seatsCameraPositions.containsKey(index)) {
-                        JsonObject cameraPos = new JsonObject();
-                        cameraPos.addProperty("UseFixedCameraPos", true);
-                        cameraPos.add("Position", seatsCameraPositions.get(index));
-                        cameraPos.addProperty("Transform", "Turret");
-                        cameraPos.add("ZoomPosition", seatsCameraPositions.get(index));
-                        cameraPos.addProperty("Direction", "Barrel");
-                        seat.add("CameraPos", cameraPos);
+                        JsonObject cameraPos;
+                        if (seat.has("CameraPos")) {
+                            cameraPos = seat.getAsJsonObject("CameraPos");
+                            cameraPos.add("Position", seatsCameraPositions.get(index));
+                        } else {
+                            cameraPos = new JsonObject();
+                            cameraPos.addProperty("UseFixedCameraPos", true);
+                            cameraPos.add("Position", seatsCameraPositions.get(index));
+                            cameraPos.addProperty("Transform", "Turret");
+                            cameraPos.add("ZoomPosition", seatsCameraPositions.get(index));
+                            cameraPos.addProperty("Direction", "Barrel");
+                            seat.add("CameraPos", cameraPos);
+                        }
                     }
                 }
             }
@@ -183,6 +189,11 @@ public class GeoOBBDataProvider implements DataProvider {
                     terrainCompatArray.add(pos);
                 }
                 vehicleJson.add("TerrainCompat", terrainCompatArray);
+            }
+
+            if (vehicleJson.has("VehicleIcon")) {
+                String iconPath = "dragonrise_reforge:textures/vehicle_icon/" + baseName + "_icon.png";
+                vehicleJson.addProperty("VehicleIcon", iconPath);
             }
 
             Files.createDirectories(vehicleFile.getParent());
