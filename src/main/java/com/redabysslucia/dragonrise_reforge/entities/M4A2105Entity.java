@@ -1,18 +1,19 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.mojang.math.Axis;
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
-import net.minecraft.util.Mth;
+import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import org.joml.Matrix4d;
-import org.joml.Vector4d;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
-public class M4A2105Entity extends FireLightVisionVehicle {
+public class M4A2105Entity extends FireLightVisionVehicle implements IVehicleBackground {
     private float prevYRot;
 
     public M4A2105Entity(EntityType<?> pEntityType, Level pLevel) {
@@ -54,6 +55,25 @@ public class M4A2105Entity extends FireLightVisionVehicle {
 //    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 //        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
 //    }
+
+    @OnlyIn(Dist.CLIENT)
+    @Override
+    public ResourceLocation getBackgroundTexture() {
+        var mc = net.minecraft.client.Minecraft.getInstance();
+        var player = mc.player;
+        if (player == null) return null;
+
+        var seatIndex = getSeatIndex(player);
+        // 一号位背景
+        if (seatIndex == 0) {
+            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
+        }
+        // 二号位背景
+        else if (seatIndex == 1) {
+            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/shermancroos.png");
+        }
+        return null;
+    }
 
     @Override
     public int getTrackAnimationLength() {

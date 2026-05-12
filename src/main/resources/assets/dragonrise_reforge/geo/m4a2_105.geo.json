@@ -7305,7 +7305,7 @@
 				{
 					"name": "MachineGunPos",
 					"parent": "Obb",
-					"pivot": [6.50625, 42.07188, -18.475]
+					"pivot": [5.50625, 40.07188, -18.475]
 				},
 				{
 					"name": "SeatsPos1",
@@ -7330,7 +7330,7 @@
 				{
 					"name": "SeatsCameraPos2",
 					"parent": "Obb",
-					"pivot": [-5.25, 42.5, -17.5]
+					"pivot": [-3, 41.5, -18]
 				},
 				{
 					"name": "TerrainCompatPos4",

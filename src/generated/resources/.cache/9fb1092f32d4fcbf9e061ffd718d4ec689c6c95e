@@ -1,4 +1,4 @@
-// 1.20.1	2026-05-10T09:17:49.8192626	Recipes
+// 1.20.1	2026-05-12T10:25:22.0727218	Recipes
 42dfa9cb35037386979864faa8933fb5205fcb48 data/dragonrise_reforge/advancements/recipes/combat/aljin_helmet.json
 75ed8f77b276abf695c65502f138b1d0711ebecf data/dragonrise_reforge/advancements/recipes/combat/desert07_chest.json
 8791f9a83cc020e9a390a6368232f99151495b21 data/dragonrise_reforge/advancements/recipes/combat/desert07_helmet.json
@@ -26,6 +26,9 @@ d8690fa913816038d00844f7994f23a35fad86c0 data/dragonrise_reforge/recipes/desert0
 b81dadf6f26bf3efa7e8c1231f13d6f30a6d611f data/dragonrise_reforge/recipes/gorka3.json
 9c3d1da8cc534161385109f2b03e6d223b67adac data/dragonrise_reforge/recipes/gorka3_leggings.json
 56c428b20cb0da33b76975bf35d1540a08e3af64 data/dragonrise_reforge/recipes/kevlar.json
+d57493393a729e4b07199a5d0540437bcf1a533e data/dragonrise_reforge/recipes/kr06_chest.json
+870dd892adc93a3980b9a1686aa6b5d294645852 data/dragonrise_reforge/recipes/kr06_helmet.json
+cefa3dcdc1ed1ed8c18378ca964486b5af81a218 data/dragonrise_reforge/recipes/kr06_pants.json
 c0057681f51d54a6d2565080ad3bd06b0288dcfd data/dragonrise_reforge/recipes/med21_chest.json
 761e33169112085fb967e775977f6bcbcedea16c data/dragonrise_reforge/recipes/msv_chest.json
 a04e43f83972a3d24989e32b8ecb3e4ca088ec54 data/dragonrise_reforge/recipes/msv_pants.json
