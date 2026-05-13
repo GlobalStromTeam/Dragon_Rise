@@ -50,25 +50,25 @@ public class ZTZ99AEntity extends NightVisionVehicle implements IVehicleBackgrou
         return new ResourceLocation("shaders/post/night-vision-wp.json");
     }
 
-    @Override
-    public int getTrackAnimationLength() {
-        return 80;
-    }
-
-    @Override
-    public float getTurretMaxHealth() {
-        return 100;
-    }
-
-    @Override
-    public float getWheelMaxHealth() {
-        return 100;
-    }
-
-    @Override
-    public float getEngineMaxHealth() {
-        return 150;
-    }
+//    @Override
+//    public int getTrackAnimationLength() {
+//        return 80;
+//    }
+//
+//    @Override
+//    public float getTurretMaxHealth() {
+//        return 100;
+//    }
+//
+//    @Override
+//    public float getWheelMaxHealth() {
+//        return 100;
+//    }
+//
+//    @Override
+//    public float getEngineMaxHealth() {
+//        return 150;
+//    }
 
     @Override
     @OnlyIn(Dist.CLIENT)
