@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:ztz99bh",
+  "ID": "dragonrise_reforge:ztz99a",
   "MaxHealth": 400,
   "MaxEnergy": 20000000,
   "OBB": [
@@ -101,30 +101,15 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "UseFixedCameraPos": true,
-        "Position": [
-          0.8046875,
-          0.8694375,
-          0.414025
-        ],
+        "UseFixedCameraPos": false,
+        "Position": [0.78125, 0.890625, 0.421875],
         "Transform": "Barrel",
-        "ZoomPosition": [
-          0.8046875,
-          0.8694375,
-          0.414025
-        ],
+        "ZoomPosition": [0.78125, 0.890625, 0.421875],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [
-        0.8,
-        -0.6,
-        0.45
-      ],
-      "Weapons": [
-        "Cannon",
-        "MachineGun"
-      ],
+      "Position": [0.8, -0.6, 0.45],
+      "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
@@ -137,27 +122,23 @@
     },
     {
       "HidePassenger": true,
-      "Transform": "Turret",
+      "Transform": "WeaponStation",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [
-          0,
-          0.7,
-          0
-        ],
+        "ZoomPosition": [0, 0.5, 0],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [
-        -1.04,
-        0.5,
-        -1.72
+        0,
+        0,
+        0
       ],
       "Weapons": [
         "PassengerMachineGun"
       ],
       "CanRotateHead": false,
-      "MinPitch": -10,
-      "MaxPitch": 45,
+      "MinPitch": -6,
+      "MaxPitch": 85,
       "Sensitivity": [
         0.57,
         0.75,
@@ -261,7 +242,7 @@
               "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
               "VehicleReload3p": "superbwarfare:medium_missile_reload",
               "VehicleReloadSoundTime": 28,
-              "Change": "superbwarfare:into_missile"
+              "Change": "dragonrise_reforge:ztz99a_reload"
             },
             "SoundRadius": 12,
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_125.png"
@@ -269,11 +250,11 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
-        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "Fire1P": "superbwarfare:ztz_99a_fire_1p",
+        "Fire3P": "superbwarfare:ztz_99a_fire_3p",
+        "Fire3PFar": "superbwarfare:ztz_99a_far",
+        "Fire3PVeryFar": "superbwarfare:ztz_99a_veryfar",
+        "VehicleReload": "superbwarfare:ztz_99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
           "dragonrise_reforge:ztz99a_reload"
@@ -330,11 +311,11 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:qbz_191_fire_1p",
-        "Fire3P": "superbwarfare:qbz_191_fire_3p",
-        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
-        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
-        "Change": "dragonrise_reforge:ztz99a_reload"
+        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire3P": "superbwarfare:qbz_95_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_95_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_95_veryfar",
+        "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 16
     },
@@ -394,51 +375,41 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.885,
     "MaxBackwardSpeedRate": 0.54,
-    "Increment": 0.0054,
-    "Decrement": 0.0076,
-    "SteeringSpeed": 0.12,
+    "Increment": 0.01,
+    "Decrement": 0.012,
+    "SteeringSpeed": 0.13,
     "EngineSoundVolume": 1.0
   },
-  "TurretPos": [
-    0,
-    1.93,
-    0.25
-  ],
-  "BarrelPos": [
-    0,
-    0.05,
-    0.6477125
-  ],
-  "TurretTurnSpeed": [
-    2.625,
-    3.575
-  ],
+  "TurretPos": [0.0, 1.875, 0.1875],
+  "BarrelPos": [0, 0.05, 0.6477125],
+  "TurretTurnSpeed": [2.625, 3.575],
+  "TurretCustomPitch": 2.5,
   "TurretPitchRange": [
     -7,
     15
   ],
   "PassengerWeaponStationPos": [
-    -1.047,
+    -0.75,
     1.1,
-    -1.71
+    -0.45
   ],
   "PassengerWeaponStationBarrelPos": [
     0,
     0.35984375,
-    0
+    0.05
   ],
   "PassengerWeaponStationTurnSpeed": [
     15.75,
     8.47
   ],
   "PassengerWeaponStationPitchRange": [
-    -10,
-    45
+    -6,
+    85
   ],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
-  "Mass": 60,
+  "Mass": 55,
   "DamageModifiers": [
     "minecraft:lava - -20",
     "minecraft:lava * 10",
@@ -452,7 +423,7 @@
     "minecraft:player_attack 0",
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile 0",
-    "All * 0.25",
+    "All * 0.3",
     "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
@@ -463,7 +434,7 @@
     "superbwarfare:grapeshot_hit * 0.1",
     "#superbwarfare:projectile_absolute * 0.15",
     "@superbwarfare:igla_9k38_missile * 0.3",
-    "@superbwarfare:small_cannon_shell * 0.25",
+    "@superbwarfare:small_cannon_shell * 0.40",
     "@superbwarfare:c4 * 4",
     "@#superbwarfare:at_rocket * 1.1",
     "@superbwarfare:gun_grenade * 1.25",
@@ -481,7 +452,7 @@
     1.5,
     4
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz99bh_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ztz99a_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_land.png",
   "Type": "Tank",
   "CollisionLevel": {
@@ -555,32 +526,32 @@
     ],
     [
       2,
-      -0.3,
+      0,
       -0.8125
     ],
     [
       -2,
-      -0.3,
+      0,
       -0.8125
     ],
     [
       2,
-      -0.3,
+      0,
       -1.8125
     ],
     [
       -2,
-      -0.3,
+      0,
       -1.8125
     ],
     [
       2,
-      -0.3,
+      0,
       -2.8125
     ],
     [
       -2,
-      -0.3,
+      0,
       -2.8125
     ]
   ]

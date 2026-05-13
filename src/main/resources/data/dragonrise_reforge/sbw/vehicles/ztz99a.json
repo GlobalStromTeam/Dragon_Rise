@@ -125,7 +125,7 @@
       "Transform": "WeaponStation",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0, 1, 0],
+        "ZoomPosition": [0, 0.5, 0],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [
@@ -257,7 +257,7 @@
         "VehicleReload": "superbwarfare:ztz_99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "superbwarfare:ztz_99a_reload"
+          "dragonrise_reforge:ztz99a_reload"
         ]
       },
       "SoundRadius": 32,
