@@ -16,13 +16,26 @@
 					"pivot": [0.76901, 0, -10]
 				},
 				{
-					"name": "turret",
+					"name": "turretRot",
 					"parent": "base",
-					"pivot": [2.12581, 47.9968, 11.3696]
+					"pivot": [2.12581, 31.6968, 11.3696],
+					"rotation": [1.75, 0, 0]
+				},
+				{
+					"name": "turret",
+					"parent": "turretRot",
+					"pivot": [2.1258, 31.6968, 11.3696],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "batter",
+					"parent": "turret",
+					"pivot": [2.1258, 31.6968, 11.3696],
+					"rotation": [-1.75, 0, 0]
 				},
 				{
 					"name": "mainturret",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [-0.33339, -2.2048, 3.144],
 					"cubes": [
 						{
@@ -1022,7 +1035,7 @@
 				},
 				{
 					"name": "turretdeco",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [0.76901, -0.3392, -10],
 					"cubes": [
 						{
@@ -1419,7 +1432,7 @@
 				},
 				{
 					"name": "fence2",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [-5.1434, 36.93874, 10.7631],
 					"cubes": [
 						{
@@ -1578,7 +1591,7 @@
 				},
 				{
 					"name": "smoke",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [0.76901, -0.3392, -10],
 					"cubes": [
 						{
@@ -1753,7 +1766,7 @@
 				},
 				{
 					"name": "turretarmor",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [0.76901, -0.3392, -10],
 					"cubes": [
 						{
@@ -1984,7 +1997,7 @@
 				},
 				{
 					"name": "barrel",
-					"parent": "turret",
+					"parent": "batter",
 					"pivot": [5.15961, 35.67198, -2.76611],
 					"cubes": [
 						{

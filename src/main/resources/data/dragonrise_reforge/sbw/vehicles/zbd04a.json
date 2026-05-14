@@ -87,15 +87,15 @@
       "HidePassenger": true,
       "Transform": "Turret",
       "Position": [
-        0.634425,
-        -1.20761875,
-        -0.390325
+        0.73629375,
+        -2.098225,
+        0.6659
       ],
       "CanRotateHead": false,
       "MinPitch": -6,
       "MaxPitch": 60,
       "CameraPos": {
-        "UseFixedCameraPos": true,
+        "UseFixedCameraPos": false,
         "Position": [
           0.73629375,
           -0.398225,
@@ -409,11 +409,12 @@
     "TrackDifferential": 0.8,
     "MaxForwardSpeedRate": 0.82,
     "MaxBackwardSpeedRate": 0.27,
-    "Increment": 0.008,
+    "Increment": 0.009,
     "Decrement": 0.039,
     "SteeringSpeed": 0.195,
     "EngineSoundVolume": 1.0
   },
+  "TurretCustomPitch": 1.75,
   "TurretPos": [
     0.1328625,
     2.9998,

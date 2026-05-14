@@ -101,30 +101,15 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "UseFixedCameraPos": true,
-        "Position": [
-          0.8046875,
-          0.8694375,
-          0.414025
-        ],
+        "UseFixedCameraPos": false,
+        "Position": [0.78125, 0.890625, 0.421875],
         "Transform": "Barrel",
-        "ZoomPosition": [
-          0.8046875,
-          0.8694375,
-          0.414025
-        ],
+        "ZoomPosition": [0.78125, 0.890625, 0.421875],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [
-        0.8,
-        -0.6,
-        0.45
-      ],
-      "Weapons": [
-        "Cannon",
-        "MachineGun"
-      ],
+      "Position": [0.8, -0.6, 0.45],
+      "Weapons": ["Cannon", "MachineGun"],
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
@@ -140,11 +125,7 @@
       "Transform": "WeaponStation",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [
-          0,
-          0.1,
-          0
-        ],
+        "ZoomPosition": [0, 0.5, 0],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [
@@ -269,11 +250,11 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:ztz99a_fire_1p",
-        "Fire3P": "dragonrise_reforge:ztz99a_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:ztz99a_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:ztz99a_reload",
+        "Fire1P": "superbwarfare:ztz_99a_fire_1p",
+        "Fire3P": "superbwarfare:ztz_99a_fire_3p",
+        "Fire3PFar": "superbwarfare:ztz_99a_far",
+        "Fire3PVeryFar": "superbwarfare:ztz_99a_veryfar",
+        "VehicleReload": "superbwarfare:ztz_99a_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
           "dragonrise_reforge:ztz99a_reload"
@@ -330,10 +311,10 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:qbz_191_fire_1p",
-        "Fire3P": "superbwarfare:qbz_191_fire_3p",
-        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
-        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
+        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire3P": "superbwarfare:qbz_95_fire_3p",
+        "Fire3PFar": "superbwarfare:qbz_95_far",
+        "Fire3PVeryFar": "superbwarfare:qbz_95_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 16
@@ -374,9 +355,9 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "weapon.superbwarfare.50_cal_gun",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
+        "Fire1P": "dragonrise_reforge:mgfire1",
+        "Fire3P": "dragonrise_reforge:mgfire1",
+        "Fire3PFar": "dragonrise_reforge:mgfire1",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
         "Change": "superbwarfare:into_cannon"
       },
@@ -394,25 +375,15 @@
     "TrackDifferential": 0.6,
     "MaxForwardSpeedRate": 0.885,
     "MaxBackwardSpeedRate": 0.54,
-    "Increment": 0.0087,
-    "Decrement": 0.005,
+    "Increment": 0.01,
+    "Decrement": 0.012,
     "SteeringSpeed": 0.13,
     "EngineSoundVolume": 1.0
   },
-  "TurretPos": [
-    0,
-    1.93,
-    0.19375
-  ],
-  "BarrelPos": [
-    0,
-    0.05,
-    0.6477125
-  ],
-  "TurretTurnSpeed": [
-    2.625,
-    3.575
-  ],
+  "TurretPos": [0.0, 1.875, 0.1875],
+  "BarrelPos": [0, 0.05, 0.6477125],
+  "TurretTurnSpeed": [2.625, 3.575],
+  "TurretCustomPitch": 2.5,
   "TurretPitchRange": [
     -7,
     15

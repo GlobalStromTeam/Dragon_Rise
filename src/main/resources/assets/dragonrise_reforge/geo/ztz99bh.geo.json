@@ -23,8 +23,7 @@
 				{
 					"name": "main",
 					"parent": "base",
-					"pivot": [0, 31, -4],
-					"rotation": [-2.5, 0, 0]
+					"pivot": [0, 31, -4]
 				},
 				{
 					"name": "lm",
@@ -1928,19 +1927,25 @@
 					]
 				},
 				{
+					"name": "turretRot",
+					"parent": "main",
+					"pivot": [0, 31, -4],
+					"rotation": [2.5, 0, 0]
+				},
+				{
 					"name": "turret",
-					"parent": "base",
+					"parent": "turretRot",
 					"pivot": [0, 31, -4]
 				},
 				{
-					"name": "tu2",
+					"name": "112",
 					"parent": "turret",
 					"pivot": [0, 31, -4],
 					"rotation": [-2.5, 0, 0]
 				},
 				{
 					"name": "pz",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [0, 31, -4],
 					"cubes": [
 						{
@@ -1983,7 +1988,7 @@
 				},
 				{
 					"name": "ptm",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [0, 38.125, -1.375],
 					"cubes": [
 						{
@@ -2187,7 +2192,7 @@
 				},
 				{
 					"name": "rf",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [-7.11205, 42.28695, -16.21268],
 					"cubes": [
 						{
@@ -2373,7 +2378,7 @@
 				},
 				{
 					"name": "lf",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [-1.5, 39.09536, -19.82047],
 					"cubes": [
 						{
@@ -2504,7 +2509,7 @@
 				},
 				{
 					"name": "bf",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [6, 32.125, 5],
 					"cubes": [
 						{
@@ -2933,7 +2938,7 @@
 				},
 				{
 					"name": "passengerWeaponStation",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [-16.75447, 53.62499, 23.40052]
 				},
 				{
@@ -3475,9 +3480,8 @@
 				},
 				{
 					"name": "barrel",
-					"parent": "tu2",
-					"pivot": [-1.6875, 35.01408, -17.43384],
-					"rotation": [-2.5, 0, 0]
+					"parent": "112",
+					"pivot": [-1.6875, 35.01408, -17.43384]
 				},
 				{
 					"name": "bsl",
@@ -3922,7 +3926,7 @@
 				},
 				{
 					"name": "ptdeco",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [0, 38.26705, 26.34855]
 				},
 				{
@@ -4687,7 +4691,7 @@
 				},
 				{
 					"name": "Cartridgecase",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [1.125, 43.75, 10.625],
 					"cubes": [
 						{
@@ -4706,7 +4710,7 @@
 				},
 				{
 					"name": "aps2",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [22.74024, 51.49319, 43.58592],
 					"rotation": [0, -45, 0],
 					"cubes": [
@@ -4872,7 +4876,7 @@
 				},
 				{
 					"name": "aps",
-					"parent": "tu2",
+					"parent": "112",
 					"pivot": [-22.74024, 51.49319, 43.58592],
 					"rotation": [0, 45, 0],
 					"cubes": [
