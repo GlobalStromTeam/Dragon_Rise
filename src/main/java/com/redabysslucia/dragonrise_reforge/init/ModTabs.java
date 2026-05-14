@@ -50,7 +50,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J35.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
 
-                        //俄罗斯
+            //俄罗斯
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80B.get()));
@@ -62,6 +62,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AKM.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TUNGUSKA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
 
                         //北约
@@ -96,6 +97,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS114.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS514.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS810.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
                     }
                     ).build()
     );
@@ -126,7 +128,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
-                            }
+
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));                            }
                     ).build()
     );
 

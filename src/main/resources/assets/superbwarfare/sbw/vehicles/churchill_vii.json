@@ -3,5 +3,9 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/churchill_vii.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
-  }
+  },
+  "MouseSpeed": [
+    0.23,
+    0.23
+  ]
 }

@@ -104,7 +104,7 @@
         "UseFixedCameraPos": true,
         "Position": [
           0.305,
-          0.962,
+          1.002,
           1.721
         ],
         "Transform": "Turret",
@@ -118,7 +118,7 @@
       "Transform": "Turret",
       "Position": [
         0.0,
-        0.033,
+        0.073,
         1.728
       ],
       "Weapons": [

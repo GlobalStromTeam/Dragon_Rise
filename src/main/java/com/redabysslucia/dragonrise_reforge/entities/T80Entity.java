@@ -64,11 +64,6 @@ public class T80Entity extends NightVisionVehicle implements IVehicleBackground 
 	}
 
 	@Override
-	public ResourceLocation getNightVisionShader() {
-		return new ResourceLocation("shaders/post/night-vision-wp.json");
-	}
-
-	@Override
 	@OnlyIn(Dist.CLIENT)
 	public ResourceLocation getBackgroundTexture() {
 		var mc = net.minecraft.client.Minecraft.getInstance();

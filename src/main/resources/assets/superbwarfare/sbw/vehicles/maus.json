@@ -3,5 +3,9 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/maus.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/maus.png"
-  }
+  },
+  "MouseSpeed": [
+    0.23,
+    0.23
+  ]
 }

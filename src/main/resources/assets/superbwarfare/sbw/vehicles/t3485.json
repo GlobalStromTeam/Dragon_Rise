@@ -3,5 +3,9 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/t3485.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/t3485.png"
-  }
+  },
+  "MouseSpeed": [
+    0.23,
+    0.23
+  ]
 }

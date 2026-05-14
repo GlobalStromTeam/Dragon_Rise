@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.M113Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
@@ -14,6 +17,7 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.world.entity.Entity;
@@ -634,6 +638,14 @@ public class ModEntities {
                     .sized(6.0f, 4.0f)
     );
 
+    public static final RegistryObject<EntityType<TunguskaEntity>> TUNGUSKA = register("tunguska",
+            EntityType.Builder.of(TunguskaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
     public static final RegistryObject<EntityType<WLHGZU23Entity>> WLHGZU23 = register("wlhgzu23",
             EntityType.Builder.of(WLHGZU23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -877,6 +889,22 @@ public class ModEntities {
                     .setTrackingRange(64)
                     .setUpdateInterval(3)
                     .sized(0.6f, 2f)
+    );
+
+    public static final RegistryObject<EntityType<Ah1fEntity>> AH1F = register("ah1f",
+            EntityType.Builder.of(Ah1fEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<M113Entity>> M113 = register("m113",
+            EntityType.Builder.of(M113Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

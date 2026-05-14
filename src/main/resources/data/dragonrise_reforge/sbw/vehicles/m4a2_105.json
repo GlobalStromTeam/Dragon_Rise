@@ -105,8 +105,8 @@
       "Transform": "Vehicle",
       "Position": [
         0.631,
-        0.6,
-        1.5
+        0.602,
+        1.478
       ],
       "MinPitch": -10,
       "MaxPitch": 10,
@@ -122,7 +122,22 @@
       },
       "Weapons": [
         "MG1"
-      ]
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Position": [
+          0.609,
+          0.609,
+          1.516
+        ],
+        "Transform": "Turret",
+        "ZoomPosition": [
+          0.609,
+          0.569,
+          1.516
+        ],
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
@@ -130,8 +145,8 @@
         "Direction": "Barrel",
         "UseFixedCameraPos": true,
         "Position": [
-          -0.2,
-          0.4,
+          -0.187,
+          0.984,
           1.125
         ],
         "Transform": "Barrel",
@@ -144,7 +159,7 @@
       "Transform": "Turret",
       "Position": [
         -0.375,
-        0.975,
+        1.015,
         0.688
       ],
       "Weapons": [
@@ -186,8 +201,16 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[1.623, 1.779, -0.731]],
-        "Directions": ["Passenger"]
+        "Positions": [
+          [
+            1.623,
+            1.779,
+            -0.731
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ]
       },
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png"
     },
@@ -195,8 +218,16 @@
       "Template": "@MG",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[-1.5, 1.779, 0.8]],
-        "Directions": ["Passenger"]
+        "Positions": [
+          [
+            -1.5,
+            1.779,
+            0.8
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ]
       }
     },
     "Cannon": {

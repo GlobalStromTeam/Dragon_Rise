@@ -37,7 +37,8 @@ public class GeoOBBDataProvider implements DataProvider {
             try {
                 String workingDir = System.getProperty("user.dir").replace("\\run-data", "").replace("/run-data", "");
                 Path inputPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/geo");
-                Path outputPath = Path.of(workingDir).resolve("src/main/resources/data/dragonrise_reforge/sbw/vehicles");
+                Path dragonriseOutputPath = Path.of(workingDir).resolve("src/main/resources/data/dragonrise_reforge/sbw/vehicles");
+                Path superbwarfareOutputPath = Path.of(workingDir).resolve("src/main/resources/assets/superbwarfare/sbw/vehicles");
 
                 if (!Files.exists(inputPath)) {
                     return;
@@ -45,7 +46,7 @@ public class GeoOBBDataProvider implements DataProvider {
 
                 try (DirectoryStream<Path> stream = Files.newDirectoryStream(inputPath, "*.geo.json")) {
                     for (Path geoFile : stream) {
-                        processGeoFile(geoFile, outputPath);
+                        processGeoFile(geoFile, dragonriseOutputPath, superbwarfareOutputPath);
                     }
                 }
             } catch (Exception e) {
@@ -54,7 +55,7 @@ public class GeoOBBDataProvider implements DataProvider {
         });
     }
 
-    private void processGeoFile(Path geoFile, Path outputPath) {
+    private void processGeoFile(Path geoFile, Path dragonriseOutputPath, Path superbwarfareOutputPath) {
         try {
             String content = Files.readString(geoFile);
             JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
@@ -77,7 +78,7 @@ public class GeoOBBDataProvider implements DataProvider {
             }
 
             String baseName = geoFile.getFileName().toString().replace(".geo.json", "");
-            Path vehicleFile = outputPath.resolve(baseName + ".json");
+            Path vehicleFile = dragonriseOutputPath.resolve(baseName + ".json");
 
             JsonObject vehicleJson;
             if (Files.exists(vehicleFile)) {
@@ -199,9 +200,61 @@ public class GeoOBBDataProvider implements DataProvider {
             Files.createDirectories(vehicleFile.getParent());
             Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
 
+            // Generate superbwarfare vehicle config
+            generateSuperbwarfareVehicleConfig(superbwarfareOutputPath, baseName);
+
         } catch (Exception e) {
             throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
         }
+    }
+
+    private void generateSuperbwarfareVehicleConfig(Path outputPath, String baseName) throws Exception {
+        Path vehicleFile = outputPath.resolve(baseName + ".json");
+        JsonObject vehicleJson;
+
+        if (Files.exists(vehicleFile)) {
+            String vehicleContent = Files.readString(vehicleFile);
+            vehicleJson = JsonParser.parseString(vehicleContent).getAsJsonObject();
+        } else {
+            vehicleJson = new JsonObject();
+            vehicleJson.addProperty("ID", "dragonrise_reforge:" + baseName);
+
+            JsonObject model = new JsonObject();
+            model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
+            model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
+            vehicleJson.add("Model", model);
+
+            JsonArray mouseSpeed = new JsonArray();
+            mouseSpeed.add(0.23);
+            mouseSpeed.add(0.23);
+            vehicleJson.add("MouseSpeed", mouseSpeed);
+        }
+
+        // Only update Model if not already set
+        if (!vehicleJson.has("Model")) {
+            JsonObject model = new JsonObject();
+            model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
+            model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
+            vehicleJson.add("Model", model);
+        } else {
+            JsonObject model = vehicleJson.getAsJsonObject("Model");
+            if (!model.has("Model")) {
+                model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
+            }
+            if (!model.has("Texture")) {
+                model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
+            }
+        }
+
+        if (!vehicleJson.has("MouseSpeed")) {
+            JsonArray mouseSpeed = new JsonArray();
+            mouseSpeed.add(0.23);
+            mouseSpeed.add(0.23);
+            vehicleJson.add("MouseSpeed", mouseSpeed);
+        }
+
+        Files.createDirectories(vehicleFile.getParent());
+        Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
     }
 
     private JsonArray extractOBBList(JsonObject geoJson, double turretPivotY) {
@@ -223,18 +276,23 @@ public class GeoOBBDataProvider implements DataProvider {
                 JsonObject bone = boneElement.getAsJsonObject();
                 String boneName = bone.get("name").getAsString();
 
+                // 只处理包含"obb"关键字的骨骼
                 if (!boneName.toLowerCase().contains("obb")) {
                     continue;
                 }
 
+                // 跳过基础的Obb骨骼（不生成碰撞盒）
                 if (boneName.equals("Obb")) {
                     continue;
                 }
 
                 JsonObject obbEntry = new JsonObject();
+                // 提取OBB尺寸
                 obbEntry.add("Size", extractSize(bone));
+                // 提取OBB位置（带有炮塔偏移处理）
                 obbEntry.add("Position", extractOBBPosition(bone, turretPivotY, boneName));
 
+                // 根据骨骼名称设置特殊部件属性
                 if (boneName.equals("MainEngineObb")) {
                     obbEntry.addProperty("Part", "MainEngine");
                 } else if (boneName.equals("WheelRightObb")) {
@@ -243,6 +301,7 @@ public class GeoOBBDataProvider implements DataProvider {
                     obbEntry.addProperty("Part", "WheelLeft");
                 } else if (boneName.startsWith("TurretObb")) {
                     obbEntry.addProperty("Part", "Turret");
+                    // 如果不是主炮塔OBB，设置为跟随炮塔旋转
                     if (!boneName.equals("TurretObb")) {
                         obbEntry.addProperty("Transform", "Turret");
                         obbEntry.addProperty("Rotation", "Turret");
@@ -262,12 +321,16 @@ public class GeoOBBDataProvider implements DataProvider {
             JsonArray pivot = bone.getAsJsonArray("pivot");
             double yValue = pivot.get(1).getAsDouble();
 
+            // 如果是炮塔相关的OBB（除了主炮塔OBB本身），需要减去炮塔枢轴的Y值进行偏移
             if (boneName.startsWith("TurretObb") && !boneName.equals("TurretObb")) {
                 yValue = yValue - turretPivotY;
             }
 
+            // X轴：直接除以16转换单位
             position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+            // Y轴：根据需要处理后除以16转换单位
             position.add(round(yValue / 16.0, 3));
+            // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
             position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
         }
         return position;
@@ -290,11 +353,15 @@ public class GeoOBBDataProvider implements DataProvider {
                 JsonObject bone = boneElement.getAsJsonObject();
                 String boneName = bone.get("name").getAsString();
 
+                // 查找名为"turret"的骨骼
                 if (boneName.equalsIgnoreCase("turret") && bone.has("pivot")) {
                     JsonArray pivot = bone.getAsJsonArray("pivot");
                     JsonArray position = new JsonArray();
+                    // X轴：直接除以16转换单位
                     position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                    // Y轴：直接除以16转换单位
                     position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                    // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                     position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                     return position;
                 }
@@ -321,11 +388,15 @@ public class GeoOBBDataProvider implements DataProvider {
                 JsonObject bone = boneElement.getAsJsonObject();
                 String boneName = bone.get("name").getAsString();
 
+                // 查找名为"barrel"的骨骼
                 if (boneName.equalsIgnoreCase("barrel") && bone.has("pivot")) {
                     JsonArray pivot = bone.getAsJsonArray("pivot");
                     JsonArray position = new JsonArray();
+                    // X轴：直接除以16转换单位
                     position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                    // Y轴：直接除以16转换单位
                     position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                    // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                     position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                     return position;
                 }
@@ -417,8 +488,11 @@ public class GeoOBBDataProvider implements DataProvider {
                     if (index > 0) {
                         JsonArray pivot = bone.getAsJsonArray("pivot");
                         JsonArray position = new JsonArray();
+                        // X轴：直接除以16转换单位
                         position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
-                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.65, 3));
+                        // Y轴：除以16转换单位后，再减去1.61的偏移值（微调座位高度）
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.61, 3));
+                        // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                         position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                         seatsPositions.put(index, position);
                     }
@@ -453,8 +527,11 @@ public class GeoOBBDataProvider implements DataProvider {
                     if (index > 0) {
                         JsonArray pivot = bone.getAsJsonArray("pivot");
                         JsonArray position = new JsonArray();
+                        // X轴：直接除以16转换单位
                         position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
-                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.65, 3));
+                        // Y轴：除以16转换单位后，再减去1.61的偏移值（微调摄像机高度，与座位保持一致）
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.61, 3));
+                        // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                         position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                         seatsCameraPositions.put(index, position);
                     }
@@ -489,8 +566,11 @@ public class GeoOBBDataProvider implements DataProvider {
                     if (index > 0) {
                         JsonArray pivot = bone.getAsJsonArray("pivot");
                         JsonArray position = new JsonArray();
+                        // X轴：直接除以16转换单位
                         position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                        // Y轴：直接除以16转换单位（不需要高度偏移）
                         position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                        // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                         position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                         tempMap.put(index, position);
                     }
@@ -528,8 +608,11 @@ public class GeoOBBDataProvider implements DataProvider {
 
         JsonArray pivot = bone.getAsJsonArray("pivot");
         JsonArray pos = new JsonArray();
+        // X轴：直接除以16转换单位
         pos.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+        // Y轴：直接除以16转换单位（具体偏移会在后面根据Transform类型处理）
         pos.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+        // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
         pos.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
         positions.add(pos);
     }

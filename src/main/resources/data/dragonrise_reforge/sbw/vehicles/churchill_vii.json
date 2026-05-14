@@ -104,7 +104,7 @@
         "UseFixedCameraPos": true,
         "Position": [
           0.353,
-          0.876,
+          0.916,
           1.31
         ],
         "Transform": "Turret",
@@ -118,7 +118,7 @@
       "Transform": "Turret",
       "Position": [
         0.032,
-        0.143,
+        0.183,
         1.584
       ],
       "Weapons": [
@@ -140,7 +140,7 @@
       "Transform": "Vehicle",
       "Position": [
         1.282,
-        1.58,
+        1.62,
         -1.603
       ]
     },
@@ -149,7 +149,7 @@
       "Transform": "Vehicle",
       "Position": [
         -1.282,
-        1.58,
+        1.62,
         -1.603
       ]
     },
@@ -158,7 +158,7 @@
       "Transform": "Vehicle",
       "Position": [
         -1.282,
-        1.58,
+        1.62,
         -2.978
       ]
     },
@@ -167,7 +167,7 @@
       "Transform": "Vehicle",
       "Position": [
         1.282,
-        1.58,
+        1.62,
         -2.978
       ]
     }

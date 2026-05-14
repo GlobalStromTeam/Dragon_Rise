@@ -1,0 +1,11 @@
+{
+  "ID": "dragonrise_reforge:m113",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/m113.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m113.png"
+  },
+  "MouseSpeed": [
+    0.23,
+    0.23
+  ]
+}

@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M113Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.NPDS810Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
@@ -9,6 +12,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.R9M133Re
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ah1fRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
@@ -97,6 +101,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.T3485.get(), T3485Renderer::new);
                 event.registerEntityRenderer(ModEntities.PERSHING.get(), PershingRenderer::new);
                 event.registerEntityRenderer(ModEntities.AC130.get(), AC130Renderer::new);
+                event.registerEntityRenderer(ModEntities.TUNGUSKA.get(), TunguskaRenderer::new);
                 event.registerEntityRenderer(ModEntities.WLHGZU23.get(), WLHGZU23Renderer::new);
                 event.registerEntityRenderer(ModEntities.syy651.get(), syy651Renderer::new);
                 event.registerEntityRenderer(ModEntities.HJ8.get(), HJ8Renderer::new);
@@ -127,5 +132,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
-        }
+        event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
+
+        event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);       }
 }

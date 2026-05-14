@@ -212,7 +212,7 @@
         "UseFixedCameraPos": true,
         "Position": [
           -0.062,
-          2.975,
+          3.015,
           -0.187
         ],
         "Transform": "Turret",
@@ -229,7 +229,7 @@
       "Transform": "Turret",
       "Position": [
         0.563,
-        0.288,
+        0.327,
         3.5
       ],
       "CanRotateHead": false,
