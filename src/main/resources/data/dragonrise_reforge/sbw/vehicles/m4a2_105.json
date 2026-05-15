@@ -122,22 +122,7 @@
       },
       "Weapons": [
         "MG1"
-      ],
-      "CameraPos": {
-        "UseFixedCameraPos": true,
-        "Position": [
-          0.609,
-          0.609,
-          1.516
-        ],
-        "Transform": "Turret",
-        "ZoomPosition": [
-          0.609,
-          0.569,
-          1.516
-        ],
-        "Direction": "Barrel"
-      }
+      ]
     },
     {
       "HidePassenger": true,
