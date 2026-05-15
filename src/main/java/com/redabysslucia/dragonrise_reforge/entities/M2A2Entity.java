@@ -2,11 +2,12 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class M2A2Entity extends FireLightVisionVehicle {
+public class M2A2Entity extends SyncCameraVehicle {
     public M2A2Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }

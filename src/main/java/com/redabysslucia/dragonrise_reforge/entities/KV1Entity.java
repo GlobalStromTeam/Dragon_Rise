@@ -2,11 +2,13 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
+import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class KV1Entity extends FireLightVisionVehicle {
+public class KV1Entity extends SyncCameraVehicle {
     public KV1Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }

@@ -56,13 +56,13 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
     }
 
     private void startShake() {
-        shakeDuration = random.nextInt(8) + 4;
-        currentShakeIntensity = (random.nextFloat() * 0.4f + 0.6f) * (float) Math.min(getDeltaMovement().length() * 0.5, 1);
+        shakeDuration = random.nextInt(3) + 2;
+        currentShakeIntensity = (random.nextFloat() * 0.8f + 1.5f) * (float) Math.min(getDeltaMovement().length() * 0.5, 1);
         shakePhase = random.nextFloat() * (float) Math.PI * 2;
     }
 
     private void resetShake() {
-        shakeCooldown = random.nextInt(9) + 2;
+        shakeCooldown = random.nextInt(5) + 4;
         shakeDuration = 0;
         currentShakeIntensity = 0;
     }
