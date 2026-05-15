@@ -18,5 +18,6 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModWreckageLootProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new GeoOBBDataProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeServer(), new VehicleJavaGenerator(packOutput, existingFileHelper));
+        generator.addProvider(event.includeServer(), new VehicleLanguageGenerator(packOutput, existingFileHelper));
     }
 }

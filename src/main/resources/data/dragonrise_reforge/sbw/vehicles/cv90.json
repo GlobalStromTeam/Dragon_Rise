@@ -314,7 +314,7 @@
       "Spread": 0.5,
       "RPM": 30,
       "CrosshairColor": "0xFFC700",
-      "Name": "dragon_rise:spike",
+      "Name": "dragonrise_reforge::spike",
       "AmmoType": [
         {
           "Ammo": "superbwarfare:medium_anti_ground_missile",
@@ -324,7 +324,7 @@
           "Ammo": "superbwarfare:medium_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "dragon_rise:spike",
+            "Name": "dragonrise_reforge::spike",
             "SeekWea  ponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
