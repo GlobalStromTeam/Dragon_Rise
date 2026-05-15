@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -12,31 +13,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
-public class M113Entity extends NightVisionVehicle implements IVehicleBackground {
+public class M113Entity extends SyncCameraVehicle implements IVehicleBackground {
     private float prevYRot;
 
         public M113Entity(EntityType<M113Entity> type, Level world) {
                 super(type, world);
         }
-
-
-    @Override
-    public void tick() {
-        super.tick();
-
-        float yRotDelta = this.getYRot() - prevYRot;
-
-        if (Math.abs(yRotDelta) > 0.01f) {
-            for (Entity passenger : this.getPassengers()) {
-                if (passenger instanceof Player player) {
-                    player.setYHeadRot(player.getYHeadRot() + yRotDelta);
-                    player.setYRot(player.getYRot() + yRotDelta);
-                }
-            }
-        }
-
-        prevYRot = this.getYRot();
-    }
 
     @Override
     @OnlyIn(Dist.CLIENT)

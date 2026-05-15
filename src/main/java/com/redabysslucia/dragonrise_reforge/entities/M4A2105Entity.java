@@ -2,40 +2,19 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
-public class M4A2105Entity extends FireLightVisionVehicle implements IVehicleBackground {
-    private float prevYRot;
+public class M4A2105Entity extends SyncCameraVehicle implements IVehicleBackground {
 
     public M4A2105Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-    }
-
-    @Override
-    public void tick() {
-        super.tick();
-        
-        float yRotDelta = this.getYRot() - prevYRot;
-        
-        if (Math.abs(yRotDelta) > 0.01f) {
-            for (Entity passenger : this.getPassengers()) {
-                if (passenger instanceof Player player) {
-                    player.setYHeadRot(player.getYHeadRot() + yRotDelta);
-                    player.setYRot(player.getYRot() + yRotDelta);
-                }
-            }
-        }
-        
-        prevYRot = this.getYRot();
     }
 
     @Override
