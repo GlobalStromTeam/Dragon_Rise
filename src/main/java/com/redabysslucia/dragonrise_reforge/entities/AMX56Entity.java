@@ -1,8 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -26,7 +26,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("removal")
-public class AMX56Entity extends NightVisionVehicle {
+public class AMX56Entity extends GeoVehicleEntity {
     // 定义涂装状态同步数据 - 0=标准涂装, 1=NATO涂装
     public static final EntityDataAccessor<Integer> CAMO_TYPE =
             SynchedEntityData.defineId(AMX56Entity.class, EntityDataSerializers.INT);
@@ -126,8 +126,5 @@ public class AMX56Entity extends NightVisionVehicle {
         data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
     }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 }

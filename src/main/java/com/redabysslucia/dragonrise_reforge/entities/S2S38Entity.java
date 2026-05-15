@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -11,7 +11,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class S2S38Entity extends NightVisionVehicle {
+public class S2S38Entity extends GeoVehicleEntity {
 
         public S2S38Entity(EntityType<?> pEntityType, Level pLevel) {
                 super(pEntityType, pLevel);
@@ -29,8 +29,5 @@ public class S2S38Entity extends NightVisionVehicle {
                 data.add(new AnimationController<>(this, "2s38fire", 0, this::S2S38Fire));
         }
 
-        @Override
-        public ResourceLocation getNightVisionShader() {
-                return new ResourceLocation("shaders/post/night-vision-wp.json");
-        }
+
 }

@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -20,14 +20,11 @@ import java.util.UUID;
 import static com.atsuishio.superbwarfare.entity.vehicle.base.ArtilleryEntity.BARREL_ANIM;
 
 @SuppressWarnings("removal")
-public class TYPE100Entity extends NightVisionVehicle {
+public class TYPE100Entity extends GeoVehicleEntity {
 
         public TYPE100Entity(EntityType<?> pEntityType, Level pLevel) {
                 super(pEntityType, pLevel);
         }
 
-        @Override
-        public ResourceLocation getNightVisionShader() {
-                return new ResourceLocation("shaders/post/night-vision-wp.json");
-        }
+
 }

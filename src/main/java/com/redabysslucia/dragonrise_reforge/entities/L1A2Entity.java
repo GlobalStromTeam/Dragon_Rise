@@ -1,13 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class L1A2Entity extends NightVisionVehicle {
+public class L1A2Entity extends GeoVehicleEntity {
 
         public L1A2Entity(EntityType<L1A2Entity> type, Level world) {
                 super(type, world);
@@ -29,8 +29,5 @@ public class L1A2Entity extends NightVisionVehicle {
 //        data.add(new AnimationController<>(this, "radar", 0, this::radar));
 //    }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 }

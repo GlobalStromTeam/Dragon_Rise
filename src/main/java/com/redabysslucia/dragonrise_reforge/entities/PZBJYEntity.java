@@ -1,14 +1,14 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class PZBJYEntity extends NightVisionVehicle {
+public class PZBJYEntity extends GeoVehicleEntity {
 
 	public PZBJYEntity(EntityType<?> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
@@ -39,10 +39,5 @@ public class PZBJYEntity extends NightVisionVehicle {
 			return this.getPassengers().get(0) instanceof net.minecraft.world.entity.player.Player;
 		}
 		return false;
-	}
-
-	@Override
-	public ResourceLocation getNightVisionShader() {
-		return new ResourceLocation("shaders/post/night-vision-wp.json");
 	}
 }

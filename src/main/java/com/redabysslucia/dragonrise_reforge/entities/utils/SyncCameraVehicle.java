@@ -13,6 +13,15 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
     private int shakeDuration = 0;
     private float currentShakeIntensity = 0;
     private float shakePhase = 0;
+    
+    private float prevShakePitch = 0;
+    private float prevShakeRoll = 0;
+    private float shakePitch = 0;
+    private float shakeRoll = 0;
+    
+    // 保存载具基础旋转（不带抖动）
+    private float vehicleBaseXRot = 0;
+    private float vehicleBaseRoll = 0;
 
     public SyncCameraVehicle(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -23,7 +32,15 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
     public void tick() {
         super.tick();
         
+        // 先保存上一帧的抖动值
+        prevShakePitch = shakePitch;
+        prevShakeRoll = shakeRoll;
+        
+        // 更新抖动
         updateVehicleShake();
+        
+        // 应用抖动到载具旋转
+        applyShakeToVehicle();
     }
 
     private void updateVehicleShake() {
@@ -33,7 +50,12 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
         if (speed <= 0.1) {
             if (shakeDuration > 0) {
                 shakeDuration--;
-                applyShake();
+                calculateShake();
+            } else {
+                shakePitch *= 0.9f;
+                shakeRoll *= 0.9f;
+                if (Math.abs(shakePitch) < 0.01f) shakePitch = 0;
+                if (Math.abs(shakeRoll) < 0.01f) shakeRoll = 0;
             }
             return;
         }
@@ -41,13 +63,17 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
         if (shakeDuration > 0) {
             shakeDuration--;
             shakePhase += 0.3f;
-            applyShake();
+            calculateShake();
             
             if (shakeDuration == 0) {
                 resetShake();
             }
         } else {
             shakeCooldown--;
+            shakePitch *= 0.9f;
+            shakeRoll *= 0.9f;
+            if (Math.abs(shakePitch) < 0.01f) shakePitch = 0;
+            if (Math.abs(shakeRoll) < 0.01f) shakeRoll = 0;
             
             if (shakeCooldown <= 0) {
                 startShake();
@@ -55,26 +81,41 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
         }
     }
 
+    private void applyShakeToVehicle() {
+        // 计算抖动的变化量
+        float deltaPitch = shakePitch - prevShakePitch;
+        float deltaRoll = shakeRoll - prevShakeRoll;
+        
+        // 应用到载具旋转
+        this.setXRot(this.getXRot() + deltaPitch);
+        this.setRoll(this.getRoll() + deltaRoll);
+    }
+
     private void startShake() {
         shakeDuration = random.nextInt(3) + 2;
-        currentShakeIntensity = (random.nextFloat() * 0.8f + 1.5f) * (float) Math.min(getDeltaMovement().length() * 0.5, 1);
+        currentShakeIntensity = (random.nextFloat() * 0.4f + 0.6f) * (float) Math.min(getDeltaMovement().length() * 0.5, 1);
         shakePhase = random.nextFloat() * (float) Math.PI * 2;
     }
 
     private void resetShake() {
-        shakeCooldown = random.nextInt(5) + 4;
+        shakeCooldown = random.nextInt(5) + 2;
         shakeDuration = 0;
         currentShakeIntensity = 0;
     }
 
-    private void applyShake() {
-        float bumpX = (float) Math.sin(shakePhase) * currentShakeIntensity * 2f;
-        float bumpY = (float) Math.cos(shakePhase * 1.5f) * currentShakeIntensity * 1.5f;
+    private void calculateShake() {
+        float bumpX = (float) Math.sin(shakePhase) * currentShakeIntensity;
+        float bumpY = (float) Math.cos(shakePhase * 1.5f) * currentShakeIntensity * 0.5f;
         
-        float newPitch = this.getXRot() + bumpY * 0.5f;
-        float newRoll = this.getRoll() + bumpX * 0.5f;
-        
-        this.setXRot(newPitch);
-        this.setRoll(newRoll);
+        shakeRoll = bumpX * 0.5f;
+        shakePitch = bumpY;
+    }
+    
+    public float getInterpolatedShakePitch(float partialTicks) {
+        return net.minecraft.util.Mth.lerp(partialTicks, prevShakePitch, shakePitch);
+    }
+    
+    public float getInterpolatedShakeRoll(float partialTicks) {
+        return net.minecraft.util.Mth.lerp(partialTicks, prevShakeRoll, shakeRoll);
     }
 }

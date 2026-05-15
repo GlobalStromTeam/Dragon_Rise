@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -13,7 +13,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class M10BookerEntity extends NightVisionVehicle {
+public class M10BookerEntity extends GeoVehicleEntity {
 
     public M10BookerEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -40,8 +40,5 @@ public class M10BookerEntity extends NightVisionVehicle {
         return false;
     }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 }

@@ -1,9 +1,7 @@
 package com.redabysslucia.dragonrise_reforge;
 
 import com.mojang.logging.LogUtils;
-import com.redabysslucia.dragonrise_reforge.client.outline.OutlineThermal;
 import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRenderer;
-import com.redabysslucia.dragonrise_reforge.client.overlay.VehicleBackgroundOverlay;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
@@ -11,10 +9,6 @@ import com.redabysslucia.dragonrise_reforge.init.ModSpeedSounds;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -76,7 +70,6 @@ public class Dragonrise_reforge {
                         try {
                             OutlineRenderer.init();
                             OutlineRenderer.register(); // 注册到事件总线
-                            OutlineThermal.setupOutlines();
                             LOGGER.info("Outline rendering system initialized");
                         } catch (Exception e) {
                             LOGGER.error("Failed to initialize outline rendering system", e);

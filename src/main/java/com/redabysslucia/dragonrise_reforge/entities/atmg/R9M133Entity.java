@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities.atmg;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.world.entity.EntityType;

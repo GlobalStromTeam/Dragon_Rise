@@ -1,9 +1,9 @@
 package com.redabysslucia.dragonrise_reforge.entities.special;
 
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.utils.VehicleVecUtils;
 import com.mojang.math.Axis;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
@@ -19,7 +19,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class CyborgTankEntity extends NightVisionVehicle {
+public class CyborgTankEntity extends GeoVehicleEntity {
     public CyborgTankEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -58,10 +58,7 @@ public class CyborgTankEntity extends NightVisionVehicle {
         data.add(new AnimationController<>(this, "station", 0, this::stationFirePredicate));
     }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 
     @Override
     public float getTurretMaxHealth() {

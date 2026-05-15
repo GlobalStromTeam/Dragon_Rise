@@ -2,7 +2,6 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;

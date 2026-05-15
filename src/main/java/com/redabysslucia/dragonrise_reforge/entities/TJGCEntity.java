@@ -12,7 +12,7 @@ import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import lombok.val;
 import net.minecraft.core.Holder;
@@ -201,8 +201,5 @@ public class TJGCEntity extends VariableEngineVehicle {
         return zoomVehicle ? 0.1 : 0.25;
     }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 }

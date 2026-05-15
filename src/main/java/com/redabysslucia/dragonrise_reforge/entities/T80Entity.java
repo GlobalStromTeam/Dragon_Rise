@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.redabysslucia.dragonrise_reforge.utils.EngineParticleUtil;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +19,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import java.util.UUID;
 
 @SuppressWarnings("removal")
-public class T80Entity extends NightVisionVehicle implements IVehicleBackground {
+public class T80Entity extends GeoVehicleEntity implements IVehicleBackground {
 
 	public T80Entity(EntityType<?> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);

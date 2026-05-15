@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.events;
 
-import com.redabysslucia.dragonrise_reforge.entities.utils.INightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
@@ -27,7 +26,7 @@ public class ClickEvent {
         if (event.getAction() == GLFW.GLFW_PRESS) {
 
             // NIGHT_VISION key temporarily disabled
-            // if (player.getVehicle() instanceof INightVisionVehicle vehicle) {
+            // if (player.getVehicle() instanceof IGeoVehicleEntity vehicle) {
             //     if (ModKeyMappings.NIGHT_VISION.isPressed()) {
                     // 循环切换模式：夜视 -> 热成像 -> 关闭
                     // if (vehicle.getNVEnable()) {

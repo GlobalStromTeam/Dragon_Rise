@@ -109,8 +109,8 @@
         0.823,
         1.489
       ],
-      "MinPitch": 0,
-      "MaxPitch": 0,
+      "MinPitch": -5,
+      "MaxPitch": 5,
       "MinYaw": -30,
       "MaxYaw": 30
     },

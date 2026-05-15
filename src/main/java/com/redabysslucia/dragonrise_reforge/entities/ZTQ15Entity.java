@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.NightVisionVehicle;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -12,7 +12,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class ZTQ15Entity extends NightVisionVehicle {
+public class ZTQ15Entity extends GeoVehicleEntity {
     public ZTQ15Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -35,10 +35,7 @@ public class ZTQ15Entity extends NightVisionVehicle {
         data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
     }
 
-    @Override
-    public ResourceLocation getNightVisionShader() {
-        return new ResourceLocation("shaders/post/night-vision-wp.json");
-    }
+
 
     @Override
     public int getTrackAnimationLength() {
