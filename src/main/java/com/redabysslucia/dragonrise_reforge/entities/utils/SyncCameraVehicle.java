@@ -92,23 +92,53 @@ public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
     }
 
     private void startShake() {
-        shakeDuration = random.nextInt(3) + 2;
-        currentShakeIntensity = (random.nextFloat() * 0.4f + 0.6f) * 5.0f * (float) Math.min(getDeltaMovement().length() * 0.5, 1);
+        // 先计算速度因子（范围约0.5-2.0，放大高速时的效果）
+        float speedFactor = (float) Math.min(getDeltaMovement().length() * 1.0, 2);
+        
+        // 基础抖动强度：0.6-1.2
+        currentShakeIntensity = (random.nextFloat() * 0.6f + 0.6f) * speedFactor;
+        
+        // 抖动持续时间与速度成正比（基础6-10 tick）
+        // 慢速时：6-10 tick（0.3-0.5秒）
+        // 快速时：12-20 tick（0.6-1.0秒）
+        int durationBase = random.nextInt(5) + 6;
+        int durationBonus = (int)(speedFactor * 6); // 根据速度增加0-12 tick
+        shakeDuration = durationBase + durationBonus;
+        
         shakePhase = random.nextFloat() * (float) Math.PI * 2;
     }
 
     private void resetShake() {
-        shakeCooldown = random.nextInt(5) + 2;
+        // 抖动间隔：0.2-0.6秒（4-12 tick）
+        shakeCooldown = random.nextInt(9) + 4;
         shakeDuration = 0;
         currentShakeIntensity = 0;
     }
 
     private void calculateShake() {
         float bumpX = (float) Math.sin(shakePhase) * currentShakeIntensity;
-        float bumpY = (float) Math.cos(shakePhase * 1.5f) * currentShakeIntensity * 0.5f;
+        
+        // 根据移动方向调整抖动方向
+        float direction = getMovementDirection();
+        float bumpY = (float) Math.cos(shakePhase * 1.5f) * currentShakeIntensity * 2.0f * direction;
         
         shakeRoll = bumpX * 0.5f;
         shakePitch = bumpY;
+    }
+    
+    private float getMovementDirection() {
+        Vec3 motion = this.getDeltaMovement();
+        double yaw = this.getYRot() * (Math.PI / 180.0);
+        
+        // 计算前进方向的向量
+        double forwardX = -Math.sin(yaw);
+        double forwardZ = Math.cos(yaw);
+        
+        // 计算实际移动方向与前进方向的点积
+        double dotProduct = motion.x * forwardX + motion.z * forwardZ;
+        
+        // 前进时返回1，后退时返回-1
+        return dotProduct > 0 ? 1.0f : -1.0f;
     }
     
     public float getInterpolatedShakePitch(float partialTicks) {

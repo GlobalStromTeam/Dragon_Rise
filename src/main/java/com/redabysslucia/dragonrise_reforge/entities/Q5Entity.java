@@ -68,8 +68,4 @@ public class Q5Entity extends FireLightVisionVehicle {
 //        return ModKeyMappings.FREE_CAMERA.isDown() && !ClientEventHandler.zoom;
 //    }
 
-    @Override
-    public double getMouseSensitivity() {
-        return zoomVehicle ? 0.03 : 0.07;
-    }
 }

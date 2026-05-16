@@ -1,52 +1,48 @@
 package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
-import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TunguskaEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class TunguskaModel extends DragonriseVehicleModel<TunguskaEntity> {
 
-    @Override
-    public boolean hideForTurretControllerWhileZooming() {
-        return false;
-    }
-
-    @Override
-    public @Nullable TransformContext<TunguskaEntity> collectTransform(String boneName) {
-
-        if (boneName.equals("MissilePos2")) {
-            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissilepos2(vehicle));
+        @Override
+        public boolean hideForTurretControllerWhileZooming() {
+                return false;
         }
 
-        if (boneName.equals("MissilePos1")) {
-            return (bone, vehicle, state) -> bone.setHidden(shouldHideMissilepos1(vehicle));
+        @Override
+        public @Nullable TransformContext<TunguskaEntity> collectTransform(String boneName) {
+
+                if (boneName.equals("missile1")) {
+                    return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 1));
+                }
+
+                if (boneName.equals("missile2")) {
+                    return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 2));
+                }
+
+                if (boneName.equals("missile3")) {
+                    return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 3));
+                }
+
+                if (boneName.equals("missile4")) {
+                    return (bone, vehicle, state) -> bone.setHidden(shouldHideMissile(vehicle, 4));
+                }
+
+                if (boneName.equals("missileshell")) {
+                    return (bone, vehicle, state) -> bone.setRotX(getAnimationProcessor().getBone("barrel").getRotX());
+                }
+
+                return super.collectTransform(boneName);
         }
 
-        if (boneName.equals("missileshell")) {
-            return (bone, vehicle, state) -> bone.setRotX(getAnimationProcessor().getBone("barrel").getRotX());
+        public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
+            var gunData = vehicle.getGunData("DriverAAMissile");
+            if (gunData == null) {
+                return false;
+            } else {
+                return gunData.ammo.get() < ammo;
+            }
         }
-        return super.collectTransform(boneName);
-    }
-
-    public boolean shouldHideMissilepos2(VehicleEntity vehicle) {
-        var gunData = vehicle.getGunData("DriverAAMissile");
-        if (gunData == null) {
-            return false;
-        }
-        int count = 0;
-        count = 2;
-        return gunData.ammo.get() < count;
-    }
-
-    public boolean shouldHideMissilepos1(VehicleEntity vehicle) {
-        var gunData = vehicle.getGunData("DriverAAMissile");
-        if (gunData == null) {
-            return false;
-        }
-        int count = 0;
-        count = 1;
-        return gunData.ammo.get() < count;
-    }
-
 }

@@ -6,7 +6,7 @@ import com.redabysslucia.dragonrise_reforge.entities.TunguskaEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 public class TunguskaRenderer extends VehicleRenderer<TunguskaEntity> {
-    public TunguskaRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new TunguskaModel());
-    }
+        public TunguskaRenderer(EntityRendererProvider.Context renderManager) {
+                super(renderManager, new TunguskaModel());
+        }
 }

@@ -227,7 +227,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/fr_tank_cannon_cross.png",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:ofl120f1",
+      "Name": "dragonrise_reforge:OFL_120_F1",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -304,7 +304,7 @@
         ]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:crcf1",
+      "Name": "dragonrise_reforge:CRC_F1",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",

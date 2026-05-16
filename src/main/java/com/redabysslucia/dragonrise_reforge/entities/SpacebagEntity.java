@@ -18,8 +18,5 @@ public class SpacebagEntity extends FireLightVisionVehicle {
         super(type, world);
     }
 
-    @Override
-    public double getMouseSensitivity() {
-        return zoomVehicle ? 0.03 : 0.07;
-    }
+
 }

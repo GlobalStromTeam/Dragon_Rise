@@ -297,7 +297,7 @@
           "Barrel"
         ]
       },
-      "Name": "dragonrise_reforge:ПКТ",
+      "Name": "dragonrise_reforge:PKT",
       "SoundInfo": {
         "Fire1P": "superbwarfare:coax_fire_1p",
         "Fire3P": "superbwarfare:m_60_fire_3p",
@@ -341,7 +341,7 @@
         ]
       },
       "Crosshair": "@VehicleCommonGun",
-      "Name": "weapon.superbwarfare.50_cal_gun",
+      "Name": "dragonrise_reforge:NSVT",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
