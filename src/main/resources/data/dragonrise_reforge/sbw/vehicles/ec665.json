@@ -617,7 +617,7 @@
   },
   "HUDColor": "0xFFC700",
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ec665_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_aircraft.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/fr_aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
