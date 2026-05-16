@@ -152,36 +152,17 @@
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [
-      0.0,
-      1.321875,
-      4.5
-    ],
+    "Position": [0.0, 1.321875, 4.5],
     "CanRotateHead": false,
-    "Sensitivity": [
-      0,
-      0,
-      0
-    ],
-    "Weapons": [
-      "Cannon",
-      "Missile",
-      "Missile2"
-    ],
+    "Sensitivity": [5, 5, 5],
+    "Weapons": ["Cannon", "Missile", "Missile2", "SeekMissile"],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [
-        0.0,
-        2.921875,
-        4.5
-      ],
+      "Position": [0.0, 2.921875, 4.5],
       "UseFixedCameraPos": true,
+      "ZoomPosition": [0.97183125, 0.51274375, -0.40775],
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [
-        2,
-        4,
-        -14
-      ]
+      "AircraftCameraPos": [0, 4, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
@@ -262,7 +243,7 @@
       "ExplosionRadius": 6,
       "Velocity": 8,
       "SeekWeaponInfo": {
-        "SeekDirection": "Default",
+        "SeekDirection": "ClientCamera",
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 5,
@@ -272,33 +253,16 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ViewDirection": "Default",
         "ShootPositionForHud": [
           0,
           1.0625,
           5.625
         ],
         "Positions": [
-          [
-            -6.46585,
-            1.5518625,
-            -3.6905375
-          ],
-          [
-            -5.137725,
-            1.2862375,
-            -3.3186625
-          ],
-          [
-            6.4594625,
-            1.5518625,
-            -3.6905375
-          ],
-          [
-            5.1313375,
-            1.3393625,
-            -3.4249125
-          ]
+          [-5.137725, 1.2862375, -3.3186625],
+          [5.1313375, 1.3393625, -3.4249125],
+          [-6.46585, 1.5518625, -3.6905375],
+          [6.4594625, 1.5518625, -3.6905375]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -320,7 +284,7 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "Magazine": 6,
+      "Magazine": 2,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:agm_65",
       "Name": "dragonrise_reforge:pl12",
@@ -330,7 +294,7 @@
       "AddShooterDeltaMovement": true,
       "Velocity": 1.05,
       "SeekWeaponInfo": {
-        "SeekDirection": "Default",
+        "SeekDirection": "ClientCamera",
         "SeekRange": 400,
         "SeekAngle": 20,
         "SeekTime": 10,
@@ -353,36 +317,63 @@
           0
         ],
         "Positions": [
-          [
-            3.93679375,
-            1.230075,
-            -2.62364375
-          ],
-          [
-            -3.92570625,
-            1.230075,
-            -2.62364375
-          ],
-          [
-            0.96710625,
-            0.6616375,
-            -2.01270625
-          ],
-          [
-            -0.98258125,
-            0.6616375,
-            -2.01270625
-          ],
-          [
-            -0.01570625,
-            1.336325,
-            -1.12551875
-          ],
-          [
-            -0.01570625,
-            1.336325,
-            -4.89739375
-          ]
+          [-0.01570625, 1.336325, -1.12551875],
+          [-0.01570625, 1.336325, -4.89739375]
+        ],
+        "BoundUpWithAmmoAmount": true
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "superbwarfare:bomb_reload",
+        "VehicleReloadSoundTime": 11,
+        "Change": "superbwarfare:into_missile",
+        "Locking": "superbwarfare:missile_locking",
+        "Locked": "superbwarfare:missile_locked"
+      },
+      "Crosshair": "@VehicleCommonSeekMissile",
+      "CrosshairColor": "0x66FF00",
+      "SoundRadius": 8
+    },
+    "SeekMissile": {
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_yj88c.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 2,
+      "EmptyReloadTime": 200,
+      "Projectile": "superbwarfare:agm_65",
+      "Name": "dragonrise_reforge:yj88c",
+      "Damage": 1100,
+      "ExplosionDamage": 180,
+      "ExplosionRadius": 12,
+      "AddShooterDeltaMovement": true,
+      "Velocity": 1.05,
+      "SeekWeaponInfo": {
+        "SeekDirection": "ClientCamera",
+        "SeekRange": 512,
+        "SeekAngle": 20,
+        "SeekTime": 10,
+        "MaxTargetHeight": 15,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "ShouldUnload": false
+        }
+      ],
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ShootPositionForHud": [
+          0,
+          1.53,
+          0
+        ],
+        "Positions": [
+          [-3.91183125, 1.10836875, -2.64199375],
+          [3.91183125, 1.10836875, -2.64199375]
         ],
         "BoundUpWithAmmoAmount": true
       },

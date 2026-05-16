@@ -323,8 +323,7 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
+        "ShootPositionForHud": [0,
           1.0625,
           5.625
         ],

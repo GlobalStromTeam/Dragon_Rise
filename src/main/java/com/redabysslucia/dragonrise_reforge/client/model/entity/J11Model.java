@@ -57,17 +57,11 @@ public class J11Model extends DragonriseVehicleModel<J11Entity> {
                         case "pl-12-2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideMissile2(vehicle, 2));
 
-                        case "pl-12-3" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideMissile2(vehicle, 3));
+                        case "yj2" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideCow(vehicle, 2));
 
-                        case "pl-12-4" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideMissile2(vehicle, 4));
-
-                        case "pl-12-5" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideMissile2(vehicle, 5));
-
-                        case "pl-12-6" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideMissile2(vehicle, 6));
+                        case "yj1" -> (bone, vehicle, state) ->
+                                bone.setHidden(shouldHideCow(vehicle, 1));
 
                            default -> null;
                 };
@@ -90,4 +84,12 @@ public class J11Model extends DragonriseVehicleModel<J11Entity> {
                 }
         }
 
+        public boolean shouldHideCow(VehicleEntity vehicle, int ammo) {
+                var gunData = vehicle.getGunData("SeekMissile");
+                if (gunData == null) {
+                        return false;
+                } else {
+                        return gunData.ammo.get() < ammo;
+                }
+        }
 }
