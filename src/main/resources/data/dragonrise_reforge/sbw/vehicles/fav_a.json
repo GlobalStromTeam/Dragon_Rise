@@ -304,7 +304,7 @@
     1,
     5
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/fav_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/fav_a_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "superbwarfare:lav_150_engine",

@@ -349,7 +349,7 @@
     1.5,
     4
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m2a2_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/lvt_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Tank",
   "CollisionLevel": {

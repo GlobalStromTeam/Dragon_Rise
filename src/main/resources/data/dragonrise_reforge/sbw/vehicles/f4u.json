@@ -402,7 +402,7 @@
     "ExplosionRadius": 16,
     "CrashPassengers": true
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/camel_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/f4u_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_aircraft.png",
   "Type": "Airplane",
   "EngineType": "Aircraft",

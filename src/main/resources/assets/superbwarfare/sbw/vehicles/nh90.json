@@ -4,5 +4,8 @@
     "Model": "dragonrise_reforge:geo/nh90.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/nh90.png"
   },
-  "MouseSpeed": [0.3, 0.3]
+  "MouseSpeed": [
+    0.3,
+    0.3
+  ]
 }

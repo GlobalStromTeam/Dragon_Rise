@@ -3,6 +3,5 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/ec665.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/ec665.png"
-  },
-  "MouseSpeed": [0.23, 0.23]
+  }
 }

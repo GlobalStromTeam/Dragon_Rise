@@ -4,6 +4,5 @@
     "Model": "dragonrise_reforge:geo/j8.geo.json",
     "Animation": "dragonrise_reforge:animations/j8.animation.json",
     "Texture": "dragonrise_reforge:textures/entity/j8.png"
-  },
-  "MouseSpeed": [0.23, 0.23]
+  }
 }

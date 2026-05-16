@@ -85,7 +85,7 @@
     1,
     5
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/wlsc_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/motuo_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "dragonrise_reforge:wheel_loop1",

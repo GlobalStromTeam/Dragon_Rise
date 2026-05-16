@@ -19,85 +19,113 @@ public class ModTabs {
                     .title(Component.translatable("item_group.dragonrise_reforge.title"))
                     .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
                     .displayItems((param, output) -> {
-                        //中国
+                        //中国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTQ15.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4B.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTQ15.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ59A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TYPE100.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CM34.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
+                        //中国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CM34.get()));
+                        //中国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.Z9.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.Z20.get()));
+                        //中国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10ME.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J10.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J10C.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.JF17.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J11.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J15T.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.Z20.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.Z9.get()));
+                        //中国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J20.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.J35.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J20VTOL.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J35.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J16.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J15T.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J11.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J10C.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J10.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.JF17.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
 
-            //俄罗斯
+                        //俄罗斯 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T80B.get()));
+                        //俄罗斯 装甲车辆
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.BMPT72.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BMP3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BMD4M.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.R2S25M.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.BMPT72.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AKM.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
+                        //俄罗斯 防空
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TUNGUSKA.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
+                        //俄罗斯 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
 
-                        //北约
+                        //美国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.AMX56.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
+                        //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
+                        //美国 轻型车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.UH60.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.NH90.get()));
+                        //美国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.UH60.get()));
+                        //美国 固定翼
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F16C.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));
+
+                        //法国 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AMX56.get()));
+                        //法国 直升机
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
+                        //法国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALEAA.get()));
 
+                        //德国 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
+
+                        //瑞典 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
+                        //瑞典 装甲车辆
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
+                        //瑞典 固定翼
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
+
+                        //欧洲 直升机
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.NH90.get()));
+
+                        //虚构/特殊
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TJGC.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
+                        //中国 民用/娱乐
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PZBJY.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.SD905.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
+                        //自动炮塔
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS114.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS514.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS810.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
+//                      output.accept(ContainerBlockItem.createInstance(ModEntities.SD905.get()));
                     }
                     ).build()
     );
@@ -107,29 +135,38 @@ public class ModTabs {
                     .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
                     .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
                     .displayItems((param, output) -> {
-                        //ww2
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
+                        //苏联 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M2A2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T3485.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+
+                        //德国 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
+
+                        //美国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PERSHING.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M2A2.get()));
+                        //美国 装甲车辆
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
+                        //美国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
+
+                        //英国 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
+                        //英国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));                            }
+                        //日本 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
+                    }
                     ).build()
     );
 

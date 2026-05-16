@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:vt4b",
-  "MaxHealth": 470   ,
+  "MaxHealth": 470,
   "MaxEnergy": 20000000,
   "OBB": [
     {
@@ -101,18 +101,37 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "Position": [0.6375, 1.17053125, 0.35355625],
+        "Position": [
+          0.6375,
+          1.17053125,
+          0.35355625
+        ],
         "Transform": "Barrel",
-        "ZoomPosition": [0.6375, 1.17053125, 0.35355625],
+        "ZoomPosition": [
+          0.6375,
+          1.17053125,
+          0.35355625
+        ],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.6375, -0.4, 0.35355625],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Position": [
+        0.6375,
+        -0.4,
+        0.35355625
+      ],
+      "Weapons": [
+        "Cannon",
+        "MachineGun"
+      ],
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
-      "Sensitivity": [0.52, 0.72, 0.9],
+      "Sensitivity": [
+        0.52,
+        0.72,
+        0.9
+      ],
       "HasThermalImaging": true
     },
     {
@@ -470,7 +489,7 @@
     1.5,
     4
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/vt4a1_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/vt4b_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_land.png",
   "Type": "Tank",
   "CollisionLevel": {

@@ -3,9 +3,5 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/pershing.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/pershing.png"
-  },
-  "MouseSpeed": [
-    0.23,
-    0.23
-  ]
+  }
 }

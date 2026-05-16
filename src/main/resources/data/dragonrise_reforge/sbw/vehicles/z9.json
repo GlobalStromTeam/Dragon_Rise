@@ -275,7 +275,7 @@
     "CrashPassengers": true
   },
   "HUDColor": "0xFFC700",
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/z10a_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/z9_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",

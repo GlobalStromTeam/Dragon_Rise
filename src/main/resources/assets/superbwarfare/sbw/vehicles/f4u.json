@@ -4,6 +4,5 @@
     "Animation": "dragonrise_reforge:animations/f4u.animation.json",
     "Model": "dragonrise_reforge:geo/f4u.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/f4u.png"
-  },
-  "MouseSpeed": [0.53, 0.53]
+  }
 }

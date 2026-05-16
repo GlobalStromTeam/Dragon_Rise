@@ -73,23 +73,37 @@ public class GeoOBBDataProvider implements DataProvider {
             Map<Integer, JsonArray> seatsCameraPositions = extractSeatsCameraPositions(geoJson);
             List<JsonArray> terrainCompatPositions = extractTerrainCompatPositions(geoJson);
 
-            if (obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty() && terrainCompatPositions.isEmpty()) {
-                return;
-            }
-
             String baseName = geoFile.getFileName().toString().replace(".geo.json", "");
             Path vehicleFile = dragonriseOutputPath.resolve(baseName + ".json");
 
-            JsonObject vehicleJson;
+            // 更新VehicleIcon（无论是否有其他数据更新，只要vehicle文件存在就替换）
             if (Files.exists(vehicleFile)) {
-                String vehicleContent = Files.readString(vehicleFile);
-                vehicleJson = JsonParser.parseString(vehicleContent).getAsJsonObject();
-            } else {
-                vehicleJson = new JsonObject();
-                vehicleJson.addProperty("ID", "dragonrise_reforge:" + baseName);
+                try {
+                    String vehicleContent = Files.readString(vehicleFile);
+                    JsonObject existingVehicleJson = JsonParser.parseString(vehicleContent).getAsJsonObject();
+                    if (existingVehicleJson.has("VehicleIcon")) {
+                        String iconPath = "dragonrise_reforge:textures/vehicle_icon/" + baseName + "_icon.png";
+                        existingVehicleJson.addProperty("VehicleIcon", iconPath);
+                        Files.writeString(vehicleFile, GSON.toJson(existingVehicleJson));
+                    }
+                } catch (Exception ignored) {
+                }
             }
 
-            if (!obbList.isEmpty()) {
+            // 如果没有需要提取的数据，后面只做superbwarfare配置生成
+            boolean hasExtractableData = !(obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty() && terrainCompatPositions.isEmpty());
+
+             if (hasExtractableData) {
+             JsonObject vehicleJson;
+             if (Files.exists(vehicleFile)) {
+                 String vehicleContent = Files.readString(vehicleFile);
+                 vehicleJson = JsonParser.parseString(vehicleContent).getAsJsonObject();
+             } else {
+                 vehicleJson = new JsonObject();
+                 vehicleJson.addProperty("ID", "dragonrise_reforge:" + baseName);
+             }
+
+             if (!obbList.isEmpty()) {
                 vehicleJson.add("OBB", obbList);
             }
 
@@ -192,13 +206,9 @@ public class GeoOBBDataProvider implements DataProvider {
                 vehicleJson.add("TerrainCompat", terrainCompatArray);
             }
 
-            if (vehicleJson.has("VehicleIcon")) {
-                String iconPath = "dragonrise_reforge:textures/vehicle_icon/" + baseName + "_icon.png";
-                vehicleJson.addProperty("VehicleIcon", iconPath);
+                Files.createDirectories(vehicleFile.getParent());
+                Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
             }
-
-            Files.createDirectories(vehicleFile.getParent());
-            Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
 
             // Generate superbwarfare vehicle config
             generateSuperbwarfareVehicleConfig(superbwarfareOutputPath, baseName);
@@ -223,11 +233,6 @@ public class GeoOBBDataProvider implements DataProvider {
             model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
             model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
             vehicleJson.add("Model", model);
-
-            JsonArray mouseSpeed = new JsonArray();
-            mouseSpeed.add(0.23);
-            mouseSpeed.add(0.23);
-            vehicleJson.add("MouseSpeed", mouseSpeed);
         }
 
         // Only update Model if not already set
@@ -244,13 +249,6 @@ public class GeoOBBDataProvider implements DataProvider {
             if (!model.has("Texture")) {
                 model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
             }
-        }
-
-        if (!vehicleJson.has("MouseSpeed")) {
-            JsonArray mouseSpeed = new JsonArray();
-            mouseSpeed.add(0.23);
-            mouseSpeed.add(0.23);
-            vehicleJson.add("MouseSpeed", mouseSpeed);
         }
 
         Files.createDirectories(vehicleFile.getParent());

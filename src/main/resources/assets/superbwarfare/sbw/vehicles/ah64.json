@@ -3,6 +3,5 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/ah64.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/ah64.png"
-  },
-  "MouseSpeed": [0.23, 0.23]
+  }
 }

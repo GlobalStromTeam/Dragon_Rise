@@ -3,9 +3,5 @@
   "Model": {
     "Model": "dragonrise_reforge:geo/tunguska.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/tunguska.png"
-  },
-  "MouseSpeed": [
-    0.23,
-    0.23
-  ]
+  }
 }

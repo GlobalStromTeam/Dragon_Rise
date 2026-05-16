@@ -266,8 +266,16 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[1.623, 1.779, -0.731]],
-        "Directions": ["Passenger"]
+        "Positions": [
+          [
+            1.623,
+            1.779,
+            -0.731
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ]
       },
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png"
     },
@@ -275,8 +283,16 @@
       "Template": "@MG",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[1.623, 1.779, -0.731]],
-        "Directions": ["Passenger"]
+        "Positions": [
+          [
+            1.623,
+            1.779,
+            -0.731
+          ]
+        ],
+        "Directions": [
+          "Passenger"
+        ]
       }
     },
     "Cannon105": {

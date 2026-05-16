@@ -101,18 +101,37 @@
     {
       "HidePassenger": true,
       "CameraPos": {
-        "Position": [0.6375, 1.17053125, 0.35355625],
+        "Position": [
+          0.6375,
+          1.17053125,
+          0.35355625
+        ],
         "Transform": "Barrel",
-        "ZoomPosition": [0.6375, 1.17053125, 0.35355625],
+        "ZoomPosition": [
+          0.6375,
+          1.17053125,
+          0.35355625
+        ],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.6375, -0.4, 0.35355625],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Position": [
+        0.6375,
+        -0.4,
+        0.35355625
+      ],
+      "Weapons": [
+        "Cannon",
+        "MachineGun"
+      ],
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
-      "Sensitivity": [0.52, 0.72, 0.9],
+      "Sensitivity": [
+        0.52,
+        0.72,
+        0.9
+      ],
       "HasThermalImaging": true
     },
     {

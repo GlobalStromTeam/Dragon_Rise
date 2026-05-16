@@ -376,7 +376,7 @@
     1.5,
     4
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cv90_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/test_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
   "Type": "Tank",
   "CollisionLevel": {

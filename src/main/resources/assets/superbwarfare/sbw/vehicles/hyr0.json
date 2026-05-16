@@ -4,6 +4,5 @@
     "Model": "dragonrise_reforge:geo/hyr0.geo.json",
     "Animation": "dragonrise_reforge:animations/hyr0.animation.json",
     "Texture": "dragonrise_reforge:textures/entity/hyr0.png"
-  },
-  "MouseSpeed": [0.23, 0.23]
+  }
 }

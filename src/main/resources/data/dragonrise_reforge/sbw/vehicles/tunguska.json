@@ -437,7 +437,7 @@
     "ExplosionRadius": 5
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/tunguska_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ru_land.png",
   "Type": "APC",
   "CollisionLevel": {
     "Level": 3,
