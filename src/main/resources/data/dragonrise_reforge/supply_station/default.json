@@ -42,6 +42,11 @@
  *             指定的任意物品 CustomItem × CustomItemCount 个
  *             适用于自定义弹药、特殊消耗品等场景
  *
+ * BonusItem - 额外补给物品 (仅 ResupplyRule 顶层)
+ *             每次补给完成后额外向载具物品栏塞入指定物品
+ *             不参与弹药类型匹配, 对所有载具统一生效
+ *             优先级: 载具覆盖 > Default, 设为 "" 即可禁用
+ *
  * ========================= 补给进度指示 ======================
  *
  * 补给并非瞬间完成，而是有充电时间 (默认 160 tick = 8秒)
@@ -82,6 +87,11 @@
     "FixedAmount": 24,
     // 血量恢复百分比 (0=不恢复, 50=恢复一半, 100=回满)
     "HealPercent": 50,
+    // 额外补给物品 (可选, 每次补给周期额外塞入载具物品栏)
+    // 设为 "" 表示不追加额外物品
+    "BonusItem": "superbwarfare:medical_kit",
+    // 每次补给的额外物品数量
+    "BonusItemCount": 2,
     /* "AmmoOverrides" - 按弹药类型覆盖规则
      * key = 弹药注册ID, value = { Mode, FixedAmount, CustomItem... }
      * 未列出的弹药类型将继承 Default.Mode 的处理方式
@@ -138,6 +148,8 @@
      *   "Mode": "FIXED",
      *   "FixedAmount": 200,
      *   "HealPercent": 50,
+     *   "BonusItem": "",
+     *   "BonusItemCount": 1,
      *   "AmmoOverrides": {
      *     "<弹药ID>": {
      *       "Mode": "MAGAZINE",

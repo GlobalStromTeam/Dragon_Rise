@@ -489,7 +489,7 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune()
-                    .sized(1.0f, 1.5f)
+                    .sized(2.0f, 2.0f)
     );
 
     public static final RegistryObject<EntityType<TOYOTASEIKIEntity>> TOYOTASEIKI = register("toyota_seiki",

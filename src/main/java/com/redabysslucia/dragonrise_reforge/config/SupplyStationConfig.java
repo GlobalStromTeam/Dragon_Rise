@@ -24,6 +24,12 @@ public class SupplyStationConfig {
         @SerializedName("HealPercent")
         public float healPercent = 50f;
 
+        @SerializedName("BonusItem")
+        public String bonusItem = "";
+
+        @SerializedName("BonusItemCount")
+        public int bonusItemCount = 1;
+
         @SerializedName("AmmoOverrides")
         public Map<String, AmmoTypeRule> ammoOverrides = new HashMap<>();
     }
@@ -49,6 +55,26 @@ public class SupplyStationConfig {
             return override;
         }
         return defaultRule;
+    }
+
+    public String getEffectiveBonusItem(ResupplyRule vehicleRule) {
+        if (vehicleRule.bonusItem != null && !vehicleRule.bonusItem.isEmpty()) {
+            return vehicleRule.bonusItem;
+        }
+        if (vehicleRule != defaultRule && defaultRule.bonusItem != null && !defaultRule.bonusItem.isEmpty()) {
+            return defaultRule.bonusItem;
+        }
+        return "";
+    }
+
+    public int getEffectiveBonusItemCount(ResupplyRule vehicleRule) {
+        if (vehicleRule.bonusItem != null && !vehicleRule.bonusItem.isEmpty()) {
+            return Math.max(1, vehicleRule.bonusItemCount);
+        }
+        if (vehicleRule != defaultRule && defaultRule.bonusItem != null && !defaultRule.bonusItem.isEmpty()) {
+            return Math.max(1, defaultRule.bonusItemCount);
+        }
+        return 0;
     }
 
     public AmmoTypeRule getAmmoRule(ResupplyRule vehicleRule, String ammoKey) {

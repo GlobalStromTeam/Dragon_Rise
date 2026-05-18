@@ -20,7 +20,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -73,6 +75,20 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         this.entityData.define(SUPPLY_TIME, DEFAULT_SUPPLY_TIME);
         this.entityData.define(ACTIVE, true);
         this.entityData.define(SUPPLY_PROGRESS, 0f);
+    }
+
+    @Override
+    public boolean isPushable() {
+        return false;
+    }
+
+    @Override
+    public void push(Entity entity) {
+    }
+
+    @Override
+    public float getMaxHealth() {
+        return 300;
     }
 
     public float getSupplyRange() {
@@ -134,6 +150,8 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         if (this.level().isClientSide()) {
             return;
         }
+
+        this.setDeltaMovement(Vec3.ZERO);
 
         if (!isActive()) {
             return;
@@ -227,7 +245,8 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         for (GeoVehicleEntity vehicle : vehicles) {
             boolean needsSupply = vehicleNeedsSupply(vehicle);
             boolean needsHeal = vehicleNeedsHealing(vehicle);
-            if (needsSupply || needsHeal) {
+            boolean needsBonus = vehicleNeedsBonusItem(vehicle);
+            if (needsSupply || needsHeal || needsBonus) {
                 anyNeedsAction = true;
                 trackedVehicleHealth.put(vehicle.getUUID(), vehicle.getHealth());
             }
@@ -286,6 +305,47 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return vehicle.getHealth() < vehicle.getMaxHealth();
     }
 
+    private boolean vehicleNeedsBonusItem(GeoVehicleEntity vehicle) {
+        SupplyStationConfig config = SupplyStationDataLoader.getConfig();
+        String vehicleId = getVehicleId(vehicle);
+        SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
+        String bonusItemId = config.getEffectiveBonusItem(vehicleRule);
+        if (bonusItemId.isEmpty()) {
+            return false;
+        }
+
+        ResourceLocation itemLocation = ResourceLocation.tryParse(bonusItemId);
+        if (itemLocation == null) {
+            return false;
+        }
+
+        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        if (bonusItem == null) {
+            return false;
+        }
+
+        int target = config.getEffectiveBonusItemCount(vehicleRule);
+        int current = countBonusItem(vehicle, bonusItem);
+        return current < target;
+    }
+
+    private int countBonusItem(GeoVehicleEntity vehicle, Item bonusItem) {
+        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
+        if (handlerOpt.isEmpty()) {
+            return 0;
+        }
+
+        IItemHandler handler = handlerOpt.get();
+        int total = 0;
+        for (int i = 0; i < handler.getSlots(); i++) {
+            ItemStack stack = handler.getStackInSlot(i);
+            if (stack.getItem() == bonusItem) {
+                total += stack.getCount();
+            }
+        }
+        return total;
+    }
+
     private boolean checkWeaponNeedsSupply(GeoVehicleEntity vehicle, GunData gunData,
                                             SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule) {
         String ammoKey = getAmmoKey(gunData);
@@ -314,6 +374,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         for (GeoVehicleEntity vehicle : vehicles) {
             resupplyVehicle(vehicle);
             healVehicle(vehicle, config);
+            supplyBonusItem(vehicle, config);
         }
 
         this.level().playSound(null, this.blockPosition(),
@@ -337,6 +398,41 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         float healAmount = maxHealth * healPercent / 100f;
         float newHealth = Math.min(maxHealth, currentHealth + healAmount);
         vehicle.setHealth(newHealth);
+    }
+
+    private void supplyBonusItem(GeoVehicleEntity vehicle, SupplyStationConfig config) {
+        String vehicleId = getVehicleId(vehicle);
+        SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
+        String bonusItemId = config.getEffectiveBonusItem(vehicleRule);
+        if (bonusItemId.isEmpty()) {
+            return;
+        }
+
+        ResourceLocation itemLocation = ResourceLocation.tryParse(bonusItemId);
+        if (itemLocation == null) {
+            return;
+        }
+
+        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        if (bonusItem == null) {
+            return;
+        }
+
+        int target = config.getEffectiveBonusItemCount(vehicleRule);
+        int current = countBonusItem(vehicle, bonusItem);
+        int toAdd = target - current;
+        if (toAdd <= 0) {
+            return;
+        }
+
+        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
+        if (handlerOpt.isEmpty()) {
+            return;
+        }
+
+        IItemHandler handler = handlerOpt.get();
+        ItemStack stack = new ItemStack(bonusItem, toAdd);
+        InventoryTool.insertItem(handler, stack, toAdd);
     }
 
     private String getVehicleId(GeoVehicleEntity vehicle) {
