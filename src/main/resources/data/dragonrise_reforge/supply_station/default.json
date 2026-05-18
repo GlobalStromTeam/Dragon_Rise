@@ -22,6 +22,13 @@
  * 查询流程: 载具ID → VehicleOverrides (未匹配则用 Default)
  *           → 该规则的 AmmoOverrides (未匹配则继承规则的 Mode)
  *
+ * ========================= 载具血量恢复 ======================
+ *
+ * 补给完成时会同时恢复载具血量
+ * HealPercent - 恢复最大血量的百分比 (0=不恢复, 50=恢复一半, 100=回满)
+ * 每次补给触发, 恢复量 = MaxHealth × HealPercent / 100 (不超过满血)
+ * 可在 Default 中设置全局值, 也可在 VehicleOverrides 中为特定载具单独设置
+ *
  * ========================= 三种补给模式 ======================
  *
  * MAGAZINE  - 弹匣制: 将武器的当前弹匣补满(ammo = magazine)
@@ -38,11 +45,6 @@
  * ========================= 补给进度指示 ======================
  *
  * 补给并非瞬间完成，而是有充电时间 (默认 160 tick = 8秒)
- * 充电期间屏幕中央会显示一个空心圆环:
- *   - 未填充部分: 半透明白色 (表示剩余时间)
- *   - 已填充部分: 金色顺时针增长 (表示已完成进度)
- *   - 充电期间补给站自身会旋转电火花粒子
- *   - 充电完成后圆环消失，补给执行，产生绿色粒子
  *
  * 只有正在驾驶载具、且载具在补给站感应范围内的玩家才会看到圆环
  *
@@ -78,6 +80,8 @@
     "Mode": "MAGAZINE",
     // FIXED 模式下的每次补给数量
     "FixedAmount": 24,
+    // 血量恢复百分比 (0=不恢复, 50=恢复一半, 100=回满)
+    "HealPercent": 50,
     /* "AmmoOverrides" - 按弹药类型覆盖规则
      * key = 弹药注册ID, value = { Mode, FixedAmount, CustomItem... }
      * 未列出的弹药类型将继承 Default.Mode 的处理方式
@@ -121,65 +125,19 @@
    * 未匹配的载具自动使用 Default 规则
    * ========================================================== */
   "VehicleOverrides": {
-
-    /* ====== T80 主战坦克 ======
-     * 全局: FIXED 200
-     * 重型弹药: MAGAZINE (穿甲弹按弹匣补充) */
-    "dragonrise_reforge:t80": {
-      "Mode": "FIXED",
-      "FixedAmount": 200,
-      "AmmoOverrides": {
-        "superbwarfare:heavy_ammo": {
-          "Mode": "MAGAZINE",
-          "FixedAmount": 60
-        }
-      }
-    },
-
     /* ====== ZTZ99A 主战坦克 ======
      * 全部 MAGAZINE 弹匣制, 备用弹药填充量 150 */
     "dragonrise_reforge:ztz99a": {
       "Mode": "MAGAZINE",
       "FixedAmount": 150,
       "AmmoOverrides": {}
-    },
-
-    /* ====== MK19 榴弹发射器 ======
-     * 全局: FIXED 300
-     * 重型弹药: FIXED 每次 500 */
-    "dragonrise_reforge:mk19": {
-      "Mode": "FIXED",
-      "FixedAmount": 300,
-      "AmmoOverrides": {
-        "superbwarfare:heavy_ammo": {
-          "Mode": "FIXED",
-          "FixedAmount": 500
-        }
-      }
-    },
-
-    /* ====== ZU23 双管机炮 (演示 PACKAGE 模式) ======
-     * 全局: FIXED 400
-     * 重型弹药: PACKAGE → 每次补给直接塞 4 个 TNT 到载具物品栏 */
-    "dragonrise_reforge:zu23": {
-      "Mode": "FIXED",
-      "FixedAmount": 400,
-      "AmmoOverrides": {
-        "superbwarfare:heavy_ammo": {
-          "Mode": "PACKAGE",
-          /* CustomItem: 要补给的物品注册ID, 格式 <modid>:<物品名> */
-          "CustomItem": "minecraft:tnt",
-          /* CustomItemCount: 每次补给塞入的物品数量 */
-          "CustomItemCount": 4
-        }
-      }
     }
-
     /* ========================= 添加新载具模板 =========================
      *
      * "<modid>:<实体名>": {
      *   "Mode": "FIXED",
      *   "FixedAmount": 200,
+     *   "HealPercent": 50,
      *   "AmmoOverrides": {
      *     "<弹药ID>": {
      *       "Mode": "MAGAZINE",

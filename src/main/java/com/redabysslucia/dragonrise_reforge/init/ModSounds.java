@@ -24,4 +24,10 @@ public class ModSounds {
     
     public static final RegistryObject<SoundEvent> TERRORIST_SHOOT = REGISTRY.register("terrorist_shoot", () -> 
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_shoot")));
+
+    public static final RegistryObject<SoundEvent> SUPPLY_STATION_CHARGING = REGISTRY.register("supply_station_charging", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_charging")));
+
+    public static final RegistryObject<SoundEvent> SUPPLY_STATION_COMPLETE = REGISTRY.register("supply_station_complete", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_complete")));
 }

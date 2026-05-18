@@ -8,19 +8,19 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.tools.InventoryTool;
 import com.redabysslucia.dragonrise_reforge.config.SupplyStationConfig;
 import com.redabysslucia.dragonrise_reforge.config.SupplyStationDataLoader;
-import net.minecraft.core.particles.ParticleTypes;
+import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -52,12 +52,13 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     private static final int DEFAULT_SUPPLY_TIME = 160;
 
     private int tickCounter = 0;
-    private int activeParticleTick = 0;
     private int chargeTick = 0;
     private int chargeCooldown = 0;
+    private int chargingSoundTimer = 0;
     private final Map<UUID, Float> trackedVehicleHealth = new HashMap<>();
 
     private static final int INTERRUPT_COOLDOWN = 10;
+    private static final int CHARGING_SOUND_INTERVAL = 20;
 
     public AmmoSupplyStationEntity(EntityType<? extends AmmoSupplyStationEntity> type, Level level) {
         super(type, level);
@@ -131,11 +132,6 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         super.tick();
 
         if (this.level().isClientSide()) {
-            if (isCharging()) {
-                spawnChargeParticles();
-            } else if (isActive()) {
-                spawnIdleParticles();
-            }
             return;
         }
 
@@ -171,6 +167,14 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         float progress = Math.min(1f, (float) chargeTick / (float) totalTime);
         setSupplyProgress(progress);
 
+        chargingSoundTimer--;
+        if (chargingSoundTimer <= 0) {
+            this.level().playSound(null, this.blockPosition(),
+                    ModSounds.SUPPLY_STATION_CHARGING.get(), SoundSource.BLOCKS,
+                    1.0f, 1.0f);
+            chargingSoundTimer = CHARGING_SOUND_INTERVAL;
+        }
+
         if (checkVehicleDamage()) {
             cancelCharge();
             return;
@@ -179,6 +183,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         if (progress >= 1f) {
             chargeTick = 0;
             trackedVehicleHealth.clear();
+            chargingSoundTimer = 0;
             performSupply();
             setSupplyProgress(0f);
         }
@@ -210,22 +215,25 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     private void cancelCharge() {
         chargeTick = 0;
         trackedVehicleHealth.clear();
+        chargingSoundTimer = 0;
         setSupplyProgress(0f);
         chargeCooldown = INTERRUPT_COOLDOWN;
     }
 
     private void startCharge() {
         List<GeoVehicleEntity> vehicles = findNearbyVehicles();
-        boolean anyNeedsSupply = false;
+        boolean anyNeedsAction = false;
         trackedVehicleHealth.clear();
         for (GeoVehicleEntity vehicle : vehicles) {
-            if (vehicleNeedsSupply(vehicle)) {
-                anyNeedsSupply = true;
+            boolean needsSupply = vehicleNeedsSupply(vehicle);
+            boolean needsHeal = vehicleNeedsHealing(vehicle);
+            if (needsSupply || needsHeal) {
+                anyNeedsAction = true;
                 trackedVehicleHealth.put(vehicle.getUUID(), vehicle.getHealth());
             }
         }
 
-        if (anyNeedsSupply) {
+        if (anyNeedsAction) {
             chargeTick = 0;
             setSupplyProgress(0.001f);
         }
@@ -236,7 +244,9 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         AABB searchBox = this.getBoundingBox().inflate(range);
         return this.level().getEntitiesOfClass(
                 GeoVehicleEntity.class, searchBox,
-                v -> v.isAlive() && v.distanceToSqr(this) <= range * range
+                v -> v.isAlive()
+                    && v.distanceToSqr(this) <= range * range
+                    && v.getPassengers().stream().anyMatch(p -> p instanceof Player)
         );
     }
 
@@ -264,6 +274,18 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return false;
     }
 
+    private boolean vehicleNeedsHealing(GeoVehicleEntity vehicle) {
+        SupplyStationConfig config = SupplyStationDataLoader.getConfig();
+        String vehicleId = getVehicleId(vehicle);
+        SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
+        float healPercent = vehicleRule.healPercent;
+        if (healPercent <= 0f && vehicleRule != config.defaultRule) {
+            healPercent = config.defaultRule.healPercent;
+        }
+        if (healPercent <= 0f) return false;
+        return vehicle.getHealth() < vehicle.getMaxHealth();
+    }
+
     private boolean checkWeaponNeedsSupply(GeoVehicleEntity vehicle, GunData gunData,
                                             SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule) {
         String ammoKey = getAmmoKey(gunData);
@@ -286,18 +308,35 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     }
 
     private void performSupply() {
+        SupplyStationConfig config = SupplyStationDataLoader.getConfig();
         List<GeoVehicleEntity> vehicles = findNearbyVehicles();
-        boolean anyResupplied = false;
 
         for (GeoVehicleEntity vehicle : vehicles) {
-            if (resupplyVehicle(vehicle)) {
-                anyResupplied = true;
-            }
+            resupplyVehicle(vehicle);
+            healVehicle(vehicle, config);
         }
 
-        if (anyResupplied) {
-            spawnSupplyParticles(vehicles);
+        this.level().playSound(null, this.blockPosition(),
+                ModSounds.SUPPLY_STATION_COMPLETE.get(), SoundSource.BLOCKS,
+                1.0f, 1.0f);
+    }
+
+    private void healVehicle(GeoVehicleEntity vehicle, SupplyStationConfig config) {
+        String vehicleId = getVehicleId(vehicle);
+        SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
+        float healPercent = vehicleRule.healPercent;
+        if (healPercent <= 0f && vehicleRule != config.defaultRule) {
+            healPercent = config.defaultRule.healPercent;
         }
+        if (healPercent <= 0f) return;
+
+        float maxHealth = vehicle.getMaxHealth();
+        float currentHealth = vehicle.getHealth();
+        if (currentHealth >= maxHealth) return;
+
+        float healAmount = maxHealth * healPercent / 100f;
+        float newHealth = Math.min(maxHealth, currentHealth + healAmount);
+        vehicle.setHealth(newHealth);
     }
 
     private String getVehicleId(GeoVehicleEntity vehicle) {
@@ -479,55 +518,6 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             int remaining = itemsNeeded - inserted;
             ammoStack.setCount(remaining);
             InventoryTool.insertItem(handler, ammoStack, remaining);
-        }
-    }
-
-    private void spawnChargeParticles() {
-        activeParticleTick++;
-        if (activeParticleTick % 4 != 0) return;
-
-        Vec3 pos = this.position();
-        double y = pos.y + 1.0;
-        double r = 0.6;
-        double angle = (activeParticleTick * 0.3) % (Math.PI * 2);
-        double ox = Math.cos(angle) * r;
-        double oz = Math.sin(angle) * r;
-        this.level().addParticle(ParticleTypes.ELECTRIC_SPARK,
-                pos.x + ox, y, pos.z + oz, 0, 0.05, 0);
-    }
-
-    private void spawnSupplyParticles(List<GeoVehicleEntity> vehicles) {
-        if (!(this.level() instanceof ServerLevel serverLevel)) {
-            return;
-        }
-
-        Vec3 stationPos = this.position();
-        for (GeoVehicleEntity vehicle : vehicles) {
-            Vec3 vehiclePos = vehicle.position();
-            Vec3 midPoint = stationPos.add(vehiclePos).scale(0.5);
-
-            for (int i = 0; i < 8; i++) {
-                double dx = (this.random.nextDouble() - 0.5) * 0.5;
-                double dy = this.random.nextDouble() * 1.5;
-                double dz = (this.random.nextDouble() - 0.5) * 0.5;
-                serverLevel.sendParticles(ParticleTypes.HAPPY_VILLAGER,
-                        midPoint.x + dx, midPoint.y + dy, midPoint.z + dz,
-                        1, 0, 0, 0, 0.1);
-            }
-        }
-    }
-
-    private void spawnIdleParticles() {
-        activeParticleTick++;
-        if (activeParticleTick % 10 != 0) return;
-
-        Vec3 pos = this.position();
-        double y = pos.y + 1.0;
-        for (int i = 0; i < 2; i++) {
-            double ox = (this.random.nextDouble() - 0.5) * 0.8;
-            double oz = (this.random.nextDouble() - 0.5) * 0.8;
-            this.level().addParticle(ParticleTypes.ELECTRIC_SPARK,
-                    pos.x + ox, y, pos.z + oz, 0, 0.05, 0);
         }
     }
 

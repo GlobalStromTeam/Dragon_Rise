@@ -21,6 +21,9 @@ public class SupplyStationConfig {
         @SerializedName("FixedAmount")
         public int fixedAmount = 100;
 
+        @SerializedName("HealPercent")
+        public float healPercent = 50f;
+
         @SerializedName("AmmoOverrides")
         public Map<String, AmmoTypeRule> ammoOverrides = new HashMap<>();
     }

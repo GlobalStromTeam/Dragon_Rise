@@ -718,5 +718,21 @@
         "stream": true
       }
     ]
+  },
+  "supply_station_charging": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:supply_station/charging",
+        "stream": false
+      }
+    ]
+  },
+  "supply_station_complete": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:supply_station/complete",
+        "stream": false
+      }
+    ]
   }
 }
