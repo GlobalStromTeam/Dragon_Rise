@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:gorka3",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/gorka3.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/gorka3.png"
+  }
+}

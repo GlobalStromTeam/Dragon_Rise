@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:ocean07_pants",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/ocean07_pants.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ocean07_pants.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:cnchest",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/cnchest.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cnchest.png"
+  }
+}

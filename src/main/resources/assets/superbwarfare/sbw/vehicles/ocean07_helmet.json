@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:ocean07_helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/ocean07_helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ocean07_helmet.png"
+  }
+}

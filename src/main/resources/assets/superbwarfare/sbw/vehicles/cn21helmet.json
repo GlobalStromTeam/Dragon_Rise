@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:cn21helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/cn21helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cn21helmet.png"
+  }
+}

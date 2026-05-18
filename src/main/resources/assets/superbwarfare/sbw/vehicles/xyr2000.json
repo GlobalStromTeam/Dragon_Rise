@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:xyr2000",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/xyr2000.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/xyr2000.png"
+  }
+}

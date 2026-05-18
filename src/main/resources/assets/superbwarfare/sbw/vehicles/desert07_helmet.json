@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:desert07_helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/desert07_helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/desert07_helmet.png"
+  }
+}

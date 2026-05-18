@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:med21_chest",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/med21_chest.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/med21_chest.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:bmpt72",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/bmpt72.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/bmpt72.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:leopard2a4",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/leopard2a4.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/leopard2a4.png"
+  }
+}

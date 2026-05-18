@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:terrorist",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/terrorist.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/terrorist.png"
+  }
+}

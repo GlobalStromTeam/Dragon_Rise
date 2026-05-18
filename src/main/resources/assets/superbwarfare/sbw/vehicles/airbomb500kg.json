@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:airbomb500kg",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/airbomb500kg.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/airbomb500kg.png"
+  }
+}

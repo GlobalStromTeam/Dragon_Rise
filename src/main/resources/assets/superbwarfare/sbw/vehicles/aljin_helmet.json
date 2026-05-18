@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:aljin_helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/aljin_helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/aljin_helmet.png"
+  }
+}

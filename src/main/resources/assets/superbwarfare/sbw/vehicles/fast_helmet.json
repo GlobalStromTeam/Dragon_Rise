@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:fast_helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/fast_helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/fast_helmet.png"
+  }
+}

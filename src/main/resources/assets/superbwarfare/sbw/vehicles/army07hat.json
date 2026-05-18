@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:army07hat",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/army07hat.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/army07hat.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:cnjustchest",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/cnjustchest.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cnjustchest.png"
+  }
+}

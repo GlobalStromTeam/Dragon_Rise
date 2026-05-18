@@ -1,0 +1,198 @@
+/* ============================================================
+ *  弹药补给站配置文件 (Ammo Supply Station Config)
+ * ============================================================
+ *
+ * 文件位置: data/<namespace>/supply_station/<任意名称>.json
+ * 支持通过数据包添加多个配置文件，重载时自动合并生效
+ * 热重载: 将配置文件放入 config/dragonrise_reforge/supply_station/
+ *         服务端执行 /reload 即可使修改生效，无需重启游戏
+ *
+ * ====================== 实体参数 (实体 NBT) ==================
+ *
+ * 可在游戏中用命令调整每个补给站的运行参数:
+ *   /data merge entity @e[type=dragonrise_reforge:ammo_supply_station,limit=1,sort=nearest] {SupplyTime:160}
+ *
+ *   SupplyRange   - 感应检测半径 (方块, 默认 10)
+ *   SupplyTime    - 补给充电时间 (tick, 默认 160 = 8秒, 设为1可瞬时)
+ *   SupplyInterval - 充电完成后再次检测的间隔 (tick, 默认 20 = 1秒)
+ *
+ * ========================= 三层规则体系 ======================
+ *
+ * 优先级: 弹药覆盖 > 载具覆盖 > 全局默认
+ * 查询流程: 载具ID → VehicleOverrides (未匹配则用 Default)
+ *           → 该规则的 AmmoOverrides (未匹配则继承规则的 Mode)
+ *
+ * ========================= 三种补给模式 ======================
+ *
+ * MAGAZINE  - 弹匣制: 将武器的当前弹匣补满(ammo = magazine)
+ *             若武器本身无弹匣(Magazine<=0)则自动降级为 FIXED 模式
+ *
+ * FIXED     - 固定数量: 当备用弹药 < FixedAmount 时触发
+ *             补充 (FixedAmount - 当前数量), 补到恰好 FixedAmount
+ *             例如 FixedAmount=100, 当前30 → 补充70
+ *
+ * PACKAGE   - 物品包: 不通过弹药系统, 直接向载具物品栏塞入
+ *             指定的任意物品 CustomItem × CustomItemCount 个
+ *             适用于自定义弹药、特殊消耗品等场景
+ *
+ * ========================= 补给进度指示 ======================
+ *
+ * 补给并非瞬间完成，而是有充电时间 (默认 160 tick = 8秒)
+ * 充电期间屏幕中央会显示一个空心圆环:
+ *   - 未填充部分: 半透明白色 (表示剩余时间)
+ *   - 已填充部分: 金色顺时针增长 (表示已完成进度)
+ *   - 充电期间补给站自身会旋转电火花粒子
+ *   - 充电完成后圆环消失，补给执行，产生绿色粒子
+ *
+ * 只有正在驾驶载具、且载具在补给站感应范围内的玩家才会看到圆环
+ *
+ * ======================== 弹药键 (Ammo Key) ==================
+ *
+ * 弹药键 = 武器的 AmmoConsumer.stack() 返回物品的注册ID
+ * 即 superbwarfare 注册的 AmmoSupplierItem ID:
+ *   superbwarfare:heavy_ammo   - 重型弹药 (坦克炮/机炮等)
+ *   superbwarfare:rifle_ammo   - 步枪弹药
+ *   superbwarfare:handgun_ammo - 手枪弹药
+ *   superbwarfare:shotgun_ammo - 霰弹弹药
+ *   superbwarfare:sniper_ammo  - 狙击弹药
+ *   minecraft:arrow            - 箭矢 (若武器消耗箭矢)
+ *
+ * 提示: 如果武器消耗的不是弹药物品而是其他物品(如方块/工具等),
+ *       弹药键就是那个物品的注册ID
+ *
+ * ======================== 载具键 (Vehicle Key) ===============
+ *
+ * 载具键 = 实体类型的注册ID, 格式: <modid>:<实体名>
+ * 示例: dragonrise_reforge:t80
+ *       dragonrise_reforge:ztz99a
+ *       dragonrise_reforge:j20
+ */
+
+{
+  /* ==========================================================
+   * "Default" - 全局默认规则
+   * 应用于所有未在 VehicleOverrides 中单独配置的载具
+   * ========================================================== */
+  "Default": {
+    // 全局默认补给模式: MAGAZINE | FIXED | PACKAGE
+    "Mode": "MAGAZINE",
+    // FIXED 模式下的每次补给数量
+    "FixedAmount": 24,
+    /* "AmmoOverrides" - 按弹药类型覆盖规则
+     * key = 弹药注册ID, value = { Mode, FixedAmount, CustomItem... }
+     * 未列出的弹药类型将继承 Default.Mode 的处理方式
+     * 注意: MAGAZINE 模式遇到无弹匣武器会自动降级为 FIXED */
+    "AmmoOverrides": {
+      "superbwarfare:large_shell_ap": {
+        "Mode": "FIXED",
+        "FixedAmount": 12
+      },
+      "superbwarfare:large_shell_he": {
+        "Mode": "FIXED",
+        "FixedAmount": 12
+      },
+      "superbwarfare:heavy_ammo": {
+        "Mode": "FIXED",
+        "FixedAmount": 240
+      },
+      "superbwarfare:rifle_ammo": {
+        "Mode": "FIXED",
+        "FixedAmount": 240
+      },
+      "superbwarfare:handgun_ammo": {
+        "Mode": "FIXED",
+        "FixedAmount": 120
+      },
+      "superbwarfare:shotgun_ammo": {
+        "Mode": "FIXED",
+        "FixedAmount": 30
+      },
+      "superbwarfare:sniper_ammo": {
+        "Mode": "FIXED",
+        "FixedAmount": 20
+      }
+    }
+  },
+
+  /* ==========================================================
+   * "VehicleOverrides" - 载具专属覆盖规则
+   * 按载具实体ID覆盖 Default 规则
+   * key = 载具注册ID, value = 同 Default 结构的规则对象
+   * 未匹配的载具自动使用 Default 规则
+   * ========================================================== */
+  "VehicleOverrides": {
+
+    /* ====== T80 主战坦克 ======
+     * 全局: FIXED 200
+     * 重型弹药: MAGAZINE (穿甲弹按弹匣补充) */
+    "dragonrise_reforge:t80": {
+      "Mode": "FIXED",
+      "FixedAmount": 200,
+      "AmmoOverrides": {
+        "superbwarfare:heavy_ammo": {
+          "Mode": "MAGAZINE",
+          "FixedAmount": 60
+        }
+      }
+    },
+
+    /* ====== ZTZ99A 主战坦克 ======
+     * 全部 MAGAZINE 弹匣制, 备用弹药填充量 150 */
+    "dragonrise_reforge:ztz99a": {
+      "Mode": "MAGAZINE",
+      "FixedAmount": 150,
+      "AmmoOverrides": {}
+    },
+
+    /* ====== MK19 榴弹发射器 ======
+     * 全局: FIXED 300
+     * 重型弹药: FIXED 每次 500 */
+    "dragonrise_reforge:mk19": {
+      "Mode": "FIXED",
+      "FixedAmount": 300,
+      "AmmoOverrides": {
+        "superbwarfare:heavy_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
+        }
+      }
+    },
+
+    /* ====== ZU23 双管机炮 (演示 PACKAGE 模式) ======
+     * 全局: FIXED 400
+     * 重型弹药: PACKAGE → 每次补给直接塞 4 个 TNT 到载具物品栏 */
+    "dragonrise_reforge:zu23": {
+      "Mode": "FIXED",
+      "FixedAmount": 400,
+      "AmmoOverrides": {
+        "superbwarfare:heavy_ammo": {
+          "Mode": "PACKAGE",
+          /* CustomItem: 要补给的物品注册ID, 格式 <modid>:<物品名> */
+          "CustomItem": "minecraft:tnt",
+          /* CustomItemCount: 每次补给塞入的物品数量 */
+          "CustomItemCount": 4
+        }
+      }
+    }
+
+    /* ========================= 添加新载具模板 =========================
+     *
+     * "<modid>:<实体名>": {
+     *   "Mode": "FIXED",
+     *   "FixedAmount": 200,
+     *   "AmmoOverrides": {
+     *     "<弹药ID>": {
+     *       "Mode": "MAGAZINE",
+     *       "FixedAmount": 50
+     *     },
+     *     "<弹药ID>": {
+     *       "Mode": "PACKAGE",
+     *       "CustomItem": "<modid>:<物品名>",
+     *       "CustomItemCount": 16
+     *     }
+     *   }
+     * }
+     *
+     * =============================================================== */
+  }
+}

@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.client.overlay.SupplyProgressOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.VehicleBackgroundOverlay;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -18,6 +19,10 @@ public class ClientEventHandler {
             Dragonrise_reforge.MODID + "_vehicle_background",
             new VehicleBackgroundOverlay()
         );
-        Dragonrise_reforge.LOGGER.info("Vehicle background overlay registered");
+        event.registerBelowAll(
+            Dragonrise_reforge.MODID + "_supply_progress",
+            new SupplyProgressOverlay()
+        );
+        Dragonrise_reforge.LOGGER.info("Dragonrise overlays registered");
     }
 }

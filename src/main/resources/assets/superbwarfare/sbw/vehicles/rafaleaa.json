@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:rafaleaa",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/rafaleaa.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/rafaleaa.png"
+  }
+}

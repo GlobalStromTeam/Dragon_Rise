@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Leopard2a4Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.M113Entity;
 
 
@@ -19,6 +22,7 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEnti
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.AmmoSupplyStationEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -480,6 +484,14 @@ public class ModEntities {
                     .fireImmune().sized(0.5f, 1.35f)
     );
 
+    public static final RegistryObject<EntityType<AmmoSupplyStationEntity>> AMMO_SUPPLY_STATION = register("ammo_supply_station",
+            EntityType.Builder.of(AmmoSupplyStationEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(1.0f, 1.5f)
+    );
+
     public static final RegistryObject<EntityType<TOYOTASEIKIEntity>> TOYOTASEIKI = register("toyota_seiki",
             EntityType.Builder.of(com.redabysslucia.dragonrise_reforge.entities.TOYOTASEIKIEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -901,6 +913,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<M113Entity>> M113 = register("m113",
             EntityType.Builder.of(M113Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Leopard2a4Entity>> LEOPARD2A4 = register("leopard2a4",
+            EntityType.Builder.of(Leopard2a4Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

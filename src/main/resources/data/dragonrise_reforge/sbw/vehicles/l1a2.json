@@ -183,8 +183,8 @@
       "Transform": "Turret",
       "Position": [
         0.0,
-        1.703,
-        1.375
+        -0.047,
+        0.912
       ],
       "CanRotateHead": false,
       "MinPitch": -10,

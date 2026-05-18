@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:kr06_pants",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/kr06_pants.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/kr06_pants.png"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:sniper21_helmet",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/sniper21_helmet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/sniper21_helmet.png"
+  }
+}

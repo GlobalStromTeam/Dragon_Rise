@@ -166,7 +166,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
-                    }
+
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));                    }
                     ).build()
     );
 
@@ -183,6 +184,7 @@ public class ModTabs {
                         output.accept(ModItems.DSHK_DEPLOYER.get());
                         output.accept(ModItems.M2_DEPLOYER.get());
                         output.accept(ModItems.SHIELD_DEPLOYER.get());
+                        output.accept(ModItems.AMMO_SUPPLY_STATION_DEPLOYER.get());
                         output.accept(DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ITEM.get());
                         output.accept(ModItems.CNCHEST.get());
                         output.accept(ModItems.CNJUSTCHEST.get());

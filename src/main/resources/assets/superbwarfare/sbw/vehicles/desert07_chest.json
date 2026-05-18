@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:desert07_chest",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/desert07_chest.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/desert07_chest.png"
+  }
+}

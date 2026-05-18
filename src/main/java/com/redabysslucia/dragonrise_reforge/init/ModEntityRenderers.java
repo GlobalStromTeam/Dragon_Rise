@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Leopard2a4Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M113Renderer;
 
 
@@ -82,6 +85,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AH64.get(), AH64Renderer::new);
                 event.registerEntityRenderer(ModEntities.UH60.get(), UH60Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHIELD.get(), SHIELDRenderer::new);
+                event.registerEntityRenderer(ModEntities.AMMO_SUPPLY_STATION.get(), AmmoSupplyStationRenderer::new);
                 event.registerEntityRenderer(ModEntities.TOYOTASEIKI.get(), TOYOTASEIKIRenderer::new);
                 event.registerEntityRenderer(ModEntities.CYBORG_TANK.get(), CyborgTankRenderer::new);
                 event.registerEntityRenderer(ModEntities.PROJECT640.get(), Project640Renderer::new);
@@ -133,6 +137,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
         event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
+        event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
+        event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);}
 
-        event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);       }
 }

@@ -168,8 +168,8 @@
       "Transform": "Turret",
       "Position": [
         0.0,
-        2.209,
-        -2.741
+        -0.013,
+        -2.673
       ],
       "CanRotateHead": false,
       "MinPitch": -10,

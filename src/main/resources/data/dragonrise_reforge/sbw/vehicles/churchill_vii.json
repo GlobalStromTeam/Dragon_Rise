@@ -118,8 +118,8 @@
       "Transform": "Turret",
       "Position": [
         0.032,
-        0.183,
-        1.584
+        -1.92,
+        1.626
       ],
       "Weapons": [
         "Cannon",

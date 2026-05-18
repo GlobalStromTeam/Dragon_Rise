@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:cnfast",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/cnfast.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cnfast.png"
+  }
+}
