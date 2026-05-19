@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:leopard2a4",
-  "MaxHealth": 500,
+  "MaxHealth": 400,
   "MaxEnergy": 20000000,
   "OBB": [
     {
@@ -41,16 +41,8 @@
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        0.413,
-        0.611,
-        4.141
-      ],
-      "Position": [
-        1.564,
-        0.617,
-        -0.803
-      ],
+      "Size": [0.413, 0.611, 4.141],
+      "Position": [1.564, 0.617, -0.803],
       "Part": "WheelRight"
     },
     {
@@ -102,23 +94,19 @@
       "BanHand": true,
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [
-        -0.798,
-        -1.021,
-        1.524
-      ],
-      "Weapons": [
-        "Cannon",
-        "MachineGun"
-      ],
+      "Position": [-0.798, -1.021, 1.524],
+      "Weapons": ["Cannon", "MachineGun"],
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Position": [-0.798, 0.6, 1.524],
+        "Transform": "Turret",
+        "ZoomPosition": [-0.798, 0.6, 1.524],
+        "Direction": "Barrel"
+      },
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 20,
-      "Sensitivity": [
-        0.52,
-        0.75,
-        0.9
-      ],
+      "Sensitivity": [0.52, 0.75, 0.9],
       "HasThermalImaging": true
     },
     {
@@ -218,14 +206,14 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:m1a2_fire_1p",
-        "Fire3P": "dragonrise_reforge:m1a2_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:m1a2_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:m1a2_fire_3p_far",
-        "VehicleReload": "dragonrise_reforge:m1a2_reload",
+        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
+        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
+        "Fire3PFar": "superbwarfare:m_1a_2_far",
+        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
+        "VehicleReload": "superbwarfare:m_1a_2_reload",
         "Change": "superbwarfare:into_cannon",
         "CancellableSounds": [
-          "dragonrise_reforge:m1a2_reload"
+          "superbwarfare:m_1a_2_reload"
         ]
       },
       "SoundRadius": 32,
@@ -429,56 +417,58 @@
     5
   ],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/leopard2a4_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gr_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,
     "PowerLimits": [
-      [
-        0,
-        0,
-        true
-      ],
-      [
-        0,
-        0,
-        true
-      ],
-      [
-        0.1,
-        0.05,
-        false
-      ],
-      [
-        1,
-        0.3,
-        false
-      ]
+      [0, 0, true],
+      [0, 0, true],
+      [0.1, 0.05, false],
+      [1, 0.3, false]
     ]
   },
-  "EngineSound": "dragonrise_reforge:m1a2_engine",
+  "EngineSound": "dragonrise_reforge:ztz99a_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
+    [2,0,3.0625],
+    [-2,0,3.0625],
+    [2,0,1.0625],
+    [-2,0,1.0625],
+    [2,0,1.125],
+    [-2, 0,1.125],
+    [2,0,0.1875],
+    [-2,0, 0.1875],
     [
-      1.594,
-      0.038,
-      2.109
+      2,
+      0,
+      -0.8125
     ],
     [
-      -1.419,
-      0.038,
-      -3.922
+      -2,
+      0,
+      -0.8125
     ],
     [
-      -1.481,
-      0.038,
-      2.109
+      2,
+      0,
+      -1.8125
     ],
     [
-      1.594,
-      0.038,
-      -3.922
+      -2,
+      0,
+      -1.8125
+    ],
+    [
+      2,
+      0,
+      -2.8125
+    ],
+    [
+      -2,
+      0,
+      -2.8125
     ]
   ]
 }

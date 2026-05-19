@@ -137,11 +137,6 @@
   "VehicleOverrides": {
     /* ====== ZTZ99A 主战坦克 ======
      * 全部 MAGAZINE 弹匣制, 备用弹药填充量 150 */
-    "dragonrise_reforge:ztz99a": {
-      "Mode": "MAGAZINE",
-      "FixedAmount": 150,
-      "AmmoOverrides": {}
-    }
     /* ========================= 添加新载具模板 =========================
      *
      * "<modid>:<实体名>": {

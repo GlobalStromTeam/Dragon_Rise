@@ -48,23 +48,32 @@ public class AC130Model extends DragonriseVehicleModel<AC130Entity> {
             case "bomb3" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideMissile(vehicle, 3));
 
-            case "rocket1" -> (bone, vehicle, state) ->
+            case "agL2" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 1));
 
-            case "rocket2" -> (bone, vehicle, state) ->
+            case "agL3" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 2));
 
-            case "rocket3" -> (bone, vehicle, state) ->
+            case "agL4" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 3));
 
-            case "rocket4" -> (bone, vehicle, state) ->
+            case "agL5" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 4));
 
-            case "rocket5" -> (bone, vehicle, state) ->
+            case "agL8" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 5));
 
-            case "rocket6" -> (bone, vehicle, state) ->
+            case "agL9" -> (bone, vehicle, state) ->
                     bone.setHidden(shouldHideCow(vehicle, 6));
+
+            case "agL10" -> (bone, vehicle, state) ->
+                    bone.setHidden(shouldHideCow(vehicle, 7));
+
+            case "agL11" -> (bone, vehicle, state) ->
+                    bone.setHidden(shouldHideCow(vehicle, 8));
+
+
+
             default -> null;
         };
     }
@@ -79,7 +88,7 @@ public class AC130Model extends DragonriseVehicleModel<AC130Entity> {
     }
 
     public boolean shouldHideMissile(VehicleEntity vehicle, int ammo) {
-        var gunData = vehicle.getGunData("Bomb");
+        var gunData = vehicle.getGunData("SeekMissile");
         if (gunData == null) {
             return false;
         } else {
