@@ -159,24 +159,17 @@
     ],
     "CanRotateHead": false,
     "Sensitivity": [
-      0,
-      0,
-      0
+      5,
+      5,
+      5
     ],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [
-        0.0,
-        3.1875,
-        4.125
-      ],
+      "Position": [0.0, 3.1875, 4.125],
+      "ZoomPosition": [-0.65438125, 0.9902625, 3.73305],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [
-        0,
-        2.75,
-        -14
-      ]
+      "AircraftCameraPos": [0, 2.75, -14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
@@ -319,7 +312,7 @@
           "Override": {
             "Name": "dragonrise_reforge:aasmg",
             "SeekWeaponInfo": {
-              "SeekDirection": "Barrel",
+              "SeekDirection": "ClientCamera",
               "SeekRange": 384,
               "SeekAngle": 20,
               "SeekTime": 20,
@@ -333,7 +326,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/agm_65.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
-      "Magazine": 6,
+      "Magazine": 2,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
       "Name": "weapon.superbwarfare.agm_65_missile_entity",
@@ -342,7 +335,7 @@
       "ExplosionRadius": 12,
       "Velocity": 3,
       "SeekWeaponInfo": {
-        "SeekDirection": "Vehicle",
+        "SeekDirection": "ClientCamera",
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 20,
@@ -358,38 +351,9 @@
           5.625
         ],
         "Positions": [
-          [
-            3.42560625,
-            1.3900125,
-            -1.00271875
-          ],
-          [
-            2.99673125,
-            1.704825,
-            -1.00271875
-          ],
-          [
-            3.86360625,
-            1.704825,
-            -1.00271875
-          ],
-          [
-            -3.42560625,
-            1.3900125,
-            -1.00271875
-          ],
-          [
-            -2.99673125,
-            1.704825,
-            -1.00271875
-          ],
-          [
-            -3.86360625,
-            1.704825,
-            -1.00271875
-          ]
+          [2.99673125, 1.704825, -1.00271875],
+          [-2.99673125, 1.704825, -1.00271875]
         ],
-        "ViewDirection": "Vehicle",
         "ViewPosition": [
           -0.94704375,
           0.3360875,
@@ -428,7 +392,7 @@
       "ExplosionRadius": 6,
       "Velocity": 3,
       "SeekWeaponInfo": {
-        "SeekDirection": "Default",
+        "SeekDirection": "ClientCamera",
         "SeekRange": 384,
         "SeekAngle": 20,
         "SeekTime": 20,
@@ -485,7 +449,7 @@
       "AddShooterDeltaMovement": true,
       "Velocity": 1.05,
       "SeekWeaponInfo": {
-        "SeekDirection": "Default",
+        "SeekDirection": "ClientCamera",
         "SeekRange": 512,
         "SeekAngle": 20,
         "SeekTime": 10,
@@ -501,7 +465,6 @@
       ],
       "ShootPos": {
         "Transform": "Vehicle",
-        "ViewDirection": "Default",
         "ShootPositionForHud": [
           0,
           1.53,
