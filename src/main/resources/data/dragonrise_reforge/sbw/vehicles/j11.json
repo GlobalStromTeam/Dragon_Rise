@@ -339,7 +339,6 @@
       ],
       "ShootPos": {
         "Transform": "Vehicle",
-        "ViewDirection": "Default",
         "ShootPositionForHud": [
           0,
           1.53,

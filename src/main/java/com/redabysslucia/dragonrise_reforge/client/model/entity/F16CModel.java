@@ -60,17 +60,6 @@ public class F16CModel extends DragonriseVehicleModel<F16CEntity> {
                         case "agm65-2" -> (bone, vehicle, state) ->
                                 bone.setHidden(shouldHideSeekMissile(vehicle, 2));
 
-                        case "agm65-3" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideSeekMissile(vehicle, 3));
-
-                        case "agm65-4" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideSeekMissile(vehicle, 4));
-
-                        case "agm65-5" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideSeekMissile(vehicle, 5));
-
-                        case "agm65-6" -> (bone, vehicle, state) ->
-                                bone.setHidden(shouldHideSeekMissile(vehicle, 6));
 
                         case "missile1" -> (bone, vehicle, state) ->
                                     bone.setHidden(shouldHideMissile(vehicle, 1));

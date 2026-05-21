@@ -48,7 +48,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     private static final EntityDataAccessor<Float> SUPPLY_PROGRESS =
             SynchedEntityData.defineId(AmmoSupplyStationEntity.class, EntityDataSerializers.FLOAT);
 
-    private static final float DEFAULT_SUPPLY_RANGE = 15.0f;
+    private static final float DEFAULT_SUPPLY_RANGE = 24.0f;
     private static final int DEFAULT_NON_MAGAZINE_FILL = 100;
     private static final int DEFAULT_SUPPLY_INTERVAL = 20;
     private static final int DEFAULT_SUPPLY_TIME = 160;
