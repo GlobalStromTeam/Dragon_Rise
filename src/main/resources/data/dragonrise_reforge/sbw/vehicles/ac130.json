@@ -154,42 +154,21 @@
     {
       "IsEnclosed": true,
       "Transform": "Vehicle",
-      "Position": [
-        0,
-        1.125,
-        1.7
-      ],
+      "Position": [0, 1.125, 1.7],
       "CanRotateHead": false,
-      "Sensitivity": [
-        0,
-        0,
-        0
-      ],
+      "Sensitivity": [5, 5, 5],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [
-          0.0,
-          3.13441875,
-          10.99754375
-        ],
+        "Position": [0.0, 3.13441875, 10.99754375],
+        "ZoomPosition": [0.0, 0.64031875, 5.25],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [
-          0,
-          14,
-          -35
-        ]
+        "AircraftCameraPos": [0, 14, -35]
       },
-      "Weapons": [
-        "MG1"
-      ],
+      "Weapons": ["MG1","SeekMissile"],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          1.6,
-          0.5,
-          3.8
-        ],
+        "Position": [1.6, 0.5, 3.8],
         "CanEject": true,
         "EjectPosition": [
           0,
@@ -446,6 +425,67 @@
         "Change": "superbwarfare:into_cannon"
       },
       "SoundRadius": 25
+    },
+    "SeekMissile": {
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_yj88c.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 8,
+      "EmptyReloadTime": 200,
+      "Projectile": "superbwarfare:agm_65",
+      "Name": "dragonrise_reforge:yj88c",
+      "Damage": 1100,
+      "ExplosionDamage": 180,
+      "ExplosionRadius": 12,
+      "AddShooterDeltaMovement": true,
+      "Velocity": 1.05,
+      "SeekWeaponInfo": {
+        "SeekDirection": "ClientCamera",
+        "SeekRange": 512,
+        "SeekAngle": 20,
+        "SeekTime": 10,
+        "MaxTargetHeight": 15,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "ShouldUnload": false
+        }
+      ],
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ShootPositionForHud": [
+          0,
+          1.53,
+          0
+        ],
+        "Positions": [
+          [14.61599375, 3.8415375, -2.2128125],
+          [14.95974375, 3.8415375, -2.2128125],
+          [14.61599375, 4.2790375, -2.2128125],
+          [14.95974375, 4.2790375, -2.2128125],
+          [-14.61599375, 3.8415375, -2.2128125],
+          [-14.95974375, 3.8415375, -2.2128125],
+          [-14.61599375, 4.2790375, -2.2128125],
+          [-14.95974375, 4.2790375, -2.2128125]
+        ],
+        "BoundUpWithAmmoAmount": true
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "superbwarfare:bomb_reload",
+        "VehicleReloadSoundTime": 11,
+        "Change": "superbwarfare:into_missile",
+        "Locking": "superbwarfare:missile_locking",
+        "Locked": "superbwarfare:missile_locked"
+      },
+      "Crosshair": "@VehicleCommonSeekMissile",
+      "CrosshairColor": "0x66FF00",
+      "SoundRadius": 8
     }
   },
   "HUDColor": "0xFFC700",
