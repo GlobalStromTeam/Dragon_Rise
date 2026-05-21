@@ -91,6 +91,8 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return 2100;
     }
 
+    public float getMass() {return 1145141919;}
+
     public float getSupplyRange() {
         return this.entityData.get(SUPPLY_RANGE);
     }

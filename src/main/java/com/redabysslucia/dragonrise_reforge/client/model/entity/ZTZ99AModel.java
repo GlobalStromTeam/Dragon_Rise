@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
-import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import org.jetbrains.annotations.Nullable;
 
@@ -13,6 +13,23 @@ public class ZTZ99AModel extends DragonriseVehicleModel<ZTZ99AEntity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
         return false;
+    }
+
+    private static final ResourceLocation[] TEXTURE_RESOURCES = {
+            new ResourceLocation("dragonrise_reforge:textures/entity/ztz99a.png"),
+            new ResourceLocation("dragonrise_reforge:textures/entity/ztz99asand.png"),
+    };
+
+    @Override
+    public ResourceLocation getTextureResource(ZTZ99AEntity entity) {
+        if (entity != null) {
+            int camoType = entity.getCamoType();
+            if (camoType >= 0 && camoType < TEXTURE_RESOURCES.length) {
+                return TEXTURE_RESOURCES[camoType];
+            }
+        }
+
+        return TEXTURE_RESOURCES[0];
     }
 
 //    public @Nullable TransformContext<ZTZ99AEntity> collectTransform(String boneName) {
