@@ -200,7 +200,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:M829A1",
+      "Name": "dragonrise_reforge:DM33",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -213,7 +213,7 @@
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
-            "Name": "dragonrise_reforge:M908"
+            "Name": "dragonrise_reforge:DM12"
           }
         }
       ],
@@ -429,7 +429,7 @@
     5
   ],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/leopard2a4_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,

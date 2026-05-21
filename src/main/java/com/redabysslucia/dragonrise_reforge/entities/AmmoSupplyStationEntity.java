@@ -1,4 +1,4 @@
-package com.redabysslucia.dragonrise_reforge.entities.utils;
+package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.gun.AmmoConsumer;
 import com.atsuishio.superbwarfare.data.gun.GunData;
@@ -48,7 +48,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     private static final EntityDataAccessor<Float> SUPPLY_PROGRESS =
             SynchedEntityData.defineId(AmmoSupplyStationEntity.class, EntityDataSerializers.FLOAT);
 
-    private static final float DEFAULT_SUPPLY_RANGE = 10.0f;
+    private static final float DEFAULT_SUPPLY_RANGE = 15.0f;
     private static final int DEFAULT_NON_MAGAZINE_FILL = 100;
     private static final int DEFAULT_SUPPLY_INTERVAL = 20;
     private static final int DEFAULT_SUPPLY_TIME = 160;
@@ -88,7 +88,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
 
     @Override
     public float getMaxHealth() {
-        return 300;
+        return 2100;
     }
 
     public float getSupplyRange() {
@@ -193,7 +193,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             chargingSoundTimer = CHARGING_SOUND_INTERVAL;
         }
 
-        if (checkVehicleDamage()) {
+        if (checkVehicleDamage() || !checkTrackedVehiclesHavePlayer()) {
             cancelCharge();
             return;
         }
@@ -218,6 +218,19 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             }
         }
         return false;
+    }
+
+    private boolean checkTrackedVehiclesHavePlayer() {
+        for (UUID uuid : trackedVehicleHealth.keySet()) {
+            GeoVehicleEntity vehicle = findTrackedVehicle(uuid);
+            if (vehicle == null) {
+                return false;
+            }
+            if (vehicle.getPassengers().stream().noneMatch(p -> p instanceof Player)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private GeoVehicleEntity findTrackedVehicle(UUID uuid) {

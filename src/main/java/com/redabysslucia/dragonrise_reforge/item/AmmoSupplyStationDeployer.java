@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.item;
 
-import com.redabysslucia.dragonrise_reforge.entities.utils.AmmoSupplyStationEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;

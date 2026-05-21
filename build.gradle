@@ -75,12 +75,20 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    mavenCentral()
     maven { url 'https://maven.aliyun.com/repository/public/' }
 
     maven {
         url "https://cursemaven.com"
         content {
             includeGroup "curse.maven"
+        }
+    }
+    maven {
+        url = uri("https://jitpack.io")
+        content {
+            includeGroup("com.github.mcmodderanchor")
+            includeGroup("com.maydaymemory")
         }
     }
 
@@ -110,8 +118,12 @@ dependencies {
     implementation fg.deobf("curse.maven:superb-warfare-1218165:8046997")
     implementation fg.deobf("curse.maven:kotlin-for-forge-351264:5402061")
 
+    compileOnly 'com.maydaymemory:mae:1.1.2'
+
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+    implementation(fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.3.3-forge-mc1.20.1"))
 }
 
 tasks.named('processResources', ProcessResources).configure {

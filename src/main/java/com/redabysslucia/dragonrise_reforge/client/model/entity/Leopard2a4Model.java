@@ -10,17 +10,4 @@ public class Leopard2a4Model extends DragonriseVehicleModel<Leopard2a4Entity> {
     public boolean hideForTurretControllerWhileZooming() {
         return true;
     }
-
-    @Override
-    public @Nullable TransformContext<Leopard2a4Entity> collectTransform(String boneName) {
-        if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
-        }
-
-        if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
-        }
-
-        return super.collectTransform(boneName);
-    }
 }
