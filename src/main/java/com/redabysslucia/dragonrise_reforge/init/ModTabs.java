@@ -100,6 +100,7 @@ public class ModTabs {
 
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));
 
                         //瑞典 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
@@ -167,7 +168,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));                    }
+             }
                     ).build()
     );
 

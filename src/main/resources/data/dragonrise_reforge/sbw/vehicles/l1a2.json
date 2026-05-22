@@ -177,7 +177,6 @@
       },
       "Weapons": [
         "Cannon",
-        "MachineGun",
         "Missile"
       ],
       "Transform": "Turret",
@@ -240,7 +239,7 @@
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "dragonrise_reforge:zu23",
+      "Name": "dragonrise_reforge:oerlikon_gdf",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
@@ -330,7 +329,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:missile_fb10",
+      "Name": "dragonrise_reforge:fim92",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
