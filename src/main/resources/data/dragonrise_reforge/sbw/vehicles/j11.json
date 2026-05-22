@@ -489,6 +489,7 @@
     "RollSpeed": 1.25,
     "LiftSpeed": 1.25,
     "SpeedRate": 1.2,
+    "Resistance": 1.2,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:jet_engine_start",
     "EngineSoundVolume": 0.8

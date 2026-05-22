@@ -409,13 +409,14 @@
   "EngineInfo": {
     "HasGear": false,
     "EnergyCostRate": 512,
-    "Increment": 0.2,
-    "Decrement": 0.1,
+    "Increment": 1,
+    "Decrement": 1,
     "PitchSpeed": 1.25,
     "YawSpeed": 1.25,
     "RollSpeed": 1.25,
     "LiftSpeed": 1.5,
-    "SpeedRate": 0.95,
+    "SpeedRate": 1,
+    "Resistance": 1.2,
     "GearRotateAngle": 85,
     "EngineStartSound": "dragonrise_reforge:plane_start1",
     "EngineSoundVolume": 0.8
