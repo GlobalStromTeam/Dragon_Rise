@@ -182,7 +182,7 @@
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_fb10.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
       "DefaultZoom": 4,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
