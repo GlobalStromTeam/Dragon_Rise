@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:m3stuart",
-  "MaxHealth": 100,
+  "MaxHealth": 200,
   "MaxEnergy": 20000000,
   "OBB": [
     {

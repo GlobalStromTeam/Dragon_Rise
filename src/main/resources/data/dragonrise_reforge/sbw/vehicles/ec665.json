@@ -582,13 +582,14 @@
   "AllowFreeCam": true,
   "HasDecoy": true,
   "DamageModifiers": [
+    "All - 10",
+    "minecraft:lava + 10",
     "minecraft:arrow * 0.1",
     "minecraft:trident * 0.2",
     "minecraft:mob_attack * 0.3",
     "minecraft:mob_attack_no_aggro * 0.3",
     "minecraft:mob_projectile * 0.2",
     "minecraft:player_attack * 0.2",
-    "minecraft:lava - -10",
     "minecraft:lava * 2.6",
     "@minecraft:tnt * 3",
     "@minecraft:tnt_minecart * 3",
@@ -607,6 +608,7 @@
     "@superbwarfare:hand_grenade * 5",
     "@superbwarfare:mortar_shell * 3",
     "@#superbwarfare:at_rocket * 1.5",
+    "All * 0.77",
     "@#superbwarfare:aerial_bomb * 2"
   ],
   "DestroyInfo": {

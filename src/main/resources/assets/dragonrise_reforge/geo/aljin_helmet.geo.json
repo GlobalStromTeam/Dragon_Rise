@@ -13,7 +13,7 @@
 			"bones": [
 				{
 					"name": "bipedHead",
-					"pivot": [0, 23, 0]
+					"pivot": [0, 21, 0]
 				},
 				{
 					"name": "armorHead",

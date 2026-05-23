@@ -1,6 +1,6 @@
 {
   "ID": "dragonrise_reforge:test",
-  "MaxHealth": 400,
+  "MaxHealth": 600,
   "MaxEnergy": 20000000,
   "OBB": [
     {
