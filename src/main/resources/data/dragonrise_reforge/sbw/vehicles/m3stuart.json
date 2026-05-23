@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:m2a2",
+  "ID": "dragonrise_reforge:m3stuart",
   "MaxHealth": 100,
   "MaxEnergy": 20000000,
   "OBB": [
@@ -349,7 +349,7 @@
     1.5,
     4
   ],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m2a2_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m3stuart_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Tank",
   "CollisionLevel": {

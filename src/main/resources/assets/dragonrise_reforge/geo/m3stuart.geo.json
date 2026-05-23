@@ -12,12 +12,12 @@
 			},
 			"bones": [
 				{
-					"name": "m2a2",
+					"name": "m3stuart",
 					"pivot": [-1.15, 11.62542, -4.26443]
 				},
 				{
 					"name": "base",
-					"parent": "m2a2",
+					"parent": "m3stuart",
 					"pivot": [-1.15, 11.62542, -4.26443],
 					"cubes": [
 						{
@@ -2400,7 +2400,7 @@
 				},
 				{
 					"name": "track",
-					"parent": "m2a2",
+					"parent": "m3stuart",
 					"pivot": [-16.44363, 2.9377, 29.36344],
 					"cubes": [
 						{
@@ -3291,7 +3291,7 @@
 				},
 				{
 					"name": "Wheel",
-					"parent": "m2a2",
+					"parent": "m3stuart",
 					"pivot": [-1.15, 11.62542, -4.26443]
 				},
 				{

@@ -122,7 +122,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.M4A2.get(), M4A2Renderer::new);
                 event.registerEntityRenderer(ModEntities.F4U.get(), F4URenderer::new);
                 event.registerEntityRenderer(ModEntities.M4A2105.get(), M4A2105Renderer::new);
-                event.registerEntityRenderer(ModEntities.M2A2.get(), M2A2Renderer::new);
+                event.registerEntityRenderer(ModEntities.M3Stuart.get(), M3StuartRenderer::new);
                 event.registerEntityRenderer(ModEntities.LVT.get(), LVTRenderer::new);
                 event.registerEntityRenderer(ModEntities.type97.get(), type97Renderer::new);
                 event.registerEntityRenderer(ModEntities.type97Q.get(), type97QRenderer::new);

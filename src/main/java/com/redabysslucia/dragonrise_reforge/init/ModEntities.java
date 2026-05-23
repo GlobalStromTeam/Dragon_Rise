@@ -792,8 +792,8 @@ public class ModEntities {
                     .sized(2.0f, 1.7f)
     );
 
-    public static final RegistryObject<EntityType<M2A2Entity>> M2A2 = register("m2a2",
-            EntityType.Builder.of(M2A2Entity::new, MobCategory.MISC)
+    public static final RegistryObject<EntityType<M3StuartEntity>> M3Stuart = register("m3stuart",
+            EntityType.Builder.of(M3StuartEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

@@ -151,7 +151,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PERSHING.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M2A2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M3Stuart.get()));
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
                         //美国 固定翼

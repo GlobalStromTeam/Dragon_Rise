@@ -206,7 +206,7 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
@@ -308,13 +308,13 @@
     },
     "Missile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_9m311.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
       "DefaultZoom": 4,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 8,
       "EmptyReloadTime": 300,
-      "Projectile": "superbwarfare:ru_9m311_missile",
+      "Projectile": "superbwarfare:ru_9m336_missile",
       "Name": "dragonrise_reforge:missile_9m311",
       "Damage": 120,
       "ExplosionDamage": 200,
