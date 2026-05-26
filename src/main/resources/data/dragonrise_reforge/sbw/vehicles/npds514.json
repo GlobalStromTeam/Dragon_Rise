@@ -1,48 +1,22 @@
 {
   "ID": "dragonrise_reforge:npds514",
   "MaxHealth": 350,
-  "TurretPos": [
-    0.0609375,
-    1.22021875,
-    -0.20801875
-  ],
-  "TurretTurnSpeed": [
-    20,
-    15
-  ],
-  "TurretPitchRange": [
-    -32.5,
-    90
-  ],
-  "BarrelPos": [
-    0.0,
-    0.4890625,
-    0.0
-  ],
+  "TurretPos": [0.0609375,1.22021875,-0.20801875],
+  "TurretTurnSpeed": [20,15],
+  "TurretPitchRange": [-32.5,90],
+  "BarrelPos": [0.0,0.4890625,0.0],
   "MaxEnergy": 5000000,
   "Seats": {
     "HidePassenger": true,
     "Transform": "Vehicle",
-    "Position": [
-      0,
-      0,
-      0
-    ],
+    "Position": [0,0,0],
     "MinPitch": -32.5,
     "MaxPitch": 90,
-    "Sensitivity": [
-      0.6,
-      0.8,
-      1
-    ],
+    "Sensitivity": [0.6,0.8,1],
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
-      "Position": [
-        0,
-        2,
-        0.0625
-      ],
+      "Position": [0,2,0.0625],
       "ZoomDirection": "Barrel"
     },
     "Weapons": [
@@ -74,11 +48,7 @@
       "ExplosionRadius": 4,
       "RecoilTime": 20,
       "RecoilForce": 0,
-      "ShootShake": [
-        0.5,
-        0.5,
-        0.5
-      ],
+      "ShootShake": [0.5,0.5,0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleDynamicCross",
@@ -97,16 +67,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.96860625,
-            0.27979375,
-            0.1101
-          ],
-          [
-            0.96860625,
-            0.27979375,
-            0.1101
-          ]
+          [-0.96860625,0.27979375,0.1101],
+          [0.96860625,0.27979375,0.1101]
         ],
         "Directions": [
           "Barrel"
@@ -147,11 +109,7 @@
     "@superbwarfare:igla_9k38_missile * 0.75",
     "All - 8"
   ],
-  "ThirdPersonCameraPos": [
-    0,
-    1,
-    2
-  ],
+  "ThirdPersonCameraPos": [0,1,2],
   "EngineType": "Fixed",
   "DestroyInfo": {
     "ParticleType": "Medium",

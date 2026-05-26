@@ -4,186 +4,74 @@
   "MaxEnergy": 10000000,
   "OBB": [
     {
-      "Size": [
-        0.9375,
-        0.65625,
-        2.90625
-      ],
-      "Position": [
-        0.0,
-        2.53125,
-        2.84375
-      ]
+      "Size": [0.9375,0.65625,2.90625],
+      "Position": [0.0,2.53125,2.84375]
     },
     {
-      "Size": [
-        0.4375,
-        0.40625,
-        1.03125
-      ],
-      "Position": [
-        0.0,
-        2.28125,
-        6.78125
-      ]
+      "Size": [0.4375,0.40625,1.03125],
+      "Position": [0.0,2.28125,6.78125]
     },
     {
-      "Size": [
-        1.4375,
-        0.71875,
-        2.6875
-      ],
-      "Position": [
-        0.0,
-        2.03125,
-        -0.875
-      ]
+      "Size": [1.4375,0.71875,2.6875],
+      "Position": [0.0,2.03125,-0.875]
     },
     {
-      "Size": [
-        1.90625,
-        0.09375,
-        1.25
-      ],
-      "Position": [
-        -3.34375,
-        2.21875,
-        -2.0625
-      ]
+      "Size": [1.90625,0.09375,1.25],
+      "Position": [-3.34375,2.21875,-2.0625]
     },
     {
-      "Size": [
-        1.125,
-        0.09375,
-        1.21875
-      ],
-      "Position": [
-        2.0,
-        2.21875,
-        -6.15625
-      ]
+      "Size": [1.125,0.09375,1.21875],
+      "Position": [2.0,2.21875,-6.15625]
     },
     {
-      "Size": [
-        1.125,
-        0.09375,
-        1.21875
-      ],
-      "Position": [
-        -2.0,
-        2.21875,
-        -6.15625
-      ]
+      "Size": [1.125,0.09375,1.21875],
+      "Position": [-2.0,2.21875,-6.15625]
     },
     {
-      "Size": [
-        0.8125,
-        0.09375,
-        0.875
-      ],
-      "Position": [
-        2.25,
-        2.21875,
-        0.0625
-      ]
+      "Size": [0.8125,0.09375,0.875],
+      "Position": [2.25,2.21875,0.0625]
     },
     {
-      "Size": [
-        1.90625,
-        0.09375,
-        1.25
-      ],
-      "Position": [
-        3.34375,
-        2.21875,
-        -2.0625
-      ]
+      "Size": [1.90625,0.09375,1.25],
+      "Position": [3.34375,2.21875,-2.0625]
     },
     {
-      "Size": [
-        0.8125,
-        0.09375,
-        0.875
-      ],
-      "Position": [
-        -2.25,
-        2.21875,
-        0.0625
-      ]
+      "Size": [0.8125,0.09375,0.875],
+      "Position": [-2.25,2.21875,0.0625]
     },
     {
-      "Size": [
-        0.125,
-        0.625,
-        1.0
-      ],
-      "Position": [
-        0.0,
-        5.1875,
-        -6.625
-      ]
+      "Size": [0.125,0.625,1.0],
+      "Position": [0.0,5.1875,-6.625]
     },
     {
-      "Size": [
-        0.125,
-        0.84375,
-        1.375
-      ],
-      "Position": [
-        0.0,
-        3.71875,
-        -5.375
-      ]
+      "Size": [0.125,0.84375,1.375],
+      "Position": [0.0,3.71875,-5.375]
     },
     {
       "Part": "MainEngine",
-      "Size": [
-        0.5,
-        0.59375,
-        2.03125
-      ],
-      "Position": [
-        0.0,
-        2.15625,
-        -5.59375
-      ]
+      "Size": [0.5,0.59375,2.03125],
+      "Position": [0.0,2.15625,-5.59375]
     }
   ],
   "Seats": {
     "IsEnclosed": true,
     "Transform": "Vehicle",
-    "Position": [
-      0.0,
-      1.625,
-      4.125
-    ],
+    "Position": [0.0,1.625,4.125],
     "CanRotateHead": false,
-    "Sensitivity": [
-      5,
-      5,
-      5
-    ],
+    "Sensitivity": [5,5,5],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 3.1875, 4.125],
-      "ZoomPosition": [-0.65438125, 0.9902625, 3.73305],
+      "Position": [0.0,3.1875,4.125],
+      "ZoomPosition": [-0.65438125,0.9902625,3.73305],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [0,2.75,-14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
-      "Position": [
-        1.6,
-        0.5,
-        3.8
-      ],
+      "Position": [1.6,0.5,3.8],
       "CanEject": true,
-      "EjectPosition": [
-        0,
-        4.2,
-        3.7
-      ],
+      "EjectPosition": [0,4.2,3.7],
       "EjectDirection": "Up",
       "EjectForce": 4
     },
@@ -222,24 +110,12 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "Positions": [
-          [
-            0.7761625,
-            2.4165125,
-            2.6100875
-          ]
+          [0.7761625,2.4165125,2.6100875]
         ],
         "Directions": [
-          [
-            0,
-            -0.02,
-            1
-          ]
+          [0,-0.02,1]
         ],
-        "ShootDirectionForHud": [
-          0,
-          -0.03,
-          1
-        ]
+        "ShootDirectionForHud": [0,-0.03,1]
       }
     },
     "Bomb": {
@@ -260,33 +136,17 @@
       "Velocity": 0.95,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.171875,
-          0.0625
-        ],
+        "ShootPositionForHud": [0,1.171875,0.0625],
         "ShootDirectionForHud": "Bomb",
         "Positions": [
-          [
-            2.0455125,
-            1.51775625,
-            -0.00501875
-          ],
-          [
-            -2.0455125,
-            1.51775625,
-            -0.00501875
-          ]
+          [2.0455125,1.51775625,-0.00501875],
+          [-2.0455125,1.51775625,-0.00501875]
         ],
         "BoundUpWithAmmoAmount": true,
         "Directions": [
           "DeltaMovement"
         ],
-        "ViewPosition": [
-          -0.94704375,
-          0.3360875,
-          0.9743625
-        ],
+        "ViewPosition": [-0.94704375,0.3360875,0.9743625],
         "ViewDirection": "Bomb"
       },
       "SoundInfo": {
@@ -345,20 +205,12 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.0625,
-          5.625
-        ],
+        "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [2.99673125, 1.704825, -1.00271875],
-          [-2.99673125, 1.704825, -1.00271875]
+          [2.99673125,1.704825,-1.00271875],
+          [-2.99673125,1.704825,-1.00271875]
         ],
-        "ViewPosition": [
-          -0.94704375,
-          0.3360875,
-          0.9743625
-        ],
+        "ViewPosition": [-0.94704375,0.3360875,0.9743625],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -402,22 +254,10 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.0625,
-          5.625
-        ],
+        "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [
-            5.3385,
-            2.21886875,
-            -1.7987375
-          ],
-          [
-            -5.3385,
-            2.21886875,
-            -1.7987375
-          ]
+          [5.3385,2.21886875,-1.7987375],
+          [-5.3385,2.21886875,-1.7987375]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -465,22 +305,10 @@
       ],
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.53,
-          0
-        ],
+        "ShootPositionForHud": [0,1.53,0],
         "Positions": [
-          [
-            4.500575,
-            1.730825,
-            -1.49338125
-          ],
-          [
-            -4.500575,
-            1.730825,
-            -1.49338125
-          ]
+          [4.500575,1.730825,-1.49338125],
+          [-4.500575,1.730825,-1.49338125]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -498,24 +326,10 @@
       "SoundRadius": 8
     }
   },
-  "TurretPos": [
-    -0.94,
-    0.336,
-    0.9743
-  ],
-  "BarrelPos": [
-    0,
-    0,
-    0
-  ],
-  "TurretTurnSpeed": [
-    5,
-    5
-  ],
-  "TurretPitchRange": [
-    -90,
-    10
-  ],
+  "TurretPos": [-0.94,0.336,0.9743],
+  "BarrelPos": [0,0,0],
+  "TurretTurnSpeed": [5,5],
+  "TurretPitchRange": [-90,10],
   "UpStep": 1.1,
   "Mass": 20,
   "AllowFreeCam": true,
@@ -575,21 +389,9 @@
     "EngineSoundVolume": 0.8
   },
   "TerrainCompat": [
-    [
-      -0.243,
-      0,
-      4.63
-    ],
-    [
-      -2.58,
-      0,
-      -0.74
-    ],
-    [
-      2.58,
-      0,
-      -0.74
-    ]
+    [-0.243,0,4.63],
+    [-2.58,0,-0.74],
+    [2.58,0,-0.74]
   ],
   "EngineSound": "dragonrise_reforge:jet_engine"
 }

@@ -4,28 +4,12 @@
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [
-        1.375,
-        0.46875,
-        3.65625
-      ],
-      "Position": [
-        0,
-        0.78125,
-        0.65625
-      ]
+      "Size": [1.375,0.46875,3.65625],
+      "Position": [0,0.78125,0.65625]
     },
     {
-      "Size": [
-        1.09375,
-        0.34375,
-        1.8125
-      ],
-      "Position": [
-        0,
-        1.53125,
-        0.375
-      ]
+      "Size": [1.09375,0.34375,1.8125],
+      "Position": [0,1.53125,0.375]
     }
   ],
   "Seats": [
@@ -33,11 +17,7 @@
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [
-        0.54,
-        0.0,
-        0.92
-      ],
+      "Position": [0.54,0.0,0.92],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -46,11 +26,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        -0.54,
-        0.0,
-        0.92
-      ],
+      "Position": [-0.54,0.0,0.92],
       "MinPitch": -60,
       "MaxPitch": 60,
       "MinYaw": -95,
@@ -59,11 +35,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        0.54,
-        0.0,
-        -0.5
-      ],
+      "Position": [0.54,0.0,-0.5],
       "CanRotateBody": true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -73,11 +45,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        -0.54,
-        0.0,
-        -0.5
-      ],
+      "Position": [-0.54,0.0,-0.5],
       "CanRotateBody": true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -87,11 +55,7 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        0,
-        0.0,
-        -0.5
-      ],
+      "Position": [0,0.0,-0.5],
       "CanRotateBody": true,
       "MinPitch": -5,
       "MaxPitch": 45,
@@ -148,37 +112,17 @@
     "ExplosionDamage": 40,
     "ExplosionRadius": 5
   },
-  "ThirdPersonCameraPos": [
-    0,
-    1,
-    5
-  ],
+  "ThirdPersonCameraPos": [0,1,5],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/toyota_seiki_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "Car",
   "EngineSound": "superbwarfare:lav_150_engine",
   "HornSound": "superbwarfare:truck_horn",
   "TerrainCompat": [
-    [
-      1.1875,
-      0,
-      3.1875
-    ],
-    [
-      -1.1875,
-      0,
-      3.1875
-    ],
-    [
-      1.1875,
-      0,
-      -1.0625
-    ],
-    [
-      -1.1875,
-      0,
-      -1.0625
-    ]
+    [1.1875,0,3.1875],
+    [-1.1875,0,3.1875],
+    [1.1875,0,-1.0625],
+    [-1.1875,0,-1.0625]
   ],
   "InertiaRotateRate": 0.9
 }

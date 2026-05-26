@@ -2,108 +2,42 @@
   "ID": "dragonrise_reforge:uh60",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
-  "TurretPos": [
-    0,
-    0.625,
-    2.09
-  ],
-  "TurretTurnSpeed": [
-    15,
-    15
-  ],
-  "TurretPitchRange": [
-    -40,
-    10
-  ],
-  "BarrelPos": [
-    0,
-    -0.14,
-    0
-  ],
+  "TurretPos": [0,0.625,2.09],
+  "TurretTurnSpeed": [15,15],
+  "TurretPitchRange": [-40,10],
+  "BarrelPos": [0,-0.14,0],
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [
-        1.375,
-        0.125,
-        5.03125
-      ],
-      "Position": [
-        0.0,
-        0.8125,
-        -0.53125
-      ]
+      "Size": [1.375,0.125,5.03125],
+      "Position": [0.0,0.8125,-0.53125]
     },
     {
-      "Size": [
-        0.53125,
-        0.84375,
-        2.6875
-      ],
-      "Position": [
-        0.0,
-        1.53125,
-        -8.25
-      ]
+      "Size": [0.53125,0.84375,2.6875],
+      "Position": [0.0,1.53125,-8.25]
     },
     {
-      "Size": [
-        0.0625,
-        0.96875,
-        0.875
-      ],
-      "Position": [
-        0.0,
-        2.15625,
-        -11.6875
-      ]
+      "Size": [0.0625,0.96875,0.875],
+      "Position": [0.0,2.15625,-11.6875]
     },
     {
-      "Size": [
-        0.0625,
-        0.96875,
-        0.875
-      ],
-      "Position": [
-        0.0,
-        4.09375,
-        -13.0
-      ]
+      "Size": [0.0625,0.96875,0.875],
+      "Position": [0.0,4.09375,-13.0]
     },
     {
-      "Size": [
-        1.65625,
-        0.375,
-        2.65625
-      ],
-      "Position": [
-        0.0,
-        3.5,
-        -1.65625
-      ]
+      "Size": [1.65625,0.375,2.65625],
+      "Position": [0.0,3.5,-1.65625]
     }
   ],
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [
-        -0.67475,
-        0.9,
-        3.00445
-      ],
-      "Sensitivity": [
-        0,
-        0,
-        0
-      ],
+      "Position": [-0.67475,0.9,3.00445],
+      "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [
-          -3.8,
-          3.5,
-          -15
-        ]
+        "AircraftCameraPos": [-3.8,3.5,-15]
       },
       "CanRotateHead": false,
       "Weapons": [
@@ -111,180 +45,80 @@
       ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.5,
-          2.5
-        ]
+        "Position": [-2.5,0.5,2.5]
       },
       "HasThermalImaging": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.833375,
-        0.9,
-        3.06695
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [0.833375,0.9,3.06695],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        -0.9010125,
-        0.9,
-        1.6554375
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [-0.9010125,0.9,1.6554375],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.01455625,
-        0.9,
-        1.6689875
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [0.01455625,0.9,1.6689875],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.9010125,
-        0.9,
-        1.6554375
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [0.9010125,0.9,1.6554375],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        1.0489,
-        0.9,
-        -1.617325
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [1.0489,0.9,-1.617325],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.3514,
-        0.9,
-        -1.617325
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [0.3514,0.9,-1.617325],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        -0.3514,
-        0.9,
-        -1.617325
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [-0.3514,0.9,-1.617325],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        -1.0489,
-        0.9,
-        -1.617325
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [-1.0489,0.9,-1.617325],
+      "Sensitivity": [0.59,0.8,0.9],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       }
     }
   ],
@@ -308,11 +142,7 @@
     "EngineSoundVolume": 2
   },
   "EngineSound": "superbwarfare:mi_28_engine",
-  "ThirdPersonCameraPos": [
-    2.7,
-    4,
-    12
-  ],
+  "ThirdPersonCameraPos": [2.7,4,12],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.8,
   "Mass": 8.2,
@@ -360,21 +190,9 @@
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [
-      -1.284,
-      0,
-      1.728
-    ],
-    [
-      1.284,
-      0,
-      1.728
-    ],
-    [
-      0,
-      0,
-      -11.1
-    ]
+    [-1.284,0,1.728],
+    [1.284,0,1.728],
+    [0,0,-11.1]
   ],
   "TerrainCompatRotateRate": 0
 }

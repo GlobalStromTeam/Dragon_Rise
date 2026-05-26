@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class GeoOBBDataProvider implements DataProvider {
 
@@ -84,7 +86,7 @@ public class GeoOBBDataProvider implements DataProvider {
                     if (existingVehicleJson.has("VehicleIcon")) {
                         String iconPath = "dragonrise_reforge:textures/vehicle_icon/" + baseName + "_icon.png";
                         existingVehicleJson.addProperty("VehicleIcon", iconPath);
-                        Files.writeString(vehicleFile, GSON.toJson(existingVehicleJson));
+                        Files.writeString(vehicleFile, compactJson(GSON.toJson(existingVehicleJson)));
                     }
                 } catch (Exception ignored) {
                 }
@@ -210,7 +212,7 @@ public class GeoOBBDataProvider implements DataProvider {
             }
 
                 Files.createDirectories(vehicleFile.getParent());
-                Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
+                Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
             }
 
             // Generate superbwarfare vehicle config
@@ -255,7 +257,20 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         Files.createDirectories(vehicleFile.getParent());
-        Files.writeString(vehicleFile, GSON.toJson(vehicleJson));
+        Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
+    }
+
+    private static String compactJson(String json) {
+        // 把跨行的纯数字数组压缩成单行, 例如 [\n  1.0,\n  2.0\n] -> [1.0, 2.0]
+        Pattern pattern = Pattern.compile("\\[\\s*\\n((?:\\s*[-\\d.]+,\\s*\\n)*\\s*[-\\d.]+\\s*)\\]");
+        Matcher matcher = pattern.matcher(json);
+        StringBuffer sb = new StringBuffer();
+        while (matcher.find()) {
+            String inner = matcher.group(1).replaceAll("\\s+", "");
+            matcher.appendReplacement(sb, "[" + inner + "]");
+        }
+        matcher.appendTail(sb);
+        return sb.toString();
     }
 
     private JsonArray extractOBBList(JsonObject geoJson, double turretPivotY) {
@@ -530,8 +545,8 @@ public class GeoOBBDataProvider implements DataProvider {
                         JsonArray position = new JsonArray();
                         // X轴：直接除以16转换单位
                         position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
-                        // Y轴：除以16转换单位后，再减去1.61的偏移值（微调摄像机高度，与座位保持一致）
-                        position.add(round(pivot.get(1).getAsDouble() / 16.0 - 1.61, 3));
+                        // Y轴：直接除以16转换单位（摄像机高度不需要减去1.61偏移）
+                        position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
                         // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
                         position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
                         seatsCameraPositions.put(index, position);

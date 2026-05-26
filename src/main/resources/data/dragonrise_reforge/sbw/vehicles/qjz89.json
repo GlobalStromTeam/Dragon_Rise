@@ -2,63 +2,29 @@
   "ID": "dragonrise_reforge:qjz89",
   "MaxHealth": 40,
   "MaxEnergy": 0,
-  "TurretPos": [
-    0.0,
-    0.325,
-    0.03125
-  ],
-  "TurretTurnSpeed": [
-    10,
-    10
-  ],
-  "TurretPitchRange": [
-    -40,
-    60
-  ],
-  "BarrelPos": [
-    0.0,
-    0.17551875,
-    0.0388125
-  ],
+  "TurretPos": [0.0,0.325,0.03125],
+  "TurretTurnSpeed": [10,10],
+  "TurretPitchRange": [-40,60],
+  "BarrelPos": [0.0,0.17551875,0.0388125],
   "Seats": {
     "Transform": "Turret",
-    "Position": [
-      0,
-      -0.8689,
-      -1
-    ],
+    "Position": [0,-0.8689,-1],
     "MinPitch": -9,
     "MaxPitch": 60,
     "CameraPos": {
       "UseFixedCameraPos": true,
-      "Position": [
-        0.21875,
-        0.4375,
-        -0.9375
-      ],
+      "Position": [0.21875,0.4375,-0.9375],
       "Transform": "Barrel",
-      "ZoomPosition": [
-        0.0,
-        0.19603125,
-        -0.11530625
-      ],
+      "ZoomPosition": [0.0,0.19603125,-0.11530625],
       "Direction": "Barrel"
     },
     "Weapons": [
       "Cannon"
     ],
-    "Sensitivity": [
-      0.55,
-      0.75,
-      1
-    ],
+    "Sensitivity": [0.55,0.75,1],
     "DismountInfo": {
       "Transform": "Turret",
-      "Position": [
-        0,
-        0.25,
-        0
-      ]
+      "Position": [0,0.25,0]
     }
   },
   "UsePassengerCreativeAmmoBox": true,
@@ -85,18 +51,10 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "UseFixedCameraPos": true,
-        "Position": [
-          0.21875,
-          0.4375,
-          -0.9375
-        ],
+        "Position": [0.21875,0.4375,-0.9375],
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.00064375,
-            0.0689,
-            1.25905625
-          ]
+          [-0.00064375,0.0689,1.25905625]
         ],
         "Directions": [
           "Barrel"
@@ -113,11 +71,7 @@
       "SoundRadius": 16
     }
   },
-  "ThirdPersonCameraPos": [
-    -0.3,
-    1,
-    -1
-  ],
+  "ThirdPersonCameraPos": [-0.3,1,-1],
   "Mass": 0.05,
   "DamageModifiers": [
     "minecraft:lava * 2.667",
