@@ -4,81 +4,33 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [
-        0.8125,
-        0.40625,
-        2.53125
-      ],
-      "Position": [
-        0.0,
-        0.78125,
-        0.09375
-      ]
+      "Size": [0.8125,0.40625,2.53125],
+      "Position": [0.0,0.78125,0.09375]
     },
     {
-      "Size": [
-        0.8125,
-        0.1875,
-        1.25
-      ],
-      "Position": [
-        0.0,
-        1.375,
-        0.125
-      ]
+      "Size": [0.8125,0.1875,1.25],
+      "Position": [0.0,1.375,0.125]
     },
     {
       "Part": "MainEngine",
-      "Size": [
-        0.59375,
-        0.25,
-        0.65625
-      ],
-      "Position": [
-        0.0,
-        0.25,
-        0.0
-      ]
+      "Size": [0.59375,0.25,0.65625],
+      "Position": [0.0,0.25,0.0]
     },
     {
       "Part": "Turret",
-      "Size": [
-        0.59375,
-        0.25,
-        0.65625
-      ],
-      "Position": [
-        0.0,
-        1.75,
-        0.0
-      ],
+      "Size": [0.59375,0.25,0.65625],
+      "Position": [0.0,1.75,0.0],
       "Rotation": "Turret"
     },
     {
       "Part": "WheelLeft",
-      "Size": [
-        0.1875,
-        0.5625,
-        2.5625
-      ],
-      "Position": [
-        -1.0,
-        0.5625,
-        0.0
-      ]
+      "Size": [0.1875,0.5625,2.5625],
+      "Position": [-1.0,0.5625,0.0]
     },
     {
       "Part": "WheelRight",
-      "Size": [
-        0.1875,
-        0.5625,
-        2.5625
-      ],
-      "Position": [
-        1.0,
-        0.5625,
-        0.0
-      ]
+      "Size": [0.1875,0.5625,2.5625],
+      "Position": [1.0,0.5625,0.0]
     }
   ],
   "Seats": [
@@ -86,24 +38,12 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [
-          0.13701875,
-          0.00639375,
-          0.25065625
-        ],
+        "Position": [0.13701875,0.00639375,0.25065625],
         "Transform": "Barrel",
-        "ZoomPosition": [
-          0.13701875,
-          0.00639375,
-          0.25065625
-        ]
+        "ZoomPosition": [0.13701875,0.00639375,0.25065625]
       },
       "Transform": "Turret",
-      "Position": [
-        0,
-        -1,
-        0
-      ],
+      "Position": [0,-1,0],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -111,11 +51,7 @@
       "CanRotateHead": false,
       "MinPitch": -9,
       "MaxPitch": 25,
-      "Sensitivity": [
-        0.42,
-        0.7,
-        0.9
-      ],
+      "Sensitivity": [0.42,0.7,0.9],
       "HasThermalImaging": true
     }
   ],
@@ -135,11 +71,7 @@
       "ExplosionRadius": 4,
       "RecoilTime": 42,
       "RecoilForce": 0.5,
-      "ShootShake": [
-        8,
-        10,
-        60
-      ],
+      "ShootShake": [8,10,60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleDynamicCross",
@@ -161,11 +93,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.0186375,
-            0.039475,
-            0.5673875
-          ]
+          [-0.0186375,0.039475,0.5673875]
         ],
         "Directions": [
           "Barrel"
@@ -195,11 +123,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.14900625,
-            0.0018625,
-            0.3125
-          ]
+          [-0.14900625,0.0018625,0.3125]
         ],
         "Directions": [
           "Barrel"
@@ -237,11 +161,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [
-            -0.008925,
-            0.1546875,
-            0.4275
-          ]
+          [-0.008925,0.1546875,0.4275]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -275,34 +195,12 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume": 1.0
   },
-  "TurretPos": [
-    -0.25105625,
-    1.54700625,
-    0.32345625
-  ],
-  "BarrelPos": [
-    -0.04833125,
-    0.19933125,
-    0.511425
-  ],
-  "TurretTurnSpeed": [
-    0.6,
-    0.675
-  ],
-  "TurretPitchRange": [
-    -8,
-    25
-  ],
-  "PassengerWeaponStationPos": [
-    -0.5,
-    2.5984875,
-    0.138825
-  ],
-  "PassengerWeaponStationBarrelPos": [
-    0.0,
-    0.145625,
-    0.0
-  ],
+  "TurretPos": [-0.25105625,1.54700625,0.32345625],
+  "BarrelPos": [-0.04833125,0.19933125,0.511425],
+  "TurretTurnSpeed": [0.6,0.675],
+  "TurretPitchRange": [-8,25],
+  "PassengerWeaponStationPos": [-0.5,2.5984875,0.138825],
+  "PassengerWeaponStationBarrelPos": [0.0,0.145625,0.0],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -344,11 +242,7 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [
-    -0.8669625,
-    1.5,
-    4
-  ],
+  "ThirdPersonCameraPos": [-0.8669625,1.5,4],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/type97q_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/jp_land.png",
   "Type": "Tank",
@@ -380,75 +274,19 @@
   "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [
-      2,
-      0,
-      3.0625
-    ],
-    [
-      -2,
-      0,
-      3.0625
-    ],
-    [
-      2,
-      0,
-      1.0625
-    ],
-    [
-      -2,
-      0,
-      1.0625
-    ],
-    [
-      2,
-      0,
-      1.125
-    ],
-    [
-      -2,
-      0,
-      1.125
-    ],
-    [
-      2,
-      0,
-      0.1875
-    ],
-    [
-      -2,
-      0,
-      0.1875
-    ],
-    [
-      2,
-      0,
-      -0.8125
-    ],
-    [
-      -2,
-      0,
-      -0.8125
-    ],
-    [
-      2,
-      0,
-      -1.8125
-    ],
-    [
-      -2,
-      0,
-      -1.8125
-    ],
-    [
-      2,
-      0,
-      -2.8125
-    ],
-    [
-      -2,
-      0,
-      -2.8125
-    ]
+    [2,0,3.0625],
+    [-2,0,3.0625],
+    [2,0,1.0625],
+    [-2,0,1.0625],
+    [2,0,1.125],
+    [-2,0,1.125],
+    [2,0,0.1875],
+    [-2,0,0.1875],
+    [2,0,-0.8125],
+    [-2,0,-0.8125],
+    [2,0,-1.8125],
+    [-2,0,-1.8125],
+    [2,0,-2.8125],
+    [-2,0,-2.8125]
   ]
 }

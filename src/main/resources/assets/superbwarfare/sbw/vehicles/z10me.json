@@ -4,8 +4,5 @@
     "Model": "dragonrise_reforge:geo/z10me.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/z10me.png"
   },
-  "MouseSpeed": [
-    0.3,
-    0.3
-  ]
+  "MouseSpeed": [0.3,0.3]
 }

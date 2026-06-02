@@ -2,58 +2,28 @@
   "ID": "dragonrise_reforge:mk19",
   "MaxHealth": 40,
   "MaxEnergy": 0,
-  "TurretPos": [
-    0,
-    0.9689,
-    0
-  ],
-  "TurretTurnSpeed": [
-    10,
-    10
-  ],
-  "TurretPitchRange": [
-    -40,
-    60
-  ],
-  "BarrelPos": [
-    0,
-    0.206,
-    0
-  ],
+  "TurretPos": [0,0.9689,0],
+  "TurretTurnSpeed": [10,10],
+  "TurretPitchRange": [-40,60],
+  "BarrelPos": [0,0.206,0],
   "Seats": {
     "Transform": "Turret",
-    "Position": [
-      0,
-      -1.3689,
-      -1
-    ],
+    "Position": [0,-1.3689,-1],
     "MinPitch": -9,
     "MaxPitch": 60,
     "CameraPos": {
       "Transform": "Turret",
       "UseFixedCameraPos": true,
-      "Position": [
-        0,
-        0.35,
-        0
-      ],
+      "Position": [0,0.35,0],
       "Direction": "Barrel"
     },
     "Weapons": [
       "Cannon"
     ],
-    "Sensitivity": [
-      0.55,
-      0.75,
-      1
-    ],
+    "Sensitivity": [0.55,0.75,1],
     "DismountInfo": {
       "Transform": "Turret",
-      "Position": [
-        0,
-        0.25,
-        0
-      ]
+      "Position": [0,0.25,0]
     }
   },
   "UsePassengerCreativeAmmoBox": true,
@@ -92,11 +62,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            0,
-            -0.2,
-            0
-          ]
+          [0,-0.2,0]
         ],
         "Directions": [
           "Barrel"
@@ -104,11 +70,7 @@
       }
     }
   },
-  "ThirdPersonCameraPos": [
-    -0.3,
-    1,
-    -1
-  ],
+  "ThirdPersonCameraPos": [-0.3,1,-1],
   "Mass": 0.05,
   "DamageModifiers": [
     "minecraft:lava * 2.667",

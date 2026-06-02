@@ -1,108 +1,105 @@
 {
-  "ID": "dragonrise_reforge:m113",
+  "ID": "dragonrise_reforge:m270",
   "MaxHealth": 100,
   "MaxEnergy": 5000000,
-  "TurretPos": [-0.004,2.4,0.525],
+  "TurretPos": [0.0,1.188,-1.875],
   "TurretTurnSpeed": [12,11.5],
   "TurretPitchRange": [-3,45],
-  "BarrelPos": [0.095,2.844,0.519],
-  "TurretControllerIndex": 1,
+  "BarrelPos": [0.0,1.181,-3.187],
+  "TurretControllerIndex": 0,
   "OBB": [
     {
-      "Size": [1.72,0.573,2.386],
-      "Position": [0.0,1.781,-0.713]
+      "Size": [1.37,0.811,0.82],
+      "Position": [0.0,1.861,2.402]
     },
     {
-      "Size": [1.037,0.394,2.92],
-      "Position": [0.0,0.882,-0.138]
+      "Size": [0.995,0.342,3.289],
+      "Position": [0.0,0.767,0.12]
     },
     {
-      "Size": [1.72,0.322,0.404],
-      "Position": [0.0,1.529,1.946]
-    },
-    {
-      "Size": [0.863,0.57,0.806],
-      "Position": [-0.934,1.788,0.895],
+      "Size": [1.531,0.527,0.736],
+      "Position": [0.0,1.711,1.311],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.358,0.544,2.884],
-      "Position": [-1.445,0.555,-0.214],
+      "Size": [0.311,0.536,3.164],
+      "Position": [-1.319,0.545,0.03],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.311,0.536,3.164],
+      "Position": [1.319,0.545,0.03],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.322,0.544,2.884],
-      "Position": [1.409,0.555,-0.214],
-      "Part": "WheelLeft"
+      "Size": [1.564,0.67,1.925],
+      "Position": [0.031,0.942,-1.431],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
     }
   ],
   "Seats": [
     {
-      "BanHand": true,
       "HidePassenger": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.979,0.823,1.489],
-      "MinPitch": -5,
-      "MaxPitch": 5,
-      "MinYaw": -30,
-      "MaxYaw": 30
-    },
-    {
-      "BanHand": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.0,1.632,-0.205],
-      "CanRotateBody": true,
       "CameraPos": {
-        "Position": [0.0,0.0,0.0],
         "Transform": "Barrel",
-        "Direction": "Barrel"
+        "ZoomPosition": [-0.5625,0.7713625,1.6246125],
+        "Direction": "Barrel",
+        "Position": [0.131,2.291,0.594]
       },
-      "MinPitch": -20,
-      "MaxPitch": 70,
-      "MinYaw": -60,
-      "MaxYaw": 60,
-      "Sensitivity": [0.6,0.95,1.25],
+      "Transform": "Turret",
+      "Position": [0.875,-0.604,4.428],
       "Weapons": [
-        "Cannon"
+        "Rocket"
       ],
+      "CanRotateHead": false,
+      "MinPitch": -7,
+      "MaxPitch": 15,
+      "Sensitivity": [0.52,0.72,0.9],
       "HasThermalImaging": true
-    },
-    {
-      "BanHand": true,
-      "HidePassenger": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
-    },
-    {
-      "BanHand": true,
-      "HidePassenger": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
-    },
-    {
-      "BanHand": true,
-      "HidePassenger": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
-    },
-    {
-      "BanHand": true,
-      "HidePassenger": true,
-      "IsEnclosed": false,
-      "Transform": "Vehicle",
-      "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
     }
   ],
   "Weapons": {
+    "Rocket": {
+      "AmmoType": "superbwarfare:small_rocket",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Magazine": 14,
+      "EmptyReloadTime": 200,
+      "Projectile": "superbwarfare:small_rocket",
+      "Spread": 0.25,
+      "Name": "dragonrise_reforge:70 mm Hydra-70 M247 rocket",
+      "RPM": 450,
+      "Damage": 85,
+      "ExplosionDamage": 42,
+      "ExplosionRadius": 6,
+      "Gravity": 0.02,
+      "Velocity": 16,
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ShootPositionForHud": [0,0.62,0.8],
+        "ShootDirectionForHud": [0,0.018,1],
+        "Positions": [
+          [1.77374375,1.39634375,2.52694375],
+          [-1.77374375,1.39634375,2.52694375]
+        ],
+        "Directions": [
+          [0,0,1]
+        ]
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:small_rocket_fire_1p",
+        "Fire3P": "superbwarfare:small_rocket_fire_3p",
+        "VehicleReload3p": "superbwarfare:missile_reload",
+        "VehicleReloadSoundTime": 7,
+        "Change": "superbwarfare:into_missile"
+      },
+      "Crosshair": "@Empty",
+      "SoundRadius": 12
+    },
     "Cannon": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
@@ -193,16 +190,16 @@
     "ExplosionRadius": 6
   },
   "ThirdPersonCameraPos": [0,1,5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m113_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m270_icon.png",
   "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
   "Type": "APC",
   "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "HornSound": "superbwarfare:truck_horn",
   "TerrainCompat": [
-    [-1.624,0.011,-2.279],
-    [1.409,0.011,1.998],
-    [1.624,0.011,-2.207],
-    [-1.409,0.011,1.998]
+    [1.225,0.009,2.856],
+    [-1.225,0.009,-2.362],
+    [-1.162,0.009,2.856],
+    [1.163,0.009,-2.362]
   ],
   "InertiaRotateRate": 2
 }

@@ -2,58 +2,28 @@
   "ID": "dragonrise_reforge:hj8",
   "MaxHealth": 60,
   "MaxEnergy": 0,
-  "TurretPos": [
-    0,
-    0,
-    0
-  ],
-  "TurretTurnSpeed": [
-    10,
-    10
-  ],
-  "TurretPitchRange": [
-    -40,
-    40
-  ],
-  "BarrelPos": [
-    0.0,
-    0.8918625,
-    0.0
-  ],
+  "TurretPos": [0,0,0],
+  "TurretTurnSpeed": [10,10],
+  "TurretPitchRange": [-40,40],
+  "BarrelPos": [0.0,0.8918625,0.0],
   "Seats": {
     "Transform": "Turret",
-    "Position": [
-      0.3,
-      -0.6,
-      -0.6
-    ],
+    "Position": [0.3,-0.6,-0.6],
     "MinPitch": -40,
     "MaxPitch": 40,
     "CameraPos": {
       "Transform": "Barrel",
       "UseFixedCameraPos": true,
-      "Position": [
-        0.19375,
-        0.0956375,
-        0.1875
-      ],
+      "Position": [0.19375,0.0956375,0.1875],
       "Direction": "Barrel"
     },
     "Weapons": [
       "Missile"
     ],
-    "Sensitivity": [
-      0.55,
-      0.75,
-      1
-    ],
+    "Sensitivity": [0.55,0.75,1],
     "DismountInfo": {
       "Transform": "Turret",
-      "Position": [
-        0.3,
-        1,
-        -0.6
-      ]
+      "Position": [0.3,1,-0.6]
     }
   },
   "UsePassengerCreativeAmmoBox": false,
@@ -71,19 +41,11 @@
       "ExplosionRadius": 6,
       "RPM": 15,
       "Velocity": 6,
-      "ShootShake": [
-        6,
-        6,
-        14
-      ],
+      "ShootShake": [6,6,14],
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.00885,
-            0.20563125,
-            -0.3323875
-          ]
+          [-0.00885,0.20563125,-0.3323875]
         ],
         "Directions": [
           "Barrel"
@@ -98,11 +60,7 @@
       "Crosshair": "@VehicleCommonMissile"
     }
   },
-  "ThirdPersonCameraPos": [
-    -0.3,
-    1,
-    -1
-  ],
+  "ThirdPersonCameraPos": [-0.3,1,-1],
   "Mass": 0.05,
   "DamageModifiers": [
     "minecraft:lava * 2.667",
