@@ -165,11 +165,23 @@
     ],
     "CameraPos": {
       "Transform": "Vehicle",
-      "Position": [0.0, 3.1875, 4.125],
-      "ZoomPosition": [-0.65438125, 0.9902625, 3.73305],
+      "Position": [
+        0.0,
+        3.1875,
+        4.125
+      ],
+      "ZoomPosition": [
+        -0.65438125,
+        0.9902625,
+        3.73305
+      ],
       "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0, 2.75, -14]
+      "AircraftCameraPos": [
+        0,
+        2.75,
+        -14
+      ]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
@@ -351,8 +363,16 @@
           5.625
         ],
         "Positions": [
-          [2.99673125, 1.704825, -1.00271875],
-          [-2.99673125, 1.704825, -1.00271875]
+          [
+            2.99673125,
+            1.704825,
+            -1.00271875
+          ],
+          [
+            -2.99673125,
+            1.704825,
+            -1.00271875
+          ]
         ],
         "ViewPosition": [
           -0.94704375,

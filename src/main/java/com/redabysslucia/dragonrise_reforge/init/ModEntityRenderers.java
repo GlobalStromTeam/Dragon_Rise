@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Flarakpz1Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Leopard2a4Renderer;
 
 
@@ -136,8 +139,10 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
-        event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
-        event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
-        event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);}
+                event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
+                event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
+                event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);
+                event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);}
+
 
 }

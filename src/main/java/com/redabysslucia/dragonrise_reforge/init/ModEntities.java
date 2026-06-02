@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Flarakpz1Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Leopard2a4Entity;
 
 
@@ -919,6 +922,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Leopard2a4Entity>> LEOPARD2A4 = register("leopard2a4",
             EntityType.Builder.of(Leopard2a4Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Flarakpz1Entity>> FLARAKPZ1 = register("flarakpz1",
+            EntityType.Builder.of(Flarakpz1Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

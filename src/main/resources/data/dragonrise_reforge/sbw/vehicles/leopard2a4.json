@@ -41,8 +41,16 @@
       "Part": "MainEngine"
     },
     {
-      "Size": [0.413, 0.611, 4.141],
-      "Position": [1.564, 0.617, -0.803],
+      "Size": [
+        0.413,
+        0.611,
+        4.141
+      ],
+      "Position": [
+        1.564,
+        0.617,
+        -0.803
+      ],
       "Part": "WheelRight"
     },
     {
@@ -94,19 +102,38 @@
       "BanHand": true,
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [-0.798, -1.021, 1.524],
-      "Weapons": ["Cannon", "MachineGun"],
+      "Position": [
+        -0.798,
+        -1.021,
+        1.524
+      ],
+      "Weapons": [
+        "Cannon",
+        "MachineGun"
+      ],
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.798, 0.6, 1.524],
+        "Position": [
+          -0.798,
+          0.6,
+          1.524
+        ],
         "Transform": "Turret",
-        "ZoomPosition": [-0.798, 0.6, 1.524],
+        "ZoomPosition": [
+          -0.798,
+          0.6,
+          1.524
+        ],
         "Direction": "Barrel"
       },
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 20,
-      "Sensitivity": [0.52, 0.75, 0.9],
+      "Sensitivity": [
+        0.52,
+        0.75,
+        0.9
+      ],
       "HasThermalImaging": true
     },
     {
@@ -422,53 +449,51 @@
   "CollisionLevel": {
     "Level": 4,
     "PowerLimits": [
-      [0, 0, true],
-      [0, 0, true],
-      [0.1, 0.05, false],
-      [1, 0.3, false]
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.1,
+        0.05,
+        false
+      ],
+      [
+        1,
+        0.3,
+        false
+      ]
     ]
   },
   "EngineSound": "dragonrise_reforge:ztz99a_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [2,0,3.0625],
-    [-2,0,3.0625],
-    [2,0,1.0625],
-    [-2,0,1.0625],
-    [2,0,1.125],
-    [-2, 0,1.125],
-    [2,0,0.1875],
-    [-2,0, 0.1875],
     [
-      2,
-      0,
-      -0.8125
+      1.594,
+      0.038,
+      2.109
     ],
     [
-      -2,
-      0,
-      -0.8125
+      -1.419,
+      0.038,
+      -3.922
     ],
     [
-      2,
-      0,
-      -1.8125
+      -1.481,
+      0.038,
+      2.109
     ],
     [
-      -2,
-      0,
-      -1.8125
-    ],
-    [
-      2,
-      0,
-      -2.8125
-    ],
-    [
-      -2,
-      0,
-      -2.8125
+      1.594,
+      0.038,
+      -3.922
     ]
   ]
 }

@@ -168,6 +168,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
 
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
              }
                     ).build()
     );
