@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:m270",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/m270.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m270.png"
+  }
+}
