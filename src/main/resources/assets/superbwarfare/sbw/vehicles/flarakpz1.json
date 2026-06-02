@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:flarakpz1",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/flarakpz1.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/flarakpz1.png"
+  }
+}
