@@ -5,6 +5,11 @@
 *.ipr
 *.iws
 
+# 运行日志J
+run-data/
+*.log
+*.log.gz
+
 # IntelliJ
 out/
 # mpeltonen/sbt-idea plugin

@@ -50,6 +50,8 @@ public class DragonVehicleDeployer {
     public static void register(IEventBus modEventBus) {
         modEventBus.addListener(DragonVehicleDeployer::commonSetup);
 
+        net.minecraftforge.fml.ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         BLOCK_ENTITY_TYPES.register(modEventBus);

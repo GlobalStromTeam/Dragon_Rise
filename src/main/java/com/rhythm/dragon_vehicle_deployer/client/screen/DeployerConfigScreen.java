@@ -15,11 +15,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfigMenu> {
     private int localInterval = -1;
     private int localAutoSpawn = -1; // -1=not modified, 0=off, 1=on
+    private int localIdleTimeout = -1;
 
     public DeployerConfigScreen(DeployerConfigMenu menu, Inventory inv, Component title) {
         super(menu, inv, title);
         this.imageWidth = 250;
-        this.imageHeight = 150;
+        this.imageHeight = 200;
     }
 
     private int getDisplayInterval() {
@@ -28,6 +29,10 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
 
     private boolean getDisplayAutoSpawn() {
         return localAutoSpawn >= 0 ? localAutoSpawn == 1 : this.menu.isAutoSpawnEnabled();
+    }
+
+    private int getDisplayIdleTimeout() {
+        return localIdleTimeout >= 0 ? localIdleTimeout : this.menu.getIdleClearTimeoutSeconds();
     }
 
     @Override
@@ -51,18 +56,29 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
                 .bounds(cx + 80, row1Y, btnW, btnH).build());
 
         // --- Row 2: Auto spawn toggle ---
-        int row2Y = row1Y + 45;
+        int row2Y = row1Y + 40;
         addRenderableWidget(Button.builder(Component.translatable("gui.dragonrise_reforge.toggle"), b -> {
             localAutoSpawn = getDisplayAutoSpawn() ? 0 : 1;
         }).bounds(cx - 40, row2Y, 80, btnH).build());
 
-        // --- Row 3: Confirm button ---
-        int row3Y = row2Y + 30;
+        // --- Row 3: Idle clear timeout ---
+        int row3Y = row2Y + 40;
+        addRenderableWidget(Button.builder(Component.literal("-60"), b -> { localIdleTimeout = Math.max(0, getDisplayIdleTimeout() - 60); })
+                .bounds(cx - 80 - btnW, row3Y, btnW, btnH).build());
+        addRenderableWidget(Button.builder(Component.literal("-5"), b -> { localIdleTimeout = Math.max(0, getDisplayIdleTimeout() - 5); })
+                .bounds(cx - 80 + btnW + gap, row3Y, btnW, btnH).build());
+        addRenderableWidget(Button.builder(Component.literal("+5"), b -> { localIdleTimeout = Math.min(36000, getDisplayIdleTimeout() + 5); })
+                .bounds(cx + 80 - btnW - btnW - gap, row3Y, btnW, btnH).build());
+        addRenderableWidget(Button.builder(Component.literal("+60"), b -> { localIdleTimeout = Math.min(36000, getDisplayIdleTimeout() + 60); })
+                .bounds(cx + 80, row3Y, btnW, btnH).build());
+
+        // --- Row 4: Confirm button ---
+        int row4Y = row3Y + 30;
         addRenderableWidget(Button.builder(Component.translatable("gui.dragonrise_reforge.confirm"), b -> {
             ModNetwork.CHANNEL.sendToServer(new DeployerSettingsPacket(
-                    this.menu.getPos(), getDisplayInterval(), getDisplayAutoSpawn()));
+                    this.menu.getPos(), getDisplayInterval(), getDisplayAutoSpawn(), getDisplayIdleTimeout()));
             this.onClose();
-        }).bounds(cx - 50, row3Y, 100, btnH).build());
+        }).bounds(cx - 50, row4Y, 100, btnH).build());
     }
 
     @Override
@@ -95,7 +111,7 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
         graphics.drawCenteredString(this.font, getDisplayInterval() + "s", cx, row1Y + 6, 0x55FF55);
 
         // Row 2: Auto spawn
-        int row2LabelY = row1Y + 35;
+        int row2LabelY = row1Y + 30;
         graphics.drawString(this.font,
                 Component.translatable("gui.dragonrise_reforge.auto_spawn"),
                 this.leftPos + 8, row2LabelY, 0xAAAAAA, false);
@@ -106,6 +122,19 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
         int statusColor = autoOn ? 0x55FF55 : 0xFF5555;
         int statusX = this.leftPos + 8 + this.font.width(Component.translatable("gui.dragonrise_reforge.auto_spawn")) + 6;
         graphics.drawString(this.font, statusText, statusX, row2LabelY, statusColor, false);
+
+        // Row 3: Idle clear timeout
+        int row3LabelY = row2LabelY + 40;
+        int row3BtnY = row3LabelY + 10;
+        graphics.drawString(this.font,
+                Component.translatable("gui.dragonrise_reforge.idle_clear_timeout"),
+                this.leftPos + 8, row3LabelY, 0xAAAAAA, false);
+        int idleVal = getDisplayIdleTimeout();
+        if (idleVal == 0) {
+            graphics.drawCenteredString(this.font, Component.translatable("gui.dragonrise_reforge.disabled").getString(), cx, row3BtnY + 6, 0xFF5555);
+        } else {
+            graphics.drawCenteredString(this.font, idleVal + "s", cx, row3BtnY + 6, 0x55FF55);
+        }
 
         this.renderTooltip(graphics, mouseX, mouseY);
     }

@@ -272,6 +272,7 @@
   "gui.dragonrise_reforge.confirm": "确认",
   "gui.dragonrise_reforge.disabled": "已禁用",
   "gui.dragonrise_reforge.enabled": "已启用",
+  "gui.dragonrise_reforge.idle_clear_timeout": "闲置清除时间",
   "gui.dragonrise_reforge.save_success": "保存成功",
   "gui.dragonrise_reforge.spawn_interval": "刷新间隔",
   "gui.dragonrise_reforge.toggle": "切换",

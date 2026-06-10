@@ -15,7 +15,7 @@ public class DeployerConfigMenu extends AbstractContainerMenu {
 
     // 客户端构造函数
     public DeployerConfigMenu(int windowId, Inventory inv, BlockPos pos) {
-        this(windowId, inv, pos, new SimpleContainerData(2));
+        this(windowId, inv, pos, new SimpleContainerData(3));
     }
 
     // 服务端构造函数
@@ -36,6 +36,10 @@ public class DeployerConfigMenu extends AbstractContainerMenu {
 
     public boolean isAutoSpawnEnabled() {
         return this.data.get(1) != 0;
+    }
+
+    public int getIdleClearTimeoutSeconds() {
+        return this.data.get(2);
     }
 
     @Override

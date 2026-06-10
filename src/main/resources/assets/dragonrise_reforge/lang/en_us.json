@@ -271,6 +271,7 @@
   "gui.dragonrise_reforge.confirm": "Confirm",
   "gui.dragonrise_reforge.disabled": "Disabled",
   "gui.dragonrise_reforge.enabled": "Enabled",
+  "gui.dragonrise_reforge.idle_clear_timeout": "Idle Clear Timeout",
   "gui.dragonrise_reforge.save_success": "Saved Successfully",
   "gui.dragonrise_reforge.spawn_interval": "Spawn Interval",
   "gui.dragonrise_reforge.toggle": "Toggle",

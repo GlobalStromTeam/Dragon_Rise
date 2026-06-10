@@ -32,11 +32,21 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
 
     public int spawnIntervalSeconds = 5;
     public boolean autoSpawnEnabled = true;
+    public int idleClearTimeoutSeconds = 300;
     private int tickCounter = 0;
 
     /** UUID of the vehicle spawned by this deployer, null if none */
     @Nullable
     private UUID spawnedVehicleUUID = null;
+
+    /** Whether the spawned vehicle has ever been occupied by a player */
+    private boolean vehicleWasOccupied = false;
+
+    /** Game time when the vehicle last had a passenger */
+    private long lastOccupiedGameTime = 0;
+
+    /** Flag set by trackOccupancy() to trigger immediate redeploy after idle clear */
+    private boolean idleClearTriggered = false;
 
     private final ContainerData dataAccess = new ContainerData() {
         @Override
@@ -44,6 +54,7 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
             return switch (index) {
                 case 0 -> spawnIntervalSeconds;
                 case 1 -> autoSpawnEnabled ? 1 : 0;
+                case 2 -> idleClearTimeoutSeconds;
                 default -> 0;
             };
         }
@@ -53,13 +64,14 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
             switch (index) {
                 case 0 -> spawnIntervalSeconds = value;
                 case 1 -> autoSpawnEnabled = value != 0;
+                case 2 -> idleClearTimeoutSeconds = value;
             }
             setChanged();
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
     };
 
@@ -67,6 +79,7 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
         super(DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ENTITY.get(), pos, state);
         try {
             this.spawnIntervalSeconds = Config.DEFAULT_SPAWN_INTERVAL.get();
+            this.idleClearTimeoutSeconds = Config.IDLE_CLEAR_TIMEOUT_SECONDS.get();
         } catch (IllegalStateException ignored) {
             // Config not yet loaded during registration
         }
@@ -84,11 +97,14 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
         }
         this.spawnIntervalSeconds = tag.contains("SpawnIntervalSeconds") ? tag.getInt("SpawnIntervalSeconds") : Config.DEFAULT_SPAWN_INTERVAL.get();
         this.autoSpawnEnabled = tag.contains("AutoSpawnEnabled") ? tag.getBoolean("AutoSpawnEnabled") : true;
+        this.idleClearTimeoutSeconds = tag.contains("IdleClearTimeoutSeconds") ? tag.getInt("IdleClearTimeoutSeconds") : Config.IDLE_CLEAR_TIMEOUT_SECONDS.get();
         if (tag.hasUUID("SpawnedVehicleUUID")) {
             this.spawnedVehicleUUID = tag.getUUID("SpawnedVehicleUUID");
         } else {
             this.spawnedVehicleUUID = null;
         }
+        this.vehicleWasOccupied = tag.getBoolean("VehicleWasOccupied");
+        this.lastOccupiedGameTime = tag.getLong("LastOccupiedGameTime");
     }
 
     @Override
@@ -102,9 +118,12 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
         }
         tag.putInt("SpawnIntervalSeconds", this.spawnIntervalSeconds);
         tag.putBoolean("AutoSpawnEnabled", this.autoSpawnEnabled);
+        tag.putInt("IdleClearTimeoutSeconds", this.idleClearTimeoutSeconds);
         if (this.spawnedVehicleUUID != null) {
             tag.putUUID("SpawnedVehicleUUID", this.spawnedVehicleUUID);
         }
+        tag.putBoolean("VehicleWasOccupied", this.vehicleWasOccupied);
+        tag.putLong("LastOccupiedGameTime", this.lastOccupiedGameTime);
     }
 
     @Nullable
@@ -130,6 +149,9 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
         if (tag == null) return;
         this.entityData = tag.copy();
         this.spawnedVehicleUUID = null;
+        this.vehicleWasOccupied = false;
+        this.lastOccupiedGameTime = 0;
+        this.idleClearTriggered = false;
         this.setChanged();
     }
 
@@ -170,10 +192,61 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
         return entity != null && entity.isAlive();
     }
 
+    /**
+     * Tracks occupancy of the spawned vehicle and clears it if idle too long.
+     * Called every tick from {@link #tick}.
+     */
+    private void trackOccupancy(Level world) {
+        int timeout = this.idleClearTimeoutSeconds;
+        if (timeout <= 0) return;
+        if (!(world instanceof ServerLevel serverLevel)) return;
+        if (this.spawnedVehicleUUID == null) {
+            this.vehicleWasOccupied = false;
+            this.lastOccupiedGameTime = 0;
+            return;
+        }
+
+        Entity entity = serverLevel.getEntity(this.spawnedVehicleUUID);
+        if (entity == null || !entity.isAlive()) {
+            this.vehicleWasOccupied = false;
+            this.lastOccupiedGameTime = 0;
+            this.spawnedVehicleUUID = null;
+            return;
+        }
+
+        boolean hasPassengers = !entity.getPassengers().isEmpty();
+
+        if (hasPassengers) {
+            this.vehicleWasOccupied = true;
+            this.lastOccupiedGameTime = world.getGameTime();
+        } else if (this.vehicleWasOccupied) {
+            long idleTicks = world.getGameTime() - this.lastOccupiedGameTime;
+            if (idleTicks >= timeout * 20L) {
+                entity.discard();
+                this.spawnedVehicleUUID = null;
+                this.vehicleWasOccupied = false;
+                this.lastOccupiedGameTime = 0;
+                this.idleClearTriggered = true;
+                this.tickCounter = 0;
+                this.setChanged();
+            }
+        }
+    }
+
     public static void tick(Level world, BlockPos pos, BlockState state, VehicleDeployerBlockEntity blockEntity) {
         if (world.isClientSide) return;
         if (!blockEntity.autoSpawnEnabled) return;
         if (!blockEntity.entityData.contains("EntityType")) return;
+
+        // Track occupancy and check for idle timeout
+        blockEntity.trackOccupancy(world);
+
+        // If vehicle was just cleared due to idle timeout, deploy immediately
+        if (blockEntity.idleClearTriggered) {
+            blockEntity.idleClearTriggered = false;
+            blockEntity.deploy(state);
+            return;
+        }
 
         blockEntity.tickCounter++;
         if (blockEntity.tickCounter < blockEntity.spawnIntervalSeconds * 20) return;

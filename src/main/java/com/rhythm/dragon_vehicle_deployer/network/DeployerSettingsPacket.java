@@ -15,24 +15,28 @@ public class DeployerSettingsPacket {
     private final BlockPos pos;
     private final int spawnIntervalSeconds;
     private final boolean autoSpawnEnabled;
+    private final int idleClearTimeoutSeconds;
 
-    public DeployerSettingsPacket(BlockPos pos, int spawnIntervalSeconds, boolean autoSpawnEnabled) {
+    public DeployerSettingsPacket(BlockPos pos, int spawnIntervalSeconds, boolean autoSpawnEnabled, int idleClearTimeoutSeconds) {
         this.pos = pos;
         this.spawnIntervalSeconds = spawnIntervalSeconds;
         this.autoSpawnEnabled = autoSpawnEnabled;
+        this.idleClearTimeoutSeconds = idleClearTimeoutSeconds;
     }
 
     public static void encode(DeployerSettingsPacket msg, FriendlyByteBuf buf) {
         buf.writeBlockPos(msg.pos);
         buf.writeInt(msg.spawnIntervalSeconds);
         buf.writeBoolean(msg.autoSpawnEnabled);
+        buf.writeInt(msg.idleClearTimeoutSeconds);
     }
 
     public static DeployerSettingsPacket decode(FriendlyByteBuf buf) {
         return new DeployerSettingsPacket(
                 buf.readBlockPos(),
                 buf.readInt(),
-                buf.readBoolean()
+                buf.readBoolean(),
+                buf.readInt()
         );
     }
 
@@ -50,6 +54,7 @@ public class DeployerSettingsPacket {
 
             blockEntity.spawnIntervalSeconds = Mth.clamp(msg.spawnIntervalSeconds, 5, 3600);
             blockEntity.autoSpawnEnabled = msg.autoSpawnEnabled;
+            blockEntity.idleClearTimeoutSeconds = Mth.clamp(msg.idleClearTimeoutSeconds, 0, 36000);
             blockEntity.setChanged();
 
             player.displayClientMessage(
