@@ -3,7 +3,6 @@ package com.redabysslucia.dragonrise_reforge.client.model.entity;
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.M1A2SEPV2Entity;
-import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import net.minecraft.resources.ResourceLocation;
 
 public class M1A2SEPV2Model extends DragonriseVehicleModel<M1A2SEPV2Entity> {

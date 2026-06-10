@@ -191,11 +191,11 @@
     "WheelDifferential": 0.5,
     "TrackRotSpeed": 1.9,
     "TrackDifferential": 0.8,
-    "MaxForwardSpeedRate": 0.7,
-    "MaxBackwardSpeedRate": 0.27,
-    "Increment": 0.008,
-    "Decrement": 0.039,
-    "SteeringSpeed": 0.195
+    "MaxForwardSpeedRate": 0.82,
+    "MaxBackwardSpeedRate": 0.35,
+    "Increment": 0.025,
+    "Decrement": 0.015,
+    "SteeringSpeed": 0.1
   },
   "TurretPos": [0.0,2.171,-0.019],
   "TurretTurnSpeed": [6.125,3.295],
