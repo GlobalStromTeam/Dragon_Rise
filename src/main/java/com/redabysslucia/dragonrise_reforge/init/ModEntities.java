@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.M270Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Flarakpz1Entity;
 
 
@@ -42,6 +45,14 @@ public class ModEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Dragonrise_reforge.MODID);
     public static final RegistryObject<EntityType<ZTZ99AEntity>> ZTZ99A = register("ztz99a",
             EntityType.Builder.of(ZTZ99AEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<ZTZ99AHEntity>> ZTZ99AH = register("ztz99ah",
+            EntityType.Builder.of(ZTZ99AHEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .fireImmune()
@@ -930,6 +941,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Flarakpz1Entity>> FLARAKPZ1 = register("flarakpz1",
             EntityType.Builder.of(Flarakpz1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<M270Entity>> M270 = register("m270",
+            EntityType.Builder.of(M270Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

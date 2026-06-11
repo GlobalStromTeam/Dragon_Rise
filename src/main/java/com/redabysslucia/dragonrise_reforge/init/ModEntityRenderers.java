@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M270Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Flarakpz1Renderer;
 
 
@@ -32,6 +35,7 @@ public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event){
                 event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ARenderer::new);
+                event.registerEntityRenderer(ModEntities.ZTZ99AH.get(), ZTZ99AHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ59A.get(), ZTZ59ARenderer::new);
                 event.registerEntityRenderer(ModEntities.VT4A1.get(), VT4A1Renderer::new);
@@ -142,7 +146,9 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
                 event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
                 event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);
-                event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);}
+                event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);
+                event.registerEntityRenderer(ModEntities.M270.get(), M270Renderer::new);
+        }
 
 
 }

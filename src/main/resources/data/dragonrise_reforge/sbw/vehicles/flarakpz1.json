@@ -2,51 +2,53 @@
   "ID": "dragonrise_reforge:flarakpz1",
   "OBB": [
     {
-      "Size": [1.067, 0.419, 2.727],
-      "Position": [0.0, 0.888, 0.636]
+      "Size": [1.067,0.419,2.727],
+      "Position": [0.0,0.888,0.636]
     },
     {
-      "Size": [1.603, 0.319, 2.177],
-      "Position": [0.0, 1.538, 0.42]
+      "Size": [1.603,0.319,2.177],
+      "Position": [0.0,1.538,0.42]
     },
     {
-      "Size": [0.541, 0.445, 0.572],
-      "Position": [0.0, 1.577, -2.828],
+      "Size": [0.541,0.445,0.572],
+      "Position": [0.0,1.577,-2.828],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.256, 0.611, 3.203],
-      "Position": [1.345, 0.617, 0.134],
+      "Size": [0.256,0.611,3.203],
+      "Position": [1.345,0.617,0.134],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.225, 0.611, 3.109],
-      "Position": [-1.389, 0.617, 0.103],
+      "Size": [0.225,0.611,3.109],
+      "Position": [-1.389,0.617,0.103],
       "Part": "WheelLeft"
     },
     {
-      "Size": [0.73, 0.405, 0.894],
-      "Position": [-0.031, -0.304, -1.134],
+      "Size": [0.73,0.405,0.894],
+      "Position": [-0.031,-0.304,-1.134],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     }
   ],
-  "TurretPos": [0.00625, 2.75900625, -1.00700625],
-  "BarrelPos": [-0.00625, 0.27368125, -0.03938125],
+  "TurretPos": [0.006,2.759,-1.007],
+  "BarrelPos": [-1.009,3.033,-1.046],
   "Seats": [
     {
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": false,
-        "Position": [0.78125, 0.890625, 0.421875],
+        "Position": [0.78125,0.890625,0.421875],
         "Transform": "Barrel",
-        "ZoomPosition": [0.78125, 0.890625, 0.421875],
+        "ZoomPosition": [0.78125,0.890625,0.421875],
         "Direction": "Barrel"
       },
-      "Weapons": ["AAMissile"],
+      "Weapons": [
+        "AAMissile"
+      ],
       "Transform": "Turret",
-      "Position": [0.36,-0.45,0.56],
+      "Position": [-0.006,-2.994,-0.118],
       "CanRotateHead": false,
       "MinPitch": -5,
       "MaxPitch": 70,
@@ -81,8 +83,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [1.025925, -0.3509625, 0.26635625],
-          [-1.025925, -0.3509625, 0.26635625]
+          [1.025925,-0.3509625,0.26635625],
+          [-1.025925,-0.3509625,0.26635625]
         ],
         "Directions": [
           "Barrel"
@@ -152,7 +154,7 @@
     "@superbwarfare:javelin_missile * 0.8",
     "All - 13"
   ],
-  "ThirdPersonCameraPos": [0, 1, 3],
+  "ThirdPersonCameraPos": [0,1,3],
   "VehicleContainerType": "Medium",
   "DestroyInfo": {
     "ParticleType": "Huge",
@@ -165,17 +167,29 @@
   "CollisionLevel": {
     "Level": 3,
     "PowerLimits": [
-      [0, 0, true],
-      [0, 0, true],
-      [0.12, 0.07, false]
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.12,
+        0.07,
+        false
+      ]
     ]
   },
   "EngineSound": "superbwarfare:bmp_2_engine",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.344, 0.038, 2.109],
-    [-1.356, 0.038, -1.984],
-    [-1.356, 0.038, 2.109],
-    [1.344, 0.038, -2.109]
+    [1.344,0.038,2.109],
+    [-1.356,0.038,-1.984],
+    [-1.356,0.038,2.109],
+    [1.344,0.038,-2.109]
   ]
 }
