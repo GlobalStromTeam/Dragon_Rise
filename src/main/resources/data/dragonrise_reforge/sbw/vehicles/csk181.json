@@ -187,11 +187,11 @@
     "WheelDifferential": 0.5,
     "TrackRotSpeed": 1.9,
     "TrackDifferential": 0.8,
-    "MaxForwardSpeedRate": 0.82,
-    "MaxBackwardSpeedRate": 0.27,
-    "Increment": 0.008,
+    "MaxForwardSpeedRate": 1.5,
+    "MaxBackwardSpeedRate": 0.5,
+    "Increment": 0.015,
     "Decrement": 0.039,
-    "SteeringSpeed": 0.195,
+    "SteeringSpeed": 0.14,
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [-0.0263625,2.442625,0.159425],
@@ -265,18 +265,10 @@
   "EngineSound": "dragonrise_reforge:wheel_loop1",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.875,0,2.375],
-    [-1.875,0,2.375],
-    [1.875,0,1.438],
-    [-1.875,0,1.438],
-    [1.875,0,0.5],
-    [-1.875,0,0.5],
-    [1.875,0,-0.4375],
-    [-1.875,0,-0.4375],
-    [1.875,0,-1.4375],
-    [-1.875,0,-1.4375],
-    [1.875,0,-2.4375],
-    [-1.875,0,-2.4375]
+    [1.4,0,2.375],
+    [-1.4,0,2.375],
+    [1.4,0,-2.4375],
+    [-1.4,0,-2.4375]
   ],
   "InertiaRotateRate": 1
 }

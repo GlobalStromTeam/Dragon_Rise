@@ -56,7 +56,7 @@
     },
     {
       "Size": [0.386,0.342,0.081],
-      "Position": [0.016,0.012,0.991],
+      "Position": [0.016,0.012,0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -66,14 +66,16 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [0.859,0.171,0.563]
+      "Position": [0.8,0.171,0.563]
     },
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [0.0,1.203,0.031],
+      "Position": [0.0,1.33,0.031],
       "MinPitch": -6,
       "MaxPitch": 60,
+      "MinYaw": -30,
+      "MaxYaw": 30,
       "Sensitivity": [0.8,0.8,0.8],
       "Weapons": [
         "PassengerMachineGun"
@@ -83,37 +85,17 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [-0.812,0.077,0.563]
+      "Position": [-0.8,0.077,0.563]
     },
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [-0.75,0.093,-0.5]
+      "Position": [-0.8,0.093,-0.5]
     },
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [0.813,0.093,-0.5]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.52021875,0.3482125,-1.87215]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.52021875,0.3482125,-2.47215]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.52021875,0.3482125,-2.17215]
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.52021875,0.3482125,-1.87215]
+      "Position": [0.8,0.093,-0.5]
     }
   ],
   "Weapons": {
@@ -167,17 +149,17 @@
     "WheelDifferential": 0.5,
     "TrackRotSpeed": 1.9,
     "TrackDifferential": 0.8,
-    "MaxForwardSpeedRate": 0.82,
-    "MaxBackwardSpeedRate": 0.27,
-    "Increment": 0.008,
+    "MaxForwardSpeedRate": 1.5,
+    "MaxBackwardSpeedRate": 0.5,
+    "Increment": 0.015,
     "Decrement": 0.039,
-    "SteeringSpeed": 0.195,
+    "SteeringSpeed": 0.14,
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [0.0,2.505,0.84],
   "TurretTurnSpeed": [10,10],
   "TurretPitchRange": [-6,60],
-  "BarrelPos": [0.0,2.505,0.84],
+  "BarrelPos": [0.0,0.05,0],
   "HasDecoy": true,
   "UpStep": 2.25,
   "TurretControllerIndex": 1,
