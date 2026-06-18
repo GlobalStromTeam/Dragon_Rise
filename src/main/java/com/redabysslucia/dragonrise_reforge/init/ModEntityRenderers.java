@@ -42,6 +42,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.VT4B.get(), VT4BRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTQ15.get(), ZTQ15Renderer::new);
                 event.registerEntityRenderer(ModEntities.CSK181.get(), CSK181Renderer::new);
+                event.registerEntityRenderer(ModEntities.HUMVEE.get(), HumveeRenderer::new);
                 event.registerEntityRenderer(ModEntities.M1A2SEPV2.get(), M1A2SEPV2Renderer::new);
                 event.registerEntityRenderer(ModEntities.AMX56.get(), AMX56Renderer::new);
                 event.registerEntityRenderer(ModEntities.CV90.get(), CV90Renderer::new);
@@ -76,6 +77,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.FAVA.get(), FAVARenderer::new);
                 event.registerEntityRenderer(ModEntities.STRV103.get(), STRV103Renderer::new);
                 event.registerEntityRenderer(ModEntities.F14.get(), F14Renderer::new);
+                event.registerEntityRenderer(ModEntities.SU24.get(), SU24SbmRenderer::new);
                 event.registerEntityRenderer(ModEntities.TYPE100.get(), TYPE100Renderer::new);
                 event.registerEntityRenderer(ModEntities.BMP3.get(), BMP3Renderer::new);
                 event.registerEntityRenderer(ModEntities.M3A3.get(), M3A3Renderer::new);

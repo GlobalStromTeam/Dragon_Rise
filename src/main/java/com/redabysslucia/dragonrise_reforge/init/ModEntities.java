@@ -371,6 +371,14 @@ public class ModEntities {
                     .sized(4.0f, 2.5f)
     );
 
+    public static final RegistryObject<EntityType<HumveeEntity>> HUMVEE = register("humvee",
+            EntityType.Builder.of(HumveeEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.5f)
+    );
+
     public static final RegistryObject<EntityType<CV90Entity>> CV90 = register("cv90",
             EntityType.Builder.of(CV90Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -430,6 +438,14 @@ public class ModEntities {
     public static final RegistryObject<EntityType<F14Entity>> F14 = register("f14",
             EntityType.Builder.of(F14Entity::new, MobCategory.MISC)
                     .setTrackingRange(255)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(5.0f, 3.5f)
+    );
+
+    public static final RegistryObject<EntityType<SU24Entity>> SU24 = register("su24",
+            EntityType.Builder.of(SU24Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(5.0f, 3.5f)

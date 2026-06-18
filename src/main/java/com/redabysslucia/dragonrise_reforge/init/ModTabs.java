@@ -171,8 +171,11 @@ public class ModTabs {
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));             }
-                    ).build()
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
+                    }
+
+).build()
     );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",

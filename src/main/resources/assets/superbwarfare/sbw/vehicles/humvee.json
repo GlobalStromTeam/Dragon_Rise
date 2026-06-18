@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:humvee",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/humvee.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/humvee.png"
+  }
+}
