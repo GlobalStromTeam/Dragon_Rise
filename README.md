@@ -21,6 +21,6 @@ QQ群: 828262126
 
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/sbw-drr)
 
-[Gitee](https://gitee.com/ly01lin/GScode/tree/dragonrise_reforge/)
+[Gitee](https://gitee.com/ly01lin/Dragon_Rise)
 
 [Discord](https://discord.gg/zSEfkjwx6U)
