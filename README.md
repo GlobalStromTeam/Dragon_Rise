@@ -7,7 +7,7 @@
 
 ## 安装教程
 
-和卓越前线本体同理，请使用[卓越前线0.8.8](https://www.curseforge.com/minecraft/mc-mods/superb-warfare/files/7292685)
+和卓越前线本体同理，请使用[卓越前线0.8.9](https://www.curseforge.com/minecraft/mc-mods/superb-warfare/files/7292685)
 
 ## 协议
 
