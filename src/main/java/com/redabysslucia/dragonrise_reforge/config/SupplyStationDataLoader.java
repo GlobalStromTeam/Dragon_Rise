@@ -12,10 +12,11 @@ import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.SimpleJsonResourceReloadListener;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.loading.FMLPaths;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.loading.FMLPaths;
 import org.slf4j.Logger;
 
 import java.io.BufferedReader;
@@ -25,7 +26,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber(modid = Dragonrise_reforge.MODID)
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID)
 public class SupplyStationDataLoader extends SimpleJsonResourceReloadListener {
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -63,7 +64,7 @@ public class SupplyStationDataLoader extends SimpleJsonResourceReloadListener {
                 loc -> loc.getPath().endsWith(".json")).entrySet()) {
             ResourceLocation resourceLocation = entry.getKey();
             String path = resourceLocation.getPath();
-            ResourceLocation fileId = new ResourceLocation(
+            ResourceLocation fileId = ResourceLocation.fromNamespaceAndPath(
                     resourceLocation.getNamespace(),
                     path.substring(i, path.length() - ".json".length())
             );
@@ -94,7 +95,7 @@ public class SupplyStationDataLoader extends SimpleJsonResourceReloadListener {
             files.filter(f -> f.toString().endsWith(".json")).forEach(file -> {
                 String fileName = file.getFileName().toString();
                 String id = fileName.substring(0, fileName.length() - ".json".length());
-                ResourceLocation fileId = new ResourceLocation(Dragonrise_reforge.MODID, id);
+                ResourceLocation fileId = ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, id);
 
                 try {
                     String content = Files.readString(file);

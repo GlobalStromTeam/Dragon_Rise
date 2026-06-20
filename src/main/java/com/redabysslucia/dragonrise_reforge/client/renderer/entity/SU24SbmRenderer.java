@@ -15,11 +15,11 @@ public class SU24SbmRenderer extends DragonriseSbmVehicleRenderer<SU24Entity> {
 
     @Override
     public ResourceLocation getModelLocation(SU24Entity entity) {
-        return new ResourceLocation("dragonrise_reforge", "su24");
+        return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "su24");
     }
 
     @Override
     public ResourceLocation getTextureLocation(SU24Entity entity) {
-        return new ResourceLocation("dragonrise_reforge", "textures/entity/su24.png");
+        return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/su24.png");
     }
 }

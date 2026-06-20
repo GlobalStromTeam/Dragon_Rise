@@ -14,11 +14,11 @@ public class ZTZ99ASbmRenderer extends DragonriseSbmVehicleRenderer<ZTZ99AEntity
 
     @Override
     public ResourceLocation getModelLocation(ZTZ99AEntity entity) {
-        return new ResourceLocation("dragonrise_reforge", "ztz99a");
+        return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "ztz99a");
     }
 
     @Override
     public ResourceLocation getTextureLocation(ZTZ99AEntity entity) {
-        return new ResourceLocation("dragonrise_reforge", "textures/entity/ztz99a.png");
+        return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/ztz99a.png");
     }
 }

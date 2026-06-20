@@ -1,7 +1,10 @@
 package com.rhythm.dragon_vehicle_deployer.block;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import com.rhythm.dragon_vehicle_deployer.block.entity.VehicleDeployerBlockEntity;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -10,8 +13,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -32,8 +37,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nullable;
 
@@ -43,14 +46,16 @@ public class VehicleDeployerBlock extends BaseEntityBlock {
 
     private static final VoxelShape SHAPE = Shapes.box(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D);
 
-    public VehicleDeployerBlock() {
-        super(BlockBehaviour.Properties.of()
-                .sound(SoundType.METAL)
-                .strength(3.0F, 3600000.0F)
-                .requiresCorrectToolForDrops());
+    public VehicleDeployerBlock(BlockBehaviour.Properties properties) {
+        super(properties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(FACING, Direction.NORTH)
                 .setValue(TRIGGERED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BaseEntityBlock> codec() {
+        return simpleCodec(VehicleDeployerBlock::new);
     }
 
     @Override
@@ -103,34 +108,33 @@ public class VehicleDeployerBlock extends BaseEntityBlock {
     }
 
     @Override
-    public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        if (world.isClientSide) return InteractionResult.SUCCESS;
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+        if (world.isClientSide) return ItemInteractionResult.SUCCESS;
 
         if (!(world.getBlockEntity(pos) instanceof VehicleDeployerBlockEntity blockEntity)) {
-            return InteractionResult.FAIL;
+            return ItemInteractionResult.FAIL;
         }
 
         // OP sneak+right-click: open config GUI
         if (player.isShiftKeyDown() && player.hasPermissions(2)) {
             if (player instanceof ServerPlayer serverPlayer) {
-                NetworkHooks.openScreen(serverPlayer, blockEntity, pos);
+                serverPlayer.openMenu(blockEntity);
             }
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
 
         // 普通右键：写入载具信息（需要创造模式和容器物品）
-        if (!player.isCreative()) return InteractionResult.FAIL;
+        if (!player.isCreative()) return ItemInteractionResult.FAIL;
 
-        var stack = player.getItemInHand(hand);
-        Item containerItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation("superbwarfare", "container"));
+        Item containerItem = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("superbwarfare", "container"));
         if (containerItem == null || stack.getItem() != containerItem) {
             player.displayClientMessage(Component.translatable("des.superbwarfare.vehicle_deployer.fail").withStyle(ChatFormatting.RED), true);
-            return InteractionResult.FAIL;
+            return ItemInteractionResult.FAIL;
         }
 
         blockEntity.writeEntityInfo(stack);
         player.displayClientMessage(Component.translatable("des.superbwarfare.vehicle_deployer.success").withStyle(ChatFormatting.GREEN), true);
 
-        return InteractionResult.SUCCESS;
+        return ItemInteractionResult.SUCCESS;
     }
 }

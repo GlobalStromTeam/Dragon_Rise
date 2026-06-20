@@ -9,19 +9,19 @@ import org.jetbrains.annotations.Nullable;
 public class AMX56Model extends DragonriseVehicleModel<AMX56Entity> {
 
     private static final ResourceLocation[] MODEL_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge:geo/amx56.geo.json"),
-            new ResourceLocation("dragonrise_reforge:geo/amx56nato.geo.json"),
-            new ResourceLocation("dragonrise_reforge:geo/amx56.geo.json") // UN皮肤复用标准模型
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "geo/amx56.geo.json"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "geo/amx56nato.geo.json"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "geo/amx56.geo.json") // UN皮肤复用标准模型
     };
 
     private static final ResourceLocation[] TEXTURE_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge:textures/entity/amx56.png"),
-            new ResourceLocation("dragonrise_reforge:textures/entity/amx56nato.png"),
-            new ResourceLocation("dragonrise_reforge:textures/entity/amx56un.png")
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/amx56.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/amx56nato.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/amx56un.png")
     };
 
     private static final ResourceLocation ANIMATION_RESOURCE =
-            new ResourceLocation("dragonrise_reforge:animations/amx56.animation.json");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "animations/amx56.animation.json");
 
     @Override
     public ResourceLocation getModelResource(AMX56Entity entity) {

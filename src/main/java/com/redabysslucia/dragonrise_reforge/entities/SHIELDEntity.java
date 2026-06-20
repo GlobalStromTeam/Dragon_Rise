@@ -25,10 +25,10 @@ public class SHIELDEntity extends FireLightVisionVehicle {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(TARGET_YAW, this.getYRot());
-        this.entityData.define(TARGET_PITCH, this.getXRot());
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(TARGET_YAW, this.getYRot());
+        builder.define(TARGET_PITCH, this.getXRot());
     }
 
     @Override

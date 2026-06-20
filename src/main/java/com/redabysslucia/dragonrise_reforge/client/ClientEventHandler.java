@@ -3,24 +3,26 @@ package com.redabysslucia.dragonrise_reforge.client;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.client.overlay.SupplyProgressOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.VehicleBackgroundOverlay;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.minecraft.resources.ResourceLocation;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 
 @OnlyIn(Dist.CLIENT)
-@Mod.EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEventHandler {
 
     @SubscribeEvent
-    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+    public static void registerGuiOverlays(RegisterGuiLayersEvent event) {
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_vehicle_background",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "vehicle_background"),
             new VehicleBackgroundOverlay()
         );
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_supply_progress",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "supply_progress"),
             new SupplyProgressOverlay()
         );
         Dragonrise_reforge.LOGGER.info("Dragonrise overlays registered");

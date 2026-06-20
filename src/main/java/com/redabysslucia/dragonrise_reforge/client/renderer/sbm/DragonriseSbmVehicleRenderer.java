@@ -41,7 +41,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
     @Override
     public ResourceLocation getTextureLocation(T entity) {
         String[] parts = entity.getType().getDescriptionId().split("\\.");
-        return new ResourceLocation(parts[1], "textures/bedrock/vehicle/" + parts[2] + ".png");
+        return ResourceLocation.fromNamespaceAndPath(parts[1], "textures/bedrock/vehicle/" + parts[2] + ".png");
     }
 
     public ResourceLocation getEmissiveTextureLocation(T entity) {
@@ -50,7 +50,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
 
     public ResourceLocation getModelLocation(T entity) {
         String[] parts = entity.getType().getDescriptionId().split("\\.");
-        return new ResourceLocation(parts[1], parts[2]);
+        return ResourceLocation.fromNamespaceAndPath(parts[1], parts[2]);
     }
 
     @Override

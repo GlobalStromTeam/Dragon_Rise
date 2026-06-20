@@ -118,7 +118,7 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
             ResourceLocation location = entry.getKey();
             var resource = entry.getValue();
             var id = modelConverter.fileToId(location);
-            id = new ResourceLocation(id.getNamespace(), id.getPath().replace(".geo", ""));
+            id = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath().replace(".geo", ""));
 
             try (var reader = resource.openAsReader()) {
                 var pojo = GsonHelper.fromJson(this.gson, reader, BedrockModelPOJO.class);

@@ -7,8 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 public class Leopard2a4Model extends DragonriseVehicleModel<Leopard2a4Entity> {
 
     private static final ResourceLocation[] TEXTURE_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge:textures/entity/leopard2a4.png"),
-            new ResourceLocation("dragonrise_reforge:textures/entity/leopard2a4nato.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/leopard2a4.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/leopard2a4nato.png"),
     };
 
     @Override

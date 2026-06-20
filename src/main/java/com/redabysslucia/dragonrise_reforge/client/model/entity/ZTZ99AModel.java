@@ -16,8 +16,8 @@ public class ZTZ99AModel extends DragonriseVehicleModel<ZTZ99AEntity> {
     }
 
     private static final ResourceLocation[] TEXTURE_RESOURCES = {
-            new ResourceLocation("dragonrise_reforge:textures/entity/ztz99a.png"),
-            new ResourceLocation("dragonrise_reforge:textures/entity/ztz99asand.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/ztz99a.png"),
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/ztz99asand.png"),
     };
 
     @Override

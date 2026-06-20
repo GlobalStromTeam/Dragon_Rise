@@ -2,17 +2,18 @@ package com.redabysslucia.dragonrise_reforge.events;
 
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
-import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.EngineChangeModeMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.neoforge.client.event.InputEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import org.lwjgl.glfw.GLFW;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class ClickEvent {
     @SubscribeEvent
     public static void onKeyPressed(InputEvent.Key event) {
@@ -53,7 +54,7 @@ public class ClickEvent {
             if(player.getVehicle() instanceof VariableEngineVehicle entity){
                 if (ModKeyMappings.ENGINE_CHANGE_MODE_TOGGLE.isPressed()) {
                     //entity.nextMode();
-                    ModNetwork.PACKET_HANDLER.sendToServer(new EngineChangeModeMessage());
+                    PacketDistributor.sendToServer(new EngineChangeModeMessage());
                 }
             }
 

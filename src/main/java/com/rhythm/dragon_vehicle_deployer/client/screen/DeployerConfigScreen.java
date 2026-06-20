@@ -2,14 +2,14 @@ package com.rhythm.dragon_vehicle_deployer.client.screen;
 
 import com.rhythm.dragon_vehicle_deployer.menu.DeployerConfigMenu;
 import com.rhythm.dragon_vehicle_deployer.network.DeployerSettingsPacket;
-import com.rhythm.dragon_vehicle_deployer.network.ModNetwork;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.network.PacketDistributor;
 
 @OnlyIn(Dist.CLIENT)
 public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfigMenu> {
@@ -75,7 +75,7 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
         // --- Row 4: Confirm button ---
         int row4Y = row3Y + 30;
         addRenderableWidget(Button.builder(Component.translatable("gui.dragonrise_reforge.confirm"), b -> {
-            ModNetwork.CHANNEL.sendToServer(new DeployerSettingsPacket(
+            PacketDistributor.sendToServer(new DeployerSettingsPacket(
                     this.menu.getPos(), getDisplayInterval(), getDisplayAutoSpawn(), getDisplayIdleTimeout()));
             this.onClose();
         }).bounds(cx - 50, row4Y, 100, btnH).build());
@@ -92,7 +92,7 @@ public class DeployerConfigScreen extends AbstractContainerScreen<DeployerConfig
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        this.renderBackground(graphics);
+        this.renderBackground(graphics, mouseX, mouseY, partialTick);
         super.render(graphics, mouseX, mouseY, partialTick);
 
         int cx = this.leftPos + this.imageWidth / 2;

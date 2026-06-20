@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.nbt.CompoundTag;
@@ -15,12 +17,12 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.registries.ForgeRegistries;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 
 import javax.annotation.Nonnull;
 
@@ -44,10 +46,10 @@ public class M1A2SEPV2Entity extends GeoVehicleEntity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
         // 初始化涂装数据，默认使用标准涂装 (0)
-        this.entityData.define(CAMO_TYPE, 0);
+        builder.define(CAMO_TYPE, 0);
     }
 
     @Override
@@ -73,8 +75,8 @@ public class M1A2SEPV2Entity extends GeoVehicleEntity {
 
         // 延迟加载喷漆罐物品
         if (sprayCanItem == null) {
-            sprayCanItem = ForgeRegistries.ITEMS.getValue(
-                    new ResourceLocation("dragonrise_reforge", "spray_can")
+            sprayCanItem = BuiltInRegistries.ITEM.get(
+                    ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "spray_can")
             );
         }
 

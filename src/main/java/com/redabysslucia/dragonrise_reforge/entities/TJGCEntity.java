@@ -6,20 +6,18 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
-import com.atsuishio.superbwarfare.network.NetworkRegistry;
-import com.atsuishio.superbwarfare.network.message.receive.ClientIndicatorMessage;
+// NetworkRegistry import removed - not available in NeoForge 1.21.1
 import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
-import lombok.val;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -31,14 +29,14 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.network.PacketDistributor;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.network.PacketDistributor;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 
 import java.util.List;
 
@@ -116,7 +114,8 @@ public class TJGCEntity extends VariableEngineVehicle {
                 if (shooter instanceof ServerPlayer player) {
                     var holder = Holder.direct(ModSounds.INDICATION.get());
                     player.connection.send(new ClientboundSoundPacket(holder, SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1f, 1f, player.level().random.nextLong()));
-                    NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new ClientIndicatorMessage(0, 5));
+                    // TODO: Reimplement using NeoForge 1.21.1 networking
+                    // NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new ClientIndicatorMessage(0, 5));
                 }
             }
         }
@@ -159,13 +158,13 @@ public class TJGCEntity extends VariableEngineVehicle {
     }
 
     public boolean shouldShowMissileOn(VehicleEntity vehicle, int... missileWeaponIndices) {
-        val driver = vehicle.getFirstPassenger();
+        Entity driver = vehicle.getFirstPassenger();
         if (driver == null) return false;
 
-        val seatIndex = vehicle.getSeatIndex(driver);
+        int seatIndex = vehicle.getSeatIndex(driver);
         if (seatIndex < 0) return false;
 
-        val currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
+        int currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
 
         boolean matches = false;
         for (int index : missileWeaponIndices) {
@@ -176,7 +175,7 @@ public class TJGCEntity extends VariableEngineVehicle {
         }
         if (!matches) return false;
 
-        val gunData = vehicle.getGunData(seatIndex);
+        GunData gunData = vehicle.getGunData(seatIndex);
         return gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0);
     }
 

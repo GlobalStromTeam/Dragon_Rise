@@ -9,7 +9,7 @@ import com.google.gson.JsonParser;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
@@ -138,11 +138,11 @@ public class VehicleJavaGenerator implements DataProvider {
 
         String content = Files.readString(modEntitiesFile);
         
-        if (content.contains("public static final RegistryObject<EntityType<" + entityClassName + ">> " + entityConstantName + " = register")) {
+        if (content.contains("public static final DeferredHolder<EntityType<?>, EntityType<" + entityClassName + ">> " + entityConstantName + " = register")) {
             return;
         }
 
-        String registrationCode = "    public static final RegistryObject<EntityType<" + entityClassName + ">> " + entityConstantName + " = register(\"" + baseName + "\",\n" +
+        String registrationCode = "    public static final DeferredHolder<EntityType<?>, EntityType<" + entityClassName + ">> " + entityConstantName + " = register(\"" + baseName + "\",\n" +
                 "            EntityType.Builder.of(" + entityClassName + "::new, MobCategory.MISC)\n" +
                 "                    .setTrackingRange(512)\n" +
                 "                    .setUpdateInterval(2)\n" +
@@ -155,7 +155,7 @@ public class VehicleJavaGenerator implements DataProvider {
             content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + importStatement);
         }
 
-        int lastRegistration = content.lastIndexOf("    public static final RegistryObject<EntityType<");
+        int lastRegistration = content.lastIndexOf("    public static final DeferredHolder<EntityType<?>, EntityType<");
         int insertIndex = content.indexOf(");", lastRegistration);
         int endOfLine = content.indexOf("\n", insertIndex);
         content = content.substring(0, endOfLine + 1) + "\n" + registrationCode + content.substring(endOfLine + 1);

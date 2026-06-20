@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
@@ -17,14 +19,14 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.registries.ForgeRegistries;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 
 import javax.annotation.Nonnull;
 
@@ -47,10 +49,10 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
         // 初始化涂装数据，默认使用标准涂装 (0)
-        this.entityData.define(CAMO_TYPE, 0);
+        builder.define(CAMO_TYPE, 0);
     }
 
     @Override
@@ -76,8 +78,8 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
 
         // 延迟加载撬棍物品
         if (crowbarItem == null) {
-            crowbarItem = ForgeRegistries.ITEMS.getValue(
-                    new ResourceLocation("dragonrise_reforge", "spray_can")
+            crowbarItem = BuiltInRegistries.ITEM.get(
+                    ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "spray_can")
             );
         }
 
@@ -166,11 +168,11 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
         var seatIndex = getSeatIndex(player);
         // 一号位背景
         if (seatIndex == 0) {
-            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos3.png");
+            return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos3.png");
         }
         // 二号位背景
         else if (seatIndex == 1) {
-            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
+            return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
         }
         return null;
     }

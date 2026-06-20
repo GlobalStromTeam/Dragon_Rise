@@ -18,11 +18,11 @@ public class ZTZ99AHModel extends DragonriseVehicleModel<ZTZ99AHEntity> {
 //
 //        @Override
 //        public ResourceLocation getModelResource(ZTZ99BHEntity entity) {
-//                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/ztz99bh.geo.json");
+//                return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "geo/ztz99bh.geo.json");
 //        }
 //
 //        @Override
 //        public ResourceLocation getTextureResource(ZTZ99BHEntity entity) {
-//                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/ztz99bh.png");
+//                return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/entity/ztz99bh.png");
 //        }
 }

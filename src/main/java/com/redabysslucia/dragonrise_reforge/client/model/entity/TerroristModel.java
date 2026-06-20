@@ -9,16 +9,16 @@ public class TerroristModel extends GeoModel<TerroristEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(TerroristEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "animations/terrorist.animation.json");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "animations/terrorist.animation.json");
     }
 
     @Override
     public ResourceLocation getModelResource(TerroristEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "geo/terrorist.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "geo/terrorist.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(TerroristEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/terrorist.png");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/entity/terrorist.png");
     }
 }

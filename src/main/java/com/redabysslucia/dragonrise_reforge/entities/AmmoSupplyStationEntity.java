@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.data.gun.AmmoConsumer;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.GunProp;
@@ -23,9 +25,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -67,14 +69,14 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(SUPPLY_RANGE, DEFAULT_SUPPLY_RANGE);
-        this.entityData.define(NON_MAGAZINE_FILL_AMOUNT, DEFAULT_NON_MAGAZINE_FILL);
-        this.entityData.define(SUPPLY_INTERVAL, DEFAULT_SUPPLY_INTERVAL);
-        this.entityData.define(SUPPLY_TIME, DEFAULT_SUPPLY_TIME);
-        this.entityData.define(ACTIVE, true);
-        this.entityData.define(SUPPLY_PROGRESS, 0f);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(SUPPLY_RANGE, DEFAULT_SUPPLY_RANGE);
+        builder.define(NON_MAGAZINE_FILL_AMOUNT, DEFAULT_NON_MAGAZINE_FILL);
+        builder.define(SUPPLY_INTERVAL, DEFAULT_SUPPLY_INTERVAL);
+        builder.define(SUPPLY_TIME, DEFAULT_SUPPLY_TIME);
+        builder.define(ACTIVE, true);
+        builder.define(SUPPLY_PROGRESS, 0f);
     }
 
     @Override
@@ -334,7 +336,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return false;
         }
 
-        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item bonusItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (bonusItem == null) {
             return false;
         }
@@ -345,12 +347,11 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     }
 
     private int countBonusItem(GeoVehicleEntity vehicle, Item bonusItem) {
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return 0;
         }
 
-        IItemHandler handler = handlerOpt.get();
         int total = 0;
         for (int i = 0; i < handler.getSlots(); i++) {
             ItemStack stack = handler.getStackInSlot(i);
@@ -428,7 +429,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return;
         }
 
-        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item bonusItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (bonusItem == null) {
             return;
         }
@@ -440,18 +441,17 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return;
         }
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return;
         }
 
-        IItemHandler handler = handlerOpt.get();
         ItemStack stack = new ItemStack(bonusItem, toAdd);
         InventoryTool.insertItem(handler, stack, toAdd);
     }
 
     private String getVehicleId(GeoVehicleEntity vehicle) {
-        ResourceLocation key = ForgeRegistries.ENTITY_TYPES.getKey(vehicle.getType());
+        ResourceLocation key = BuiltInRegistries.ENTITY_TYPE.getKey(vehicle.getType());
         return key != null ? key.toString() : "";
     }
 
@@ -464,7 +464,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         if (stack.isEmpty()) {
             return "";
         }
-        ResourceLocation key = ForgeRegistries.ITEMS.getKey(stack.getItem());
+        ResourceLocation key = BuiltInRegistries.ITEM.getKey(stack.getItem());
         return key != null ? key.toString() : "";
     }
 
@@ -573,19 +573,18 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return false;
         }
 
-        Item customItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item customItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (customItem == null) {
             return false;
         }
 
         int count = Math.max(1, ammoRule.customItemCount);
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return false;
         }
 
-        IItemHandler handler = handlerOpt.get();
         ItemStack stack = new ItemStack(customItem, count);
         int inserted = InventoryTool.insertItem(handler, stack, count);
         if (inserted < count) {
@@ -613,12 +612,11 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return;
         }
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return;
         }
 
-        IItemHandler handler = handlerOpt.get();
         ItemStack ammoStack = consumer.stack().copy();
         if (ammoStack.isEmpty()) {
             return;

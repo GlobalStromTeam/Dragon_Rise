@@ -1,17 +1,12 @@
 {
   "required": true,
-  "minVersion": "0.8.5",
+  "minVersion": "0.8.7",
   "package": "com.redabysslucia.dragonrise_reforge.mixin",
-  "compatibilityLevel": "JAVA_17",
-  "refmap": "dragonrise_reforge.refmap.json",
-  "mixins": [
-  ],
+  "compatibilityLevel": "JAVA_21",
   "client": [
+    "GameRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "overwrites": {
-    "requireAnnotations": true
   }
 }

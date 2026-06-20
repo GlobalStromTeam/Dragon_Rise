@@ -11,10 +11,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.material.FogType;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.RenderGuiEvent;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RenderGuiEvent;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.bus.api.SubscribeEvent;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
@@ -24,14 +24,14 @@ import org.lwjgl.opengl.GL30;
 import java.io.IOException;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 public class OutlineRenderer {
     
     // 确保类被注册到事件总线上
     public static void register() {
         // 直接注册到事件总线
-        MinecraftForge.EVENT_BUS.register(OutlineRenderer.class);
+        NeoForge.EVENT_BUS.register(OutlineRenderer.class);
         System.out.println("OutlineRenderer registered to event bus");
     }
 
@@ -56,6 +56,9 @@ public class OutlineRenderer {
 
     private static BufferBuilder maskBuffer = null;
     private static MultiBufferSource.BufferSource maskBufferSource = null;
+    // TODO: Replaced ByteBufferBuilder with BufferBuilder for 1.21.1 API
+    // BufferBuilder constructor now takes (ByteBufferBuilder, Mode, VertexFormat)
+    private static java.nio.ByteBuffer byteBuffer = null;
 
     private static int lastEntityCount = 0;
     private static int framesSinceLastCheck = 0;
@@ -120,8 +123,12 @@ public class OutlineRenderer {
         }
 
         createQuadVAO();
-        maskBuffer = new BufferBuilder(262144);
-        maskBufferSource = MultiBufferSource.immediate(maskBuffer);
+        // TODO: Reimplement for 1.21.1 BufferBuilder API
+        // BufferBuilder constructor changed: new BufferBuilder(ByteBufferBuilder, Mode, VertexFormat)
+        // MultiBufferSource.immediate() now takes ByteBufferBuilder instead of BufferBuilder
+        byteBuffer = java.nio.ByteBuffer.allocateDirect(262144);
+        maskBuffer = null;
+        maskBufferSource = null;
     }
 
     private static void minimalStateReset() {
@@ -358,8 +365,9 @@ public class OutlineRenderer {
         GL11.glDisable(GL11.GL_STENCIL_TEST);
 
         if (maskBufferSource == null) {
-            maskBuffer = new BufferBuilder(262144);
-            maskBufferSource = MultiBufferSource.immediate(maskBuffer);
+            // TODO: Reimplement for 1.21.1 - BufferBuilder constructor changed
+            maskBuffer = null;
+            maskBufferSource = null;
         }
 
         boolean oldRenderShadows = mc.options.entityShadows().get();
@@ -368,7 +376,7 @@ public class OutlineRenderer {
         mc.getEntityRenderDispatcher().setRenderShadow(false);
         mc.getEntityRenderDispatcher().setRenderHitBoxes(false);
 
-        float partialTick = mc.getFrameTime();
+        float partialTick = mc.getTimer().getGameTimeDeltaPartialTick(true);
 
         int renderDistanceChunks = mc.options.renderDistance().get();
         double renderDistanceBlocks = renderDistanceChunks * 16.0;

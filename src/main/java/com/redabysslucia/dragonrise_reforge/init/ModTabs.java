@@ -7,14 +7,14 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 @SuppressWarnings("unused")
 public class ModTabs {
     public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Dragonrise_reforge.MODID);
 
-    public static final RegistryObject<CreativeModeTab> MBT_TAB = TABS.register("dragonrise_reforge",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MBT_TAB = TABS.register("dragonrise_reforge",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("item_group.dragonrise_reforge.title"))
                     .icon(() -> new ItemStack(ModItems.TAB_ICON.get()))
@@ -132,7 +132,7 @@ public class ModTabs {
                     ).build()
     );
 
-    public static final RegistryObject<CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> WW2_TAB = TABS.register("ww2_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
                     .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
@@ -178,7 +178,7 @@ public class ModTabs {
 ).build()
     );
 
-    public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("item_group.dragonrise_reforge.misc_tab.title"))
                     .icon(() -> new ItemStack(ModItems.MISC_ICON.get()))

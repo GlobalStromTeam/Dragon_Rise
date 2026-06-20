@@ -6,11 +6,10 @@ import com.atsuishio.superbwarfare.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.protocol.Packet;
-import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.DifficultyInstance;
@@ -31,16 +30,15 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
+import software.bernie.geckolib.animation.AnimationController;
+import software.bernie.geckolib.animation.AnimationState;
+import software.bernie.geckolib.animation.RawAnimation;
+import software.bernie.geckolib.animation.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -61,31 +59,31 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(RUNNER, false);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(RUNNER, false);
     }
 
     @Nullable
     @Override
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @Nullable SpawnGroupData pSpawnData) {
         this.entityData.set(RUNNER, Math.random() < 0.3);
 
         if (entityData.get(RUNNER)) {
             var attribute = this.getAttribute(Attributes.MOVEMENT_SPEED);
             if (attribute != null) {
-                attribute.addPermanentModifier(new AttributeModifier(Mod.ATTRIBUTE_MODIFIER, 0.4, AttributeModifier.Operation.MULTIPLY_BASE));
+                attribute.addPermanentModifier(new AttributeModifier(Mod.ATTRIBUTE_MODIFIER, 0.4, AttributeModifier.Operation.ADD_MULTIPLIED_BASE));
             }
         } else {
             var attribute = this.getAttribute(Attributes.ATTACK_DAMAGE);
             if (attribute != null) {
-                attribute.addPermanentModifier(new AttributeModifier(Mod.ATTRIBUTE_MODIFIER, 3, AttributeModifier.Operation.ADDITION));
+                attribute.addPermanentModifier(new AttributeModifier(Mod.ATTRIBUTE_MODIFIER, 3, AttributeModifier.Operation.ADD_VALUE));
             }
         }
 
         this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(Items.BOW));
 
-        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        return super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData);
     }
 
     @Override
@@ -98,17 +96,6 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
     public void readAdditionalSaveData(@NotNull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.entityData.set(RUNNER, compound.getBoolean("Runner"));
-    }
-
-    @Override
-    @ParametersAreNonnullByDefault
-    protected float getStandingEyeHeight(Pose poseIn, EntityDimensions sizeIn) {
-        return 1.75F;
-    }
-
-    @Override
-    public @NotNull Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     @Override
@@ -125,11 +112,6 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
             public boolean canUse() {
                 return super.canUse() && TerroristEntity.this.entityData.get(RUNNER);
             }
-            
-            @Override
-            protected double getAttackReachSqr(@NotNull LivingEntity entity) {
-                return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
-            }
         });
         this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
@@ -138,13 +120,10 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
         this.targetSelector.addGoal(6, new NearestAttackableTargetGoal<>(this, Player.class, false, false));
     }
 
-    @Override
-    public @NotNull MobType getMobType() {
-        return MobType.ILLAGER;
-    }
+    // Removed in NeoForge 1.21.1 - getMobType() no longer exists
 
-    protected void dropCustomDeathLoot(@NotNull DamageSource source, int looting, boolean recentlyHitIn) {
-        super.dropCustomDeathLoot(source, looting, recentlyHitIn);
+    protected void dropCustomDeathLoot(@NotNull ServerLevel level, @NotNull DamageSource source, boolean recentlyHitIn) {
+        super.dropCustomDeathLoot(level, source, recentlyHitIn);
 
         double random = Math.random();
         if (random < 0.01) {
@@ -273,7 +252,7 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
         ++this.deathTime;
         if (this.deathTime == 140) {
             this.remove(TerroristEntity.RemovalReason.KILLED);
-            this.dropExperience();
+            this.dropExperience(this.getKillCredit());
         }
     }
 

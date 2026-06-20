@@ -8,8 +8,8 @@ import net.minecraft.resources.ResourceLocation;
 public class M1A2SEPV2Model extends DragonriseVehicleModel<M1A2SEPV2Entity> {
 
         private static final ResourceLocation[] TEXTURE_RESOURCES = {
-                new ResourceLocation("dragonrise_reforge:textures/entity/m1a2sepv2green.png"),
-                new ResourceLocation("dragonrise_reforge:textures/entity/m1a2sepv2.png"),
+                ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/m1a2sepv2green.png"),
+                ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/m1a2sepv2.png"),
         };
 
         @Override
@@ -35,11 +35,11 @@ public class M1A2SEPV2Model extends DragonriseVehicleModel<M1A2SEPV2Entity> {
 //
 //        @Override
 //        public ResourceLocation getModelResource(M1A2SEPV2Entity entity) {
-//                return new ResourceLocation(Dragonrise_reforge.MODID, "geo/m1a2sepv2.geo.json");
+//                return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "geo/m1a2sepv2.geo.json");
 //        }
 //
 //        @Override
 //        public ResourceLocation getTextureResource(M1A2SEPV2Entity entity) {
-//                return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/m1a2sepv2.png");
+//                return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/entity/m1a2sepv2.png");
 //        }
 }
