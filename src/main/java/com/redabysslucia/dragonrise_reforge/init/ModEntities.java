@@ -451,6 +451,14 @@ public class ModEntities {
                     .sized(5.0f, 3.5f)
     );
 
+    public static final RegistryObject<EntityType<SU24MEntity>> SU24M = register("su24m",
+            EntityType.Builder.of(SU24MEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(5.0f, 3.5f)
+    );
+
     public static final RegistryObject<EntityType<TYPE100Entity>> TYPE100 = register("type100",
             EntityType.Builder.of(TYPE100Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)

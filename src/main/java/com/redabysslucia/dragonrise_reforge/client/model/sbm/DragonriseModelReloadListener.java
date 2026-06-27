@@ -21,6 +21,9 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
 
     private static final Pattern WHEEL_PATTERN = Pattern.compile("^wheel(?<direction>[LR]).*$");
     private static final Pattern SHELL_PATTERN = Pattern.compile("^shell(?<id>\\d+)$");
+    private static final Pattern TRACK_PATTERN = Pattern.compile("^track(?<type>Mov|Rot)(?<direction>[LR])(?<id>\\d+)$");
+    private static final Pattern FLARE_PATTERN = Pattern.compile("^flare.*");
+    private static final Pattern DOG_TAG_PATTERN = Pattern.compile("^.*_dogTag$");
 
     private final String modelPath;
     private final String animPath;
@@ -60,6 +63,18 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
         public final List<BedrockBone> rightWheels = new ArrayList<>();
         public final List<BedrockBone> leftWheelsTurn = new ArrayList<>();
         public final List<BedrockBone> rightWheelsTurn = new ArrayList<>();
+        public final List<BedrockBone> leftTrackMove = new ArrayList<>();
+        public final List<BedrockBone> leftTrackRot = new ArrayList<>();
+        public final List<BedrockBone> rightTrackMove = new ArrayList<>();
+        public final List<BedrockBone> rightTrackRot = new ArrayList<>();
+        public final List<BedrockBone> shellBones = new ArrayList<>();
+        public final List<BedrockBone> flareBones = new ArrayList<>();
+        public final List<BedrockBone> dogTagBones = new ArrayList<>();
+        public final Map<Integer, BedrockBone> shellMap = new HashMap<>();
+        public final Map<Integer, BedrockBone> leftTrackMoveMap = new HashMap<>();
+        public final Map<Integer, BedrockBone> leftTrackRotMap = new HashMap<>();
+        public final Map<Integer, BedrockBone> rightTrackMoveMap = new HashMap<>();
+        public final Map<Integer, BedrockBone> rightTrackRotMap = new HashMap<>();
         public final Map<String, BoneSnapshot> boneSnapshots = new HashMap<>();
 
         public CachedVehicleModel(BedrockModel model) {
@@ -86,7 +101,61 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
                         else rightWheels.add(bone);
                     }
                 }
+
+                var shellMatcher = SHELL_PATTERN.matcher(name);
+                if (shellMatcher.matches()) {
+                    int index = Integer.parseInt(shellMatcher.group("id"));
+                    shellMap.put(index, bone);
+                }
+
+                var trackMatcher = TRACK_PATTERN.matcher(name);
+                if (trackMatcher.matches()) {
+                    boolean isRot = "Rot".equals(trackMatcher.group("type"));
+                    boolean isL = "L".equals(trackMatcher.group("direction"));
+                    int index = Integer.parseInt(trackMatcher.group("id"));
+
+                    if (isRot) {
+                        if (isL) {
+                            leftTrackRotMap.put(index, bone);
+                        } else {
+                            rightTrackRotMap.put(index, bone);
+                        }
+                    } else {
+                        if (isL) {
+                            leftTrackMoveMap.put(index, bone);
+                        } else {
+                            rightTrackMoveMap.put(index, bone);
+                        }
+                    }
+                }
+
+                var flareMatcher = FLARE_PATTERN.matcher(name);
+                if (flareMatcher.matches()) {
+                    flareBones.add(bone);
+                }
+
+                var dogTagMatcher = DOG_TAG_PATTERN.matcher(name);
+                if (dogTagMatcher.matches()) {
+                    dogTagBones.add(bone);
+                }
             }
+
+            // 排序
+            shellBones.addAll(shellMap.entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .map(Map.Entry::getValue).toList());
+            leftTrackMove.addAll(leftTrackMoveMap.entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .map(Map.Entry::getValue).toList());
+            leftTrackRot.addAll(leftTrackRotMap.entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .map(Map.Entry::getValue).toList());
+            rightTrackMove.addAll(rightTrackMoveMap.entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .map(Map.Entry::getValue).toList());
+            rightTrackRot.addAll(rightTrackRotMap.entrySet().stream()
+                    .sorted(Map.Entry.comparingByKey())
+                    .map(Map.Entry::getValue).toList());
         }
 
         private void snapshotBones(BedrockModel model) {

@@ -1,9 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.sbm;
 
+import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.github.mcmodderanchor.simplebedrockmodel.v1.client.renderer.BedrockModelRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import net.minecraft.world.phys.Vec3;
 import com.redabysslucia.dragonrise_reforge.client.model.sbm.DragonriseModelReloadListener;
 import com.redabysslucia.dragonrise_reforge.client.model.sbm.DragonriseModelReloadListener.CachedVehicleModel;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -13,7 +15,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
-import net.minecraft.world.phys.Vec3;
 import org.joml.Quaterniond;
 import org.joml.Quaternionf;
 
@@ -53,6 +54,10 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         return new ResourceLocation(parts[1], parts[2]);
     }
 
+    public float renderScale() {
+        return 1f;
+    }
+
     @Override
     public void render(T entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         var cached = modelListener.getCachedModel(getModelLocation(entity));
@@ -64,16 +69,17 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
 
         poseStack.pushPose();
 
-        rotateVehicleAxis(entity, poseStack, entityYaw, partialTick);
+        this.rotateVehicleAxis(entity, poseStack, entityYaw, partialTick);
+        poseStack.scale(renderScale(), renderScale(), renderScale());
 
-        cached.resetBones();
+        model.applyPose(model.getBindPose());
 
-        tickVariables(entity, entityYaw, partialTick);
-        transformCustomModelPart(entity, cached, poseStack, entityYaw, partialTick);
+        this.tickVariables(entity, entityYaw, partialTick);
+        this.transformCustomModelPart(entity, cached, poseStack, entityYaw, partialTick);
 
         model.renderToBuffer(
                 poseStack, buffer,
-                RenderType.entityCutout(texture),
+                RenderType.entityTranslucent(texture),
                 BedrockModelRenderTypes.polyMeshCutout(texture),
                 packedLight, OverlayTexture.NO_OVERLAY
         );
@@ -87,7 +93,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
             );
         }
 
-        renderCustomPart(entity, cached, poseStack, entityYaw, partialTick, buffer, packedLight);
+        this.renderCustomPart(entity, cached, poseStack, entityYaw, partialTick, buffer, packedLight);
 
         poseStack.popPose();
     }
@@ -112,6 +118,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
     }
 
     protected void transformCustomModelPart(T vehicle, CachedVehicleModel cached, PoseStack poseStack, float entityYaw, float partialTicks) {
+        // 车轮
         for (var wheel : cached.leftWheels) {
             wheel.rotation.rotationX(1.5f * leftWheelRot);
         }
@@ -131,6 +138,33 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
             wheel.rotation.mul(new Quaternionf(quaternion));
         }
 
+        // 履带移动
+        for (int i = 0; i < cached.leftTrackMove.size(); i++) {
+            var bone = cached.leftTrackMove.get(i);
+            float t = wrap(leftTrack + getTrackDistance() * i, vehicle);
+            bone.y += getBoneMoveY(t);
+            bone.z += getBoneMoveZ(t);
+        }
+        for (int i = 0; i < cached.rightTrackMove.size(); i++) {
+            var bone = cached.rightTrackMove.get(i);
+            float t = wrap(rightTrack + getTrackDistance() * i, vehicle);
+            bone.y += getBoneMoveY(t);
+            bone.z += getBoneMoveZ(t);
+        }
+
+        // 履带旋转
+        for (int i = 0; i < cached.leftTrackRot.size(); i++) {
+            var bone = cached.leftTrackRot.get(i);
+            float t = wrap(leftTrack + getTrackDistance() * i, vehicle);
+            bone.rotation.rotationX(-getBoneRotX(t) * Mth.DEG_TO_RAD);
+        }
+        for (int i = 0; i < cached.rightTrackRot.size(); i++) {
+            var bone = cached.rightTrackRot.get(i);
+            float t = wrap(rightTrack + getTrackDistance() * i, vehicle);
+            bone.rotation.rotationX(-getBoneRotX(t) * Mth.DEG_TO_RAD);
+        }
+
+        // 射击时带来的车体摇晃视觉效果
         var base = cached.getBone("base");
         if (base != null) {
             float a = vehicle.getYawWhileShoot();
@@ -154,17 +188,20 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
             base.rotation.mul(new Quaternionf(quaternion));
         }
 
+        // 炮塔
         var turret = cached.getBone("turret");
         if (turret != null) {
             turret.rotation.rotationY(turretYRot * Mth.DEG_TO_RAD);
         }
 
+        // 炮管
         var barrel = cached.getBone("barrel");
         if (barrel != null) {
             float rot = Mth.clamp(-turretXRot, vehicle.getTurretMinPitch(), vehicle.getTurretMaxPitch()) * Mth.DEG_TO_RAD;
             barrel.rotation.rotationX(rot);
         }
 
+        // 激光
         var laser = cached.getBone("laser");
         if (laser != null) {
             laser.zScale = 10 * vehicle.getLaserLength();
@@ -174,13 +211,45 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         }
     }
 
-    protected void renderCustomPart(T vehicle, CachedVehicleModel cached, PoseStack poseStack, float entityYaw, float partialTicks, MultiBufferSource buffer, int packedLight) {
+    // 履带辅助函数 - 子类可覆写
+    protected float getTrackDistance() {
+        return 0.5f;
     }
 
-    protected void rotateVehicleAxis(T entityIn, PoseStack poseStack, float entityYaw, float partialTicks) {
-        var root = new Vec3(0.0, entityIn.getRotateOffsetHeight(), 0.0);
-        poseStack.rotateAround(Axis.YP.rotationDegrees(-entityYaw + 180), (float) root.x, (float) root.y, (float) root.z);
-        poseStack.rotateAround(Axis.XP.rotationDegrees(-Mth.lerp(partialTicks, entityIn.xRotO, entityIn.getXRot())), (float) root.x, (float) root.y, (float) root.z);
-        poseStack.rotateAround(Axis.ZP.rotationDegrees(-Mth.lerp(partialTicks, entityIn.getPrevRoll(), entityIn.getRoll())), (float) root.x, (float) root.y, (float) root.z);
+    protected float wrap(float t, VehicleEntity vehicle) {
+        return t / 4f;
+    }
+
+    protected float getBoneMoveY(float t) {
+        return 0.01f * Mth.sin(t * Mth.PI * 2) * 4;
+    }
+
+    protected float getBoneMoveZ(float t) {
+        return 0.01f * Mth.cos(t * Mth.PI * 2) * 4;
+    }
+
+    protected float getBoneRotX(float t) {
+        return 360f * t;
+    }
+
+    // 子类可覆写此方法实现自定义轴旋转
+    protected void rotateVehicleAxis(T entity, PoseStack poseStack, float entityYaw, float partialTick) {
+        var root = new Vec3(0.0, entity.getRotateOffsetHeight(), 0.0);
+        poseStack.rotateAround(
+                Axis.YP.rotationDegrees(-entityYaw + 180),
+                (float) root.x, (float) root.y, (float) root.z
+        );
+        poseStack.rotateAround(
+                Axis.XP.rotationDegrees((float) -Mth.lerp(partialTick, entity.xRotO, entity.getXRot())),
+                (float) root.x, (float) root.y, (float) root.z
+        );
+        poseStack.rotateAround(
+                Axis.ZP.rotationDegrees((float) -Mth.lerp(partialTick, entity.getPrevRoll(), entity.getRoll())),
+                (float) root.x, (float) root.y, (float) root.z
+        );
+    }
+
+    // 子类覆写此方法实现自定义部件渲染
+    protected void renderCustomPart(T entity, CachedVehicleModel cached, PoseStack poseStack, float entityYaw, float partialTick, MultiBufferSource buffer, int packedLight) {
     }
 }

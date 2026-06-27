@@ -1,0 +1,458 @@
+﻿To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :
+MixinGradle did not locate the diffplug APT plugin, skipping eclipse task configuration
+
+> Task :clean
+> Task :downloadMcpConfig
+> Task :extractSrg
+> Task :createMcpToSrg
+
+> Task :compileJava
+.\gradlew.bat : 注: SpongePowered MIXIN Annotation Processor Version=0.8.5 (Mixi
+nGradle Version=0.7)
+所在位置 行:1 字符: 5
++ & { .\gradlew.bat clean compileJava --no-daemon 2>&1 | Out-File -File ...
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (注: SpongePowere...le Version=0.7) 
+   :String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+注: Supported obfuscation types: ObfuscationServiceMCP supports [notch] Obfuscat
+ionServiceFG3 supports [searge]
+注: Loading searge mappings from D:\minecraft\modp\GScode\build\createMcpToSrg\o
+utput.tsrg
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing searge composite mappings to D:\minecraft\modp\GScode\build\tmp\comp
+ileJava\compileJava-mappings.tsrg
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing searge composite mappings to D:\minecraft\modp\GScode\build\tmp\comp
+ileJava\compileJava-mappings.tsrg
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing searge composite mappings to D:\minecraft\modp\GScode\build\tmp\comp
+ileJava\compileJava-mappings.tsrg
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJava
+-refmap.json
+注: Writing searge composite mappings to D:\minecraft\modp\GScode\build\tmp\comp
+ileJava\compileJava-mappings.tsrg
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:94: 错误: 找不到符号
+            AABB aabb = vehicle.getCombinedAABB().inflate(3.0);
+                               ^
+  符号:   方法 getCombinedAABB()
+  位置: 类型为T的变量 vehicle
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:125: 错误: 找不到符号
+                ? ((entity.getVehicleType() == VehicleType.AIRPLANE || entity.g
+etVehicleType() == VehicleType.HELICOPTER || entity.getVehicleType() == Vehicle
+Type.AIRSHIP)
+                                                                               
+                                                                               
+    ^
+  符号:   变量 AIRSHIP
+  位置: 类 VehicleType
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:126: 错误: 找不到符号
+                        ? (entity.isSympatheticDetonated() ? TextureBrightnessH
+andler.getBrightenedTexture(texture, 0.3f) : texture)
+                                 ^
+  符号:   方法 isSympatheticDetonated()
+  位置: 类型为T的变量 entity
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:126: 错误: 无法从静态上下文中引用非静态 方法 g
+etBrightenedTexture(ResourceLocation,float)
+                        ? (entity.isSympatheticDetonated() ? TextureBrightnessH
+andler.getBrightenedTexture(texture, 0.3f) : texture)
+                                                                               
+      ^
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:127: 错误: 无法从静态上下文中引用非静态 方法 g
+etBrightenedTexture(ResourceLocation,float)
+                        : TextureBrightnessHandler.getBrightenedTexture(texture
+, 0.3f))
+                                                  ^
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:136: 错误: 找不到符号
+        if (entity.getAnimationInstance() != null && !entity.isSympatheticDeton
+ated()) {
+                  ^
+  符号:   方法 getAnimationInstance()
+  位置: 类型为T的变量 entity
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:136: 错误: 找不到符号
+        if (entity.getAnimationInstance() != null && !entity.isSympatheticDeton
+ated()) {
+                                                            ^
+  符号:   方法 isSympatheticDetonated()
+  位置: 类型为T的变量 entity
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:137: 错误: 找不到符号
+            var ani = entity.getAnimationInstance();
+                            ^
+  符号:   方法 getAnimationInstance()
+  位置: 类型为T的变量 entity
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:197: 错误: 找不到符号
+        if (!entity.isSympatheticDetonated() && flareFlag
+                   ^
+  符号:   方法 isSympatheticDetonated()
+  位置: 类型为T的变量 entity
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:235: 错误: 无法从静态上下文中引用非静态 方法 g
+etDogTagIcon(List<? extends List<Short>>,String)
+                var dogTagTexture = SpritePixelHelper.getDogTagIcon(list, entit
+y.getUUID().toString());
+                                                     ^
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:248: 错误: 找不到符号
+                    var cube = !bone.getCubes().isEmpty() ? bone.getCubes().get
+(0) : null;
+                                    ^
+  符号:   方法 getCubes()
+  位置: 类型为BedrockBone的变量 bone
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:248: 错误: 找不到符号
+                    var cube = !bone.getCubes().isEmpty() ? bone.getCubes().get
+(0) : null;
+                                                                ^
+  符号:   方法 getCubes()
+  位置: 类型为BedrockBone的变量 bone
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:389: 错误: 找不到符号
+            turret.visible = !(vehicle.isWreck() && vehicle.hasTurret() && vehi
+cle.isSympatheticDetonated());
+                                                                               
+   ^
+  符号:   方法 isSympatheticDetonated()
+  位置: 类型为T的变量 vehicle
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:436: 错误: 找不到符号
+                var boundBones = data.get(GunProp.BOUND_BONES);
+                                                 ^
+  符号:   变量 BOUND_BONES
+  位置: 类 GunProp
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:438: 错误: 找不到符号
+                var defaultVec = vehicle.getDefaultBarrelDirection(index, parti
+alTicks);
+                                        ^
+  符号:   方法 getDefaultBarrelDirection(int,float)
+  位置: 类型为T的变量 vehicle
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:475: 错误: 找不到符号
+                var dummyInfo = data.get(GunProp.PROJECTILE_DUMMY_INFO);
+                                                ^
+  符号:   变量 PROJECTILE_DUMMY_INFO
+  位置: 类 GunProp
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:477: 错误: 找不到符号
+                int ammo = data.getAmmo().get();
+                               ^
+  符号:   方法 getAmmo()
+  位置: 类型为GunData的变量 data
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:541: 错误: 找不到符号
+        poseStack.rotateAround(Axis.XP.rotationDegrees(-Mth.lerp(partialTicks, 
+entityIn.xRotO + entityIn.getFakePitchO(), entityIn.getXRot() + entityIn.getFak
+ePitch())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                         ^
+  符号:   方法 getFakePitchO()
+  位置: 类型为T的变量 entityIn
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:541: 错误: 找不到符号
+        poseStack.rotateAround(Axis.XP.rotationDegrees(-Mth.lerp(partialTicks, 
+entityIn.xRotO + entityIn.getFakePitchO(), entityIn.getXRot() + entityIn.getFak
+ePitch())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                                                        ^
+  符号:   方法 getFakePitch()
+  位置: 类型为T的变量 entityIn
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:542: 错误: 找不到符号
+        poseStack.rotateAround(Axis.ZP.rotationDegrees(-Mth.lerp(partialTicks, 
+entityIn.getPrevRoll() + entityIn.getFakeRollO(), entityIn.getRoll() + entityIn
+.getFakeRoll())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                 ^
+  符号:   方法 getFakeRollO()
+  位置: 类型为T的变量 entityIn
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\cli
+ent\renderer\sbm\DragonriseSbmVehicleRenderer.java:542: 错误: 找不到符号
+        poseStack.rotateAround(Axis.ZP.rotationDegrees(-Mth.lerp(partialTicks, 
+entityIn.getPrevRoll() + entityIn.getFakeRollO(), entityIn.getRoll() + entityIn
+.getFakeRoll())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                                                               
+^
+  符号:   方法 getFakeRoll()
+  位置: 类型为T的变量 entityIn
+  其中, T是类型变量:
+    T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\ini
+t\ModEntityRenderers.java:81: 错误: 找不到符号
+                event.registerEntityRenderer(ModEntities.SU24M.get(), SU24MSbmR
+enderer::new);
+                                                                      ^
+  符号:   类 SU24MSbmRenderer
+  位置: 类 ModEntityRenderers
+注: 某些输入文件使用或覆盖了已过时的 API。
+注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+注: 某些输入文件使用或覆盖了标记为待删除的已过时 API。
+注: 有关详细信息, 请使用 -Xlint:removal 重新编译。
+22 个错误
+
+> Task :compileJava FAILED
+
+[Incubating] Problems report is available at: file:///D:/minecraft/modp/GScode/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler output below.
+  注: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+  注: 某些输入文件使用或覆盖了标记为待删除的已过时 API。
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:126: 错误: 无法从静态上下文中引用非静态 方法
+ getBrightenedTexture(ResourceLocation,float)
+                          ? (entity.isSympatheticDetonated() ? TextureBrightnes
+sHandler.getBrightenedTexture(texture, 0.3f) : texture)
+                                                                               
+        ^
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:127: 错误: 无法从静态上下文中引用非静态 方法
+ getBrightenedTexture(ResourceLocation,float)
+                          : TextureBrightnessHandler.getBrightenedTexture(textu
+re, 0.3f))
+                                                    ^
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:235: 错误: 无法从静态上下文中引用非静态 方法
+ getDogTagIcon(List<? extends List<Short>>,String)
+                  var dogTagTexture = SpritePixelHelper.getDogTagIcon(list, ent
+ity.getUUID().toString());
+                                                       ^
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:125: 错误: 找不到符号
+                  ? ((entity.getVehicleType() == VehicleType.AIRPLANE || entity
+.getVehicleType() == VehicleType.HELICOPTER || entity.getVehicleType() == Vehic
+leType.AIRSHIP)
+                                                                               
+                                                                               
+      ^
+    符号:   变量 AIRSHIP
+    位置: 类 VehicleType
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:436: 错误: 找不到符号
+                  var boundBones = data.get(GunProp.BOUND_BONES);
+                                                   ^
+    符号:   变量 BOUND_BONES
+    位置: 类 GunProp
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:475: 错误: 找不到符号
+                  var dummyInfo = data.get(GunProp.PROJECTILE_DUMMY_INFO);
+                                                  ^
+    符号:   变量 PROJECTILE_DUMMY_INFO
+    位置: 类 GunProp
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\i
+nit\ModEntityRenderers.java:81: 错误: 找不到符号
+                  event.registerEntityRenderer(ModEntities.SU24M.get(), SU24MSb
+mRenderer::new);
+                                                                        ^
+    符号:   类 SU24MSbmRenderer
+    位置: 类 ModEntityRenderers
+  注: 某些输入文件使用或覆盖了已过时的 API。
+  注: SpongePowered MIXIN Annotation Processor Version=0.8.5 (MixinGradle Versio
+n=0.7)
+  注: Supported obfuscation types: ObfuscationServiceMCP supports [notch] Obfusc
+ationServiceFG3 supports [searge]
+  注: Loading searge mappings from D:\minecraft\modp\GScode\build\createMcpToSrg
+\output.tsrg
+  注: Writing refmap to D:\minecraft\modp\GScode\build\tmp\compileJava\compileJa
+va-refmap.json
+  注: Writing searge composite mappings to D:\minecraft\modp\GScode\build\tmp\co
+mpileJava\compileJava-mappings.tsrg
+  注: 有关详细信息, 请使用 -Xlint:removal 重新编译。
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:94: 错误: 找不到符号
+              AABB aabb = vehicle.getCombinedAABB().inflate(3.0);
+                                 ^
+    符号:   方法 getCombinedAABB()
+    位置: 类型为T的变量 vehicle
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:126: 错误: 找不到符号
+                          ? (entity.isSympatheticDetonated() ? TextureBrightnes
+sHandler.getBrightenedTexture(texture, 0.3f) : texture)
+                                   ^
+    符号:   方法 isSympatheticDetonated()
+    位置: 类型为T的变量 entity
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:136: 错误: 找不到符号
+          if (entity.getAnimationInstance() != null && !entity.isSympatheticDet
+onated()) {
+                    ^
+    符号:   方法 getAnimationInstance()
+    位置: 类型为T的变量 entity
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:136: 错误: 找不到符号
+          if (entity.getAnimationInstance() != null && !entity.isSympatheticDet
+onated()) {
+                                                              ^
+    符号:   方法 isSympatheticDetonated()
+    位置: 类型为T的变量 entity
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:137: 错误: 找不到符号
+              var ani = entity.getAnimationInstance();
+                              ^
+    符号:   方法 getAnimationInstance()
+    位置: 类型为T的变量 entity
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:197: 错误: 找不到符号
+          if (!entity.isSympatheticDetonated() && flareFlag
+                     ^
+    符号:   方法 isSympatheticDetonated()
+    位置: 类型为T的变量 entity
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:248: 错误: 找不到符号
+                      var cube = !bone.getCubes().isEmpty() ? bone.getCubes().g
+et(0) : null;
+                                      ^
+    符号:   方法 getCubes()
+    位置: 类型为BedrockBone的变量 bone
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:248: 错误: 找不到符号
+                      var cube = !bone.getCubes().isEmpty() ? bone.getCubes().g
+et(0) : null;
+                                                                  ^
+    符号:   方法 getCubes()
+    位置: 类型为BedrockBone的变量 bone
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:389: 错误: 找不到符号
+              turret.visible = !(vehicle.isWreck() && vehicle.hasTurret() && ve
+hicle.isSympatheticDetonated());
+                                                                               
+     ^
+    符号:   方法 isSympatheticDetonated()
+    位置: 类型为T的变量 vehicle
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:438: 错误: 找不到符号
+                  var defaultVec = vehicle.getDefaultBarrelDirection(index, par
+tialTicks);
+                                          ^
+    符号:   方法 getDefaultBarrelDirection(int,float)
+    位置: 类型为T的变量 vehicle
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:477: 错误: 找不到符号
+                  int ammo = data.getAmmo().get();
+                                 ^
+    符号:   方法 getAmmo()
+    位置: 类型为GunData的变量 data
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:541: 错误: 找不到符号
+          poseStack.rotateAround(Axis.XP.rotationDegrees(-Mth.lerp(partialTicks
+, entityIn.xRotO + entityIn.getFakePitchO(), entityIn.getXRot() + entityIn.getF
+akePitch())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                           ^
+    符号:   方法 getFakePitchO()
+    位置: 类型为T的变量 entityIn
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:541: 错误: 找不到符号
+          poseStack.rotateAround(Axis.XP.rotationDegrees(-Mth.lerp(partialTicks
+, entityIn.xRotO + entityIn.getFakePitchO(), entityIn.getXRot() + entityIn.getF
+akePitch())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                                                          ^
+    符号:   方法 getFakePitch()
+    位置: 类型为T的变量 entityIn
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:542: 错误: 找不到符号
+          poseStack.rotateAround(Axis.ZP.rotationDegrees(-Mth.lerp(partialTicks
+, entityIn.getPrevRoll() + entityIn.getFakeRollO(), entityIn.getRoll() + entity
+In.getFakeRoll())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                   ^
+    符号:   方法 getFakeRollO()
+    位置: 类型为T的变量 entityIn
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  D:\minecraft\modp\GScode\src\main\java\com\redabysslucia\dragonrise_reforge\c
+lient\renderer\sbm\DragonriseSbmVehicleRenderer.java:542: 错误: 找不到符号
+          poseStack.rotateAround(Axis.ZP.rotationDegrees(-Mth.lerp(partialTicks
+, entityIn.getPrevRoll() + entityIn.getFakeRollO(), entityIn.getRoll() + entity
+In.getFakeRoll())), (float) root.x, (float) root.y, (float) root.z);
+                                                                               
+                                                                               
+  ^
+    符号:   方法 getFakeRoll()
+    位置: 类型为T的变量 entityIn
+    其中, T是类型变量:
+      T扩展已在类 DragonriseSbmVehicleRenderer中声明的VehicleEntity
+  22 个错误
+
+* Try:
+> Check your code and dependencies to fix the compilation error(s)
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 5m 33s
+5 actionable tasks: 5 executed
