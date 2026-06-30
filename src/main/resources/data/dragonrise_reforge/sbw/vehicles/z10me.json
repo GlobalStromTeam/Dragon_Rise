@@ -188,7 +188,8 @@
       "Damage": 650,
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "CrosshairColor": "0xFFC700",
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
@@ -250,7 +251,8 @@
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
         "SeekRange": 384,
@@ -301,7 +303,8 @@
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
         "SeekRange": 384,

@@ -139,7 +139,7 @@
       "RPM": 60,
       "EmptyReloadTime": 250,
       "Projectile": "superbwarfare:mk_82",
-      "Gravity": 0.06,
+      "Gravity": 0.05,
       "Spread": 0.5,
       "Name": "dragonrise_reforge:500kg",
       "ExplosionDamage": 300,

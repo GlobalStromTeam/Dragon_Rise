@@ -94,6 +94,8 @@
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:3UBM22",
+      "Velocity": 50,
+      "Gravity": 0.05,
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -103,6 +105,7 @@
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
             "Velocity": 25,
+            "Gravity": 0.05,
             "Damage": 250,
             "ExplosionDamage": 60,
             "ExplosionRadius": 4,
@@ -154,7 +157,8 @@
       "EmptyReloadTime": 120,
       "Damage": 10,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 42.75,
+      "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 2.5,

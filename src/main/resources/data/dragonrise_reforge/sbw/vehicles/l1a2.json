@@ -213,7 +213,8 @@
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
-      "Velocity": 3,
+      "Velocity": 30,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
         "SeekRange": 318,

@@ -2,10 +2,10 @@
   "ID": "dragonrise_reforge:m270",
   "MaxHealth": 100,
   "MaxEnergy": 5000000,
-  "TurretPos": [0.0,1.188,-1.875],
+  "TurretPos": [0.0, 1.1875, -1.875],
   "TurretTurnSpeed": [12,11.5],
   "TurretPitchRange": [-3,45],
-  "BarrelPos": [0.0,1.181,-3.187],
+  "BarrelPos": [0.0, -0.00625, -1.3125],
   "TurretControllerIndex": 0,
   "OBB": [
     {
@@ -44,18 +44,18 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [-0.5625,0.7713625,1.6246125],
+        "ZoomPosition": [0,2,0],
         "Direction": "Barrel",
-        "Position": [0.131,2.291,0.594]
+        "Position": [0,1,0]
       },
-      "Transform": "Turret",
-      "Position": [0.875,-0.604,4.428],
+      "Transform": "Barrel",
+      "Position": [0,1,0],
       "Weapons": [
         "Rocket"
       ],
       "CanRotateHead": false,
-      "MinPitch": -7,
-      "MaxPitch": 15,
+      "MinPitch": 0,
+      "MaxPitch": 60,
       "Sensitivity": [0.52,0.72,0.9],
       "HasThermalImaging": true
     }
@@ -67,24 +67,34 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Magazine": 14,
+      "Magazine": 12,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:small_rocket",
       "Spread": 0.25,
       "Name": "dragonrise_reforge:70 mm Hydra-70 M247 rocket",
-      "RPM": 450,
+      "RPM": 60,
       "Damage": 85,
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
-      "Gravity": 0.02,
-      "Velocity": 16,
+      "Gravity": 0.05,
+      "Velocity": 36.95,
       "ShootPos": {
-        "Transform": "Vehicle",
+        "Transform": "Barrel",
         "ShootPositionForHud": [0,0.62,0.8],
         "ShootDirectionForHud": [0,0.018,1],
         "Positions": [
-          [1.77374375,1.39634375,2.52694375],
-          [-1.77374375,1.39634375,2.52694375]
+          [-1.034375, 0.946875, 1.78125],
+          [-0.721875, 0.946875, 1.78125],
+          [-0.409375, 0.946875, 1.78125],
+          [0.403125, 0.946875, 1.78125],
+          [0.715625, 0.946875, 1.78125],
+          [1.028125, 0.946875, 1.78125],
+          [-1.034375, 0.634375, 1.78125],
+          [-0.721875, 0.634375, 1.78125],
+          [-0.409375, 0.634375, 1.78125],
+          [0.403125, 0.634375, 1.78125],
+          [0.715625, 0.634375, 1.78125],
+          [1.028125, 0.634375, 1.78125]
         ],
         "Directions": [
           [0,0,1]
