@@ -40,7 +40,8 @@
       "ExplosionDamage": 60,
       "ExplosionRadius": 6,
       "RPM": 8,
-      "Velocity": 6,
+      "Velocity": 12.5,
+      "Gravity": 0.05,
       "ShootShake": [6,6,14],
       "ShootPos": {
         "Transform": "Barrel",

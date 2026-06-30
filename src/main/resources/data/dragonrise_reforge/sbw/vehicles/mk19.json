@@ -37,6 +37,7 @@
       "Magazine": 20,
       "EmptyReloadTime": 100,
       "Velocity": 4.5,
+      "Gravity": 0.05,
       "Damage": 55,
       "ExplosionDamage": 10,
       "ExplosionRadius": 5,

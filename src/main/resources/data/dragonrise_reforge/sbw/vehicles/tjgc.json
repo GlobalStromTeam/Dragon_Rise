@@ -153,7 +153,7 @@
       "Damage": 960,
       "ExplosionDamage": 240,
       "ExplosionRadius": 30,
-      "Gravity": 0.02,
+      "Gravity": 0.05,
       "Velocity": 20,
       "ShootPos": {
         "Transform": "Vehicle",
@@ -242,7 +242,7 @@
       "Damage": 160,
       "ExplosionDamage": 480,
       "ExplosionRadius": 60,
-      "Gravity": 0.02,
+      "Gravity": 0.05,
       "Velocity": 20,
       "ShootPos": {
         "Transform": "Vehicle",
@@ -285,7 +285,7 @@
       "Magazine": 1,
       "EmptyReloadTime": 150,
       "Projectile": "superbwarfare:mk_82",
-      "Gravity": 0.06,
+      "Gravity": 0.05,
       "Spread": 0.5,
       "Name": "dragonrise_reforge:neo",
       "ExplosionDamage": 114514,
@@ -409,7 +409,8 @@
       "Damage": 6100,
       "ExplosionDamage": 280,
       "ExplosionRadius": 30,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Vehicle",
         "SeekRange": 384,
@@ -495,7 +496,8 @@
       "Damage": 9100,
       "ExplosionDamage": 840,
       "ExplosionRadius": 46,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Vehicle",
         "SeekRange": 384,

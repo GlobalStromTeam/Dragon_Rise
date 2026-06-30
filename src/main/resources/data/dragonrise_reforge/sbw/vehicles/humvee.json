@@ -111,6 +111,7 @@
       "Damage": 40,
       "BypassesArmor": 0.2,
       "Velocity": 25,
+      "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 3.75,

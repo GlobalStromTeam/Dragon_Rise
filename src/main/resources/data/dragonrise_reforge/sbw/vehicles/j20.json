@@ -88,7 +88,8 @@
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
-      "Velocity": 3,
+      "Velocity": 15,
+      "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
         "SeekRange": 384,
