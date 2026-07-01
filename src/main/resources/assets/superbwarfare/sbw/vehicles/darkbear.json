@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:darkbear",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/darkbear.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/darkbear.png"
+  }
+}

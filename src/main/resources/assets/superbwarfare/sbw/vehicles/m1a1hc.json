@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:m1a1hc",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/m1a1hc.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m1a1hc.png"
+  }
+}

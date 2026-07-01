@@ -81,7 +81,7 @@
       "DefaultZoom": 3,
       "Magazine": 20,
       "EmptyReloadTime": 120,
-      "Velocity": 40,
+      "Velocity": 50,
       "Damage": 550,
       "RPM": 60,
       "ExplosionDamage": 80,
@@ -94,7 +94,6 @@
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:3UBM22",
-      "Velocity": 50,
       "Gravity": 0.05,
       "AmmoType": [
         "superbwarfare:large_shell_ap",

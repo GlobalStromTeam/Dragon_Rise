@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.DarkbearRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M1a1hcRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M270Renderer;
 
 
@@ -151,7 +157,10 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);
                 event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);
                 event.registerEntityRenderer(ModEntities.M270.get(), M270Renderer::new);
+                event.registerEntityRenderer(ModEntities.M1A1HC.get(), M1a1hcRenderer::new);
+                event.registerEntityRenderer(ModEntities.DARKBEAR.get(), DarkbearRenderer::new);
         }
+
 
 
 }

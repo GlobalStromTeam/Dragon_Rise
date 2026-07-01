@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.DarkbearEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.M1a1hcEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.M270Entity;
 
 
@@ -973,6 +979,22 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<M270Entity>> M270 = register("m270",
             EntityType.Builder.of(M270Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<M1a1hcEntity>> M1A1HC = register("m1a1hc",
+            EntityType.Builder.of(M1a1hcEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<DarkbearEntity>> DARKBEAR = register("darkbear",
+            EntityType.Builder.of(DarkbearEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

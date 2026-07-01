@@ -1,0 +1,194 @@
+package com.redabysslucia.dragonrise_reforge.client.model.entity;
+
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M1a1hcEntity;
+import net.minecraft.util.Mth;
+import org.jetbrains.annotations.Nullable;
+
+public class M1a1hcModel extends DragonriseVehicleModel<M1a1hcEntity> {
+    @Override
+    public boolean hideForTurretControllerWhileZooming() {
+        return false;
+    }
+    public float getBoneRotX(float t) {
+        if (t <= 1.5833) return Mth.lerp(t / (1.5833F - 0F), 360F, 357F);
+        if (t <= 3.1667) return Mth.lerp((t - 1.5833F) / (3.1667F - 1.5833F), 357F, 339F);
+        if (t <= 4.75) return Mth.lerp((t - 3.1667F) / (4.75F - 3.1667F), 339F, 334F);
+        if (t <= 9.5417) return 334F;
+        if (t <= 11.125) return Mth.lerp((t - 9.5417F) / (11.125F - 9.5417F), 334F, 315F);
+        if (t <= 12.7083) return Mth.lerp((t - 11.125F) / (12.7083F - 11.125F), 315F, 270F);
+        if (t <= 14.2917) return Mth.lerp((t - 12.7083F) / (14.2917F - 12.7083F), 270F, 225F);
+        if (t <= 15.875) return Mth.lerp((t - 14.2917F) / (15.875F - 14.2917F), 225F, 181F);
+        if (t <= 17.4583) return Mth.lerp((t - 15.875F) / (17.4583F - 15.875F), 181F, 177F);
+        if (t <= 19.0417) return Mth.lerp((t - 17.4583F) / (19.0417F - 17.4583F), 177F, 180F);
+        if (t <= 53.9583) return 180F;
+        if (t <= 55.5417) return Mth.lerp((t - 53.9583F) / (55.5417F - 53.9583F), 180F, 182.5F);
+        if (t <= 57.125) return Mth.lerp((t - 55.5417F) / (57.125F - 55.5417F), 182.5F, 186.5F);
+        if (t <= 58.75) return Mth.lerp((t - 57.125F) / (58.75F - 57.125F), 186.5F, 176.5F);
+        if (t <= 60.3333) return Mth.lerp((t - 58.75F) / (60.3333F - 58.75F), 176.5F, 138.5F);
+        if (t <= 61.9167) return Mth.lerp((t - 60.3333F) / (61.9167F - 60.3333F), 138.5F, 92.5F);
+        if (t <= 63.5) return Mth.lerp((t - 61.9167F) / (63.5F - 61.9167F), 92.5F, 54F);
+        if (t <= 65.0833) return Mth.lerp((t - 63.5F) / (65.0833F - 63.5F), 54F, 33F);
+        if (t <= 69.8333) return 33F;
+        if (t <= 71.4167) return Mth.lerp((t - 69.8333F) / (71.4167F - 69.8333F), 33F, 13F);
+        if (t <= 73) return Mth.lerp((t - 71.4167F) / (73F - 71.4167F), 13F, 0F);
+
+        return 0F;
+    }
+
+    public float getBoneMoveY(float t) {
+        if (t <= 1.5833) return Mth.lerp(t / (1.5833F - 0F), 0F, 0.11F);
+        if (t <= 2.3333) return Mth.lerp((t - 1.5833F) / (2.3333F - 1.5833F), 0.11F, 0.29F);
+        if (t <= 3.1667) return Mth.lerp((t - 2.3333F) / (3.1667F - 2.3333F), 0.29F, 1.11F);
+        if (t <= 4.75) return Mth.lerp((t - 3.1667F) / (4.75F - 3.1667F), 1.11F, 3.01F);
+        if (t <= 6.3333) return Mth.lerp((t - 4.75F) / (6.3333F - 4.75F), 3.01F, 5.11F);
+        if (t <= 7.9167) return Mth.lerp((t - 6.3333F) / (7.9167F - 6.3333F), 5.11F, 7.11F);
+        if (t <= 9.5417) return Mth.lerp((t - 7.9167F) / (9.5417F - 7.9167F), 7.11F, 9.21F);
+        if (t <= 10.3333) return Mth.lerp((t - 9.5417F) / (10.3333F - 9.5417F), 9.21F, 10.36F);
+        if (t <= 11.125) return Mth.lerp((t - 10.3333F) / (11.125F - 10.3333F), 10.36F, 11.91F);
+        if (t <= 11.875) return Mth.lerp((t - 11.125F) / (11.875F - 11.125F), 11.91F, 13.58F);
+        if (t <= 12.7083) return Mth.lerp((t - 11.875F) / (12.7083F - 11.875F), 13.58F, 15.81F);
+        if (t <= 13.4583) return Mth.lerp((t - 12.7083F) / (13.4583F - 12.7083F), 15.81F, 18.08F);
+        if (t <= 14.2917) return Mth.lerp((t - 13.4583F) / (14.2917F - 13.4583F), 18.08F, 19.71F);
+        if (t <= 15.0417) return Mth.lerp((t - 14.2917F) / (15.0417F - 14.2917F), 19.71F, 21.12F);
+        if (t <= 15.875) return Mth.lerp((t - 15.0417F) / (15.875F - 15.0417F), 21.12F, 21.41F);
+        if (t <= 17.4583) return 21.41F;
+        if (t <= 19.0417) return Mth.lerp((t - 17.4583F) / (19.0417F - 17.4583F), 21.41F, 21.31F);
+        if (t <= 20.625) return 21.31F;
+        if (t <= 22.2083) return 21.31F;
+        if (t <= 23.7917) return 21.31F;
+        if (t <= 25.4167) return 21.31F;
+        if (t <= 27) return 21.31F;
+        if (t <= 28.5833) return 21.31F;
+        if (t <= 30.1667) return 21.31F;
+        if (t <= 31.75) return 21.31F;
+        if (t <= 33.3333) return 21.31F;
+        if (t <= 34.9167) return 21.31F;
+        if (t <= 36.5) return 21.31F;
+        if (t <= 38.0833) return 21.31F;
+        if (t <= 39.6667) return 21.31F;
+        if (t <= 41.25) return 21.31F;
+        if (t <= 42.875) return 21.31F;
+        if (t <= 44.4583) return 21.31F;
+        if (t <= 46.0417) return 21.31F;
+        if (t <= 47.625) return 21.31F;
+        if (t <= 49.2083) return 21.31F;
+        if (t <= 50.7917) return 21.31F;
+        if (t <= 52.375) return 21.31F;
+        if (t <= 53.9583) return 21.31F;
+        if (t <= 55.5417) return 21.31F;
+        if (t <= 57.125) return Mth.lerp((t - 55.5417F) / (57.125F - 55.5417F), 21.31F, 21.71F);
+        if (t <= 57.9167) return Mth.lerp((t - 57.125F) / (57.9167F - 57.125F), 21.71F, 21.86F);
+        if (t <= 58.75) return Mth.lerp((t - 57.9167F) / (58.75F - 57.9167F), 21.86F, 21.81F);
+        if (t <= 59.5417) return Mth.lerp((t - 58.75F) / (59.5417F - 58.75F), 21.81F, 21.46F);
+        if (t <= 60.3333) return Mth.lerp((t - 59.5417F) / (60.3333F - 59.5417F), 21.46F, 20.11F);
+        if (t <= 61.125) return Mth.lerp((t - 60.3333F) / (61.125F - 60.3333F), 20.11F, 18.61F);
+        if (t <= 61.9167) return Mth.lerp((t - 61.125F) / (61.9167F - 61.125F), 18.61F, 16.31F);
+        if (t <= 62.7083) return Mth.lerp((t - 61.9167F) / (62.7083F - 61.9167F), 16.31F, 14.01F);
+        if (t <= 63.5) return Mth.lerp((t - 62.7083F) / (63.5F - 62.7083F), 14.01F, 12.31F);
+        if (t <= 65.0833) return Mth.lerp((t - 63.5F) / (65.0833F - 63.5F), 12.31F, 9.41F);
+        if (t <= 66.6667) return Mth.lerp((t - 65.0833F) / (66.6667F - 65.0833F), 9.41F, 7.01F);
+        if (t <= 68.25) return Mth.lerp((t - 66.6667F) / (68.25F - 66.6667F), 7.01F, 4.51F);
+        if (t <= 69.8333) return Mth.lerp((t - 68.25F) / (69.8333F - 68.25F), 4.51F, 2.1135F);
+        if (t <= 70.5833) return Mth.lerp((t - 69.8333F) / (70.5833F - 69.8333F), 2.1135F, 1.09F);
+        if (t <= 71.4167) return Mth.lerp((t - 70.5833F) / (71.4167F - 70.5833F), 1.09F, 0.4F);
+        if (t <= 72.2083) return Mth.lerp((t - 71.4167F) / (72.2083F - 71.4167F), 0.4F, -0.1F);
+        if (t <= 73) return Mth.lerp((t - 72.2083F) / (73F - 72.2083F), -0.1F, 0F);
+        if (t <= 74.5833) return 0F;
+        if (t <= 76.2083) return 0F;
+        if (t <= 77.7917) return 0F;
+        if (t <= 79.375) return 0F;
+        if (t <= 80.9583) return 0F;
+        if (t <= 82.5417) return 0F;
+        if (t <= 84.125) return 0F;
+        if (t <= 85.7083) return 0F;
+        if (t <= 87.2917) return 0F;
+        if (t <= 88.875) return 0F;
+        if (t <= 90.4583) return 0F;
+        if (t <= 92.0833) return 0F;
+        if (t <= 93.6667) return 0F;
+        if (t <= 95.25) return 0F;
+        if (t <= 96.8333) return 0F;
+        if (t <= 98.4167) return 0F;
+
+        return 0F;
+    }
+
+    public float getBoneMoveZ ( float t){
+        if (t <= 1.5833) return Mth.lerp(t / (1.5833F - 0F), 0F, -4.49F);
+        if (t <= 2.3333) return Mth.lerp((t - 1.5833F) / (2.3333F - 1.5833F), -4.49F, -6.69F);
+        if (t <= 3.1667) return Mth.lerp((t - 2.3333F) / (3.1667F - 2.3333F), -6.69F, -9.09F);
+        if (t <= 4.75) return Mth.lerp((t - 3.1667F) / (4.75F - 3.1667F), -9.09F, -13.39F);
+        if (t <= 6.3333) return Mth.lerp((t - 4.75F) / (6.3333F - 4.75F), -13.39F, -17.69F);
+        if (t <= 7.9167) return Mth.lerp((t - 6.3333F) / (7.9167F - 6.3333F), -17.69F, -21.89F);
+        if (t <= 9.5417) return Mth.lerp((t - 7.9167F) / (9.5417F - 7.9167F), -21.89F, -26.19F);
+        if (t <= 10.3333) return Mth.lerp((t - 9.5417F) / (10.3333F - 9.5417F), -26.19F, -28.29F);
+        if (t <= 11.125) return Mth.lerp((t - 10.3333F) / (11.125F - 10.3333F), -28.29F, -29.99F);
+        if (t <= 11.875) return Mth.lerp((t - 11.125F) / (11.875F - 11.125F), -29.99F, -31.31F);
+        if (t <= 12.7083) return Mth.lerp((t - 11.875F) / (12.7083F - 11.875F), -31.31F, -31.49F);
+        if (t <= 13.4583) return Mth.lerp((t - 12.7083F) / (13.4583F - 12.7083F), -31.49F, -31.27F);
+        if (t <= 14.2917) return Mth.lerp((t - 13.4583F) / (14.2917F - 13.4583F), -31.27F, -29.99F);
+        if (t <= 15.0417) return Mth.lerp((t - 14.2917F) / (15.0417F - 14.2917F), -29.99F, -28.37F);
+        if (t <= 15.875) return Mth.lerp((t - 15.0417F) / (15.875F - 15.0417F), -28.37F, -26.19F);
+        if (t <= 17.4583) return Mth.lerp((t - 15.875F) / (17.4583F - 15.875F), -26.19F, -21.69F);
+        if (t <= 19.0417) return Mth.lerp((t - 17.4583F) / (19.0417F - 17.4583F), -21.69F, -17.29F);
+        if (t <= 20.625) return Mth.lerp((t - 19.0417F) / (20.625F - 19.0417F), -17.29F, -12.79F);
+        if (t <= 22.2083) return Mth.lerp((t - 20.625F) / (22.2083F - 20.625F), -12.79F, -8.29F);
+        if (t <= 23.7917) return Mth.lerp((t - 22.2083F) / (23.7917F - 22.2083F), -8.29F, -3.79F);
+        if (t <= 25.4167) return Mth.lerp((t - 23.7917F) / (25.4167F - 23.7917F), -3.79F, 0.71F);
+        if (t <= 27) return Mth.lerp((t - 25.4167F) / (27F - 25.4167F), 0.71F, 5.21F);
+        if (t <= 28.5833) return Mth.lerp((t - 27F) / (28.5833F - 27F), 5.21F, 9.71F);
+        if (t <= 30.1667) return Mth.lerp((t - 28.5833F) / (30.1667F - 28.5833F), 9.71F, 14.21F);
+        if (t <= 31.75) return Mth.lerp((t - 30.1667F) / (31.75F - 30.1667F), 14.21F, 18.71F);
+        if (t <= 33.3333) return Mth.lerp((t - 31.75F) / (33.3333F - 31.75F), 18.71F, 23.21F);
+        if (t <= 34.9167) return Mth.lerp((t - 33.3333F) / (34.9167F - 33.3333F), 23.21F, 27.71F);
+        if (t <= 36.5) return Mth.lerp((t - 34.9167F) / (36.5F - 34.9167F), 27.71F, 32.21F);
+        if (t <= 38.0833) return Mth.lerp((t - 36.5F) / (38.0833F - 36.5F), 32.21F, 36.71F);
+        if (t <= 39.6667) return Mth.lerp((t - 38.0833F) / (39.6667F - 38.0833F), 36.71F, 41.21F);
+        if (t <= 41.25) return Mth.lerp((t - 39.6667F) / (41.25F - 39.6667F), 41.21F, 45.71F);
+        if (t <= 42.875) return Mth.lerp((t - 41.25F) / (42.875F - 41.25F), 45.71F, 50.21F);
+        if (t <= 44.4583) return Mth.lerp((t - 42.875F) / (44.4583F - 42.875F), 50.21F, 54.71F);
+        if (t <= 46.0417) return Mth.lerp((t - 44.4583F) / (46.0417F - 44.4583F), 54.71F, 59.21F);
+        if (t <= 47.625) return Mth.lerp((t - 46.0417F) / (47.625F - 46.0417F), 59.21F, 63.71F);
+        if (t <= 49.2083) return Mth.lerp((t - 47.625F) / (49.2083F - 47.625F), 63.71F, 68.21F);
+        if (t <= 50.7917) return Mth.lerp((t - 49.2083F) / (50.7917F - 49.2083F), 68.21F, 72.71F);
+        if (t <= 52.375) return Mth.lerp((t - 50.7917F) / (52.375F - 50.7917F), 72.71F, 77.21F);
+        if (t <= 53.9583) return Mth.lerp((t - 52.375F) / (53.9583F - 52.375F), 77.21F, 81.71F);
+        if (t <= 55.5417) return Mth.lerp((t - 53.9583F) / (55.5417F - 53.9583F), 81.71F, 86.21F);
+        if (t <= 57.125) return Mth.lerp((t - 55.5417F) / (57.125F - 55.5417F), 86.21F, 90.61F);
+        if (t <= 57.9167) return Mth.lerp((t - 57.125F) / (57.9167F - 57.125F), 90.61F, 92.86F);
+        if (t <= 58.75) return Mth.lerp((t - 57.9167F) / (58.75F - 57.9167F), 92.86F, 95.11F);
+        if (t <= 59.5417) return Mth.lerp((t - 58.75F) / (59.5417F - 58.75F), 95.11F, 97.46F);
+        if (t <= 60.3333) return Mth.lerp((t - 59.5417F) / (60.3333F - 59.5417F), 97.46F, 99.21F);
+        if (t <= 61.125) return Mth.lerp((t - 60.3333F) / (61.125F - 60.3333F), 99.21F, 100.46F);
+        if (t <= 61.9167) return Mth.lerp((t - 61.125F) / (61.9167F - 61.125F), 100.46F, 100.91F);
+        if (t <= 62.7083) return Mth.lerp((t - 61.9167F) / (62.7083F - 61.9167F), 100.91F, 100.66F);
+        if (t <= 63.5) return Mth.lerp((t - 62.7083F) / (63.5F - 62.7083F), 100.66F, 99.81F);
+        if (t <= 65.0833) return Mth.lerp((t - 63.5F) / (65.0833F - 63.5F), 99.81F, 96.61F);
+        if (t <= 66.6667) return Mth.lerp((t - 65.0833F) / (66.6667F - 65.0833F), 96.61F, 92.81F);
+        if (t <= 68.25) return Mth.lerp((t - 66.6667F) / (68.25F - 66.6667F), 92.81F, 89.01F);
+        if (t <= 69.8333) return Mth.lerp((t - 68.25F) / (69.8333F - 68.25F), 89.01F, 85.20946F);
+        if (t <= 70.5833) return Mth.lerp((t - 69.8333F) / (70.5833F - 69.8333F), 85.20946F, 83.29F);
+        if (t <= 71.4167) return Mth.lerp((t - 70.5833F) / (71.4167F - 70.5833F), 83.29F, 81F);
+        if (t <= 72.2083) return Mth.lerp((t - 71.4167F) / (72.2083F - 71.4167F), 81F, 78.75F);
+        if (t <= 73) return Mth.lerp((t - 72.2083F) / (73F - 72.2083F), 78.75F, 76.5F);
+        if (t <= 74.5833) return Mth.lerp((t - 73F) / (74.5833F - 73F), 76.5F, 72F);
+        if (t <= 76.2083) return Mth.lerp((t - 74.5833F) / (76.2083F - 74.5833F), 72F, 67.5F);
+        if (t <= 77.7917) return Mth.lerp((t - 76.2083F) / (77.7917F - 76.2083F), 67.5F, 63F);
+        if (t <= 79.375) return Mth.lerp((t - 77.7917F) / (79.375F - 77.7917F), 63F, 58.5F);
+        if (t <= 80.9583) return Mth.lerp((t - 79.375F) / (80.9583F - 79.375F), 58.5F, 54F);
+        if (t <= 82.5417) return Mth.lerp((t - 80.9583F) / (82.5417F - 80.9583F), 54F, 49.5F);
+        if (t <= 84.125) return Mth.lerp((t - 82.5417F) / (84.125F - 82.5417F), 49.5F, 45F);
+        if (t <= 85.7083) return Mth.lerp((t - 84.125F) / (85.7083F - 84.125F), 45F, 40.5F);
+        if (t <= 87.2917) return Mth.lerp((t - 85.7083F) / (87.2917F - 85.7083F), 40.5F, 36F);
+        if (t <= 88.875) return Mth.lerp((t - 87.2917F) / (88.875F - 87.2917F), 36F, 31.5F);
+        if (t <= 90.4583) return Mth.lerp((t - 88.875F) / (90.4583F - 88.875F), 31.5F, 27F);
+        if (t <= 92.0833) return Mth.lerp((t - 90.4583F) / (92.0833F - 90.4583F), 27F, 22.5F);
+        if (t <= 93.6667) return Mth.lerp((t - 92.0833F) / (93.6667F - 92.0833F), 22.5F, 18F);
+        if (t <= 95.25) return Mth.lerp((t - 93.6667F) / (95.25F - 93.6667F), 18F, 13.5F);
+        if (t <= 96.8333) return Mth.lerp((t - 95.25F) / (96.8333F - 95.25F), 13.5F, 9F);
+        if (t <= 98.4167) return Mth.lerp((t - 96.8333F) / (98.4167F - 96.8333F), 9F, 4.5F);
+        return Mth.lerp((t - 98.4167F) / (100F - 98.4167F), 4.5F, 0F);
+    }
+
+}

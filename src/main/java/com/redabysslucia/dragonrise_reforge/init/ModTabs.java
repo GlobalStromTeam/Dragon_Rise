@@ -75,10 +75,13 @@ public class ModTabs {
 
                         //美国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1A1HC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
                         //美国 轻型车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
                         //美国 直升机
@@ -171,9 +174,7 @@ public class ModTabs {
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
-                    }
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));                    }
 
 ).build()
     );
