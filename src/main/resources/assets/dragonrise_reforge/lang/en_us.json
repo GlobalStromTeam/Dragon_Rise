@@ -460,5 +460,6 @@
   "weapon.superbwarfare.agm_65_missile_entity": "AGM-65 Maverick Air-to-Ground Missile",
   "weapon.superbwarfare.fim_92_missile": "",
   "weapon.superbwarfare.laser_auto": "Automatic Laser Cannon",
-  "weapon.superbwarfare.laser_semi": "Semi-Automatic Laser Cannon"
+  "weapon.superbwarfare.laser_semi": "Semi-Automatic Laser Cannon",
+  "weapon.superbwarfare.tow_missile": ""
 }

@@ -6,8 +6,8 @@
       "Position": [0.0,0.888,0.636]
     },
     {
-      "Size": [1.603,0.319,2.177],
-      "Position": [0.0,1.538,0.42]
+      "Size": [1.603,0.319,3.02],
+      "Position": [0.0,1.538,-0.423]
     },
     {
       "Size": [0.541,0.445,0.572],
@@ -26,7 +26,7 @@
     },
     {
       "Size": [0.73,0.405,0.894],
-      "Position": [-0.031,-0.304,-1.134],
+      "Position": [-0.031,-0.304,-1.072],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -39,16 +39,16 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": false,
-        "Position": [0.78125,0.890625,0.421875],
+        "Position": [0.78125,1.5,0.421875],
         "Transform": "Barrel",
-        "ZoomPosition": [0.78125,0.890625,0.421875],
+        "ZoomPosition": [0.78125,1.5,0.421875],
         "Direction": "Barrel"
       },
       "Weapons": [
         "AAMissile"
       ],
       "Transform": "Turret",
-      "Position": [-0.006,-2.994,-0.118],
+      "Position": [0.119,-1.619,0.382],
       "CanRotateHead": false,
       "MinPitch": -5,
       "MaxPitch": 70,

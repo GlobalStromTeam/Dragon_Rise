@@ -4,62 +4,8 @@
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.255,0.481,2.633],
-      "Position": [0.0,0.95,-0.02]
-    },
-    {
-      "Size": [1.291,0.444,1.083],
-      "Position": [0.0,1.663,0.014]
-    },
-    {
-      "Size": [0.041,0.256,0.677],
-      "Position": [-0.625,2.413,-0.08]
-    },
-    {
-      "Size": [0.041,0.256,0.677],
-      "Position": [0.688,2.413,-0.08]
-    },
-    {
-      "Size": [0.697,0.256,0.052],
-      "Position": [0.031,2.413,-0.705]
-    },
-    {
-      "Size": [0.197,0.256,0.052],
-      "Position": [-0.469,2.413,0.608]
-    },
-    {
-      "Size": [0.197,0.256,0.052],
-      "Position": [0.531,2.413,0.608]
-    },
-    {
-      "Size": [0.541,0.445,0.572],
-      "Position": [0.0,1.077,1.797],
-      "Part": "MainEngine"
-    },
-    {
-      "Size": [0.194,0.525,0.516],
-      "Position": [1.095,0.531,2.134],
-      "Part": "WheelRight"
-    },
-    {
-      "Size": [0.194,0.525,0.516],
-      "Position": [1.095,0.531,-1.741]
-    },
-    {
-      "Size": [0.225,0.517,0.508],
-      "Position": [-1.139,0.523,2.127],
-      "Part": "WheelLeft"
-    },
-    {
-      "Size": [0.225,0.517,0.508],
-      "Position": [-1.139,0.523,-1.748]
-    },
-    {
-      "Size": [0.386,0.342,0.081],
-      "Position": [0.016,0.012,0],
-      "Part": "Turret",
-      "Transform": "Turret",
-      "Rotation": "Turret"
+      "Size": [],
+      "Position": [0.0,0.0,0.0]
     }
   ],
   "Seats": [
@@ -112,11 +58,15 @@
       "ExplosionRadius": 8,
       "EmptyReloadTime": 160,
       "Velocity": 3,
-      "ShootShake": [6, 6, 14],
+      "ShootShake": [6,6,14],
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0, 0.035, 0]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [0,0.035,0]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "SoundInfo": {
         "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
@@ -188,7 +138,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/humvee_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/humveetow_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Car",
   "CollisionLevel": {
