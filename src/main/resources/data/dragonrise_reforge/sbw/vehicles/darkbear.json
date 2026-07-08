@@ -43,11 +43,11 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [-0.9192375, -1.2, 1.38765],
+        "ZoomPosition": [-0.9192375,-1.2,1.38765],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [-0.9192375, -0.68656875, 1.38765],
+      "Position": [-0.9192375,-0.68656875,1.38765],
       "Weapons": [
         "Cannon",
         "MachineGun",
@@ -177,7 +177,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.4351875, -1.758, 0.53648125]
+          [-0.4351875,-1.758,0.53648125]
         ],
         "Directions": [
           "Barrel"
@@ -262,7 +262,7 @@
       "ShootPos": {
         "Transform": "turret",
         "Positions": [
-          [-1.6067375, 0.78121875, -2.6747875]
+          [-1.6067375,0.78121875,-2.6747875]
         ],
         "Directions": [
           "Barrel"
@@ -291,7 +291,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [-0.005625, 0.13853125, 1.7662375]
+          [-0.005625,0.13853125,1.7662375]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -325,13 +325,13 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume": 0.6
   },
-  "TurretPos": [-0.0932625, 1.803575, 0.22829375],
+  "TurretPos": [-0.0932625,1.803575,0.22829375],
   "BarrelPos": [0.0,2.211,1.881],
   "TurretTurnSpeed": [3.765,4.2],
   "TurretPitchRange": [-10,20],
   "TurretCustomPitch": 2.5,
-  "PassengerWeaponStationPos": [0.75685, 1.48036875, -1.7518875],
-  "PassengerWeaponStationBarrelPos": [-0.45265, -0.0421375, -0.03215],
+  "PassengerWeaponStationPos": [0.75685,1.48036875,-1.7518875],
+  "PassengerWeaponStationBarrelPos": [-0.45265,-0.0421375,-0.03215],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-9,65],
   "HasDecoy": true,
@@ -376,7 +376,7 @@
     "ExplosionRadius": 16
   },
   "ThirdPersonCameraPos": [-0.8669625,1.5,5],
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m1a1hc_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/darkbear_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Tank",
   "CollisionLevel": {

@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:humveetow",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/humveetow.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/humveetow.png"
+  }
+}

@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.DarkbearEntity;
 
 
@@ -995,6 +998,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<DarkbearEntity>> DARKBEAR = register("darkbear",
             EntityType.Builder.of(DarkbearEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
+            EntityType.Builder.of(HumveetowEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

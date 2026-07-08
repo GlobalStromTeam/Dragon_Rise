@@ -84,6 +84,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
                         //美国 轻型车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
                         //美国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
@@ -175,6 +176,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));                    }
+
 
 ).build()
     );
