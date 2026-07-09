@@ -43,7 +43,7 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [-0.768,-0.35,0.75],
+        "ZoomPosition": [-0.768,1.2,0.75],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -147,8 +147,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.246,-1.628,3.079],
-          [-0.081,-1.784,2.704]
+          [0.12, -1.04055, 1.3204]
         ],
         "Directions": [
           "Barrel"
@@ -252,8 +251,8 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume": 0.6
   },
-  "TurretPos": [-0.107,1.731,0.313],
-  "BarrelPos": [0.0,2.211,1.881],
+  "TurretPos": [-0.1068125, 1.7311125, 0.3125],
+  "BarrelPos": [0.1068125, 0.479825, 1.5683625],
   "TurretTurnSpeed": [3.765,4.2],
   "TurretPitchRange": [-10,20],
   "PassengerWeaponStationPos": [-0.38273125,1.07539375,-0.89239375],

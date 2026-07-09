@@ -3593,8 +3593,14 @@
 					"pivot": [-1.6875, 34.86008, -16.74142]
 				},
 				{
-					"name": "ba",
+					"name": "bone18",
 					"parent": "barrel",
+					"pivot": [-1.6875, 34.86008, -16.74142],
+					"rotation": [2.5, 0, 0]
+				},
+				{
+					"name": "ba",
+					"parent": "bone18",
 					"pivot": [-1.6875, 59.8601, -22.74138],
 					"rotation": [2.5, 0, 0],
 					"cubes": [
@@ -3707,7 +3713,7 @@
 				},
 				{
 					"name": "bone54",
-					"parent": "barrel",
+					"parent": "bone18",
 					"pivot": [-0.165, 33.62918, -34.6812],
 					"cubes": [
 						{
@@ -3882,7 +3888,7 @@
 				},
 				{
 					"name": "bone55",
-					"parent": "barrel",
+					"parent": "bone18",
 					"pivot": [-1.68165, 34.58016, -18.68727],
 					"cubes": [
 						{

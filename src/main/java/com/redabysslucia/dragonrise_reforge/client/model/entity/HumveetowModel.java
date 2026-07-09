@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 public class HumveetowModel extends DragonriseVehicleModel<HumveetowEntity> {
     @Override
     public boolean hideForTurretControllerWhileZooming() {
-        return true;
+        return false;
     }
 
     @Override
