@@ -81,7 +81,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 170,
-      "Velocity": 30,
+      "Velocity": 42.65,
       "Gravity": 0.05,
       "Damage": 420,
       "ExplosionDamage": 95,
@@ -102,7 +102,7 @@
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 20,
+            "Velocity": 39.5,
             "Gravity": 0.05,
             "Damage": 140,
             "ExplosionDamage": 135,
@@ -126,7 +126,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.1,-2.201,3.078]
+          [0.0,-1.701,3.078]
         ],
         "Directions": [
           "Barrel"

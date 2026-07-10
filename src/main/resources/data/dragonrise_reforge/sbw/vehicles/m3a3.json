@@ -124,7 +124,7 @@
       "AvailableFireModes": "Auto",
       "DefaultZoom": 3,
       "RPM": 200,
-      "Velocity": 18,
+      "Velocity": 67.25,
       "Gravity": 0.05,
       "Damage": 65,
       "ExplosionDamage": 8,
@@ -155,7 +155,7 @@
           "Ammo": "superbwarfare:small_shell_he",
           "Override": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_he.png",
-            "Velocity": 15,
+            "Velocity": 55,
             "Gravity": 0.05,
             "Damage": 15,
             "ExplosionDamage": 18,
@@ -168,7 +168,7 @@
           "Override": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_gs.png",
             "Spread": 3,
-            "Velocity": 10,
+            "Velocity": 50,
             "Gravity": 0.05,
             "Damage": 8,
             "ProjectileAmount": 16,
@@ -202,15 +202,15 @@
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "RPM": 800,
+      "RPM": 650,
       "Damage": 10,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 42.65,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
-      "Magazine": 1500,
-      "EmptyReloadTime": 160,
+      "Magazine": 100,
+      "EmptyReloadTime": 100,
       "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
@@ -241,13 +241,12 @@
       "DefaultZoom": 3,
       "HeatPerShoot": 0.5,
       "Spread": 0.5,
-      "RPM": 30,
+      "RPM": 40,
       "CrosshairColor": "0xFFC700",
       "Name": "dragonrise_reforge:tow",
-      "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
       "Magazine": 2,
-      "EmptyReloadTime": 200,
+      "EmptyReloadTime": 600,
       "Damage": 400,
       "ExplosionDamage": 120,
       "ExplosionRadius": 2,
@@ -258,8 +257,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [1.3190625,1.054375,-0.0634375],
-          [1.5990625,1.054375,-0.0634375]
+          [1.5990625, 1.054375, -0.0634375],
+          [1.3190625, 0.998125, -0.0634375]
         ],
         "Directions": [
           [0,0,0.8],
@@ -276,7 +275,18 @@
         "Change": "superbwarfare:into_missile"
       },
       "SoundRadius": 12,
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png"
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
+      "AmmoType": [
+        "superbwarfare:medium_anti_ground_missile",
+        {
+          "Ammo": "superbwarfare:medium_anti_ground_missile",
+          "Override": {
+            "Projectile": "dragonrise_reforge:anti_top_wire_guide_missile",
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_tow_top.png",
+            "Name": "dragonrise_reforge:tow_top_attack"
+          }
+        }
+      ]
     }
   },
   "HUDColor": "0xFFC700",

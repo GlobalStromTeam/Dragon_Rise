@@ -49,11 +49,11 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.6598625,0.844525,0.85841875],
+        "ZoomPosition": [0.662,0.451,0.907],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.8,-0.6,0.65],
+      "Position": [0.662,-0.749,0.907],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -72,7 +72,7 @@
         "ZoomPosition": [0,0.1,0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.58,0.1,-0.0020625],
+      "Position": [0.662,0.1,-0.718],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -93,7 +93,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 100,
-      "Velocity": 40,
+      "Velocity": 78.75,
       "Damage": 350,
       "RecoilTime": 42,
       "RecoilForce": 1.0,
@@ -111,7 +111,7 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 25,
+            "Velocity": 41.5,
             "Damage": 200,
             "ExplosionDamage": 40,
             "ExplosionRadius": 6,
@@ -160,7 +160,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0,0,0.5]
+          [0.0016875,-0.50550625,2.63850625]
         ],
         "Directions": [
           "Barrel"
@@ -191,7 +191,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.3,0.0517,0.5]
+          [-0.40218125,-0.09444375,0.64426875]
         ],
         "Directions": [
           "Barrel"
@@ -262,10 +262,10 @@
     "Decrement": 0.005,
     "SteeringSpeed": 0.1
   },
-  "TurretPos": [0,2.4003,0],
+  "TurretPos": [-0.037,3.677,0.031],
   "TurretTurnSpeed": [1.2,2.445],
   "TurretPitchRange": [-5,18],
-  "BarrelPos": [0.0234375,0.33795,0.825],
+  "BarrelPos": [0.05843125,0.55538125,0.72135625],
   "PassengerWeaponStationPos": [-0.58,1.0963625,-0.0020625],
   "PassengerWeaponStationBarrelPos": [0,0.35984375,0.05],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
@@ -334,10 +334,10 @@
   "EngineSound": "superbwarfare:lav_150_engine",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.156,0,1.594],
-    [-1.156,0,1.594],
-    [1.156,0,-1.594],
-    [-1.156,0,-1.594]
+    [1.344,0.038,2.109],
+    [-1.356,0.038,-1.984],
+    [-1.356,0.038,2.109],
+    [1.344,0.038,-2.109]
   ],
   "InertiaRotateRate": 1.25
 }

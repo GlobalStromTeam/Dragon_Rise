@@ -136,7 +136,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 100,
-      "Velocity": 83,
+      "Velocity": 90,
       "Gravity": 0.05,
       "Damage": 450,
       "ExplosionDamage": 70,
@@ -157,7 +157,7 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 25,
+            "Velocity": 45,
             "Gravity": 0.05,
             "Damage": 220,
             "ExplosionDamage": 100,
@@ -181,7 +181,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.0041375,-0.01620625,1.85724375]
+          [0.0958625,-0.51620625,1.85724375]
         ],
         "Directions": [
           "Barrel"

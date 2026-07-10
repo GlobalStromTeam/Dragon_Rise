@@ -94,7 +94,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultZoom": 3,
       "RPM": 625,
-      "Velocity": 40.25,
+      "Velocity": 40.4,
       "Gravity": 0.05,
       "Damage": 55,
       "Magazine": 1200,
@@ -144,7 +144,7 @@
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 36.95,
+      "Velocity": 27.5,
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,0.62,0.8],

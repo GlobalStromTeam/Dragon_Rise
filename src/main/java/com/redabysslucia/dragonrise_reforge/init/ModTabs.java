@@ -178,6 +178,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));                    }
 
 
+
 ).build()
     );
 

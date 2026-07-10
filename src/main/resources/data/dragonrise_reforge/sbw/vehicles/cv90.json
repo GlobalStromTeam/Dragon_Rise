@@ -118,7 +118,7 @@
       "AvailableFireModes": "Auto",
       "DefaultZoom": 3,
       "RPM": 200,
-      "Velocity": 18,
+      "Velocity": 74,
       "Gravity": 0.05,
       "Damage": 65,
       "ExplosionDamage": 8,
@@ -149,7 +149,7 @@
           "Ammo": "superbwarfare:small_shell_he",
           "Override": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_he.png",
-            "Velocity": 15,
+            "Velocity": 54,
             "Gravity": 0.05,
             "Damage": 15,
             "ExplosionDamage": 18,
@@ -162,7 +162,7 @@
           "Override": {
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_gs.png",
             "Spread": 3,
-            "Velocity": 10,
+            "Velocity": 50,
             "Gravity": 0.05,
             "Damage": 8,
             "ProjectileAmount": 16,
@@ -196,15 +196,15 @@
       "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
-      "RPM": 800,
+      "RPM": 650,
       "Damage": 10,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 42.65,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
-      "Magazine": 1500,
-      "EmptyReloadTime": 160,
+      "Magazine": 100,
+      "EmptyReloadTime": 100,
       "HeatPerShoot": 2.5,
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
@@ -235,9 +235,18 @@
       "DefaultZoom": 3,
       "HeatPerShoot": 0.5,
       "Spread": 0.5,
-      "RPM": 30,
+      "RPM": 10,
       "CrosshairColor": "0xFFC700",
       "Name": "dragonrise_reforge::spike",
+      "SeekWeaponInfo": {
+        "SeekDirection": "Barrel",
+        "SeekRange": 512,
+        "SeekAngle": 3,
+        "SeekTime": 10,
+        "MaxTargetHeight": 15,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
       "AmmoType": [
         {
           "Ammo": "superbwarfare:medium_anti_ground_missile",
@@ -260,21 +269,21 @@
           }
         }
       ],
-      "Projectile": "superbwarfare:wire_guide_missile",
+      "Projectile": "superbwarfare:javelin_missile",
       "Magazine": 2,
-      "EmptyReloadTime": 360,
+      "EmptyReloadTime": 900,
       "Damage": 400,
       "ExplosionDamage": 120,
       "ExplosionRadius": 2,
-      "Velocity": 15,
+      "Velocity": 9,
       "Gravity": 0.05,
       "RecoilTime": 18,
       "RecoilForce": 0.65,
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.5597,0.91899375,0.13836875],
-          [-1.87035,0.91899375,0.13836875]
+          [-1.4597,0.41899375,0.13836875],
+          [-1.77035,0.41899375,0.13836875]
         ],
         "Directions": [
           [0,0.1,0.8],

@@ -93,7 +93,7 @@
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 2,
       "RPM": 1200,
-      "Velocity": 52.5,
+      "Velocity": 57.25,
       "Gravity": 0.05,
       "Damage": 35,
       "ExplosionDamage": 10,
