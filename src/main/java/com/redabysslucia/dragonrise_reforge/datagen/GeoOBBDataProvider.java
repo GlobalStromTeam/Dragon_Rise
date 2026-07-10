@@ -62,6 +62,10 @@ public class GeoOBBDataProvider implements DataProvider {
             String content = Files.readString(geoFile);
             JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
 
+            if (!hasBuildBone(geoJson)) {
+                return;
+            }
+
             boolean hasSeatsPos1 = checkSeatsPos1(geoJson);
 
             JsonArray turretPos = hasSeatsPos1 ? extractTurretPos(geoJson) : null;
@@ -221,6 +225,30 @@ public class GeoOBBDataProvider implements DataProvider {
         } catch (Exception e) {
             throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
         }
+    }
+
+    private static boolean hasBuildBone(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+        for (JsonElement geomElement : geometries) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            JsonArray bones = geometry.getAsJsonArray("bones");
+            for (JsonElement boneElement : bones) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                if (bone.get("name").getAsString().equals("Build")) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private void generateSuperbwarfareVehicleConfig(Path outputPath, String baseName) throws Exception {

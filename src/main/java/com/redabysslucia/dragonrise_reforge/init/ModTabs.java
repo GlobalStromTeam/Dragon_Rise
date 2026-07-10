@@ -141,44 +141,45 @@ public class ModTabs {
                     .title(Component.translatable("item_group.dragonrise_reforge.ww2title"))
                     .icon(() -> new ItemStack(ModItems.WW2_TAB_ICON.get()))
                     .displayItems((param, output) -> {
-                        //苏联 坦克
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3485.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                                //苏联 坦克
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.IS2.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.T3485.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
 
-                        //德国 坦克
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
+                                //德国 坦克
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.TIGER.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.PANZER4.get()));
 
-                        //美国 坦克
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.PERSHING.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M3Stuart.get()));
-                        //美国 装甲车辆
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
-                        //美国 固定翼
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
+                                //美国 坦克
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.PERSHING.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2105.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.M4A2.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.M3Stuart.get()));
+                                //美国 装甲车辆
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
+                                //美国 固定翼
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
 
-                        //英国 坦克
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
-                        //英国 固定翼
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
+                                //英国 坦克
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
+                                //英国 固定翼
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
 
-                        //日本 坦克
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
+                                //日本 坦克
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));                    }
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
 
-
-).build()
+                                output.accept(ContainerBlockItem.createInstance(ModEntities.PAK40.get()));
+                            }
+                    ).build()
     );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",

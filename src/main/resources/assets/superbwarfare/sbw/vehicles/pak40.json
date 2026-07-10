@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:pak40",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/pak40.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/pak40.png"
+  }
+}
