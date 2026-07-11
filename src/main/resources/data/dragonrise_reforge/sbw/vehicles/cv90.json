@@ -44,9 +44,9 @@
       "MaxPitch": 60,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.62339375,0.98475,0.2983375],
+        "Position": [-0.62339375,1.38475,0.2983375],
         "Transform": "Turret",
-        "ZoomPosition": [-0.62339375,0.98475,0.2983375],
+        "ZoomPosition": [-0.62339375,1.38475,0.2983375],
         "Direction": "Barrel"
       },
       "Weapons": [
