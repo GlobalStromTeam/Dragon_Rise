@@ -1,11 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
-
-
-
-
-
 import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
 
 
@@ -39,7 +33,6 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
@@ -900,13 +893,6 @@ public class ModEntities {
                     .setUpdateInterval(1)
                     .fireImmune()
                     .sized(0.2f, 0.2f)
-    );
-    public static final RegistryObject<EntityType<AntiTopWireGuideMissileEntity>> ANTI_TOP_WIRE_GUIDE_MISSILE = register("anti_top_wire_guide_missile",
-            EntityType.Builder.<AntiTopWireGuideMissileEntity>of((type, level) -> new AntiTopWireGuideMissileEntity(type, level), MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(1)
-                    .fireImmune()
-                    .sized(0.5f, 0.5f)
     );
     public static final RegistryObject<EntityType<AKMEEntity>> AKM = register("akm",
             EntityType.Builder.of(AKMEEntity::new, MobCategory.MISC)
