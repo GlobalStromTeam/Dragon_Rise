@@ -99,8 +99,7 @@
       "Position": [0.8125,1.2,0.84375],
       "Weapons": [
         "Cannon",
-        "MachineGun",
-        "Laser"
+        "MachineGun"
       ],
       "CanRotateHead": false,
       "MinPitch": -6,
@@ -113,9 +112,9 @@
       "Transform": "Turret",
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.22351875, 0.15625, 0.52634375],
+        "Position": [-0.22351875,0.15625,0.52634375],
         "Transform": "WeaponStation",
-        "ZoomPosition": [-0.22351875, 0.15625, 0.52634375],
+        "ZoomPosition": [-0.22351875,0.15625,0.52634375],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [-0.5805625,2,-0.47275625],
@@ -153,7 +152,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 100,
-      "Velocity": 40,
+      "Velocity": 73.5,
       "Gravity": 0.05,
       "Damage": 450,
       "ExplosionDamage": 70,
@@ -174,7 +173,7 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 25,
+            "Velocity": 36.5,
             "Damage": 220,
             "ExplosionDamage": 100,
             "ExplosionRadius": 10,
@@ -269,7 +268,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [0.002975, 0.0160625, 1.18185]
+          [0.002975,0.0160625,1.18185]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -307,8 +306,8 @@
   "BarrelPos": [-0.0784,2.1409,0.4258],
   "TurretTurnSpeed": [7,3.765],
   "TurretPitchRange": [-15,20],
-  "PassengerWeaponStationPos": [-0.44125625, 2.85379375, -0.68490625],
-  "PassengerWeaponStationBarrelPos": [-0.0040875, 0.35215, 0.98879375],
+  "PassengerWeaponStationPos": [-0.44125625,2.85379375,-0.68490625],
+  "PassengerWeaponStationBarrelPos": [-0.0040875,0.35215,0.98879375],
   "PassengerWeaponStationTurnSpeed": [20.75,15.47],
   "PassengerWeaponStationPitchRange": [-25,80],
   "HasDecoy": true,

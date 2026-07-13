@@ -1,8 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.entities.Pak40Entity;
-
-
 import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
 
 
@@ -1013,14 +1010,6 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
-    );
-
-    public static final RegistryObject<EntityType<Pak40Entity>> PAK40 = register("pak40",
-            EntityType.Builder.of(Pak40Entity::new, MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(2)
-                    .fireImmune()
-                    .sized(0.5f, 1.3f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

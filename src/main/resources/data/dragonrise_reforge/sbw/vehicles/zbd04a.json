@@ -129,7 +129,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 80,
-      "Velocity": 12.5,
+      "Velocity": 34,
       "Gravity": 0.05,
       "Damage": 200,
       "ExplosionDamage": 150,
@@ -159,6 +159,15 @@
             "Gravity": 0.05,
             "RecoilTime": 18,
             "RecoilForce": 0.05,
+            "ShootPos": {
+              "Transform": "Barrel",
+              "Positions": [
+                [0.12213125,0.0,0.5]
+              ],
+              "Directions": [
+                "Barrel"
+              ]
+            },
             "Crosshair": "@VehicleCommonMissile",
             "SoundInfo": {
               "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
@@ -189,7 +198,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.02213125,-0.5,0.5]
+          [0.12213125,-0.5,0.5]
         ],
         "Directions": [
           "Barrel"

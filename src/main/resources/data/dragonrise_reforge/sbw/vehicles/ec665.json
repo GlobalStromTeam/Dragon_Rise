@@ -103,7 +103,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultZoom": 3,
       "RPM": 750,
-      "Velocity": 52.5,
+      "Velocity": 40.4,
       "Gravity": 0.05,
       "Damage": 55,
       "Magazine": 450,

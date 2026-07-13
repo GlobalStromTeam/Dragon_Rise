@@ -79,7 +79,7 @@
       "Sensitivity": [0.8,0.8,0.8],
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0.291625, 0.15785625, 0.20265625],
+        "ZoomPosition": [0.291625,0.15785625,0.20265625],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -117,11 +117,15 @@
       "ExplosionRadius": 8,
       "EmptyReloadTime": 160,
       "Velocity": 3,
-      "ShootShake": [6, 6, 14],
+      "ShootShake": [6,6,14],
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [[0.0, 0.01635, 0.93075625]],
-        "Directions": ["Barrel"]
+        "Positions": [
+          [0.1,-0.48365,0.93075625]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
       },
       "SoundInfo": {
         "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
@@ -148,10 +152,10 @@
     "SteeringSpeed": 0.14,
     "EngineSoundVolume": 1.0
   },
-  "TurretPos": [-0.25625, 2.4915125, 0.38125],
+  "TurretPos": [-0.25625,2.4915125,0.38125],
   "TurretTurnSpeed": [10,10],
   "TurretPitchRange": [-6,60],
-  "BarrelPos": [0.0, -0.01489375, 0.0],
+  "BarrelPos": [0.0,-0.01489375,0.0],
   "HasDecoy": true,
   "UpStep": 2.25,
   "TurretControllerIndex": 1,
@@ -193,7 +197,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/humvee_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/humveetow_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Car",
   "CollisionLevel": {

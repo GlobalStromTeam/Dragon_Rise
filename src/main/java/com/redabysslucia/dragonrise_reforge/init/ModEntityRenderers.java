@@ -1,8 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Pak40Renderer;
-
-
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.HumveetowRenderer;
 
 
@@ -45,7 +42,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {
         @SubscribeEvent
-        public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event){
                 event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ARenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99AH.get(), ZTZ99AHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
@@ -166,9 +163,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.M1A1HC.get(), M1a1hcRenderer::new);
                 event.registerEntityRenderer(ModEntities.DARKBEAR.get(), DarkbearRenderer::new);
 
-                event.registerEntityRenderer(ModEntities.HUMVEETOW.get(), HumveetowRenderer::new);
+        event.registerEntityRenderer(ModEntities.HUMVEETOW.get(), HumveetowRenderer::new);        }
 
-                event.registerEntityRenderer(ModEntities.PAK40.get(), Pak40Renderer::new);
-        }
+
 
 }
