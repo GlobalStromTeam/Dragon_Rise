@@ -177,32 +177,51 @@ public class GeoOBBDataProvider implements DataProvider {
             }
 
             if (hasSeatsPos1 && !seatsPositions.isEmpty() && vehicleJson.has("Seats")) {
-                JsonArray seats = vehicleJson.getAsJsonArray("Seats");
-                for (int i = 0; i < seats.size(); i++) {
-                    JsonObject seat = seats.get(i).getAsJsonObject();
-                    int index = i + 1;
+                var seatsElement = vehicleJson.get("Seats");
+                if (seatsElement.isJsonArray()) {
+                    JsonArray seats = seatsElement.getAsJsonArray();
+                    for (int i = 0; i < seats.size(); i++) {
+                        JsonObject seat = seats.get(i).getAsJsonObject();
+                        int index = i + 1;
 
-                    if (seatsPositions.containsKey(index)) {
-                        JsonArray pos = seatsPositions.get(index);
-                        String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
-                        // Transform为Turret/WeaponStation时，座位坐标是相对于炮塔的，需要减去炮塔坐标
-                        if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
-                            JsonArray adjustedPos = new JsonArray();
-                            adjustedPos.add(round(pos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
-                            adjustedPos.add(round(pos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
-                            adjustedPos.add(round(pos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
-                            seat.add("Position", adjustedPos);
-                        } else {
-                            // Transform为Vehicle时，座位坐标已经是相对于车体的，直接使用
-                            seat.add("Position", pos);
+                        if (seatsPositions.containsKey(index)) {
+                            JsonArray pos = seatsPositions.get(index);
+                            String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
+                            if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
+                                JsonArray adjustedPos = new JsonArray();
+                                adjustedPos.add(round(pos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
+                                adjustedPos.add(round(pos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
+                                adjustedPos.add(round(pos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
+                                seat.add("Position", adjustedPos);
+                            } else {
+                                seat.add("Position", pos);
+                            }
+                        }
+
+                        if (seatsCameraPositions.containsKey(index)) {
+                            if (seat.has("CameraPos")) {
+                                JsonObject cameraPos = seat.getAsJsonObject("CameraPos");
+                                cameraPos.add("Position", seatsCameraPositions.get(index));
+                            }
                         }
                     }
+                } else if (seatsElement.isJsonObject() && seatsPositions.containsKey(1)) {
+                    JsonObject seat = seatsElement.getAsJsonObject();
+                    JsonArray pos = seatsPositions.get(1);
+                    String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
+                    if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
+                        JsonArray adjustedPos = new JsonArray();
+                        adjustedPos.add(round(pos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
+                        adjustedPos.add(round(pos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
+                        adjustedPos.add(round(pos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
+                        seat.add("Position", adjustedPos);
+                    } else {
+                        seat.add("Position", pos);
+                    }
 
-                    if (seatsCameraPositions.containsKey(index)) {
-                        if (seat.has("CameraPos")) {
-                            JsonObject cameraPos = seat.getAsJsonObject("CameraPos");
-                            cameraPos.add("Position", seatsCameraPositions.get(index));
-                        }
+                    if (seatsCameraPositions.containsKey(1) && seat.has("CameraPos")) {
+                        JsonObject cameraPos = seat.getAsJsonObject("CameraPos");
+                        cameraPos.add("Position", seatsCameraPositions.get(1));
                     }
                 }
             }

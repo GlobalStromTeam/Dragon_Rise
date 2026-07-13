@@ -33,6 +33,24 @@ public class VehicleBackgroundOverlay implements IGuiOverlay {
 
             float alpha = vehicle.getBackgroundAlpha();
 
+            int drawX = 0, drawY = 0;
+            int drawWidth = screenWidth, drawHeight = screenHeight;
+
+            if (vehicle.keepAspectRatio()) {
+                float aspectRatio = vehicle.getBackgroundAspectRatio();
+                float screenRatio = (float) screenWidth / screenHeight;
+
+                if (vehicle.scaleByHeight() || aspectRatio <= screenRatio) {
+                    drawHeight = screenHeight;
+                    drawWidth = (int) (screenHeight * aspectRatio);
+                    drawX = (screenWidth - drawWidth) / 2;
+                } else {
+                    drawWidth = screenWidth;
+                    drawHeight = (int) (screenWidth / aspectRatio);
+                    drawY = (screenHeight - drawHeight) / 2;
+                }
+            }
+
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
             RenderSystem.enableBlend();
@@ -45,7 +63,7 @@ public class VehicleBackgroundOverlay implements IGuiOverlay {
             );
             RenderSystem.setShaderColor(1, 1, 1, alpha);
 
-            guiGraphics.blit(texture, 0, 0, 0, 0, screenWidth, screenHeight, screenWidth, screenHeight);
+            guiGraphics.blit(texture, drawX, drawY, 0, 0, drawWidth, drawHeight, drawWidth, drawHeight);
 
             RenderSystem.depthMask(true);
             RenderSystem.enableDepthTest();

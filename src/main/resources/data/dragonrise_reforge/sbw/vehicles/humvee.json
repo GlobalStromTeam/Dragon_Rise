@@ -72,7 +72,7 @@
       "HidePassenger": false,
       "Transform": "Vehicle",
       "Position": [0.0,1.33,0.031],
-      "MinPitch": -6,
+      "MinPitch": -10,
       "MaxPitch": 60,
       "MinYaw": -30,
       "MaxYaw": 30,

@@ -18,4 +18,19 @@ public interface IVehicleBackground {
     default float getBackgroundAlpha() {
         return 1.0f;
     }
+
+    @OnlyIn(Dist.CLIENT)
+    default boolean keepAspectRatio() {
+        return true;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    default float getBackgroundAspectRatio() {
+        return 1.0f;
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    default boolean scaleByHeight() {
+        return false;
+    }
 }
