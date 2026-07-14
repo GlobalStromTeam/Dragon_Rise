@@ -24,6 +24,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M113Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.NPDS810Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Pak40Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M10BookerRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.R9M133Renderer;
@@ -83,6 +84,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZLT_11.get(), ZLT11Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZBD04A.get(), ZBD04ARenderer::new);
                 event.registerEntityRenderer(ModEntities.PANZER4.get(), PANZER4Renderer::new);
+                event.registerEntityRenderer(ModEntities.PAK40.get(), Pak40Renderer::new);
                 event.registerEntityRenderer(ModEntities.SX1.get(), SX1Renderer::new);
                 event.registerEntityRenderer(ModEntities.FAVA.get(), FAVARenderer::new);
                 event.registerEntityRenderer(ModEntities.STRV103.get(), STRV103Renderer::new);

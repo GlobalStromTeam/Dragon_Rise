@@ -1,31 +1,66 @@
 {
   "ID": "dragonrise_reforge:pak40",
-  "MaxHealth": 350,
+  "MaxHealth": 100,
   "TurretPos": [0.0,0.0,-0.104],
   "TurretTurnSpeed": [5,2.5],
   "TurretPitchRange": [-10,25],
   "TurretPitchYaw": [-35,35],
   "BarrelPos": [-0.063,1.122,-0.293],
+  "TurretControllerIndex": 1,
   "MaxEnergy": 0,
-  "Seats": {
-    "Transform": "Vehicle",
-    "Position": [0.551,-0.403,-0.994],
-    "MinPitch": -10,
-    "MaxPitch": 25,
-    "MinYaw": -30,
-    "MaxYaw": 30,
-    "Sensitivity": [0.4,0.5,0.8],
-    "CameraPos": {
-      "Transform": "Turret",
-      "UseFixedCameraPos": true,
-      "ZoomPosition": [0.554,1.071,0.135],
-      "Direction": "Barrel",
-      "Position": [0.554,1.071,0.135]
+  "Seats": [
+    {
+      "Transform": "Vehicle",
+      "Position": [
+        -0.551,
+        0,
+        -0.994
+      ],
+      "Sensitivity": [
+        0.4,
+        0.5,
+        0.8
+      ],
+      "Weapons": [
+        "Cannon"
+      ]
     },
-    "Weapons": [
-      "Cannon"
-    ]
-  },
+    {
+      "Transform": "Vehicle",
+      "Position": [
+        0.551,
+        -0.403,
+        -0.994
+      ],
+      "MinPitch": -10,
+      "MaxPitch": 25,
+      "MinYaw": -30,
+      "MaxYaw": 30,
+      "Sensitivity": [
+        0.4,
+        0.5,
+        0.8
+      ],
+      "CameraPos": {
+        "Transform": "Turret",
+        "UseFixedCameraPos": true,
+        "ZoomPosition": [
+          0.554,
+          1.071,
+          0.135
+        ],
+        "Direction": "Barrel",
+        "Position": [
+          0.554,
+          1.071,
+          0.135
+        ]
+      },
+      "Weapons": [
+        "Cannon"
+      ]
+    }
+  ],
   "Weapons": {
     "Cannon": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
@@ -61,7 +96,15 @@
         ]
       },
       "SoundInfo": {
-        "FireSoundInstances": "dragonrise_reforge:fire_sound_57mm"
+        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
+        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
+        "Fire3PFar": "superbwarfare:m_1a_2_far",
+        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
+        "VehicleReload": "dragonrise_reforge:m1a2_reload",
+        "Change": "superbwarfare:into_cannon",
+        "CancellableSounds": [
+          "dragonrise_reforge:m1a2_reload"
+        ]
       }
     }
   },
@@ -71,7 +114,7 @@
     "minecraft:lava * 6.66",
     "@minecraft:tnt * 3",
     "@minecraft:tnt_minecart * 3",
-    "All * 0.3",
+    "All * 1",
     "minecraft:arrow * 1.5",
     "minecraft:trident * 1.5",
     "minecraft:mob_attack * 2.5",
@@ -93,7 +136,7 @@
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8",
     "@superbwarfare:igla_9k38_missile * 0.75",
-    "All - 8"
+    "All - 2"
   ],
   "ThirdPersonCameraPos": [0,1,2],
   "EngineType": "Track",
@@ -110,6 +153,7 @@
     "Increment": 0.08,
     "Decrement": 0.08,
     "SteeringSpeed": 0.03,
+    "UpStep": 1.0,
     "EngineSoundVolume": 0.3
   },
   "DestroyInfo": {

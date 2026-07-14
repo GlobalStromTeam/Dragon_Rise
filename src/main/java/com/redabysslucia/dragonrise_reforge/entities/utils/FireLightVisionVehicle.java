@@ -55,8 +55,9 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
                 handleTurretFireLight(0); // 传入0表示停止开火
             }
         }
-        
-        
+
+        // 处理栓绳拖拽
+        VehicleLeashData.tickLeash(this);
     }
 
     /**

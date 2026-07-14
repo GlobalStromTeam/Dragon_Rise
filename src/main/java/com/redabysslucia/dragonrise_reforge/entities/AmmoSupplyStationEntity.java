@@ -153,7 +153,9 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return;
         }
 
-        this.setDeltaMovement(Vec3.ZERO);
+        // 始终施加阻力，防止被推动或无限滑动
+        Vec3 vel = this.getDeltaMovement();
+        this.setDeltaMovement(vel.x * 0.85, vel.y, vel.z * 0.85);
 
         if (!isActive()) {
             return;

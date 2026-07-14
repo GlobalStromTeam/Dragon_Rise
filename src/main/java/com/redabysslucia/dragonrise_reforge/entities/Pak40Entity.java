@@ -25,7 +25,7 @@ public class Pak40Entity extends SyncCameraVehicle implements IVehicleBackground
 
                 var seatIndex = getSeatIndex(player);
                 // 一号位背景
-                if (seatIndex == 0) {
+                if (seatIndex == 1) {
                         return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/zf3x8.png");
                 }
                 return null;
