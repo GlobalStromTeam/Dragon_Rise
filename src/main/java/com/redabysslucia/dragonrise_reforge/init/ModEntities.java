@@ -34,6 +34,7 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
@@ -894,6 +895,13 @@ public class ModEntities {
                     .fireImmune()
                     .sized(0.2f, 0.2f)
     );
+    public static final RegistryObject<EntityType<AntiTopWireGuideMissileEntity>> ANTI_TOP_WIRE_GUIDE_MISSILE = register("anti_top_wire_guide_missile",
+            EntityType.Builder.<AntiTopWireGuideMissileEntity>of((type, level) -> new AntiTopWireGuideMissileEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
     public static final RegistryObject<EntityType<AKMEEntity>> AKM = register("akm",
             EntityType.Builder.of(AKMEEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1006,6 +1014,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
             EntityType.Builder.of(HumveetowEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Pak40Entity>> PAK40 = register("pak40",
+            EntityType.Builder.of(Pak40Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

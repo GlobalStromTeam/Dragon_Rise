@@ -160,15 +160,15 @@
             "RecoilTime": 18,
             "RecoilForce": 0.05,
             "ShootPos": {
-              "Transform": "Barrel",
-              "Positions": [
-                [0.12213125,0.0,0.5]
-              ],
-              "Directions": [
-                "Barrel"
-              ]
-            },
-            "Crosshair": "@VehicleCommonMissile",
+        "Transform": "Barrel",
+        "Positions": [
+          [0.12213125,0.0,6.0]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      },
+      "Crosshair": "@VehicleCommonMissile",
             "SoundInfo": {
               "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
               "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
@@ -198,7 +198,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.12213125,-0.5,0.5]
+          [0.12213125,-0.5,6.0]
         ],
         "Directions": [
           "Barrel"
@@ -229,7 +229,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.25920625,-0.00930625,0.23975625]
+          [-0.25920625,-0.00930625,0.53975625]
         ],
         "Directions": [
           "Barrel"
@@ -314,7 +314,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.16506875,-0.006325,0.5]
+          [-0.16506875,-0.006325,3.0]
         ],
         "Directions": [
           "Barrel"

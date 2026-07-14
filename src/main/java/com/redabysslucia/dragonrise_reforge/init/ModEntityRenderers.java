@@ -33,6 +33,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Rend
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ah1fRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AntiTopWireGuideMissileRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -150,6 +151,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
                 event.registerEntityRenderer(ModEntities.AASHELL.get(), AAshellRenderer::new);
                 event.registerEntityRenderer(ModEntities.AIRBOMB500KG.get(), AirBomb500kgRenderer::new);
+                event.registerEntityRenderer(ModEntities.ANTI_TOP_WIRE_GUIDE_MISSILE.get(), AntiTopWireGuideMissileRenderer::new);
                 event.registerEntityRenderer(ModEntities.L1A2.get(), L1A2Renderer::new);
                 event.registerEntityRenderer(ModEntities.F16C.get(), F16CRenderer::new);
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);

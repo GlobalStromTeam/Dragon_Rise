@@ -43,11 +43,11 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [-0.768,1.2,0.75],
+        "ZoomPosition": [-0.768,1.15,0.75],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [-0.768,-0.2,0.75],
+      "Position": [-0.768,-0.25,0.75],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -147,7 +147,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.12,-1.04055,1.3204]
+          [0.12,-0.97055,6.8204]
         ],
         "Directions": [
           "Barrel"

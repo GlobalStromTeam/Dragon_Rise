@@ -36,7 +36,7 @@
     },
     {
       "Size": [1.042,0.373,1.269],
-      "Position": [0.031,0.339,-1.634],
+      "Position": [0.031,0.339,0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -58,8 +58,8 @@
       "Transform": "Turret",
       "Position": [0.559,-0.756,0.374],
       "CanRotateHead": false,
-      "MinPitch": -10,
-      "MaxPitch": 35.5,
+      "MinPitch": -6,
+      "MaxPitch": 60,
       "Sensitivity": [0.53,0.71,0.9],
       "HasThermalImaging": true
     },
@@ -191,7 +191,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.007875, 0.0135125, 1.92135]
+          [0.007875, 0.0135125, 3.42135]
         ],
         "Directions": [
           "Barrel"
@@ -366,5 +366,5 @@
     [-1.356,0.1,2.734],
     [1.344,0.038,-2.609]
   ],
-  "InertiaRotateRate": 1.25
+  "InertiaRotateRate": 0.3
 }

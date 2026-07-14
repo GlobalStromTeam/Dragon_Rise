@@ -126,7 +126,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.062,-2.066,3.078]
+          [-0.062,-2.066,14.078]
         ],
         "Directions": [
           "Barrel"
@@ -155,7 +155,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.107,-2.042,1.708]
+          [0.107,-2.042,12.708]
         ],
         "Directions": [
           "Barrel"

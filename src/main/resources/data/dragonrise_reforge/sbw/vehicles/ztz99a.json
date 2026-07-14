@@ -186,7 +186,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.1,-0.4,0.5]
+          [-0.1,-0.4,6.0]
         ],
         "Directions": [
           "Barrel"
@@ -290,7 +290,8 @@
     "Increment": 0.02,
     "Decrement": 0.01,
     "SteeringSpeed": 0.1,
-    "EngineSoundVolume": 0.6
+    "EngineSoundVolume": 0.6,
+    "InertiaRotateRate": 0.8
   },
   "TurretPos": [0.0,1.875,0.1875],
   "BarrelPos": [0,0.05,0.6477125],
