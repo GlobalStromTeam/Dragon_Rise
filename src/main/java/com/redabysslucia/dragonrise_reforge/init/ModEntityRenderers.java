@@ -53,7 +53,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.VT4B.get(), VT4BRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTQ15.get(), ZTQ15Renderer::new);
                 event.registerEntityRenderer(ModEntities.CSK181.get(), CSK181Renderer::new);
-                event.registerEntityRenderer(ModEntities.HUMVEE.get(), HumveeRenderer::new);
+               // event.registerEntityRenderer(ModEntities.HUMVEE.get(), HumveeRenderer::new);
                 event.registerEntityRenderer(ModEntities.M1A2SEPV2.get(), M1A2SEPV2Renderer::new);
                 event.registerEntityRenderer(ModEntities.AMX56.get(), AMX56Renderer::new);
                 event.registerEntityRenderer(ModEntities.CV90.get(), CV90Renderer::new);
@@ -127,7 +127,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.T3485.get(), T3485Renderer::new);
                 event.registerEntityRenderer(ModEntities.PERSHING.get(), PershingRenderer::new);
                 event.registerEntityRenderer(ModEntities.AC130.get(), AC130Renderer::new);
-                event.registerEntityRenderer(ModEntities.TUNGUSKA.get(), TunguskaRenderer::new);
+                //event.registerEntityRenderer(ModEntities.TUNGUSKA.get(), TunguskaRenderer::new);
                 event.registerEntityRenderer(ModEntities.WLHGZU23.get(), WLHGZU23Renderer::new);
                 event.registerEntityRenderer(ModEntities.syy651.get(), syy651Renderer::new);
                 event.registerEntityRenderer(ModEntities.HJ8.get(), HJ8Renderer::new);
@@ -159,15 +159,15 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
-                event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
+                //event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
                 event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
                 event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);
-                event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);
-                event.registerEntityRenderer(ModEntities.M270.get(), M270Renderer::new);
+                //event.registerEntityRenderer(ModEntities.FLARAKPZ1.get(), Flarakpz1Renderer::new);
+                //event.registerEntityRenderer(ModEntities.M270.get(), M270Renderer::new);
                 event.registerEntityRenderer(ModEntities.M1A1HC.get(), M1a1hcRenderer::new);
                 event.registerEntityRenderer(ModEntities.DARKBEAR.get(), DarkbearRenderer::new);
-
-        event.registerEntityRenderer(ModEntities.HUMVEETOW.get(), HumveetowRenderer::new);        }
+                // event.registerEntityRenderer(ModEntities.HUMVEETOW.get(), HumveetowRenderer::new);
+        }
 
 
 
