@@ -21,8 +21,8 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         //中国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99AH.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
+//                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99AH.get()));
+//                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTQ15.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4B.get()));

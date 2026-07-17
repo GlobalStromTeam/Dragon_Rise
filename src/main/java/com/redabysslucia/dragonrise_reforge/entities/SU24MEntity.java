@@ -18,51 +18,28 @@ public class SU24MEntity extends FireLightVisionVehicle {
         super(type, world);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
-    }
-
-    private PlayState F14A(AnimationState<SU24MEntity> event) {
+    private PlayState A12(AnimationState<SU24MEntity> event) {
         if (this.onGround()) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.ground_idle"));
+                    ("animation"));
         } else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.fly_idle"));
+                    ("animation2"));
         }
     }
-
-    private PlayState F14B(AnimationState<SU24MEntity> event) {
-        if (this.sprintInputDown()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.sprinting_on"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.sprinting_off"));
-        }
-    }
-
-    private PlayState F14C(AnimationState<SU24MEntity> event) {
+    private PlayState A34(AnimationState<SU24MEntity> event) {
         if (this.getPower() >= 0.6) {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.highspeed_on"));
+                    ("add"));
         } else {
             return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.f14.highspeed_off"));
+                    ("add2"));
         }
     }
 
     @Override
     public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "f14a", 0, this::F14A));
-        data.add(new AnimationController<>(this, "f14b", 0, this::F14B));
-        data.add(new AnimationController<>(this, "f14c", 0, this::F14C));
-    }
-
-    @Override
-    public double getMouseSensitivity() {
-        return zoomVehicle ? 0.1 : 0.25;
+        data.add(new AnimationController<>(this, "A12", 0, this::A12));
+        data.add(new AnimationController<>(this, "A34", 0, this::A34));
     }
 }

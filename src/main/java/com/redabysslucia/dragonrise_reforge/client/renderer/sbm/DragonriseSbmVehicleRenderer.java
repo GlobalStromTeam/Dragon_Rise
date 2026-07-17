@@ -1,13 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.sbm;
 
-import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.github.mcmodderanchor.simplebedrockmodel.v1.client.renderer.BedrockModelRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.world.phys.Vec3;
-import com.redabysslucia.dragonrise_reforge.client.model.sbm.DragonriseModelReloadListener;
-import com.redabysslucia.dragonrise_reforge.client.model.sbm.DragonriseModelReloadListener.CachedVehicleModel;
+import com.redabysslucia.dragonrise_reforge.init.DragonriseBedrockLoader;
+import com.redabysslucia.dragonrise_reforge.init.DragonriseBedrockLoader.CachedVehicleModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -32,11 +31,8 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
     protected float turretYaw = 0f;
     protected float recoilShake = 0f;
 
-    protected final DragonriseModelReloadListener modelListener;
-
-    public DragonriseSbmVehicleRenderer(EntityRendererProvider.Context manager, DragonriseModelReloadListener modelListener) {
+    public DragonriseSbmVehicleRenderer(EntityRendererProvider.Context manager) {
         super(manager);
-        this.modelListener = modelListener;
     }
 
     @Override
@@ -49,10 +45,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         return null;
     }
 
-    public ResourceLocation getModelLocation(T entity) {
-        String[] parts = entity.getType().getDescriptionId().split("\\.");
-        return new ResourceLocation(parts[1], parts[2]);
-    }
+    public abstract ResourceLocation getModelLocation(T entity);
 
     public float renderScale() {
         return 1f;
@@ -60,7 +53,7 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
 
     @Override
     public void render(T entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
-        var cached = modelListener.getCachedModel(getModelLocation(entity));
+        var cached = DragonriseBedrockLoader.getCachedModel(getModelLocation(entity));
         if (cached == null) return;
 
         var model = cached.model;
@@ -211,7 +204,6 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         }
     }
 
-    // 履带辅助函数 - 子类可覆写
     protected float getTrackDistance() {
         return 0.5f;
     }
@@ -232,7 +224,6 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         return 360f * t;
     }
 
-    // 子类可覆写此方法实现自定义轴旋转
     protected void rotateVehicleAxis(T entity, PoseStack poseStack, float entityYaw, float partialTick) {
         var root = new Vec3(0.0, entity.getRotateOffsetHeight(), 0.0);
         poseStack.rotateAround(
@@ -249,7 +240,6 @@ public abstract class DragonriseSbmVehicleRenderer<T extends VehicleEntity> exte
         );
     }
 
-    // 子类覆写此方法实现自定义部件渲染
     protected void renderCustomPart(T entity, CachedVehicleModel cached, PoseStack poseStack, float entityYaw, float partialTick, MultiBufferSource buffer, int packedLight) {
     }
 }

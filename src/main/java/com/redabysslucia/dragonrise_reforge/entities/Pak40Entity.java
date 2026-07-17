@@ -30,13 +30,6 @@ public class Pak40Entity extends SyncCameraVehicle implements IVehicleBackground
                 }
                 return null;
         }
-
-        @Override
-        @OnlyIn(Dist.CLIENT)
-        public float getBackgroundAspectRatio() {
-                return 3713.0f / 2048.0f;
-        }
-
         @Override
         @OnlyIn(Dist.CLIENT)
         public boolean scaleByHeight() {

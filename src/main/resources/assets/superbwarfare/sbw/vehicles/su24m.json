@@ -1,0 +1,8 @@
+{
+  "ID": "dragonrise_reforge:su24m",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/su24m.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/su24m.png",
+    "Animation": "dragonrise_reforge:animations/su24m.animation.json"
+  }
+}

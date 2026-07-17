@@ -22,6 +22,7 @@ public class ModNetwork {
 
     public static void register() {
         playToServer(EngineChangeModeMessage.class, EngineChangeModeMessage::encode, EngineChangeModeMessage::decode, EngineChangeModeMessage::handler);
+        playToServer(new DisconnectLeashMessage(), DisconnectLeashMessage::handle);
     }
 
     public static <T> void playToClient(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

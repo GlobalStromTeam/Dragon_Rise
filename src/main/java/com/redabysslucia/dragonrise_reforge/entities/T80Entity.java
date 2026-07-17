@@ -94,7 +94,6 @@ public class T80Entity extends GeoVehicleEntity implements IVehicleBackground {
 		// 一号位是索引0，二号位是索引1
 		return seatIndex == 0 || seatIndex == 1;
 	}
-
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public float getBackgroundAlpha() {

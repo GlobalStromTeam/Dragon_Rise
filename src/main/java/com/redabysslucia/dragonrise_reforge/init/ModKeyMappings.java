@@ -17,7 +17,8 @@ import java.util.function.BiConsumer;
 public enum ModKeyMappings {
 
     // NIGHT_VISION("nightvisionkey",GLFW.GLFW_KEY_X,"Toggle Realistic Night Vision Mode"),
-    ENGINE_CHANGE_MODE_TOGGLE("enginechangekey",GLFW.GLFW_KEY_V,"Toggle Engine Change Mode")
+    ENGINE_CHANGE_MODE_TOGGLE("enginechangekey",GLFW.GLFW_KEY_V,"Toggle Engine Change Mode"),
+    DISCONNECT_LEASH("disconnectleashkey", GLFW.GLFW_KEY_C, "Disconnect Leash")
     ;
 
     private final String description;

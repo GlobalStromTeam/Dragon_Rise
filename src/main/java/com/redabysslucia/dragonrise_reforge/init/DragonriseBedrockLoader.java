@@ -1,23 +1,30 @@
-package com.redabysslucia.dragonrise_reforge.client.model.sbm;
+package com.redabysslucia.dragonrise_reforge.init;
 
 import com.github.mcmodderanchor.simplebedrockmodel.v1.common.model.BedrockBone;
 import com.github.mcmodderanchor.simplebedrockmodel.v1.common.model.BedrockModel;
 import com.github.mcmodderanchor.simplebedrockmodel.v1.common.resource.GsonUtil;
-import com.github.mcmodderanchor.simplebedrockmodel.v1.common.resource.pojo.BedrockModelPOJO;
-import com.google.gson.Gson;
+import com.github.mcmodderanchor.simplebedrockmodel.v1.event.RegisterBedrockModelEvent;
+import com.github.mcmodderanchor.simplebedrockmodel.v1.event.RegisterBedrockModelReloadListenerEvent;
+import com.github.mcmodderanchor.simplebedrockmodel.v1.resource.BedrockModelResourceSet;
+import com.github.mcmodderanchor.simplebedrockmodel.v1.resource.RawResourceLoader;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import net.minecraft.resources.FileToIdConverter;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.packs.resources.ResourceManager;
-import net.minecraft.server.packs.resources.SimplePreparableReloadListener;
-import net.minecraft.util.GsonHelper;
-import net.minecraft.util.profiling.ProfilerFiller;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
 import org.joml.Quaternionf;
 
+import java.io.*;
 import java.util.*;
 import java.util.regex.Pattern;
 
-public class DragonriseModelReloadListener extends SimplePreparableReloadListener<Map<ResourceLocation, BedrockModelPOJO>> {
+/**
+ * SBM模型加载器，仿照 SuperbWarfare 的 BedrockModelLoader 设计，
+ * 使用 SBM 内置的 RegisterBedrockModelEvent 注册模型并缓存骨骼分类信息。
+ */
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class DragonriseBedrockLoader {
 
     private static final Pattern WHEEL_PATTERN = Pattern.compile("^wheel(?<direction>[LR]).*$");
     private static final Pattern SHELL_PATTERN = Pattern.compile("^shell(?<id>\\d+)$");
@@ -25,18 +32,65 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
     private static final Pattern FLARE_PATTERN = Pattern.compile("^flare.*");
     private static final Pattern DOG_TAG_PATTERN = Pattern.compile("^.*_dogTag$");
 
-    private final String modelPath;
-    private final String animPath;
-    private final Gson gson;
+    private static final List<ResourceLocation> SBM_MODEL_PATHS = new ArrayList<>();
+    private static final Map<ResourceLocation, ResourceLocation> RENDER_KEY_TO_SBM = new HashMap<>();
+    private static final Map<ResourceLocation, CachedVehicleModel> CACHED = new HashMap<>();
 
-    public final Map<ResourceLocation, BedrockModel> models = new HashMap<>();
-    public final Map<ResourceLocation, CachedVehicleModel> cachedModels = new HashMap<>();
+    // 渲染时使用的 key（供 Renderer 调用） → SBM 模型注册路径
+    public static final ResourceLocation SU24_KEY = register("vehicle/su24", "su24");
+    public static final ResourceLocation SU24M_KEY = register("vehicle/su24m", "su24m");
+    public static final ResourceLocation ZTZ99A_KEY = register("vehicle/ztz99a", "ztz99a");
 
-    public DragonriseModelReloadListener(String modelPath, String animPath) {
-        this.modelPath = modelPath;
-        this.animPath = animPath;
-        this.gson = GsonUtil.CLIENT_GSON;
+    private static ResourceLocation register(String sbmPath, String renderKey) {
+        var sbmLoc = new ResourceLocation(Dragonrise_reforge.MODID, sbmPath + ".geo");
+        var renderLoc = new ResourceLocation(Dragonrise_reforge.MODID, renderKey);
+        SBM_MODEL_PATHS.add(sbmLoc);
+        RENDER_KEY_TO_SBM.put(renderLoc, sbmLoc);
+        return renderLoc;
     }
+
+    private static final RawResourceLoader COMMON_LOADER = new RawResourceLoader() {
+        @Override
+        public <T> T load(InputStream inputStream, Class<T> clazz) {
+            try (var reader = new InputStreamReader(inputStream)) {
+                return GsonUtil.CLIENT_GSON.fromJson(reader, clazz);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    };
+
+    @SubscribeEvent
+    public static void onRegisterBedrockModels(RegisterBedrockModelEvent event) {
+        // 去重后注册到 SBM
+        new HashSet<>(SBM_MODEL_PATHS).forEach(rl -> event.register(rl, COMMON_LOADER));
+    }
+
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public static void onModelLoaded(RegisterBedrockModelReloadListenerEvent event) {
+        event.register(resourceSet -> {
+            CACHED.clear();
+            RENDER_KEY_TO_SBM.forEach((renderKey, sbmKey) -> {
+                var model = resourceSet.get(sbmKey);
+                if (model != null) {
+                    CACHED.put(renderKey, new CachedVehicleModel(model));
+                }
+            });
+        });
+    }
+
+    @SuppressWarnings("unused")
+    public static BedrockModel getModel(ResourceLocation renderKey) {
+        var sbmKey = RENDER_KEY_TO_SBM.get(renderKey);
+        if (sbmKey == null) return null;
+        return BedrockModelResourceSet.getInstance().getModel(sbmKey);
+    }
+
+    public static CachedVehicleModel getCachedModel(ResourceLocation renderKey) {
+        return CACHED.get(renderKey);
+    }
+
+    // ==================== CachedVehicleModel ====================
 
     public static class BoneSnapshot {
         public final float x, y, z;
@@ -113,19 +167,12 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
                     boolean isRot = "Rot".equals(trackMatcher.group("type"));
                     boolean isL = "L".equals(trackMatcher.group("direction"));
                     int index = Integer.parseInt(trackMatcher.group("id"));
-
                     if (isRot) {
-                        if (isL) {
-                            leftTrackRotMap.put(index, bone);
-                        } else {
-                            rightTrackRotMap.put(index, bone);
-                        }
+                        if (isL) leftTrackRotMap.put(index, bone);
+                        else rightTrackRotMap.put(index, bone);
                     } else {
-                        if (isL) {
-                            leftTrackMoveMap.put(index, bone);
-                        } else {
-                            rightTrackMoveMap.put(index, bone);
-                        }
+                        if (isL) leftTrackMoveMap.put(index, bone);
+                        else rightTrackMoveMap.put(index, bone);
                     }
                 }
 
@@ -140,22 +187,16 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
                 }
             }
 
-            // 排序
             shellBones.addAll(shellMap.entrySet().stream()
-                    .sorted(Map.Entry.comparingByKey())
-                    .map(Map.Entry::getValue).toList());
+                    .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
             leftTrackMove.addAll(leftTrackMoveMap.entrySet().stream()
-                    .sorted(Map.Entry.comparingByKey())
-                    .map(Map.Entry::getValue).toList());
+                    .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
             leftTrackRot.addAll(leftTrackRotMap.entrySet().stream()
-                    .sorted(Map.Entry.comparingByKey())
-                    .map(Map.Entry::getValue).toList());
+                    .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
             rightTrackMove.addAll(rightTrackMoveMap.entrySet().stream()
-                    .sorted(Map.Entry.comparingByKey())
-                    .map(Map.Entry::getValue).toList());
+                    .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
             rightTrackRot.addAll(rightTrackRotMap.entrySet().stream()
-                    .sorted(Map.Entry.comparingByKey())
-                    .map(Map.Entry::getValue).toList());
+                    .sorted(Map.Entry.comparingByKey()).map(Map.Entry::getValue).toList());
         }
 
         private void snapshotBones(BedrockModel model) {
@@ -176,46 +217,5 @@ public class DragonriseModelReloadListener extends SimplePreparableReloadListene
         public BedrockBone getBone(String name) {
             return model.getBoneMap().get(name);
         }
-    }
-
-    @Override
-    protected Map<ResourceLocation, BedrockModelPOJO> prepare(ResourceManager resourceManager, ProfilerFiller profiler) {
-        var map = new HashMap<ResourceLocation, BedrockModelPOJO>();
-        var modelConverter = FileToIdConverter.json(this.modelPath);
-
-        for (var entry : modelConverter.listMatchingResources(resourceManager).entrySet()) {
-            ResourceLocation location = entry.getKey();
-            var resource = entry.getValue();
-            var id = modelConverter.fileToId(location);
-            id = new ResourceLocation(id.getNamespace(), id.getPath().replace(".geo", ""));
-
-            try (var reader = resource.openAsReader()) {
-                var pojo = GsonHelper.fromJson(this.gson, reader, BedrockModelPOJO.class);
-                var existed = map.put(id, pojo);
-                if (existed != null) {
-                    throw new IllegalStateException("Duplicate model resource " + resource);
-                }
-            } catch (Exception e) {
-                Dragonrise_reforge.LOGGER.error("Error while reading model {}", resource, e);
-            }
-        }
-
-        return map;
-    }
-
-    @Override
-    protected void apply(Map<ResourceLocation, BedrockModelPOJO> map, ResourceManager resourceManager, ProfilerFiller profiler) {
-        this.models.clear();
-        this.cachedModels.clear();
-
-        map.forEach((location, pojo) -> {
-            var model = new BedrockModel(pojo);
-            this.models.put(location, model);
-            this.cachedModels.put(location, new CachedVehicleModel(model));
-        });
-    }
-
-    public CachedVehicleModel getCachedModel(ResourceLocation path) {
-        return this.cachedModels.get(path);
     }
 }
