@@ -68,7 +68,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AKM.get()));
                         //俄罗斯 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
-                        //output.accept(ContainerBlockItem.createInstance(ModEntities.TUNGUSKA.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TUNGUSKA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
                         //俄罗斯 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
@@ -77,17 +77,18 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A1HC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
-                        //output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
-                        //output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
                         //美国 轻型车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
-                        //output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
                         //美国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
-                        //output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.UH60.get()));
                         //美国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
@@ -106,6 +107,7 @@ public class ModTabs {
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
                         //瑞典 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
@@ -172,13 +174,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97Q.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
-
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
-
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));                    }
-
-
-).build()
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
+                    }
+                    ).build()
     );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",

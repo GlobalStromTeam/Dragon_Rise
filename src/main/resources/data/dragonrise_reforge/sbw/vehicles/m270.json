@@ -201,7 +201,7 @@
   },
   "ThirdPersonCameraPos": [0,1,5],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/m270_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "APC",
   "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "HornSound": "superbwarfare:truck_horn",

@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Ztd05Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
 
 
@@ -381,13 +387,13 @@ public class ModEntities {
                     .sized(4.0f, 2.5f)
     );
 
-//    public static final RegistryObject<EntityType<HumveeEntity>> HUMVEE = register("humvee",
-//            EntityType.Builder.of(HumveeEntity::new, MobCategory.MISC)
-//                    .setTrackingRange(512)
-//                    .setUpdateInterval(2)
-//                    .fireImmune()
-//                    .sized(4.0f, 2.5f)
-//    );
+    public static final RegistryObject<EntityType<HumveeEntity>> HUMVEE = register("humvee",
+            EntityType.Builder.of(HumveeEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.5f)
+    );
 
     public static final RegistryObject<EntityType<CV90Entity>> CV90 = register("cv90",
             EntityType.Builder.of(CV90Entity::new, MobCategory.MISC)
@@ -696,13 +702,13 @@ public class ModEntities {
                     .sized(6.0f, 4.0f)
     );
 
-//    public static final RegistryObject<EntityType<TunguskaEntity>> TUNGUSKA = register("tunguska",
-//            EntityType.Builder.of(TunguskaEntity::new, MobCategory.MISC)
-//                    .setTrackingRange(512)
-//                    .setUpdateInterval(2)
-//                    .fireImmune()
-//                    .sized(4.0f, 2.7f)
-//    );
+    public static final RegistryObject<EntityType<TunguskaEntity>> TUNGUSKA = register("tunguska",
+            EntityType.Builder.of(TunguskaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
 
     public static final RegistryObject<EntityType<WLHGZU23Entity>> WLHGZU23 = register("wlhgzu23",
             EntityType.Builder.of(WLHGZU23Entity::new, MobCategory.MISC)
@@ -958,13 +964,13 @@ public class ModEntities {
                     .sized(0.6f, 2f)
     );
 
-//    public static final RegistryObject<EntityType<Ah1fEntity>> AH1F = register("ah1f",
-//            EntityType.Builder.of(Ah1fEntity::new, MobCategory.MISC)
-//                    .setTrackingRange(512)
-//                    .setUpdateInterval(2)
-//                    .fireImmune()
-//                    .sized(4.0f, 2.9f)
-//    );
+    public static final RegistryObject<EntityType<Ah1fEntity>> AH1F = register("ah1f",
+            EntityType.Builder.of(Ah1fEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
     public static final RegistryObject<EntityType<M113Entity>> M113 = register("m113",
             EntityType.Builder.of(M113Entity::new, MobCategory.MISC)
@@ -990,13 +996,13 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-//    public static final RegistryObject<EntityType<M270Entity>> M270 = register("m270",
-//            EntityType.Builder.of(M270Entity::new, MobCategory.MISC)
-//                    .setTrackingRange(512)
-//                    .setUpdateInterval(2)
-//                    .fireImmune()
-//                    .sized(4.0f, 2.9f)
-//    );
+    public static final RegistryObject<EntityType<M270Entity>> M270 = register("m270",
+            EntityType.Builder.of(M270Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
     public static final RegistryObject<EntityType<M1a1hcEntity>> M1A1HC = register("m1a1hc",
             EntityType.Builder.of(M1a1hcEntity::new, MobCategory.MISC)
@@ -1014,16 +1020,24 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-//    public static final RegistryObject<EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
-//            EntityType.Builder.of(HumveetowEntity::new, MobCategory.MISC)
-//                    .setTrackingRange(512)
-//                    .setUpdateInterval(2)
-//                    .fireImmune()
-//                    .sized(4.0f, 2.9f)
-//    );
+    public static final RegistryObject<EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
+            EntityType.Builder.of(HumveetowEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
     public static final RegistryObject<EntityType<Pak40Entity>> PAK40 = register("pak40",
             EntityType.Builder.of(Pak40Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Ztd05Entity>> ZTD05 = register("ztd05",
+            EntityType.Builder.of(Ztd05Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
