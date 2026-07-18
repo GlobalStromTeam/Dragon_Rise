@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Mixin(value = VehicleEntity.class, remap = false)
+@Mixin(value = VehicleEntity.class)
 public abstract class VehicleEntityLeadMixin {
 
     @Inject(method = "defineSynchedData", at = @At("RETURN"))

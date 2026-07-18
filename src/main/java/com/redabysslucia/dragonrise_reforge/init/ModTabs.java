@@ -223,6 +223,7 @@ public class ModTabs {
                         output.accept(ModItems.SPRAY_CAN.get());
                         output.accept(ModItems.KEVLAR.get());
                         output.accept(ModItems.PAK40_DEPLOYER.get());
+//                        output.accept(ModItems.GENERATOR_DEPLOYER.get());
                     }
                     ).build()
     );

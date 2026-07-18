@@ -544,6 +544,14 @@ public class ModEntities {
                     .sized(2.0f, 2.0f)
     );
 
+    public static final RegistryObject<EntityType<GeneratorEntity>> GENERATOR = register("generator",
+            EntityType.Builder.of(GeneratorEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(2.0f, 2.0f)
+    );
+
     public static final RegistryObject<EntityType<TOYOTASEIKIEntity>> TOYOTASEIKI = register("toyota_seiki",
             EntityType.Builder.of(com.redabysslucia.dragonrise_reforge.entities.TOYOTASEIKIEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1030,10 +1038,10 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Pak40Entity>> PAK40 = register("pak40",
             EntityType.Builder.of(Pak40Entity::new, MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(2)
+                    .setTrackingRange(1024)
+                    .setUpdateInterval(1)
                     .fireImmune()
-                    .sized(4.0f, 2.9f)
+                    .sized(3.0f, 3.0f)
     );
 
     public static final RegistryObject<EntityType<Ztd05Entity>> ZTD05 = register("ztd05",

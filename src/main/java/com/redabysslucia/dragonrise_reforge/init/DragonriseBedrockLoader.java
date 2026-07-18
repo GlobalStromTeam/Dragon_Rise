@@ -40,6 +40,7 @@ public class DragonriseBedrockLoader {
     public static final ResourceLocation SU24_KEY = register("vehicle/su24", "su24");
     public static final ResourceLocation SU24M_KEY = register("vehicle/su24m", "su24m");
     public static final ResourceLocation ZTZ99A_KEY = register("vehicle/ztz99a", "ztz99a");
+    public static final ResourceLocation GENERATOR_KEY = register("vehicle/generator", "generator");
 
     private static ResourceLocation register(String sbmPath, String renderKey) {
         var sbmLoc = new ResourceLocation(Dragonrise_reforge.MODID, sbmPath + ".geo");
