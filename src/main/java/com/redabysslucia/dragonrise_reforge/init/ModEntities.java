@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Zbd05Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Ztd05Entity;
 
 
@@ -1038,6 +1041,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Ztd05Entity>> ZTD05 = register("ztd05",
             EntityType.Builder.of(Ztd05Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Zbd05Entity>> ZBD05 = register("zbd05",
+            EntityType.Builder.of(Zbd05Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

@@ -1,34 +1,34 @@
 {
   "ID": "dragonrise_reforge:ztd05",
-  "MaxHealth": 300,
+  "MaxHealth": 270,
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [2.192,0.606,5.758],
-      "Position": [0.0,2.2,0.73]
+      "Size": [1.644,0.455,4.318],
+      "Position": [0.0,1.569,1.532]
     },
     {
-      "Size": [1.603,0.344,5.114],
-      "Position": [0.0,0.875,0.108]
+      "Size": [1.202,0.258,3.836],
+      "Position": [0.0,0.575,1.065]
     },
     {
-      "Size": [1.291,0.883,1.322],
-      "Position": [-0.75,2.014,3.172],
+      "Size": [0.968,0.662,0.991],
+      "Position": [-0.562,1.429,3.363],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.319,0.611,5.047],
-      "Position": [1.97,0.617,-0.084],
+      "Size": [0.239,0.458,3.785],
+      "Position": [1.478,0.382,0.921],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.319,0.611,5.078],
-      "Position": [-1.983,0.617,-0.053],
+      "Size": [0.239,0.458,3.809],
+      "Position": [-1.487,0.382,0.945],
       "Part": "WheelLeft"
     },
     {
-      "Size": [1.573,0.53,2.55],
-      "Position": [0.0,0.729,-1.541],
+      "Size": [1.18,0.397,1.913],
+      "Position": [0.0,0.547,-0.171],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -37,23 +37,21 @@
   "Seats": [
     {
       "HidePassenger": true,
-      "Transform": "Turret",
-      "Position": [0.947,-0.398,1.448],
-      "CanRotateHead": false,
-      "MinPitch": -6,
-      "MaxPitch": 60,
       "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Position": [0.73629375,-0.398225,0.6659],
         "Transform": "Turret",
-        "ZoomPosition": [0.73629375,-0.398225,0.6659],
+        "ZoomPosition": [0.7096875, 0.8466375, 1.08609375],
         "Direction": "Barrel"
       },
+      "Transform": "Turret",
+      "Position": [0.71,-0.701,1.086],
       "Weapons": [
         "Cannon",
         "MachineGun"
       ],
-      "Sensitivity": [0.53,0.71,0.9],
+      "CanRotateHead": false,
+      "MinPitch": -5,
+      "MaxPitch": 18,
+      "Sensitivity": [0.52,0.72,0.9],
       "HasThermalImaging": true
     },
     {
@@ -64,7 +62,7 @@
         "ZoomPosition": [0,0.1,0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.741,0.664,-0.739],
+      "Position": [-0.555,0.096,-0.554],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -152,7 +150,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.116,-3.296,3.016]
+          [0.087,-0.515,3.246]
         ],
         "Directions": [
           "Barrel"
@@ -242,7 +240,6 @@
       "SoundRadius": 16
     }
   },
-  "HUDColor": "0xFFC700",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0.052,
@@ -257,11 +254,12 @@
     "Decrement": 0.015,
     "SteeringSpeed": 0.1
   },
-  "TurretCustomPitch": 1.75,
-  "TurretPos": [-0.009,2.788,-1.323],
+  "TurretPos": [-0.007,2.01,-0.008],
   "TurretTurnSpeed": [6.125,3.295],
+  "PassengerWeaponStationPos": [-0.58,1.0963625,-0.0020625],
+  "PassengerWeaponStationBarrelPos": [0,0.35984375,0.05],
   "TurretPitchRange": [-6,60],
-  "BarrelPos": [0.004,3.572,2.714],
+  "BarrelPos": [0.0095375, 0.5252875, 1.02763125],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -329,10 +327,10 @@
   "EngineSound": "superbwarfare:bmp_2_engine",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.344,0.038,3.422],
-    [-1.356,0.038,4.078],
-    [-1.356,0.038,-3.953],
-    [1.344,0.038,-3.984]
+    [1.008,-0.053,3.551],
+    [-1.017,-0.053,4.043],
+    [-1.017,-0.053,-1.98],
+    [1.008,-0.053,-2.004]
   ],
   "InertiaRotateRate": 1
 }

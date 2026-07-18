@@ -16,7 +16,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class Ztd05Entity extends GeoVehicleEntity {
+public class Zbd05Entity extends GeoVehicleEntity {
 
         private static final EntityDataAccessor<Integer> FLAP_STATE =
                 new EntityDataAccessor<>(100, EntityDataSerializers.INT);
@@ -24,7 +24,7 @@ public class Ztd05Entity extends GeoVehicleEntity {
                 new EntityDataAccessor<>(101, EntityDataSerializers.INT);
         private int lastFlapCheckTick = 0;
 
-        public Ztd05Entity(EntityType<Ztd05Entity> type, Level world) {
+        public Zbd05Entity(EntityType<Zbd05Entity> type, Level world) {
                 super(type, world);
         }
 
@@ -84,7 +84,7 @@ public class Ztd05Entity extends GeoVehicleEntity {
                 }
         }
 
-        private PlayState flapPredicate(AnimationState<Ztd05Entity> event) {
+        private PlayState flapPredicate(AnimationState<Zbd05Entity> event) {
                 int state = entityData.get(FLAP_STATE);
                 // 展开/保持展开
                 if (state == 1 || state == 2) {

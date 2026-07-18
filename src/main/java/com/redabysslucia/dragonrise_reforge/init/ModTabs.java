@@ -21,13 +21,14 @@ public class ModTabs {
                     .displayItems((param, output) -> {
                         //中国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99A.get()));
-//                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99AH.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99AH.get()));
 //                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ99BH.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTQ15.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.VT4B.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ59A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TYPE100.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTD05.get()));
                         //中国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
@@ -175,8 +176,10 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
-                    }
-                    ).build()
+
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));                    }
+
+                                           ).build()
     );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",

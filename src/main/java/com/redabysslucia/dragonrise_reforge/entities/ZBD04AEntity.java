@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
+import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -9,6 +10,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.AnimationState;
@@ -18,8 +20,10 @@ import software.bernie.geckolib.core.object.PlayState;
 @SuppressWarnings("removal")
 public class ZBD04AEntity extends GeoVehicleEntity {
 
-        private static final EntityDataAccessor<Integer> FLAP_STATE = SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
-        private static final EntityDataAccessor<Integer> FLAP_TIMER = SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
+        private static final EntityDataAccessor<Integer> FLAP_STATE =
+                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
+        private static final EntityDataAccessor<Integer> FLAP_TIMER =
+                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
         private int lastFlapCheckTick = 0;
 
         public ZBD04AEntity(EntityType<ZBD04AEntity> type, Level world) {
@@ -34,32 +38,46 @@ public class ZBD04AEntity extends GeoVehicleEntity {
         }
 
         @Override
+        public void travel() {
+                super.travel();
+                if (!level().isClientSide && isInFluidType() && !onGround()) {
+                        float power = entityData.get(VehicleEntity.POWER);
+                        Vec3 viewVec = getViewVector(1f).normalize();
+                        setDeltaMovement(getDeltaMovement().add(viewVec.scale(power * 0.004)));
+                }
+        }
+
+        @Override
         public void tick() {
                 super.tick();
-                if (!level().isClientSide && tickCount - lastFlapCheckTick >= 10) {
-                        lastFlapCheckTick = tickCount;
-                        boolean inWater = this.isInWater();
-                        int state = entityData.get(FLAP_STATE);
+                if (level().isClientSide) return;
 
-                        if (inWater && state == 0) {
-                                entityData.set(FLAP_STATE, 1);
-                                entityData.set(FLAP_TIMER, 20);
-                        } else if (!inWater && (state == 1 || state == 2)) {
-                                entityData.set(FLAP_STATE, 3);
-                                entityData.set(FLAP_TIMER, 20);
+                // 动画计时器每 tick 递减
+                int state = entityData.get(FLAP_STATE);
+                if (state == 1 || state == 3) {
+                        int timer = entityData.get(FLAP_TIMER) - 1;
+                        entityData.set(FLAP_TIMER, timer);
+                        if (timer <= 0) {
+                                entityData.set(FLAP_STATE, state == 1 ? 2 : 0);
                         }
+                }
 
-                        int timer = entityData.get(FLAP_TIMER);
-                        if (timer > 0) {
-                                entityData.set(FLAP_TIMER, timer - 1);
-                                if (timer == 1) {
-                                        if (state == 1) {
-                                                entityData.set(FLAP_STATE, 2);
-                                        } else if (state == 3) {
-                                                entityData.set(FLAP_STATE, 0);
-                                        }
-                                }
-                        }
+                // 每 10 tick 检测离地
+                if (tickCount - lastFlapCheckTick < 10) return;
+                lastFlapCheckTick = tickCount;
+
+                state = entityData.get(FLAP_STATE);
+                boolean inWater = this.isInWater();
+
+                // 在水中：展开防浪板
+                if (inWater && state == 0) {
+                        entityData.set(FLAP_STATE, 1);
+                        entityData.set(FLAP_TIMER, 20);
+                }
+                // 离开水：关闭防浪板
+                else if (!inWater && (state == 1 || state == 2)) {
+                        entityData.set(FLAP_STATE, 3);
+                        entityData.set(FLAP_TIMER, 20);
                 }
         }
 

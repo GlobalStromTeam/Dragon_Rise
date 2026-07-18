@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
@@ -25,11 +26,11 @@ import java.util.UUID;
 public class ZBL08Entity extends GeoVehicleEntity {
 
         // 防浪板状态: 0=关闭, 1=展开中, 2=已展开, 3=关闭中
-        public static final EntityDataAccessor<Integer> FLAP_STATE =
-                SynchedEntityData.defineId(ZBL08Entity.class, EntityDataSerializers.INT);
+        private static final EntityDataAccessor<Integer> FLAP_STATE =
+                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
         // 动画计时器
-        public static final EntityDataAccessor<Integer> FLAP_TIMER =
-                SynchedEntityData.defineId(ZBL08Entity.class, EntityDataSerializers.INT);
+        private static final EntityDataAccessor<Integer> FLAP_TIMER =
+                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
 
         private int lastShootWarningTick = 0;
 
@@ -99,6 +100,16 @@ public class ZBL08Entity extends GeoVehicleEntity {
                 super.vehicleShoot(living, uuid, targetPos);
         }
 
+        @Override
+        public void travel() {
+                super.travel();
+                if (!level().isClientSide && isInFluidType() && !onGround()) {
+                        float power = entityData.get(VehicleEntity.POWER);
+                        Vec3 viewVec = getViewVector(1f).normalize();
+                        setDeltaMovement(getDeltaMovement().add(viewVec.scale(power * 0.004)));
+                }
+        }
+
         private int waterCheckCooldown = 0;
 
         @Override
@@ -125,7 +136,7 @@ public class ZBL08Entity extends GeoVehicleEntity {
                 state = entityData.get(FLAP_STATE);
                 boolean inWater = this.isInWater();
 
-                // 进入水中：展开防浪板 (flbon 1.125s ≈ 23 tick)
+                // 在水中：展开防浪板 (flbon 1.125s ≈ 23 tick)
                 if (inWater && state == 0) {
                         entityData.set(FLAP_STATE, 1);
                         entityData.set(FLAP_TIMER, 23);
