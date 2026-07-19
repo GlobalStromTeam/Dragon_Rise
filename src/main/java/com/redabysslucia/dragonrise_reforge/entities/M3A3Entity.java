@@ -4,7 +4,6 @@ import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import lombok.val;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -20,6 +19,8 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @SuppressWarnings("removal")
@@ -47,18 +48,34 @@ public class M3A3Entity extends GeoVehicleEntity {
                 .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
     }
 
-    private int lastMessageTick = -100;
+    private final Map<UUID, Integer> lastMessageTick = new HashMap<>();
 
     private boolean isMoving() {
         Vec3 motion = this.getDeltaMovement();
         return Math.abs(motion.x) > 0.01 || Math.abs(motion.z) > 0.01;
     }
 
+    /**
+     * 遍历所有乘客，检查是否有任意乘客在任意座位选择了导弹武器
+     */
+    private boolean anyPassengerHasMissile() {
+        for (var passenger : getPassengers()) {
+            int seatIndex = getSeatIndex(passenger);
+            if (seatIndex >= 0 && getSelectedWeapon(seatIndex) == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void showClientMessage(LivingEntity living, String key) {
         if (level().isClientSide && living instanceof Player player) {
-            if (ClientEventHandler.holdFireVehicle && tickCount - lastMessageTick > 20) {
-                lastMessageTick = tickCount;
-                player.displayClientMessage(Component.translatable(key), true);
+            if (ClientEventHandler.holdFireVehicle) {
+                int lastTick = lastMessageTick.getOrDefault(player.getUUID(), -100);
+                if (tickCount - lastTick > 20) {
+                    lastMessageTick.put(player.getUUID(), tickCount);
+                    player.displayClientMessage(Component.translatable(key), true);
+                }
             }
         }
     }
@@ -89,32 +106,30 @@ public class M3A3Entity extends GeoVehicleEntity {
         if (level().isClientSide) return;
 
         int currentState = entityData.get(MISSILE_STATE);
-        var driver = getFirstPassenger();
-        int seatIndex = driver != null ? getSeatIndex(driver) : -1;
-        int selectedWeapon = seatIndex >= 0 ? getSelectedWeapon(seatIndex) : -1;
-        boolean isMissileSelected = selectedWeapon == 1;
+        boolean anyMissileSelected = anyPassengerHasMissile();
         boolean moving = isMoving();
 
         if (moving) {
-            if (currentState == 2) {
-                entityData.set(MISSILE_STATE, 3);
-                entityData.set(DEPLOY_TIMER, 30);
-            } else if (currentState == 1) {
+            // 移动时强制收起
+            if (currentState == 2 || currentState == 1) {
                 entityData.set(MISSILE_STATE, 3);
                 entityData.set(DEPLOY_TIMER, 30);
             }
-        } else if (isMissileSelected) {
+        } else if (anyMissileSelected) {
+            // 停止且有任意乘客选择导弹时展开
             if (currentState == 0) {
                 entityData.set(MISSILE_STATE, 1);
                 entityData.set(DEPLOY_TIMER, 30);
             }
         } else {
-            if (currentState == 2) {
+            // 无人选择导弹时收起
+            if (currentState == 2 || currentState == 1) {
                 entityData.set(MISSILE_STATE, 3);
                 entityData.set(DEPLOY_TIMER, 30);
             }
         }
 
+        // 动画计时
         if (currentState == 1 || currentState == 3) {
             int timer = entityData.get(DEPLOY_TIMER) - 1;
             entityData.set(DEPLOY_TIMER, timer);
@@ -162,17 +177,19 @@ public class M3A3Entity extends GeoVehicleEntity {
     }
 
     public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
-        val driver = vehicle.getFirstPassenger();
-        if (driver == null) return false;
+        for (var passenger : vehicle.getPassengers()) {
+            int seatIndex = vehicle.getSeatIndex(passenger);
+            if (seatIndex < 0) continue;
 
-        val seatIndex = vehicle.getSeatIndex(driver);
-        if (seatIndex < 0) return false;
+            int currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
+            if (currentWeaponIndex != missileWeaponIndex) continue;
 
-        val currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
-        if (currentWeaponIndex != missileWeaponIndex) return false;
-
-        val gunData = vehicle.getGunData(seatIndex);
-        return gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0);
+            var gunData = vehicle.getGunData(seatIndex);
+            if (gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private PlayState MissileOn(AnimationState<M3A3Entity> event) {

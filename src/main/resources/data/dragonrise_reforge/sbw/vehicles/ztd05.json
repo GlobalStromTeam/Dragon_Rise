@@ -28,7 +28,7 @@
     },
     {
       "Size": [1.18,0.397,1.913],
-      "Position": [0.0,0.547,-0.171],
+      "Position": [0.007,0.485,-0.163],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -39,11 +39,11 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Turret",
-        "ZoomPosition": [0.7096875, 0.8466375, 1.08609375],
+        "ZoomPosition": [0.7096875,0.8466375,1.58609375],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.71,-0.701,1.086],
+      "Position": [0.71,-0.763,1.086],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -56,13 +56,13 @@
     },
     {
       "HidePassenger": true,
-      "Transform": "Turret",
+      "Transform": "WeaponStationBarrel",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
         "ZoomPosition": [0,0.1,0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [-0.555,0.096,-0.554],
+      "Position": [-0.562,2.106,-0.562],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -150,7 +150,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.087,-0.515,3.246]
+          [0.087,-0.505,3.246]
         ],
         "Directions": [
           "Barrel"
@@ -254,12 +254,12 @@
     "Decrement": 0.015,
     "SteeringSpeed": 0.1
   },
-  "TurretPos": [-0.007,2.01,-0.008],
+  "TurretPos": [-0.007,2.072,-0.008],
   "TurretTurnSpeed": [6.125,3.295],
-  "PassengerWeaponStationPos": [-0.58,1.0963625,-0.0020625],
+  "PassengerWeaponStationPos": [-0.6397875,1.25601875,0.10175],
   "PassengerWeaponStationBarrelPos": [0,0.35984375,0.05],
   "TurretPitchRange": [-6,60],
-  "BarrelPos": [0.0095375, 0.5252875, 1.02763125],
+  "BarrelPos": [0.01,0.525,1.028],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,

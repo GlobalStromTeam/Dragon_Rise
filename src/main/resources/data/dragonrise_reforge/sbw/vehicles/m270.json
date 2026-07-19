@@ -5,7 +5,7 @@
   "TurretPos": [0.0,1.188,-1.875],
   "TurretTurnSpeed": [12,11.5],
   "TurretPitchRange": [-3,45],
-  "BarrelPos": [0.0,1.181,-3.187],
+  "BarrelPos": [0.0,-0.007,-1.312],
   "TurretControllerIndex": 0,
   "OBB": [
     {
@@ -33,7 +33,7 @@
     },
     {
       "Size": [1.564,0.67,1.925],
-      "Position": [0.031,0.942,-1.431],
+      "Position": [0.031,0.942,0.444],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"

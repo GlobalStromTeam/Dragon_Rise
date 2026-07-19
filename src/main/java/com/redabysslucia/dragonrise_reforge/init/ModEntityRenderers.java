@@ -1,18 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zbd05Renderer;
-
-
-import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Pak40Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M10BookerRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.R9M133Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ah1fRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AntiTopWireGuideMissileRenderer;
@@ -149,8 +143,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.M1A1HC.get(), M1a1hcRenderer::new);
                 event.registerEntityRenderer(ModEntities.DARKBEAR.get(), DarkbearRenderer::new);
                 event.registerEntityRenderer(ModEntities.HUMVEETOW.get(), HumveetowRenderer::new);
-                event.registerEntityRenderer(ModEntities.ZBL08.get(), ZBL08Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZTD05.get(), Ztd05Renderer::new);
-
-        event.registerEntityRenderer(ModEntities.ZBD05.get(), Zbd05Renderer::new);        }
+                event.registerEntityRenderer(ModEntities.ZBD05.get(), Zbd05Renderer::new);
+                event.registerEntityRenderer(ModEntities.ZSL10.get(), Zsl10Renderer::new);
+        }
 }

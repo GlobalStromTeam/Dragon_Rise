@@ -2899,13 +2899,13 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStationPitch",
+					"name": "passengerWeaponStationYaw",
 					"parent": "passengerWeaponStation",
 					"pivot": [-10.34162, 53.25015, -1.50047]
 				},
 				{
-					"name": "passengerWeaponStationYaw",
-					"parent": "passengerWeaponStationPitch",
+					"name": "passengerWeaponStationPitch",
+					"parent": "passengerWeaponStationYaw",
 					"pivot": [-10.34162, 53.25015, -1.50047],
 					"cubes": [
 						{
@@ -3125,16 +3125,6 @@
 							}
 						}
 					]
-				},
-				{
-					"name": "turret2",
-					"parent": "base",
-					"pivot": [-2.145, 32.15375, 2.6775]
-				},
-				{
-					"name": "mainturret2",
-					"parent": "turret2",
-					"pivot": [-2.75358, -4.36105, -33.07657]
 				},
 				{
 					"name": "tarck",

@@ -159,25 +159,26 @@ public class TJGCEntity extends VariableEngineVehicle {
     }
 
     public boolean shouldShowMissileOn(VehicleEntity vehicle, int... missileWeaponIndices) {
-        val driver = vehicle.getFirstPassenger();
-        if (driver == null) return false;
+        for (var passenger : vehicle.getPassengers()) {
+            int seatIndex = vehicle.getSeatIndex(passenger);
+            if (seatIndex < 0) continue;
 
-        val seatIndex = vehicle.getSeatIndex(driver);
-        if (seatIndex < 0) return false;
+            int currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
+            boolean matches = false;
+            for (int index : missileWeaponIndices) {
+                if (currentWeaponIndex == index) {
+                    matches = true;
+                    break;
+                }
+            }
+            if (!matches) continue;
 
-        val currentWeaponIndex = vehicle.getSelectedWeapon(seatIndex);
-
-        boolean matches = false;
-        for (int index : missileWeaponIndices) {
-            if (currentWeaponIndex == index) {
-                matches = true;
-                break;
+            var gunData = vehicle.getGunData(seatIndex);
+            if (gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0)) {
+                return true;
             }
         }
-        if (!matches) return false;
-
-        val gunData = vehicle.getGunData(seatIndex);
-        return gunData != null && (gunData.ammo.get() > 0 || gunData.backupAmmoCount.get() > 0);
+        return false;
     }
 
     private PlayState MissileOn(AnimationState<TJGCEntity> event) {

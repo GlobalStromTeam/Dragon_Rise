@@ -26,14 +26,14 @@
     },
     {
       "Size": [0.73,0.405,0.894],
-      "Position": [-0.031,-0.304,-1.072],
+      "Position": [-0.037,-0.304,-0.065],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     }
   ],
   "TurretPos": [0.006,2.759,-1.007],
-  "BarrelPos": [-1.009,3.033,-1.046],
+  "BarrelPos": [-1.015,0.274,-0.039],
   "Seats": [
     {
       "HidePassenger": true,

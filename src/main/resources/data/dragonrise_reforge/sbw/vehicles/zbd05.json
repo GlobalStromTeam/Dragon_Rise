@@ -28,7 +28,7 @@
     },
     {
       "Size": [0.993,0.335,1.288],
-      "Position": [-0.111,0.422,0.194],
+      "Position": [-0.103,0.422,-0.162],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -39,7 +39,7 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Turret",
-        "ZoomPosition": [0.45, 0.909375, 0.59921875],
+        "ZoomPosition": [0.45,0.909375,0.59921875],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -183,7 +183,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.0107125, 0.0120125, 2.39724375]
+          [-0.049,0.012,3.486]
         ],
         "Directions": [
           "Barrel"
@@ -290,7 +290,7 @@
   "TurretPos": [-0.008,2.163,0.356],
   "TurretTurnSpeed": [6.125,3.295],
   "TurretPitchRange": [-6,60],
-  "BarrelPos": [-0.0515625, 0.3890625, 0.7328125],
+  "BarrelPos": [-0.051,0.389,0.733],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,

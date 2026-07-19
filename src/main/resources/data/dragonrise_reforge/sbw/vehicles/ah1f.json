@@ -5,7 +5,7 @@
   "TurretPos": [0.015,0.793,3.595],
   "TurretTurnSpeed": [15,15],
   "TurretPitchRange": [-40,10],
-  "BarrelPos": [0.0,1.038,3.594],
+  "BarrelPos": [-0.015,0.245,-0.001],
   "TurretControllerIndex": 1,
   "OBB": [
     {
@@ -121,7 +121,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.0,-1.12,5.53]
+          [0.0,-0.327,5.53]
         ],
         "Directions": [
           "Barrel"

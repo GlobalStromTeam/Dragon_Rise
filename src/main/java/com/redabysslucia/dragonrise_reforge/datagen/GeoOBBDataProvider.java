@@ -70,10 +70,10 @@ public class GeoOBBDataProvider implements DataProvider {
 
             JsonArray turretPos = hasSeatsPos1 ? extractTurretPos(geoJson) : null;
             double turretPivotY = turretPos != null ? turretPos.get(1).getAsDouble() * 16.0 : 0.0;
-            JsonArray barrelPos = hasSeatsPos1 ? extractBarrelPos(geoJson) : null;
+            JsonArray barrelPos = hasSeatsPos1 ? extractBarrelPos(geoJson, turretPos) : null;
             double barrelPosY = barrelPos != null ? barrelPos.get(1).getAsDouble() : 0.0;
             double barrelPivotY = barrelPosY * 16.0;
-            JsonArray obbList = extractOBBList(geoJson, turretPivotY);
+            JsonArray obbList = extractOBBList(geoJson, turretPos);
             Map<String, JsonArray> weaponPositions = extractWeaponPositions(geoJson, barrelPivotY, turretPivotY);
             Map<Integer, JsonArray> seatsPositions = extractSeatsPositions(geoJson);
             Map<Integer, JsonArray> seatsCameraPositions = extractSeatsCameraPositions(geoJson);
@@ -320,8 +320,13 @@ public class GeoOBBDataProvider implements DataProvider {
         return sb.toString();
     }
 
-    private JsonArray extractOBBList(JsonObject geoJson, double turretPivotY) {
+    private JsonArray extractOBBList(JsonObject geoJson, JsonArray turretPos) {
         JsonArray obbList = new JsonArray();
+
+        // 计算炮塔枢轴在Blockbench中的原始坐标（用于TurretObb子骨骼的相对位置计算）
+        double turretPivotX = turretPos != null ? turretPos.get(0).getAsDouble() * 16.0 : 0.0;
+        double turretPivotY = turretPos != null ? turretPos.get(1).getAsDouble() * 16.0 : 0.0;
+        double turretPivotZ = turretPos != null ? -turretPos.get(2).getAsDouble() * 16.0 : 0.0;
 
         if (!geoJson.has("minecraft:geometry")) {
             return obbList;
@@ -353,7 +358,7 @@ public class GeoOBBDataProvider implements DataProvider {
                 // 提取OBB尺寸
                 obbEntry.add("Size", extractSize(bone));
                 // 提取OBB位置（带有炮塔偏移处理）
-                obbEntry.add("Position", extractOBBPosition(bone, turretPivotY, boneName));
+                obbEntry.add("Position", extractOBBPosition(bone, turretPivotX, turretPivotY, turretPivotZ, boneName));
 
                 // 根据骨骼名称设置特殊部件属性
                 if (boneName.equals("MainEngineObb")) {
@@ -378,23 +383,27 @@ public class GeoOBBDataProvider implements DataProvider {
         return obbList;
     }
 
-    private JsonArray extractOBBPosition(JsonObject bone, double turretPivotY, String boneName) {
+    private JsonArray extractOBBPosition(JsonObject bone, double turretPivotX, double turretPivotY, double turretPivotZ, String boneName) {
         JsonArray position = new JsonArray();
         if (bone.has("pivot")) {
             JsonArray pivot = bone.getAsJsonArray("pivot");
+            double xValue = pivot.get(0).getAsDouble();
             double yValue = pivot.get(1).getAsDouble();
+            double zValue = pivot.get(2).getAsDouble();
 
-            // 如果是炮塔相关的OBB（除了主炮塔OBB本身），需要减去炮塔枢轴的Y值进行偏移
+            // 如果是炮塔相关的OBB（除了主炮塔OBB本身），需要减去炮塔枢轴进行偏移
             if (boneName.startsWith("TurretObb") && !boneName.equals("TurretObb")) {
+                xValue = xValue - turretPivotX;
                 yValue = yValue - turretPivotY;
+                zValue = zValue - turretPivotZ;
             }
 
             // X轴：直接除以16转换单位
-            position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+            position.add(round(xValue / 16.0, 3));
             // Y轴：根据需要处理后除以16转换单位
             position.add(round(yValue / 16.0, 3));
             // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
-            position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+            position.add(round(-zValue / 16.0, 3));
         }
         return position;
     }
@@ -434,7 +443,12 @@ public class GeoOBBDataProvider implements DataProvider {
         return null;
     }
 
-    private JsonArray extractBarrelPos(JsonObject geoJson) {
+    /**
+     * 提取炮管位置（相对于炮塔，与SuperbWarfare的BarrelPos语义一致）
+     * @param geoJson 模型JSON
+     * @param turretPos 炮塔位置（MC坐标，extractTurretPos的返回值）
+     */
+    private JsonArray extractBarrelPos(JsonObject geoJson, JsonArray turretPos) {
         if (!geoJson.has("minecraft:geometry")) {
             return null;
         }
@@ -455,12 +469,13 @@ public class GeoOBBDataProvider implements DataProvider {
                 if (boneName.equalsIgnoreCase("barrel") && bone.has("pivot")) {
                     JsonArray pivot = bone.getAsJsonArray("pivot");
                     JsonArray position = new JsonArray();
-                    // X轴：直接除以16转换单位
-                    position.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
-                    // Y轴：直接除以16转换单位
-                    position.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
-                    // Z轴：除以16转换单位后取反（Minecraft坐标系差异）
-                    position.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                    // 计算相对于炮塔的位置（pivot是Blockbench绝对坐标，需减去turret pivot）
+                    double turretX = turretPos != null ? turretPos.get(0).getAsDouble() * 16.0 : 0.0;
+                    double turretY = turretPos != null ? turretPos.get(1).getAsDouble() * 16.0 : 0.0;
+                    double turretZ = turretPos != null ? -turretPos.get(2).getAsDouble() * 16.0 : 0.0;
+                    position.add(round((pivot.get(0).getAsDouble() - turretX) / 16.0, 3));
+                    position.add(round((pivot.get(1).getAsDouble() - turretY) / 16.0, 3));
+                    position.add(round((-pivot.get(2).getAsDouble() + turretZ) / 16.0, 3));
                     return position;
                 }
             }
