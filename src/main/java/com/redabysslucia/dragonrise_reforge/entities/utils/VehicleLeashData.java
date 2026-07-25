@@ -3,7 +3,6 @@ package com.redabysslucia.dragonrise_reforge.entities.utils;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -16,12 +15,15 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class VehicleLeashData {
 
+    // 固定高位 id，避免 defineId(VehicleEntity.class, …) 与 SBW VehicleEntity
+    // 的同步数据 id 冲突（会在创造栏 ContainerItemDecorator 临时 new 实体时
+    // 抛出 Duplicate id value for 61!）。100/101 已被多车防浪板占用。
     public static final EntityDataAccessor<Optional<UUID>> LEASH_HOLDER =
-            SynchedEntityData.defineId(VehicleEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+            new EntityDataAccessor<>(200, EntityDataSerializers.OPTIONAL_UUID);
 
     /** 是否为铁链连接（不会断 + 双向拉力） */
     public static final EntityDataAccessor<Boolean> CHAIN_LEASHED =
-            SynchedEntityData.defineId(VehicleEntity.class, EntityDataSerializers.BOOLEAN);
+            new EntityDataAccessor<>(201, EntityDataSerializers.BOOLEAN);
 
     public static final ResourceLocation LEAD_TEXTURE =
             new ResourceLocation("minecraft", "textures/entity/lead_knot.png");

@@ -1,8 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
-import net.minecraft.resources.ResourceLocation;
+import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -12,7 +11,7 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class BMP3Entity extends GeoVehicleEntity {
+public class BMP3Entity extends IndirectFireVehicleBase {
 
         public BMP3Entity(EntityType<BMP3Entity> type, Level world) {
                 super(type, world);

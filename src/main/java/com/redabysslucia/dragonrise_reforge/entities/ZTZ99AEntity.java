@@ -164,11 +164,11 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
         if (player == null) return null;
 
         var seatIndex = getSeatIndex(player);
-        // 一号位背景
-        if (seatIndex == 0) {
+        // 圆形炮镜跟随 JSON 中配置的主炮控制位
+        if (seatIndex == getTurretControllerIndex()) {
             return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos3.png");
         }
-        // 二号位背景
+        // 二号位保留原有矩形观察窗；若同时是主炮控制位，优先显示圆形炮镜
         else if (seatIndex == 1) {
             return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
         }
@@ -178,14 +178,12 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
     @Override
     @OnlyIn(Dist.CLIENT)
     public boolean shouldRenderBackground() {
-        // 只在一号位和二号位显示背景
         var mc = net.minecraft.client.Minecraft.getInstance();
         var player = mc.player;
         if (player == null) return false;
 
         var seatIndex = getSeatIndex(player);
-        // 一号位是索引0，二号位是索引1
-        return seatIndex == 0 || seatIndex == 1;
+        return seatIndex == getTurretControllerIndex() || seatIndex == 1;
     }
     @Override
     @OnlyIn(Dist.CLIENT)
