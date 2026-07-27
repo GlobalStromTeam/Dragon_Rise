@@ -6,7 +6,10 @@
   "refmap": "dragonrise_reforge.refmap.json",
   "mixins": [
     "VehicleEntityLeadMixin",
-    "FireControlTurretAimMixin"
+    "FireControlTurretAimMixin",
+    "DefaultVehicleDataMixin",
+    "VehicleContainerTypeMixin",
+    "SmallVehicleContainerMenuMixin"
   ],
   "client": [
     "GameRendererMixin",
