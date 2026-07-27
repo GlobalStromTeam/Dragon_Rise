@@ -303,8 +303,14 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
                 if (gunData == null) continue;
                 if (gunData.hasInfiniteBackupAmmo(vehicle)) continue;
 
-                boolean needs = checkWeaponNeedsSupply(vehicle, gunData, config, vehicleRule);
-                if (needs) return true;
+                List<AmmoConsumer> consumers = gunData.get(GunProp.AMMO_CONSUMER);
+                if (consumers == null || consumers.isEmpty()) continue;
+
+                for (AmmoConsumer consumer : consumers) {
+                    if (checkWeaponNeedsSupply(vehicle, gunData, config, vehicleRule, consumer)) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
@@ -364,24 +370,38 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     }
 
     private boolean checkWeaponNeedsSupply(GeoVehicleEntity vehicle, GunData gunData,
-                                            SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule) {
-        String ammoKey = getAmmoKey(gunData);
+                                            SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
+                                            AmmoConsumer consumer) {
+        String ammoKey = getAmmoKey(consumer);
+        if (ammoKey.isEmpty()) return false;
 
         if (config.isPackageBasedMode(vehicleRule, ammoKey)) {
-            return true;
+            SupplyStationConfig.AmmoTypeRule ammoRule = config.getAmmoRule(vehicleRule, ammoKey);
+            String customItemId = ammoRule.customItem;
+            if (customItemId == null || customItemId.isEmpty()) return false;
+            ResourceLocation itemLocation = ResourceLocation.tryParse(customItemId);
+            if (itemLocation == null) return false;
+            Item customItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+            if (customItem == null) return false;
+            int current = countBonusItem(vehicle, customItem);
+            int target = Math.max(1, ammoRule.customItemCount);
+            return current < target;
         }
 
         if (config.isMagazineMode(vehicleRule, ammoKey) && gunData.get(GunProp.MAGAZINE) > 0) {
             int magazine = gunData.get(GunProp.MAGAZINE);
             int currentAmmo = gunData.ammo.get();
-            int backupAmmo = gunData.countBackupAmmo(vehicle);
+            int backupAmmo = countBackupAmmoForConsumer(vehicle, gunData, consumer);
             return (currentAmmo + backupAmmo) < magazine;
         }
 
         SupplyStationConfig.AmmoTypeRule ammoRule = config.getAmmoRule(vehicleRule, ammoKey);
         int target = ammoRule.fixedAmount > 0 ? ammoRule.fixedAmount : getNonMagazineFillAmount();
-        int currentBackup = gunData.countBackupAmmo(vehicle);
-        return currentBackup < target;
+        int currentBackup = countBackupAmmoForConsumer(vehicle, gunData, consumer);
+        // 包含已上膛/代发的弹药，避免双倍补给
+        boolean isSelected = (consumer == gunData.selectedAmmoConsumer());
+        int currentLoaded = isSelected ? gunData.ammo.get() : 0;
+        return (currentLoaded + currentBackup) < target;
     }
 
     private void performSupply() {
@@ -457,8 +477,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return key != null ? key.toString() : "";
     }
 
-    private String getAmmoKey(GunData gunData) {
-        AmmoConsumer consumer = gunData.selectedAmmoConsumer();
+    private String getAmmoKey(AmmoConsumer consumer) {
         if (consumer == null) {
             return "";
         }
@@ -468,6 +487,15 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         }
         ResourceLocation key = ForgeRegistries.ITEMS.getKey(stack.getItem());
         return key != null ? key.toString() : "";
+    }
+
+    private int countBackupAmmoForConsumer(GeoVehicleEntity vehicle, GunData gunData, AmmoConsumer consumer) {
+        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
+        if (handlerOpt.isEmpty()) return 0;
+        IItemHandler handler = handlerOpt.get();
+        int itemCount = consumer.count(gunData, handler);
+        int loadAmount = consumer.getLoadAmount();
+        return itemCount * loadAmount;
     }
 
     private boolean resupplyVehicle(GeoVehicleEntity vehicle) {
@@ -499,8 +527,13 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
                     continue;
                 }
 
-                if (resupplyWeapon(vehicle, gunData, seat, weaponIdx, config, vehicleRule, globalFallbackFill)) {
-                    anyResupplied = true;
+                List<AmmoConsumer> consumers = gunData.get(GunProp.AMMO_CONSUMER);
+                if (consumers == null || consumers.isEmpty()) continue;
+
+                for (AmmoConsumer consumer : consumers) {
+                    if (resupplyWeapon(vehicle, gunData, config, vehicleRule, globalFallbackFill, consumer)) {
+                        anyResupplied = true;
+                    }
                 }
             }
         }
@@ -508,10 +541,11 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return anyResupplied;
     }
 
-    private boolean resupplyWeapon(GeoVehicleEntity vehicle, GunData gunData, int seat, int weaponIdx,
+    private boolean resupplyWeapon(GeoVehicleEntity vehicle, GunData gunData,
                                     SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
-                                    int globalFallbackFill) {
-        String ammoKey = getAmmoKey(gunData);
+                                    int globalFallbackFill, AmmoConsumer consumer) {
+        String ammoKey = getAmmoKey(consumer);
+        if (ammoKey.isEmpty()) return false;
 
         if (config.isPackageBasedMode(vehicleRule, ammoKey)) {
             return resupplyPackageWeapon(vehicle, gunData, config.getAmmoRule(vehicleRule, ammoKey));
@@ -519,19 +553,18 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
 
         if (config.isMagazineMode(vehicleRule, ammoKey)) {
             if (gunData.get(GunProp.MAGAZINE) > 0) {
-                return resupplyMagazineWeapon(vehicle, gunData, config, vehicleRule, ammoKey);
+                return resupplyMagazineWeapon(vehicle, gunData, ammoKey, consumer);
             }
         }
 
-        return resupplyFixedWeapon(vehicle, gunData, config, vehicleRule, ammoKey, globalFallbackFill);
+        return resupplyFixedWeapon(vehicle, gunData, config, vehicleRule, ammoKey, globalFallbackFill, consumer);
     }
 
     private boolean resupplyMagazineWeapon(GeoVehicleEntity vehicle, GunData gunData,
-                                            SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
-                                            String ammoKey) {
+                                            String ammoKey, AmmoConsumer consumer) {
         int magazine = gunData.get(GunProp.MAGAZINE);
         int currentAmmo = gunData.ammo.get();
-        int backupAmmo = gunData.countBackupAmmo(vehicle);
+        int backupAmmo = countBackupAmmoForConsumer(vehicle, gunData, consumer);
         int totalAmmo = currentAmmo + backupAmmo;
 
         if (totalAmmo >= magazine) {
@@ -543,23 +576,26 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return false;
         }
 
-        supplyBackupAmmoToVehicle(vehicle, gunData, ammoNeeded);
+        supplyBackupAmmoToVehicle(vehicle, ammoNeeded, consumer);
         return true;
     }
 
     private boolean resupplyFixedWeapon(GeoVehicleEntity vehicle, GunData gunData,
                                          SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
-                                         String ammoKey, int globalFallbackFill) {
+                                         String ammoKey, int globalFallbackFill, AmmoConsumer consumer) {
         SupplyStationConfig.AmmoTypeRule ammoRule = config.getAmmoRule(vehicleRule, ammoKey);
         int fillAmount = ammoRule.fixedAmount > 0 ? ammoRule.fixedAmount : globalFallbackFill;
 
-        int currentBackup = gunData.countBackupAmmo(vehicle);
-        if (currentBackup >= fillAmount) {
+        int currentBackup = countBackupAmmoForConsumer(vehicle, gunData, consumer);
+        boolean isSelected = (consumer == gunData.selectedAmmoConsumer());
+        int currentLoaded = isSelected ? gunData.ammo.get() : 0;
+        int totalAmmo = currentBackup + currentLoaded;
+        if (totalAmmo >= fillAmount) {
             return false;
         }
 
-        int ammoToAdd = fillAmount - currentBackup;
-        supplyBackupAmmoToVehicle(vehicle, gunData, ammoToAdd);
+        int ammoToAdd = fillAmount - totalAmmo;
+        supplyBackupAmmoToVehicle(vehicle, ammoToAdd, consumer);
         return true;
     }
 
@@ -580,7 +616,12 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
             return false;
         }
 
-        int count = Math.max(1, ammoRule.customItemCount);
+        int target = Math.max(1, ammoRule.customItemCount);
+        int current = countBonusItem(vehicle, customItem);
+        int toAdd = target - current;
+        if (toAdd <= 0) {
+            return false;
+        }
 
         var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
         if (handlerOpt.isEmpty()) {
@@ -588,10 +629,10 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         }
 
         IItemHandler handler = handlerOpt.get();
-        ItemStack stack = new ItemStack(customItem, count);
-        int inserted = InventoryTool.insertItem(handler, stack, count);
-        if (inserted < count) {
-            int remaining = count - inserted;
+        ItemStack stack = new ItemStack(customItem, toAdd);
+        int inserted = InventoryTool.insertItem(handler, stack, toAdd);
+        if (inserted < toAdd) {
+            int remaining = toAdd - inserted;
             stack.setCount(remaining);
             InventoryTool.insertItem(handler, stack, remaining);
         }
@@ -599,12 +640,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return inserted > 0;
     }
 
-    private void supplyBackupAmmoToVehicle(GeoVehicleEntity vehicle, GunData gunData, int ammoAmount) {
-        AmmoConsumer consumer = gunData.selectedAmmoConsumer();
-        if (consumer == null) {
-            return;
-        }
-
+    private void supplyBackupAmmoToVehicle(GeoVehicleEntity vehicle, int ammoAmount, AmmoConsumer consumer) {
         int loadAmount = consumer.getLoadAmount();
         if (loadAmount <= 0) {
             loadAmount = 1;
