@@ -5,7 +5,11 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "dragonrise_reforge.refmap.json",
   "mixins": [
-    "VehicleEntityLeadMixin"
+    "VehicleEntityLeadMixin",
+    "FireControlTurretAimMixin",
+    "DefaultVehicleDataMixin",
+    "VehicleContainerTypeMixin",
+    "SmallVehicleContainerMenuMixin"
   ],
   "client": [
     "GameRendererMixin",

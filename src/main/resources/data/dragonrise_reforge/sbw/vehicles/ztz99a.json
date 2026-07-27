@@ -1,5 +1,7 @@
 {
   "ID": "dragonrise_reforge:ztz99a",
+  "TurretControllerIndex": 1,
+  "PassengerWeaponStationControllerIndex": 2,
   "MaxHealth": 620,
   "MaxEnergy": 20000000,
   "OBB": [
@@ -44,6 +46,14 @@
   "Seats": [
     {
       "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0.475,0.5,2.1],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Position": [0.78125,0.890625,0.421875],
@@ -80,14 +90,6 @@
       "MaxPitch": 85,
       "Sensitivity": [0.57,0.75,0.9],
       "HasThermalImaging": true
-    },
-    {
-      "HidePassenger": true,
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [0.475,0.5,2.1],
-      "MinYaw": -95,
-      "MaxYaw": 95
     },
     {
       "BanHand": true,
