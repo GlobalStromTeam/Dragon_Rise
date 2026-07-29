@@ -25,8 +25,8 @@ import java.util.UUID;
 @Mixin(value = VehicleEntity.class)
 public abstract class VehicleEntityLeadMixin {
 
-    @Inject(method = "<init>", at = @At("RETURN"))
-    private void onInit(CallbackInfo ci) {
+    @Inject(method = "defineSynchedData", at = @At("RETURN"))
+    private void onDefineSynchedData(CallbackInfo ci) {
         var data = ((VehicleEntity) (Object) this).getEntityData();
         data.define(VehicleLeashData.LEASH_HOLDER, Optional.empty());
         data.define(VehicleLeashData.CHAIN_LEASHED, false);
