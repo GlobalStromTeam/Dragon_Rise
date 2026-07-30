@@ -7,6 +7,7 @@ import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlSolution;
 import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlStatus;
 import com.redabysslucia.dragonrise_reforge.firecontrol.IndirectFireBallistics;
 import com.redabysslucia.dragonrise_reforge.firecontrol.TrajectoryMode;
+import com.redabysslucia.dragonrise_reforge.integration.EsWeatherFireControlBridge;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.message.SetFireControlMessage;
 import com.redabysslucia.dragonrise_reforge.network.message.ToggleTakeoverMessage;
@@ -19,6 +20,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 
@@ -37,11 +39,14 @@ public class FiringSolutionScreen extends Screen {
 
     private FireControlComputation preview;
     private TrajectoryMode trajectoryMode = TrajectoryMode.LOW;
+    private boolean weatherJammed;
+    private boolean wasWeatherJammed;
 
     private static final int PANEL_WIDTH = 210;
     private static final int PANEL_HEIGHT = 200;
     /** 默认目标水平距离（格） */
     private static final double DEFAULT_TARGET_RANGE = 120.0;
+    private static final int RANGE_TABLE_ROWS = 6;
 
     public FiringSolutionScreen(VehicleEntity vehicle, Player player) {
         super(Component.translatable("screen.dragonrise_reforge.fire_control.title"));
@@ -103,6 +108,7 @@ public class FiringSolutionScreen extends Screen {
         updateTakeoverLabel();
 
         updatePreview();
+        refreshWeatherJamState();
     }
 
     /**
@@ -141,6 +147,12 @@ public class FiringSolutionScreen extends Screen {
     }
 
     private void applySolution() {
+        if (weatherJammed || EsWeatherFireControlBridge.isDisrupted(vehicle)) {
+            player.displayClientMessage(Component.translatable(
+                    "message.dragonrise_reforge.fire_control.weather_jammed"
+            ).withStyle(ChatFormatting.RED), true);
+            return;
+        }
         if (!vehicle.isMainCannonSelected()) {
             player.displayClientMessage(Component.translatable("screen.dragonrise_reforge.fire_control.weapon_warning")
                     .withStyle(ChatFormatting.RED), true);
@@ -206,8 +218,68 @@ public class FiringSolutionScreen extends Screen {
 
         if (applyButton != null) {
             boolean mainCannonReady = vehicle.isMainCannonSelected();
-            applyButton.active = preview != null && preview.isSuccess() && mainCannonReady;
+            applyButton.active = !weatherJammed && preview != null && preview.isSuccess() && mainCannonReady;
         }
+    }
+
+    private void refreshWeatherJamState() {
+        weatherJammed = EsWeatherFireControlBridge.isDisrupted(vehicle);
+        if (targetXField == null) {
+            return;
+        }
+        boolean inputsVisible = !weatherJammed;
+        targetXField.visible = inputsVisible;
+        targetYField.visible = inputsVisible;
+        targetZField.visible = inputsVisible;
+        if (applyButton != null) {
+            applyButton.visible = inputsVisible;
+            applyButton.active = inputsVisible && preview != null && preview.isSuccess()
+                    && vehicle.isMainCannonSelected();
+        }
+        if (clearButton != null) {
+            clearButton.visible = inputsVisible;
+            clearButton.active = inputsVisible;
+        }
+        if (takeoverToggle != null) {
+            takeoverToggle.visible = inputsVisible;
+            takeoverToggle.active = inputsVisible;
+        }
+
+        if (weatherJammed) {
+            if (vehicle.level().getGameTime() % 4L == 0L) {
+                targetXField.setValue(garble(6));
+                targetYField.setValue(garble(5));
+                targetZField.setValue(garble(6));
+                if (applyButton != null) {
+                    applyButton.setMessage(Component.literal(garble(4)));
+                }
+                if (clearButton != null) {
+                    clearButton.setMessage(Component.literal(garble(4)));
+                }
+                if (takeoverToggle != null) {
+                    takeoverToggle.setMessage(Component.literal(garble(10)));
+                }
+            }
+        } else if (wasWeatherJammed) {
+            if (applyButton != null) {
+                applyButton.setMessage(Component.translatable("screen.dragonrise_reforge.fire_control.apply"));
+            }
+            if (clearButton != null) {
+                clearButton.setMessage(Component.translatable("screen.dragonrise_reforge.fire_control.clear"));
+            }
+            updateTakeoverLabel();
+        }
+        wasWeatherJammed = weatherJammed;
+    }
+
+    private static String garble(int length) {
+        RandomSource random = RandomSource.create(System.nanoTime());
+        final String alphabet = "#$%&@?!*<>/\\|+=~^";
+        StringBuilder builder = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            builder.append(alphabet.charAt(random.nextInt(alphabet.length())));
+        }
+        return builder.toString();
     }
 
     @Override
@@ -217,8 +289,11 @@ public class FiringSolutionScreen extends Screen {
             onClose();
             return;
         }
-        updatePreview();
-        updateTakeoverLabel();
+        refreshWeatherJamState();
+        if (!weatherJammed) {
+            updatePreview();
+            updateTakeoverLabel();
+        }
     }
 
     @Override
@@ -228,13 +303,24 @@ public class FiringSolutionScreen extends Screen {
         int panelY = (this.height - PANEL_HEIGHT) / 2;
 
         graphics.fill(panelX, panelY, panelX + PANEL_WIDTH, panelY + PANEL_HEIGHT, 0xCC000000);
-        graphics.fill(panelX, panelY, panelX + PANEL_WIDTH, panelY + 1, 0xFFFFC700);
-        graphics.fill(panelX, panelY + PANEL_HEIGHT - 1, panelX + PANEL_WIDTH, panelY + PANEL_HEIGHT, 0xFFFFC700);
-        graphics.fill(panelX, panelY, panelX + 1, panelY + PANEL_HEIGHT, 0xFFFFC700);
-        graphics.fill(panelX + PANEL_WIDTH - 1, panelY, panelX + PANEL_WIDTH, panelY + PANEL_HEIGHT, 0xFFFFC700);
+        int border = weatherJammed ? 0xFFFF5555 : 0xFFFFC700;
+        graphics.fill(panelX, panelY, panelX + PANEL_WIDTH, panelY + 1, border);
+        graphics.fill(panelX, panelY + PANEL_HEIGHT - 1, panelX + PANEL_WIDTH, panelY + PANEL_HEIGHT, border);
+        graphics.fill(panelX, panelY, panelX + 1, panelY + PANEL_HEIGHT, border);
+        graphics.fill(panelX + PANEL_WIDTH - 1, panelY, panelX + PANEL_WIDTH, panelY + PANEL_HEIGHT, border);
 
         Font font = this.minecraft.font;
         int textX = panelX + 10;
+
+        if (weatherJammed) {
+            graphics.drawString(font, Component.translatable("screen.dragonrise_reforge.fire_control.title_jammed"),
+                    textX, panelY + 8, 0xFFFF5555, false);
+            graphics.drawString(font, Component.translatable("screen.dragonrise_reforge.fire_control.jammed_hint"),
+                    textX, panelY + 24, 0xFFFFAA55, false);
+            renderJammedRangeTable(graphics, font, textX, panelY + 42);
+            super.render(graphics, mouseX, mouseY, partialTick);
+            return;
+        }
 
         graphics.drawString(font, Component.translatable("screen.dragonrise_reforge.fire_control.title"),
                 textX, panelY + 8, 0xFFFFC700, false);
@@ -291,6 +377,31 @@ public class FiringSolutionScreen extends Screen {
         }
 
         super.render(graphics, mouseX, mouseY, partialTick);
+    }
+
+    /** 干扰模式下仅显示仰角-射程表，不提供坐标瞄准。 */
+    private void renderJammedRangeTable(GuiGraphics graphics, Font font, int textX, int startY) {
+        graphics.drawString(font, Component.translatable("screen.dragonrise_reforge.fire_control.table.elevation"),
+                textX, startY, 0xFFFFC700, false);
+        graphics.drawString(font, Component.translatable("screen.dragonrise_reforge.fire_control.table.range"),
+                textX + 70, startY, 0xFFFFC700, false);
+
+        int seat = vehicle.getTurretControllerIndex();
+        // 只采样正仰角（抬头），与 SBW 迫击炮 RangeTool 一致
+        double elevMin = Math.max(1.0, vehicle.getTurretMinPitch());
+        double elevMax = Math.max(elevMin, vehicle.getTurretMaxPitch());
+        double velocity = seat >= 0 ? vehicle.getProjectileVelocity(seat) : 0;
+        double gravity = seat >= 0 ? vehicle.getProjectileGravity(seat) : 0;
+        double vehicleY = vehicle.getY();
+        int rows = RANGE_TABLE_ROWS;
+        for (int i = 0; i < rows; i++) {
+            double elev = rows <= 1 ? elevMax
+                    : elevMin + (elevMax - elevMin) * i / (rows - 1.0);
+            double range = IndirectFireBallistics.rangeAtPitch(velocity, gravity, vehicleY, vehicleY, elev);
+            int rowY = startY + 14 + i * 12;
+            graphics.drawString(font, String.format("%.0f°", elev), textX, rowY, 0xFFFFFFFF, false);
+            graphics.drawString(font, String.format("%.0f m", range), textX + 70, rowY, 0xFF00FF66, false);
+        }
     }
 
     @Override

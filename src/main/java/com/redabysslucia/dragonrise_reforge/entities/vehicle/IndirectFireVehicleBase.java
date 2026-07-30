@@ -11,6 +11,7 @@ import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlSolution;
 import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlStatus;
 import com.redabysslucia.dragonrise_reforge.firecontrol.IndirectFireBallistics;
 import com.redabysslucia.dragonrise_reforge.firecontrol.TrajectoryMode;
+import com.redabysslucia.dragonrise_reforge.integration.EsWeatherFireControlBridge;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -153,6 +154,10 @@ public abstract class IndirectFireVehicleBase extends GeoVehicleEntity implement
         if (this.level().isClientSide) {
             return false;
         }
+        if (EsWeatherFireControlBridge.isDisrupted(this)) {
+            notifyActor(actor, "message.dragonrise_reforge.fire_control.weather_jammed");
+            return false;
+        }
         if (isWreck()) {
             notifyActor(actor, FireControlStatus.WRECKED.translationKey());
             return false;
@@ -238,6 +243,11 @@ public abstract class IndirectFireVehicleBase extends GeoVehicleEntity implement
         if (!isFireControlActive()) {
             stationaryTicks = 0;
             setFireControlStatus(FireControlStatus.INACTIVE);
+            return;
+        }
+        // 雷雪暴内无法维持坐标瞄准：清除火控，天气结束后玩家需重新设定。
+        if (EsWeatherFireControlBridge.isDisrupted(this)) {
+            clearFireControl(null);
             return;
         }
         // 弹药类型限制：如果当前武器不是主炮，自动停用火控

@@ -138,6 +138,10 @@ public final class IndirectFireBallistics {
         return target.add(sampledRadius * Math.cos(angle), 0, sampledRadius * Math.sin(angle));
     }
 
+    /**
+     * 给定仰角估算水平射程。同高时与 SBW {@code RangeTool.getRange} 一致；
+     * 有高度差时用带落差的弹道公式。
+     */
     public static double rangeAtPitch(
             double velocity,
             double gravity,
@@ -147,6 +151,11 @@ public final class IndirectFireBallistics {
     ) {
         if (velocity <= 0 || gravity <= 0 || pitchDegrees <= 0) {
             return 0;
+        }
+
+        // 同高：直接复用 SBW 迫击炮公式 R = v²·sin(2θ)/g
+        if (Math.abs(targetY - muzzleY) < 1.0E-6) {
+            return com.atsuishio.superbwarfare.tools.RangeTool.getRange(pitchDegrees, velocity, gravity);
         }
 
         double pitch = Math.toRadians(pitchDegrees);
