@@ -4,8 +4,6 @@ import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.EngineChangeModeMessage;
-import com.redabysslucia.dragonrise_reforge.network.DisconnectLeashMessage;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.api.distmarker.Dist;
@@ -56,12 +54,6 @@ public class ClickEvent {
                 if (ModKeyMappings.ENGINE_CHANGE_MODE_TOGGLE.isPressed()) {
                     //entity.nextMode();
                     ModNetwork.PACKET_HANDLER.sendToServer(new EngineChangeModeMessage());
-                }
-            }
-
-            if (player.getVehicle() instanceof VehicleEntity) {
-                if (ModKeyMappings.DISCONNECT_LEASH.isPressed()) {
-                    ModNetwork.PACKET_HANDLER.sendToServer(new DisconnectLeashMessage());
                 }
             }
 
