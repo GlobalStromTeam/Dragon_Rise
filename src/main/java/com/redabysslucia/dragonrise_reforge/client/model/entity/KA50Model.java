@@ -1,12 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.client.model.entity;
 
-import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
-import com.atsuishio.superbwarfare.entity.vehicle.Mi28Entity;
-import com.atsuishio.superbwarfare.client.model.entity.VehicleModel;
-import com.atsuishio.superbwarfare.entity.vehicle.A10Entity;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import net.minecraft.resources.ResourceLocation;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
 import net.minecraft.util.Mth;

@@ -124,3 +124,15 @@ run-data/
 
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
+
+# 训练模型（参考源码与训练素材，不纳入版本控制）
+训练模型/
+
+# Eclipse 项目设置
+.settings/
+
+# ForgeGradle 数据生成缓存
+src/generated/**/.cache/
+
+# 数据生成输出日志
+datagen_output.txt

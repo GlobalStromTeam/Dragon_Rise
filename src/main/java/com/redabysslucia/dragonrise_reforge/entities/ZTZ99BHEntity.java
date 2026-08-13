@@ -17,7 +17,7 @@ public class ZTZ99BHEntity extends FireLightVisionVehicle {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
         }
         private PlayState cannonFirePredicate(AnimationState<ZTZ99BHEntity> event) {
                 if (getShootAnimationTimer(0, 0) > 0) {

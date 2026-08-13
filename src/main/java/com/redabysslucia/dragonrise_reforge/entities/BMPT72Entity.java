@@ -21,7 +21,7 @@ public class BMPT72Entity extends GeoVehicleEntity {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
 
         private PlayState cannonShootPredicate(AnimationState<BMPT72Entity> event) {

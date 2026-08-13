@@ -20,7 +20,7 @@ public class BMP3Entity extends IndirectFireVehicleBase {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
 
         private PlayState cannonShootPredicate(AnimationState<BMP3Entity> event) {

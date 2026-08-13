@@ -76,6 +76,7 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     mavenCentral()
+    flatDir { dirs 'libs' }
     maven { url 'https://maven.aliyun.com/repository/public/' }
 
     maven {
@@ -104,6 +105,16 @@ repositories {
             includeGroup("com.eliotlash.mclib")
         }
     }
+
+    maven {
+        name = 'Create'
+        url 'https://maven.createmod.net'
+    }
+
+    maven {
+        name = 'Shedaniel'
+        url 'https://maven.shedaniel.me/'
+    }
 }
 
 dependencies {
@@ -111,11 +122,11 @@ dependencies {
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.4.2+1.20.1:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1:api")
 
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.4.6')
-    implementation fg.deobf("curse.maven:superb-warfare-1218165:8104849")
+    implementation fg.deobf("superbwarfare:superbwarfare:0.8.9.1-snapshot")
     implementation fg.deobf("curse.maven:kotlin-for-forge-351264:5402061")
 
     compileOnly 'com.maydaymemory:mae:1.1.2'
@@ -123,7 +134,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-    implementation(fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.3.3-forge-mc1.20.1"))
+    implementation(fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.5.1-forge-mc1.20.1"))
+    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-1.20.1:1.0.91"))
+    implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-1.20.1:1.0.5"))
+    implementation(fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.106"))
+
+    minecraftLibrary 'org.ywzj:rhino:1.8.1-SNAPSHOT'
 }
 
 tasks.named('processResources', ProcessResources).configure {

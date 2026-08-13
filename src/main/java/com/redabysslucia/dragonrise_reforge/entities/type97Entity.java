@@ -15,7 +15,7 @@ public class type97Entity extends SyncCameraVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
 
 //    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {

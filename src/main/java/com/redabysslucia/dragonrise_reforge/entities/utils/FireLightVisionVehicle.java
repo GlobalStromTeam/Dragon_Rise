@@ -26,8 +26,8 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
     private int lightRemovalTimer = 0;
 
     @Override
-    public void vehicleShoot(LivingEntity living, String weaponName) {
-        super.vehicleShoot(living, weaponName);
+    public void vehicleShoot(LivingEntity living, String weaponName, Vec3 targetPos) {
+        super.vehicleShoot(living, weaponName, targetPos);
         // 处理炮口火光效果
         handleTurretFireLight(1); // 传入1表示正在开火
         // 设置删除计时器

@@ -222,7 +222,7 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
         projectile.setOwner(this);
         projectile.setRGB(new float[]{ProjectileEntity.DEFAULT_R, ProjectileEntity.DEFAULT_G, ProjectileEntity.DEFAULT_B});
         projectile.setDamage(4.0f);
-        projectile.setGravity(0.0f);
+        projectile.setCustomGravity(0.0f);
         projectile.velocity(15.0F);
         projectile.setPos(this.getEyePosition());
         

@@ -17,8 +17,6 @@ import org.joml.Math;
 
 import java.util.UUID;
 
-import static com.atsuishio.superbwarfare.entity.vehicle.base.ArtilleryEntity.BARREL_ANIM;
-
 @SuppressWarnings("removal")
 public class TYPE100Entity extends GeoVehicleEntity {
 

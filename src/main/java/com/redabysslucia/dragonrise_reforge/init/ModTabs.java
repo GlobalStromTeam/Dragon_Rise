@@ -177,9 +177,10 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
 
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));                    }
-
-                                           ).build()
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MARKV.get()));
+                    }
+                    ).build()
     );
 
     public static final RegistryObject<CreativeModeTab> MISC_TAB = TABS.register("misc_tab",
@@ -198,7 +199,6 @@ public class ModTabs {
                         output.accept(ModItems.AMMO_SUPPLY_STATION_DEPLOYER.get());
                         output.accept(DragonVehicleDeployer.VEHICLE_DEPLOYER_BLOCK_ITEM.get());
                         output.accept(ModItems.CNCHEST.get());
-                        output.accept(ModItems.CNJUSTCHEST.get());
                         output.accept(ModItems.CN21.get());
                         output.accept(ModItems.CNFAST.get());
                         output.accept(ModItems.MSV_CHEST.get());
@@ -221,7 +221,7 @@ public class ModTabs {
                         output.accept(ModItems.KR06_HELMET.get());
                         output.accept(ModItems.KR06_CHEST.get());
                         output.accept(ModItems.KR06_PANTS.get());
-//                        output.accept(ModItems.ARMY07HAT.get());
+
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());
                         output.accept(ModItems.KEVLAR.get());

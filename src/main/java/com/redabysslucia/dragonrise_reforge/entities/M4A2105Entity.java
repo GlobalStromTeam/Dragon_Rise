@@ -20,7 +20,7 @@ public class M4A2105Entity extends SyncCameraVehicle implements IVehicleBackgrou
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
 
 //    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {

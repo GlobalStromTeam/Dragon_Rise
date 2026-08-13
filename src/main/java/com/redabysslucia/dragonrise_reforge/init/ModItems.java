@@ -36,7 +36,6 @@ public class ModItems {
     public static final RegistryObject<Item> AMMO_SUPPLY_STATION_DEPLOYER = REGISTRY.register("ammo_supply_station", AmmoSupplyStationDeployer::new);
     public static final RegistryObject<Item> GENERATOR_DEPLOYER = REGISTRY.register("generator_deployer", GeneratorDeployer::new);
     public static final RegistryObject<Item> CN21 = REGISTRY.register("cn21", CN21::new);
-    public static final RegistryObject<Item> CNJUSTCHEST = REGISTRY.register("cnjustchest", CNJustchest::new);
     public static final RegistryObject<Item> CNCHEST = REGISTRY.register("cnchest", CNchest::new);
     public static final RegistryObject<Item> CNFAST = REGISTRY.register("cnfast", CNfast::new);
     public static final RegistryObject<Item> MSV_CHEST = REGISTRY.register("msv_chest", MSVChest::new);
@@ -55,7 +54,6 @@ public class ModItems {
     public static final RegistryObject<Item> OCEAN07_HELMET = REGISTRY.register("ocean07_helmet", Ocean07Helmet::new);
     public static final RegistryObject<Item> OCEAN07_CHEST = REGISTRY.register("ocean07_chest", Ocean07Chest::new);
     public static final RegistryObject<Item> OCEAN07_PANTS = REGISTRY.register("ocean07_pants", Ocean07Pants::new);
-    public static final RegistryObject<Item> ARMY07HAT = REGISTRY.register("army07hat", Army07Hat::new);
     public static final RegistryObject<Item> KR06_HELMET = REGISTRY.register("kr06_helmet", KR06Helmet::new);
     public static final RegistryObject<Item> KR06_CHEST = REGISTRY.register("kr06_chest", KR06Chest::new);
     public static final RegistryObject<Item> KR06_PANTS = REGISTRY.register("kr06_pants", KR06Pants::new);

@@ -21,7 +21,7 @@ public class AC130Entity extends FireLightVisionVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.2f) * damage * (getHealth() > 0.1f ? 0.5f : 0.05f));
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.2f) * damage * (getHealth() > 0.1f ? 0.5f : 0.05f));
     }
 
     @Override

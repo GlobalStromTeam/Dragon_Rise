@@ -57,7 +57,7 @@ public class AirBomb500kgEntity extends DestroyableProjectile implements GeoEnti
     }
 
     @Override
-    protected void onHitEntity(@NotNull EntityHitResult result) {
+    public void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
         if (entity == this.getOwner() || (this.getOwner() != null && entity == this.getOwner().getVehicle()) || entity instanceof AirBomb500kgEntity)

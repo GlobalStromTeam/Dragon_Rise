@@ -45,7 +45,7 @@ public class M3A3Entity extends GeoVehicleEntity {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
     }
 
     private final Map<UUID, Integer> lastMessageTick = new HashMap<>();

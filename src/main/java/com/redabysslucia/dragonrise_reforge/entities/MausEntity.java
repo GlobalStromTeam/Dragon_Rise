@@ -15,7 +15,7 @@ public class MausEntity extends SyncCameraVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.2f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.2f) * damage);
     }
 
     @Override

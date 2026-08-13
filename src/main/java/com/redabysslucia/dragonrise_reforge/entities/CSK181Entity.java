@@ -16,7 +16,7 @@ public class CSK181Entity extends GeoVehicleEntity {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.05f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.05f) * damage);
         }
 
 

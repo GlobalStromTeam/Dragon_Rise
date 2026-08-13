@@ -1,0 +1,7 @@
+{
+  "ID": "dragonrise_reforge:markv",
+  "Model": {
+    "Model": "dragonrise_reforge:geo/markv.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/markv.png"
+  }
+}

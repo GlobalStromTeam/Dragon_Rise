@@ -15,7 +15,7 @@ public class PershingEntity extends SyncCameraVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.30f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.30f) * damage);
     }
 
     @Override

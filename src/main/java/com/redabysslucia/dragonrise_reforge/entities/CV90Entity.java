@@ -23,7 +23,7 @@ public class CV90Entity extends GeoVehicleEntity {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
 
     private PlayState cannonFirePredicate(AnimationState<CV90Entity> event) {
