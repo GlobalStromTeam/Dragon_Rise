@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities.special;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.utils.VehicleVecUtils;
 import com.mojang.math.Axis;
@@ -12,14 +12,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import org.joml.Matrix4d;
 import org.joml.Vector4d;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class CyborgTankEntity extends GeoVehicleEntity {
+public class CyborgTankEntity extends VehicleEntity {
     public CyborgTankEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -29,38 +24,7 @@ public class CyborgTankEntity extends GeoVehicleEntity {
         return super.getDamageModifier()
                 .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
-
-    private PlayState cannonFirePredicate(AnimationState<CyborgTankEntity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.cyborg_tank.fire"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.cyborg_tank.idle"));
-    }
-
-    private PlayState coaxFirePredicate(AnimationState<CyborgTankEntity> event) {
-        if (getShootAnimationTimer(0, 1) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.cyborg_tank.fire_coax"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.cyborg_tank.idle"));
-    }
-
-    private PlayState stationFirePredicate(AnimationState<CyborgTankEntity> event) {
-        if (getShootAnimationTimer(1, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.cyborg_tank.fire_station"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.cyborg_tank.idle"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-        data.add(new AnimationController<>(this, "coax", 0, this::coaxFirePredicate));
-        data.add(new AnimationController<>(this, "station", 0, this::stationFirePredicate));
-    }
-
-
-
-    @Override
+@Override
     public float getTurretMaxHealth() {
         return 420;
     }

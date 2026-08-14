@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:akm",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/akm.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/akm.png"
-  }
+    "ID":  "dragonrise_reforge:akm",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/akm.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/akm.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/akm.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/akm.png"
+                   }
+               ]
 }

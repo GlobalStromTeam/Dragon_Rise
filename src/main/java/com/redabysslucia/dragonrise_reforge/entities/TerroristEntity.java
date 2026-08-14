@@ -37,18 +37,24 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class TerroristEntity extends Monster implements GeoEntity, RangedAttackMob {
+public class TerroristEntity extends Monster implements RangedAttackMob, GeoEntity {
+
+    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+    }
 
     public static final EntityDataAccessor<Boolean> RUNNER = SynchedEntityData.defineId(TerroristEntity.class, EntityDataSerializers.BOOLEAN);
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private int burstShotsRemaining = 0;
     private int burstTickCounter = 0;
     private int nextBurstTick = 0;
@@ -243,27 +249,7 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
                 .add(Attributes.FOLLOW_RANGE, 64)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
     }
-
-    private PlayState movementPredicate(AnimationState<TerroristEntity> event) {
-        if (this.isDeadOrDying()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.terrorist.die"));
-        }
-        if (this.shootAnimationTick > 0 && !entityData.get(RUNNER)) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.terrorist.run"));
-        }
-        if (this.isAggressive() && !entityData.get(RUNNER)) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.terrorist.fire"));
-        }
-        if (this.isAggressive() && entityData.get(RUNNER) && event.isMoving()) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.terrorist.run2"));
-        }
-        if (event.isMoving()) {
-            return event.setAndContinue(RawAnimation.begin().thenLoop("animation.terrorist.walk"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.terrorist.idle"));
-    }
-
-    @Override
+@Override
     public void die(@NotNull DamageSource source) {
         super.die(source);
     }
@@ -275,15 +261,5 @@ public class TerroristEntity extends Monster implements GeoEntity, RangedAttackM
             this.remove(TerroristEntity.RemovalReason.KILLED);
             this.dropExperience();
         }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 }

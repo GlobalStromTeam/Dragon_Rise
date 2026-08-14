@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:pershing",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/pershing.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/pershing.png"
-  }
+    "ID":  "dragonrise_reforge:pershing",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/pershing.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/pershing.png"
+                   }
+               ]
 }

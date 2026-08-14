@@ -179,6 +179,9 @@ public class ModTabs {
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MARKV.get()));
+
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.AAV7A1.get()));
+
                     }
                     ).build()
     );

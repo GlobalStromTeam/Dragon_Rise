@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -20,16 +20,11 @@ import net.minecraft.world.level.Level;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.registries.ForgeRegistries;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("removal")
-public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground {
+public class ZTZ99AEntity extends VehicleEntity implements IVehicleBackground {
 
     private final Float[][] PitchAdjustments = {
             {180f, 180f, 180f, 4f, -4f},
@@ -121,21 +116,6 @@ public class ZTZ99AEntity extends GeoVehicleEntity implements IVehicleBackground
         return super.getDamageModifier()
                 .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
-
-    private PlayState cannonFirePredicate(AnimationState<ZTZ99AEntity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.ztz99a.fire"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-    }
-
-
-
 //    @Override
 //    public int getTrackAnimationLength() {
 //        return 80;

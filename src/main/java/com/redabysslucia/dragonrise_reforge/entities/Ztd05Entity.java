@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -9,14 +9,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class Ztd05Entity extends GeoVehicleEntity {
+public class Ztd05Entity extends VehicleEntity {
 
         private static final EntityDataAccessor<Integer> FLAP_STATE =
                 new EntityDataAccessor<>(100, EntityDataSerializers.INT);
@@ -83,21 +78,4 @@ public class Ztd05Entity extends GeoVehicleEntity {
                         entityData.set(FLAP_TIMER, 40);
                 }
         }
-
-        private PlayState flapPredicate(AnimationState<Ztd05Entity> event) {
-                int state = entityData.get(FLAP_STATE);
-                // 展开/保持展开
-                if (state == 1 || state == 2) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("flbon"));
-                }
-                // 关闭/保持关闭：统一使用thenPlayAndHold避免3→0切换时重启动画
-                return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("flboff"));
-        }
-
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "flap", 0, this::flapPredicate));
-        }
-
-
 }

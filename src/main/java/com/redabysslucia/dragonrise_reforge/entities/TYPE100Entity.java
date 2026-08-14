@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -18,7 +18,7 @@ import org.joml.Math;
 import java.util.UUID;
 
 @SuppressWarnings("removal")
-public class TYPE100Entity extends GeoVehicleEntity {
+public class TYPE100Entity extends VehicleEntity {
 
         public TYPE100Entity(EntityType<?> pEntityType, Level pLevel) {
                 super(pEntityType, pLevel);

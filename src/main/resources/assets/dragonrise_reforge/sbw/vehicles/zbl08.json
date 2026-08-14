@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:zbl08",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/zbl08.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/zbl08.png"
-  }
+    "ID":  "dragonrise_reforge:zbl08",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/zbl08.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/zbl08.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/zbl08.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/zbl08.png"
+                   }
+               ]
 }

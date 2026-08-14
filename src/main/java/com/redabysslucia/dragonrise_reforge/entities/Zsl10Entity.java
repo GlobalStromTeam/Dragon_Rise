@@ -6,11 +6,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
 public class Zsl10Entity extends SyncCameraVehicle {
@@ -70,25 +65,4 @@ public class Zsl10Entity extends SyncCameraVehicle {
                         entityData.set(FLAP_TIMER, 25);
                 }
         }
-
-        private PlayState flapPredicate(AnimationState<Zsl10Entity> event) {
-                int state = entityData.get(FLAP_STATE);
-                // 展开/保持展开 使用同一个动画，切换时不会重启
-                if (state == 1 || state == 2) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("flbon"));
-                }
-                // 关闭/保持关闭 使用同一个动画，切换时不会重启
-                if (state == 3) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("flboff"));
-                }
-                // 状态0（初始关闭）：不播放任何动画，避免flboff首帧110°闪烁
-                return PlayState.CONTINUE;
-        }
-
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "flap", 0, this::flapPredicate));
-        }
-
-
 }

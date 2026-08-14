@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.data.DataLoader;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 
 import com.redabysslucia.dragonrise_reforge.utils.AirshipInfo;
 
@@ -14,7 +14,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-public abstract class AirshipVehicle extends GeoVehicleEntity {
+public abstract class AirshipVehicle extends VehicleEntity {
 
     private EngineInfo engineCache;
 

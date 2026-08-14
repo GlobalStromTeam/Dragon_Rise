@@ -1,8 +1,14 @@
 {
-  "ID": "dragonrise_reforge:t80b",
-  "Model": {
-    "Animation": "dragonrise_reforge:animations/t80.animation.json",
-    "Model": "dragonrise_reforge:geo/t80b.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/t80b.png"
-  }
+    "ID":  "dragonrise_reforge:t80b",
+    "Model":  {
+                  "Animation":  "dragonrise_reforge:animations/t80.animation.json",
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/t80b.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/t80b.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/t80b.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/t80b.png"
+                   }
+               ]
 }

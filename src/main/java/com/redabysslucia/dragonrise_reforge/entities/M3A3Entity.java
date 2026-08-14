@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.network.chat.Component;
@@ -13,18 +13,13 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @SuppressWarnings("removal")
-public class M3A3Entity extends GeoVehicleEntity {
+public class M3A3Entity extends VehicleEntity {
 
     public static final EntityDataAccessor<Integer> MISSILE_STATE =
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
@@ -168,15 +163,7 @@ public class M3A3Entity extends GeoVehicleEntity {
 
         super.vehicleShoot(living, uuid, targetPos);
     }
-
-    private PlayState cannonFirePredicate(AnimationState<M3A3Entity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.maincannon"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("m3a3.nothinghappen.new"));
-    }
-
-    public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
+public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
         for (var passenger : vehicle.getPassengers()) {
             int seatIndex = vehicle.getSeatIndex(passenger);
             if (seatIndex < 0) continue;
@@ -191,24 +178,4 @@ public class M3A3Entity extends GeoVehicleEntity {
         }
         return false;
     }
-
-    private PlayState MissileOn(AnimationState<M3A3Entity> event) {
-        int state = entityData.get(MISSILE_STATE);
-        if (state == 1) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.missile_deploy"));
-        } else if (state == 3) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.missile_retract"));
-        } else if (state == 2) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("m3a3.animation.missile_hold"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("m3a3.animation.missile_off_hold"));
-        }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "missileon", 0, this::MissileOn));
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-    }
-
 }

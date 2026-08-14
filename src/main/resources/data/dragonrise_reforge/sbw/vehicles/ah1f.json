@@ -401,5 +401,11 @@
     [1.725,0.009,-0.919],
     [-1.725,0.009,2.362]
   ],
-  "TerrainCompatRotateRate": 0
+  "TerrainCompatRotateRate": 0,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+    }
+  ]
 }

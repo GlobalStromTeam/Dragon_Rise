@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:is2",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/is2.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/is2.png"
-  }
+    "ID":  "dragonrise_reforge:is2",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/is2.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/is2.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/is2.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/is2.png"
+                   }
+               ]
 }

@@ -1,8 +1,14 @@
 {
-  "ID": "dragonrise_reforge:project640",
-  "Model": {
-    "Animation": "dragonrise_reforge:animations/t80.animation.json",
-    "Model": "dragonrise_reforge:geo/project640.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/project640.png"
-  }
+    "ID":  "dragonrise_reforge:project640",
+    "Model":  {
+                  "Animation":  "dragonrise_reforge:animations/t80.animation.json",
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/project640.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/project640.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/project640.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/project640.png"
+                   }
+               ]
 }

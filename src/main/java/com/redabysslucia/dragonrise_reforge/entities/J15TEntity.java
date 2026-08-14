@@ -4,11 +4,6 @@ import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
@@ -23,35 +18,7 @@ public class J15TEntity extends FireLightVisionVehicle {
         return super.getDamageModifier()
                 .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
     }
-
-    private PlayState J15A(AnimationState<J15TEntity> event) {
-        if (this.onGround()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("animation.j15t.qljon"));
-        }
-        else {
-        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                ("animation.j15t.qljoff"));
-        }
-    }
-
-    private PlayState J15B(AnimationState<J15TEntity> event) {
-        if (this.sprintInputDown()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("engine on"));
-        }
-        else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold
-                    ("engine off"));
-        }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "j15a", 0, this::J15A));
-        data.add(new AnimationController<>(this, "j15b", 0, this::J15B));
-    }
-    //    @Override
+//    @Override
 //    public boolean useAircraftCamera(int seatIndex) {
 //        return ModKeyMappings.FREE_CAMERA.isDown() && !ClientEventHandler.zoom;
 //    }

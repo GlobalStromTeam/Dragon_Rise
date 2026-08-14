@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:nuclearbomb",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/nuclearbomb.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/nuclearbomb.png"
-  }
+    "ID":  "dragonrise_reforge:nuclearbomb",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/nuclearbomb.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/nuclearbomb.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/nuclearbomb.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/nuclearbomb.png"
+                   }
+               ]
 }

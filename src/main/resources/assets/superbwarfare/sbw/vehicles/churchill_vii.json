@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:churchill_vii",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/churchill_vii.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
-  }
+    "ID":  "dragonrise_reforge:churchill_vii",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/churchill_vii.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/churchill_vii.png"
+                   }
+               ]
 }

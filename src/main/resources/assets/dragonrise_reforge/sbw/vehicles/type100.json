@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:type100",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/type100.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/type100.png"
-  }
+    "ID":  "dragonrise_reforge:type100",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/type100.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/type100.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/type100.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/type100.png"
+                   }
+               ]
 }

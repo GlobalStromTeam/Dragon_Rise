@@ -1,14 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
-import com.redabysslucia.dragonrise_reforge.client.model.entity.ZBD04AModel;
-import com.redabysslucia.dragonrise_reforge.client.model.entity.ZBL08Model;
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ZBD04ARenderer extends VehicleRenderer<ZBD04AEntity> {
+public class ZBD04ARenderer extends GeoVehicleRenderer<ZBD04AEntity> {
         public ZBD04ARenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager,new ZBD04AModel());
+                super(renderManager);
         }
 }

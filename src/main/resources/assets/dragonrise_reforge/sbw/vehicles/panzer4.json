@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:panzer4",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/panzer4.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/panzer4.png"
-  }
+    "ID":  "dragonrise_reforge:panzer4",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/panzer4.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/panzer4.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/panzer4.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/panzer4.png"
+                   }
+               ]
 }

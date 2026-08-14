@@ -8,11 +8,6 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
 public class ZBD04AEntity extends IndirectFireVehicleBase {
@@ -83,36 +78,4 @@ public class ZBD04AEntity extends IndirectFireVehicleBase {
                 return super.getDamageModifier()
                         .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
-
-        private PlayState cannonShootPredicate(AnimationState<ZBD04AEntity> event) {
-
-                if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("zbd04a.animation.subcannon.new"));
-                }
-                if (getShootAnimationTimer(0, 1) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("zbd04a.animation.minecannon.new"));
-                }
-
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.unknown.new"));
-
-        }
-
-        private PlayState flapPredicate(AnimationState<ZBD04AEntity> event) {
-                int state = entityData.get(FLAP_STATE);
-                if (state == 1 || state == 2) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("flbon"));
-                }
-                if (state == 3) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("flboff"));
-                }
-                return PlayState.CONTINUE;
-        }
-
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "cannon", 0, this::cannonShootPredicate));
-                data.add(new AnimationController<>(this, "flap", 0, this::flapPredicate));
-        }
-
-
 }

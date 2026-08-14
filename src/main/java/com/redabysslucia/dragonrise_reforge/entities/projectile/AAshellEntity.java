@@ -31,7 +31,14 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
 
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+    }
 
     public AAshellEntity(EntityType<? extends AAshellEntity> type, Level level) {
         super(type, level);
@@ -126,17 +133,6 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
                 }
             }
         }
-    }
-
-
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

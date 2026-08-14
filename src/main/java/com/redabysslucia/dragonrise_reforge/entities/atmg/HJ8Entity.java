@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities.atmg;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
 import com.atsuishio.superbwarfare.tools.FormatTool;
@@ -29,17 +29,12 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Math;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class HJ8Entity extends GeoVehicleEntity {
+public class HJ8Entity extends VehicleEntity {
 
     // 是否已装填弹药
     public static final EntityDataAccessor<Boolean> LOADED = SynchedEntityData.defineId(com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity.class, EntityDataSerializers.BOOLEAN);
@@ -148,18 +143,6 @@ public class HJ8Entity extends GeoVehicleEntity {
             ParticleTool.spawnMediumCannonMuzzleParticles(barrelVector.scale(-1), pos, serverLevel, this);
             ParticleTool.spawnMediumCannonMuzzleParticles(barrelVector, pos, serverLevel, this);
         }
-    }
-
-    private PlayState cannonFirePredicate(AnimationState<HJ8Entity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("fire"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("nothinghappen"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
     }
 //    @Override
 //    public void destroy() {

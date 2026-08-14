@@ -1,8 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1SbmRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MarkvRenderer;
-
-
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
@@ -150,5 +149,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZBD05.get(), Zbd05Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZSL10.get(), Zsl10Renderer::new);
 
-        event.registerEntityRenderer(ModEntities.MARKV.get(), MarkvRenderer::new);        }
+                event.registerEntityRenderer(ModEntities.MARKV.get(), MarkvRenderer::new);
+
+                event.registerEntityRenderer(ModEntities.AAV7A1.get(), Aav7a1SbmRenderer::new);
+        }
 }

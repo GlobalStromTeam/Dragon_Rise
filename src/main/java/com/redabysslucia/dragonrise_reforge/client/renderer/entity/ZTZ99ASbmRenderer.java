@@ -1,24 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.sbm.DragonriseSbmVehicleRenderer;
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
-import com.redabysslucia.dragonrise_reforge.init.DragonriseBedrockLoader;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
 
-public class ZTZ99ASbmRenderer extends DragonriseSbmVehicleRenderer<ZTZ99AEntity> {
+public class ZTZ99ASbmRenderer extends GeoVehicleRenderer<ZTZ99AEntity> {
 
     public ZTZ99ASbmRenderer(EntityRendererProvider.Context context) {
         super(context);
-    }
-
-    @Override
-    public ResourceLocation getModelLocation(ZTZ99AEntity entity) {
-        return DragonriseBedrockLoader.ZTZ99A_KEY;
-    }
-
-    @Override
-    public ResourceLocation getTextureLocation(ZTZ99AEntity entity) {
-        return new ResourceLocation("dragonrise_reforge", "textures/entity/ztz99a.png");
     }
 }

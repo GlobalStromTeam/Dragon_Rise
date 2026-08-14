@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:tiger",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/tiger.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/tiger.png"
-  }
+    "ID":  "dragonrise_reforge:tiger",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/tiger.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/tiger.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/tiger.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/tiger.png"
+                   }
+               ]
 }

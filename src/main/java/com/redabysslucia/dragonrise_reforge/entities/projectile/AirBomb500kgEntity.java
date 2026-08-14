@@ -21,15 +21,20 @@ import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class AirBomb500kgEntity extends DestroyableProjectile implements GeoEntity {
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+    }
 
     private int explosionTimer = -1;
     private static final int EXPLOSION_DELAY = 40; // 20 ticks = 1 second
@@ -135,20 +140,6 @@ public class AirBomb500kgEntity extends DestroyableProjectile implements GeoEnti
             // 爆炸倒计时期间停止移动
             this.setDeltaMovement(0, 0, 0);
         }
-    }
-
-    private PlayState movementPredicate(AnimationState<AirBomb500kgEntity> event) {
-        return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("animation.airbomb500kg.start"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "movement", 0, this::movementPredicate));
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

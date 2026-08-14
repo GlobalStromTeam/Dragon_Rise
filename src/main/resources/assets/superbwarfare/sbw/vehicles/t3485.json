@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:t3485",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/t3485.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/t3485.png"
-  }
+    "ID":  "dragonrise_reforge:t3485",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/t3485.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/t3485.png"
+                   }
+               ]
 }

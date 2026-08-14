@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:csk181",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/csk181.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/csk181.png"
-  }
+    "ID":  "dragonrise_reforge:csk181",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/csk181.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/csk181.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/csk181.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/csk181.png"
+                   }
+               ]
 }

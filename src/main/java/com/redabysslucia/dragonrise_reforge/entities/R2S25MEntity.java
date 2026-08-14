@@ -1,18 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class R2S25MEntity extends GeoVehicleEntity {
+public class R2S25MEntity extends VehicleEntity {
 
     public R2S25MEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -25,19 +20,7 @@ public class R2S25MEntity extends GeoVehicleEntity {
             GeoBasedParticleUtil.spawnParticlesFromManualPosition(this, -27, 25, 47);
         }
     }
-
-    private PlayState cannonFirePredicate(AnimationState<R2S25MEntity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("fire"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("nothing"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-    }
-    /**
+/**
      * 检查是否有玩家在操作车辆
      * @return 如果有玩家在操作返回true，否则返回false
      */

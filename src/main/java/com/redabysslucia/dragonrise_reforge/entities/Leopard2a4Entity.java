@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -19,7 +19,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("removal")
-public class Leopard2a4Entity extends GeoVehicleEntity {
+public class Leopard2a4Entity extends VehicleEntity {
 
         // 定义涂装状态同步数据 - 0=标准涂装, 1=NATO涂装
         public static final EntityDataAccessor<Integer> CAMO_TYPE =

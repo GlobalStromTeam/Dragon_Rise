@@ -16,8 +16,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,18 +40,39 @@ public class GeoOBBDataProvider implements DataProvider {
         return CompletableFuture.runAsync(() -> {
             try {
                 String workingDir = System.getProperty("user.dir").replace("\\run-data", "").replace("/run-data", "");
-                Path inputPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/geo");
+                Path geoPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/geo");
+                Path bedrockPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/models/bedrock/vehicle");
                 Path dragonriseOutputPath = Path.of(workingDir).resolve("src/main/resources/data/dragonrise_reforge/sbw/vehicles");
                 Path superbwarfareOutputPath = Path.of(workingDir).resolve("src/main/resources/assets/superbwarfare/sbw/vehicles");
+                Path dragonriseAssetOutputPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/sbw/vehicles");
 
-                if (!Files.exists(inputPath)) {
+                if (!Files.exists(geoPath) && !Files.exists(bedrockPath)) {
                     return;
                 }
 
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(inputPath, "*.geo.json")) {
-                    for (Path geoFile : stream) {
-                        processGeoFile(geoFile, dragonriseOutputPath, superbwarfareOutputPath);
+                // 同时支持 geo/ 与 models/bedrock/vehicle/ 两个输入目录，按文件名去重（SBM 模型优先放 models/bedrock/vehicle/）
+                Set<Path> inputFiles = new LinkedHashSet<>();
+                if (Files.exists(geoPath)) {
+                    try (DirectoryStream<Path> stream = Files.newDirectoryStream(geoPath, "*.geo.json")) {
+                        for (Path p : stream) {
+                            inputFiles.add(p);
+                        }
                     }
+                }
+                if (Files.exists(bedrockPath)) {
+                    try (DirectoryStream<Path> stream = Files.newDirectoryStream(bedrockPath, "*.geo.json")) {
+                        for (Path p : stream) {
+                            boolean duplicate = inputFiles.stream()
+                                    .anyMatch(e -> e.getFileName().equals(p.getFileName()));
+                            if (!duplicate) {
+                                inputFiles.add(p);
+                            }
+                        }
+                    }
+                }
+
+                for (Path geoFile : inputFiles) {
+                    processGeoFile(geoFile, dragonriseOutputPath, superbwarfareOutputPath, dragonriseAssetOutputPath);
                 }
             } catch (Exception e) {
                 throw new RuntimeException("Failed to process geo files", e);
@@ -57,7 +80,7 @@ public class GeoOBBDataProvider implements DataProvider {
         });
     }
 
-    private void processGeoFile(Path geoFile, Path dragonriseOutputPath, Path superbwarfareOutputPath) {
+    private void processGeoFile(Path geoFile, Path dragonriseOutputPath, Path superbwarfareOutputPath, Path dragonriseAssetOutputPath) {
         try {
             String content = Files.readString(geoFile);
             JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
@@ -238,8 +261,10 @@ public class GeoOBBDataProvider implements DataProvider {
                 Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
             }
 
-            // Generate superbwarfare vehicle config
+            // Generate superbwarfare vehicle config（同时写入 superbwarfare 与本模组两个 assets 目录，
+            // 保证实体 ID（dragonrise_reforge:xxx）在两个 namespace 下都能查到车辆数据）
             generateSuperbwarfareVehicleConfig(superbwarfareOutputPath, baseName);
+            generateSuperbwarfareVehicleConfig(dragonriseAssetOutputPath, baseName);
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
@@ -280,27 +305,36 @@ public class GeoOBBDataProvider implements DataProvider {
         } else {
             vehicleJson = new JsonObject();
             vehicleJson.addProperty("ID", "dragonrise_reforge:" + baseName);
-
-            JsonObject model = new JsonObject();
-            model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
-            model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
-            vehicleJson.add("Model", model);
         }
 
-        // Only update Model if not already set
+        // SBM 渲染需要 models/bedrock/vehicle/ 下的模型与 Models 数组（新格式）
+        String modelPath = "dragonrise_reforge:models/bedrock/vehicle/" + baseName + ".geo.json";
+        String texturePath = "dragonrise_reforge:textures/entity/" + baseName + ".png";
+
+        // Model（单数，旧格式，保留兼容）
         if (!vehicleJson.has("Model")) {
             JsonObject model = new JsonObject();
-            model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
-            model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
+            model.addProperty("Model", modelPath);
+            model.addProperty("Texture", texturePath);
             vehicleJson.add("Model", model);
         } else {
             JsonObject model = vehicleJson.getAsJsonObject("Model");
             if (!model.has("Model")) {
-                model.addProperty("Model", "dragonrise_reforge:geo/" + baseName + ".geo.json");
+                model.addProperty("Model", modelPath);
             }
             if (!model.has("Texture")) {
-                model.addProperty("Texture", "dragonrise_reforge:textures/entity/" + baseName + ".png");
+                model.addProperty("Texture", texturePath);
             }
+        }
+
+        // Models（复数数组，GeoVehicleRenderer 渲染必需）
+        if (!vehicleJson.has("Models")) {
+            JsonArray models = new JsonArray();
+            JsonObject entry = new JsonObject();
+            entry.addProperty("Model", modelPath);
+            entry.addProperty("Texture", texturePath);
+            models.add(entry);
+            vehicleJson.add("Models", models);
         }
 
         Files.createDirectories(vehicleFile.getParent());
@@ -360,6 +394,23 @@ public class GeoOBBDataProvider implements DataProvider {
                 // 提取OBB位置（带有炮塔偏移处理）
                 obbEntry.add("Position", extractOBBPosition(bone, turretPivotX, turretPivotY, turretPivotZ, boneName));
 
+                // 提取OBB角度（CustomRotate，单位度；Z 轴与 Position 一致取反）
+                if (bone.has("rotation")) {
+                    JsonArray rotation = bone.getAsJsonArray("rotation");
+                    if (rotation.size() >= 3) {
+                        double rx = rotation.get(0).getAsDouble();
+                        double ry = rotation.get(1).getAsDouble();
+                        double rz = -rotation.get(2).getAsDouble();
+                        if (rx != 0 || ry != 0 || rz != 0) {
+                            JsonArray customRotate = new JsonArray();
+                            customRotate.add(round(rx, 3));
+                            customRotate.add(round(ry, 3));
+                            customRotate.add(round(rz, 3));
+                            obbEntry.add("CustomRotate", customRotate);
+                        }
+                    }
+                }
+
                 // 根据骨骼名称设置特殊部件属性
                 if (boneName.equals("MainEngineObb")) {
                     obbEntry.addProperty("Part", "MainEngine");
@@ -374,6 +425,9 @@ public class GeoOBBDataProvider implements DataProvider {
                         obbEntry.addProperty("Transform", "Turret");
                         obbEntry.addProperty("Rotation", "Turret");
                     }
+                } else if (boneName.contains("CollisionObb")) {
+                    // 纯碰撞盒（不参与部件伤害路由）
+                    obbEntry.addProperty("Part", "Collision");
                 }
 
                 obbList.add(obbEntry);

@@ -1,8 +1,14 @@
 {
-  "ID": "dragonrise_reforge:2s38",
-  "Model": {
-    "Animation": "dragonrise_reforge:animations/2s38.animation.json",
-    "Model": "dragonrise_reforge:geo/2s38.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/2s38.png"
-  }
+    "ID":  "dragonrise_reforge:2s38",
+    "Model":  {
+                  "Animation":  "dragonrise_reforge:animations/2s38.animation.json",
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/2s38.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/2s38.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/2s38.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/2s38.png"
+                   }
+               ]
 }

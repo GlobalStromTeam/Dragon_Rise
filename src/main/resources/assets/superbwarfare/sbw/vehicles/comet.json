@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:comet",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/comet.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/comet.png"
-  }
+    "ID":  "dragonrise_reforge:comet",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/comet.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/comet.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/comet.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/comet.png"
+                   }
+               ]
 }

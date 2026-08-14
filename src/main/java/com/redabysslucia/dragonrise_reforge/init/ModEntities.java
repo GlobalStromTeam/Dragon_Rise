@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.MarkvEntity;
 
 
@@ -1079,6 +1082,14 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<MarkvEntity>> MARKV = register("markv",
             EntityType.Builder.of(MarkvEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Aav7a1Entity>> AAV7A1 = register("aav7a1",
+            EntityType.Builder.of(Aav7a1Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

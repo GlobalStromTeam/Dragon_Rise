@@ -433,5 +433,11 @@
     [-1.625,0.0,-2.804],
     [-1.625,0.0,1.518],
     [1.625,0.0,-2.804]
+  ],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/markv.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/markv.png"
+    }
   ]
 }

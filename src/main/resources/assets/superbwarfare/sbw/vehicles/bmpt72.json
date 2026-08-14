@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:bmpt72",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/bmpt72.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/bmpt72.png"
-  }
+    "ID":  "dragonrise_reforge:bmpt72",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/bmpt72.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/bmpt72.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/bmpt72.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/bmpt72.png"
+                   }
+               ]
 }

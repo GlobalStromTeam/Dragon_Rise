@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:zu23",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/zu23.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/zu23.png"
-  }
+    "ID":  "dragonrise_reforge:zu23",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/zu23.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/zu23.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/zu23.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/zu23.png"
+                   }
+               ]
 }

@@ -1,8 +1,14 @@
 {
-  "ID": "dragonrise_reforge:j10c",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/j10c.geo.json",
-    "Animation": "dragonrise_reforge:animations/j10c.animation.json",
-    "Texture": "dragonrise_reforge:textures/entity/j10c.png"
-  }
+    "ID":  "dragonrise_reforge:j10c",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/j10c.geo.json",
+                  "Animation":  "dragonrise_reforge:animations/j10c.animation.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/j10c.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/j10c.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/j10c.png"
+                   }
+               ]
 }

@@ -59,25 +59,21 @@ public class VehicleJavaGenerator implements DataProvider {
             }
 
             String baseName = geoFile.getFileName().toString().replace(".geo.json", "");
-            
+
             String entityClassName = toPascalCase(baseName) + "Entity";
-            String modelClassName = toPascalCase(baseName) + "Model";
             String rendererClassName = toPascalCase(baseName) + "Renderer";
             String entityConstantName = baseName.toUpperCase();
 
             Path javaSourcePath = Path.of(workingDir).resolve("src/main/java/com/redabysslucia/dragonrise_reforge");
             Path entitiesPath = javaSourcePath.resolve("entities");
-            Path modelPath = javaSourcePath.resolve("client/model/entity");
             Path rendererPath = javaSourcePath.resolve("client/renderer/entity");
             Path initPath = javaSourcePath.resolve("init");
 
             Files.createDirectories(entitiesPath);
-            Files.createDirectories(modelPath);
             Files.createDirectories(rendererPath);
             Files.createDirectories(initPath);
 
             Path entityFile = entitiesPath.resolve(entityClassName + ".java");
-            Path modelFile = modelPath.resolve(modelClassName + ".java");
             Path rendererFile = rendererPath.resolve(rendererClassName + ".java");
 
             if (!Files.exists(entityFile)) {
@@ -85,13 +81,8 @@ public class VehicleJavaGenerator implements DataProvider {
                 Files.writeString(entityFile, entityContent);
             }
 
-            if (!Files.exists(modelFile)) {
-                String modelContent = generateModelContent(baseName, entityClassName, modelClassName);
-                Files.writeString(modelFile, modelContent);
-            }
-
             if (!Files.exists(rendererFile)) {
-                String rendererContent = generateRendererContent(baseName, entityClassName, modelClassName, rendererClassName);
+                String rendererContent = generateRendererContent(baseName, entityClassName, rendererClassName);
                 Files.writeString(rendererFile, rendererContent);
             }
 
@@ -137,7 +128,7 @@ public class VehicleJavaGenerator implements DataProvider {
         }
 
         String content = Files.readString(modEntitiesFile);
-        
+
         if (content.contains("public static final RegistryObject<EntityType<" + entityClassName + ">> " + entityConstantName + " = register")) {
             return;
         }
@@ -148,17 +139,14 @@ public class VehicleJavaGenerator implements DataProvider {
                 "                    .setUpdateInterval(2)\n" +
                 "                    .fireImmune()\n" +
                 "                    .sized(4.0f, 2.9f)\n" +
-                "    );\n";
+                "    );";
 
         String importStatement = "import com.redabysslucia.dragonrise_reforge.entities." + entityClassName + ";\n";
         if (!content.contains(importStatement)) {
             content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + importStatement);
         }
 
-        int lastRegistration = content.lastIndexOf("    public static final RegistryObject<EntityType<");
-        int insertIndex = content.indexOf(");", lastRegistration);
-        int endOfLine = content.indexOf("\n", insertIndex);
-        content = content.substring(0, endOfLine + 1) + "\n" + registrationCode + content.substring(endOfLine + 1);
+        content = insertAfterLast(content, "public static final RegistryObject<EntityType<", registrationCode);
 
         Files.writeString(modEntitiesFile, content);
     }
@@ -182,10 +170,7 @@ public class VehicleJavaGenerator implements DataProvider {
             content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + rendererImport);
         }
 
-        int lastRegistration = content.lastIndexOf("        event.registerEntityRenderer(");
-        int insertIndex = content.indexOf(");", lastRegistration);
-        int endOfLine = content.indexOf("\n", insertIndex);
-        content = content.substring(0, endOfLine + 1) + "\n" + registrationCode + content.substring(endOfLine + 1);
+        content = insertAfterLast(content, "event.registerEntityRenderer(ModEntities.", registrationCode);
 
         Files.writeString(modEntityRenderersFile, content);
     }
@@ -204,12 +189,61 @@ public class VehicleJavaGenerator implements DataProvider {
 
         String tabCode = "                        output.accept(ContainerBlockItem.createInstance(ModEntities." + entityConstantName + ".get()));";
 
-        int lastTabEntry = content.lastIndexOf("output.accept(ContainerBlockItem.createInstance(ModEntities.");
-        int insertIndex = content.indexOf(");", lastTabEntry);
-        int endOfLine = content.indexOf("\n", insertIndex);
-        content = content.substring(0, endOfLine + 1) + "\n" + tabCode + content.substring(endOfLine + 1);
+        content = insertAfterLast(content, "output.accept(ContainerBlockItem.createInstance(ModEntities.", tabCode);
 
         Files.writeString(modTabsFile, content);
+    }
+
+    /**
+     * 在 content 中最后一个匹配 marker 的行之后插入 newBlock。
+     * <ul>
+     *   <li>新块各行的缩进自动对齐到 marker 行的缩进（块内相对缩进保持不变）；</li>
+     *   <li>换行风格跟随文件（CRLF/LF），不再产生混合换行或多余空行；</li>
+     *   <li>兼容文件末尾无换行的情况（直接在末尾追加），避免把新行错误地插到文件开头。</li>
+     * </ul>
+     */
+    private String insertAfterLast(String content, String marker, String newBlock) {
+        int lastIdx = content.lastIndexOf(marker);
+        if (lastIdx < 0) {
+            return content;
+        }
+
+        String eol = content.contains("\r\n") ? "\r\n" : "\n";
+        String indent = extractIndent(content, lastIdx);
+
+        // 把 newBlock 的缩进对齐到 marker 行的缩进
+        String blockIndent = extractIndent(newBlock, 0);
+        StringBuilder aligned = new StringBuilder();
+        for (String line : newBlock.split("\n", -1)) {
+            if (line.isEmpty()) {
+                aligned.append(line);
+                continue;
+            }
+            if (line.startsWith(blockIndent)) {
+                aligned.append(indent).append(line.substring(blockIndent.length()));
+            } else {
+                aligned.append(line);
+            }
+        }
+
+        int lineEnd = content.indexOf("\n", lastIdx);
+        if (lineEnd == -1) {
+            // marker 行是最后一行且没有末尾换行：在文件末尾追加
+            return content + eol + aligned + eol;
+        }
+        // 在 marker 行的行尾换行之后插入
+        int insertPoint = lineEnd + 1;
+        return content.substring(0, insertPoint) + aligned + eol + content.substring(insertPoint);
+    }
+
+    /** 返回 text 中 offset 所在行的前导空格。 */
+    private String extractIndent(String text, int offset) {
+        int lineStart = text.lastIndexOf('\n', offset) + 1;
+        int i = lineStart;
+        while (i < text.length() && text.charAt(i) == ' ') {
+            i++;
+        }
+        return text.substring(lineStart, i);
     }
 
     private String toPascalCase(String name) {
@@ -235,71 +269,35 @@ public class VehicleJavaGenerator implements DataProvider {
         return """
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
-import net.minecraft.resources.ResourceLocation;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
-@SuppressWarnings("removal")
-public class %s extends GeoVehicleEntity {
+public class %s extends VehicleEntity {
 
-        public %s(EntityType<%s> type, Level world) {
-                super(type, world);
-        }
-
+    public %s(EntityType<%s> type, Level world) {
+        super(type, world);
+    }
 
 }
 """.formatted(pascalName + "Entity", pascalName + "Entity", pascalName + "Entity");
     }
 
-    private String generateModelContent(String baseName, String entityClassName, String modelClassName) {
-        String pascalName = toPascalCase(baseName);
-        return """
-package com.redabysslucia.dragonrise_reforge.client.model.entity;
-
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.redabysslucia.dragonrise_reforge.entities.%s;
-import net.minecraft.util.Mth;
-import org.jetbrains.annotations.Nullable;
-
-public class %s extends DragonriseVehicleModel<%s> {
-    @Override
-    public boolean hideForTurretControllerWhileZooming() {
-        return true;
-    }
-
-    @Override
-    public @Nullable TransformContext<%s> collectTransform(String boneName) {
-        if (boneName.equals("propeller")) {
-            return (bone, vehicle, state) -> bone.setRotY(Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
-        }
-
-        if (boneName.equals("tailPropeller")) {
-            return (bone, vehicle, state) -> bone.setRotX(-6 * Mth.lerp(state.getPartialTick(), vehicle.getPropellerRotO(), vehicle.getPropellerRot()));
-        }
-
-        return super.collectTransform(boneName);
-    }
-}
-""".formatted(pascalName + "Entity", pascalName + "Model", pascalName + "Entity", pascalName + "Entity");
-    }
-
-    private String generateRendererContent(String baseName, String entityClassName, String modelClassName, String rendererClassName) {
+    private String generateRendererContent(String baseName, String entityClassName, String rendererClassName) {
         String pascalName = toPascalCase(baseName);
         return """
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.%s;
-import com.redabysslucia.dragonrise_reforge.client.model.entity.%s;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class %s extends VehicleRenderer<%s> {
-        public %s(EntityRendererProvider.Context renderManager) {
-                super(renderManager, new %s());
-        }
+public class %s extends GeoVehicleRenderer<%s> {
+    public %s(EntityRendererProvider.Context renderManager) {
+        super(renderManager);
+    }
 }
-""".formatted(pascalName + "Entity", pascalName + "Model", pascalName + "Renderer", pascalName + "Entity", pascalName + "Renderer", pascalName + "Model");
+""".formatted(pascalName + "Entity", pascalName + "Renderer", pascalName + "Entity", pascalName + "Renderer");
     }
 
     @Override

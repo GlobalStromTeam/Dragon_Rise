@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:dshk",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/dshk.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/dshk.png"
-  }
+    "ID":  "dragonrise_reforge:dshk",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/dshk.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/dshk.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/dshk.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/dshk.png"
+                   }
+               ]
 }
