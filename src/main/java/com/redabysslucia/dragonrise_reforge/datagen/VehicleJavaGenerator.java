@@ -14,6 +14,8 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.LinkedHashSet;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class VehicleJavaGenerator implements DataProvider {
@@ -32,16 +34,36 @@ public class VehicleJavaGenerator implements DataProvider {
         return CompletableFuture.runAsync(() -> {
             try {
                 String workingDir = System.getProperty("user.dir").replace("\\run-data", "").replace("/run-data", "");
-                Path inputPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/geo");
+                Path geoPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/geo");
+                Path bedrockPath = Path.of(workingDir).resolve("src/main/resources/assets/dragonrise_reforge/models/bedrock/vehicle");
 
-                if (!Files.exists(inputPath)) {
+                if (!Files.exists(geoPath) && !Files.exists(bedrockPath)) {
                     return;
                 }
 
-                try (DirectoryStream<Path> stream = Files.newDirectoryStream(inputPath, "*.geo.json")) {
-                    for (Path geoFile : stream) {
-                        processGeoFile(geoFile, workingDir);
+                // 同时支持 geo/ 与 models/bedrock/vehicle/ 两个输入目录，按文件名去重（SBM 模型优先放 models/bedrock/vehicle/）
+                Set<Path> inputFiles = new LinkedHashSet<>();
+                if (Files.exists(geoPath)) {
+                    try (DirectoryStream<Path> stream = Files.newDirectoryStream(geoPath, "*.geo.json")) {
+                        for (Path p : stream) {
+                            inputFiles.add(p);
+                        }
                     }
+                }
+                if (Files.exists(bedrockPath)) {
+                    try (DirectoryStream<Path> stream = Files.newDirectoryStream(bedrockPath, "*.geo.json")) {
+                        for (Path p : stream) {
+                            boolean duplicate = inputFiles.stream()
+                                    .anyMatch(e -> e.getFileName().equals(p.getFileName()));
+                            if (!duplicate) {
+                                inputFiles.add(p);
+                            }
+                        }
+                    }
+                }
+
+                for (Path geoFile : inputFiles) {
+                    processGeoFile(geoFile, workingDir);
                 }
             } catch (Exception e) {
                 throw new RuntimeException("Failed to process geo files", e);
@@ -141,12 +163,12 @@ public class VehicleJavaGenerator implements DataProvider {
                 "                    .sized(4.0f, 2.9f)\n" +
                 "    );";
 
-        String importStatement = "import com.redabysslucia.dragonrise_reforge.entities." + entityClassName + ";\n";
-        if (!content.contains(importStatement)) {
-            content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + importStatement);
+        String importLine = "import com.redabysslucia.dragonrise_reforge.entities." + entityClassName + ";";
+        if (!content.contains(importLine)) {
+            content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + importLine + "\n");
         }
 
-        content = insertAfterLast(content, "public static final RegistryObject<EntityType<", registrationCode);
+        content = insertAfterBlockEnd(content, "public static final RegistryObject<EntityType<", "    );", registrationCode);
 
         Files.writeString(modEntitiesFile, content);
     }
@@ -165,9 +187,9 @@ public class VehicleJavaGenerator implements DataProvider {
 
         String registrationCode = "        event.registerEntityRenderer(ModEntities." + entityConstantName + ".get(), " + rendererClassName + "::new);";
 
-        String rendererImport = "import com.redabysslucia.dragonrise_reforge.client.renderer.entity." + rendererClassName + ";\n";
-        if (!content.contains(rendererImport)) {
-            content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + rendererImport);
+        String rendererImportLine = "import com.redabysslucia.dragonrise_reforge.client.renderer.entity." + rendererClassName + ";";
+        if (!content.contains(rendererImportLine)) {
+            content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + rendererImportLine + "\n");
         }
 
         content = insertAfterLast(content, "event.registerEntityRenderer(ModEntities.", registrationCode);
@@ -195,7 +217,7 @@ public class VehicleJavaGenerator implements DataProvider {
     }
 
     /**
-     * 在 content 中最后一个匹配 marker 的行之后插入 newBlock。
+     * 在 content 中最后一个匹配 marker 的行之后插入 newBlock（单行插入）。
      * <ul>
      *   <li>新块各行的缩进自动对齐到 marker 行的缩进（块内相对缩进保持不变）；</li>
      *   <li>换行风格跟随文件（CRLF/LF），不再产生混合换行或多余空行；</li>
@@ -210,21 +232,7 @@ public class VehicleJavaGenerator implements DataProvider {
 
         String eol = content.contains("\r\n") ? "\r\n" : "\n";
         String indent = extractIndent(content, lastIdx);
-
-        // 把 newBlock 的缩进对齐到 marker 行的缩进
-        String blockIndent = extractIndent(newBlock, 0);
-        StringBuilder aligned = new StringBuilder();
-        for (String line : newBlock.split("\n", -1)) {
-            if (line.isEmpty()) {
-                aligned.append(line);
-                continue;
-            }
-            if (line.startsWith(blockIndent)) {
-                aligned.append(indent).append(line.substring(blockIndent.length()));
-            } else {
-                aligned.append(line);
-            }
-        }
+        String aligned = alignBlock(newBlock, indent);
 
         int lineEnd = content.indexOf("\n", lastIdx);
         if (lineEnd == -1) {
@@ -234,6 +242,57 @@ public class VehicleJavaGenerator implements DataProvider {
         // 在 marker 行的行尾换行之后插入
         int insertPoint = lineEnd + 1;
         return content.substring(0, insertPoint) + aligned + eol + content.substring(insertPoint);
+    }
+
+    /**
+     * 在 content 中最后一个匹配 marker 的<b>多行块</b>的结束标记行之后插入 newBlock。
+     * 用于 ModEntities 这类注册代码是多行块（声明行 + Builder 链 + {@code );}）的情况：
+     * 插入点取块结束标记（如 {@code "    );"}）所在行的换行之后，避免把已有块劈开。
+     */
+    private String insertAfterBlockEnd(String content, String marker, String blockEndMarker, String newBlock) {
+        int lastIdx = content.lastIndexOf(marker);
+        if (lastIdx < 0) {
+            return content;
+        }
+
+        String eol = content.contains("\r\n") ? "\r\n" : "\n";
+        String indent = extractIndent(content, lastIdx);
+        String aligned = alignBlock(newBlock, indent);
+
+        int blockEndIdx = content.indexOf(blockEndMarker, lastIdx);
+        int insertPoint;
+        if (blockEndIdx >= 0) {
+            int lineEnd = content.indexOf("\n", blockEndIdx);
+            insertPoint = lineEnd >= 0 ? lineEnd + 1 : content.length();
+        } else {
+            // 找不到块结束标记：回退到 marker 行尾插入
+            int lineEnd = content.indexOf("\n", lastIdx);
+            insertPoint = lineEnd >= 0 ? lineEnd + 1 : content.length();
+        }
+        return content.substring(0, insertPoint) + aligned + eol + content.substring(insertPoint);
+    }
+
+    /** 把 newBlock 的缩进对齐到目标缩进（块内相对缩进与换行保持不变）。 */
+    private String alignBlock(String newBlock, String indent) {
+        String blockIndent = extractIndent(newBlock, 0);
+        StringBuilder aligned = new StringBuilder();
+        int start = 0;
+        while (start <= newBlock.length()) {
+            int nl = newBlock.indexOf('\n', start);
+            String line = (nl >= 0) ? newBlock.substring(start, nl) : newBlock.substring(start);
+            if (!line.isEmpty() && line.startsWith(blockIndent)) {
+                aligned.append(indent).append(line.substring(blockIndent.length()));
+            } else {
+                aligned.append(line);
+            }
+            if (nl >= 0) {
+                aligned.append('\n');
+                start = nl + 1;
+            } else {
+                break;
+            }
+        }
+        return aligned.toString();
     }
 
     /** 返回 text 中 offset 所在行的前导空格。 */

@@ -1,5 +1,15 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aavc7c1Renderer;
+
+
+
+
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1SbmRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MarkvRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
@@ -152,5 +162,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.MARKV.get(), MarkvRenderer::new);
 
                 event.registerEntityRenderer(ModEntities.AAV7A1.get(), Aav7a1SbmRenderer::new);
+                event.registerEntityRenderer(ModEntities.AAV7A1.get(), Aav7a1Renderer::new);
+                event.registerEntityRenderer(ModEntities.AAVC7C1.get(), Aavc7c1Renderer::new);
         }
 }

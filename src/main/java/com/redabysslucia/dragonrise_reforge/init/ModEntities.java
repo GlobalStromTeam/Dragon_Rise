@@ -1,5 +1,10 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Aavc7c1Entity;
+
+
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
 
 
@@ -1095,6 +1100,14 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
+    public static final RegistryObject<EntityType<Aavc7c1Entity>> AAVC7C1 = register("aavc7c1",
+            EntityType.Builder.of(Aavc7c1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));

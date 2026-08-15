@@ -81,10 +81,24 @@ public class GeoOBBDataProvider implements DataProvider {
     }
 
     private void processGeoFile(Path geoFile, Path dragonriseOutputPath, Path superbwarfareOutputPath, Path dragonriseAssetOutputPath) {
+        String content;
         try {
-            String content = Files.readString(geoFile);
-            JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
+            content = Files.readString(geoFile);
+        } catch (Exception e) {
+            System.err.println("GeoOBBDataProvider: cannot read " + geoFile.getFileName() + ", skipped: " + e.getMessage());
+            return;
+        }
 
+        JsonObject geoJson;
+        try {
+            geoJson = JsonParser.parseString(content).getAsJsonObject();
+        } catch (Exception e) {
+            // 单个模型损坏/非 JSON 时跳过，避免整个 runData 崩溃
+            System.err.println("GeoOBBDataProvider: malformed model " + geoFile.getFileName() + " (" + e.getMessage() + "), skipped");
+            return;
+        }
+
+        try {
             if (!hasBuildBone(geoJson)) {
                 return;
             }

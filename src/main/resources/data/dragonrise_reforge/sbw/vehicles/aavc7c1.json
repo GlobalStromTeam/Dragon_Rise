@@ -1,6 +1,5 @@
 {
-  "ID": "dragonrise_reforge:aav7a1",
-  "TurretControllerIndex": 1,
+  "ID": "dragonrise_reforge:aavc7c1",
   "MaxHealth": 300,
   "MaxEnergy": 5000000,
   "OBB": [
@@ -120,7 +119,7 @@
     },
     {
       "Size": [0.698,0.186,0.956],
-      "Position": [0.059,0.262,-0.175],
+      "Position": [-1.0,3.111,0.928],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -135,17 +134,9 @@
     },
     {
       "HidePassenger": true,
-      "Transform": "Barrel",
-      "Position": [0.059,-1.146,0.272],
-      "CanRotateHead": false,
-      "MinPitch": -12,
-      "MaxPitch": 40,
-      "Weapons": [
-        "Mk19",
-        "M2HB"
-      ],
-      "Sensitivity": [0.53,0.71,0.9],
-      "HasThermalImaging": true
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-1.0,1.703,1.375]
     },
     {
       "HidePassenger": true,
@@ -262,91 +253,6 @@
       "Position": [1.125,1.578,1.375]
     }
   ],
-  "Weapons": {
-    "Mk19": {
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Projectile": "superbwarfare:gun_grenade",
-      "DefaultZoom": 3,
-      "RPM": 350,
-      "Magazine": 96,
-      "EmptyReloadTime": 100,
-      "Velocity": 4.5,
-      "Gravity": 0.05,
-      "Damage": 55,
-      "ExplosionDamage": 10,
-      "ExplosionRadius": 5,
-      "HeatPerShoot": 6,
-      "NaturalCooldown": 1,
-      "RecoilTime": 31,
-      "RecoilForce": 1.62,
-      "ShootAnimationTime": 3,
-      "Spread": 1.2,
-      "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
-      "Name": "dragonrise_reforge:mk19",
-      "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
-        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
-      },
-      "SoundRadius": 24,
-      "AmmoType": "superbwarfare:grenade_40mm",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/grenade.png",
-      "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [0.0,-0.1,1.5]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
-      }
-    },
-    "M2HB": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
-      "DefaultFireMode": "Auto",
-      "AvailableFireModes": "Auto",
-      "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
-      "Projectile": "superbwarfare:projectile",
-      "DefaultZoom": 3,
-      "RPM": 600,
-      "Damage": 40,
-      "BypassesArmor": 0.2,
-      "Velocity": 42.65,
-      "Gravity": 0.05,
-      "RecoilTime": 16,
-      "RecoilForce": 0.05,
-      "HeatPerShoot": 3.75,
-      "NaturalCooldown": 1,
-      "ShootAnimationTime": 1,
-      "Magazine": 200,
-      "EmptyReloadTime": 100,
-      "AmmoType": "@HeavyAmmo",
-      "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [0.15,0.1,1.5]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
-      },
-      "Crosshair": "@VehicleCommonGun",
-      "Name": "dragonrise_reforge:M2HB",
-      "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
-      },
-      "SoundRadius": 16
-    }
-  },
   "HUDColor": "0xFFC700",
   "EngineType": "Track",
   "EngineInfo": {
@@ -407,7 +313,7 @@
     "ExplosionDamage": 160,
     "ExplosionRadius": 8
   },
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/aav7a1_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/aavc7c1_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "APC",
   "CollisionLevel": {
@@ -441,8 +347,8 @@
   "InertiaRotateRate": 1.75,
   "Models": [
     {
-      "Model": "dragonrise_reforge:models/bedrock/vehicle/aav7a1.geo.json",
-      "Texture": "dragonrise_reforge:textures/entity/aav7a1.png"
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/aavc7c1.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/aavc7c1.png"
     }
   ]
 }
