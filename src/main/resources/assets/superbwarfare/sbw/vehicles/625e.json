@@ -3,7 +3,7 @@
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/625e.geo.json",
                   "Texture":  "dragonrise_reforge:textures/entity/625e.png",
-                  "Animation":  "dragonrise_reforge:animations/625e.animation.json"
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/625e.animation.json"
               },
     "Models":  [
                    {

@@ -2,7 +2,7 @@
     "ID":  "dragonrise_reforge:hyr0",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/hyr0.geo.json",
-                  "Animation":  "dragonrise_reforge:animations/hyr0.animation.json",
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/hyr0.animation.json",
                   "Texture":  "dragonrise_reforge:textures/entity/hyr0.png"
               },
     "MouseSpeed":  [

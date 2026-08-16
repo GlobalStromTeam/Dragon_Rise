@@ -669,6 +669,16 @@
 					"pivot": [0, 30.075, -15.05]
 				},
 				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [1.27, 68.07, -151.5]
+				},
+				{
+					"name": "flare2",
+					"parent": "barrel",
+					"pivot": [1.27, 68.07, -151.5]
+				},
+				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 33.783, -33.7445],
@@ -3111,6 +3121,16 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [9.43, 105.8, -28.82]
+				},
+				{
+					"name": "flare4",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [9.43, 105.8, -28.82]
 				},
 				{
 					"name": "passengerWeaponStationPitch",

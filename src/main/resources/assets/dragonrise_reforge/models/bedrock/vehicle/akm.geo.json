@@ -26,6 +26,11 @@
 					"pivot": [0, 38.5, 0]
 				},
 				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [32.78, 98.4, -36.51]
+				},
+				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 53.9, -15.4]

@@ -3,7 +3,7 @@
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/su24m.geo.json",
                   "Texture":  "dragonrise_reforge:textures/entity/su24m.png",
-                  "Animation":  "dragonrise_reforge:animations/su24m.animation.json"
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/su24m.animation.json"
               },
     "Models":  [
                    {

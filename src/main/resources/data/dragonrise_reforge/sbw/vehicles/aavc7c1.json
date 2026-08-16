@@ -130,127 +130,235 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.0,1.14,2.938]
+      "Position": [1.0,1.14,2.938],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [1.0,2.75,2.938]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.0,1.703,1.375]
+      "Position": [-1.0,1.703,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-1.0,3.313,1.375]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [1.125,3.188,1.375]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375]
+      "Position": [1.125,1.578,1.375],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     }
   ],
   "HUDColor": "0xFFC700",

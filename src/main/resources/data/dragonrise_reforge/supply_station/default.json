@@ -98,19 +98,6 @@
         "Mode": "FIXED",
         "FixedAmount": 12
       },
-      "superbwarfare:small_shell_ap": {
-        "Mode": "FIXED",
-        "FixedAmount": 80
-      },
-      "superbwarfare:small_shell_he": {
-        "Mode": "FIXED",
-        "FixedAmount": 100
-      },
-      "superbwarfare:medium_anti_ground_missile": {
-        "Mode": "PACKAGE",
-        "CustomItem": "superbwarfare:wire_guide_missile",
-        "CustomItemCount": 2
-      },
       "superbwarfare:heavy_ammo": {
         "Mode": "FIXED",
         "FixedAmount": 240
@@ -158,17 +145,16 @@
           "FixedAmount": 18
         },
         "superbwarfare:medium_anti_ground_missile": {
-          "Mode": "PACKAGE",
-          "CustomItem": "superbwarfare:wire_guide_missile",
-          "CustomItemCount": 4
+          "Mode": "FIXED",
+          "FixedAmount": 4
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 2000
+          "FixedAmount": 500
         },
         "superbwarfare:heavy_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 450
+          "FixedAmount": 500
         }
       }
     },
@@ -189,16 +175,15 @@
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 3000
+          "FixedAmount": 500
         },
         "superbwarfare:large_shell_he": {
           "Mode": "FIXED",
           "FixedAmount": 22
         },
         "superbwarfare:medium_anti_ground_missile": {
-          "Mode": "PACKAGE",
-          "CustomItem": "superbwarfare:wire_guide_missile",
-          "CustomItemCount": 4
+          "Mode": "FIXED",
+          "FixedAmount": 4
         }
       }
     },
@@ -219,12 +204,11 @@
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 3000
+          "FixedAmount": 500
         },
         "superbwarfare:medium_anti_ground_missile": {
-          "Mode": "PACKAGE",
-          "CustomItem": "superbwarfare:wire_guide_missile",
-          "CustomItemCount": 2
+          "Mode": "FIXED",
+          "FixedAmount": 2
         }
       }
     },
@@ -245,7 +229,7 @@
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 2000
+          "FixedAmount": 500
         },
         "superbwarfare:heavy_ammo": {
           "Mode": "FIXED",
@@ -300,7 +284,7 @@
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 2000
+          "FixedAmount": 500
         },
         "superbwarfare:heavy_ammo": {
           "Mode": "FIXED",
@@ -324,13 +308,12 @@
           "FixedAmount": 230
         },
         "superbwarfare:medium_anti_ground_missile": {
-          "Mode": "PACKAGE",
-          "CustomItem": "superbwarfare:wire_guide_missile",
-          "CustomItemCount": 2
+          "Mode": "FIXED",
+          "FixedAmount": 2
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 1600
+          "FixedAmount": 500
         }
       }
     },
@@ -348,6 +331,10 @@
         "superbwarfare:small_shell_he": {
           "Mode": "FIXED",
           "FixedAmount": 200
+        },
+        "superbwarfare:rifle_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
         }
       }
     },
@@ -385,10 +372,110 @@
         },
         "superbwarfare:rifle_ammo": {
           "Mode": "FIXED",
-          "FixedAmount": 2000
+          "FixedAmount": 500
         }
       }
-    }
+    },
 
+    /* ====== BMP2D 步兵战车 ======
+     * 200小口径穿甲弹, 300小口径高爆弹, 3000发步枪弹, 22发高爆弹, 4发线控导弹 */
+    "fcp:bmp2d": {
+      "Mode": "FIXED",
+      "HealPercent": 50,
+      "AmmoOverrides": {
+        "superbwarfare:small_shell_ap": {
+          "Mode": "FIXED",
+          "FixedAmount": 200
+        },
+        "superbwarfare:small_shell_he": {
+          "Mode": "FIXED",
+          "FixedAmount": 300
+        },
+        "superbwarfare:rifle_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
+        },
+        "superbwarfare:large_shell_he": {
+          "Mode": "FIXED",
+          "FixedAmount": 22
+        },
+        "superbwarfare:medium_anti_ground_missile": {
+          "Mode": "FIXED",
+          "FixedAmount": 4
+        }
+      }
+    },
+    /* ====== BTR82 步兵战车 ======
+     * 160发小口径穿甲弹, 300发小口径高爆弹, 3000发步枪弹, 2发线控导弹 */
+    "fcp:btr82": {
+      "Mode": "FIXED",
+      "HealPercent": 50,
+      "AmmoOverrides": {
+        "superbwarfare:small_shell_ap": {
+          "Mode": "FIXED",
+          "FixedAmount": 160
+        },
+        "superbwarfare:small_shell_he": {
+          "Mode": "FIXED",
+          "FixedAmount": 300
+        },
+        "superbwarfare:rifle_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
+        }
+      }
+    },
+    /* ====== T90M 主战坦克 ======
+     * 21穿甲弹, 18高爆弹, 4发线控导弹, 2000发步枪弹, 450发重型子弹 */
+    "dragonrise_reforge:t90mh": {
+      "Mode": "FIXED",
+      "HealPercent": 50,
+      "AmmoOverrides": {
+        "superbwarfare:large_shell_ap": {
+          "Mode": "FIXED",
+          "FixedAmount": 21
+        },
+        "superbwarfare:large_shell_he": {
+          "Mode": "FIXED",
+          "FixedAmount": 18
+        },
+        "superbwarfare:medium_anti_ground_missile": {
+          "Mode": "FIXED",
+          "FixedAmount": 4
+        },
+        "superbwarfare:rifle_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
+        },
+        "superbwarfare:heavy_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 500
+        }
+      }
+    },
+    /* ====== BTR80 装甲输送车 ======
+     * 1000发重型子弹 */
+    "fcp:btr80": {
+      "Mode": "FIXED",
+      "HealPercent": 50,
+      "AmmoOverrides": {
+        "superbwarfare:heavy_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 1000
+        }
+      }
+    },
+    /* ====== 虎式 防护型突击车 ======
+     * 1000发重型子弹, 60发榴弹 */
+    "fcp:gaz_tigr_rws": {
+      "Mode": "FIXED",
+      "HealPercent": 50,
+      "AmmoOverrides": {
+        "superbwarfare:heavy_ammo": {
+          "Mode": "FIXED",
+          "FixedAmount": 1000
+        }
+      }
+    },
   }
 }

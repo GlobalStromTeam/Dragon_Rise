@@ -44,7 +44,8 @@
         "Position": [0.0,2.728,1.844],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0,5,-15]
+        "AircraftCameraPos": [0,5,-15],
+        "ZoomPosition": [0.0,2.728,1.844]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
@@ -68,7 +69,7 @@
         "Transform": "Barrel",
         "UseFixedCameraPos": true,
         "Position": [0.0,0.916,4.344],
-        "ZoomPosition": [0.0,1.1640625,7.2171875],
+        "ZoomPosition": [0.0,0.916,4.344],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,

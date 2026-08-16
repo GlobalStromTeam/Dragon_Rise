@@ -1,5 +1,17 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mv3Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ztz96aEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.T72b3Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Aavc7c1Entity;
 
 
@@ -1102,6 +1114,34 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Aavc7c1Entity>> AAVC7C1 = register("aavc7c1",
             EntityType.Builder.of(Aavc7c1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<T72b3Entity>> T72B3 = register("t72b3",
+            EntityType.Builder.of(T72b3Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ztz96aEntity>> ZTZ96A = register("ztz96a",
+            EntityType.Builder.of(Ztz96aEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3Entity>> MV3 = register("mv3",
+            EntityType.Builder.of(Mv3Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<ChallengerDsEntity>> CHALLENGER_DS = register("challenger_ds",
+            EntityType.Builder.of(ChallengerDsEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

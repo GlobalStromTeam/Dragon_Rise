@@ -2,7 +2,7 @@
     "ID":  "dragonrise_reforge:jas39e",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/jas39e.geo.json",
-                  "Animation":  "dragonrise_reforge:animations/jas39e.animation.json",
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/jas39e.animation.json",
                   "Texture":  "dragonrise_reforge:textures/entity/jas39e.png"
               },
     "MouseSpeed":  [

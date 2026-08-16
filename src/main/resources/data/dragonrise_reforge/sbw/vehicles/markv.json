@@ -70,7 +70,13 @@
       "MaxYaw": 30,
       "Weapons": [
         "MG1"
-      ]
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-0.187,2.121,2.853]
+      }
     },
     {
       "HidePassenger": true,
@@ -85,7 +91,13 @@
       "MaxPitch": 20,
       "MinYaw": -80,
       "MaxYaw": 45,
-      "Sensitivity": [0.52,0.72,0.9]
+      "Sensitivity": [0.52,0.72,0.9],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [2.188,1.621,1.478]
+      }
     },
     {
       "HidePassenger": true,
@@ -100,7 +112,13 @@
       "MaxPitch": 20,
       "MinYaw": -45,
       "MaxYaw": 80,
-      "Sensitivity": [0.57,0.55,0.9]
+      "Sensitivity": [0.57,0.55,0.9],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-2.125,1.621,1.415]
+      }
     },
     {
       "HidePassenger": true,
@@ -114,7 +132,13 @@
       "MaxYaw": 50,
       "Weapons": [
         "MG2"
-      ]
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [2.063,1.621,0.165]
+      }
     },
     {
       "HidePassenger": true,
@@ -128,7 +152,13 @@
       "MaxYaw": 50,
       "Weapons": [
         "MG3"
-      ]
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-2.062,1.621,0.165]
+      }
     }
   ],
   "Weapons": {

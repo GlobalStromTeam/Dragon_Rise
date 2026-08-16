@@ -1396,6 +1396,11 @@
 					]
 				},
 				{
+					"name": "flare",
+					"parent": "turret",
+					"pivot": [-26.17, 36.24, -141.69]
+				},
+				{
 					"name": "turret",
 					"parent": "base",
 					"pivot": [-0.125, 34.6, -5.7]

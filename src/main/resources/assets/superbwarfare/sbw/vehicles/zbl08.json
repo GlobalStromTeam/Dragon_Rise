@@ -3,7 +3,7 @@
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/zbl08.geo.json",
                   "Texture":  "dragonrise_reforge:textures/entity/zbl08.png",
-                  "Animation":  "dragonrise_reforge:animations/zbl08.animation.json"
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/zbl08.animation.json"
               },
     "Models":  [
                    {

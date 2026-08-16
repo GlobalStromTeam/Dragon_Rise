@@ -182,6 +182,10 @@ public class ModTabs {
 
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AAV7A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AAVC7C1.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T72B3.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZTZ96A.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHALLENGER_DS.get()));
 
                     }
                     ).build()

@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 31, -3]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [20.25, 23.9918, 15.1937]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "main",
@@ -5453,6 +5453,11 @@
 					"pivot": [-10.0928, 52.7835, 1.14512]
 				},
 				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [1.79, -0.18, -30.15]
+				},
+				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerWeaponStationYaw",
 					"pivot": [-10.0928, 52.7835, 1.14512],
@@ -7563,6 +7568,7 @@
 				},
 				{
 					"name": "trackL",
+					"parent": "root",
 					"pivot": [-0.5, 17.1, -19],
 					"cubes": [
 						{
@@ -7735,6 +7741,7 @@
 				},
 				{
 					"name": "trackR",
+					"parent": "root",
 					"pivot": [0.5, 17.1, -19],
 					"cubes": [
 						{
@@ -7935,6 +7942,7 @@
 				},
 				{
 					"name": "bone21",
+					"parent": "root",
 					"pivot": [-13, 28.06651, -35.02473],
 					"cubes": [
 						{
@@ -8795,6 +8803,7 @@
 				},
 				{
 					"name": "bone48",
+					"parent": "root",
 					"pivot": [-7.06251, 16.74042, 75.70151],
 					"rotation": [0, 0, 7.5],
 					"cubes": [

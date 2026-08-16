@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import software.bernie.geckolib.animatable.GeoItem;
 
-@Mixin(value = VehicleAssemblingScreen.class, remap = false)
+@Mixin(value = VehicleAssemblingScreen.class)
 public abstract class VehicleAssemblingScreenMixin {
 
     /**
@@ -25,8 +25,7 @@ public abstract class VehicleAssemblingScreenMixin {
             method = "renderDefaultItemModel",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/renderer/entity/ItemRenderer;renderStatic(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;IILcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/Level;I)V",
-                    remap = false
+                    target = "Lnet/minecraft/client/renderer/entity/ItemRenderer;renderStatic(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;IILcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;Lnet/minecraft/world/level/Level;I)V"
             )
     )
     private void redirectRenderStatic(ItemRenderer instance, ItemStack stack, ItemDisplayContext displayContext,

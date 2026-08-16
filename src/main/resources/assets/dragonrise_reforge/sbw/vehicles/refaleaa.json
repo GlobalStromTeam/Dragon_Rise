@@ -2,7 +2,7 @@
     "ID":  "dragonrise_reforge:refaleaa",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/rafaleaa.geo.json",
-                  "Animation":  "dragonrise_reforge:animations/refale.animation.json",
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/refale.animation.json",
                   "Texture":  "dragonrise_reforge:textures/entity/rafaleaa.png"
               },
     "MouseSpeed":  [

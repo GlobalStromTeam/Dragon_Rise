@@ -7705,6 +7705,11 @@
 					"pivot": [-9.95826, 52.145, 0.10663]
 				},
 				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [-19.56, 106.61, -29.56]
+				},
+				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerweaponstation",
 					"pivot": [-9.9583, 52.145, 0.1066]

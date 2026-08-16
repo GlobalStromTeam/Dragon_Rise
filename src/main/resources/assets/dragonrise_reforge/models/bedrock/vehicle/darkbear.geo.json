@@ -1475,6 +1475,11 @@
 					"rotation": [2.5, 0, 0]
 				},
 				{
+					"name": "flare3",
+					"parent": "turret",
+					"pivot": [-2.63, 199.33, -382.61]
+				},
+				{
 					"name": "turret",
 					"parent": "turretRot",
 					"pivot": [-1.49216, 28.85719, -3.65274]
@@ -3298,6 +3303,11 @@
 					]
 				},
 				{
+					"name": "flare4",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [9.94, 160.52, 64.98]
+				},
+				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerWeaponStationYaw",
 					"pivot": [3.375, 51.86894, 24.89194]
@@ -3512,6 +3522,16 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [0, 135.89, -345.17]
+				},
+				{
+					"name": "flare2",
+					"parent": "barrel",
+					"pivot": [0, 135.89, -345.17]
 				},
 				{
 					"name": "barrel",

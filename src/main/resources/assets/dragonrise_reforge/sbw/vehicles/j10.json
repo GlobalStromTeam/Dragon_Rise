@@ -2,7 +2,7 @@
     "ID":  "dragonrise_reforge:j10",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/j10.geo.json",
-                  "Animation":  "dragonrise_reforge:animations/j10.animation.json",
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/j10.animation.json",
                   "Texture":  "dragonrise_reforge:textures/entity/j10.png"
               },
     "MouseSpeed":  [

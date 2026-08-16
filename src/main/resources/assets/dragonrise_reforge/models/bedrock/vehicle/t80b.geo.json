@@ -12,36 +12,17 @@
 			},
 			"bones": [
 				{
-					"name": "base",
-					"pivot": [0, 21.49955, 61.78842]
-				},
-				{
-					"name": "smoker",
-					"parent": "base",
-					"pivot": [0, 21.49955, 61.78842],
-					"cubes": [
-						{
-							"origin": [-9, 19.0431, 59.69676],
-							"size": [18, 4.91289, 4.18332],
-							"uv": {
-								"north": {"uv": [170, 315], "uv_size": [18, 5]},
-								"east": {"uv": [263, 320], "uv_size": [4, 5]},
-								"south": {"uv": [249, 315], "uv_size": [18, 5]},
-								"west": {"uv": [356, 164], "uv_size": [4, 5]},
-								"up": {"uv": [327, 173], "uv_size": [18, 4]},
-								"down": {"uv": [327, 181], "uv_size": [18, -4]}
-							}
-						}
-					]
-				},
-				{
 					"name": "root",
-					"parent": "base",
-					"pivot": [0, 13.75, -52]
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "base",
+					"parent": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "sbb",
-					"parent": "root",
+					"parent": "base",
 					"pivot": [0, 13.75, -52],
 					"cubes": [
 						{
@@ -1506,6 +1487,16 @@
 					]
 				},
 				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [0, 0.4, -94.13]
+				},
+				{
+					"name": "flare2",
+					"parent": "barrel",
+					"pivot": [-3.52, 0.4, -94.13]
+				},
+				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 30.25, -13.75],
@@ -1682,6 +1673,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [-2.13, -0.93, -32.4]
 				},
 				{
 					"name": "passengerWeaponStationPitch",
@@ -2759,6 +2755,25 @@
 					]
 				},
 				{
+					"name": "smoker",
+					"parent": "base",
+					"pivot": [0, 21.49955, 61.78842],
+					"cubes": [
+						{
+							"origin": [-9, 19.0431, 59.69676],
+							"size": [18, 4.91289, 4.18332],
+							"uv": {
+								"north": {"uv": [170, 315], "uv_size": [18, 5]},
+								"east": {"uv": [263, 320], "uv_size": [4, 5]},
+								"south": {"uv": [249, 315], "uv_size": [18, 5]},
+								"west": {"uv": [356, 164], "uv_size": [4, 5]},
+								"up": {"uv": [327, 173], "uv_size": [18, 4]},
+								"down": {"uv": [327, 181], "uv_size": [18, -4]}
+							}
+						}
+					]
+				},
+				{
 					"name": "bone6",
 					"parent": "base",
 					"pivot": [31.92031, 36.05549, 26.40171],
@@ -3393,6 +3408,7 @@
 				},
 				{
 					"name": "ld",
+					"parent": "root",
 					"pivot": [0, -0.25, -0.25]
 				},
 				{
@@ -3623,6 +3639,7 @@
 				},
 				{
 					"name": "Wheel",
+					"parent": "root",
 					"pivot": [55.5, 14.75, -52]
 				},
 				{

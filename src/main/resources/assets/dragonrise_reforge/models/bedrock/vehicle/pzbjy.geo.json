@@ -3460,6 +3460,11 @@
 					]
 				},
 				{
+					"name": "flare2",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [40.76, 140.95, 96.85]
+				},
+				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerWeaponStationYaw",
 					"pivot": [20.8241, 69.91886, 44.18187]
@@ -3737,6 +3742,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [-47.03, 132.76, -380.17]
 				},
 				{
 					"name": "barrel",

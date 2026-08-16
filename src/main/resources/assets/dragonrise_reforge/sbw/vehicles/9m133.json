@@ -1,6 +1,7 @@
 {
     "ID":  "dragonrise_reforge:9m133",
     "Model":  {
+                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/9m133.animation.json",
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/9m133.geo.json",
                   "Texture":  "dragonrise_reforge:textures/entity/9m133.png"
               },

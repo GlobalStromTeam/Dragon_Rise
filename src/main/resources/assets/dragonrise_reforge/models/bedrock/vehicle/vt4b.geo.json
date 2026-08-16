@@ -3408,6 +3408,16 @@
 					]
 				},
 				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [-0.69, 97.65, -122.51]
+				},
+				{
+					"name": "flare2",
+					"parent": "barrel",
+					"pivot": [-0.69, 97.65, -122.51]
+				},
+				{
 					"name": "barrel",
 					"parent": "bone",
 					"pivot": [0, 33.5418, -27.5563]
