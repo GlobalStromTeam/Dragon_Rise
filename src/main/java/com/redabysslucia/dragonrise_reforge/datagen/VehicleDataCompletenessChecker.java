@@ -350,12 +350,14 @@ public class VehicleDataCompletenessChecker implements DataProvider {
                 g.append("- 建议补：`waterMask` 水面遮罩；`TerrainCompat` 可省略\n");
             }
             case "AIRSHIP" -> {
-                g.append("- 飞艇：垂直起降飞行器，参考直升机与固定翼的混合\n");
-                g.append("- `HudType`：`@Aircraft` 或 `@Helicopter`\n");
-                g.append("- `EngineType`：`Helicopter` 或 `Aircraft`（按模型推进方式）\n");
-                g.append("- `EngineInfo` 参考直升机：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`\n");
-                g.append("- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`、`RotateOffsetHeight`\n");
-                g.append("- 无需字段：`TrackDistanceMultiply`、`TerrainCompat` 可不填\n");
+                g.append("- 飞艇（参考 superbwarfare 原版 kirov 基洛夫）：浮空重型平台，整体 `Gravity: 0`\n");
+                g.append("- `HudType`：`@Kirov`（原版飞艇专用 HUD）\n");
+                g.append("- `EngineType`：`AirShip`；`EngineSound` 填飞艇引擎音效\n");
+                g.append("- `EngineInfo` 应包含（kirov 原版键）：`Buoyancy`, `EnergyCostRate`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `MaxUpSpeedRate`, `MaxDownSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`, `FloatHeight`, `SprintMultiply`\n");
+                g.append("- 特有字段：`FloatHeight`（悬浮高度，kirov 为 3.5）、`Buoyancy`（浮力，kirov 为 0.1）、`MaxUpSpeedRate`/`MaxDownSpeedRate`（垂直爬升/下降速度）\n");
+                g.append("- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`（如 `[0, 11, 44]`）、`RotateOffsetHeight`、`VehicleContainerType: Huge`\n");
+                g.append("- 武器典型：`Bomb`（航弹投放——`AddShooterDeltaMovement: true`、`ShootPos.Directions: [\"DeltaMovement\"]`、`ShootDirectionForHud: \"Bomb\"`、`Velocity: 1.0`），也可带 `Missile`\n");
+                g.append("- 无需字段：陆地车的 `TerrainCompat`、`TrackDistanceMultiply` 不需要\n");
             }
             default -> {
                 g.append("- 陆地载具默认：`HudType: @Land`，`EngineType` 按模型（`Track`/`Wheel`）\n");
