@@ -2,6 +2,10 @@
 
 该载具模型含 Build 骨骼，属于可自动生成数据的车辆。请按 superbwarfare 车辆数据格式填充缺失字段，**已有字段保持原样，不得改动**。输出完整 JSON。
 
+## 载具类型
+
+`HELICOPTER`
+
 ## 缺失字段
 
 ```
@@ -41,6 +45,18 @@ UsePassengerCreativeAmmoBox
 Gravity
 InertiaRotateRate
 ```
+
+## 类型专属填写指南（HELICOPTER）
+
+- `HudType`：`@Helicopter`
+- `EngineType`：`Helicopter`；`EngineSound` 填旋翼音效
+- `EngineInfo` 应包含：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`
+- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`、`RotateOffsetHeight`
+- 武器典型：`Cannon`（机炮，可旋转）+ `Rocket` + `Missile`（含 `@Missile` 等，按模型骨骼）
+- 无需字段：`HasGear`/`SpeedRate`（固定翼特有）、`TrackDistanceMultiply`
+
+- 通用：`VehicleIcon` 填 `dragonrise_reforge:textures/vehicle_icon/XXX_icon.png`；`ContainerIcon` 填 `dragonrise_reforge:textures/gui/vehicle/type/*.png`；`VehicleContainerType` 按载具大小（`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`）
+
 
 ## 现有数据（骨架，保留不变）
 

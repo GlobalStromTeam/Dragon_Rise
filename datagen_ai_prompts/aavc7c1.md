@@ -2,6 +2,10 @@
 
 该载具模型含 Build 骨骼，属于可自动生成数据的车辆。请按 superbwarfare 车辆数据格式填充缺失字段，**已有字段保持原样，不得改动**。输出完整 JSON。
 
+## 载具类型
+
+`WHEEL`
+
 ## 缺失字段
 
 ```
@@ -42,6 +46,19 @@ UsePassengerCreativeAmmoBox
 Gravity
 TerrainCompatRotateRate
 ```
+
+## 类型专属填写指南（WHEEL）
+
+- `HudType`：`@Land`
+- `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID
+- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`
+- 炮塔：`TurretPos`/`BarrelPos`（若模型有）、`TurretTurnSpeed`/`TurretYawRange`/`TurretPitchRange`
+- 地形：`TerrainCompat`
+- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）
+- 无需字段：飞行器的 `PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`
+
+- 通用：`VehicleIcon` 填 `dragonrise_reforge:textures/vehicle_icon/XXX_icon.png`；`ContainerIcon` 填 `dragonrise_reforge:textures/gui/vehicle/type/*.png`；`VehicleContainerType` 按载具大小（`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`）
+
 
 ## 现有数据（骨架，保留不变）
 

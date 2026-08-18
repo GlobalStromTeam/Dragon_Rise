@@ -180,13 +180,18 @@ public class VehicleDataCompletenessChecker implements DataProvider {
 
     /** 构建单个载具的 AI 填充提示词。 */
     private String buildPrompt(String id, String vehicleJson, String modelJson, List<String> missingFields) {
+        String typeCategory = detectTypeCategory(vehicleJson, modelJson);
         StringBuilder sb = new StringBuilder();
         sb.append("# AI 填充任务：载具 `").append(id).append("`\n\n");
         sb.append("该载具模型含 Build 骨骼，属于可自动生成数据的车辆。请按 superbwarfare 车辆数据格式填充缺失字段，");
         sb.append("**已有字段保持原样，不得改动**。输出完整 JSON。\n\n");
+        sb.append("## 载具类型\n\n");
+        sb.append("`").append(typeCategory).append("`\n\n");
 
         sb.append("## 缺失字段\n\n");
         sb.append("```\n").append(String.join("\n", missingFields)).append("\n```\n\n");
+
+        sb.append(buildTypeGuide(typeCategory)).append("\n\n");
 
         sb.append("## 现有数据（骨架，保留不变）\n\n```json\n").append(vehicleJson).append("\n```\n\n");
 
@@ -253,6 +258,115 @@ public class VehicleDataCompletenessChecker implements DataProvider {
         } catch (Exception ignored) {
         }
         return false;
+    }
+
+    /**
+     * 检测载具类型类别。优先读现有 JSON 的 Type 字段；缺失时从模型骨骼推断。
+     * 返回类别：TRACK（履带坦克）/ WHEEL（轮式）/ AIRPLANE / HELICOPTER / BOAT / DEFENSE / LAND（未知陆地）
+     */
+    private String detectTypeCategory(String vehicleJson, String modelJson) {
+        String jsonType = "";
+        try {
+            JsonObject json = JsonParser.parseString(vehicleJson).getAsJsonObject();
+            if (json.has("Type")) {
+                jsonType = json.get("Type").getAsString();
+            }
+        } catch (Exception ignored) {
+        }
+
+        if (!jsonType.isEmpty()) {
+            switch (jsonType) {
+                case "Tank": return modelHas(modelJson, "track") ? "TRACK" : "WHEEL";
+                case "APC":
+                case "Car":
+                case "Artillery":
+                case "AA":
+                    return modelHas(modelJson, "track") ? "TRACK" : "WHEEL";
+                case "Airplane": return "AIRPLANE";
+                case "Helicopter": return "HELICOPTER";
+                case "Boat": return "BOAT";
+                case "Defense": return "DEFENSE";
+                case "Drone": return "AIRPLANE";
+                case "AirShip": return "HELICOPTER";
+                default: return "LAND";
+            }
+        }
+
+        // 模型骨骼推断
+        if (modelHas(modelJson, "propeller") || modelHas(modelJson, "tailPropeller")) return "AIRPLANE";
+        if (modelHas(modelJson, "rotor") || modelHas(modelJson, "mainRotor") || modelHas(modelJson, "tailRotor")) return "HELICOPTER";
+        if (modelHas(modelJson, "waterMask")) return "BOAT";
+        if (modelHas(modelJson, "track")) return "TRACK";
+        if (modelHas(modelJson, "wheel")) return "WHEEL";
+        return "LAND";
+    }
+
+    private boolean modelHas(String modelJson, String keyword) {
+        if (modelJson == null || modelJson.isEmpty()) return false;
+        return modelJson.toLowerCase().contains(keyword);
+    }
+
+    /** 按类型类别返回填写指南（HudType/EngineType/EngineInfo 键/特有字段/武器要点/无需字段）。 */
+    private String buildTypeGuide(String category) {
+        StringBuilder g = new StringBuilder();
+        g.append("## 类型专属填写指南（").append(category).append("）\n\n");
+
+        switch (category) {
+            case "TRACK" -> {
+                g.append("- `HudType`：`@Land`\n");
+                g.append("- `EngineType`：`Track`（履带）；`EngineSound` 填音效 ID\n");
+                g.append("- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `TrackRotSpeed`, `TrackDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`\n");
+                g.append("- 建议补：`TrackDistanceMultiply`（履带动画速度）、`InertiaRotateRate`（转向惯性）\n");
+                g.append("- 炮塔：`TurretPos`/`BarrelPos`（若模型有 turret/barrel 骨骼）、`TurretTurnSpeed`（如 `1.5 1.5`）、`TurretYawRange`（如 `-75 75`）、`TurretPitchRange`（如 `-9 20`）、`TurretControllerIndex`\n");
+                g.append("- 地形：`TerrainCompat`（履带接地位置数组）\n");
+                g.append("- 武器典型：`Cannon`（主炮）+ `MachineGun`/`Coax`（同轴机枪）\n");
+                g.append("- 无需字段：`PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`（那是飞行器用的）\n");
+            }
+            case "WHEEL" -> {
+                g.append("- `HudType`：`@Land`\n");
+                g.append("- `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID\n");
+                g.append("- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`\n");
+                g.append("- 炮塔：`TurretPos`/`BarrelPos`（若模型有）、`TurretTurnSpeed`/`TurretYawRange`/`TurretPitchRange`\n");
+                g.append("- 地形：`TerrainCompat`\n");
+                g.append("- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）\n");
+                g.append("- 无需字段：飞行器的 `PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`\n");
+            }
+            case "AIRPLANE" -> {
+                g.append("- `HudType`：`@Aircraft`\n");
+                g.append("- `EngineType`：`Aircraft`；`EngineSound` 填喷气/螺旋桨音效\n");
+                g.append("- `EngineInfo` 应包含：`HasGear`, `EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `SpeedRate`, `GearRotateAngle`, `EngineStartSound`, `EngineSoundVolume`\n");
+                g.append("- 建议补：`HasDecoy: true`（诱饵/热焰弹）、`ThirdPersonCameraPos`、`RotateOffsetHeight`\n");
+                g.append("- 武器典型：`Cannon`（机炮）+ `Missile`（空空/空地）+ `Rocket` + `Bomb`（按模型 `CannonPos`/`MissilePos` 骨骼）\n");
+                g.append("- 无需字段：陆地车的 `TerrainCompat` 可不填；`TrackDistanceMultiply` 不需要\n");
+            }
+            case "HELICOPTER" -> {
+                g.append("- `HudType`：`@Helicopter`\n");
+                g.append("- `EngineType`：`Helicopter`；`EngineSound` 填旋翼音效\n");
+                g.append("- `EngineInfo` 应包含：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`\n");
+                g.append("- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`、`RotateOffsetHeight`\n");
+                g.append("- 武器典型：`Cannon`（机炮，可旋转）+ `Rocket` + `Missile`（含 `@Missile` 等，按模型骨骼）\n");
+                g.append("- 无需字段：`HasGear`/`SpeedRate`（固定翼特有）、`TrackDistanceMultiply`\n");
+            }
+            case "BOAT" -> {
+                g.append("- `HudType`：`@Boat`（如无则 `@Land`）\n");
+                g.append("- `EngineType`：`Boat`；`EngineSound` 填引擎音效\n");
+                g.append("- `EngineInfo` 应包含浮力相关：`Buoyancy`, `EnergyCostRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume` 等\n");
+                g.append("- 建议补：`waterMask` 相关水面遮罩、`TerrainCompat` 可省略\n");
+            }
+            case "DEFENSE" -> {
+                g.append("- 固定防御设施：通常无引擎（`EngineType` 留空或 `None`）\n");
+                g.append("- `HudType`：`@Land`\n");
+                g.append("- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）\n");
+                g.append("- 无需动力字段：`EngineInfo`/`EngineSound`/`TerrainCompat` 一般不需要\n");
+            }
+            default -> {
+                g.append("- 陆地载具默认：`HudType: @Land`，`EngineType` 按模型（`Track`/`Wheel`）\n");
+                g.append("- `EngineInfo` 参考：`EnergyCostRate`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`（履带再加 `TrackRotSpeed`/`TrackDifferential`，轮式加 `WheelRotSpeed`/`WheelDifferential`）\n");
+                g.append("- 有炮塔补 `TurretPos`/`BarrelPos`/`TurretTurnSpeed`/`TurretYawRange`/`TurretPitchRange`\n");
+            }
+        }
+        g.append("\n- 通用：`VehicleIcon` 填 `dragonrise_reforge:textures/vehicle_icon/").append("XXX").append("_icon.png`；`ContainerIcon` 填 `dragonrise_reforge:textures/gui/vehicle/type/*.png`；`VehicleContainerType` 按载具大小（`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`）\n");
+        return g.toString();
     }
 
     @Override

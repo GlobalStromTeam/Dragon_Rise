@@ -34,6 +34,7 @@
 - **新增 MeshModelNormalRemover**：删除模型中的 `normals` 顶点法线字段（文本级方括号配对，保留格式）
 - **新增 VehicleSkinGenerator**：按 `{载具ID}_{涂装ID}.png` 命名约定自动生成/合并 `vehicle_skins` 皮肤数据（data/assets 双份并同步 IDE/Gradle 输出）
 - **新增 VehicleDataCompletenessChecker**：对照 superbwarfare `DefaultVehicleData` 63 字段生成 `datagen_vehicle_report.md` 完整性报告，并为缺失核心字段的载具生成 `datagen_ai_prompts/{id}.md` AI 填充提示词（仅处理模型含 Build 骨骼的载具，只读不覆盖）
+  - **分类型提示词**：自动检测载具类型（履带坦克 / 轮式 / 固定翼 / 直升机 / 舰船 / 固定防御），按类型给出专属填写指南——`HudType`、`EngineType`、`EngineInfo` 字段键（履带 Track vs 轮式 Wheel vs 飞行器 Pitch/Yaw/Roll/Lift 参数）、特有字段（飞机 `HasGear`/诱饵、直升机旋翼、舰船浮力）、武器配置要点，并提示该类型**无需**的字段
 
 ## 五、载具皮肤（喷漆罐）系统
 
