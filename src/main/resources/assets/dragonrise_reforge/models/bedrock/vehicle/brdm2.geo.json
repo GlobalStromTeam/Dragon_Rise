@@ -21488,6 +21488,11 @@
 					]
 				},
 				{
+					"name": "Car",
+					"parent": "Obb",
+					"pivot": [0, 0, 0]
+				},
+				{
 					"name": "Build",
 					"parent": "Obb",
 					"pivot": [0, 0, 0]

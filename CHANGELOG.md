@@ -35,6 +35,9 @@
 - **新增 VehicleSkinGenerator**：按 `{载具ID}_{涂装ID}.png` 命名约定自动生成/合并 `vehicle_skins` 皮肤数据（data/assets 双份并同步 IDE/Gradle 输出）
 - **新增 VehicleDataCompletenessChecker**：对照 superbwarfare `DefaultVehicleData` 63 字段生成 `datagen_vehicle_report.md` 完整性报告，并为缺失核心字段的载具生成 `datagen_ai_prompts/{id}.md` AI 填充提示词（仅处理模型含 Build 骨骼的载具，只读不覆盖）
   - **分类型提示词**：通过**类型标记骨骼**判定载具类型——与 Build 骨骼机制一致，遍历模型骨骼，骨骼名（忽略大小写）为 `HELI`/`SHIP`/`AIRSHIP`/`TANK`/`PLANE`/`CAR` 即判定为对应类型（多个标记按 HELI>SHIP>AIRSHIP>TANK>PLANE>CAR 取首个，无标记默认 CAR）；按类型给出专属填写指南——`HudType`、`EngineType`、`EngineInfo` 字段键（履带 Track vs 轮式 Wheel vs 飞行器 Pitch/Yaw/Roll/Lift 参数）、特有字段（飞机 `HasGear`/诱饵、直升机旋翼、舰船浮力）、武器配置要点，并提示该类型**无需**的字段
+  - **官方参考载具**：每类型内嵌官方实测参考（坦克→M1A2、轮式→LAV-25、固定翼→A-10、直升机→米-28、舰船→快艇、飞艇→基洛夫），含 EngineInfo/关键数值
+  - **武器填写参考**：武器完整配置示例（坦克炮/机炮/机枪/导弹/火箭）+ Projectile/AmmoType/Velocity/ProjectileLife/Spread 官方实测参考 + HudType/Type/EngineType/ContainerIcon 可选值清单
+  - `Weapons` 非必填提示（无武装载具省略）；新增《使用说明.md》
 
 ## 五、载具皮肤（喷漆罐）系统
 

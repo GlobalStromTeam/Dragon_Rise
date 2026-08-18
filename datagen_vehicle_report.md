@@ -1,23 +1,20 @@
 # 载具数据完整性报告
 
-生成时间：2026-08-19 05:18:46
+生成时间：2026-08-19 07:50:25
 
 前提：仅统计**模型含 Build 骨骼**的载具（防止误报/覆盖已完成载具）；本报告只读，不修改任何数据。
 
-字段清单：superbwarfare `DefaultVehicleData` 共 63 个字段，其中核心必填 11 个（MaxHealth/MaxEnergy/OBB/Seats/Weapons/Engine*/HudType/ContainerType/Icon）。
+字段清单：superbwarfare `DefaultVehicleData` 共 63 个字段，其中核心必填 2 个（MaxHealth/MaxEnergy/OBB/Seats/Weapons/Engine*/HudType/ContainerType/Icon）。
 
 ## 一、缺少核心字段的载具（需要 AI/人工填充）
 
 | 载具 | 缺失字段数 | 缺失字段 |
 |---|---|---|
 | aavc7c1 | 36 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, HasUpgradeSlots, LaserColor, LaserScale, HornSound, HasLowHealthWarning, ForwardTowed, Weapons, TurretYawRange, TurretControllerIndex, TurretCustomPitch, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
-| ah1f | 35 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, VehicleContainerType, HasUpgradeSlots, LaserColor, LaserScale, HornSound, HasLowHealthWarning, ForwardTowed, CollisionLevel, TurretYawRange, TurretCustomPitch, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, InertiaRotateRate |
-| challenger_ds | 32 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, VehicleContainerType, HasUpgradeSlots, LaserColor, LaserScale, HornSound, HasLowHealthWarning, ForwardTowed, TurretYawRange, TurretControllerIndex, TurretCustomPitch, PassengerWeaponStationYawRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
-| markv | 30 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, VehicleContainerType, HasUpgradeSlots, LaserColor, LaserScale, HornSound, HasLowHealthWarning, ForwardTowed, TurretYawRange, TurretCustomPitch, PassengerWeaponStationYawRange, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
 
 ## 二、核心字段齐全的载具
 
-aav7a1, brdm2, ztd05
+aav7a1, ah1f, brdm2, challenger_ds, markv, ztd05
 
 ## 三、跳过（模型缺失或无 Build 骨骼）
 
