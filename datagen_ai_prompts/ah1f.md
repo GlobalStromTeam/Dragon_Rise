@@ -4,7 +4,7 @@
 
 ## 载具类型
 
-`HELICOPTER`
+`CAR`
 
 ## 缺失字段
 
@@ -46,14 +46,15 @@ Gravity
 InertiaRotateRate
 ```
 
-## 类型专属填写指南（HELICOPTER）
+## 类型专属填写指南（CAR）
 
-- `HudType`：`@Helicopter`
-- `EngineType`：`Helicopter`；`EngineSound` 填旋翼音效
-- `EngineInfo` 应包含：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`
-- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`、`RotateOffsetHeight`
-- 武器典型：`Cannon`（机炮，可旋转）+ `Rocket` + `Missile`（含 `@Missile` 等，按模型骨骼）
-- 无需字段：`HasGear`/`SpeedRate`（固定翼特有）、`TrackDistanceMultiply`
+- `HudType`：`@Land`
+- `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID
+- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`
+- 炮塔：`TurretPos`/`BarrelPos`（若模型有）、`TurretTurnSpeed`/`TurretYawRange`/`TurretPitchRange`
+- 地形：`TerrainCompat`
+- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）
+- 无需字段：飞行器的 `PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`
 
 - 通用：`VehicleIcon` 填 `dragonrise_reforge:textures/vehicle_icon/XXX_icon.png`；`ContainerIcon` 填 `dragonrise_reforge:textures/gui/vehicle/type/*.png`；`VehicleContainerType` 按载具大小（`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`）
 

@@ -4,7 +4,7 @@
 
 ## 载具类型
 
-`WHEEL`
+`CAR`
 
 ## 缺失字段
 
@@ -47,7 +47,7 @@ Gravity
 TerrainCompatRotateRate
 ```
 
-## 类型专属填写指南（WHEEL）
+## 类型专属填写指南（CAR）
 
 - `HudType`：`@Land`
 - `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID

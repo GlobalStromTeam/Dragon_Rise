@@ -261,49 +261,45 @@ public class VehicleDataCompletenessChecker implements DataProvider {
     }
 
     /**
-     * 检测载具类型类别。优先读现有 JSON 的 Type 字段；缺失时从模型骨骼推断。
-     * 返回类别：TRACK（履带坦克）/ WHEEL（轮式）/ AIRPLANE / HELICOPTER / BOAT / DEFENSE / LAND（未知陆地）
+     * 检测载具类型类别：<b>查找类型标记骨骼</b>，机制与 Build 骨骼一致。
+     * <p>遍历模型骨骼，骨骼名（忽略大小写）为 HELI / SHIP / AIRSHIP / TANK / PLANE / CAR 之一即判定为对应类型；
+     * 多个标记时按 HELI > SHIP > AIRSHIP > TANK > PLANE > CAR 的顺序取第一个命中；
+     * 未找到任何类型标记骨骼时返回 CAR（陆地默认）。
      */
     private String detectTypeCategory(String vehicleJson, String modelJson) {
-        String jsonType = "";
+        if (modelJson == null || modelJson.isEmpty()) {
+            return "CAR";
+        }
         try {
-            JsonObject json = JsonParser.parseString(vehicleJson).getAsJsonObject();
-            if (json.has("Type")) {
-                jsonType = json.get("Type").getAsString();
+            JsonObject geoJson = JsonParser.parseString(modelJson).getAsJsonObject();
+            if (!geoJson.has("minecraft:geometry")) {
+                return "CAR";
+            }
+            JsonArray geometries = geoJson.getAsJsonArray("minecraft:geometry");
+            for (JsonElement geomElement : geometries) {
+                JsonObject geometry = geomElement.getAsJsonObject();
+                if (!geometry.has("bones")) {
+                    continue;
+                }
+                for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                    JsonObject bone = boneElement.getAsJsonObject();
+                    if (!bone.has("name")) {
+                        continue;
+                    }
+                    switch (bone.get("name").getAsString().toUpperCase()) {
+                        case "HELI": return "HELI";
+                        case "SHIP": return "SHIP";
+                        case "AIRSHIP": return "AIRSHIP";
+                        case "TANK": return "TANK";
+                        case "PLANE": return "PLANE";
+                        case "CAR": return "CAR";
+                        default: break;
+                    }
+                }
             }
         } catch (Exception ignored) {
         }
-
-        if (!jsonType.isEmpty()) {
-            switch (jsonType) {
-                case "Tank": return modelHas(modelJson, "track") ? "TRACK" : "WHEEL";
-                case "APC":
-                case "Car":
-                case "Artillery":
-                case "AA":
-                    return modelHas(modelJson, "track") ? "TRACK" : "WHEEL";
-                case "Airplane": return "AIRPLANE";
-                case "Helicopter": return "HELICOPTER";
-                case "Boat": return "BOAT";
-                case "Defense": return "DEFENSE";
-                case "Drone": return "AIRPLANE";
-                case "AirShip": return "HELICOPTER";
-                default: return "LAND";
-            }
-        }
-
-        // 模型骨骼推断
-        if (modelHas(modelJson, "propeller") || modelHas(modelJson, "tailPropeller")) return "AIRPLANE";
-        if (modelHas(modelJson, "rotor") || modelHas(modelJson, "mainRotor") || modelHas(modelJson, "tailRotor")) return "HELICOPTER";
-        if (modelHas(modelJson, "waterMask")) return "BOAT";
-        if (modelHas(modelJson, "track")) return "TRACK";
-        if (modelHas(modelJson, "wheel")) return "WHEEL";
-        return "LAND";
-    }
-
-    private boolean modelHas(String modelJson, String keyword) {
-        if (modelJson == null || modelJson.isEmpty()) return false;
-        return modelJson.toLowerCase().contains(keyword);
+        return "CAR";
     }
 
     /** 按类型类别返回填写指南（HudType/EngineType/EngineInfo 键/特有字段/武器要点/无需字段）。 */
@@ -312,7 +308,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
         g.append("## 类型专属填写指南（").append(category).append("）\n\n");
 
         switch (category) {
-            case "TRACK" -> {
+            case "TANK" -> {
                 g.append("- `HudType`：`@Land`\n");
                 g.append("- `EngineType`：`Track`（履带）；`EngineSound` 填音效 ID\n");
                 g.append("- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `TrackRotSpeed`, `TrackDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`\n");
@@ -322,7 +318,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
                 g.append("- 武器典型：`Cannon`（主炮）+ `MachineGun`/`Coax`（同轴机枪）\n");
                 g.append("- 无需字段：`PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`（那是飞行器用的）\n");
             }
-            case "WHEEL" -> {
+            case "CAR" -> {
                 g.append("- `HudType`：`@Land`\n");
                 g.append("- `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID\n");
                 g.append("- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`\n");
@@ -331,7 +327,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
                 g.append("- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）\n");
                 g.append("- 无需字段：飞行器的 `PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`\n");
             }
-            case "AIRPLANE" -> {
+            case "PLANE" -> {
                 g.append("- `HudType`：`@Aircraft`\n");
                 g.append("- `EngineType`：`Aircraft`；`EngineSound` 填喷气/螺旋桨音效\n");
                 g.append("- `EngineInfo` 应包含：`HasGear`, `EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `SpeedRate`, `GearRotateAngle`, `EngineStartSound`, `EngineSoundVolume`\n");
@@ -339,7 +335,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
                 g.append("- 武器典型：`Cannon`（机炮）+ `Missile`（空空/空地）+ `Rocket` + `Bomb`（按模型 `CannonPos`/`MissilePos` 骨骼）\n");
                 g.append("- 无需字段：陆地车的 `TerrainCompat` 可不填；`TrackDistanceMultiply` 不需要\n");
             }
-            case "HELICOPTER" -> {
+            case "HELI" -> {
                 g.append("- `HudType`：`@Helicopter`\n");
                 g.append("- `EngineType`：`Helicopter`；`EngineSound` 填旋翼音效\n");
                 g.append("- `EngineInfo` 应包含：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`\n");
@@ -347,17 +343,19 @@ public class VehicleDataCompletenessChecker implements DataProvider {
                 g.append("- 武器典型：`Cannon`（机炮，可旋转）+ `Rocket` + `Missile`（含 `@Missile` 等，按模型骨骼）\n");
                 g.append("- 无需字段：`HasGear`/`SpeedRate`（固定翼特有）、`TrackDistanceMultiply`\n");
             }
-            case "BOAT" -> {
+            case "SHIP" -> {
                 g.append("- `HudType`：`@Boat`（如无则 `@Land`）\n");
                 g.append("- `EngineType`：`Boat`；`EngineSound` 填引擎音效\n");
                 g.append("- `EngineInfo` 应包含浮力相关：`Buoyancy`, `EnergyCostRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume` 等\n");
-                g.append("- 建议补：`waterMask` 相关水面遮罩、`TerrainCompat` 可省略\n");
+                g.append("- 建议补：`waterMask` 水面遮罩；`TerrainCompat` 可省略\n");
             }
-            case "DEFENSE" -> {
-                g.append("- 固定防御设施：通常无引擎（`EngineType` 留空或 `None`）\n");
-                g.append("- `HudType`：`@Land`\n");
-                g.append("- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）\n");
-                g.append("- 无需动力字段：`EngineInfo`/`EngineSound`/`TerrainCompat` 一般不需要\n");
+            case "AIRSHIP" -> {
+                g.append("- 飞艇：垂直起降飞行器，参考直升机与固定翼的混合\n");
+                g.append("- `HudType`：`@Aircraft` 或 `@Helicopter`\n");
+                g.append("- `EngineType`：`Helicopter` 或 `Aircraft`（按模型推进方式）\n");
+                g.append("- `EngineInfo` 参考直升机：`EnergyCostRate`, `Increment`, `Decrement`, `PitchSpeed`, `YawSpeed`, `RollSpeed`, `LiftSpeed`, `Speed`, `EngineStartSound`, `EngineSoundVolume`\n");
+                g.append("- 建议补：`HasDecoy: true`、`ThirdPersonCameraPos`、`RotateOffsetHeight`\n");
+                g.append("- 无需字段：`TrackDistanceMultiply`、`TerrainCompat` 可不填\n");
             }
             default -> {
                 g.append("- 陆地载具默认：`HudType: @Land`，`EngineType` 按模型（`Track`/`Wheel`）\n");

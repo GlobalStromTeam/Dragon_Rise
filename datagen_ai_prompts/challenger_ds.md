@@ -4,7 +4,7 @@
 
 ## 载具类型
 
-`TRACK`
+`CAR`
 
 ## 缺失字段
 
@@ -43,16 +43,15 @@ Gravity
 TerrainCompatRotateRate
 ```
 
-## 类型专属填写指南（TRACK）
+## 类型专属填写指南（CAR）
 
 - `HudType`：`@Land`
-- `EngineType`：`Track`（履带）；`EngineSound` 填音效 ID
-- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `TrackRotSpeed`, `TrackDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`
-- 建议补：`TrackDistanceMultiply`（履带动画速度）、`InertiaRotateRate`（转向惯性）
-- 炮塔：`TurretPos`/`BarrelPos`（若模型有 turret/barrel 骨骼）、`TurretTurnSpeed`（如 `1.5 1.5`）、`TurretYawRange`（如 `-75 75`）、`TurretPitchRange`（如 `-9 20`）、`TurretControllerIndex`
-- 地形：`TerrainCompat`（履带接地位置数组）
-- 武器典型：`Cannon`（主炮）+ `MachineGun`/`Coax`（同轴机枪）
-- 无需字段：`PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`（那是飞行器用的）
+- `EngineType`：`Wheel`（轮式）；`EngineSound` 填音效 ID
+- `EngineInfo` 应包含：`Buoyancy`, `EnergyCostRate`, `WheelRotSpeed`, `WheelDifferential`, `MaxForwardSpeedRate`, `MaxBackwardSpeedRate`, `Increment`, `Decrement`, `SteeringSpeed`, `EngineSoundVolume`
+- 炮塔：`TurretPos`/`BarrelPos`（若模型有）、`TurretTurnSpeed`/`TurretYawRange`/`TurretPitchRange`
+- 地形：`TerrainCompat`
+- 武器典型：`Cannon`/`MachineGun`/`Missile`（按模型射击点骨骼）
+- 无需字段：飞行器的 `PitchSpeed`/`YawSpeed`/`RollSpeed`/`LiftSpeed`/`HasGear`
 
 - 通用：`VehicleIcon` 填 `dragonrise_reforge:textures/vehicle_icon/XXX_icon.png`；`ContainerIcon` 填 `dragonrise_reforge:textures/gui/vehicle/type/*.png`；`VehicleContainerType` 按载具大小（`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`）
 
