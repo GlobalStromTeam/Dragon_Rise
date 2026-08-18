@@ -99,11 +99,14 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         try {
-            if (!hasBuildBone(geoJson)) {
+            // 入口闸门：坦克模型需有 Build 骨骼；飞机模型按 Obb 组下的 Plane 骨骼判定；
+            // 无 Build/Plane 但有 OBB 组的模型（如 ztz96a）也按车辆流程生成。
+            if (!hasBuildBone(geoJson) && !isAircraft(geoJson) && !hasObbBone(geoJson)) {
                 return;
             }
 
             boolean hasSeatsPos1 = checkSeatsPos1(geoJson);
+            boolean isAircraft = isAircraft(geoJson);
             double turretCustomPitch = extractTurretCustomPitch(geoJson);
 
             JsonArray turretPos = hasSeatsPos1 ? extractTurretPos(geoJson) : null;
@@ -136,7 +139,7 @@ public class GeoOBBDataProvider implements DataProvider {
             }
 
             // 如果没有需要提取的数据，后面只做superbwarfare配置生成
-            boolean hasExtractableData = !(obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty() && terrainCompatPositions.isEmpty());
+            boolean hasExtractableData = !(obbList.isEmpty() && turretPos == null && barrelPos == null && weaponPositions.isEmpty() && seatsPositions.isEmpty() && seatsCameraPositions.isEmpty() && terrainCompatPositions.isEmpty()) || isAircraft;
 
              if (hasExtractableData) {
              JsonObject vehicleJson;
@@ -189,7 +192,8 @@ public class GeoOBBDataProvider implements DataProvider {
                             adjustedPositions.add(adjustedPos);
                         }
 
-                        if (hasSeatsPos1) {
+                        // 坦克武器按炮塔/炮管相对化；飞机武器一律读取骨骼直接坐标（绝对坐标），不做相对化
+                        if (hasSeatsPos1 && !isAircraft) {
                             if ("Barrel".equals(transform) && barrelPos != null && turretPos != null) {
                                 double barrelY = barrelPos.get(1).getAsDouble();
                                 double turretY = turretPos.get(1).getAsDouble();
@@ -213,6 +217,58 @@ public class GeoOBBDataProvider implements DataProvider {
                         }
 
                         shootPos.add("Positions", adjustedPositions);
+                    }
+                }
+            }
+
+            // 飞机专项：挂架发射位置（dummy_<座位>_<武器>_<挂点> 骨骼，与挂架假体渲染共用）
+            if (isAircraft && vehicleJson.has("Weapons")) {
+                Map<String, JsonArray> dummyWeaponPositions = extractDummyWeaponPositions(geoJson, vehicleJson);
+                JsonObject weapons = vehicleJson.getAsJsonObject("Weapons");
+                for (Map.Entry<String, JsonArray> entry : dummyWeaponPositions.entrySet()) {
+                    String weaponName = entry.getKey();
+                    if (!weapons.has(weaponName)) {
+                        continue;
+                    }
+                    JsonObject weapon = weapons.getAsJsonObject(weaponName);
+                    JsonObject shootPos;
+                    if (weapon.has("ShootPos")) {
+                        shootPos = weapon.getAsJsonObject("ShootPos");
+                    } else {
+                        shootPos = new JsonObject();
+                        weapon.add("ShootPos", shootPos);
+                    }
+                    // 飞机挂架位置为载具绝对坐标，与坦克 CannonPos 相同语义，直接写入
+                    shootPos.add("Positions", entry.getValue());
+                }
+
+                // 飞机专项：瞄准吊舱视角位置（NacellePos<武器名> / NacellePos 骨骼）
+                Map<String, JsonArray> nacellePositions = extractNacellePositions(geoJson);
+                for (Map.Entry<String, JsonArray> entry : nacellePositions.entrySet()) {
+                    List<String> targets = "__ALL__".equals(entry.getKey())
+                            ? new ArrayList<>(weapons.keySet())
+                            : java.util.Collections.singletonList(entry.getKey());
+                    for (String target : targets) {
+                        if (!weapons.has(target)) {
+                            continue;
+                        }
+                        JsonObject weapon = weapons.getAsJsonObject(target);
+                        JsonObject shootPos;
+                        if (weapon.has("ShootPos")) {
+                            shootPos = weapon.getAsJsonObject("ShootPos");
+                        } else {
+                            shootPos = new JsonObject();
+                            weapon.add("ShootPos", shootPos);
+                        }
+                        // 吊舱视角单独定义：只为已启用 UseNacelleCamera 的武器写 ViewPosition
+                        // （吊舱骨骼是权威来源：位置始终按骨骼当前坐标覆盖，骨骼移动后重新生成即更新）。
+                        // 不再自动给全部武器加 UseNacelleCamera —— 默认右键放大视角为座位头部位置，
+                        // 吊舱仅用于明确启用的武器（如 agm65 弹种）。
+                        if (weapon.has("UseNacelleCamera") && weapon.get("UseNacelleCamera").getAsBoolean()
+                                && entry.getValue().size() > 0) {
+                            // 单吊舱直接写；多吊舱取第一个
+                            shootPos.add("ViewPosition", entry.getValue().get(0).getAsJsonArray());
+                        }
                     }
                 }
             }
@@ -242,7 +298,7 @@ public class GeoOBBDataProvider implements DataProvider {
                             }
                         }
 
-                        applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos);
+                        applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
                     }
                 } else if (seatsElement.isJsonObject() && seatsPositions.containsKey(1)) {
                     JsonObject seat = seatsElement.getAsJsonObject();
@@ -261,7 +317,7 @@ public class GeoOBBDataProvider implements DataProvider {
                         seat.addProperty("Orientation", round(seatsOrientations.get(1), 1));
                     }
 
-                    applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos);
+                    applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
                 }
             }
 
@@ -322,6 +378,72 @@ public class GeoOBBDataProvider implements DataProvider {
             }
         }
 
+        return false;
+    }
+
+    /**
+     * 飞机判定：模型存在名为 "Plane" 的骨骼，且其父骨骼链上存在 Obb 组（名字含 "obb"）。
+     * 即 Blockbench 中把 Plane 骨骼挂在 Obb 组下时，该模型按飞机流程生成。
+     */
+    private static boolean isAircraft(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        Map<String, JsonObject> boneMap = new HashMap<>();
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                boneMap.put(bone.get("name").getAsString(), bone);
+            }
+        }
+
+        for (JsonObject bone : boneMap.values()) {
+            if (!bone.get("name").getAsString().equalsIgnoreCase("Plane")) {
+                continue;
+            }
+            // 沿父骨骼链向上查找 Obb 组
+            String parent = bone.has("parent") ? bone.get("parent").getAsString() : null;
+            Set<String> visited = new java.util.HashSet<>();
+            while (parent != null && visited.add(parent)) {
+                if (parent.toLowerCase().contains("obb")) {
+                    return true;
+                }
+                JsonObject parentBone = boneMap.get(parent);
+                if (parentBone == null) {
+                    break;
+                }
+                parent = parentBone.has("parent") ? parentBone.get("parent").getAsString() : null;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * 车辆特征判定：模型存在名字含 "obb" 的骨骼（Obb/OBB/Obb1/TurretObb* 等）。
+     * 部分车辆模型没有 Build 标记骨骼（如 ztz96a），只要有 OBB 组就按车辆流程生成。
+     */
+    private static boolean hasObbBone(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                if (bone.get("name").getAsString().toLowerCase().contains("obb")) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
@@ -424,12 +546,14 @@ public class GeoOBBDataProvider implements DataProvider {
                 // 提取OBB位置（带有炮塔偏移处理）
                 obbEntry.add("Position", extractOBBPosition(bone, turretPivotX, turretPivotY, turretPivotZ, boneName, theta));
 
-                // 提取OBB角度（CustomRotate，单位度；Z 轴与 Position 一致取反）
+                // 提取OBB角度（CustomRotate，单位度；Z 轴与 Position 一致取反）。
+                // Y（水平）旋转经游戏内实测（jas39e 机翼 OBB 前后镜像）确认需取反：
+                // 游戏 OBB 旋转空间与模型渲染空间的 Y 方向相反。
                 if (bone.has("rotation")) {
                     JsonArray rotation = bone.getAsJsonArray("rotation");
                     if (rotation.size() >= 3) {
                         double rx = rotation.get(0).getAsDouble();
-                        double ry = rotation.get(1).getAsDouble();
+                        double ry = -rotation.get(1).getAsDouble();
                         double rz = -rotation.get(2).getAsDouble();
                         if (rx != 0 || ry != 0 || rz != 0) {
                             JsonArray customRotate = new JsonArray();
@@ -709,6 +833,10 @@ public class GeoOBBDataProvider implements DataProvider {
                     addWeaponPosition(weaponPositions, "MachineGun", boneName, "MachineGunPos", bone, barrelY, turretY);
                 } else if (boneName.startsWith("MissilePos") && bone.has("pivot")) {
                     addWeaponPosition(weaponPositions, "Missile", boneName, "MissilePos", bone, barrelY, turretY);
+                } else if (boneName.startsWith("BombPos") && bone.has("pivot")) {
+                    addWeaponPosition(weaponPositions, "Bomb", boneName, "BombPos", bone, barrelY, turretY);
+                } else if (boneName.startsWith("RocketPos") && bone.has("pivot")) {
+                    addWeaponPosition(weaponPositions, "Rocket", boneName, "RocketPos", bone, barrelY, turretY);
                 } else if (boneName.startsWith("PassengerMachineGunPos") && bone.has("pivot")) {
                     if (pitchPivot != null) {
                         // 枪口直接坐标减去俯仰枢轴直接坐标，得到相对武器站炮管的位置；随炮塔倾斜时绕 X 反向旋转 -theta 补偿
@@ -738,6 +866,147 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         return weaponPositions;
+    }
+
+    /**
+     * 飞机挂架发射位置：读取模型中的 dummy_&lt;座位&gt;_&lt;武器序号&gt;_&lt;挂点序号&gt; 骨骼，
+     * 按（座位，武器序号）分组后映射到座位 Weapons 列表中的武器名，生成 ShootPos.Positions。
+     * 与 superb 挂架假体渲染（GeoVehicleRenderer.renderCustomPart）共用同一组骨骼：
+     * 一个骨骼同时充当挂架假体锚点与弹药发射位置。
+     *
+     * @param vehicleJson 现有车辆配置（用于读取 Seats 的 Weapons 列表，把武器序号映射到武器名）
+     */
+    private Map<String, JsonArray> extractDummyWeaponPositions(JsonObject geoJson, JsonObject vehicleJson) {
+        Map<String, JsonArray> weaponPositions = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return weaponPositions;
+        }
+
+        // 座位 -> 武器名列表（座位 1 起）
+        Map<Integer, List<String>> seatWeapons = new HashMap<>();
+        if (vehicleJson != null && vehicleJson.has("Seats")) {
+            JsonElement seatsElement = vehicleJson.get("Seats");
+            if (seatsElement.isJsonArray()) {
+                JsonArray seats = seatsElement.getAsJsonArray();
+                for (int i = 0; i < seats.size(); i++) {
+                    JsonObject seat = seats.get(i).getAsJsonObject();
+                    if (seat.has("Weapons") && seat.get("Weapons").isJsonArray()) {
+                        List<String> names = new ArrayList<>();
+                        for (JsonElement w : seat.getAsJsonArray("Weapons")) {
+                            names.add(w.getAsString());
+                        }
+                        seatWeapons.put(i + 1, names);
+                    }
+                }
+            } else if (seatsElement.isJsonObject()) {
+                JsonObject seat = seatsElement.getAsJsonObject();
+                if (seat.has("Weapons") && seat.get("Weapons").isJsonArray()) {
+                    List<String> names = new ArrayList<>();
+                    for (JsonElement w : seat.getAsJsonArray("Weapons")) {
+                        names.add(w.getAsString());
+                    }
+                    seatWeapons.put(1, names);
+                }
+            }
+        }
+
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+                if (!boneName.startsWith("dummy_") || !bone.has("pivot")) {
+                    continue;
+                }
+
+                // dummy_<座位>_<武器序号>_<挂点序号>；座位序号与 superb 渲染器一致为 0 基
+                String[] parts = boneName.split("_");
+                if (parts.length < 4) {
+                    continue;
+                }
+                int seatIndex;
+                int weaponIndex;
+                try {
+                    seatIndex = Integer.parseInt(parts[1]);
+                    weaponIndex = Integer.parseInt(parts[2]);
+                } catch (NumberFormatException e) {
+                    continue;
+                }
+                if (seatIndex < 0 || weaponIndex < 0) {
+                    continue;
+                }
+
+                List<String> weapons = seatWeapons.get(seatIndex + 1);
+                if (weapons == null || weaponIndex >= weapons.size()) {
+                    continue;
+                }
+                String weaponName = weapons.get(weaponIndex);
+
+                JsonArray pivot = bone.getAsJsonArray("pivot");
+                JsonArray pos = new JsonArray();
+                pos.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                pos.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                pos.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+                weaponPositions.computeIfAbsent(weaponName, k -> new JsonArray()).add(pos);
+            }
+        }
+
+        return weaponPositions;
+    }
+
+    /**
+     * 瞄准吊舱视角定位：读取模型中的 NacellePos&lt;武器名&gt; 骨骼（如 NacellePosMissile），
+     * 或 NacellePos（无后缀，应用到该座位全部武器），生成武器 ShootPos.ViewPosition。
+     * 游戏内配合武器 UseNacelleCamera=true，zoom 时相机从吊舱位置看出去（A10 的 AGM65 模式）。
+     */
+    private Map<String, JsonArray> extractNacellePositions(JsonObject geoJson) {
+        Map<String, JsonArray> nacellePositions = new HashMap<>();
+
+        if (!geoJson.has("minecraft:geometry")) {
+            return nacellePositions;
+        }
+
+        JsonArray defaultPositions = new JsonArray();
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String boneName = bone.get("name").getAsString();
+                if (!boneName.startsWith("NacellePos") || !bone.has("pivot")) {
+                    continue;
+                }
+
+                JsonArray pivot = bone.getAsJsonArray("pivot");
+                JsonArray pos = new JsonArray();
+                pos.add(round(pivot.get(0).getAsDouble() / 16.0, 3));
+                pos.add(round(pivot.get(1).getAsDouble() / 16.0, 3));
+                pos.add(round(-pivot.get(2).getAsDouble() / 16.0, 3));
+
+                String weaponName = boneName.substring("NacellePos".length());
+                if (weaponName.isEmpty()) {
+                    // 无后缀：应用到全部武器（多个同名骨骼按序号 NacellePos1/2/… 追加）
+                    defaultPositions.add(pos);
+                } else {
+                    nacellePositions.computeIfAbsent(weaponName, k -> new JsonArray()).add(pos);
+                }
+            }
+        }
+
+        if (!defaultPositions.isEmpty()) {
+            // 无后缀吊舱骨骼：写为一个占位条目，由写入侧展开到全部武器
+            nacellePositions.put("__ALL__", defaultPositions);
+        }
+
+        return nacellePositions;
     }
 
     private boolean checkSeatsPos1(JsonObject geoJson) {
@@ -894,7 +1163,8 @@ public class GeoOBBDataProvider implements DataProvider {
      */
     private void applyCameraPos(JsonObject seat, int seatIndex,
                                 Map<Integer, JsonArray> seatsPositions,
-                                Map<Integer, JsonArray> seatsCameraPositions, JsonArray turretPos) {
+                                Map<Integer, JsonArray> seatsCameraPositions, JsonArray turretPos,
+                                boolean isAircraft) {
         JsonObject cameraPos;
         if (seat.has("CameraPos")) {
             cameraPos = seat.getAsJsonObject("CameraPos");
@@ -918,8 +1188,11 @@ public class GeoOBBDataProvider implements DataProvider {
             cameraPos.add("ZoomPosition", adjusted);
         } else {
             cameraPos.addProperty("UseFixedCameraPos", false);
-            // 二号位（遥控武器站座位，Transform=WeaponStation）默认看向武器站，其余座位看向主炮。
-            if ("WeaponStation".equals(seatTransform)) {
+            // 二号位（遥控武器站座位，Transform=WeaponStation）默认看向武器站，其余座位看向主炮；
+            // 飞机没有炮塔/炮管，默认看向载具自身（Transform=Vehicle）。
+            if (isAircraft) {
+                cameraPos.addProperty("Transform", "Vehicle");
+            } else if ("WeaponStation".equals(seatTransform)) {
                 cameraPos.addProperty("Transform", "WeaponStation");
                 cameraPos.addProperty("Direction", "WeaponStationBarrel");
             } else {

@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/humveetow.animation.json",
     "ID":  "dragonrise_reforge:humveetow",
     "Model":  {
                   "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/humveetow.animation.json",

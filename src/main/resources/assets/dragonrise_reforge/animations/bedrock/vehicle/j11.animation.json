@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"engine on": {
+		"animation.j11.engine_on": {
 			"animation_length": 3.75,
 			"bones": {
 				"bone": {
@@ -64,7 +64,7 @@
 				}
 			}
 		},
-		"engine off": {
+		"animation.j11.engine_off": {
 			"animation_length": 3.75,
 			"bones": {
 				"bone": {
@@ -95,7 +95,7 @@
 				}
 			}
 		},
-		"off": {
+		"animation.j11.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {
@@ -209,7 +209,7 @@
 				}
 			}
 		},
-		"on": {
+		"animation.j11.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {

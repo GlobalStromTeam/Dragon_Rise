@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/j11.animation.json",
     "ID":  "dragonrise_reforge:j11",
     "MaxHealth":  250,
     "MaxEnergy":  10000000,
@@ -496,7 +497,7 @@
     "Type":  "Airplane",
     "EngineType":  "Aircraft",
     "EngineInfo":  {
-                       "HasGear":  false,
+                       "HasGear":  true,
                        "EnergyCostRate":  512,
                        "Increment":  0.5,
                        "Decrement":  0.5,

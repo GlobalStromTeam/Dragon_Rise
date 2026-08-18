@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/zsu234.animation.json",
     "ID":  "dragonrise_reforge:zsu234",
     "MaxHealth":  300,
     "MaxEnergy":  5000000,

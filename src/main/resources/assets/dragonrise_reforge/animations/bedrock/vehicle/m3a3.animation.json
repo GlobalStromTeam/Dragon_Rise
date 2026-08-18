@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "m3a3.animation.maincannon":  {
+                       "animation.m3a3.main_cannon":  {
                                                          "loop":  true,
                                                          "animation_length":  0.25,
                                                          "bones":  {
@@ -26,10 +26,7 @@
                                                                                       }
                                                                    }
                                                      },
-                       "m3a3.nothinghappen.new":  {
-                                                      "loop":  true
-                                                  },
-                       "m3a3.animation.missile_deploy":  {
+                       "animation.m3a3.missile_deploy":  {
                                                              "animation_length":  1.5,
                                                              "bones":  {
                                                                            "missile":  {
@@ -62,7 +59,7 @@
                                                                                     }
                                                                        }
                                                          },
-                       "m3a3.animation.missile_retract":  {
+                       "animation.m3a3.missile_retract":  {
                                                               "animation_length":  1.5,
                                                               "bones":  {
                                                                             "missile":  {
@@ -95,7 +92,7 @@
                                                                                      }
                                                                         }
                                                           },
-                       "m3a3.animation.missile_hold":  {
+                       "animation.m3a3.missile_hold":  {
                                                            "animation_length":  0,
                                                            "bones":  {
                                                                          "missile":  {
@@ -114,7 +111,7 @@
                                                                                   }
                                                                      }
                                                        },
-                       "m3a3.animation.missile_off_hold":  {
+                       "animation.m3a3.missile_off_hold":  {
                                                                "animation_length":  0,
                                                                "bones":  {
                                                                              "missile":  {

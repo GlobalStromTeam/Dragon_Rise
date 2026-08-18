@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/type97.animation.json",
     "ID":  "dragonrise_reforge:type97",
     "Model":  {
                   "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/type97.animation.json",

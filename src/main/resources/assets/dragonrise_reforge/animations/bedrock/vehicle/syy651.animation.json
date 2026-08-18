@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"fire": {
+		"animation.syy651.fire": {
 			"loop": true,
 			"animation_length": 0.0417,
 			"bones": {
@@ -40,7 +40,7 @@
 				}
 			}
 		},
-		"on": {
+		"animation.syy651.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -138,7 +138,7 @@
 				}
 			}
 		},
-		"off": {
+		"animation.syy651.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -235,9 +235,6 @@
 					}
 				}
 			}
-		},
-		"nothing": {
-			"loop": true
 		}
 	}
 }

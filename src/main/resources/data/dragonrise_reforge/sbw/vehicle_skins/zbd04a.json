@@ -1,0 +1,18 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "Vanilla",
+      "Description": "Vanilla",
+      "Texture": "dragonrise_reforge:textures/entity/zbd04a.png",
+      "Priority": 1
+    },
+    {
+      "Id": "desert",
+      "Name": "沙漠迷彩",
+      "Description": "沙漠迷彩",
+      "Texture": "dragonrise_reforge:textures/entity/zbd04a_sand.png",
+      "Priority": 2
+    }
+  ]
+}

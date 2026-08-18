@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/syy651.animation.json",
     "ID":  "dragonrise_reforge:syy651",
     "MaxHealth":  250,
     "MaxEnergy":  10000000,
@@ -334,7 +335,7 @@
     "EngineType":  "Aircraft",
     "Gravity":  0.0,
     "EngineInfo":  {
-                       "HasGear":  false,
+                       "HasGear":  true,
                        "EnergyCostRate":  512,
                        "Increment":  0.5,
                        "Decrement":  0.5,

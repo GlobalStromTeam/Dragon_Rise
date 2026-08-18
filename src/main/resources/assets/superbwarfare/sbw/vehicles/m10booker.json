@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/m10booker.animation.json",
     "ID":  "dragonrise_reforge:m10booker",
     "Model":  {
                   "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/m10booker.animation.json",

@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/pak40.animation.json",
     "ID":  "dragonrise_reforge:pak40",
     "Model":  {
                   "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/pak40.animation.json",

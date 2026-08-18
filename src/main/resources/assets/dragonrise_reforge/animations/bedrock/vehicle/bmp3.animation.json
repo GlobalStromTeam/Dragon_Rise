@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "bmp3.animation.minecannon.new":  {
+                       "animation.bmp3.mine_cannon":  {
                                                              "animation_length":  1.1667,
                                                              "bones":  {
                                                                            "maincannon":  {
@@ -122,7 +122,7 @@
                                                                                      }
                                                                        }
                                                          },
-                       "bmp3.animation.subcannon.new":  {
+                       "animation.bmp3.sub_cannon":  {
                                                             "loop":  true,
                                                             "animation_length":  0.125,
                                                             "bones":  {
@@ -147,9 +147,6 @@
                                                                                       }
                                                                       }
                                                         },
-                       "animation.unknown.new":  {
-                                                     "loop":  true
-                                                 },
                        "animation.cannon.idle":  {
                                                      "loop":  true,
                                                      "bones":  {

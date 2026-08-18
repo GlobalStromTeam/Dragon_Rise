@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.j15t.qljoff": {
+		"animation.j15t.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {
@@ -109,7 +109,7 @@
 				}
 			}
 		},
-		"animation.j15t.qljon": {
+		"animation.j15t.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.9583,
 			"bones": {
@@ -219,7 +219,7 @@
 				}
 			}
 		},
-		"engine on": {
+		"animation.j15t.engine_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.75,
 			"bones": {
@@ -283,7 +283,7 @@
 				}
 			}
 		},
-		"engine off": {
+		"animation.j15t.engine_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.75,
 			"bones": {

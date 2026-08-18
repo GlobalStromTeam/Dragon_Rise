@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/q5.animation.json",
     "ID":  "dragonrise_reforge:q5",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/q5.geo.json",

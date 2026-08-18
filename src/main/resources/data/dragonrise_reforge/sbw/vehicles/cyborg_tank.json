@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/cyborg_tank.animation.json",
     "ID":  "dragonrise_reforge:cyborg_tank",
     "MaxHealth":  600,
     "MaxEnergy":  20000000,

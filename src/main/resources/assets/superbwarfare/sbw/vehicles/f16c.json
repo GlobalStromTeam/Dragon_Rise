@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/f16c.animation.json",
     "ID":  "dragonrise_reforge:f16c",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/f16c.geo.json",

@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"engine on": {
+		"animation.f16c.engine_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.5833,
 			"bones": {
@@ -50,7 +50,7 @@
 				}
 			}
 		},
-		"engine off": {
+		"animation.f16c.engine_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.5833,
 			"bones": {
@@ -74,7 +74,7 @@
 				}
 			}
 		},
-		"off": {
+		"animation.f16c.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.0833,
 			"bones": {
@@ -165,7 +165,7 @@
 				}
 			}
 		},
-		"on": {
+		"animation.f16c.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3.0833,
 			"bones": {

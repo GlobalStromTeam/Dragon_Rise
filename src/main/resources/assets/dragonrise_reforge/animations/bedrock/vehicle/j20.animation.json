@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"pack up": {
+		"animation.j20.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -107,7 +107,7 @@
 				}
 			}
 		},
-		"lay down": {
+		"animation.j20.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -215,7 +215,7 @@
 				}
 			}
 		},
-		"Engineon": {
+		"animation.j20.engine_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 75,
 			"bones": {
@@ -1778,7 +1778,7 @@
 				}
 			}
 		},
-		"EngineoFF ": {
+		"animation.j20.engine_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {

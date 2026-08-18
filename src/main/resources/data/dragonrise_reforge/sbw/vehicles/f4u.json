@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/f4u.animation.json",
     "ID":  "dragonrise_reforge:f4u",
     "MaxHealth":  180,
     "MaxEnergy":  10000000,

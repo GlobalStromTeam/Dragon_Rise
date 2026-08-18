@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/csk181.animation.json",
     "ID":  "dragonrise_reforge:csk181",
     "MaxHealth":  180,
     "MaxEnergy":  5000000,

@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/su24m.animation.json",
     "ID":  "dragonrise_reforge:su24m",
     "Model":  {
                   "Model":  "dragonrise_reforge:models/bedrock/vehicle/su24m.geo.json",

@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation": {
+		"animation.su24m.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -25,7 +25,7 @@
 				}
 			}
 		},
-		"animation2": {
+		"animation.su24m.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1,
 			"bones": {
@@ -49,7 +49,7 @@
 				}
 			}
 		},
-		"add": {
+		"animation.su24m.pylon_on": {
 			"animation_length": 1,
 			"bones": {
 				"3": {
@@ -78,7 +78,7 @@
 				}
 			}
 		},
-		"add2": {
+		"animation.su24m.pylon_off": {
 			"animation_length": 1,
 			"bones": {
 				"3": {

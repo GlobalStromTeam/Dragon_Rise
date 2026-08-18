@@ -60,7 +60,7 @@
     {
       "Size": [0.855,0.342,0.738],
       "Position": [0.545,0.27,0.35],
-      "CustomRotate": [0.0,12.5,0.0],
+      "CustomRotate": [0.0,-12.5,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -68,7 +68,7 @@
     {
       "Size": [0.855,0.342,0.738],
       "Position": [-0.361,0.27,0.35],
-      "CustomRotate": [0.0,-12.5,0.0],
+      "CustomRotate": [0.0,12.5,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -76,7 +76,7 @@
     {
       "Size": [0.636,0.342,0.738],
       "Position": [-0.113,0.254,0.803],
-      "CustomRotate": [0.0,30.0,0.0],
+      "CustomRotate": [0.0,-30.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -84,7 +84,7 @@
     {
       "Size": [0.636,0.342,0.738],
       "Position": [0.297,0.254,0.803],
-      "CustomRotate": [0.0,-30.0,0.0],
+      "CustomRotate": [0.0,30.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -100,7 +100,7 @@
     {
       "Size": [0.636,0.342,0.738],
       "Position": [0.655,0.397,0.292],
-      "CustomRotate": [15.221,9.656,-2.613],
+      "CustomRotate": [15.221,-9.656,-2.613],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -108,7 +108,7 @@
     {
       "Size": [0.636,0.342,0.738],
       "Position": [-0.471,0.397,0.292],
-      "CustomRotate": [15.221,-9.656,2.613],
+      "CustomRotate": [15.221,9.656,2.613],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -116,7 +116,7 @@
     {
       "Size": [0.855,0.436,1.175],
       "Position": [0.436,0.42,-1.272],
-      "CustomRotate": [0.0,-10.0,0.0],
+      "CustomRotate": [0.0,10.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -124,7 +124,7 @@
     {
       "Size": [0.855,0.436,1.175],
       "Position": [-0.252,0.42,-1.272],
-      "CustomRotate": [0.0,10.0,0.0],
+      "CustomRotate": [0.0,-10.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -164,7 +164,7 @@
       "CameraPos": {
         "Transform": "Turret",
         "ZoomPosition": [-0.587,1.798,-0.43],
-        "Direction": "WeaponStationBarrel",
+        "Direction": "Barrel",
         "UseFixedCameraPos": false
       },
       "Position": [-0.587,0.188,-0.43],
@@ -185,9 +185,9 @@
       "MaxYaw": 95,
       "CameraPos": {
         "UseFixedCameraPos": false,
+        "ZoomPosition": [1.125,3.188,1.375],
         "Transform": "Turret",
-        "Direction": "Barrel",
-        "ZoomPosition": [1.125,3.188,1.375]
+        "Direction": "Barrel"
       }
     },
     {
@@ -271,7 +271,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.001,-0.396,7.327]
+          [0.001,-0.396,7.327],
+          [-0.376,0.022,2.15]
         ],
         "Directions": [
           "Barrel"

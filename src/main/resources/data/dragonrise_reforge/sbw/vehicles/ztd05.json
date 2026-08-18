@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animation/entity/ztd05.animation.json",
   "ID": "dragonrise_reforge:ztd05",
   "MaxHealth": 270,
   "MaxEnergy": 5000000,

@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/leopard2a4.animation.json",
     "ID":  "dragonrise_reforge:leopard2a4",
     "Model":  {
                   "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/leopard2a4.animation.json",

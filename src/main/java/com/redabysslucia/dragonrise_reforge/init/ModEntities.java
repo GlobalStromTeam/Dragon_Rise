@@ -68,8 +68,12 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Agm65CustomEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim120Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim9Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
@@ -454,6 +458,38 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.5f)
+    );
+
+    public static final RegistryObject<EntityType<Aim120Entity>> AIM120 = register("aim120",
+            EntityType.Builder.<Aim120Entity>of((type, level) -> new Aim120Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Agm65CustomEntity>> AGM65 = register("agm65",
+            EntityType.Builder.<Agm65CustomEntity>of((type, level) -> new Agm65CustomEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Gbu12Entity>> GBU12 = register("gbu_12",
+            EntityType.Builder.<Gbu12Entity>of((type, level) -> new Gbu12Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Aim9Entity>> AIM9 = register("aim9",
+            EntityType.Builder.<Aim9Entity>of((type, level) -> new Aim9Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
     );
 
     public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",

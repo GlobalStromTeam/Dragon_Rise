@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "开火":  {
+                       "animation.hyr0.fire":  {
                                   "animation_length":  6.9167,
                                   "bones":  {
                                                 "ki":  {
@@ -1204,7 +1204,7 @@
                                                            }
                                             }
                               },
-                       "幻影":  {
+                       "animation.hyr0.phantom":  {
                                   "animation_length":  10.125,
                                   "bones":  {
                                                 "OU":  {
@@ -1418,11 +1418,7 @@
                                                            }
                                             }
                               },
-                       "75毫米机炮发射动画":  {
-                                          "loop":  true,
-                                          "animation_length":  0.5
-                                      },
-                       "保持打开这个动画":  {
+                       "animation.hyr0.hold_open":  {
                                         "loop":  true,
                                         "animation_length":  1,
                                         "bones":  {
@@ -1719,7 +1715,7 @@
                                                                  }
                                                   }
                                     },
-                       "小口径机枪开火":  {
+                       "animation.hyr0.small_mg_fire":  {
                                        "loop":  true,
                                        "animation_length":  0.125,
                                        "bones":  {

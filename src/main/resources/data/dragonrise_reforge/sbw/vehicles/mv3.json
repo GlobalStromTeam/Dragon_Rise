@@ -69,14 +69,26 @@
       "Transform": "Vehicle",
       "Position": [0.659,0.935,1.542],
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.659,2.545,1.542]
+      }
     },
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [-0.659,0.935,1.542],
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-0.659,2.545,1.542]
+      }
     },
     {
       "IsEnclosed": false,
@@ -84,7 +96,13 @@
       "Position": [-0.659,0.935,0.73],
       "CanRotateBody": true,
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-0.659,2.545,0.73]
+      }
     },
     {
       "IsEnclosed": false,
@@ -92,7 +110,13 @@
       "Position": [0.659,0.935,0.73],
       "CanRotateBody": true,
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.659,2.545,0.73]
+      }
     },
     {
       "IsEnclosed": false,
@@ -100,7 +124,13 @@
       "Position": [0.0,0.935,0.73],
       "CanRotateBody": true,
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.0,2.545,0.73]
+      }
     },
     {
       "IsEnclosed": false,
@@ -109,7 +139,13 @@
       "CanRotateBody": true,
       "Orientation": 90.0,
       "MinPitch": -60,
-      "MaxPitch": 60
+      "MaxPitch": 60,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-0.847,2.795,-1.083]
+      }
     }
   ],
   "Weapons": {

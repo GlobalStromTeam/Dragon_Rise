@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/tiger.animation.json",
     "ID":  "dragonrise_reforge:tiger",
     "MaxHealth":  400,
     "MaxEnergy":  20000000,

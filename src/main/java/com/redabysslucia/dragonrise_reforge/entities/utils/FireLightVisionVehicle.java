@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities.utils;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import com.atsuishio.superbwarfare.tools.OBB.Part;
 
@@ -17,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class FireLightVisionVehicle extends VehicleEntity {
+public abstract class FireLightVisionVehicle extends DragonriseVehicleBase {
 
     // 存储实体的光源方块位置和放置时间
     private static final Map<FireLightVisionVehicle, LightInfo> lightInfoMap = new HashMap<>();

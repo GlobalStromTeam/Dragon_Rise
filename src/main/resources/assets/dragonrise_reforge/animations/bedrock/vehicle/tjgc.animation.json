@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"missileon": {
+		"animation.tjgc.missile_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3,
 			"bones": {
@@ -1611,7 +1611,7 @@
 				}
 			}
 		},
-		"missileoff": {
+		"animation.tjgc.missile_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 3,
 			"bones": {
@@ -3221,7 +3221,7 @@
 				}
 			}
 		},
-		"off": {
+		"animation.tjgc.bay_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.375,
 			"bones": {
@@ -3286,7 +3286,7 @@
 				}
 			}
 		},
-		"on": {
+		"animation.tjgc.bay_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.375,
 			"bones": {
@@ -3351,7 +3351,7 @@
 				}
 			}
 		},
-		"enginon": {
+		"animation.tjgc.engine_on": {
 			"animation_length": 134.1667,
 			"bones": {
 				"bone374": {
@@ -9786,7 +9786,7 @@
 				}
 			}
 		},
-		"enginoff": {
+		"animation.tjgc.engine_off": {
 			"animation_length": 1,
 			"bones": {
 				"bone374": {

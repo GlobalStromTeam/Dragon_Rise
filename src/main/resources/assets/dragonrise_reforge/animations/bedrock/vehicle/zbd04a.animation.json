@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "zbd04a.animation.minecannon.new":  {
+                       "animation.zbd04a.mine_cannon":  {
                                                                "loop":  "hold_on_last_frame",
                                                                "animation_length":  1,
                                                                "bones":  {
@@ -192,7 +192,7 @@
                                                                                        }
                                                                          }
                                                            },
-                       "zbd04a.animation.subcannon.new":  {
+                       "animation.zbd04a.sub_cannon":  {
                                                               "loop":  true,
                                                               "animation_length":  0.1667,
                                                               "bones":  {
@@ -247,10 +247,8 @@
                                                                                       }
                                                                         }
                                                           },
-                       "animation.unknown.new":  {
-                                                     "loop":  true
-                                                 },
-                       "flbon":  {
+                       "animation.zbd04a.splash_on":  {
+                                     "loop":  "hold_on_last_frame",
                                      "animation_length":  1,
                                      "bones":  {
                                                    "flb":  {
@@ -269,7 +267,8 @@
                                                            }
                                                }
                                  },
-                       "flboff":  {
+                       "animation.zbd04a.splash_off":  {
+                                      "loop":  "hold_on_last_frame",
                                       "animation_length":  1,
                                       "bones":  {
                                                     "flb":  {

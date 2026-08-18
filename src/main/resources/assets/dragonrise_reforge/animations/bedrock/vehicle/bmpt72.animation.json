@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "bmpt.maincannon.fire":  {
+                       "animation.bmpt72.main_cannon_fire":  {
                                                     "loop":  true,
                                                     "animation_length":  0.0781,
                                                     "bones":  {
@@ -141,18 +141,6 @@
                                                                             }
                                                               }
                                                 },
-                       "animation.unknown.new":  {
-                                                     "loop":  true,
-                                                     "bones":  {
-                                                                   "9m120":  {
-                                                                                 "rotation":  [
-                                                                                                  0,
-                                                                                                  0,
-                                                                                                  0
-                                                                                              ]
-                                                                             }
-                                                               }
-                                                 },
                        "animation.cannon1.idle":  {
                                                       "loop":  true,
                                                       "bones":  {

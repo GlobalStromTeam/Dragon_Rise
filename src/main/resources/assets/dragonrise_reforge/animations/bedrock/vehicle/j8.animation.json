@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.j8.qljoff": {
+		"animation.j8.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -51,7 +51,7 @@
 				}
 			}
 		},
-		"animation.j8.qljopen": {
+		"animation.j8.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2,
 			"bones": {
@@ -101,7 +101,7 @@
 				}
 			}
 		},
-		"animation.j8.wyon": {
+		"animation.j8.weapon_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 92.125,
 			"bones": {
@@ -2773,7 +2773,7 @@
 				}
 			}
 		},
-		"animation.j8.wyoff": {
+		"animation.j8.weapon_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 2.7083,
 			"bones": {

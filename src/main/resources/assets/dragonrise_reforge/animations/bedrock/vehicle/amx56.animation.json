@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "amx.animation.maincannon":  {
+                       "animation.amx56.main_cannon":  {
                                                         "animation_length":  0.75,
                                                         "bones":  {
                                                                       "bone":  {
@@ -25,9 +25,6 @@
                                                                                }
                                                                   }
                                                     },
-                       "animation.unknown.new":  {
-                                                     "loop":  true
-                                                 },
                        "animation.cannon.idle":  {
                                                      "loop":  true,
                                                      "bones":  {

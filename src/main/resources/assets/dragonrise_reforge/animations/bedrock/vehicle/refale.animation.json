@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.j10.OFFground_idle": {
+		"animation.refale.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.25,
 			"bones": {
@@ -87,7 +87,7 @@
 				}
 			}
 		},
-		"animation.j10.ONground_idle2": {
+		"animation.refale.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.25,
 			"bones": {
@@ -173,7 +173,7 @@
 				}
 			}
 		},
-		"animation.j10.engon": {
+		"animation.refale.engine_on": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 75.4583,
 			"bones": {
@@ -1753,7 +1753,7 @@
 				}
 			}
 		},
-		"animation.j10.engoFF": {
+		"animation.refale.engine_off": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 4.5,
 			"bones": {

@@ -32,8 +32,12 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRende
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Agm65CustomRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Aim120Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Aim9Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AntiTopWireGuideMissileRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gbu12Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -152,6 +156,10 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AKM.get(), AKMRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
                 event.registerEntityRenderer(ModEntities.AASHELL.get(), AAshellRenderer::new);
+                event.registerEntityRenderer(ModEntities.AIM120.get(), Aim120Renderer::new);
+                event.registerEntityRenderer(ModEntities.AGM65.get(), Agm65CustomRenderer::new);
+                event.registerEntityRenderer(ModEntities.GBU12.get(), Gbu12Renderer::new);
+                event.registerEntityRenderer(ModEntities.AIM9.get(), Aim9Renderer::new);
                 event.registerEntityRenderer(ModEntities.AIRBOMB500KG.get(), AirBomb500kgRenderer::new);
                 event.registerEntityRenderer(ModEntities.ANTI_TOP_WIRE_GUIDE_MISSILE.get(), AntiTopWireGuideMissileRenderer::new);
                 event.registerEntityRenderer(ModEntities.L1A2.get(), L1A2Renderer::new);

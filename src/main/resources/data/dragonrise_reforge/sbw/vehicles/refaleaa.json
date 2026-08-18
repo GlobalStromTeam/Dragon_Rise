@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/refaleaa.animation.json",
     "ID":  "dragonrise_reforge:refaleaa",
     "MaxHealth":  250,
     "MaxEnergy":  10000000,
@@ -437,7 +438,7 @@
     "Type":  "Airplane",
     "EngineType":  "Aircraft",
     "EngineInfo":  {
-                       "HasGear":  false,
+                       "HasGear":  true,
                        "EnergyCostRate":  512,
                        "Increment":  0.5,
                        "Decrement":  0.5,

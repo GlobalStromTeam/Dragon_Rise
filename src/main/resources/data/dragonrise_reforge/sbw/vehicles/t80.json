@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/t80.animation.json",
     "ID":  "dragonrise_reforge:t80",
     "MaxHealth":  380,
     "MaxEnergy":  20000000,

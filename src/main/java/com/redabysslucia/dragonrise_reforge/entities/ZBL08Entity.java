@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
@@ -18,7 +19,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.UUID;
 @SuppressWarnings("removal")
-public class ZBL08Entity extends VehicleEntity {
+public class ZBL08Entity extends DragonriseVehicleBase {
 
         // 防浪板状态: 0=关闭, 1=展开中, 2=已展开, 3=关闭中
         private static final EntityDataAccessor<Integer> FLAP_STATE =

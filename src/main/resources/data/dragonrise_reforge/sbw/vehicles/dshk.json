@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/dshk.animation.json",
     "ID":  "dragonrise_reforge:dshk",
     "MaxHealth":  40,
     "MaxEnergy":  0,

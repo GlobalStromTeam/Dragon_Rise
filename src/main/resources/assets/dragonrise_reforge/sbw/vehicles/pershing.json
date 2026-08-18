@@ -1,14 +1,15 @@
 {
-    "ID":  "dragonrise_reforge:pershing",
-    "Model":  {
-                  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/pershing.animation.json",
-                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
-                  "Texture":  "dragonrise_reforge:textures/entity/pershing.png"
-              },
-    "Models":  [
-                   {
-                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
-                       "Texture":  "dragonrise_reforge:textures/entity/pershing.png"
-                   }
-               ]
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/pershing.animation.json",
+  "ID": "dragonrise_reforge:pershing",
+  "Model": {
+    "Animation": "dragonrise_reforge:animations/bedrock/vehicle/pershing.animation.json",
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/pershing.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/pershing.png"
+    }
+  ]
 }

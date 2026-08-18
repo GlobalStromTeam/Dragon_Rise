@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "fire":  {
+                       "animation.2s25m.fire":  {
                                     "animation_length":  1.25,
                                     "bones":  {
                                                   "bone3":  {
@@ -107,9 +107,6 @@
                                                             }
                                               }
                                 },
-                       "nothing":  {
-                                       "loop":  true
-                                   },
                        "animation.cannon.idle":  {
                                                      "loop":  true,
                                                      "bones":  {

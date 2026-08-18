@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "112":  {
+                       "animation.ztz99ah.state_112":  {
                                    "animation_length":  0.5087,
                                    "bones":  {
                                                  "bone11":  {
@@ -169,7 +169,7 @@
                                                             }
                                              }
                                },
-                       "99A":  {
+                       "animation.ztz99ah.state_99a":  {
                                    "loop":  true,
                                    "animation_length":  2,
                                    "bones":  {

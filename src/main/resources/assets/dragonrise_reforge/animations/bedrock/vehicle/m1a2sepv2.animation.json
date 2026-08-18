@@ -1,10 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "m1a2sepv2.animation":  {
-                                                   "loop":  true
-                                               },
-                       "m1a2sepv2.fire":  {
+                       "animation.m1a2sepv2.fire":  {
                                               "animation_length":  0.5417,
                                               "bones":  {
                                                             "1":  {

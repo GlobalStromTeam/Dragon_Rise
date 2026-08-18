@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"625.animation.radar": {
+		"animation.625e.radar": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {

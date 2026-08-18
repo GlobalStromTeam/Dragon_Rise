@@ -1,7 +1,7 @@
 {
     "format_version":  "1.8.0",
     "animations":  {
-                       "ztq15.fire.animation":  {
+                       "animation.ztq15.fire":  {
                                                     "animation_length":  1.0833,
                                                     "bones":  {
                                                                   "cannon":  {

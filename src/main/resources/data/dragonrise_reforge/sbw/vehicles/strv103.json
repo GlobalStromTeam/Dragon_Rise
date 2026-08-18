@@ -1,4 +1,5 @@
 {
+    "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/strv103.animation.json",
     "ID":  "dragonrise_reforge:strv103",
     "MaxHealth":  420,
     "MaxEnergy":  20000000,
