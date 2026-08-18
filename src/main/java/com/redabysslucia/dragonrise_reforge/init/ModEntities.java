@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
 
 
@@ -1178,6 +1181,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<ChallengerDsEntity>> CHALLENGER_DS = register("challenger_ds",
             EntityType.Builder.of(ChallengerDsEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Brdm2Entity>> BRDM2 = register("brdm2",
+            EntityType.Builder.of(Brdm2Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

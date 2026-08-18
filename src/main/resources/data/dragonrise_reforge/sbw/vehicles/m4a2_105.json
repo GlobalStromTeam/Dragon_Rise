@@ -122,6 +122,7 @@
     },
     "MG1": {
       "Template": "@MG",
+      "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Vehicle",
         "Positions": [
@@ -153,7 +154,7 @@
       "Crosshair": "@VehicleDynamicCross",
       "CrosshairColor": "0x00ff66",
       "Name": "dragonrise_reforge:M1he",
-      "Ammo": "superbwarfare:large_shell_he",
+      "AmmoType": "superbwarfare:large_shell_he",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:us_105_shoot",
         "Fire3P": "dragonrise_reforge:us_105_shoot",

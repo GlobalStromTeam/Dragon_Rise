@@ -291,6 +291,7 @@
     "Weapons":  {
                     "Rocket":  {
                                    "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/em.png",
+                                   "AmmoType":  "superbwarfare:small_rocket",
                                    "Name":  ""
                                }
                 },

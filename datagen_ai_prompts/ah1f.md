@@ -1,129 +1,99 @@
+# AI 填充任务：载具 `ah1f`
+
+该载具模型含 Build 骨骼，属于可自动生成数据的车辆。请按 superbwarfare 车辆数据格式填充缺失字段，**已有字段保持原样，不得改动**。输出完整 JSON。
+
+## 缺失字段
+
+```
+RepairCooldown
+RepairAmount
+SelfHurtPercent
+SelfHurtAmount
+Radar
+TrackDistanceMultiply
+KeepChunkLoaded
+MouseSensitivity
+PassengerRenderScale
+SmokeDecoy
+ApplyDefaultDamageModifiers
+SendHitParticles
+TowForceFactor
+DecoyMagazineSize
+DecoyReloadTime
+SeekInfo
+VehicleContainerType
+HasUpgradeSlots
+LaserColor
+LaserScale
+HornSound
+HasLowHealthWarning
+ForwardTowed
+CollisionLevel
+TurretYawRange
+TurretCustomPitch
+PassengerWeaponStationPos
+PassengerWeaponStationBarrelPos
+PassengerWeaponStationTurnSpeed
+PassengerWeaponStationYawRange
+PassengerWeaponStationPitchRange
+PassengerWeaponStationControllerIndex
+UsePassengerCreativeAmmoBox
+Gravity
+InertiaRotateRate
+```
+
+## 现有数据（骨架，保留不变）
+
+```json
 {
-  "ID": "dragonrise_reforge:test_ship",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/ah1f.animation.json",
+  "ID": "dragonrise_reforge:ah1f",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
-  "TurretPos": [
-    0.0,
-    1.175,
-    4.50625
-  ],
-  "TurretTurnSpeed": [
-    15,
-    15
-  ],
-  "TurretPitchRange": [
-    -40,
-    10
-  ],
-  "BarrelPos": [
-    0.0,
-    -0.446875,
-    0.08125
-  ],
+  "TurretPos": [0.015,0.793,3.595],
+  "TurretTurnSpeed": [15,15],
+  "TurretPitchRange": [-40,10],
+  "BarrelPos": [-0.015,0.245,-0.001],
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [
-        1.0,
-        1.15625,
-        3.03125
-      ],
-      "Position": [
-        0.0,
-        2.03125,
-        2.96875
-      ]
+      "Size": [0.62,1.123,1.633],
+      "Position": [0.0,1.736,2.161]
     },
     {
-      "Size": [
-        1.0,
-        0.5625,
-        3.65625
-      ],
-      "Position": [
-        0.0,
-        1.4375,
-        -3.71875
-      ]
+      "Size": [0.62,0.498,6.945],
+      "Position": [0.0,1.361,-1.964]
     },
     {
-      "Size": [
-        0.15625,
-        0.8125,
-        0.78125
-      ],
-      "Position": [
-        0.03125,
-        2.8125,
-        -7.78125
-      ]
+      "Size": [1.995,0.155,0.602],
+      "Position": [0.0,1.517,0.005]
     },
     {
-      "Size": [
-        2.9375,
-        0.15625,
-        0.875
-      ],
-      "Position": [
-        0.0,
-        1.84375,
-        2.0625
-      ]
+      "Size": [0.183,0.373,0.602],
+      "Position": [0.0,2.048,-8.745]
     },
     {
-      "Part": "MainEngine",
-      "Size": [
-        1.40625,
-        0.3125,
-        1.53125
-      ],
-      "Position": [
-        -0.15625,
-        2.5,
-        0.21875
-      ]
+      "Size": [0.183,0.592,0.914],
+      "Position": [0.0,3.017,-9.808]
     },
     {
-      "Part": "SubEngine",
-      "Size": [
-        0.25,
-        0.28125,
-        0.53125
-      ],
-      "Position": [
-        0.25,
-        3.03125,
-        -7.84375
-      ]
+      "Size": [0.656,0.87,1.58],
+      "Position": [0.0,2.555,-1.03],
+      "Part": "MainEngine"
     }
   ],
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.0,
-        1,
-        3.5
-      ],
-      "Sensitivity": [
-        0,
-        0,
-        0
-      ],
+      "Position": [0.0,1.146,1.697],
+      "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [
-          0.0,
-          2.875,
-          3.5
-        ],
+        "Position": [0.0,2.728,1.844],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [
-          -3.8,
-          3.5,
-          -15
-        ]
+        "AircraftCameraPos": [0,5,-15],
+        "ZoomPosition": [0.0,2.728,1.844]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
@@ -135,39 +105,19 @@
       ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.5,
-          2.5
-        ]
+        "Position": [-2.5,0.5,2.5]
       },
       "HasThermalImaging": true
     },
     {
       "Transform": "Vehicle",
-      "Position": [
-        0.0,
-        0.8,
-        4.8125
-      ],
-      "Sensitivity": [
-        0.59,
-        0.8,
-        0.9
-      ],
+      "Position": [0.0,0.709,3.259],
+      "Sensitivity": [0.59,0.8,0.9],
       "CameraPos": {
-        "Transform": "Vehicle",
+        "Transform": "Barrel",
         "UseFixedCameraPos": true,
-        "Position": [
-          0.0,
-          2.5625,
-          4.8125
-        ],
-        "ZoomPosition": [
-          0.0,
-          1.1640625,
-          7.2171875
-        ],
+        "Position": [0.0,0.916,4.344],
+        "ZoomPosition": [0.0,0.916,4.344],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,
@@ -180,11 +130,7 @@
       ],
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [
-          -2.5,
-          0.3,
-          3.5625
-        ]
+        "Position": [-2.5,0.3,3.5625]
       },
       "HasThermalImaging": true
     }
@@ -197,7 +143,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultZoom": 3,
       "RPM": 625,
-      "Velocity": 40.25,
+      "Velocity": 40.4,
       "Gravity": 0.05,
       "Damage": 55,
       "Magazine": 1200,
@@ -224,11 +170,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            0.0,
-            0.01105625,
-            1.5234375
-          ]
+          [0.0,-0.327,5.53]
         ],
         "Directions": [
           "Barrel"
@@ -251,37 +193,17 @@
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 36.95,
+      "Velocity": 27.5,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          0.62,
-          0.8
-        ],
-        "ShootDirectionForHud": [
-          0,
-          0.018,
-          1
-        ],
+        "ShootPositionForHud": [0,0.62,0.8],
+        "ShootDirectionForHud": [0,0.018,1],
         "Positions": [
-          [
-            1.77374375,
-            1.39634375,
-            2.52694375
-          ],
-          [
-            -1.77374375,
-            1.39634375,
-            2.52694375
-          ]
+          [1.77374375,1.39634375,2.52694375],
+          [-1.77374375,1.39634375,2.52694375]
         ],
         "Directions": [
-          [
-            0,
-            0,
-            1
-          ]
+          [0,0,1]
         ]
       },
       "SoundInfo": {
@@ -326,52 +248,16 @@
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.0625,
-          5.625
-        ],
+        "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [
-            2.69939375,
-            1.2435125,
-            2.6317125
-          ],
-          [
-            2.70360625,
-            0.96335625,
-            2.53489375
-          ],
-          [
-            2.34610625,
-            1.27616875,
-            2.53489375
-          ],
-          [
-            2.34610625,
-            0.96335625,
-            2.53489375
-          ],
-          [
-            -2.70360625,
-            1.27616875,
-            2.53489375
-          ],
-          [
-            -2.70360625,
-            0.96335625,
-            2.53489375
-          ],
-          [
-            -2.34610625,
-            1.27616875,
-            2.53489375
-          ],
-          [
-            -2.34189375,
-            0.9307,
-            2.53489375
-          ]
+          [2.69939375,1.2435125,2.6317125],
+          [2.70360625,0.96335625,2.53489375],
+          [2.34610625,1.27616875,2.53489375],
+          [2.34610625,0.96335625,2.53489375],
+          [-2.70360625,1.27616875,2.53489375],
+          [-2.70360625,0.96335625,2.53489375],
+          [-2.34610625,1.27616875,2.53489375],
+          [-2.34189375,0.9307,2.53489375]
         ],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
@@ -423,32 +309,12 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.0625,
-          5.625
-        ],
+        "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [
-            2.19,
-            1,
-            2.29
-          ],
-          [
-            2.19,
-            0.64,
-            2.29
-          ],
-          [
-            2.59,
-            1,
-            2.29
-          ],
-          [
-            2.59,
-            0.64,
-            2.29
-          ]
+          [2.19,1,2.29],
+          [2.19,0.64,2.29],
+          [2.59,1,2.29],
+          [2.59,0.64,2.29]
         ],
         "ViewDirection": "Barrel",
         "BoundUpWithAmmoAmount": true
@@ -495,32 +361,12 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [
-          0,
-          1.0625,
-          5.625
-        ],
+        "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [
-            1.006,
-            1.932,
-            0
-          ],
-          [
-            1.006,
-            1.67,
-            0
-          ],
-          [
-            1.193,
-            1.932,
-            0
-          ],
-          [
-            1.193,
-            1.67,
-            0
-          ]
+          [1.006,1.932,0],
+          [1.006,1.67,0],
+          [1.193,1.932,0],
+          [1.193,1.67,0]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -538,40 +384,35 @@
       "SoundRadius": 8
     }
   },
-  "EngineType": "Airship",
+  "EngineType": "Helicopter",
   "EngineInfo": {
     "EnergyCostRate": 320,
-    "Increment": 0.01,
-    "Decrement": 0.01,
-    "Buoyancy": 0.05,
-    "SteeringSpeed": 0.03,
-    "MaxForwardSpeedRate": 0.4,
-    "MaxBackwardSpeedRate": 0.2,
-    "LiftSpeedRate": 0.02,
-    "SinkSpeedRate": 0.01,
-    "DragHorizontal": 0.03,
-    "DragVertical": 0.03,
-    "EngineSoundVolume": 1
+    "Increment": 0.8,
+    "Decrement": 0.8,
+    "PitchSpeed": 0.75,
+    "YawSpeed": 0.85,
+    "RollSpeed": 0.6,
+    "LiftSpeed": 1,
+    "Speed": 0.97,
+    "EngineStartSound": "superbwarfare:mi_28_engine_start",
+    "EngineSoundVolume": 2
   },
   "EngineSound": "superbwarfare:mi_28_engine",
-  "ThirdPersonCameraPos": [
-    2.7,
-    4,
-    12
-  ],
+  "ThirdPersonCameraPos": [2.7,4,12],
   "UpStep": 1.1,
   "RotateOffsetHeight": 1.8,
   "Mass": 8.2,
   "AllowFreeCam": true,
   "HasDecoy": true,
   "DamageModifiers": [
+    "All - 10",
+    "minecraft:lava + 10",
     "minecraft:arrow * 0.1",
     "minecraft:trident * 0.2",
     "minecraft:mob_attack * 0.3",
     "minecraft:mob_attack_no_aggro * 0.3",
     "minecraft:mob_projectile * 0.2",
     "minecraft:player_attack * 0.2",
-    "minecraft:lava - -10",
     "minecraft:lava * 2.6",
     "@minecraft:tnt * 3",
     "@minecraft:tnt_minecart * 3",
@@ -590,6 +431,7 @@
     "@superbwarfare:hand_grenade * 5",
     "@superbwarfare:mortar_shell * 3",
     "@#superbwarfare:at_rocket * 1.5",
+    "All * 0.77",
     "@#superbwarfare:aerial_bomb * 2"
   ],
   "DestroyInfo": {
@@ -599,26 +441,45 @@
     "CrashPassengers": true
   },
   "HUDColor": "0xFFC700",
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ah64_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ah1f_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_aircraft.png",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [
-      -1.284,
-      0,
-      1.728
-    ],
-    [
-      1.284,
-      0,
-      1.728
-    ],
-    [
-      0,
-      0,
-      -11.1
-    ]
+    [-1.725,0.009,-0.919],
+    [1.725,0.009,2.362],
+    [1.725,0.009,-0.919],
+    [-1.725,0.009,2.362]
   ],
-  "TerrainCompatRotateRate": 0
+  "TerrainCompatRotateRate": 0,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+    }
+  ]
 }
+```
+
+## 模型信息（辅助判断武器/座位/炮塔）
+
+```
+射击点骨骼: CannonPos1, MissilePos1, MissilePos2
+座位骨骼: SeatsPos1, SeatsPos2
+地形兼容骨骼: TerrainCompatPos4, TerrainCompatPos1, TerrainCompatPos2, TerrainCompatPos3
+OBB 骨骼数: 7
+```
+
+## 填写要求
+
+参考 superbwarfare 车辆 JSON 格式。关键字段说明：
+
+- `Weapons`：武器映射表（如 `Cannon`/`MachineGun`/`Missile`）。每把武器包含：`AmmoType`（弹药 ID）、`Projectile`（抛射物 ID）、`RPM`（射速）、`Velocity`（初速）、`Damage`（伤害）、`ExplosionDamage`、`ExplosionRadius`、`Magazine`（弹夹）、`EmptyReloadTime`（装填 tick）、`Spread`、`DefaultZoom`、`ShootPos`（射击位，可参考上面射击点骨骼）、`SoundInfo` 等。
+- `EngineType`：动力类型（如 `Tank`/`Aircraft`/`Helicopter`/`Wheeled`），`EngineInfo` 为对应参数 JSON，`EngineSound` 为音效 ID。
+- `MaxHealth`/`MaxEnergy`：按车辆定位填写（坦克 300-800，装甲车 200-500，飞机 200-400）。
+- `HudType`：`@Land`（陆地）/ `@Aircraft`（飞行）/ `@AirCraftCommon` 等。
+- `VehicleContainerType`：`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`。
+- `TurretPos`/`BarrelPos`/`Seats`/`TerrainCompat` 若缺失可参考模型骨骼 pivot 换算（除以 16，Z 取反）。
+- `VehicleIcon`/`ContainerIcon` 填贴图路径：`dragonrise_reforge:textures/vehicle_icon/ah1f_icon.png` / `dragonrise_reforge:textures/gui/vehicle/type/*.png`。
+
+输出：直接给出完整的 `ah1f.json` 内容（JSON 代码块）。

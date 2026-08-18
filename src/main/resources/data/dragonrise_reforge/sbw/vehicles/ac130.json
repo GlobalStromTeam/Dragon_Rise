@@ -288,6 +288,7 @@
                             },
                     "MG1":  {
                                 "Template":  "@MG",
+                                "AmmoType":  "@RifleAmmo",
                                 "ShootPos":  {
                                                  "Transform":  "Vehicle",
                                                  "Positions":  [

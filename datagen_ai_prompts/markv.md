@@ -1,3 +1,45 @@
+# AI 填充任务：载具 `markv`
+
+该载具模型含 Build 骨骼，属于可自动生成数据的车辆。请按 superbwarfare 车辆数据格式填充缺失字段，**已有字段保持原样，不得改动**。输出完整 JSON。
+
+## 缺失字段
+
+```
+RepairCooldown
+RepairAmount
+SelfHurtPercent
+SelfHurtAmount
+Radar
+TrackDistanceMultiply
+KeepChunkLoaded
+MouseSensitivity
+PassengerRenderScale
+AllowFreeCam
+SmokeDecoy
+ApplyDefaultDamageModifiers
+SendHitParticles
+TowForceFactor
+DecoyMagazineSize
+DecoyReloadTime
+SeekInfo
+VehicleContainerType
+HasUpgradeSlots
+LaserColor
+LaserScale
+HornSound
+HasLowHealthWarning
+ForwardTowed
+TurretYawRange
+TurretCustomPitch
+PassengerWeaponStationYawRange
+UsePassengerCreativeAmmoBox
+Gravity
+TerrainCompatRotateRate
+```
+
+## 现有数据（骨架，保留不变）
+
+```json
 {
   "ID": "dragonrise_reforge:markv",
   "MaxHealth": 300,
@@ -474,3 +516,27 @@
     }
   ]
 }
+```
+
+## 模型信息（辅助判断武器/座位/炮塔）
+
+```
+射击点骨骼: MachineGunPos
+座位骨骼: SeatsPos1, SeatsPos2, SeatsPos3, SeatsPos4, SeatsPos5
+地形兼容骨骼: TerrainCompatPos4, TerrainCompatPos1, TerrainCompatPos2, TerrainCompatPos3
+OBB 骨骼数: 13
+```
+
+## 填写要求
+
+参考 superbwarfare 车辆 JSON 格式。关键字段说明：
+
+- `Weapons`：武器映射表（如 `Cannon`/`MachineGun`/`Missile`）。每把武器包含：`AmmoType`（弹药 ID）、`Projectile`（抛射物 ID）、`RPM`（射速）、`Velocity`（初速）、`Damage`（伤害）、`ExplosionDamage`、`ExplosionRadius`、`Magazine`（弹夹）、`EmptyReloadTime`（装填 tick）、`Spread`、`DefaultZoom`、`ShootPos`（射击位，可参考上面射击点骨骼）、`SoundInfo` 等。
+- `EngineType`：动力类型（如 `Tank`/`Aircraft`/`Helicopter`/`Wheeled`），`EngineInfo` 为对应参数 JSON，`EngineSound` 为音效 ID。
+- `MaxHealth`/`MaxEnergy`：按车辆定位填写（坦克 300-800，装甲车 200-500，飞机 200-400）。
+- `HudType`：`@Land`（陆地）/ `@Aircraft`（飞行）/ `@AirCraftCommon` 等。
+- `VehicleContainerType`：`Empty`/`Mini`/`Small`/`Medium`/`Large`/`Huge`。
+- `TurretPos`/`BarrelPos`/`Seats`/`TerrainCompat` 若缺失可参考模型骨骼 pivot 换算（除以 16，Z 取反）。
+- `VehicleIcon`/`ContainerIcon` 填贴图路径：`dragonrise_reforge:textures/vehicle_icon/markv_icon.png` / `dragonrise_reforge:textures/gui/vehicle/type/*.png`。
+
+输出：直接给出完整的 `markv.json` 内容（JSON 代码块）。

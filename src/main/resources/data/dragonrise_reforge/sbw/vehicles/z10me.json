@@ -343,6 +343,7 @@
                                              "DefaultZoom":  3,
                                              "Magazine":  4,
                                              "Template":  "@Missile",
+                                             "AmmoType":  "superbwarfare:medium_anti_ground_missile",
                                              "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
                                              "ShootPos":  {
                                                               "Transform":  "Vehicle",
