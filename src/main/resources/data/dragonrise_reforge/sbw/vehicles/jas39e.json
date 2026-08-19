@@ -78,7 +78,7 @@
     "CameraPos": {
       "Transform": "Vehicle",
       "Position": [0.0,2.375,3.363],
-      "UseFixedCameraPos": false,
+      "UseFixedCameraPos": true,
       "UseAircraftCamera": true,
       "AircraftCameraPos": [0,2.75,-14],
       "ZoomPosition": [0.0,2.375,3.363]
@@ -126,12 +126,7 @@
       "CrosshairColor": "0x66FF00",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [
-          [0.376,1.069,2.516]
-        ],
-        "Directions": [
-          [0,-0.02,1]
-        ],
+        "Positions": [[0.376,1.069,2.516]],
         "ShootDirectionForHud": [0,-0.03,1]
       }
     },
@@ -200,7 +195,7 @@
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
       "AddShooterDeltaMovement": true,
-      "Velocity": 15,
+      "Velocity": 3.75,
       "ProjectileLife": 3600,
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
@@ -260,7 +255,7 @@
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
       "AddShooterDeltaMovement": true,
-      "Velocity": 15,
+      "Velocity": 3.75,
       "ProjectileLife": 3600,
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
@@ -358,7 +353,7 @@
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
       "AddShooterDeltaMovement": true,
-      "Velocity": 15,
+      "Velocity": 3.75,
       "ProjectileLife": 3600,
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
