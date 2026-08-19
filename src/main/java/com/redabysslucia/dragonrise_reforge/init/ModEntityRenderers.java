@@ -42,6 +42,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Ai
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AntiTopWireGuideMissileRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gbu12Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.ClusterChargeRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -192,5 +193,6 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.MV3.get(), Mv3Renderer::new);
                 event.registerEntityRenderer(ModEntities.CHALLENGER_DS.get(), ChallengerDsRenderer::new);
                 event.registerEntityRenderer(ModEntities.BRDM2.get(), Brdm2Renderer::new);
+                event.registerEntityRenderer(ModEntities.CLUSTER_CHARGE.get(), ClusterChargeRenderer::new);
         }
 }

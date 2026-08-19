@@ -330,7 +330,7 @@
                                  "SoundRadius":  8
                              }
                 },
-    "EngineType":  "Airship",
+    "EngineType":  "AirShip",
     "EngineInfo":  {
                        "EnergyCostRate":  320,
                        "Increment":  0.0014,

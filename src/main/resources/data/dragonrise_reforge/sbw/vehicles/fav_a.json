@@ -336,7 +336,7 @@
     "Models":  [
                    {
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/fav_a.geo.json",
-                       "Texture":  "dragonrise_reforge:textures/bedrock/vehicle/fav_a.png"
+                       "Texture":  "dragonrise_reforge:textures/entity/fav.png"
                    }
                ]
 }

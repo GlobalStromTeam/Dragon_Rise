@@ -78,6 +78,7 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEnti
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
@@ -1194,6 +1195,13 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
+
+    public static final RegistryObject<EntityType<ClusterChargeEntity>> CLUSTER_CHARGE = register("cluster_charge",
+            EntityType.Builder.<ClusterChargeEntity>of((type, level) -> new ClusterChargeEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(10)
+                    .setUpdateInterval(Integer.MAX_VALUE)
+                    .sized(0.5f, 0.5f)
+    );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));

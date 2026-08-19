@@ -232,6 +232,7 @@ public class ModTabs {
 
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());
+                        output.accept(ModItems.CLUSTER_CHARGE.get());
                         output.accept(ModItems.KEVLAR.get());
                         output.accept(ModItems.PAK40_DEPLOYER.get());
 //                        output.accept(ModItems.GENERATOR_DEPLOYER.get());

@@ -13,7 +13,7 @@
     "Models":  [
                    {
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
-                       "Texture":  "dragonrise_reforge:textures/bedrock/vehicle/t90mhigh.png"
+                       "Texture":  "dragonrise_reforge:textures/entity/t90mhight.png"
                    }
                ]
 }
