@@ -1,8 +1,8 @@
-{
+﻿{
   "type": "superbwarfare:vehicle_assembling",
   "category": "aircraft",
   "inputs": [
-    "8 #superbwarfare:storage_blocks/steel",
+    "8 superbwarfare:steel_block",
     "2 superbwarfare:large_battery_pack",
     "2 superbwarfare:large_propeller",
     "3 superbwarfare:wheel"

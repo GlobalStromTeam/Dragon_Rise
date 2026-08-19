@@ -1,8 +1,8 @@
-{
+﻿{
   "type": "superbwarfare:vehicle_assembling",
   "category": "defense",
   "inputs": [
-    "1 #superbwarfare:storage_blocks/steel"
+    "1 superbwarfare:steel_block"
   ],
   "result": {
     "entity": "dragonrise_reforge:mk19"

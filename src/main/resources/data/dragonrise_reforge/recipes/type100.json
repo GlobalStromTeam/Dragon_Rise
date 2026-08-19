@@ -1,8 +1,8 @@
-{
+﻿{
   "type": "superbwarfare:vehicle_assembling",
   "category": "land",
   "inputs": [
-    "8 #superbwarfare:storage_blocks/steel",
+    "8 superbwarfare:steel_block",
     "superbwarfare:heavy_armament_module",
     "5 superbwarfare:battery",
     "2 superbwarfare:track",

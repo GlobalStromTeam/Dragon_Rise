@@ -1,8 +1,8 @@
-{
+﻿{
   "type": "superbwarfare:vehicle_assembling",
   "category": "defense",
   "inputs": [
-    "3 #superbwarfare:storage_blocks/steel",
+    "3 superbwarfare:steel_block",
     "superbwarfare:cannon_core"
   ],
   "result": {
