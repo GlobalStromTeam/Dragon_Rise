@@ -117,6 +117,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
                         //瑞典 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.JAS39E.get()));
+                        //美国 舰载战斗机
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.FA18E.get()));
 
                         //欧洲 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NH90.get()));

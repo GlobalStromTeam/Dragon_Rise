@@ -317,5 +317,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/t3485.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/t3485.png"
+  }
 }

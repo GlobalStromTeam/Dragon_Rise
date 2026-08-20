@@ -410,5 +410,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+  }
 }

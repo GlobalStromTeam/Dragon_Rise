@@ -363,5 +363,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/m4a2_105.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/m4a2_105.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m4a2_105.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m4a2_105.png"
+  }
 }

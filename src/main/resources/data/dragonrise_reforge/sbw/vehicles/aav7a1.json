@@ -553,5 +553,9 @@
       "Texture": "dragonrise_reforge:textures/entity/aav7a1.png"
     }
   ],
-  "TurretCustomPitch": -1.5
+  "TurretCustomPitch": -1.5,
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/aav7a1.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/aav7a1.png"
+  }
 }

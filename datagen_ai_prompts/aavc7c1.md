@@ -592,7 +592,11 @@ ussr_water.png
       "Model": "dragonrise_reforge:models/bedrock/vehicle/aavc7c1.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/aavc7c1.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/aavc7c1.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/aavc7c1.png"
+  }
 }
 ```
 

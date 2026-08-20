@@ -472,5 +472,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/markv.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/markv.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/markv.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/markv.png"
+  }
 }

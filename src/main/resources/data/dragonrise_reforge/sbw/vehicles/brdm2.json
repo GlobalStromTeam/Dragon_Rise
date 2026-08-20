@@ -301,5 +301,15 @@
     [-1.044,0.038,-1.797],
     [-1.044,0.038,1.734],
     [1.094,0.038,-1.797]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/brdm2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/brdm2.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/brdm2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/brdm2.png"
+    }
   ]
 }

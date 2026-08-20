@@ -14,7 +14,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
@@ -76,7 +78,9 @@ public class VehicleJavaGenerator implements DataProvider {
             String content = Files.readString(geoFile);
             JsonObject geoJson = JsonParser.parseString(content).getAsJsonObject();
 
-            if (!hasBuildBone(geoJson)) {
+            // 入口闸门：只有 Obb 组下存在 Build 骨骼的模型才会生成（飞机/坦克统一规则，
+            // 与 GeoOBBDataProvider 一致）——无 Build 或 Build 不在 Obb 组下的一律跳过。
+            if (!hasBuildUnderObb(geoJson)) {
                 return;
             }
 
@@ -98,7 +102,11 @@ public class VehicleJavaGenerator implements DataProvider {
             Path entityFile = entitiesPath.resolve(entityClassName + ".java");
             Path rendererFile = rendererPath.resolve(rendererClassName + ".java");
 
-            if (!Files.exists(entityFile)) {
+            // 实体类文件已存在说明该实体由手动维护（注册/渲染器/创造物品已手动配置），
+            // 生成器不再改动它，避免破坏手动维护的 ModEntities / ModEntityRenderers / ModTabs 结构。
+            boolean entityFileExisted = Files.exists(entityFile);
+
+            if (!entityFileExisted) {
                 String entityContent = generateEntityContent(baseName, entityClassName);
                 Files.writeString(entityFile, entityContent);
             }
@@ -108,13 +116,139 @@ public class VehicleJavaGenerator implements DataProvider {
                 Files.writeString(rendererFile, rendererContent);
             }
 
-            updateModEntities(initPath, baseName, entityClassName, entityConstantName);
-            updateModEntityRenderers(initPath, baseName, entityClassName, rendererClassName, entityConstantName);
-            updateModTabs(initPath, baseName, entityConstantName);
+            // 仅对由生成器新建的实体执行注册/物品自动插入（全新模型一键接入）；
+            // 手动创建的实体保持完全手动管理。
+            if (!entityFileExisted) {
+                updateModEntities(initPath, baseName, entityClassName, entityConstantName);
+                updateModEntityRenderers(initPath, baseName, entityClassName, rendererClassName, entityConstantName);
+                updateModTabs(initPath, baseName, entityConstantName);
+            }
 
         } catch (Exception e) {
             throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
         }
+    }
+
+    /**
+     * 生成判定：模型存在名为 "Build" 的骨骼，且其父骨骼链上存在名字含 "obb" 的组。
+     * 即 Blockbench 中把 Build 骨骼挂在 Obb 组下（飞机/坦克统一规则）。
+     * 与 GeoOBBDataProvider.hasBuildUnderObb 保持一致。
+     */
+    private boolean hasBuildUnderObb(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        Map<String, JsonObject> boneMap = new HashMap<>();
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                boneMap.put(bone.get("name").getAsString(), bone);
+            }
+        }
+
+        for (JsonObject bone : boneMap.values()) {
+            if (!bone.get("name").getAsString().equals("Build")) {
+                continue;
+            }
+            String parent = bone.has("parent") ? bone.get("parent").getAsString() : null;
+            Set<String> visited = new java.util.HashSet<>();
+            while (parent != null && visited.add(parent)) {
+                if (parent.toLowerCase().contains("obb")) {
+                    return true;
+                }
+                JsonObject parentBone = boneMap.get(parent);
+                if (parentBone == null) {
+                    break;
+                }
+                parent = parentBone.has("parent") ? parentBone.get("parent").getAsString() : null;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 飞机判定：模型存在名为 "Plane" 的骨骼，且模型存在 Obb 组（名字含 "obb"）。
+     * 兼容两种结构：Plane 挂在 Obb 组下（jas39e 等）或 Plane 与 Obb 平级（fa18e 等）。
+     * 与 GeoOBBDataProvider.isAircraft 保持一致。
+     */
+    private boolean isAircraft(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        Map<String, JsonObject> boneMap = new HashMap<>();
+        boolean hasPlane = false;
+        boolean hasObb = false;
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                String name = bone.get("name").getAsString();
+                boneMap.put(name, bone);
+                if (name.equalsIgnoreCase("Plane")) {
+                    hasPlane = true;
+                }
+                if (name.toLowerCase().contains("obb")) {
+                    hasObb = true;
+                }
+            }
+        }
+        if (!hasPlane || !hasObb) {
+            return false;
+        }
+
+        // 旧结构：沿 Plane 的父骨骼链向上查找 Obb 组
+        for (JsonObject bone : boneMap.values()) {
+            if (!bone.get("name").getAsString().equalsIgnoreCase("Plane")) {
+                continue;
+            }
+            String parent = bone.has("parent") ? bone.get("parent").getAsString() : null;
+            Set<String> visited = new java.util.HashSet<>();
+            while (parent != null && visited.add(parent)) {
+                if (parent.toLowerCase().contains("obb")) {
+                    return true;
+                }
+                JsonObject parentBone = boneMap.get(parent);
+                if (parentBone == null) {
+                    break;
+                }
+                parent = parentBone.has("parent") ? parentBone.get("parent").getAsString() : null;
+            }
+        }
+
+        // 新结构：Plane 与 Obb 平级（如 fa18e），模型同时存在 Plane 与 Obb 即按飞机生成
+        return true;
+    }
+
+    /**
+     * 车辆特征判定：模型存在名字含 "obb" 的骨骼（Obb/OBB/Obb1/TurretObb* 等）。
+     * 部分车辆模型没有 Build 标记骨骼（如 ztz96a），只要有 OBB 组也生成。
+     */
+    private boolean hasObbBone(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                if (bone.get("name").getAsString().toLowerCase().contains("obb")) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     private boolean hasBuildBone(JsonObject geoJson) {

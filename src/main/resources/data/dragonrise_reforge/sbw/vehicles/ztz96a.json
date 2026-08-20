@@ -1,5 +1,6 @@
 {
   "ID": "dragonrise_reforge:ztz96a",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/ztz96a.animation.json",
   "MaxHealth": 380,
   "MaxEnergy": 20000000,
   "OBB": [
@@ -164,7 +165,7 @@
       "CameraPos": {
         "Transform": "Turret",
         "ZoomPosition": [-0.587,1.798,-0.43],
-        "Direction": "Barrel",
+        "Direction": "WeaponStationBarrel",
         "UseFixedCameraPos": false
       },
       "Position": [-0.587,0.188,-0.43],
@@ -176,31 +177,6 @@
       "MaxPitch": 60,
       "Sensitivity": [0.57,0.55,0.9],
       "HasThermalImaging": true
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
-      "MinYaw": -95,
-      "MaxYaw": 95,
-      "CameraPos": {
-        "UseFixedCameraPos": false,
-        "ZoomPosition": [1.125,3.188,1.375],
-        "Transform": "Turret",
-        "Direction": "Barrel"
-      }
-    },
-    {
-      "BanHand": true,
-      "Transform": "Vehicle",
-      "Position": [-1.625,-0.0625,-4.25],
-      "MinYaw": -95,
-      "MaxYaw": 95,
-      "CameraPos": {
-        "UseFixedCameraPos": false,
-        "Transform": "Turret",
-        "Direction": "Barrel"
-      }
     }
   ],
   "Weapons": {
@@ -467,9 +443,13 @@
   ],
   "Models": [
     {
-      "Model": "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
-      "Texture": "dragonrise_reforge:textures/entity/t90mhight.png"
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ztz96a.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ztz96a.png"
     }
   ],
-  "TurretCustomPitch": 2.0
+  "TurretCustomPitch": 2.0,
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/ztz96a.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ztz96a.png"
+  }
 }

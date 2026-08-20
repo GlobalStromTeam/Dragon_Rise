@@ -271,5 +271,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/kv1.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/kv1.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/kv1.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/kv1.png"
+  }
 }

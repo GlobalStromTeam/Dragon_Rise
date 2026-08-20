@@ -99,9 +99,9 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         try {
-            // 入口闸门：坦克模型需有 Build 骨骼；飞机模型按 Obb 组下的 Plane 骨骼判定；
-            // 无 Build/Plane 但有 OBB 组的模型（如 ztz96a）也按车辆流程生成。
-            if (!hasBuildBone(geoJson) && !isAircraft(geoJson) && !hasObbBone(geoJson)) {
+            // 入口闸门：只有 Obb 组下存在 Build 骨骼的模型才会生成（飞机/坦克统一规则）——
+            // 即 Blockbench 中把 Build 骨骼挂在 Obb 组下。无 Build 或 Build 不在 Obb 组下的一律跳过。
+            if (!hasBuildUnderObb(geoJson)) {
                 return;
             }
 
@@ -346,6 +346,10 @@ public class GeoOBBDataProvider implements DataProvider {
                 vehicleJson.addProperty("TurretCustomPitch", round(turretCustomPitch, 3));
             }
 
+                // 修正模型/贴图引用指向本模型（data 版是游戏实际加载的文件，
+                // 旧文件可能是从其他载具复制来的残留）
+                applyModelPaths(vehicleJson, baseName);
+
                 Files.createDirectories(vehicleFile.getParent());
                 Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
             }
@@ -358,6 +362,47 @@ public class GeoOBBDataProvider implements DataProvider {
         } catch (Exception e) {
             throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
         }
+    }
+
+    /**
+     * 生成判定：模型存在名为 "Build" 的骨骼，且其父骨骼链上存在名字含 "obb" 的组。
+     * 即 Blockbench 中把 Build 骨骼挂在 Obb 组下（飞机/坦克统一规则）。
+     */
+    private static boolean hasBuildUnderObb(JsonObject geoJson) {
+        if (!geoJson.has("minecraft:geometry")) {
+            return false;
+        }
+
+        Map<String, JsonObject> boneMap = new HashMap<>();
+        for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
+            JsonObject geometry = geomElement.getAsJsonObject();
+            if (!geometry.has("bones")) {
+                continue;
+            }
+            for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
+                JsonObject bone = boneElement.getAsJsonObject();
+                boneMap.put(bone.get("name").getAsString(), bone);
+            }
+        }
+
+        for (JsonObject bone : boneMap.values()) {
+            if (!bone.get("name").getAsString().equals("Build")) {
+                continue;
+            }
+            String parent = bone.has("parent") ? bone.get("parent").getAsString() : null;
+            Set<String> visited = new java.util.HashSet<>();
+            while (parent != null && visited.add(parent)) {
+                if (parent.toLowerCase().contains("obb")) {
+                    return true;
+                }
+                JsonObject parentBone = boneMap.get(parent);
+                if (parentBone == null) {
+                    break;
+                }
+                parent = parentBone.has("parent") ? parentBone.get("parent").getAsString() : null;
+            }
+        }
+        return false;
     }
 
     private static boolean hasBuildBone(JsonObject geoJson) {
@@ -386,8 +431,11 @@ public class GeoOBBDataProvider implements DataProvider {
     }
 
     /**
-     * 飞机判定：模型存在名为 "Plane" 的骨骼，且其父骨骼链上存在 Obb 组（名字含 "obb"）。
-     * 即 Blockbench 中把 Plane 骨骼挂在 Obb 组下时，该模型按飞机流程生成。
+     * 飞机判定：模型存在名为 "Plane" 的骨骼，且模型存在 Obb 组（名字含 "obb"）。
+     * 兼容两种模型结构：
+     *  - 旧结构（jas39e 等）：Plane 骨骼挂在 Obb 组下（父链上含 obb）；
+     *  - 新结构（fa18e 等）：Plane 与 Obb 为平级顶层骨骼。
+     * 该模型按飞机流程生成（挂架 dummy 位置、吊舱 NacellePos、座位相机 Transform=Vehicle 等）。
      */
     private static boolean isAircraft(JsonObject geoJson) {
         if (!geoJson.has("minecraft:geometry")) {
@@ -395,6 +443,8 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         Map<String, JsonObject> boneMap = new HashMap<>();
+        boolean hasPlane = false;
+        boolean hasObb = false;
         for (JsonElement geomElement : geoJson.getAsJsonArray("minecraft:geometry")) {
             JsonObject geometry = geomElement.getAsJsonObject();
             if (!geometry.has("bones")) {
@@ -402,15 +452,25 @@ public class GeoOBBDataProvider implements DataProvider {
             }
             for (JsonElement boneElement : geometry.getAsJsonArray("bones")) {
                 JsonObject bone = boneElement.getAsJsonObject();
-                boneMap.put(bone.get("name").getAsString(), bone);
+                String name = bone.get("name").getAsString();
+                boneMap.put(name, bone);
+                if (name.equalsIgnoreCase("Plane")) {
+                    hasPlane = true;
+                }
+                if (name.toLowerCase().contains("obb")) {
+                    hasObb = true;
+                }
             }
         }
+        if (!hasPlane || !hasObb) {
+            return false;
+        }
 
+        // 旧结构：沿 Plane 的父骨骼链向上查找 Obb 组
         for (JsonObject bone : boneMap.values()) {
             if (!bone.get("name").getAsString().equalsIgnoreCase("Plane")) {
                 continue;
             }
-            // 沿父骨骼链向上查找 Obb 组
             String parent = bone.has("parent") ? bone.get("parent").getAsString() : null;
             Set<String> visited = new java.util.HashSet<>();
             while (parent != null && visited.add(parent)) {
@@ -425,7 +485,8 @@ public class GeoOBBDataProvider implements DataProvider {
             }
         }
 
-        return false;
+        // 新结构：Plane 与 Obb 平级（如 fa18e），模型同时存在 Plane 与 Obb 即按飞机生成
+        return true;
     }
 
     /**
@@ -464,6 +525,19 @@ public class GeoOBBDataProvider implements DataProvider {
         }
 
         // SBM 渲染需要 models/bedrock/vehicle/ 下的模型与 Models 数组（新格式）
+        applyModelPaths(vehicleJson, baseName);
+
+        Files.createDirectories(vehicleFile.getParent());
+        Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
+    }
+
+    /**
+     * 修正载具 JSON 中的模型/贴图引用，使其指向本模型（baseName）：
+     *  - Model（单数，旧格式，保留兼容）：缺失时补写；
+     *  - Models（复数数组，GeoVehicleRenderer 渲染必需）：缺失时新建；
+     *    已存在但内容不指向本模型（旧文件从其他载具复制来的残留）时覆盖为正确路径。
+     */
+    private static void applyModelPaths(JsonObject vehicleJson, String baseName) {
         String modelPath = "dragonrise_reforge:models/bedrock/vehicle/" + baseName + ".geo.json";
         String texturePath = "dragonrise_reforge:textures/entity/" + baseName + ".png";
 
@@ -491,10 +565,27 @@ public class GeoOBBDataProvider implements DataProvider {
             entry.addProperty("Texture", texturePath);
             models.add(entry);
             vehicleJson.add("Models", models);
+        } else {
+            // 旧文件可能是从其他载具复制来的（Models 指向别的模型），
+            // 内容不指向本模型时覆盖为正确路径
+            boolean pointsToSelf = false;
+            JsonArray models = vehicleJson.getAsJsonArray("Models");
+            for (JsonElement e : models) {
+                JsonObject o = e.getAsJsonObject();
+                if (o.has("Model") && o.get("Model").getAsString().endsWith(baseName + ".geo.json")) {
+                    pointsToSelf = true;
+                    break;
+                }
+            }
+            if (!pointsToSelf) {
+                JsonArray correct = new JsonArray();
+                JsonObject entry = new JsonObject();
+                entry.addProperty("Model", modelPath);
+                entry.addProperty("Texture", texturePath);
+                correct.add(entry);
+                vehicleJson.add("Models", correct);
+            }
         }
-
-        Files.createDirectories(vehicleFile.getParent());
-        Files.writeString(vehicleFile, compactJson(GSON.toJson(vehicleJson)));
     }
 
     private static String compactJson(String json) {
@@ -1196,6 +1287,10 @@ public class GeoOBBDataProvider implements DataProvider {
             // 飞机没有炮塔/炮管，默认看向载具自身（Transform=Vehicle）。
             if (isAircraft) {
                 cameraPos.addProperty("Transform", "Vehicle");
+                // 旧文件可能是按车辆生成的，清掉炮塔/炮管残留方向
+                if (cameraPos.has("Direction")) {
+                    cameraPos.remove("Direction");
+                }
             } else if ("WeaponStation".equals(seatTransform)) {
                 cameraPos.addProperty("Transform", "WeaponStation");
                 cameraPos.addProperty("Direction", "WeaponStationBarrel");
