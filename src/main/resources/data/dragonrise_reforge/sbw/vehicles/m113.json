@@ -247,5 +247,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/m113.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/m113.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m113.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m113.png"
+  }
 }

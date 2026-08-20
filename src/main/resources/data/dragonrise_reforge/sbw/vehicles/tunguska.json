@@ -349,5 +349,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/tunguska.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/tunguska.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/tunguska.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/tunguska.png"
+  }
 }

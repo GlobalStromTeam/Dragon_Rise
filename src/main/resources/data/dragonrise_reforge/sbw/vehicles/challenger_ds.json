@@ -404,8 +404,12 @@
   ],
   "Models": [
     {
-      "Model": "dragonrise_reforge:models/bedrock/vehicle/m1a2sepv2.geo.json",
-      "Texture": "dragonrise_reforge:textures/entity/m1a2sepv2.png"
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/challenger_ds.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/challenger_ds.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/challenger_ds.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/challenger_ds.png"
+  }
 }

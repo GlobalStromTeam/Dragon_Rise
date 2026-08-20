@@ -308,5 +308,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/maus.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/maus.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/maus.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/maus.png"
+  }
 }

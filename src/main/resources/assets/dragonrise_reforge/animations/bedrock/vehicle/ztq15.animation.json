@@ -38,7 +38,7 @@
                                                  },
                        "animation.cannon.fire":  {
                                                      "loop":  "hold_on_last_frame",
-                                                     "animation_length":  0.15,
+                                                     "animation_length":  1.0833,
                                                      "bones":  {
                                                                    "flare":  {
                                                                                  "scale":  {
@@ -73,7 +73,26 @@
                                                                                                             0
                                                                                                         ]
                                                                                            }
-                                                                             }
+                                                                             },
+                                                                   "cannon":  {
+                                                                                  "position":  {
+                                                                                                   "0.0":  [
+                                                                                                               0,
+                                                                                                               0,
+                                                                                                               0
+                                                                                                           ],
+                                                                                                   "0.0417":  [
+                                                                                                                  0,
+                                                                                                                  0,
+                                                                                                                  4
+                                                                                                              ],
+                                                                                                   "0.2083":  [
+                                                                                                                  0,
+                                                                                                                  0,
+                                                                                                                  0
+                                                                                                              ]
+                                                                                               }
+                                                                              }
                                                                }
                                                  },
                        "animation.machine_gun.idle":  {

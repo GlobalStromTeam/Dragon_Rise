@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -12,13 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "ZBD05",
-					"pivot": [0, -5.2, -63]
+					"name": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
-					"parent": "ZBD05",
-					"pivot": [0, -5.2, -63]
+					"parent": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "body",
@@ -3128,7 +3128,7 @@
 				},
 				{
 					"name": "tarck",
-					"parent": "ZBD05",
+					"parent": "root",
 					"pivot": [0, -5.2, -63]
 				},
 				{
@@ -3423,7 +3423,7 @@
 				},
 				{
 					"name": "wheel",
-					"parent": "ZBD05",
+					"parent": "root",
 					"pivot": [0, -2.91625, -25.9875]
 				},
 				{

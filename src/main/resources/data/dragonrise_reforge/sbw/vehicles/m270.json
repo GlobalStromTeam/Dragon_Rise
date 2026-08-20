@@ -218,5 +218,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/m270.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/m270.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m270.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m270.png"
+  }
 }

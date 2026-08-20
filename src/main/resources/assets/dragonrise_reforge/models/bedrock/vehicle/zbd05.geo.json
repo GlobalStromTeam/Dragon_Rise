@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -12,13 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "ZBD05",
-					"pivot": [0.225, 0.15, -12.5875]
+					"name": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
-					"parent": "ZBD05",
-					"pivot": [0.225, -3.75, -59.8375]
+					"parent": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "body",
@@ -1396,14 +1396,14 @@
 					]
 				},
 				{
-					"name": "flare",
-					"parent": "turret",
-					"pivot": [-26.17, 36.24, -141.69]
-				},
-				{
 					"name": "turret",
 					"parent": "base",
 					"pivot": [-0.125, 34.6, -5.7]
+				},
+				{
+					"name": "flare",
+					"parent": "turret",
+					"pivot": [-26.17, 36.24, -141.69]
 				},
 				{
 					"name": "bone16",
@@ -2969,7 +2969,7 @@
 				},
 				{
 					"name": "tarck",
-					"parent": "ZBD05",
+					"parent": "root",
 					"pivot": [0.225, -3.75, -59.8375]
 				},
 				{
@@ -3264,7 +3264,7 @@
 				},
 				{
 					"name": "wheel",
-					"parent": "ZBD05",
+					"parent": "root",
 					"pivot": [0.225, -1.46625, -22.825]
 				},
 				{

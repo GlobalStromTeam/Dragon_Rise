@@ -254,5 +254,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/akm.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/akm.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/akm.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/akm.png"
+  }
 }

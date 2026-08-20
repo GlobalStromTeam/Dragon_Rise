@@ -199,5 +199,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/flarakpz1.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/flarakpz1.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/flarakpz1.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/flarakpz1.png"
+  }
 }

@@ -464,6 +464,14 @@ public class ModEntities {
                     .sized(4.0f, 2.5f)
     );
 
+    public static final RegistryObject<EntityType<FA18EEntity>> FA18E = register("fa18e",
+            EntityType.Builder.of(FA18EEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.5f)
+    );
+
     public static final RegistryObject<EntityType<Aim120Entity>> AIM120 = register("aim120",
             EntityType.Builder.<Aim120Entity>of((type, level) -> new Aim120Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)

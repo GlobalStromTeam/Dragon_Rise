@@ -317,5 +317,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/pershing.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/pershing.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/pershing.png"
+  }
 }

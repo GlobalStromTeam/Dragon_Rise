@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:fa18e",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/fa18e.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/fa18e.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/fa18e.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/fa18e.png"
+    }
+  ]
+}

@@ -352,5 +352,9 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
+  }
 }

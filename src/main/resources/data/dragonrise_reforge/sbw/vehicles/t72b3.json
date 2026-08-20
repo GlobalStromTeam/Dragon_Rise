@@ -100,7 +100,7 @@
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
-        "Direction": "Barrel",
+        "Direction": "WeaponStationBarrel",
         "ZoomPosition": [1.125,3.188,1.375]
       }
     },
@@ -364,8 +364,12 @@
   ],
   "Models": [
     {
-      "Model": "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
-      "Texture": "dragonrise_reforge:textures/entity/t90mhight.png"
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/t72b3.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/t72b3.png"
     }
-  ]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/t72b3.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/t72b3.png"
+  }
 }
