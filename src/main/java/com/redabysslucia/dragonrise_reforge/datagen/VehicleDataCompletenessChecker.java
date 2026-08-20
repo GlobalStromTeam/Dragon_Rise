@@ -389,7 +389,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
         sb.append("## 填写要求（重点：EngineInfo 性能 + 武器字段）\n\n");
         sb.append("### 1. EngineInfo（载具性能）\n\n");
         sb.append("按上面「类型专属填写指南」中该类型的 `EngineInfo` 键清单填写，给出**合理的性能参数**（速度、转向、能量消耗等）。\n");
-        sb.append("参考（速度换算见下文）：`Increment`/`Decrement`（加速度）建议 `0.10`；`MaxForwardSpeedRate` 填 1 = 80 km/h、`MaxBackwardSpeedRate` 填 1 = 64 km/h。\n\n");
+        sb.append("参考（速度换算见下文）：`Increment`/`Decrement`（加速度）建议 `0.01`；`MaxForwardSpeedRate` 填 1 = 80 km/h、`MaxBackwardSpeedRate` 填 1 = 64 km/h。\n\n");
         sb.append("### 2. Weapons（武器字段）\n\n");
         sb.append("- **注意**：`Weapons` 非必填——**如果该载具不应该有武器**（纯运输车/无武装车辆/模型没有 `CannonPos`/`MachineGunPos`/`MissilePos` 射击点骨骼），**省略 `Weapons` 字段**即可，不要硬填。\n");
         sb.append("- **武器键名（key）**：根据模型射击点骨骼命名（见上方模型信息），如 `CannonPos*` → `Cannon`、`MachineGunPos*` → `MachineGun`、`MissilePos*` → `Missile`；多个射击点可用 `Cannon1`/`Cannon2`。\n");
@@ -599,7 +599,7 @@ public class VehicleDataCompletenessChecker implements DataProvider {
         }
         g.append("\n## 速度参考（所有载具统一）\n\n");
         g.append("- `MaxEnergy`：**默认 100000**（所有载具）\n");
-        g.append("- `Increment`/`Decrement`：前进/倒车**加速度**，**建议统一填 `0.10`**\n");
+        g.append("- `Increment`/`Decrement`：前进/倒车**加速度**，**建议统一填 `0.01`**\n");
         g.append("- `MaxForwardSpeedRate`（最大前进速度）：填 `1` 时最快 80 km/h → 每 `0.01` = 0.8 km/h。按目标速度换算：目标km/h ÷ 0.8 × 0.01（例：60 km/h → 60 ÷ 0.8 × 0.01 = 0.75；40 km/h → 0.5）\n");
         g.append("- `MaxBackwardSpeedRate`（最大倒车速度）：填 `1` 时最快 64 km/h → 每 `0.01` = 0.64 km/h。按目标速度换算：目标km/h ÷ 0.64 × 0.01（例：32 km/h → 32 ÷ 0.64 × 0.01 = 0.5；16 km/h → 0.25）\n");
         g.append("\n## HudType 可选值（供选择）\n\n");

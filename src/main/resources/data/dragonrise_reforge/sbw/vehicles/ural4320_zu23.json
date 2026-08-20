@@ -1,5 +1,5 @@
 {
-  "ID": "dragonrise_reforge:ural4320",
+  "ID": "dragonrise_reforge:ural4320_zu23",
   "TurretControllerIndex": 2,
   "OBB": [
     {
@@ -108,21 +108,21 @@
     },
     {
       "Size": [0.369,0.737,0.756],
-      "Position": [0.035,2.48,-1.789],
+      "Position": [0.035,0.397,0.206],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [1.002,0.209,0.264],
-      "Position": [0.0,2.543,-1.773],
+      "Position": [0.0,0.46,0.222],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.123,0.244,0.404],
-      "Position": [0.07,3.324,-2.281],
+      "Position": [0.07,1.241,-0.286],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -142,106 +142,28 @@
     {
       "HidePassenger": false,
       "Transform": "Vehicle",
-      "Position": [-0.48,0.846,1.594],
+      "Position": [-0.668,0.846,1.594],
       "CanRotateHead": true,
+      "MinPitch": -10,
+      "MaxPitch": 20,
       "Sensitivity": [0.57,0.75,0.9],
       "HasThermalImaging": false
     },
     {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-0.257],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-1.07],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-1.57],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-2.195],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-2.757],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [0.828,1.119,-3.507],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-0.257],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-1.07],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-1.57],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-2.195],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-2.757],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
-    },
-    {
-      "HidePassenger": false,
-      "Transform": "Vehicle",
-      "Position": [-0.828,1.119,-3.507],
-      "CanRotateHead": true,
-      "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": false
+      "BanHand": true,
+      "Transform": "Turret",
+      "Position": [0.703,-0.464,-0.7],
+      "MinPitch": -5,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95,
+      "Weapons": [
+        "Cannon"
+      ],
+      "DismountInfo": {
+        "Transform": "Turret",
+        "Position": [0,0.25,0]
+      }
     }
   ],
   "MaxHealth": 300,
@@ -255,7 +177,7 @@
   "EngineType": "Wheel",
   "EngineSound": "superbwarfare:lav_150_engine",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ussr_land.png",
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ural4320_icon.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ural4320_zu23_icon.png",
   "VehicleContainerType": "Medium",
   "EngineInfo": {
     "Buoyancy": 0.052,
@@ -307,8 +229,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.14,2.93,1.354],
-          [0.14,2.93,1.354]
+          [-0.14,0.281,1.354],
+          [0.14,0.281,1.354]
         ],
         "Directions": [
           "Barrel"

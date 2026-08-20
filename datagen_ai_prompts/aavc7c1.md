@@ -26,7 +26,7 @@ Weapons
 ## 速度参考（所有载具统一）
 
 - `MaxEnergy`：**默认 100000**（所有载具）
-- `Increment`/`Decrement`：前进/倒车**加速度**，**建议统一填 `0.10`**
+- `Increment`/`Decrement`：前进/倒车**加速度**，**建议统一填 `0.01`**
 - `MaxForwardSpeedRate`（最大前进速度）：填 `1` 时最快 80 km/h → 每 `0.01` = 0.8 km/h。按目标速度换算：目标km/h ÷ 0.8 × 0.01（例：60 km/h → 60 ÷ 0.8 × 0.01 = 0.75；40 km/h → 0.5）
 - `MaxBackwardSpeedRate`（最大倒车速度）：填 `1` 时最快 64 km/h → 每 `0.01` = 0.64 km/h。按目标速度换算：目标km/h ÷ 0.64 × 0.01（例：32 km/h → 32 ÷ 0.64 × 0.01 = 0.5；16 km/h → 0.25）
 
@@ -610,7 +610,7 @@ OBB 骨骼数: 25
 ### 1. EngineInfo（载具性能）
 
 按上面「类型专属填写指南」中该类型的 `EngineInfo` 键清单填写，给出**合理的性能参数**（速度、转向、能量消耗等）。
-参考（速度换算见下文）：`Increment`/`Decrement`（加速度）建议 `0.10`；`MaxForwardSpeedRate` 填 1 = 80 km/h、`MaxBackwardSpeedRate` 填 1 = 64 km/h。
+参考（速度换算见下文）：`Increment`/`Decrement`（加速度）建议 `0.01`；`MaxForwardSpeedRate` 填 1 = 80 km/h、`MaxBackwardSpeedRate` 填 1 = 64 km/h。
 
 ### 2. Weapons（武器字段）
 

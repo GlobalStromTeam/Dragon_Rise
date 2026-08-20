@@ -1,5 +1,14 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320SupplyEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Zu23Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
 
 
@@ -1201,6 +1210,27 @@ public class ModEntities {
                     .setTrackingRange(10)
                     .setUpdateInterval(Integer.MAX_VALUE)
                     .sized(0.5f, 0.5f)
+    );
+    public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
+            EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ural4320Entity>> URAL4320 = register("ural4320",
+            EntityType.Builder.of(Ural4320Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ural4320SupplyEntity>> URAL4320_SUPPLY = register("ural4320_supply",
+            EntityType.Builder.of(Ural4320SupplyEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
