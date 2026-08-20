@@ -24,6 +24,7 @@ public class ModNetwork {
         playToServer(EngineChangeModeMessage.class, EngineChangeModeMessage::encode, EngineChangeModeMessage::decode, EngineChangeModeMessage::handler);
         playToServer(com.redabysslucia.dragonrise_reforge.network.message.SetFireControlMessage.class, com.redabysslucia.dragonrise_reforge.network.message.SetFireControlMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.SetFireControlMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.SetFireControlMessage::handle);
         playToServer(com.redabysslucia.dragonrise_reforge.network.message.ToggleTakeoverMessage.class, com.redabysslucia.dragonrise_reforge.network.message.ToggleTakeoverMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.ToggleTakeoverMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.ToggleTakeoverMessage::handle);
+        playToClient(com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage.class, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::handle);
     }
 
     public static <T> void playToClient(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

@@ -393,7 +393,17 @@
             "AddShooterDeltaMovement": true,
             "ExplosionDamage": 1600,
             "ExplosionRadius": 40,
+            "UseNacelleCamera": true,
             "Crosshair": "@AirBomb",
+            "CrosshairZooming": "@AirCraftNacelle",
+            "SeekWeaponInfo": {
+              "SeekDirection": "ClientCamera",
+              "SeekRange": 1024,
+              "SeekAngle": 20,
+              "SeekTime": 2,
+              "MinTargetSize": 0.1,
+              "OnlyLockBlock": true
+            },
             "ShootPos": {
               "Transform": "Vehicle",
               "ShootPositionForHud": [0,1.125,-0.875],
@@ -402,7 +412,7 @@
               "Directions": [
                 "DeltaMovement"
               ],
-              "ViewPosition": [0,2.375,3.363],
+              "ViewPosition": [-0.75,0.438,2.313],
               "ViewDirection": "Bomb",
               "Positions": [
                 [-0.619,1.125,-0.875],
