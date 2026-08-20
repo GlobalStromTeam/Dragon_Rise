@@ -298,7 +298,9 @@ public class GeoOBBDataProvider implements DataProvider {
                             }
                         }
 
-                        applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                        if (seatsCameraPositions.containsKey(index)) {
+                            applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                        }
                     }
                 } else if (seatsElement.isJsonObject() && seatsPositions.containsKey(1)) {
                     JsonObject seat = seatsElement.getAsJsonObject();
@@ -317,7 +319,9 @@ public class GeoOBBDataProvider implements DataProvider {
                         seat.addProperty("Orientation", round(seatsOrientations.get(1), 1));
                     }
 
-                    applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                    if (seatsCameraPositions.containsKey(1)) {
+                        applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                    }
                 }
             }
 
@@ -565,12 +569,12 @@ public class GeoOBBDataProvider implements DataProvider {
                     }
                 }
 
-                // 根据骨骼名称设置特殊部件属性
-                if (boneName.equals("MainEngineObb")) {
+                // 根据骨骼名称设置特殊部件属性（支持带编号后缀的变体如 MainEngineObb1、WheelLeftObb2 等）
+                if (boneName.startsWith("MainEngineObb")) {
                     obbEntry.addProperty("Part", "MainEngine");
-                } else if (boneName.equals("WheelRightObb")) {
+                } else if (boneName.startsWith("WheelRightObb")) {
                     obbEntry.addProperty("Part", "WheelRight");
-                } else if (boneName.equals("WheelLeftObb")) {
+                } else if (boneName.startsWith("WheelLeftObb")) {
                     obbEntry.addProperty("Part", "WheelLeft");
                 } else if (boneName.startsWith("TurretObb")) {
                     obbEntry.addProperty("Part", "Turret");
