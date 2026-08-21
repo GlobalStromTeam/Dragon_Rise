@@ -451,6 +451,8 @@
   "item.dragonrise_reforge.aljin_helmet": "Aljin Ballistic Helmet",
   "item.dragonrise_reforge.ammo_supply_station": "Ammo Supply Station",
   "item.dragonrise_reforge.cluster_charge": "Cluster Charge",
+  "item.dragonrise_reforge.r6_drone": "Scout Drone",
+  "des.dragonrise_reforge.r6_drone": "Deploy it, then link with the Monitor: WASD to move, Ctrl to sprint, Space to jump toward your view (2s cooldown)",
   "item.dragonrise_reforge.cn21": "Chinese Type 21 Helmet",
   "item.dragonrise_reforge.cnchest": "Chinese Type 21 Uniform \u0026 Carrier",
   "item.dragonrise_reforge.cnfast": "FAST Helmet",

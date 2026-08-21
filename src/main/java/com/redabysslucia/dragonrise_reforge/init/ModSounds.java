@@ -31,6 +31,14 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> SUPPLY_STATION_COMPLETE = REGISTRY.register("supply_station_complete", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_complete")));
 
+    // 侦察无人车音效
+    public static final RegistryObject<SoundEvent> R6_DRONE_MOVING = REGISTRY.register("r6_drone_moving", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_moving")));
+    public static final RegistryObject<SoundEvent> R6_DRONE_JUMP = REGISTRY.register("r6_drone_jump", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_jump")));
+    public static final RegistryObject<SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_down")));
+
     /** 载具音效（开火/装填/引擎等）。仅写 sounds.json 不会被注册进 ForgeRegistries.SOUND_EVENTS，
      *  1.20.1 里 Level.playSound 需要 Holder<SoundEvent>，未注册的事件会静默失败。 */
     private static final String[] VEHICLE_SOUNDS = {

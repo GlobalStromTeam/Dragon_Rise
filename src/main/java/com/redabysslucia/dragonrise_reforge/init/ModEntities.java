@@ -88,6 +88,7 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuide
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
@@ -1218,6 +1219,13 @@ public class ModEntities {
                     .setTrackingRange(10)
                     .setUpdateInterval(Integer.MAX_VALUE)
                     .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<R6DroneEntity>> R6_DRONE = register("r6_drone",
+            EntityType.Builder.<R6DroneEntity>of((type, level) -> new R6DroneEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.6f, 0.2f)
     );
     public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)

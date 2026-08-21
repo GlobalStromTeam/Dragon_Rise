@@ -11,7 +11,10 @@
     "AircraftHudMixin",
     "GameRendererMixin",
     "LandVehicleHudMixin",
-    "VehicleAssemblingScreenMixin"
+    "VehicleAssemblingScreenMixin",
+    "MonitorItemMixin",
+    "ClientMouseHandlerMixin",
+    "R6DroneCameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1

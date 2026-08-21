@@ -451,6 +451,8 @@
   "item.dragonrise_reforge.aljin_helmet": "Aljin防弹头盔",
   "item.dragonrise_reforge.ammo_supply_station": "弹药补给站",
   "item.dragonrise_reforge.cluster_charge": "霰射炸药",
+  "item.dragonrise_reforge.r6_drone": "侦察无人车",
+  "des.dragonrise_reforge.r6_drone": "右键部署后用监控平板链接遥控：WASD 移动、Ctrl 冲刺、空格朝视角方向跳跃（冷却 2 秒）",
   "item.dragonrise_reforge.cn21": "中国 21式头盔",
   "item.dragonrise_reforge.cnchest": "中国 21式军装上衣与防弹携行具",
   "item.dragonrise_reforge.cnfast": "fast 头盔",
