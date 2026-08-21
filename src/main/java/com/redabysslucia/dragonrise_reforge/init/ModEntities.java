@@ -1225,7 +1225,7 @@ public class ModEntities {
             EntityType.Builder.<R6DroneEntity>of((type, level) -> new R6DroneEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
-                    .sized(0.6f, 0.2f)
+                    .sized(0.4f, 0.2f)
     );
     public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)

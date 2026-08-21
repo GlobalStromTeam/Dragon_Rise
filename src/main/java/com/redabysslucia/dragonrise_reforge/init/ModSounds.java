@@ -34,6 +34,8 @@ public class ModSounds {
     // 侦察无人车音效
     public static final RegistryObject<SoundEvent> R6_DRONE_MOVING = REGISTRY.register("r6_drone_moving", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_moving")));
+    public static final RegistryObject<SoundEvent> R6_DRONE_FAST = REGISTRY.register("r6_drone_fast", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_fast")));
     public static final RegistryObject<SoundEvent> R6_DRONE_JUMP = REGISTRY.register("r6_drone_jump", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_jump")));
     public static final RegistryObject<SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->

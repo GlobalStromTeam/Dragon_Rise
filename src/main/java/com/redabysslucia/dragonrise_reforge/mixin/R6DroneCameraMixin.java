@@ -7,6 +7,7 @@ import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -57,15 +58,19 @@ public abstract class R6DroneCameraMixin {
         setRotation(player.getYRot(), player.getXRot());
 
         CameraType cameraType = mc.options.getCameraType();
-        // 用帧间插值位置（无人车客户端自维护 prev/cur 位置），消除 20Hz 同步跳变造成的移动卡顿
-        Vec3 dronePos = drone.getRenderPosition(partialTicks);
+        // 帧间低通滤波位置（advanceSmoothPosition 每帧推进一次），
+        // 吸收位置包到达节奏/增量编码精度的微小速度波动，消除移动顿挫。
+        Vec3 dronePos = drone.advanceSmoothPosition(partialTicks);
+
         if (cameraType == CameraType.FIRST_PERSON || cameraType == CameraType.THIRD_PERSON_BACK) {
-            // 第一人称式：相机在无人车上，沿视角方向小偏移（前方 0.18、上方 0.075）
-            Vec3 look = player.getLookAngle();
-            Vec3 camPos = dronePos.add(look.scale(0.18)).add(0.0, 0.075, 0.0);
+            // 第一人称式：相机基本在无人车中心（前方仅 0.05），垂直高度固定在地面上方 0.15。
+            // 贴近方块时车头先碰墙，相机不会再嵌进方块（原 0.18 太靠前）。
+            double yawRad = Math.toRadians(player.getYRot());
+            Vec3 flatLook = new Vec3(-Mth.sin((float) yawRad), 0.0, Mth.cos((float) yawRad));
+            Vec3 camPos = dronePos.add(flatLook.scale(0.05)).add(0.0, 0.15, 0.0);
             setPosition(camPos.x, camPos.y, camPos.z);
         } else {
-            // 第三人称（F5 切到 THIRD_PERSON_FRONT）：相机在无人车后方追尾
+            // 第三人称（F5 切到 THIRD_PERSON_FRONT）：相机在无人车后方追尾（三维视角方向，原样）
             Vec3 look = player.getLookAngle();
             Vec3 camPos = dronePos.add(look.scale(-2.5)).add(0.0, 0.6, 0.0);
             setPosition(camPos.x, camPos.y, camPos.z);

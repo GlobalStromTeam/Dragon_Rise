@@ -7,6 +7,14 @@
       }
     ]
   },
+  "r6_drone_fast": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:r6_drone/fast",
+        "stream": true
+      }
+    ]
+  },
   "r6_drone_jump": {
     "sounds": [
       {

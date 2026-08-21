@@ -11,10 +11,14 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.phys.Vec3;
 
 /**
  * 侦察无人车渲染器：SBM 加载 models/bedrock/entity/r6_drone.geo.json。
  * 车体朝向：控制端直接用玩家视角（即时跟随、与相机一致），其他客户端用同步角度。
+ * 位置：LevelRenderer 把车体放在 lerp(xOld, x) 线性插值位置，这里修正到实体的
+ * Catmull-Rom 样条位置（getRenderPosition），与相机 mixin 使用同一平滑位置，杜绝错位。
  */
 public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
 
@@ -39,6 +43,16 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
         if (model == null) return;
 
         poseStack.pushPose();
+
+        // 位置修正：LevelRenderer 已把 poseStack 平移到线性插值位置 lerp(xOld, x)，
+        // 平移差值到相机同一平滑位置（getSmoothPositionOrNull，由 Camera.setup 每帧推进），
+        // 使车体与相机完全一致；未初始化时退回样条位置。
+        Vec3 smooth = entity.getSmoothPositionOrNull();
+        Vec3 spline = smooth != null ? smooth : entity.getRenderPosition(partialTick);
+        double lx = Mth.lerp(partialTick, entity.xOld, entity.getX());
+        double ly = Mth.lerp(partialTick, entity.yOld, entity.getY());
+        double lz = Mth.lerp(partialTick, entity.zOld, entity.getZ());
+        poseStack.translate(spline.x - lx, spline.y - ly, spline.z - lz);
 
         // 车体朝向：控制端玩家视角（即时），否则同步角度
         float bodyYaw = entity.getRenderYaw(partialTick);
