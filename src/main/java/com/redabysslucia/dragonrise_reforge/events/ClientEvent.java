@@ -8,7 +8,7 @@ import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.GuidedBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
@@ -59,8 +59,8 @@ public class ClientEvent {
     private static final ResourceLocation BOMB_LOCK_FRAME =
             new ResourceLocation("superbwarfare", "textures/overlay/frame/frame_lock.png");
 
-    /** 世界中的 GBU-12 炸弹（不分玩家，渲染时按 UUID 归属过滤；由 join 事件 + 兜底扫描维护） */
-    private static final List<Gbu12Entity> bombsInWorld = new ArrayList<>();
+    /** 世界中的制导炸弹（不分玩家，渲染时按 UUID 归属过滤；由 join 事件 + 兜底扫描维护） */
+    private static final List<GuidedBombEntity> bombsInWorld = new ArrayList<>();
     private static int scanCooldown = 0;
     private static final int SCAN_INTERVAL = 20;      // 每 20 tick 兜底扫描一次
     private static final double SCAN_RANGE = 512.0;   // 兜底扫描半径（格）
@@ -85,7 +85,7 @@ public class ClientEvent {
 
     @SubscribeEvent
     public static void onEntityJoinLevel(EntityJoinLevelEvent event) {
-        if (event.getLevel().isClientSide() && event.getEntity() instanceof Gbu12Entity bomb) {
+        if (event.getLevel().isClientSide() && event.getEntity() instanceof GuidedBombEntity bomb) {
             // 客户端分支：登记实体（此时 owner 尚未同步，不做归属过滤；归属由服务端 OwnBombMessage 通知）
             LOGGER.info("[BombHud] client join: bomb {} at {}", bomb.getUUID(), bomb.position());
             if (!bombsInWorld.contains(bomb)) {
@@ -100,14 +100,14 @@ public class ClientEvent {
         scanCooldown = SCAN_INTERVAL;
 
         Vec3 c = player.position();
-        List<Gbu12Entity> found = player.level().getEntitiesOfClass(
-                Gbu12Entity.class,
+        List<GuidedBombEntity> found = player.level().getEntitiesOfClass(
+                GuidedBombEntity.class,
                 new AABB(c.x - SCAN_RANGE, c.y - SCAN_RANGE, c.z - SCAN_RANGE,
                         c.x + SCAN_RANGE, c.y + SCAN_RANGE, c.z + SCAN_RANGE),
-                Gbu12Entity::isAlive);
+                GuidedBombEntity::isAlive);
         if (!found.isEmpty()) {
             LOGGER.info("[BombHud] scan found {} bomb(s)", found.size());
-            for (Gbu12Entity b : found) {
+            for (GuidedBombEntity b : found) {
                 if (!bombsInWorld.contains(b)) {
                     bombsInWorld.add(b);
                 }
@@ -117,7 +117,7 @@ public class ClientEvent {
     }
 
     /** 是否为本玩家投下且仍在飞行的炸弹（归属由服务端通知的 UUID 集合判断） */
-    private static boolean isOwnBomb(Gbu12Entity bomb, Player player) {
+    private static boolean isOwnBomb(GuidedBombEntity bomb, Player player) {
         boolean removed = bomb.isRemoved();
         boolean sameLevel = bomb.level() == player.level();
         boolean own = ownBombUuids.contains(bomb.getUUID());
@@ -250,8 +250,10 @@ public class ClientEvent {
         double cy = mc.getWindow().getGuiScaledHeight() / 2.0;
         final double margin = 30.0;
 
-        for (Gbu12Entity bomb : bombsInWorld) {
+        for (GuidedBombEntity bomb : bombsInWorld) {
             if (!isOwnBomb(bomb, player)) continue;
+            // 未锁定的炸弹（激光随动/无锁定目标）不渲染锁定框，避免无意义开销
+            if (!bomb.isLocked()) continue;
 
             Vec3 target = bomb.getTargetPos();
             if (target == null) continue;

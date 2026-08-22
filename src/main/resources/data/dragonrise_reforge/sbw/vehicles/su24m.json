@@ -204,7 +204,7 @@
                                    "Projectile":  "superbwarfare:small_cannon_shell",
                                    "DefaultZoom":  2,
                                    "RPM":  800,
-                                   "Velocity":  35.75,
+                                   "Velocity":  23.8333,
                                    "Gravity":  0.05,
                                    "Damage":  32,
                                    "ExplosionDamage":  8,
@@ -255,7 +255,7 @@
                                       "ExplosionDamage":  160,
                                       "ExplosionRadius":  10,
                                       "AddShooterDeltaMovement":  true,
-                                      "Velocity":  15,
+                                      "Velocity":  10,
                                       "Gravity":  0.05,
                                       "SeekWeaponInfo":  {
                                                              "SeekDirection":  "Barrel",
@@ -330,7 +330,7 @@
                                       "Damage":  240,
                                       "ExplosionDamage":  80,
                                       "ExplosionRadius":  6,
-                                      "Velocity":  15,
+                                      "Velocity":  10,
                                       "Gravity":  0.05,
                                       "SeekWeaponInfo":  {
                                                              "SeekDirection":  "Default",

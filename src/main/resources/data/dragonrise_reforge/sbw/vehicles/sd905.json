@@ -178,7 +178,7 @@
                                    "DefaultZoom":  3,
                                    "RPM":  400,
                                    "Magazine":  30,
-                                   "Velocity":  20,
+                                   "Velocity":  26.9333,
                                    "Damage":  8,
                                    "EmptyReloadTime":  200,
                                    "ExplosionDamage":  12,
@@ -236,7 +236,7 @@
                                  "ExplosionDamage":  300,
                                  "ExplosionRadius":  8,
                                  "AddShooterDeltaMovement":  true,
-                                 "Velocity":  0.55,
+                                 "Velocity":  0.3667,
                                  "ShootPos":  {
                                                   "Transform":  "Vehicle",
                                                   "ShootPositionForHud":  [

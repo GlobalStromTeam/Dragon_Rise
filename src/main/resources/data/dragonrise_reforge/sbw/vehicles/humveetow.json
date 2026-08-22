@@ -249,7 +249,7 @@
                                     "ExplosionDamage":  60,
                                     "ExplosionRadius":  8,
                                     "EmptyReloadTime":  160,
-                                    "Velocity":  3,
+                                    "Velocity":  2,
                                     "ShootShake":  [
                                                        6,
                                                        6,

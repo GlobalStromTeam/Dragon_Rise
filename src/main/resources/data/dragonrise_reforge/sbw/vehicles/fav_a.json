@@ -216,7 +216,7 @@
                                    "RPM":  450,
                                    "Magazine":  120,
                                    "EmptyReloadTime":  100,
-                                   "Velocity":  12.05,
+                                   "Velocity":  8.0333,
                                    "Gravity":  0.05,
                                    "Damage":  5,
                                    "HeatPerShoot":  6,

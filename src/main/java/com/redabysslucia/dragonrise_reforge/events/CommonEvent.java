@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.events;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.GuidedBombEntity;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage;
 import net.minecraft.server.level.ServerPlayer;
@@ -24,7 +24,7 @@ public class CommonEvent {
     @SubscribeEvent
     public static void onEntityJoinLevel(EntityJoinLevelEvent event) {
         if (event.getLevel().isClientSide()) return;
-        if (!(event.getEntity() instanceof Gbu12Entity bomb)) return;
+        if (!(event.getEntity() instanceof GuidedBombEntity bomb)) return;
 
         if (bomb.getOwner() instanceof ServerPlayer sp) {
             LOGGER.info("[BombHud] server: notify player {} bomb {}", sp.getGameProfile().getName(), bomb.getUUID());

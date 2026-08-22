@@ -68,7 +68,7 @@
                                  "DefaultZoom":  3,
                                  "Magazine":  1,
                                  "EmptyReloadTime":  40,
-                                 "Velocity":  10,
+                                 "Velocity":  6.6667,
                                  "Gravity":  0.05,
                                  "Damage":  500,
                                  "ExplosionDamage":  80,

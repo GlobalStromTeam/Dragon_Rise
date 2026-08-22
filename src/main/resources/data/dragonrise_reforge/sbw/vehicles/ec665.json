@@ -221,7 +221,7 @@
                                    "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
                                    "DefaultZoom":  3,
                                    "RPM":  750,
-                                   "Velocity":  40.4,
+                                   "Velocity":  26.9333,
                                    "Gravity":  0.05,
                                    "Damage":  55,
                                    "Magazine":  450,
@@ -275,7 +275,7 @@
                                    "ExplosionDamage":  42,
                                    "ExplosionRadius":  6,
                                    "Gravity":  0.05,
-                                   "Velocity":  22.5,
+                                   "Velocity":  15,
                                    "ShootPos":  {
                                                     "Transform":  "Vehicle",
                                                     "ShootPositionForHud":  [
@@ -330,7 +330,7 @@
                                      "Damage":  650,
                                      "ExplosionDamage":  80,
                                      "ExplosionRadius":  7,
-                                     "Velocity":  3,
+                                     "Velocity":  9.5,
                                      "CrosshairColor":  "0xFFC700",
                                      "SoundInfo":  {
                                                        "Fire1P":  "superbwarfare:bomb_release",
@@ -433,7 +433,7 @@
                                         "Damage":  1100,
                                         "ExplosionDamage":  180,
                                         "ExplosionRadius":  12,
-                                        "Velocity":  3,
+                                        "Velocity":  10,
                                         "SeekWeaponInfo":  {
                                                                "SeekDirection":  "Barrel",
                                                                "SeekRange":  384,
@@ -504,7 +504,7 @@
                                             "Damage":  260,
                                             "ExplosionDamage":  90,
                                             "ExplosionRadius":  6,
-                                            "Velocity":  15,
+                                            "Velocity":  10,
                                             "Gravity":  0.05,
                                             "SeekWeaponInfo":  {
                                                                    "SeekDirection":  "Default",

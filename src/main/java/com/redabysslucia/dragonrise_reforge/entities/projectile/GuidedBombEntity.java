@@ -10,6 +10,9 @@ import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.init.ModSounds;
 import com.github.mcmodderanchor.simplebedrockmodel.v2.common.model.runtime.BakedModelInstance;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
@@ -43,8 +46,36 @@ import net.minecraft.world.phys.Vec3;
  */
 public abstract class GuidedBombEntity extends MissileProjectile implements BasicGeoProjectileEntity {
 
-    /** 每 tick 最大速度方向修正角（度）——"略微修正" */
-    private static final double CORRECTION_DEGREES_PER_TICK = 1.0;
+    /** 每次转向判定（5 tick 一次）的最大速度方向修正角（度），默认 5.0° ≈ 20°/秒 */
+
+    /**
+     * 锁定状态标记（entityData 同步到客户端）：
+     * 服务端在 tick 中按 guideType==1（锁定地面）或 targetUUID 有效（锁定实体）写入；
+     * 客户端锁定框仅对已锁定炸弹渲染（guideType 是普通字段，不跨客户端同步）。
+     */
+    private static final EntityDataAccessor<Boolean> LOCKED =
+            new EntityDataAccessor<>(200, EntityDataSerializers.BOOLEAN);
+
+    /** 客户端查询：该炸弹是否处于锁定状态 */
+    public boolean isLocked() {
+        return this.entityData.get(LOCKED);
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(LOCKED, false);
+    }
+
+    /**
+     * 每次转向判定的最大速度方向修正角（度）。
+     * 转向每 5 tick 判定一次（见 tick()），因此此处为 5 tick 内的修正量；
+     * 默认 5.0°/次 = 每 tick 平均 1.0°（20°/秒，GBU-12/GB-500 基准档）。
+     * 子类可按型号覆写：JDAM-ER 弹翼滑翔，转向远强于 GBU-12；GBU-24 弹体更重，转向更弱。
+     */
+    protected double getCorrectionDegreesPerTick() {
+        return 5.0;
+    }
 
     /** 激光架束瞄准射线最大距离（格） */
     private static final double LASER_SEEK_DISTANCE = 1024.0;
@@ -140,25 +171,47 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
 
     // ==================== 制导 ====================
 
+    /** 当前转向目标（每 5 tick 判定更新一次；转向每 tick 平滑执行，见 tick()） */
+    protected Vec3 currentTarget = null;
+
     @Override
     public void tick() {
         // MissileProjectile.tick（BVR 同步、失锁自毁）+ FastThrowableProjectile.tick（移动/重力/碰撞/爆炸）
         super.tick();
 
-        if (level() instanceof ServerLevel && isAlive() && getOwner() != null) {
-            Vec3 target;
-            if (getGuideType() == 1) {
-                // 卫星制导：向锁定的地面坐标修正
-                target = getTargetPos();
-            } else {
-                // 激光架束制导：向吊舱当前瞄准点修正（实时）
-                target = calculatePodAimPoint();
-                if (target != null) {
-                    setTargetPos(target);
-                }
+        // 服务端：同步锁定状态（guideType==1 锁定地面 / targetUUID 有效锁定实体）
+        if (level() instanceof ServerLevel) {
+            boolean locked = getGuideType() == 1 || !"none".equals(getTargetUUID());
+            if (entityData.get(LOCKED) != locked) {
+                entityData.set(LOCKED, locked);
             }
-            if (target != null) {
-                correctVelocityTowards(target);
+        }
+
+        if (level() instanceof ServerLevel && isAlive() && getOwner() != null) {
+            // 目标判定每 5 tick 一次（降低射线/解算开销）
+            if (tickCount % 5 == 0) {
+                updateTarget();
+            }
+            // 转向每 tick 平滑执行：每次只转"一次判定总修正角"的 1/5，
+            // 5 tick 合计仍是完整角度，但避免了"每 5 tick 一次性跳转"造成的抽搐
+            if (currentTarget != null) {
+                correctVelocityTowards(currentTarget, getCorrectionDegreesPerTick() / 5.0);
+            }
+        }
+    }
+
+    /**
+     * 目标判定（每 5 tick 调用一次，子类可覆写）：
+     * - 卫星制导（guideType 1）：锁定的地面坐标；
+     * - 激光架束制导（guideType 0）：吊舱当前瞄准点（实时射线）。
+     */
+    protected void updateTarget() {
+        if (getGuideType() == 1) {
+            currentTarget = getTargetPos();
+        } else {
+            currentTarget = calculatePodAimPoint();
+            if (currentTarget != null) {
+                setTargetPos(currentTarget);
             }
         }
     }
@@ -192,10 +245,10 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
     }
 
     /**
-     * 将速度方向绕旋转轴向目标方向旋转，每 tick 最多 CORRECTION_DEGREES_PER_TICK 度，
-     * 速度大小保持不变（罗德里格斯旋转）。
+     * 将速度方向绕旋转轴向目标方向旋转，每次最多 maxDegrees 度，
+     * 速度大小保持不变（罗德里格斯旋转）。子类（如 JDAM-ER 的实体锁定）可复用。
      */
-    private void correctVelocityTowards(Vec3 target) {
+    protected void correctVelocityTowards(Vec3 target, double maxDegrees) {
         Vec3 cur = getDeltaMovement();
         if (cur.lengthSqr() < 1.0e-8) {
             return;
@@ -208,7 +261,7 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
             return;
         }
 
-        double turn = Math.min(angle, CORRECTION_DEGREES_PER_TICK);
+        double turn = Math.min(angle, maxDegrees);
         Vec3 axis = curDir.cross(toTarget);
         double len = axis.length();
         if (len < 1.0e-8) {

@@ -327,7 +327,7 @@
                                        "Magazine":  600,
                                        "EmptyReloadTime":  100,
                                        "BypassesArmor":  0.2,
-                                       "Velocity":  25,
+                                       "Velocity":  16.6667,
                                        "Gravity":  0.05,
                                        "RecoilTime":  16,
                                        "RecoilForce":  0.05,

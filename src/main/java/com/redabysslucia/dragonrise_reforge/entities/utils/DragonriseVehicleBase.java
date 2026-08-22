@@ -11,16 +11,30 @@ import net.minecraft.world.level.Level;
  *    animation.&lt;载具id&gt;.gear_up / gear_down（PLAY_ONCE_HOLD）。
  * 2. 防浪板（两栖载具）：进入水中播放 animation.&lt;载具id&gt;.splash_on，
  *    离开水播放 animation.&lt;载具id&gt;.splash_off（PLAY_ONCE_HOLD）。
+ * 3. 引擎加力（喷气式飞机）：按住加速键（Ctrl）播放 animation.&lt;载具id&gt;.engine_on，
+ *    松开播放 animation.&lt;载具id&gt;.engine_off（PLAY_ONCE_HOLD）。
  * 动画名按实体注册 id 自动推导，例如 f14 -> animation.f14.gear_up，
  * zbd04a -> animation.zbd04a.splash_on。没有对应动画的载具调用是安全空操作。
  */
 public abstract class DragonriseVehicleBase extends VehicleEntity {
 
     private boolean wasSplash;
+    private boolean wasEngineOn;
     private int splashCheckCooldown;
 
     public DragonriseVehicleBase(EntityType<?> type, Level level) {
         super(type, level);
+        // 模型默认展开防浪板的载具（如 ZTD05/ZBD05）：陆地初始先由 splash_off 收起
+        this.wasSplash = isSplashDefaultOpen();
+    }
+
+    /**
+     * 防浪板在模型中的默认姿态是否为展开。
+     * 默认 false（收起，如 ZBL08/ZBD04A/ZSL10）：陆地初始无需播放动画；
+     * 返回 true（展开，如 ZTD05/ZBD05）时，陆地初始会先播放 splash_off 收起防浪板。
+     */
+    protected boolean isSplashDefaultOpen() {
+        return false;
     }
 
     @Override
@@ -28,6 +42,7 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
         super.baseTick();
         this.tickGearAnimation();
         this.tickSplashAnimation();
+        this.tickEngineAnimation();
     }
 
     private void tickGearAnimation() {
@@ -75,5 +90,32 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
             ctx.playAnimation(splashOff, AnimationPlayType.PLAY_ONCE_HOLD, 0);
         }
         wasSplash = inWater;
+    }
+
+    /**
+     * 引擎加力动画状态机：按住加速键（Ctrl，即 sprintInputDown）播放
+     * animation.&lt;载具id&gt;.engine_on，松开播放 engine_off。
+     * 仅在载具有乘客（被驾驶）时响应，避免地面停放时误触。
+     */
+    private void tickEngineAnimation() {
+        if (!level().isClientSide()) return;
+        var animationInstance = getAnim();
+        if (animationInstance == null) return;
+        var ctx = animationInstance.getContext();
+
+        boolean engineOn = !getPassengers().isEmpty() && sprintInputDown();
+
+        String prefix = "animation." + EntityType.getKey(getType()).getPath();
+        String engineOnAnim = prefix + ".engine_on";
+        String engineOffAnim = prefix + ".engine_off";
+
+        if (engineOn && !wasEngineOn) {
+            ctx.stopAnimation(engineOffAnim, 0);
+            ctx.playAnimation(engineOnAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+        } else if (!engineOn && wasEngineOn) {
+            ctx.stopAnimation(engineOnAnim, 0);
+            ctx.playAnimation(engineOffAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+        }
+        wasEngineOn = engineOn;
     }
 }

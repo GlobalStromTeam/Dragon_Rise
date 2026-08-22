@@ -218,7 +218,7 @@
                                    "Projectile":  "superbwarfare:small_cannon_shell",
                                    "DefaultZoom":  2,
                                    "RPM":  1200,
-                                   "Velocity":  57.25,
+                                   "Velocity":  38.1667,
                                    "Gravity":  0.05,
                                    "Damage":  35,
                                    "ExplosionDamage":  10,
@@ -271,7 +271,7 @@
                                  "ExplosionDamage":  450,
                                  "ExplosionRadius":  10,
                                  "AddShooterDeltaMovement":  true,
-                                 "Velocity":  0.95,
+                                 "Velocity":  0.6333,
                                  "ShootPos":  {
                                                   "Transform":  "Vehicle",
                                                   "ShootPositionForHud":  [
@@ -347,7 +347,7 @@
                                         "Damage":  1100,
                                         "ExplosionDamage":  180,
                                         "ExplosionRadius":  12,
-                                        "Velocity":  15,
+                                        "Velocity":  10,
                                         "Gravity":  0.05,
                                         "SeekWeaponInfo":  {
                                                                "SeekDirection":  "ClientCamera",
@@ -413,7 +413,7 @@
                                     "Damage":  260,
                                     "ExplosionDamage":  90,
                                     "ExplosionRadius":  6,
-                                    "Velocity":  15,
+                                    "Velocity":  10,
                                     "Gravity":  0.05,
                                     "SeekWeaponInfo":  {
                                                            "SeekDirection":  "ClientCamera",
@@ -471,7 +471,7 @@
                                      "ExplosionDamage":  180,
                                      "ExplosionRadius":  12,
                                      "AddShooterDeltaMovement":  true,
-                                     "Velocity":  15,
+                                     "Velocity":  10,
                                      "Gravity":  0.05,
                                      "SeekWeaponInfo":  {
                                                             "SeekDirection":  "ClientCamera",

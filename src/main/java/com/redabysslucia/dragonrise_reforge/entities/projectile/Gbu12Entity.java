@@ -15,5 +15,8 @@ public class Gbu12Entity extends GuidedBombEntity {
 
     public Gbu12Entity(EntityType<? extends GuidedBombEntity> type, Level level) {
         super(type, level);
+        // 250kg 级制导炸弹：范围/威力缩减为基线的 1/4（1300/32 → 325/8）
+        this.setExplosionDamage(325f);
+        this.setExplosionRadius(8f);
     }
 }

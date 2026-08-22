@@ -236,7 +236,7 @@
                                          "DefaultZoom":  3,
                                          "Magazine":  1,
                                          "EmptyReloadTime":  80,
-                                         "Velocity":  34,
+                                         "Velocity":  22.6667,
                                          "Gravity":  0.05,
                                          "Damage":  200,
                                          "ExplosionDamage":  150,
@@ -266,7 +266,7 @@
                                                                                "Damage":  600,
                                                                                "ExplosionDamage":  60,
                                                                                "ExplosionRadius":  5,
-                                                                               "Velocity":  15,
+                                                                               "Velocity":  10,
                                                                                "Gravity":  0.05,
                                                                                "RecoilTime":  18,
                                                                                "RecoilForce":  0.05,
@@ -324,7 +324,7 @@
                                            "EmptyReloadTime":  100,
                                            "Damage":  10,
                                            "BypassesArmor":  0.2,
-                                           "Velocity":  42.5,
+                                           "Velocity":  28.3333,
                                            "Gravity":  0.05,
                                            "RecoilTime":  16,
                                            "RecoilForce":  0.05,
@@ -361,7 +361,7 @@
                                    "AvailableFireModes":  "Auto",
                                    "DefaultZoom":  3,
                                    "RPM":  330,
-                                   "Velocity":  56,
+                                   "Velocity":  37.3333,
                                    "Gravity":  0.05,
                                    "Damage":  65,
                                    "ExplosionDamage":  8,
@@ -392,30 +392,12 @@
                                                         "Ammo":  "superbwarfare:small_shell_he",
                                                         "Override":  {
                                                                          "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_he.png",
-                                                                         "Velocity":  48,
+                                                                         "Velocity":  32,
                                                                          "Gravity":  0.05,
                                                                          "Damage":  15,
                                                                          "ExplosionDamage":  18,
                                                                          "ExplosionRadius":  5,
                                                                          "Name":  "dragonrise_reforge:30mm_hefi_he"
-                                                                     }
-                                                    },
-                                                    {
-                                                        "Ammo":  "superbwarfare:small_shell_gs",
-                                                        "Override":  {
-                                                                         "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_gs.png",
-                                                                         "Spread":  3,
-                                                                         "Velocity":  10,
-                                                                         "Gravity":  0.05,
-                                                                         "Damage":  8,
-                                                                         "ProjectileAmount":  16,
-                                                                         "DamageReduce":  {
-                                                                                              "Type":  "Shotgun"
-                                                                                          },
-                                                                         "ExplosionDamage":  0,
-                                                                         "ExplosionRadius":  0,
-                                                                         "Projectile":  "superbwarfare:projectile",
-                                                                         "Name":  "dragonrise_reforge:30mm_shotgun"
                                                                      }
                                                     }
                                                 ],

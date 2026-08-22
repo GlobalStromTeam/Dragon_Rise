@@ -71,7 +71,7 @@
                                     "ExplosionDamage":  60,
                                     "ExplosionRadius":  6,
                                     "RPM":  8,
-                                    "Velocity":  12.5,
+                                    "Velocity":  8.3333,
                                     "Gravity":  0.05,
                                     "ShootShake":  [
                                                        6,

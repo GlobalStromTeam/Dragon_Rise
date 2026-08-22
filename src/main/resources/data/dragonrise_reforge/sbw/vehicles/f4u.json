@@ -163,7 +163,7 @@
                                    "Magazine":  540,
                                    "EmptyReloadTime":  200,
                                    "AutoReload":  true,
-                                   "Velocity":  40.25,
+                                   "Velocity":  26.8333,
                                    "Gravity":  0.05,
                                    "Damage":  45,
                                    "ExplosionDamage":  12,
@@ -231,7 +231,7 @@
                                    "ExplosionDamage":  40,
                                    "ExplosionRadius":  5,
                                    "Gravity":  0.05,
-                                   "Velocity":  36.95,
+                                   "Velocity":  24.6333,
                                    "ShootPos":  {
                                                     "Transform":  "Vehicle",
                                                     "ShootPositionForHud":  [
@@ -315,7 +315,7 @@
                                  "ExplosionDamage":  450,
                                  "ExplosionRadius":  10,
                                  "AddShooterDeltaMovement":  true,
-                                 "Velocity":  0.95,
+                                 "Velocity":  0.6333,
                                  "ShootPos":  {
                                                   "Transform":  "Vehicle",
                                                   "ShootPositionForHud":  [

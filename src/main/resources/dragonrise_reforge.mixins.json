@@ -14,7 +14,10 @@
     "VehicleAssemblingScreenMixin",
     "MonitorItemMixin",
     "ClientMouseHandlerMixin",
-    "R6DroneCameraMixin"
+    "R6DroneCameraMixin",
+    "ProjectileLightHelperMixin",
+    "ClientEventHandlerDualSeekMixin",
+    "VehicleMainWeaponHudOverlayDualSeekMixin"
   ],
   "injectors": {
     "defaultRequire": 1

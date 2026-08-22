@@ -69,7 +69,7 @@
                                  "RPM":  60,
                                  "Magazine":  2,
                                  "EmptyReloadTime":  20,
-                                 "Velocity":  10,
+                                 "Velocity":  6.6667,
                                  "Gravity":  0.05,
                                  "Damage":  500,
                                  "ExplosionDamage":  80,

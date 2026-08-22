@@ -231,7 +231,7 @@
       "AvailableFireModes":  "Auto",
       "DefaultZoom":  3,
       "RPM":  200,
-      "Velocity":  67.25,
+      "Velocity":  44.8333,
       "Gravity":  0.05,
       "Damage":  65,
       "ExplosionDamage":  8,
@@ -262,30 +262,12 @@
           "Ammo":  "superbwarfare:small_shell_he",
           "Override":  {
             "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_he.png",
-            "Velocity":  55,
+            "Velocity":  36.6667,
             "Gravity":  0.05,
             "Damage":  15,
             "ExplosionDamage":  18,
             "ExplosionRadius":  5,
             "Name":  "weapon.superbwarfare.25mm_cannon_he"
-          }
-        },
-        {
-          "Ammo":  "superbwarfare:small_shell_gs",
-          "Override":  {
-            "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_gs.png",
-            "Spread":  3,
-            "Velocity":  50,
-            "Gravity":  0.05,
-            "Damage":  8,
-            "ProjectileAmount":  16,
-            "DamageReduce":  {
-              "Type":  "Shotgun"
-            },
-            "ExplosionDamage":  0,
-            "ExplosionRadius":  0,
-            "Projectile":  "superbwarfare:projectile",
-            "Name":  "dragonrise_reforge:25mm_shotgun"
           }
         }
       ],
@@ -316,7 +298,7 @@
       "RPM":  650,
       "Damage":  10,
       "BypassesArmor":  0.2,
-      "Velocity":  42.65,
+      "Velocity":  28.4333,
       "Gravity":  0.05,
       "RecoilTime":  16,
       "RecoilForce":  0.05,
@@ -365,7 +347,7 @@
       "Damage":  400,
       "ExplosionDamage":  120,
       "ExplosionRadius":  2,
-      "Velocity":  15,
+      "Velocity":  10,
       "Gravity":  0.05,
       "RecoilTime":  18,
       "RecoilForce":  0.65,

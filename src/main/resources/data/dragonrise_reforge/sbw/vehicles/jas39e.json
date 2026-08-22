@@ -76,13 +76,9 @@
     "CanRotateHead": false,
     "Sensitivity": [0,0,0],
     "CameraPos": {
-      "Transform": "Turret",
-      "Position": [0.0,2.375,3.363],
-      "UseFixedCameraPos": false,
+      "Transform": "Vehicle",
       "UseAircraftCamera": true,
-      "AircraftCameraPos": [0,2.75,-14],
-      "ZoomPosition": [0.0,2.375,3.363],
-      "Direction": "Barrel"
+      "AircraftCameraPos": [0,2.75,-14]
     },
     "DismountInfo": {
       "Transform": "Vehicle",
@@ -110,7 +106,7 @@
       "Projectile": "superbwarfare:small_cannon_shell",
       "DefaultZoom": 2,
       "RPM": 1200,
-      "Velocity": 51,
+      "Velocity": 34,
       "Gravity": 0.05,
       "Damage": 35,
       "ExplosionDamage": 10,
@@ -146,7 +142,7 @@
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
@@ -292,6 +288,7 @@
             "Projectile": "dragonrise_reforge:agm65",
             "Name": "dragonrise_reforge:agm65",
             "Magazine": 2,
+            "Velocity": 2.5,
             "UseNacelleCamera": true,
             "ShootPos": {
               "Transform": "Vehicle",
@@ -312,7 +309,8 @@
               "SeekTime": 10,
               "MaxTargetHeight": 32,
               "MinTargetSize": 0.9,
-              "OnlyLockEntity": true
+              "OnlyLockEntity": true,
+              "OnlyLockBlock": true
             },
             "CrosshairZooming": "@AirCraftNacelle",
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/agm_65.png",
@@ -392,10 +390,11 @@
             "Name": "dragonrise_reforge:gbu12",
             "Magazine": 3,
             "Gravity": 0.06,
-            "Velocity": 0.95,
+            "Velocity": 0.6333,
             "AddShooterDeltaMovement": true,
-            "ExplosionDamage": 1600,
-            "ExplosionRadius": 40,
+            "Damage": 275,
+            "ExplosionDamage": 400,
+            "ExplosionRadius": 10,
             "UseNacelleCamera": true,
             "Crosshair": "@AirBomb",
             "CrosshairZooming": "@AirCraftNacelle",

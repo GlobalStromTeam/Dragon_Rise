@@ -125,7 +125,7 @@
                                    "ShellType":  "AA",
                                    "DefaultZoom":  3,
                                    "RPM":  1200,
-                                   "Velocity":  60,
+                                   "Velocity":  40,
                                    "Gravity":  0.05,
                                    "Damage":  23,
                                    "ExplosionDamage":  2,
@@ -188,7 +188,7 @@
                                             "Damage":  100,
                                             "ExplosionDamage":  170,
                                             "ExplosionRadius":  4,
-                                            "Velocity":  15,
+                                            "Velocity":  10,
                                             "Gravity":  0.05,
                                             "SeekWeaponInfo":  {
                                                                    "SeekDirection":  "Barrel",

@@ -78,7 +78,7 @@
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 19.5,
+      "Velocity": 13,
       "ShootPos": {
         "Transform": "Barrel",
         "ShootPositionForHud": [0,0.62,0.8],
@@ -119,7 +119,7 @@
       "RPM": 450,
       "Magazine": 120,
       "EmptyReloadTime": 100,
-      "Velocity": 12,
+      "Velocity": 8,
       "Damage": 5,
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,

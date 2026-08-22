@@ -175,7 +175,7 @@
                                    "Projectile":  "superbwarfare:small_cannon_shell",
                                    "DefaultZoom":  2,
                                    "RPM":  800,
-                                   "Velocity":  55,
+                                   "Velocity":  36.6667,
                                    "Gravity":  0.05,
                                    "Damage":  35,
                                    "ExplosionDamage":  10,
@@ -222,7 +222,7 @@
                                    "ExplosionDamage":  40,
                                    "ExplosionRadius":  5,
                                    "Gravity":  0.05,
-                                   "Velocity":  36.95,
+                                   "Velocity":  24.6333,
                                    "ShootPos":  {
                                                     "Transform":  "Vehicle",
                                                     "ShootPositionForHud":  [
@@ -286,7 +286,7 @@
                                  "ExplosionDamage":  450,
                                  "ExplosionRadius":  10,
                                  "AddShooterDeltaMovement":  true,
-                                 "Velocity":  0.95,
+                                 "Velocity":  0.6333,
                                  "ShootPos":  {
                                                   "Transform":  "Vehicle",
                                                   "ShootPositionForHud":  [
@@ -339,7 +339,7 @@
                                     "Damage":  260,
                                     "ExplosionDamage":  90,
                                     "ExplosionRadius":  6,
-                                    "Velocity":  15,
+                                    "Velocity":  10,
                                     "Gravity":  0.05,
                                     "SeekWeaponInfo":  {
                                                            "SeekDirection":  "Default",

@@ -244,7 +244,7 @@
                                    "AvailableFireModes":  "Auto",
                                    "DefaultZoom":  3,
                                    "RPM":  330,
-                                   "Velocity":  56,
+                                   "Velocity":  37.3333,
                                    "Gravity":  0.05,
                                    "Damage":  65,
                                    "ExplosionDamage":  8,
@@ -275,28 +275,11 @@
                                                         "Ammo":  "superbwarfare:small_shell_he",
                                                         "Override":  {
                                                                          "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_he.png",
-                                                                         "Velocity":  15,
+                                                                         "Velocity":  32,
                                                                          "Damage":  15,
                                                                          "ExplosionDamage":  18,
                                                                          "ExplosionRadius":  5,
                                                                          "Name":  "dragonrise_reforge:30mm_dtb02_30_he"
-                                                                     }
-                                                    },
-                                                    {
-                                                        "Ammo":  "superbwarfare:small_shell_gs",
-                                                        "Override":  {
-                                                                         "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_gs.png",
-                                                                         "Spread":  3,
-                                                                         "Velocity":  10,
-                                                                         "Damage":  8,
-                                                                         "ProjectileAmount":  16,
-                                                                         "DamageReduce":  {
-                                                                                              "Type":  "Shotgun"
-                                                                                          },
-                                                                         "ExplosionDamage":  0,
-                                                                         "ExplosionRadius":  0,
-                                                                         "Projectile":  "superbwarfare:projectile",
-                                                                         "Name":  "dragonrise_reforge:30mm_shotgun"
                                                                      }
                                                     }
                                                 ],
@@ -329,7 +312,7 @@
                                        "Magazine":  500,
                                        "EmptyReloadTime":  160,
                                        "BypassesArmor":  0.2,
-                                       "Velocity":  25,
+                                       "Velocity":  31,
                                        "Gravity":  0.05,
                                        "RecoilTime":  16,
                                        "RecoilForce":  0.05,
@@ -377,7 +360,7 @@
                                     "Damage":  400,
                                     "ExplosionDamage":  120,
                                     "ExplosionRadius":  2,
-                                    "Velocity":  3,
+                                    "Velocity":  2,
                                     "RecoilTime":  18,
                                     "RecoilForce":  0.65,
                                     "ShootPos":  {

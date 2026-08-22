@@ -157,7 +157,7 @@
                                    "Projectile":  "superbwarfare:projectile",
                                    "DefaultZoom":  2,
                                    "RPM":  600,
-                                   "Velocity":  52.5,
+                                   "Velocity":  35,
                                    "Gravity":  0.05,
                                    "Damage":  10,
                                    "ExplosionDamage":  8,

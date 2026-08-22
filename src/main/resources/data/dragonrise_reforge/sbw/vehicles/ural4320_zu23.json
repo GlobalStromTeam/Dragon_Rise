@@ -200,7 +200,7 @@
       "ShellType": "AA",
       "DefaultZoom": 3,
       "RPM": 800,
-      "Velocity": 52.5,
+      "Velocity": 35,
       "Gravity": 0.05,
       "Damage": 23,
       "ExplosionDamage": 2,
