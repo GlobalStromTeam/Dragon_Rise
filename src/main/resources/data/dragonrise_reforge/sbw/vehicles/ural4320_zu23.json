@@ -32,7 +32,7 @@
       "Position": [0.281,0.956,0.461]
     },
     {
-      "Size": [0.849,0.295,0.571],
+      "Size": [0.849,0.108,0.478],
       "Position": [0.0,2.082,2.541],
       "CustomRotate": [40.0,0.0,0.0]
     },
@@ -243,5 +243,15 @@
     [-1.174,0.042,-2.584],
     [-1.174,0.042,2.701],
     [1.23,0.042,-2.584]
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/ural4320_zu23.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ural4320_zu23.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ural4320_zu23.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ural4320_zu23.png"
+    }
   ]
 }
