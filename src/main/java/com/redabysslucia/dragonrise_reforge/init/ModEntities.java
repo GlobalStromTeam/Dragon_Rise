@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Mv3SupplyEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mv3ArmedEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Ural4320SupplyEntity;
 
 
@@ -101,6 +107,7 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.R73Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.R77Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
@@ -1344,6 +1351,12 @@ public class ModEntities {
                     .setUpdateInterval(1)
                     .sized(0.4f, 0.2f)
     );
+    public static final RegistryObject<EntityType<AttackDroneEntity>> ATTACK_DRONE = register("attack_drone",
+            EntityType.Builder.<AttackDroneEntity>of((type, level) -> new AttackDroneEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.4f, 0.2f)
+    );
     public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1360,6 +1373,20 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Ural4320SupplyEntity>> URAL4320_SUPPLY = register("ural4320_supply",
             EntityType.Builder.of(Ural4320SupplyEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3ArmedEntity>> MV3_ARMED = register("mv3_armed",
+            EntityType.Builder.of(Mv3ArmedEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3SupplyEntity>> MV3_SUPPLY = register("mv3_supply",
+            EntityType.Builder.of(Mv3SupplyEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

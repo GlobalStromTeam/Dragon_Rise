@@ -65,6 +65,7 @@ public class ModItems {
     public static final RegistryObject<Item> SPRAY_CAN = REGISTRY.register("spray_can", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CLUSTER_CHARGE = REGISTRY.register("cluster_charge", () -> new ClusterChargeItem(new Item.Properties()));
     public static final RegistryObject<Item> R6_DRONE = REGISTRY.register("r6_drone", () -> new R6DroneDeployerItem(new Item.Properties()));
+    public static final RegistryObject<Item> ATTACK_DRONE = REGISTRY.register("attack_drone", () -> new AttackDroneDeployerItem(new Item.Properties()));
     public static final RegistryObject<Item> KEVLAR = REGISTRY.register("kevlar", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> KV1_DEPLOYER = REGISTRY.register("kv1", KV1Deployer::new);
     public static final RegistryObject<Item> PAK40_DEPLOYER = REGISTRY.register("pak40", Pak40Deployer::new);

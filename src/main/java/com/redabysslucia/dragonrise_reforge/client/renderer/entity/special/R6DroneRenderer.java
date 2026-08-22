@@ -15,7 +15,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
 /**
- * 侦察无人车渲染器：SBM 加载 models/bedrock/entity/r6_drone.geo.json。
+ * 无人车渲染器（侦察/攻击变种共用）：SBM 加载 models/bedrock/entity/{r6_drone|attack_drone}.geo.json。
  * 车体朝向：控制端直接用玩家视角（即时跟随、与相机一致），其他客户端用同步角度。
  * 位置：LevelRenderer 把车体放在 lerp(xOld, x) 线性插值位置，这里修正到实体的
  * Catmull-Rom 样条位置（getRenderPosition），与相机 mixin 使用同一平滑位置，杜绝错位。
@@ -26,20 +26,31 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
             new ResourceLocation("dragonrise_reforge", "models/bedrock/entity/r6_drone.geo.json");
     private static final ResourceLocation TEXTURE =
             new ResourceLocation("dragonrise_reforge", "textures/entity/r6_drone.png");
+    private static final ResourceLocation ATTACK_MODEL =
+            new ResourceLocation("dragonrise_reforge", "models/bedrock/entity/attack_drone.geo.json");
+    private static final ResourceLocation ATTACK_TEXTURE =
+            new ResourceLocation("dragonrise_reforge", "textures/entity/attack_drone.png");
 
     public R6DroneRenderer(EntityRendererProvider.Context context) {
         super(context);
     }
 
+    private static boolean isAttack(R6DroneEntity entity) {
+        return entity instanceof com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
+    }
+
     @Override
     public ResourceLocation getTextureLocation(R6DroneEntity entity) {
-        return TEXTURE;
+        return isAttack(entity) ? ATTACK_TEXTURE : TEXTURE;
     }
 
     @Override
     public void render(R6DroneEntity entity, float yaw, float partialTick, PoseStack poseStack,
                        MultiBufferSource buffer, int packedLight) {
-        var model = EntityModelReloadListener.INSTANCE.getModel(MODEL);
+        boolean attack = isAttack(entity);
+        ResourceLocation modelLoc = attack ? ATTACK_MODEL : MODEL;
+        ResourceLocation texture = attack ? ATTACK_TEXTURE : TEXTURE;
+        var model = EntityModelReloadListener.INSTANCE.getModel(modelLoc);
         if (model == null) return;
 
         poseStack.pushPose();
@@ -66,8 +77,8 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
         model.renderToBuffer(
                 poseStack,
                 buffer,
-                RenderType.entityCutout(TEXTURE),
-                BedrockModelRenderTypes.polyMeshCutout(TEXTURE),
+                RenderType.entityCutout(texture),
+                BedrockModelRenderTypes.polyMeshCutout(texture),
                 packedLight,
                 OverlayTexture.NO_OVERLAY
         );

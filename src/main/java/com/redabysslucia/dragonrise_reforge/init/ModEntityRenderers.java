@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3SupplyRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3ArmedRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ural4320SupplyRenderer;
 
 
@@ -232,8 +238,11 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.BRDM2.get(), Brdm2Renderer::new);
                 event.registerEntityRenderer(ModEntities.CLUSTER_CHARGE.get(), ClusterChargeRenderer::new);
                 event.registerEntityRenderer(ModEntities.R6_DRONE.get(), R6DroneRenderer::new);
+                event.registerEntityRenderer(ModEntities.ATTACK_DRONE.get(), R6DroneRenderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320_ZU23.get(), Ural4320Zu23Renderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320.get(), Ural4320Renderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320_SUPPLY.get(), Ural4320SupplyRenderer::new);
+                event.registerEntityRenderer(ModEntities.MV3_ARMED.get(), Mv3ArmedRenderer::new);
+                event.registerEntityRenderer(ModEntities.MV3_SUPPLY.get(), Mv3SupplyRenderer::new);
         }
 }

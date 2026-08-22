@@ -91,6 +91,25 @@ public class R6DroneEntity extends Entity {
         }
     }
 
+    /**
+     * 播放任意注册表音效（如 superbwarfare 的枪声），机制同上：遥控时发给控制者专用包。
+     * 用 Holder.direct 直接包装 SoundEvent，不依赖注册表查询（getHolder 可能返回空导致无声）。
+     */
+    protected void playDroneSound(SoundEvent sound, float volume) {
+        if (this.level().isClientSide()) return;
+        Player controller = this.getController();
+        if (controller instanceof ServerPlayer sp && this.isMonitorControlling(controller)) {
+            sp.connection.send(new ClientboundSoundPacket(
+                    net.minecraft.core.Holder.direct(sound),
+                    SoundSource.PLAYERS,
+                    this.getX(), this.getY(), this.getZ(),
+                    volume, 1.0f, this.level().getRandom().nextLong()));
+        } else {
+            this.level().playSound(null, this.getX(), this.getY(), this.getZ(),
+                    sound, SoundSource.PLAYERS, volume, 1.0f);
+        }
+    }
+
     private static final EntityDataAccessor<Optional<UUID>> CONTROLLER =
             SynchedEntityData.defineId(R6DroneEntity.class, EntityDataSerializers.OPTIONAL_UUID);
 
@@ -265,20 +284,27 @@ public class R6DroneEntity extends Entity {
     /** 回收无人车：返还部署物品、解除链接、移除实体（仅服务端执行实际回收） */
     private void recycle(Player player) {
         if (this.level().isClientSide()) return;
-        // 解除控制者链接
+        // 解除控制者链接（仅当本无人车确实是 monitor 当前链接的目标）
         Player controller = this.getController();
         if (controller != null) {
             ItemStack ctrlStack = controller.getMainHandItem();
             if (ctrlStack.is(ModItems.MONITOR.get())) {
-                MonitorItem.disLink(ctrlStack, controller);
+                String linked = ctrlStack.getOrCreateTag().getString(MonitorItem.LINKED_DRONE);
+                if (linked.equals(this.getStringUUID())) {
+                    MonitorItem.disLink(ctrlStack, controller);
+                }
             }
         }
-        // 返还部署物品（本项目 ModItems.R6_DRONE）
-        ItemHandlerHelper.giveItemToPlayer(player,
-                new ItemStack(com.redabysslucia.dragonrise_reforge.init.ModItems.R6_DRONE.get()));
+        // 返还对应部署物品（子类 override getDeployItem）
+        ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(this.getDeployItem()));
         player.displayClientMessage(
                 Component.translatable("tips.superbwarfare.drone.unlinked").withStyle(ChatFormatting.GREEN), true);
         this.discard();
+    }
+
+    /** 本无人车对应的部署物品（子类返回各自的物品） */
+    protected net.minecraft.world.item.Item getDeployItem() {
+        return com.redabysslucia.dragonrise_reforge.init.ModItems.R6_DRONE.get();
     }
 
     // ---- 伤害 / 销毁 ----
@@ -299,7 +325,12 @@ public class R6DroneEntity extends Entity {
         if (controller != null) {
             ItemStack stack = controller.getMainHandItem();
             if (stack.is(ModItems.MONITOR.get())) {
-                MonitorItem.disLink(stack, controller);
+                // 仅当 monitor 当前链接的确实是本无人车时才解除，
+                // 否则场景中有多辆无人车时打掉任意一辆会误断当前遥控的链接。
+                String linked = stack.getOrCreateTag().getString(MonitorItem.LINKED_DRONE);
+                if (linked.equals(this.getStringUUID())) {
+                    MonitorItem.disLink(stack, controller);
+                }
             }
         }
         // 先 discard 再爆炸：爆炸是同步执行的，会立即伤害范围内实体（包括本车）。

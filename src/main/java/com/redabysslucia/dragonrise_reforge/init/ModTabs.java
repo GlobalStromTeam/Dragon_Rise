@@ -190,6 +190,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_ARMED.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_SUPPLY.get()));
                     }
                     ).build()
     );
@@ -237,6 +239,7 @@ public class ModTabs {
                         output.accept(ModItems.SPRAY_CAN.get());
                         output.accept(ModItems.CLUSTER_CHARGE.get());
                         output.accept(ModItems.R6_DRONE.get());
+                        output.accept(ModItems.ATTACK_DRONE.get());
                         output.accept(ModItems.KEVLAR.get());
                         output.accept(ModItems.PAK40_DEPLOYER.get());
 //                        output.accept(ModItems.GENERATOR_DEPLOYER.get());

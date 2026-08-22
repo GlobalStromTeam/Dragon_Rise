@@ -146,7 +146,7 @@
     {
       "IsEnclosed": true,
       "Transform": "Vehicle",
-      "Position": [0.0,2.2,4.175],
+      "Position": [0.0,2.202,4.175],
       "CanRotateHead": true,
       "Sensitivity": [0.59,0.8,0.9],
       "CameraPos": {
@@ -231,8 +231,8 @@
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [-7.547,2.547,-4.5],
-          [7.547,2.547,-4.5]
+          [-7.547,2.609,-4.5],
+          [7.547,2.609,-4.5]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -289,8 +289,8 @@
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.53,0],
         "Positions": [
-          [-6.194,2.161,-4.437],
-          [6.194,2.161,-4.437]
+          [-6.194,2.161,-4.187],
+          [6.194,2.161,-4.187]
         ],
         "BoundUpWithAmmoAmount": true
       },
@@ -339,8 +339,8 @@
         "ShootPositionForHud": [0,1.406,-1.562],
         "BoundUpWithAmmoAmount": true,
         "Positions": [
-          [-4.692,2.161,-3.125],
-          [4.692,2.161,-3.125]
+          [-4.692,2.161,-2.875],
+          [4.692,2.161,-2.875]
         ]
       },
       "AmmoType": [
@@ -581,8 +581,8 @@
         "ShootPositionForHud": [0,1.125,-0.875],
         "BoundUpWithAmmoAmount": true,
         "Positions": [
-          [-3.552,2.161,-2.25],
-          [3.552,2.161,-2.25]
+          [-3.552,2.161,-2.0],
+          [3.552,2.161,-2.0]
         ]
       },
       "AmmoType": [
@@ -776,7 +776,7 @@
         "ShootPositionForHud": [0,1.125,-0.875],
         "BoundUpWithAmmoAmount": true,
         "Positions": [
-          [-1.245,0.998,-1.937]
+          [-1.245,0.998,-1.687]
         ]
       },
       "AmmoType": [
@@ -874,8 +874,8 @@
         "ShootPositionForHud": [0,2.036,-1.875],
         "BoundUpWithAmmoAmount": true,
         "Positions": [
-          [0,2.036,0.0625],
-          [0,2.036,-4.1875]
+          [0.0,2.036,0.063],
+          [0.0,2.036,-4.187]
         ]
       },
       "AmmoType": [
