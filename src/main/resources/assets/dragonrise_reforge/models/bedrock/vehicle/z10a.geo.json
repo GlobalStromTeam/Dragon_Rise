@@ -2897,13 +2897,13 @@
 					]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "root",
 					"pivot": [0.01756, 63.875, 35.44866]
 				},
 				{
 					"name": "octagon3",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [-0.35744, 63.875, 35.22366],
 					"cubes": [
 						{
@@ -3204,7 +3204,7 @@
 				},
 				{
 					"name": "lxj2",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [4.17979, 63.2, 35.36174]
 				},
 				{
@@ -3263,7 +3263,7 @@
 					]
 				},
 				{
-					"name": "tailPropeller",
+					"name": "move_tailPropeller",
 					"parent": "root",
 					"pivot": [-9.34375, 58.11937, 163.64197],
 					"cubes": [

@@ -4631,7 +4631,7 @@
 					"rotation": [-90, 0, 180]
 				},
 				{
-					"name": "propeller3",
+					"name": "move_propeller3",
 					"parent": "bone",
 					"pivot": [-80.00014, 64.02626, -42.51277],
 					"rotation": [-90, 0, 0],
@@ -4756,7 +4756,7 @@
 				},
 				{
 					"name": "group34",
-					"parent": "propeller3",
+					"parent": "move_propeller3",
 					"pivot": [-80.00143, 64.03287, -39.12521],
 					"cubes": [
 						{
@@ -4847,7 +4847,7 @@
 				},
 				{
 					"name": "octagon13",
-					"parent": "propeller3",
+					"parent": "move_propeller3",
 					"pivot": [-80, 64.02553, -48.52553],
 					"cubes": [
 						{
@@ -5158,7 +5158,7 @@
 					"rotation": [-90, 0, 180]
 				},
 				{
-					"name": "propeller4",
+					"name": "move_propeller4",
 					"parent": "bone7",
 					"pivot": [-162.00014, 69.00073, -35.5383],
 					"rotation": [-90, 0, 0],
@@ -5283,7 +5283,7 @@
 				},
 				{
 					"name": "group30",
-					"parent": "propeller4",
+					"parent": "move_propeller4",
 					"pivot": [-162.00143, 69.00734, -32.15074],
 					"cubes": [
 						{
@@ -5374,7 +5374,7 @@
 				},
 				{
 					"name": "octagon8",
-					"parent": "propeller4",
+					"parent": "move_propeller4",
 					"pivot": [-162, 69, -41.55106],
 					"cubes": [
 						{
@@ -5685,7 +5685,7 @@
 					"rotation": [90, 0, 0]
 				},
 				{
-					"name": "propeller1",
+					"name": "move_propeller1",
 					"parent": "bone9",
 					"pivot": [162.00014, 69.00073, -35.51277],
 					"rotation": [-90, 0, 0],
@@ -5810,7 +5810,7 @@
 				},
 				{
 					"name": "group26",
-					"parent": "propeller1",
+					"parent": "move_propeller1",
 					"pivot": [162.00143, 69.00734, -38.90032],
 					"cubes": [
 						{
@@ -5901,7 +5901,7 @@
 				},
 				{
 					"name": "octagon6",
-					"parent": "propeller1",
+					"parent": "move_propeller1",
 					"pivot": [162, 69, -29.5],
 					"cubes": [
 						{
@@ -6228,7 +6228,7 @@
 					"rotation": [90, 0, 0]
 				},
 				{
-					"name": "propeller2",
+					"name": "move_propeller2",
 					"parent": "bone8",
 					"pivot": [80.00014, 64.00073, -42.51277],
 					"rotation": [-90, 0, 0],
@@ -6353,7 +6353,7 @@
 				},
 				{
 					"name": "group25",
-					"parent": "propeller2",
+					"parent": "move_propeller2",
 					"pivot": [80.00143, 64.00734, -45.90032],
 					"cubes": [
 						{
@@ -6444,7 +6444,7 @@
 				},
 				{
 					"name": "octagon4",
-					"parent": "propeller2",
+					"parent": "move_propeller2",
 					"pivot": [80, 64, -36.5],
 					"cubes": [
 						{

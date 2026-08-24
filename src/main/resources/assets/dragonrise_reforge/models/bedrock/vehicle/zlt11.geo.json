@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, -2, 7]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [0, -2, -33.5]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "body",

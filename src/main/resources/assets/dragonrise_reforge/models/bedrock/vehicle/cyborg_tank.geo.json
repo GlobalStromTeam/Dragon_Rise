@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -13,16 +13,16 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 45.5, 48]
+					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "main",
+					"name": "base",
 					"parent": "root",
 					"pivot": [-0.125, 3.25, -43.5]
 				},
 				{
 					"name": "turret",
-					"parent": "main",
+					"parent": "base",
 					"pivot": [-0.125, 34.65, 16.25],
 					"cubes": [
 						{
@@ -1724,16 +1724,6 @@
 					]
 				},
 				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [-0.12, 139.57, -142.75]
-				},
-				{
-					"name": "flare2",
-					"parent": "barrel",
-					"pivot": [-0.12, 139.57, -142.75]
-				},
-				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [-0.125, 49.4625, -11],
@@ -1807,6 +1797,16 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [-0.12, 139.57, -142.75]
+				},
+				{
+					"name": "flare2",
+					"parent": "barrel",
+					"pivot": [-0.12, 139.57, -142.75]
 				},
 				{
 					"name": "bone4",
@@ -2020,8 +2020,8 @@
 					]
 				},
 				{
-					"name": "base",
-					"parent": "main",
+					"name": "body",
+					"parent": "base",
 					"pivot": [0, 4, 0],
 					"cubes": [
 						{
@@ -4122,7 +4122,7 @@
 				},
 				{
 					"name": "passengerWeaponStation",
-					"parent": "base",
+					"parent": "body",
 					"pivot": [-10.3, 29.3, -42.75]
 				},
 				{

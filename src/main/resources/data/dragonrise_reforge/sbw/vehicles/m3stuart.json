@@ -325,7 +325,6 @@
     "@minecraft:tnt_minecart * 4",
     "@#superbwarfare:aerial_bomb * 12",
     "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
     "superbwarfare:projectile_explosion * 0.65",

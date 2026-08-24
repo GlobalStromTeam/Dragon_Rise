@@ -1,6 +1,6 @@
 # 载具数据完整性报告
 
-生成时间：2026-08-23 02:22:11
+生成时间：2026-08-23 13:11:06
 
 前提：仅统计**模型含 Build 骨骼**的载具（防止误报/覆盖已完成载具）；本报告只读，不修改任何数据。
 
@@ -11,11 +11,11 @@
 | 载具 | 缺失字段数 | 缺失字段 |
 |---|---|---|
 | aavc7c1 | 36 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, HasUpgradeSlots, LaserColor, LaserScale, HornSound, HasLowHealthWarning, ForwardTowed, Weapons, TurretYawRange, TurretControllerIndex, TurretCustomPitch, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
-| mv3_supply | 49 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, UpStep, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, DamageModifiers, Mass, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HornSound, ThirdPersonCameraPos, HasLowHealthWarning, ForwardTowed, RotateOffsetHeight, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretCustomPitch, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate, InertiaRotateRate |
+| mv3_supply | 47 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, Mass, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HornSound, ThirdPersonCameraPos, HasLowHealthWarning, ForwardTowed, RotateOffsetHeight, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretCustomPitch, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate, InertiaRotateRate |
 
 ## 二、核心字段齐全的载具
 
-aav7a1, ah1f, brdm2, challenger_ds, j16, markv, mv3, mv3_armed, ural4320, ural4320_supply, ural4320_zu23, ztd05
+aav7a1, ah1f, brdm2, challenger_ds, f15e, j16, markv, mi24v, mv3, mv3_armed, ural4320, ural4320_supply, ural4320_zu23, ztd05
 
 ## 三、跳过（模型缺失或无 Build 骨骼）
 

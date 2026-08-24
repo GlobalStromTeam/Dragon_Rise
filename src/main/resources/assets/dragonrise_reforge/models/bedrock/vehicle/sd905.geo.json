@@ -2414,7 +2414,7 @@
 					"rotation": [-90, 0, 0]
 				},
 				{
-					"name": "propeller2",
+					"name": "move_propeller2",
 					"parent": "bone33",
 					"pivot": [47.80483, 52.19866, 39.12418],
 					"rotation": [90, 0, 0],
@@ -2484,7 +2484,7 @@
 					"rotation": [90, 0, 0]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "bone32",
 					"pivot": [-47.80483, 52.19866, 39.12418],
 					"rotation": [-90, 0, 0],

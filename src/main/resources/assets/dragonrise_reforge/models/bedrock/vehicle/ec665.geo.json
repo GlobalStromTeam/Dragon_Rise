@@ -4349,7 +4349,7 @@
 					]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "root",
 					"pivot": [-0.275, 63, 40.6],
 					"rotation": [0, -45, 0],
@@ -4635,7 +4635,7 @@
 					]
 				},
 				{
-					"name": "tailPropeller",
+					"name": "move_tailPropeller",
 					"parent": "root",
 					"pivot": [-6, 52.1, 171],
 					"cubes": [

@@ -13,13 +13,13 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [1.75, 26.49452, -80.84305],
+					"pivot": [0, 0, 0],
 					"rotation": [-2, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [0, 30.26288, 4.39647]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "main",
@@ -6013,13 +6013,13 @@
 					]
 				},
 				{
-					"name": "propeller0",
+					"name": "move_propeller0",
 					"parent": "lxj",
 					"pivot": [0, 55.38403, 8.15208]
 				},
 				{
 					"name": "bone15",
-					"parent": "propeller0",
+					"parent": "move_propeller0",
 					"pivot": [0, 55.38403, 8.15208],
 					"cubes": [
 						{
@@ -6130,7 +6130,7 @@
 				},
 				{
 					"name": "bone13",
-					"parent": "propeller0",
+					"parent": "move_propeller0",
 					"pivot": [0, 55.38403, 8.15208],
 					"rotation": [0, -120, 0],
 					"cubes": [
@@ -6242,7 +6242,7 @@
 				},
 				{
 					"name": "bone14",
-					"parent": "propeller0",
+					"parent": "move_propeller0",
 					"pivot": [0, 55.38403, 8.15208],
 					"rotation": [0, 120, 0],
 					"cubes": [
@@ -6353,13 +6353,13 @@
 					]
 				},
 				{
-					"name": "propeller1",
+					"name": "move_propeller1",
 					"parent": "lxj",
 					"pivot": [-0.25, 70.63403, 8.15208]
 				},
 				{
 					"name": "bone4",
-					"parent": "propeller1",
+					"parent": "move_propeller1",
 					"pivot": [0.16368, 68.38178, 8.51332],
 					"rotation": [0, 120, 0],
 					"cubes": [
@@ -6479,7 +6479,7 @@
 				},
 				{
 					"name": "bone21",
-					"parent": "propeller1",
+					"parent": "move_propeller1",
 					"pivot": [0.16368, 68.38178, 8.51332],
 					"rotation": [0, -120, 0],
 					"cubes": [
@@ -6599,7 +6599,7 @@
 				},
 				{
 					"name": "bone22",
-					"parent": "propeller1",
+					"parent": "move_propeller1",
 					"pivot": [0.16368, 68.38178, 8.51332],
 					"cubes": [
 						{
@@ -8226,7 +8226,7 @@
 				{
 					"name": "weiyiR",
 					"parent": "root",
-					"pivot": [0, 53.26288, 128.39647],
+					"pivot": [0, 0, 0],
 					"rotation": [-15, 0, 0],
 					"cubes": [
 						{
@@ -8362,7 +8362,7 @@
 				{
 					"name": "weapon",
 					"parent": "root",
-					"pivot": [1.75, 26.49452, -80.84305]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "turret",
@@ -9897,7 +9897,7 @@
 				{
 					"name": "wingRR",
 					"parent": "root",
-					"pivot": [0.19318, 19.85731, -37.00297]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "wingRB",

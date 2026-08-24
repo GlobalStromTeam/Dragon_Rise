@@ -2428,9 +2428,9 @@
 					]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "UH-60",
-					"pivot": [-0.43054, 68.23848, 0.80705],
+					"pivot": [-0.19834, 68.44373, 1.26895],
 					"cubes": [
 						{
 							"origin": [-3.60671, 56.10146, -2.14868],
@@ -3421,7 +3421,7 @@
 					]
 				},
 				{
-					"name": "tailPropeller",
+					"name": "move_tailPropeller",
 					"parent": "UH-60",
 					"pivot": [-10.96392, 74.3557, 214.07217],
 					"cubes": [

@@ -419,7 +419,6 @@
                             "@#superbwarfare:aerial_bomb * 3",
                             "#superbwarfare:projectile 0",
                             "All * 0.3",
-                            "superbwarfare:vehicle_strike * 2.5",
                             "minecraft:explosion * 2",
                             "superbwarfare:custom_explosion * 0.65",
                             "superbwarfare:projectile_explosion * 0.65",

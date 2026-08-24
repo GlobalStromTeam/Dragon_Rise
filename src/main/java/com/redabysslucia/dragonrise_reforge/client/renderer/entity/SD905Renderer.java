@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.SD905Entity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class SD905Renderer extends GeoVehicleRenderer<SD905Entity> {
+public class SD905Renderer extends RotorVehicleRenderer<SD905Entity> {
         public SD905Renderer(EntityRendererProvider.Context renderManager) {
                 super(renderManager);
         }

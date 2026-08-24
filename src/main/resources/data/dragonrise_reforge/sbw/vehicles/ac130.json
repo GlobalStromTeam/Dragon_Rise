@@ -575,6 +575,7 @@
                    },
     "AllowFreeCam":  true,
     "HasDecoy":  true,
+  "SmokeDecoy": false,
     "UpStep":  0.5,
     "RotateOffsetHeight":  1.0,
     "Mass":  70,

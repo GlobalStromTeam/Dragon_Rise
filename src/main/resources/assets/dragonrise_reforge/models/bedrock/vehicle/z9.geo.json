@@ -1043,7 +1043,7 @@
 					]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "group16",
 					"pivot": [1.27, 39.635, 2],
 					"cubes": [
@@ -2686,7 +2686,7 @@
 					]
 				},
 				{
-					"name": "tailPropeller",
+					"name": "move_tailPropeller",
 					"parent": "group3",
 					"pivot": [3.532, 32.76213, 158.28315],
 					"cubes": [

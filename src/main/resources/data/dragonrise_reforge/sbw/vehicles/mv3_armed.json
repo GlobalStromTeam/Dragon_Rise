@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/mv3_armed.animation.json",
   "ID": "dragonrise_reforge:mv3_armed",
   "TurretControllerIndex": 4,
   "OBB": [
@@ -97,92 +98,127 @@
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.659,0.935,1.542]
+      "Position": [0.659,0.935,1.542],
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.659,0.935,1.542]
+      "Position": [-0.659,0.935,1.542],
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.659,0.935,0.73]
+      "Position": [-0.659,0.935,0.73],
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.659,0.935,0.73]
+      "Position": [0.659,0.935,0.73],
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.0,1.935,1.105]
+      "Position": [0.0,1.935,1.105],
+      "MaxYaw": 60,
+      "MinYaw": -60,
+      "Weapons": [
+        "Cannon"
+      ],
+      "CameraPos": {
+        "UseFixedCameraPos": true,
+        "Position": [0.21875,0.4375,-0.9375],
+        "Transform": "Barrel",
+        "ZoomPosition": [0.0,0.19603125,-0.11530625]
+      }
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.847,1.185,-1.083],
-      "Orientation": 90.0
+      "Orientation": 90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.847,1.185,-1.083],
-      "Orientation": -90.0
+      "Orientation": -90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.847,1.185,-1.708],
-      "Orientation": 90.0
+      "Orientation": 90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.847,1.185,-1.708],
-      "Orientation": -90.0
+      "Orientation": -90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.847,1.185,-2.333],
-      "Orientation": 90.0
+      "Orientation": 90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.847,1.185,-2.333],
-      "Orientation": -90.0
+      "Orientation": -90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.847,1.185,-2.958],
-      "Orientation": 90.0
+      "Orientation": 90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     },
     {
       "IsEnclosed": false,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.847,1.185,-2.958],
-      "Orientation": -90.0
+      "Orientation": -90.0,
+      "MaxYaw": 60,
+      "MinYaw": -60
     }
   ],
+  "UpStep": 1.5,
   "MaxHealth": 250,
   "MaxEnergy": 100000,
-  "HudType": "@Land",
   "Type": "Car",
   "EngineType": "Wheel",
   "EngineSound": "superbwarfare:wheel_engine",
@@ -195,32 +231,41 @@
   "VehicleContainerType": "Medium",
   "EngineInfo": {
     "Buoyancy": 0.052,
-    "EnergyCostRate": 32,
+    "EnergyCostRate": 12,
     "WheelRotSpeed": 1.75,
     "WheelDifferential": 0.3,
-    "MaxForwardSpeedRate": 1.21,
-    "MaxBackwardSpeedRate": 0.4,
-    "Increment": 0.01,
-    "Decrement": 0.01,
+    "MaxForwardSpeedRate": 1.35,
+    "MaxBackwardSpeedRate": 0.5,
+    "Increment": 0.015,
+    "Decrement": 0.015,
     "SteeringSpeed": 0.065,
     "EngineSoundVolume": 1.0
   },
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/mg.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "AmmoType": "@HeavyAmmo",
+      "Spread": 0.25,
+      "CrosshairColor": "0x00ff66",
       "Projectile": "superbwarfare:projectile",
-      "RPM": 550,
-      "Damage": 25,
-      "BypassesArmor": 0.3,
-      "Velocity": 30,
-      "Spread": 5,
       "DefaultZoom": 3,
-      "HeatPerShoot": 4,
+      "RPM": 600,
+      "Damage": 40,
+      "BypassesArmor": 0.2,
+      "Magazine": 50,
+      "EmptyReloadTime": 80,
+      "Velocity": 16.6667,
+      "Gravity": 0.05,
+      "RecoilTime": 20,
+      "RecoilForce": 0,
+      "HeatPerShoot": 3.75,
       "NaturalCooldown": 1,
+      "ShootAnimationTime": 1,
+      "AmmoType": "@HeavyAmmo",
       "ShootPos": {
+        "UseFixedCameraPos": true,
+        "Position": [0.00064375,0.06838125,1.25930625],
         "Transform": "Barrel",
         "Positions": [
           [-0.187,0.054,3.135]
@@ -229,9 +274,41 @@
           "Barrel"
         ]
       },
-      "Name": "weapon.dragonrise_reforge.mv3_hmg"
+      "Name": "dragonrise_reforge:QJZ89",
+      "SoundInfo": {
+        "Fire1P": "dragonrise_reforge:mgfire1",
+        "Fire3P": "dragonrise_reforge:mgfire1",
+        "Fire3PFar": "dragonrise_reforge:mgfire1",
+        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
+        "Change": "superbwarfare:into_cannon"
+      },
+      "SoundRadius": 16
     }
   },
+  "DamageModifiers": [
+    "minecraft:arrow * 0.1",
+    "minecraft:trident * 0.2",
+    "minecraft:mob_attack * 0.2",
+    "minecraft:mob_attack_no_aggro * 0.2",
+    "minecraft:mob_projectile * 0.2",
+    "minecraft:player_attack * 0.2",
+    "minecraft:lava - -4",
+    "minecraft:lava * 4",
+    "@minecraft:tnt * 1.5",
+    "@minecraft:tnt_minecart * 1.5",
+    "minecraft:explosion * 2",
+    "minecraft:player_explosion * 2",
+    "superbwarfare:projectile_hit * 0.4",
+    "superbwarfare:grapeshot_hit * 0.1",
+    "@#superbwarfare:aerial_bomb * 0.7",
+    "#superbwarfare:projectile * 0.5",
+    "@superbwarfare:cannon_shell * 0.8",
+    "@superbwarfare:small_cannon_shell * 0.9",
+    "@superbwarfare:gun_grenade * 0.7",
+    "@superbwarfare:rgo_grenade * 1.5",
+    "@superbwarfare:hand_grenade * 1.25",
+    "@superbwarfare:mortar_shell * 1"
+  ],
   "TerrainCompat": [
     [1.031,0.038,2.359],
     [-1.044,0.038,-2.984],

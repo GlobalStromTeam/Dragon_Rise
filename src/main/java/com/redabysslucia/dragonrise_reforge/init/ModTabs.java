@@ -40,6 +40,9 @@ public class ModTabs {
                         //中国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_ARMED.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_SUPPLY.get()));
                         //中国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10A.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Z10ME.get()));
@@ -101,6 +104,7 @@ public class ModTabs {
                         //美国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.F15E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F16C.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AV8B.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FA18E.get()));
@@ -137,7 +141,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PZBJY.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
                         //自动炮塔
@@ -190,8 +193,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_ARMED.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.MV3_SUPPLY.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
                     }
                     ).build()
     );

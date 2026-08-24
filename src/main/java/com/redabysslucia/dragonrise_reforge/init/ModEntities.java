@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Mi24vEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.F15eEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Mv3SupplyEntity;
 
 
@@ -1387,6 +1393,20 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Mv3SupplyEntity>> MV3_SUPPLY = register("mv3_supply",
             EntityType.Builder.of(Mv3SupplyEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<F15eEntity>> F15E = register("f15e",
+            EntityType.Builder.of(F15eEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mi24vEntity>> MI24V = register("mi24v",
+            EntityType.Builder.of(Mi24vEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

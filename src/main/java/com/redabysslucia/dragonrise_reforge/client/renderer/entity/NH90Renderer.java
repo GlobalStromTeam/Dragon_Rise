@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.NH90Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Z20Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class NH90Renderer extends GeoVehicleRenderer<NH90Entity> {
+public class NH90Renderer extends RotorVehicleRenderer<NH90Entity> {
         public NH90Renderer(EntityRendererProvider.Context renderManager) {
                 super(renderManager);
         }

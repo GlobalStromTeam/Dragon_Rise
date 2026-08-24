@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.UH60Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Z9Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class UH60Renderer extends GeoVehicleRenderer<UH60Entity> {
+public class UH60Renderer extends RotorVehicleRenderer<UH60Entity> {
         public UH60Renderer(EntityRendererProvider.Context renderManager) {
                 super(renderManager);
         }

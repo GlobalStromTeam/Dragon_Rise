@@ -329,6 +329,7 @@
   "Mass": 20,
   "AllowFreeCam": true,
   "HasDecoy": true,
+  "SmokeDecoy": false,
   "SendHitParticles": false,
   "DamageModifiers": [
     "minecraft:arrow * 1.5",

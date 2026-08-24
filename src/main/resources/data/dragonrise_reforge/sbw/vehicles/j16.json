@@ -218,8 +218,8 @@
       "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
-        "SeekDirection": "Default",
-        "SeekRange": 384,
+        "SeekDirection": "ClientCamera",
+        "SeekRange": 512,
         "SeekAngle": 20,
         "SeekTime": 5,
         "MinTargetHeight": 10,
@@ -273,7 +273,7 @@
         "SeekDirection": "ClientCamera",
         "MaxGuidedRange": 48000,
         "MaxTargetHeight": 32,
-        "SeekRange": 1024,
+        "SeekRange": 1536,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MinTargetSize": 0.9,
@@ -326,7 +326,7 @@
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
         "MaxGuidedRange": 48000,
-        "SeekRange": 1024,
+        "SeekRange": 1536,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MaxTargetHeight": 32,
@@ -371,7 +371,7 @@
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
               "MaxGuidedRange": 48000,
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MaxTargetHeight": 32,
@@ -406,7 +406,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 2,
               "MinTargetSize": 0.1,
@@ -453,7 +453,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -500,7 +500,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -568,7 +568,7 @@
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
         "MaxGuidedRange": 48000,
-        "SeekRange": 1024,
+        "SeekRange": 2048,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MaxTargetHeight": 32,
@@ -613,7 +613,7 @@
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
               "MaxGuidedRange": 48000,
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MaxTargetHeight": 32,
@@ -648,7 +648,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -695,7 +695,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -763,7 +763,7 @@
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
         "MaxGuidedRange": 48000,
-        "SeekRange": 1024,
+        "SeekRange": 2048,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MaxTargetHeight": 32,
@@ -806,7 +806,7 @@
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
               "MaxGuidedRange": 48000,
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MaxTargetHeight": 32,
@@ -861,7 +861,7 @@
       "SeekWeaponInfo": {
         "SeekDirection": "ClientCamera",
         "MaxGuidedRange": 48000,
-        "SeekRange": 1024,
+        "SeekRange": 2048,
         "SeekAngle": 20,
         "SeekTime": 10,
         "MaxTargetHeight": 32,
@@ -901,7 +901,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -948,7 +948,7 @@
             "CrosshairZooming": "@AirCraftNacelle",
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
-              "SeekRange": 1024,
+              "SeekRange": 2048,
               "SeekAngle": 20,
               "SeekTime": 10,
               "MinTargetSize": 0.9,
@@ -1003,6 +1003,7 @@
   "Mass": 20,
   "AllowFreeCam": true,
   "HasDecoy": true,
+  "SmokeDecoy": false,
   "SendHitParticles": false,
   "DamageModifiers": [
     "minecraft:arrow * 1.5",

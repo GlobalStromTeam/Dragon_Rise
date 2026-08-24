@@ -12,13 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "lvt",
+					"name": "root",
 					"pivot": [-4.57628, 16.59893, -18.58361]
 				},
 				{
 					"name": "base",
-					"parent": "lvt",
-					"pivot": [11, 14.7, 17.4]
+					"parent": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "M2sub",
@@ -2878,7 +2878,7 @@
 				},
 				{
 					"name": "track",
-					"parent": "lvt",
+					"parent": "root",
 					"pivot": [21.57117, 21.39678, -53.85083]
 				},
 				{
@@ -3469,7 +3469,7 @@
 				},
 				{
 					"name": "Wheel",
-					"parent": "lvt",
+					"parent": "root",
 					"pivot": [40.7, 13.7, -19.3]
 				},
 				{

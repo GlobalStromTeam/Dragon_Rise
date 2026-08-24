@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 30.13, -3.3]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [19.98, 23.58524, 14.65112]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "Cartridgecase",
@@ -7705,14 +7705,14 @@
 					"pivot": [-9.95826, 52.145, 0.10663]
 				},
 				{
-					"name": "flare3",
-					"parent": "passengerWeaponStationPitch",
-					"pivot": [-19.56, 106.61, -29.56]
-				},
-				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerweaponstation",
 					"pivot": [-9.9583, 52.145, 0.1066]
+				},
+				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [-19.56, 106.61, -29.56]
 				},
 				{
 					"name": "passengerWeaponStationYaw",

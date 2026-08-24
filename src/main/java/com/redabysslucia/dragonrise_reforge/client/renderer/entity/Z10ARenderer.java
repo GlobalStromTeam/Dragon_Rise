@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.Z10AEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Z10MEEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class Z10ARenderer extends GeoVehicleRenderer<Z10AEntity> {
+public class Z10ARenderer extends RotorVehicleRenderer<Z10AEntity> {
         public Z10ARenderer(EntityRendererProvider.Context renderManager) {
                 super(renderManager);
         }

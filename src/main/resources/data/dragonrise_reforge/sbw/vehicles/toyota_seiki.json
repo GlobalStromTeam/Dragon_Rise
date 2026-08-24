@@ -132,7 +132,6 @@
                             "superbwarfare:grapeshot_hit * 0.2",
                             "@#superbwarfare:aerial_bomb * 1.4",
                             "#superbwarfare:projectile * 1.0",
-                            "superbwarfare:vehicle_strike * 10",
                             "@superbwarfare:cannon_shell * 1.6",
                             "@superbwarfare:small_cannon_shell * 1.8",
                             "@superbwarfare:gun_grenade * 1.4",

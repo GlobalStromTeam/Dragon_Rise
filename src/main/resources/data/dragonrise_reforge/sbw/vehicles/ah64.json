@@ -560,6 +560,7 @@
     "Mass":  8.2,
     "AllowFreeCam":  true,
     "HasDecoy":  true,
+  "SmokeDecoy": false,
     "DamageModifiers":  [
                             "All - 10",
                             "minecraft:lava + 10",

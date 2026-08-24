@@ -1743,7 +1743,7 @@
 					]
 				},
 				{
-					"name": "propeller",
+					"name": "move_propeller",
 					"parent": "root",
 					"pivot": [0, 56.38182, -30.21136],
 					"cubes": [
@@ -1823,7 +1823,7 @@
 				},
 				{
 					"name": "bone4",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [0, 62.025, -30.175],
 					"cubes": [
 						{
@@ -1882,7 +1882,7 @@
 				},
 				{
 					"name": "bone7",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [0, 62.025, -30.175],
 					"rotation": [0, 90, 0],
 					"cubes": [
@@ -1942,7 +1942,7 @@
 				},
 				{
 					"name": "bone8",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [0, 62.025, -30.175],
 					"rotation": [0, 180, 0],
 					"cubes": [
@@ -2002,7 +2002,7 @@
 				},
 				{
 					"name": "bone9",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [0, 62.025, -30.175],
 					"rotation": [0, -90, 0],
 					"cubes": [
@@ -2062,7 +2062,7 @@
 				},
 				{
 					"name": "millimeterradar",
-					"parent": "propeller",
+					"parent": "move_propeller",
 					"pivot": [0, 33.1, -115],
 					"cubes": [
 						{
@@ -2120,7 +2120,7 @@
 					]
 				},
 				{
-					"name": "tailPropeller",
+					"name": "move_tailPropeller",
 					"parent": "root",
 					"pivot": [11.05, 48.79118, 120.01961],
 					"cubes": [

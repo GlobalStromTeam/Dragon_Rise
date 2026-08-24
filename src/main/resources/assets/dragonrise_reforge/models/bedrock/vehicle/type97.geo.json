@@ -12,13 +12,13 @@
 			},
 			"bones": [
 				{
-					"name": "type97",
-					"pivot": [0, 16.78426, -22.51322]
+					"name": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
-					"parent": "type97",
-					"pivot": [0, 16.78426, -22.51322],
+					"parent": "root",
+					"pivot": [0, 0, 0],
 					"cubes": [
 						{
 							"origin": [-10.85764, 11.67666, -32.48162],
@@ -2374,6 +2374,11 @@
 					]
 				},
 				{
+					"name": "barrel",
+					"parent": "turret",
+					"pivot": [2, 28.6, -9.95]
+				},
+				{
 					"name": "flare",
 					"parent": "barrel",
 					"pivot": [4.1, 37.73, -31.74]
@@ -2382,11 +2387,6 @@
 					"name": "flare2",
 					"parent": "barrel",
 					"pivot": [4.1, 37.73, -31.74]
-				},
-				{
-					"name": "barrel",
-					"parent": "turret",
-					"pivot": [2, 28.6, -9.95]
 				},
 				{
 					"name": "bone5",
@@ -2716,7 +2716,7 @@
 				},
 				{
 					"name": "track",
-					"parent": "type97",
+					"parent": "root",
 					"pivot": [-17.21064, -0.06285, -19.42451]
 				},
 				{
@@ -3611,7 +3611,7 @@
 				},
 				{
 					"name": "Wheels",
-					"parent": "type97",
+					"parent": "root",
 					"pivot": [0, 0, -5.9]
 				},
 				{

@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mi24vRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.F15eRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3SupplyRenderer;
 
 
@@ -81,7 +87,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-                event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ARenderer::new);
+                event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ASbmRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99AH.get(), ZTZ99AHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ59A.get(), ZTZ59ARenderer::new);
@@ -244,5 +250,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.URAL4320_SUPPLY.get(), Ural4320SupplyRenderer::new);
                 event.registerEntityRenderer(ModEntities.MV3_ARMED.get(), Mv3ArmedRenderer::new);
                 event.registerEntityRenderer(ModEntities.MV3_SUPPLY.get(), Mv3SupplyRenderer::new);
+                event.registerEntityRenderer(ModEntities.F15E.get(), F15eRenderer::new);
+                event.registerEntityRenderer(ModEntities.MI24V.get(), Mi24vRenderer::new);
         }
 }
