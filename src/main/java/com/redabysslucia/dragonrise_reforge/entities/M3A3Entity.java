@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.network.chat.Component;
@@ -13,6 +13,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +27,9 @@ public class M3A3Entity extends VehicleEntity {
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> DEPLOY_TIMER =
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
+
+    // 客户端动画状态机缓存
+    private String lastMissileAnim = "";
 
     public M3A3Entity(EntityType<M3A3Entity> type, Level world) {
         super(type, world);
@@ -98,7 +103,10 @@ public class M3A3Entity extends VehicleEntity {
     @Override
     public void tick() {
         super.tick();
-        if (level().isClientSide) return;
+        if (level().isClientSide) {
+            tickMissileAnimation();
+            return;
+        }
 
         int currentState = entityData.get(MISSILE_STATE);
         boolean anyMissileSelected = anyPassengerHasMissile();
@@ -134,14 +142,59 @@ public class M3A3Entity extends VehicleEntity {
         }
     }
 
+    /**
+     * 客户端导弹架动画状态机：
+     *  - MISSILE_STATE 0=收起(off_hold) 1=展开中(deploy) 2=展开(hold) 3=收起中(retract)
+     */
+    @OnlyIn(Dist.CLIENT)
+    private void tickMissileAnimation() {
+        var ani = getAnimationInstance();
+        if (ani == null) return;
+
+        int state = entityData.get(MISSILE_STATE);
+        String want;
+        AnimationPlayType type;
+        switch (state) {
+            case 1 -> {
+                want = "animation.m3a3.missile_deploy";
+                type = AnimationPlayType.PLAY_ONCE_HOLD; // 播完停在展开姿态
+            }
+            case 2 -> {
+                want = "animation.m3a3.missile_hold";
+                type = AnimationPlayType.LOOP;
+            }
+            case 3 -> {
+                want = "animation.m3a3.missile_retract";
+                type = AnimationPlayType.PLAY_ONCE_HOLD; // 播完停在收起姿态
+            }
+            default -> {
+                want = "animation.m3a3.missile_off_hold";
+                type = AnimationPlayType.LOOP;
+            }
+        }
+        if (!want.equals(lastMissileAnim)) {
+            lastMissileAnim = want;
+            ani.getContext().playAnimation(want, type, 10);
+        }
+    }
+
     @Override
     public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
         int seatIndex = getSeatIndex(living);
+        int selectedWeapon = seatIndex >= 0 ? getSelectedWeapon(seatIndex) : -1;
+
+        // 客户端：主炮（索引 0）开火时播放一次性后坐动画
+        if (level().isClientSide && selectedWeapon == 0) {
+            var ani = getAnimationInstance();
+            if (ani != null) {
+                ani.getContext().playAnimation("animation.m3a3.main_cannon", AnimationPlayType.PLAY_ONCE_STOP, 0);
+            }
+        }
+
         if (seatIndex < 0) {
             super.vehicleShoot(living, uuid, targetPos);
             return;
         }
-        int selectedWeapon = getSelectedWeapon(seatIndex);
         if (selectedWeapon != 1) {
             super.vehicleShoot(living, uuid, targetPos);
             return;

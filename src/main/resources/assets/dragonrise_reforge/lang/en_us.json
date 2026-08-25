@@ -518,6 +518,8 @@
   "message.dragonrise_reforge.fire_control.takeover_enabled": "Fire control turret takeover enabled",
   "message.dragonrise_reforge.fire_control.takeover_requires_active": "Apply fire control first before enabling turret takeover",
   "message.dragonrise_reforge.fire_control.weapon_changed": "Fire control deactivated: main cannon not selected",
+  "message.dragonrise_reforge.m1a2sepv2.tusk_installed": "TUSK kit installed",
+  "message.dragonrise_reforge.m1a2sepv2.tusk_removed": "TUSK kit removed",
   "message.dragonrise_reforge.m270_angle_restricted": "Cannot fire at this angle",
   "message.dragonrise_reforge.m3a3_stop_to_shoot": "Stop the vehicle to fire",
   "message.dragonrise_reforge.m3a3_wait_deploy": "Waiting for launcher to deploy",
