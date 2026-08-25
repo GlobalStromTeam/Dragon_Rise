@@ -3183,7 +3183,7 @@
 					"pivot": [-1.125, -2.15, -38]
 				},
 				{
-					"name": "missile3",
+					"name": "move_missile3",
 					"parent": "missile",
 					"pivot": [-1.125, -2.15, -38],
 					"cubes": [
@@ -3260,7 +3260,7 @@
 					]
 				},
 				{
-					"name": "missile4",
+					"name": "move_missile4",
 					"parent": "missile",
 					"pivot": [-1.125, -2.15, -38],
 					"cubes": [

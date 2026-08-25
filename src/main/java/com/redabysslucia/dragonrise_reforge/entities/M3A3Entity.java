@@ -144,38 +144,11 @@ public class M3A3Entity extends VehicleEntity {
 
     /**
      * 客户端导弹架动画状态机：
-     *  - MISSILE_STATE 0=收起(off_hold) 1=展开中(deploy) 2=展开(hold) 3=收起中(retract)
+     *  - MISSILE_STATE 0=收起 1=展开中 2=展开 3=收起中
+     *  动画由 M3A3Renderer 手动控制（绕开引擎 Z 方向问题），此处不再播放动画文件。
      */
     @OnlyIn(Dist.CLIENT)
     private void tickMissileAnimation() {
-        var ani = getAnimationInstance();
-        if (ani == null) return;
-
-        int state = entityData.get(MISSILE_STATE);
-        String want;
-        AnimationPlayType type;
-        switch (state) {
-            case 1 -> {
-                want = "animation.m3a3.missile_deploy";
-                type = AnimationPlayType.PLAY_ONCE_HOLD; // 播完停在展开姿态
-            }
-            case 2 -> {
-                want = "animation.m3a3.missile_hold";
-                type = AnimationPlayType.LOOP;
-            }
-            case 3 -> {
-                want = "animation.m3a3.missile_retract";
-                type = AnimationPlayType.PLAY_ONCE_HOLD; // 播完停在收起姿态
-            }
-            default -> {
-                want = "animation.m3a3.missile_off_hold";
-                type = AnimationPlayType.LOOP;
-            }
-        }
-        if (!want.equals(lastMissileAnim)) {
-            lastMissileAnim = want;
-            ani.getContext().playAnimation(want, type, 10);
-        }
     }
 
     @Override
@@ -216,6 +189,21 @@ public class M3A3Entity extends VehicleEntity {
 
         super.vehicleShoot(living, uuid, targetPos);
     }
+
+    /**
+     * 获取导弹架状态（0=收起 1=展开中 2=展开 3=收起中）
+     */
+    public int getMissileState() {
+        return this.entityData.get(MISSILE_STATE);
+    }
+
+    /**
+     * 获取展开/收起剩余计时（tick，0~30）
+     */
+    public int getDeployTimer() {
+        return this.entityData.get(DEPLOY_TIMER);
+    }
+
 public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
         for (var passenger : vehicle.getPassengers()) {
             int seatIndex = vehicle.getSeatIndex(passenger);

@@ -1,9 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
+import com.atsuishio.superbwarfare.client.model.entity.VehicleModelInstance;
 import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
+import com.github.mcmodderanchor.simplebedrockmodel.v2.common.model.runtime.BoneState;
+import com.mojang.blaze3d.vertex.PoseStack;
 import com.redabysslucia.dragonrise_reforge.entities.M3A3Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.util.Mth;
+import org.joml.Quaternionf;
 
 /**
  * 履带曲线由 track_anim_generator 生成。
@@ -15,6 +19,40 @@ public class M3A3Renderer extends GeoVehicleRenderer<M3A3Entity> {
 
     public M3A3Renderer(EntityRendererProvider.Context renderManager) {
         super(renderManager);
+    }
+
+    /**
+     * 手动控制导弹发射架（与 blockbench 一致的绝对角度）。
+     * 绕开引擎动画的 Z 旋转方向问题；MISSILE_STATE 0=收起 1=展开中 2=展开 3=收起中。
+     */
+    @Override
+    public void transformCustomModelPart(M3A3Entity entity, VehicleModelInstance instance,
+                                         PoseStack poseStack, float entityYaw, float partialTicks) {
+        super.transformCustomModelPart(entity, instance, poseStack, entityYaw, partialTicks);
+
+        int state = entity.getMissileState();
+        int timer = entity.getDeployTimer();
+        float progress;
+        if (state == 1) {
+            progress = 1f - timer / 30f;   // 展开中：计时 30→0
+        } else if (state == 2) {
+            progress = 1f;                 // 已展开
+        } else if (state == 3) {
+            progress = timer / 30f;        // 收起中
+        } else {
+            progress = 0f;                 // 已收起
+        }
+        progress = Mth.clamp(progress, 0f, 1f);
+
+        // missile 骨骼：展开时 Z 从 90° 转到 0°；bone 骨骼：Z 从 -45° 转到 0°（blockbench 原始角度）
+        BoneState missile = instance.getBone("missile");
+        if (missile != null) {
+            missile.rotation.set(new Quaternionf().rotationZ((float) Math.toRadians(90f * (1f - progress))));
+        }
+        BoneState bone = instance.getBone("bone");
+        if (bone != null) {
+            bone.rotation.set(new Quaternionf().rotationZ((float) Math.toRadians(-45f * (1f - progress))));
+        }
     }
 
     private static final float[] MOVE_Y = { 18.4688f, 18.3352f, 17.9403f, 17.302f, 16.4488f, 15.4191f, 14.2592f, 13.0213f, 11.7608f, 10.5346f, 9.3976f, 8.4009f, 7.5894f, 6.9956f, 6.4825f, 5.9693f, 5.4561f, 4.943f, 4.4298f, 3.9167f, 3.4035f, 2.8903f, 2.3772f, 1.864f, 1.3508f, 0.91f, 0.7206f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7147f, 0.7843f, 1.1076f, 1.6244f, 2.1532f, 2.6821f, 3.2109f, 3.7397f, 4.2685f, 4.7974f, 5.3262f, 5.855f, 6.3838f, 6.9127f, 7.4415f, 7.9703f, 8.592f, 9.4295f, 10.4469f, 11.5983f, 12.8321f, 14.0929f, 15.3238f, 16.4698f, 17.4792f, 18.3067f, 18.9152f, 19.2772f, 19.3774f, 19.3666f, 19.3558f, 19.345f, 19.3341f, 19.3233f, 19.3125f, 19.3017f, 19.2909f, 19.2801f, 19.2692f, 19.2584f, 19.2476f, 19.2368f, 19.226f, 19.2152f, 19.2043f, 19.1935f, 19.1827f, 19.1719f, 19.1611f, 19.1503f, 19.1394f, 19.1286f, 19.1178f, 19.107f, 19.0962f, 19.0854f, 19.0745f, 19.0637f, 19.0529f, 19.0421f, 19.0313f, 19.0205f, 19.0096f, 18.9988f, 18.988f, 18.9772f, 18.9664f, 18.9556f, 18.9447f, 18.9339f, 18.9231f, 18.9123f, 18.9015f, 18.8907f, 18.8798f, 18.869f, 18.8582f, 18.8474f, 18.8366f, 18.8258f, 18.8149f, 18.8041f, 18.7933f, 18.7825f, 18.7717f, 18.7609f, 18.75f, 18.7392f, 18.7284f, 18.7176f, 18.7068f, 18.696f, 18.6851f, 18.6743f, 18.6635f, 18.6527f, 18.6419f, 18.6311f, 18.6202f, 18.6094f, 18.5986f, 18.5878f, 18.577f, 18.5662f, 18.5553f, 18.5445f, 18.5337f, 18.5229f, 18.5121f, 18.5013f, 18.4904f, 18.4796f, 18.4688f };

@@ -40,7 +40,7 @@
     },
     {
       "Size": [1.973,0.794,4.039],
-      "Position": [0.0,0.883,0.04],
+      "Position": [0.0,0.8,0.04],
       "Part": "Collision"
     },
     {
@@ -431,7 +431,7 @@
       ]
     ]
   },
-  "EngineSound": "dragonrise_reforge:t80_engine",
+  "EngineSound":  "dragonrise_reforge:ztz99a_engine",
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
