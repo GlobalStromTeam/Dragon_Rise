@@ -15,12 +15,8 @@ public class ModNetwork {
             PROTOCOL_VERSION::equals
     );
 
-    private static int id = 0;
-
-    public static void register(final FMLCommonSetupEvent event) {
-        CHANNEL.registerMessage(id++, DeployerSettingsPacket.class,
-                DeployerSettingsPacket::encode,
-                DeployerSettingsPacket::decode,
-                DeployerSettingsPacket::handle);
+    public static void register(RegisterPayloadHandlersEvent event) {
+        final PayloadRegistrar registrar = event.registrar(PROTOCOL_VERSION);
+        registrar.playToServer(DeployerSettingsPacket.TYPE, DeployerSettingsPacket.STREAM_CODEC, DeployerSettingsPacket::handle);
     }
 }

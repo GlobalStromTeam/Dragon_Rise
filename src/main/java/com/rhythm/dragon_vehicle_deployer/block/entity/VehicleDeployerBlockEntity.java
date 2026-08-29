@@ -5,8 +5,9 @@ import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import com.rhythm.dragon_vehicle_deployer.block.VehicleDeployerBlock;
 import com.rhythm.dragon_vehicle_deployer.menu.DeployerConfigMenu;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -17,7 +18,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -86,8 +86,8 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
     }
 
     @Override
-    public void load(CompoundTag tag) {
-        super.load(tag);
+    public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.loadAdditional(tag, registries);
         this.entityData = new CompoundTag();
         if (tag.contains("EntityType")) {
             this.entityData.putString("EntityType", tag.getString("EntityType"));
@@ -108,8 +108,8 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
     }
 
     @Override
-    protected void saveAdditional(CompoundTag tag) {
-        super.saveAdditional(tag);
+    protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
+        super.saveAdditional(tag, registries);
         if (this.entityData.contains("EntityType")) {
             tag.putString("EntityType", this.entityData.getString("EntityType"));
         }
@@ -133,21 +133,16 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
     }
 
     @Override
-    public CompoundTag getUpdateTag() {
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
         CompoundTag tag = new CompoundTag();
-        saveAdditional(tag);
+        saveAdditional(tag, registries);
         return tag;
     }
 
-    @Override
-    public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
-        load(pkt.getTag());
-    }
-
     public void writeEntityInfo(ItemStack stack) {
-        var tag = BlockItem.getBlockEntityData(stack);
-        if (tag == null) return;
-        this.entityData = tag.copy();
+        var customData = stack.get(DataComponents.BLOCK_ENTITY_DATA);
+        if (customData == null) return;
+        this.entityData = customData.copyTag();
         this.spawnedVehicleUUID = null;
         this.vehicleWasOccupied = false;
         this.lastOccupiedGameTime = 0;

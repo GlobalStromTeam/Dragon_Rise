@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.datagen.base;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.data.loot.WreckageLootData;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.google.gson.JsonArray;
@@ -29,7 +31,7 @@ public abstract class SbwWreckageLootProvider implements DataProvider {
     public abstract void generate();
 
     public void add(EntityType<? extends VehicleEntity> type, WreckageLootData.Builder builder) {
-        var id = ForgeRegistries.ENTITY_TYPES.getKey(type);
+        var id = BuiltInRegistries.ENTITY_TYPE.getKey(type);
         if (id != null) {
             lootData.add(builder.build(id));
         }

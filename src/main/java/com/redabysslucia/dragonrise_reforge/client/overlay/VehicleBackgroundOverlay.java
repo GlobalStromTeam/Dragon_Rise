@@ -6,8 +6,10 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import net.minecraft.client.CameraType;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
@@ -17,14 +19,14 @@ import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
 import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 
 @OnlyIn(Dist.CLIENT)
-public class VehicleBackgroundOverlay implements IGuiOverlay {
+public class VehicleBackgroundOverlay implements LayeredDraw.Layer {
     public static final String ID = Dragonrise_reforge.MODID + "_vehicle_background";
 
     private float scopeScale = 1f;
 
     @Override
-    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
-        Minecraft mc = gui.getMinecraft();
+    public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
 
         if (player == null) return;

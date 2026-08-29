@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.item.*;
 import com.redabysslucia.dragonrise_reforge.item.armor.*;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.SpawnEggItem;
 import net.neoforged.bus.api.IEventBus;
@@ -12,18 +13,18 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModItems {
 
-    public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, Dragonrise_reforge.MODID);
+    public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(Registries.ITEM, Dragonrise_reforge.MODID);
 
     public static void register(IEventBus eventBus) {
         REGISTRY.register(eventBus);
     }
 
-    public static final RegistryObject<Item> TAB_ICON = REGISTRY.register("tab_icon", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SF_TAB_ICON = REGISTRY.register("sf_tab_icon", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SOC_TAB_ICON = REGISTRY.register("soc_tab_icon", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> WW2_TAB_ICON = REGISTRY.register("ww2_tab_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> TAB_ICON = REGISTRY.register("tab_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> SF_TAB_ICON = REGISTRY.register("sf_tab_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> SOC_TAB_ICON = REGISTRY.register("soc_tab_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> WW2_TAB_ICON = REGISTRY.register("ww2_tab_icon", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> MISC_ICON = REGISTRY.register("misc_icon", () -> new Item(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> MISC_ICON = REGISTRY.register("misc_icon", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
     public static final RegistryObject<Item> HJ8_DEPLOYER = REGISTRY.register("hj8", HJ8Deployer::new);

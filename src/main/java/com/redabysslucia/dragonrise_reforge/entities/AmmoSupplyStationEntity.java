@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.data.gun.AmmoConsumer;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.GunProp;
@@ -342,7 +344,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return false;
         }
 
-        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item bonusItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (bonusItem == null) {
             return false;
         }
@@ -358,7 +360,6 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return 0;
         }
 
-        IItemHandler handler = handlerOpt.get();
         int total = 0;
         for (int i = 0; i < handler.getSlots(); i++) {
             ItemStack stack = handler.getStackInSlot(i);
@@ -450,7 +451,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return;
         }
 
-        Item bonusItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item bonusItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (bonusItem == null) {
             return;
         }
@@ -462,12 +463,11 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return;
         }
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return;
         }
 
-        IItemHandler handler = handlerOpt.get();
         ItemStack stack = new ItemStack(bonusItem, toAdd);
         InventoryTool.insertItem(handler, stack, toAdd);
     }
@@ -485,7 +485,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
         if (stack.isEmpty()) {
             return "";
         }
-        ResourceLocation key = ForgeRegistries.ITEMS.getKey(stack.getItem());
+        ResourceLocation key = BuiltInRegistries.ITEM.getKey(stack.getItem());
         return key != null ? key.toString() : "";
     }
 
@@ -611,7 +611,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return false;
         }
 
-        Item customItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+        Item customItem = BuiltInRegistries.ITEM.get(itemLocation);
         if (customItem == null) {
             return false;
         }
@@ -623,8 +623,8 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return false;
         }
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return false;
         }
 
@@ -651,12 +651,11 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return;
         }
 
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        if (handler == null) {
             return;
         }
 
-        IItemHandler handler = handlerOpt.get();
         ItemStack ammoStack = consumer.stack().copy();
         if (ammoStack.isEmpty()) {
             return;

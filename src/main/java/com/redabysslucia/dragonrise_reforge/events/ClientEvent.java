@@ -288,7 +288,7 @@ public class ClientEvent {
     }
 
     @SubscribeEvent
-    public static void onRenderTick(TickEvent.RenderTickEvent event) {
+    public static void onRenderFrame(RenderFrameEvent.Pre event) {
         var mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null) return;

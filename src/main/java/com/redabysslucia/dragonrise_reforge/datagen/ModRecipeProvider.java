@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.datagen;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -14,14 +15,14 @@ import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.function.Consumer;
+import java.util.concurrent.CompletableFuture;
 
-public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
+public class ModRecipeProvider extends RecipeProvider {
 
     private static final TagKey<Item> DYES = commonItemTag("dyes");
 
-    public ModRecipeProvider(PackOutput pOutput) {
-        super(pOutput);
+    public ModRecipeProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pRegistries) {
+        super(pOutput, pRegistries);
     }
 
     private static ResourceLocation loc(String path) {
@@ -37,12 +38,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     @Override
-    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> writer) {
+    protected void buildRecipes(@NotNull RecipeOutput writer) {
         buildMiscRecipes(writer);
         buildArmorRecipes(writer);
     }
 
-    private static void buildMiscRecipes(Consumer<FinishedRecipe> writer) {
+    private static void buildMiscRecipes(RecipeOutput writer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SPRAY_CAN.get())
                 .pattern("III")
                 .pattern("IDI")
@@ -62,7 +63,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(writer, loc(getItemName(ModItems.KEVLAR.get())));
     }
 
-    private static void buildArmorRecipes(Consumer<FinishedRecipe> writer) {
+    private static void buildArmorRecipes(RecipeOutput writer) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.MSV_CHEST.get())
                 .pattern("KDK")
                 .pattern("K K")

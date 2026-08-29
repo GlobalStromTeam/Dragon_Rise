@@ -3,11 +3,11 @@ package com.rhythm.dragon_vehicle_deployer;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class Config {
-    public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
+    public static final ModConfigSpec SPEC;
 
-    public static final ForgeConfigSpec.IntValue DEFAULT_SPAWN_INTERVAL;
-    public static final ForgeConfigSpec.IntValue IDLE_CLEAR_TIMEOUT_SECONDS;
+    public static final ModConfigSpec.IntValue DEFAULT_SPAWN_INTERVAL;
+    public static final ModConfigSpec.IntValue IDLE_CLEAR_TIMEOUT_SECONDS;
 
     static {
         BUILDER.push("General");

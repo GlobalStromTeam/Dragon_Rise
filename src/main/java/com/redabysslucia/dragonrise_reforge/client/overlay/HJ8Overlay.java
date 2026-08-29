@@ -7,8 +7,10 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.CameraType;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.LayeredDraw;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -21,7 +23,7 @@ import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 import static com.atsuishio.superbwarfare.client.RenderHelper.preciseBlit;
 
 @OnlyIn(Dist.CLIENT)
-public class HJ8Overlay implements IGuiOverlay {
+public class HJ8Overlay implements LayeredDraw.Layer {
     public static final String ID = Mod.MODID + "_hj8";
 
     private static final ResourceLocation SPYGLASS = Mod.loc("textures/overlay/spyglass/spyglass.png");
@@ -29,10 +31,10 @@ public class HJ8Overlay implements IGuiOverlay {
     private static float scopeScale = 1;
 
     @Override
-    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
-        Minecraft mc = gui.getMinecraft();
+    public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        Minecraft mc = Minecraft.getInstance();
         PoseStack poseStack = guiGraphics.pose();
-        Player player = gui.getMinecraft().player;
+        Player player = mc.player;
 
         if (player == null) return;
 
@@ -45,8 +47,10 @@ public class HJ8Overlay implements IGuiOverlay {
             RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA, GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
             RenderSystem.setShaderColor(1, 1, 1, 1);
 
-            float deltaFrame = Minecraft.getInstance().getDeltaFrameTime();
+            float deltaFrame = Minecraft.getInstance().getTimer().getGameTimeDeltaPartialTick(true);
             scopeScale = (float) Mth.lerp(0.5F * deltaFrame, scopeScale, 1.35F + (0.2f * ClientEventHandler.firePosTimer));
+            int screenWidth = guiGraphics.guiWidth();
+            int screenHeight = guiGraphics.guiHeight();
             float f = (float) Math.min(screenWidth, screenHeight);
             float f1 = Math.min((float) screenWidth / f, (float) screenHeight / f) * scopeScale;
             float i = Mth.floor(f * f1);

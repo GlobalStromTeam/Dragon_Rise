@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;

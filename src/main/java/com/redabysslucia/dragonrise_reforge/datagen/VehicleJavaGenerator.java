@@ -289,7 +289,7 @@ public class VehicleJavaGenerator implements DataProvider {
             return;
         }
 
-        String registrationCode = "    public static final RegistryObject<EntityType<" + entityClassName + ">> " + entityConstantName + " = register(\"" + baseName + "\",\n" +
+        String registrationCode = "    public static final DeferredHolder<EntityType<?>, EntityType<" + entityClassName + ">> " + entityConstantName + " = register(\"" + baseName + "\",\n" +
                 "            EntityType.Builder.of(" + entityClassName + "::new, MobCategory.MISC)\n" +
                 "                    .setTrackingRange(512)\n" +
                 "                    .setUpdateInterval(2)\n" +

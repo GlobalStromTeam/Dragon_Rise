@@ -7,13 +7,6 @@ import net.neoforged.neoforge.network.NetworkDirection;
 import net.neoforged.neoforge.network.NetworkEvent;
 import net.neoforged.neoforge.network.simple.SimpleChannel;
 
-import java.util.Optional;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Supplier;
-
-@SuppressWarnings("removal")
 public class ModNetwork {
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel PACKET_HANDLER = net.neoforged.neoforge.network.NetworkRegistry.newSimpleChannel(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, Dragonrise_reforge.MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);

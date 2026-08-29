@@ -1,17 +1,27 @@
 package com.redabysslucia.dragonrise_reforge.network;
 
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.ResourceLocation;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-public class EngineChangeModeMessage {
+public class EngineChangeModeMessage implements CustomPacketPayload {
+    public static final CustomPacketPayload.Type<EngineChangeModeMessage> TYPE = new CustomPacketPayload.Type<>(
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "engine_change_mode"));
 
+    public static final StreamCodec<FriendlyByteBuf, EngineChangeModeMessage> STREAM_CODEC = StreamCodec.of(
+            (buf, msg) -> {},
+            buf -> new EngineChangeModeMessage()
+    );
 
-//    public VTOLModeMessage(EngineType engineType) {
-//        this.engineType = engineType;
-//    }
+    public EngineChangeModeMessage() {}
 
-    public static void encode(EngineChangeModeMessage message, FriendlyByteBuf buffer) {
-        //buffer.writeEnum(message.engineType);
+    @Override
+    public CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
+        return TYPE;
     }
 
     public static EngineChangeModeMessage decode(FriendlyByteBuf buffer) {
@@ -24,18 +34,8 @@ public class EngineChangeModeMessage {
             if (player == null) return;
             var vehicle = player.getVehicle();
             if (vehicle instanceof VariableEngineVehicle vtol) {
-                // Toggle VTOL mode logic here
-                // For example, switch between "VTOL" and "FIXED" modes
-                // This is a placeholder; actual implementation depends on VTOLEntity methods
-                // String currentMode = vtol.getFlyMode();
-                // if (currentMode.equals("VTOL")) {
-                //     vtol.setFlyMode("FIXED");
-                // } else {
-                //     vtol.setFlyMode("VTOL");
-                // }
                 vtol.toggleChangeMode();
             }
         });
-        ctx.get().setPacketHandled(true);
     }
 }

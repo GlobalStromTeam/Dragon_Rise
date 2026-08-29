@@ -56,6 +56,9 @@ public class OutlineRenderer {
 
     private static BufferBuilder maskBuffer = null;
     private static MultiBufferSource.BufferSource maskBufferSource = null;
+    // TODO: Replaced ByteBufferBuilder with BufferBuilder for 1.21.1 API
+    // BufferBuilder constructor now takes (ByteBufferBuilder, Mode, VertexFormat)
+    private static java.nio.ByteBuffer byteBuffer = null;
 
     private static int lastEntityCount = 0;
     private static int framesSinceLastCheck = 0;
@@ -120,8 +123,12 @@ public class OutlineRenderer {
         }
 
         createQuadVAO();
-        maskBuffer = new BufferBuilder(262144);
-        maskBufferSource = MultiBufferSource.immediate(maskBuffer);
+        // TODO: Reimplement for 1.21.1 BufferBuilder API
+        // BufferBuilder constructor changed: new BufferBuilder(ByteBufferBuilder, Mode, VertexFormat)
+        // MultiBufferSource.immediate() now takes ByteBufferBuilder instead of BufferBuilder
+        byteBuffer = java.nio.ByteBuffer.allocateDirect(262144);
+        maskBuffer = null;
+        maskBufferSource = null;
     }
 
     private static void minimalStateReset() {
@@ -358,8 +365,9 @@ public class OutlineRenderer {
         GL11.glDisable(GL11.GL_STENCIL_TEST);
 
         if (maskBufferSource == null) {
-            maskBuffer = new BufferBuilder(262144);
-            maskBufferSource = MultiBufferSource.immediate(maskBuffer);
+            // TODO: Reimplement for 1.21.1 - BufferBuilder constructor changed
+            maskBuffer = null;
+            maskBufferSource = null;
         }
 
         boolean oldRenderShadows = mc.options.entityShadows().get();

@@ -18,13 +18,13 @@ import net.neoforged.fml.common.Mod;
 public class ClientEventHandler {
 
     @SubscribeEvent
-    public static void registerGuiOverlays(RegisterGuiOverlaysEvent event) {
+    public static void registerGuiOverlays(RegisterGuiLayersEvent event) {
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_vehicle_background",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "vehicle_background"),
             new VehicleBackgroundOverlay()
         );
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_supply_progress",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "supply_progress"),
             new SupplyProgressOverlay()
         );
         event.registerBelowAll(

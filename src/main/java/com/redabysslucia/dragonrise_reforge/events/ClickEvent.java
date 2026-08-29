@@ -2,7 +2,6 @@ package com.redabysslucia.dragonrise_reforge.events;
 
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
-import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.EngineChangeModeMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.player.Player;
@@ -53,7 +52,7 @@ public class ClickEvent {
             if(player.getVehicle() instanceof VariableEngineVehicle entity){
                 if (ModKeyMappings.ENGINE_CHANGE_MODE_TOGGLE.isPressed()) {
                     //entity.nextMode();
-                    ModNetwork.PACKET_HANDLER.sendToServer(new EngineChangeModeMessage());
+                    PacketDistributor.sendToServer(new EngineChangeModeMessage());
                 }
             }
 

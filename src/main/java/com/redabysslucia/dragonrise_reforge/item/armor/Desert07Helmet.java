@@ -57,15 +57,8 @@ public class Desert07Helmet extends ArmorItem implements GeoItem {
     }
 
     @Override
-    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {
-        Multimap<Attribute, AttributeModifier> map = super.getDefaultAttributeModifiers(slot);
-        UUID uuid = new UUID(slot.toString().hashCode(), 0);
-        if (slot == EquipmentSlot.HEAD) {
-            map = HashMultimap.create(map);
-            map.put(ModAttributes.BULLET_RESISTANCE.get(), new AttributeModifier(uuid, Mod.ATTRIBUTE_MODIFIER,
-                    0.5 * Math.max(0, 1 - (double) stack.getDamageValue() / stack.getMaxDamage()), AttributeModifier.Operation.ADDITION));
-        }
-        return map;
+    public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
+        return super.getDefaultAttributeModifiers(stack);
     }
 
     @Override

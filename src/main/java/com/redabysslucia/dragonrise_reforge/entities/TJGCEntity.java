@@ -6,15 +6,13 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
-import com.atsuishio.superbwarfare.network.NetworkRegistry;
-import com.atsuishio.superbwarfare.network.message.receive.ClientIndicatorMessage;
+// NetworkRegistry import removed - not available in NeoForge 1.21.1
 import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
-import lombok.val;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
@@ -111,7 +109,8 @@ public class TJGCEntity extends VariableEngineVehicle {
                 if (shooter instanceof ServerPlayer player) {
                     var holder = Holder.direct(ModSounds.INDICATION.get());
                     player.connection.send(new ClientboundSoundPacket(holder, SoundSource.PLAYERS, player.getX(), player.getY(), player.getZ(), 1f, 1f, player.level().random.nextLong()));
-                    NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new ClientIndicatorMessage(0, 5));
+                    // TODO: Reimplement using NeoForge 1.21.1 networking
+                    // NetworkRegistry.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> player), new ClientIndicatorMessage(0, 5));
                 }
             }
         }

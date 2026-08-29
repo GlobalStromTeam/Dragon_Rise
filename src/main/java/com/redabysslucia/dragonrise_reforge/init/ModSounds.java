@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -8,7 +9,7 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModSounds {
-    public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Dragonrise_reforge.MODID);
+    public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(Registries.SOUND_EVENT, Dragonrise_reforge.MODID);
 
     public static final RegistryObject<SoundEvent> TERRORIST_IDLE = REGISTRY.register("terrorist_idle", () -> 
         SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_idle")));

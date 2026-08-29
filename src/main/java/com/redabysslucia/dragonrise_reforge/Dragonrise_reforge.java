@@ -8,6 +8,7 @@ import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.bus.api.IEventBus;
@@ -18,8 +19,6 @@ import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.slf4j.Logger;
 
-@SuppressWarnings("removal")
-
 @Mod(Dragonrise_reforge.MODID)
 public class Dragonrise_reforge {
 
@@ -27,8 +26,7 @@ public class Dragonrise_reforge {
 
         public static final Logger LOGGER = LogUtils.getLogger();
 
-        public Dragonrise_reforge() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        public Dragonrise_reforge(IEventBus bus) {
 
         ModItems.register(bus);
         ModEntities.REGISTRY.register(bus);
@@ -74,10 +72,5 @@ public class Dragonrise_reforge {
                         }
                 });
         }
-
-//        @SubscribeEvent
-//        public void registerKeyMappings(RegisterKeyMappingsEvent event) {
-//                event.register(SWITCH_MODE_KEY.get());
-//        }
 
 }
