@@ -1,6 +1,7 @@
 package com.rhythm.dragon_vehicle_deployer.event;
 
-import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import com.mojang.logging.LogUtils;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
@@ -14,7 +15,7 @@ import org.slf4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-@EventBusSubscriber(modid = DragonVehicleDeployer.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(modid = DragonVehicleDeployer.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class PlayerLoginHandler {
     private static final Logger LOGGER = LogUtils.getLogger();
     private static Class<?> vehicleEntityClass = null;

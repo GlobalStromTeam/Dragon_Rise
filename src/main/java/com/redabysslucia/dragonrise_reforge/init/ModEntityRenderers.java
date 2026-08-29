@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mi24vRenderer;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mi24vRenderer;
 
 
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.F15eRenderer;
@@ -83,7 +84,7 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 
-@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {

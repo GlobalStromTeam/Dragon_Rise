@@ -7,16 +7,16 @@ import com.atsuishio.superbwarfare.tools.FormatTool;
 import com.atsuishio.superbwarfare.tools.RangeTool;
 import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
+import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.LayeredDraw;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 /**
  * ZBD04A / BMP3 主炮榴弹即时弹道读数。
@@ -24,12 +24,12 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
  * （同高水平落点，R = v²·sin(2θ)/g）。
  */
 @OnlyIn(Dist.CLIENT)
-public class CannonBallisticOverlay implements IGuiOverlay {
+public class CannonBallisticOverlay implements LayeredDraw.Layer {
     public static final String ID = Mod.MODID + "_cannon_ballistic";
 
     @Override
-    public void render(ForgeGui gui, GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight) {
-        Minecraft mc = gui.getMinecraft();
+    public void render(GuiGraphics guiGraphics, DeltaTracker deltaTracker) {
+        Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null) return;
 
@@ -46,7 +46,7 @@ public class CannonBallisticOverlay implements IGuiOverlay {
         if (gunData == null) return;
 
         var ammoStack = gunData.selectedAmmoConsumer().stack();
-        var ammoId = ForgeRegistries.ITEMS.getKey(ammoStack.getItem());
+        var ammoId = BuiltInRegistries.ITEM.getKey(ammoStack.getItem());
         if (ammoId == null || !"superbwarfare".equals(ammoId.getNamespace()) || !ammoId.getPath().contains("he")) {
             return;
         }
@@ -71,7 +71,7 @@ public class CannonBallisticOverlay implements IGuiOverlay {
                 : 0.0D;
 
         int x = 5;
-        int y = screenHeight / 2 - 20;
+        int y = guiGraphics.guiHeight() / 2 - 20;
         int color = 0xFFFFAA00;
 
         guiGraphics.drawString(mc.font,

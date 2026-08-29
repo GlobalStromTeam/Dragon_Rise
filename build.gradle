@@ -99,25 +99,25 @@ dependencies {
     runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1"
     compileOnly "top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1:api"
 
-    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:5.14.1+1.20.1:api")
-
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.4.6')
-    implementation fg.deobf("curse.maven:superb-warfare-1218165:8689629")
-    implementation fg.deobf("curse.maven:kotlin-for-forge-351264:5402061")
+    implementation 'software.bernie.geckolib:geckolib-neoforge-1.21.1:4.8.4'
+    // 与 1.20.1 分支使用的 superbwarfare-0.8.9.1-hotfix 同世代（1.20.1 用的是 file 8689629）
+    implementation "curse.maven:superb-warfare-1218165:8689942"
+    implementation "curse.maven:kotlin-for-forge-351264:7471280"
 
     compileOnly 'com.maydaymemory:mae:1.1.2'
 
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
-    implementation(fg.deobf("com.github.mcmodderanchor:simplebedrockmodel:2.5.1-forge-mc1.20.1"))
-    implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-1.20.1:1.0.91"))
-    implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-1.20.1:1.0.5"))
-    implementation(fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.106"))
+    // Kotlin stdlib and serialization - required at compile time for SuperbWarfare dependency
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-core:1.6.2'
 
+    // 1.20.1 使用的是 simplebedrockmodel 2.5.x（v2 包），此处对齐同代版本
+    implementation "com.github.mcmodderanchor:simplebedrockmodel:2.5.1.1-neoforge-mc1.21.1"
+
+    implementation "curse.maven:accelerated-rendering-1314021:8179086"
+    runtimeOnly "maven.modrinth:sodium:mc1.21-0.6.0-beta.2-neoforge"
 }
 
 tasks.named('processResources', ProcessResources).configure {

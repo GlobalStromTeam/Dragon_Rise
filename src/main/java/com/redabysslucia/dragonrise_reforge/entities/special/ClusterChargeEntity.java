@@ -16,6 +16,7 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerEntity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -128,13 +129,7 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
-        super.defineSynchedData(builder);
         builder.define(OWNER_UUID, Optional.empty());
-    }
-
-    @Override
-    protected float getEyeHeight(Pose pose, EntityDimensions dimensions) {
-        return 0f;
     }
 
     @Override
@@ -196,39 +191,38 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
     }
 
     @Override
-    public void recalculateBoundingBox() {
-        Direction dir = this.direction;
-        if (dir == null) return;
+    protected AABB calculateBoundingBox(BlockPos pos, Direction direction) {
+        if (direction == null) {
+            return new AABB(pos.getX(), pos.getY(), pos.getZ(), pos.getX(), pos.getY(), pos.getZ());
+        }
 
         double d0 = 0.46875;
-        double centerX = this.pos.getX() + 0.5 - dir.getStepX() * d0;
-        double centerY = this.pos.getY() + 0.5 - dir.getStepY() * d0;
-        double centerZ = this.pos.getZ() + 0.5 - dir.getStepZ() * d0;
+        double centerX = pos.getX() + 0.5 - direction.getStepX() * d0;
+        double centerY = pos.getY() + 0.5 - direction.getStepY() * d0;
+        double centerZ = pos.getZ() + 0.5 - direction.getStepZ() * d0;
 
         double halfWidth = this.getWidth() / 32.0;
         double halfHeight = this.getHeight() / 32.0;
 
-        Vec3 cornerOffset = calculateCornerOffset(dir, this.corner, halfWidth, halfHeight);
+        Vec3 cornerOffset = calculateCornerOffset(direction, this.corner, halfWidth, halfHeight);
 
         double finalX = centerX + cornerOffset.x;
         double finalY = centerY + cornerOffset.y;
         double finalZ = centerZ + cornerOffset.z;
 
-        this.setPosRaw(finalX, finalY, finalZ);
-
         double dx = this.getWidth() / 32.0;
         double dy = this.getHeight() / 32.0;
         double dz = this.getWidth() / 32.0;
-        switch (dir.getAxis()) {
+        switch (direction.getAxis()) {
             case X -> dx = 1.0 / 32.0;
             case Y -> dy = 1.0 / 32.0;
             case Z -> dz = 1.0 / 32.0;
         }
 
-        this.setBoundingBox(new AABB(
+        return new AABB(
                 finalX - dx, finalY - dy, finalZ - dz,
                 finalX + dx, finalY + dy, finalZ + dz
-        ));
+        );
     }
 
     private Vec3 calculateCornerOffset(Direction direction, int corner, double width, double height) {
@@ -259,12 +253,10 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
         };
     }
 
-    @Override
     public int getWidth() {
         return 8;
     }
 
-    @Override
     public int getHeight() {
         return 8;
     }
@@ -291,9 +283,9 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
     }
 
     @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+    public Packet<ClientGamePacketListener> getAddEntityPacket(ServerEntity entity) {
         int data = this.corner * 10 + this.direction.get3DDataValue();
-        return new ClientboundAddEntityPacket(this, data, this.getPos());
+        return new ClientboundAddEntityPacket(this, entity, data);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.screen;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+
+import net.neoforged.neoforge.network.PacketDistributor;import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlComputation;
 import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlSolution;
@@ -167,7 +168,7 @@ public class FiringSolutionScreen extends Screen {
             int z = Integer.parseInt(targetZField.getValue());
             BlockPos target = new BlockPos(x, y, z);
             // 不使用散布：radius 固定 0
-            ModNetwork.PACKET_HANDLER.sendToServer(SetFireControlMessage.apply(
+            PacketDistributor.sendToServer(SetFireControlMessage.apply(
                     vehicle.getId(), target, 0, trajectoryMode, true
             ));
         } catch (NumberFormatException ignored) {
@@ -177,7 +178,7 @@ public class FiringSolutionScreen extends Screen {
     }
 
     private void clearSolution() {
-        ModNetwork.PACKET_HANDLER.sendToServer(SetFireControlMessage.clear(vehicle.getId()));
+        PacketDistributor.sendToServer(SetFireControlMessage.clear(vehicle.getId()));
     }
 
     private void toggleTakeover() {
@@ -188,7 +189,7 @@ public class FiringSolutionScreen extends Screen {
             return;
         }
         boolean newState = !vehicle.isFireControlTakeoverEnabled();
-        ModNetwork.PACKET_HANDLER.sendToServer(new ToggleTakeoverMessage(vehicle.getId(), newState));
+        PacketDistributor.sendToServer(new ToggleTakeoverMessage(vehicle.getId(), newState));
         updateTakeoverLabel();
     }
 
@@ -298,7 +299,7 @@ public class FiringSolutionScreen extends Screen {
 
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        renderBackground(graphics);
+        renderBackground(graphics, mouseX, mouseY, partialTick);
         int panelX = (this.width - PANEL_WIDTH) / 2;
         int panelY = (this.height - PANEL_HEIGHT) / 2;
 

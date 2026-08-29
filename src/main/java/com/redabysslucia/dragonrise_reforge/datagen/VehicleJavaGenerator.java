@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.datagen;
 
-import com.google.gson.Gson;
+
+import net.neoforged.neoforge.registries.DeferredHolder;import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -285,7 +286,7 @@ public class VehicleJavaGenerator implements DataProvider {
 
         String content = Files.readString(modEntitiesFile);
 
-        if (content.contains("public static final RegistryObject<EntityType<" + entityClassName + ">> " + entityConstantName + " = register")) {
+        if (content.contains("public static final DeferredHolder<EntityType<?>, EntityType<" + entityClassName + ">> " + entityConstantName + " = register")) {
             return;
         }
 
@@ -302,7 +303,7 @@ public class VehicleJavaGenerator implements DataProvider {
             content = content.replace("package com.redabysslucia.dragonrise_reforge.init;", "package com.redabysslucia.dragonrise_reforge.init;\n\n" + importLine + "\n");
         }
 
-        content = insertAfterBlockEnd(content, "public static final RegistryObject<EntityType<", "    );", registrationCode);
+        content = insertAfterBlockEnd(content, "public static final DeferredHolder<EntityType<?>, EntityType<", "    );", registrationCode);
 
         Files.writeString(modEntitiesFile, content);
     }

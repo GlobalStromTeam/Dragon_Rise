@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.mixin;
 
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
@@ -29,7 +30,7 @@ public class MonitorItemMixin {
         if (!selected) return;   // 切走物品：保留原复位逻辑
         if (!stack.is(ModItems.MONITOR.get())) return;
 
-        CompoundTag tag = stack.getTag();
+        CompoundTag tag = NBTTool.getTag(stack);
         if (tag == null || !tag.getBoolean(MonitorItem.USING)) return;
 
         String linked = tag.getString(MonitorItem.LINKED_DRONE);

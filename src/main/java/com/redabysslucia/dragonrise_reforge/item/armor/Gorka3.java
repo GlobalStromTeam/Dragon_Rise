@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.Gorka3Model;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.Gorka3Model;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.Gorka3Renderer;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;

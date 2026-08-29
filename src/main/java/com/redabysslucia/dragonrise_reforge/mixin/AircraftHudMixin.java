@@ -10,7 +10,7 @@ import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
+import net.minecraft.client.gui.Gui;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -32,7 +32,7 @@ public class AircraftHudMixin {
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void dragonrise$skipBombScope(
-            VehicleEntity vehicle, Player player, ForgeGui gui,
+            VehicleEntity vehicle, Player player, Gui gui,
             GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight,
             CallbackInfo ci) {
         if (!ClientEventHandler.zoomVehicle) return;
@@ -49,7 +49,7 @@ public class AircraftHudMixin {
 
     @Inject(method = "render", at = @At("RETURN"))
     private void dragonrise$rearSeatWeaponName(
-            VehicleEntity vehicle, Player player, ForgeGui gui,
+            VehicleEntity vehicle, Player player, Gui gui,
             GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight,
             CallbackInfo ci) {
         // 仅后座（非一号位）：一号位由官方 HUD 渲染，此处跳过

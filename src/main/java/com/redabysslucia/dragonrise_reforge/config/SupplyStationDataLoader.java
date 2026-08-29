@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.config;
 
-import com.google.common.collect.Maps;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.google.common.collect.Maps;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;

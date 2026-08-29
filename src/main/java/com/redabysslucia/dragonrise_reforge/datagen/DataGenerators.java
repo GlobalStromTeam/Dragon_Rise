@@ -1,11 +1,12 @@
 package com.redabysslucia.dragonrise_reforge.datagen;
 
-import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 
-@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
 
     @SubscribeEvent

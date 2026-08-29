@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+
+import net.minecraft.network.syncher.SynchedEntityData;import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -25,8 +26,8 @@ public class ZBD04AEntity extends IndirectFireVehicleBase {
         @Override
         protected void defineSynchedData(SynchedEntityData.Builder builder) {
                 super.defineSynchedData(builder);
-                entityData.define(FLAP_STATE, 0);
-                entityData.define(FLAP_TIMER, 0);
+                builder.define(FLAP_STATE, 0);
+                builder.define(FLAP_TIMER, 0);
         }
 
         @Override

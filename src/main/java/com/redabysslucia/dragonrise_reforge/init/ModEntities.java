@@ -129,7 +129,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
-@net.neoforged.fml.common.Mod.EventBusSubscriber(bus = net.neoforged.fml.common.Mod.EventBusSubscriber.Bus.MOD)
+@net.neoforged.fml.common.EventBusSubscriber(bus = net.neoforged.fml.common.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
 
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, Dragonrise_reforge.MODID);
@@ -501,7 +501,7 @@ public class ModEntities {
                     .sized(4.0f, 2.5f)
     );
 
-    public static final RegistryObject<EntityType<FA18EEntity>> FA18E = register("fa18e",
+    public static final DeferredHolder<EntityType<?>, EntityType<FA18EEntity>> FA18E = register("fa18e",
             EntityType.Builder.of(FA18EEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -509,7 +509,7 @@ public class ModEntities {
                     .sized(4.0f, 2.5f)
     );
 
-    public static final RegistryObject<EntityType<Aim120Entity>> AIM120 = register("aim120",
+    public static final DeferredHolder<EntityType<?>, EntityType<Aim120Entity>> AIM120 = register("aim120",
             EntityType.Builder.<Aim120Entity>of((type, level) -> new Aim120Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -517,7 +517,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Agm65CustomEntity>> AGM65 = register("agm65",
+    public static final DeferredHolder<EntityType<?>, EntityType<Agm65CustomEntity>> AGM65 = register("agm65",
             EntityType.Builder.<Agm65CustomEntity>of((type, level) -> new Agm65CustomEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -525,7 +525,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Gbu12Entity>> GBU12 = register("gbu_12",
+    public static final DeferredHolder<EntityType<?>, EntityType<Gbu12Entity>> GBU12 = register("gbu_12",
             EntityType.Builder.<Gbu12Entity>of((type, level) -> new Gbu12Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -533,7 +533,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Aim9Entity>> AIM9 = register("aim9",
+    public static final DeferredHolder<EntityType<?>, EntityType<Aim9Entity>> AIM9 = register("aim9",
             EntityType.Builder.<Aim9Entity>of((type, level) -> new Aim9Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -541,7 +541,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Pl12Entity>> PL12 = register("pl_12",
+    public static final DeferredHolder<EntityType<?>, EntityType<Pl12Entity>> PL12 = register("pl_12",
             EntityType.Builder.<Pl12Entity>of((type, level) -> new Pl12Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -549,7 +549,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Pl15Entity>> PL15 = register("pl_15",
+    public static final DeferredHolder<EntityType<?>, EntityType<Pl15Entity>> PL15 = register("pl_15",
             EntityType.Builder.<Pl15Entity>of((type, level) -> new Pl15Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -557,7 +557,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<R77Entity>> R77 = register("r_77",
+    public static final DeferredHolder<EntityType<?>, EntityType<R77Entity>> R77 = register("r_77",
             EntityType.Builder.<R77Entity>of((type, level) -> new R77Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -565,7 +565,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Pl10Entity>> PL10 = register("pl_10",
+    public static final DeferredHolder<EntityType<?>, EntityType<Pl10Entity>> PL10 = register("pl_10",
             EntityType.Builder.<Pl10Entity>of((type, level) -> new Pl10Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -573,7 +573,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<R73Entity>> R73 = register("r_73",
+    public static final DeferredHolder<EntityType<?>, EntityType<R73Entity>> R73 = register("r_73",
             EntityType.Builder.<R73Entity>of((type, level) -> new R73Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -581,7 +581,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Kd88aEntity>> KD88A = register("kd_88a",
+    public static final DeferredHolder<EntityType<?>, EntityType<Kd88aEntity>> KD88A = register("kd_88a",
             EntityType.Builder.<Kd88aEntity>of((type, level) -> new Kd88aEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -589,7 +589,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Kh29Entity>> KH29 = register("kh_29",
+    public static final DeferredHolder<EntityType<?>, EntityType<Kh29Entity>> KH29 = register("kh_29",
             EntityType.Builder.<Kh29Entity>of((type, level) -> new Kh29Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -597,7 +597,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Gb500Entity>> GB500 = register("gb_500",
+    public static final DeferredHolder<EntityType<?>, EntityType<Gb500Entity>> GB500 = register("gb_500",
             EntityType.Builder.<Gb500Entity>of((type, level) -> new Gb500Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -605,7 +605,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Gbu24Entity>> GBU24 = register("gbu_24",
+    public static final DeferredHolder<EntityType<?>, EntityType<Gbu24Entity>> GBU24 = register("gbu_24",
             EntityType.Builder.<Gbu24Entity>of((type, level) -> new Gbu24Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -613,7 +613,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<JdamErEntity>> JDAM_ER = register("jdam_er",
+    public static final DeferredHolder<EntityType<?>, EntityType<JdamErEntity>> JDAM_ER = register("jdam_er",
             EntityType.Builder.<JdamErEntity>of((type, level) -> new JdamErEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -621,7 +621,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Ls6Entity>> LS6 = register("ls_6",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ls6Entity>> LS6 = register("ls_6",
             EntityType.Builder.<Ls6Entity>of((type, level) -> new Ls6Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -629,7 +629,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Ls6IrEntity>> LS6_IR = register("ls_6_ir",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ls6IrEntity>> LS6_IR = register("ls_6_ir",
             EntityType.Builder.<Ls6IrEntity>of((type, level) -> new Ls6IrEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -637,7 +637,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<Gb250Entity>> GB250 = register("gb_250",
+    public static final DeferredHolder<EntityType<?>, EntityType<Gb250Entity>> GB250 = register("gb_250",
             EntityType.Builder.<Gb250Entity>of((type, level) -> new Gb250Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -645,7 +645,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",
+    public static final DeferredHolder<EntityType<?>, EntityType<SX1Entity>> SX1 = register("sx1",
             EntityType.Builder.of(SX1Entity::new, MobCategory.MISC)
                     .setTrackingRange(255)
                     .setUpdateInterval(2)
@@ -685,7 +685,7 @@ public class ModEntities {
                     .sized(5.0f, 3.5f)
     );
 
-    public static final RegistryObject<EntityType<SU24MEntity>> SU24M = register("su24m",
+    public static final DeferredHolder<EntityType<?>, EntityType<SU24MEntity>> SU24M = register("su24m",
             EntityType.Builder.of(SU24MEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -693,7 +693,7 @@ public class ModEntities {
                     .sized(5.0f, 3.5f)
     );
 
-    public static final RegistryObject<EntityType<TYPE100Entity>> TYPE100 = register("type100",
+    public static final DeferredHolder<EntityType<?>, EntityType<TYPE100Entity>> TYPE100 = register("type100",
             EntityType.Builder.of(TYPE100Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -762,7 +762,7 @@ public class ModEntities {
                     .sized(2.0f, 2.0f)
     );
 
-    public static final RegistryObject<EntityType<GeneratorEntity>> GENERATOR = register("generator",
+    public static final DeferredHolder<EntityType<?>, EntityType<GeneratorEntity>> GENERATOR = register("generator",
             EntityType.Builder.of(GeneratorEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -770,7 +770,7 @@ public class ModEntities {
                     .sized(2.0f, 2.0f)
     );
 
-    public static final RegistryObject<EntityType<TOYOTASEIKIEntity>> TOYOTASEIKI = register("toyota_seiki",
+    public static final DeferredHolder<EntityType<?>, EntityType<TOYOTASEIKIEntity>> TOYOTASEIKI = register("toyota_seiki",
             EntityType.Builder.of(com.redabysslucia.dragonrise_reforge.entities.TOYOTASEIKIEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -1128,7 +1128,7 @@ public class ModEntities {
                     .sized(0.2f, 0.2f)
     );
 
-    public static final RegistryObject<EntityType<AntiTopWireGuideMissileEntity>> ANTI_TOP_WIRE_GUIDE_MISSILE = register("anti_top_wire_guide_missile",
+    public static final DeferredHolder<EntityType<?>, EntityType<AntiTopWireGuideMissileEntity>> ANTI_TOP_WIRE_GUIDE_MISSILE = register("anti_top_wire_guide_missile",
             EntityType.Builder.<AntiTopWireGuideMissileEntity>of((type, level) -> new AntiTopWireGuideMissileEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
@@ -1136,7 +1136,7 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<AKMEEntity>> AKM = register("akm",
+    public static final DeferredHolder<EntityType<?>, EntityType<AKMEEntity>> AKM = register("akm",
             EntityType.Builder.of(AKMEEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1230,7 +1230,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<M1a1hcEntity>> M1A1HC = register("m1a1hc",
+    public static final DeferredHolder<EntityType<?>, EntityType<M1a1hcEntity>> M1A1HC = register("m1a1hc",
             EntityType.Builder.of(M1a1hcEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1238,7 +1238,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<DarkbearEntity>> DARKBEAR = register("darkbear",
+    public static final DeferredHolder<EntityType<?>, EntityType<DarkbearEntity>> DARKBEAR = register("darkbear",
             EntityType.Builder.of(DarkbearEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1246,7 +1246,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
+    public static final DeferredHolder<EntityType<?>, EntityType<HumveetowEntity>> HUMVEETOW = register("humveetow",
             EntityType.Builder.of(HumveetowEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1254,7 +1254,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<Pak40Entity>> PAK40 = register("pak40",
+    public static final DeferredHolder<EntityType<?>, EntityType<Pak40Entity>> PAK40 = register("pak40",
             EntityType.Builder.of(Pak40Entity::new, MobCategory.MISC)
                     .setTrackingRange(1024)
                     .setUpdateInterval(1)
@@ -1262,7 +1262,7 @@ public class ModEntities {
                     .sized(3.0f, 3.0f)
     );
 
-    public static final RegistryObject<EntityType<Ztd05Entity>> ZTD05 = register("ztd05",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ztd05Entity>> ZTD05 = register("ztd05",
             EntityType.Builder.of(Ztd05Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1270,7 +1270,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<Zbd05Entity>> ZBD05 = register("zbd05",
+    public static final DeferredHolder<EntityType<?>, EntityType<Zbd05Entity>> ZBD05 = register("zbd05",
             EntityType.Builder.of(Zbd05Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1278,7 +1278,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<Zsl10Entity>> ZSL10 = register("zsl10",
+    public static final DeferredHolder<EntityType<?>, EntityType<Zsl10Entity>> ZSL10 = register("zsl10",
             EntityType.Builder.of(Zsl10Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1286,7 +1286,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<MarkvEntity>> MARKV = register("markv",
+    public static final DeferredHolder<EntityType<?>, EntityType<MarkvEntity>> MARKV = register("markv",
             EntityType.Builder.of(MarkvEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1294,49 +1294,49 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<Aav7a1Entity>> AAV7A1 = register("aav7a1",
+    public static final DeferredHolder<EntityType<?>, EntityType<Aav7a1Entity>> AAV7A1 = register("aav7a1",
             EntityType.Builder.of(Aav7a1Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Aavc7c1Entity>> AAVC7C1 = register("aavc7c1",
+    public static final DeferredHolder<EntityType<?>, EntityType<Aavc7c1Entity>> AAVC7C1 = register("aavc7c1",
             EntityType.Builder.of(Aavc7c1Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<T72b3Entity>> T72B3 = register("t72b3",
+    public static final DeferredHolder<EntityType<?>, EntityType<T72b3Entity>> T72B3 = register("t72b3",
             EntityType.Builder.of(T72b3Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Ztz96aEntity>> ZTZ96A = register("ztz96a",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ztz96aEntity>> ZTZ96A = register("ztz96a",
             EntityType.Builder.of(Ztz96aEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Mv3Entity>> MV3 = register("mv3",
+    public static final DeferredHolder<EntityType<?>, EntityType<Mv3Entity>> MV3 = register("mv3",
             EntityType.Builder.of(Mv3Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<ChallengerDsEntity>> CHALLENGER_DS = register("challenger_ds",
+    public static final DeferredHolder<EntityType<?>, EntityType<ChallengerDsEntity>> CHALLENGER_DS = register("challenger_ds",
             EntityType.Builder.of(ChallengerDsEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Brdm2Entity>> BRDM2 = register("brdm2",
+    public static final DeferredHolder<EntityType<?>, EntityType<Brdm2Entity>> BRDM2 = register("brdm2",
             EntityType.Builder.of(Brdm2Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1345,68 +1345,68 @@ public class ModEntities {
     );
 
 
-    public static final RegistryObject<EntityType<ClusterChargeEntity>> CLUSTER_CHARGE = register("cluster_charge",
+    public static final DeferredHolder<EntityType<?>, EntityType<ClusterChargeEntity>> CLUSTER_CHARGE = register("cluster_charge",
             EntityType.Builder.<ClusterChargeEntity>of((type, level) -> new ClusterChargeEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(10)
                     .setUpdateInterval(Integer.MAX_VALUE)
                     .sized(0.5f, 0.5f)
     );
 
-    public static final RegistryObject<EntityType<R6DroneEntity>> R6_DRONE = register("r6_drone",
+    public static final DeferredHolder<EntityType<?>, EntityType<R6DroneEntity>> R6_DRONE = register("r6_drone",
             EntityType.Builder.<R6DroneEntity>of((type, level) -> new R6DroneEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .sized(0.4f, 0.2f)
     );
-    public static final RegistryObject<EntityType<AttackDroneEntity>> ATTACK_DRONE = register("attack_drone",
+    public static final DeferredHolder<EntityType<?>, EntityType<AttackDroneEntity>> ATTACK_DRONE = register("attack_drone",
             EntityType.Builder.<AttackDroneEntity>of((type, level) -> new AttackDroneEntity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .sized(0.4f, 0.2f)
     );
-    public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Ural4320Entity>> URAL4320 = register("ural4320",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ural4320Entity>> URAL4320 = register("ural4320",
             EntityType.Builder.of(Ural4320Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Ural4320SupplyEntity>> URAL4320_SUPPLY = register("ural4320_supply",
+    public static final DeferredHolder<EntityType<?>, EntityType<Ural4320SupplyEntity>> URAL4320_SUPPLY = register("ural4320_supply",
             EntityType.Builder.of(Ural4320SupplyEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Mv3ArmedEntity>> MV3_ARMED = register("mv3_armed",
+    public static final DeferredHolder<EntityType<?>, EntityType<Mv3ArmedEntity>> MV3_ARMED = register("mv3_armed",
             EntityType.Builder.of(Mv3ArmedEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Mv3SupplyEntity>> MV3_SUPPLY = register("mv3_supply",
+    public static final DeferredHolder<EntityType<?>, EntityType<Mv3SupplyEntity>> MV3_SUPPLY = register("mv3_supply",
             EntityType.Builder.of(Mv3SupplyEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<F15eEntity>> F15E = register("f15e",
+    public static final DeferredHolder<EntityType<?>, EntityType<F15eEntity>> F15E = register("f15e",
             EntityType.Builder.of(F15eEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Mi24vEntity>> MI24V = register("mi24v",
+    public static final DeferredHolder<EntityType<?>, EntityType<Mi24vEntity>> MI24V = register("mi24v",
             EntityType.Builder.of(Mi24vEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
@@ -1414,7 +1414,7 @@ public class ModEntities {
                     .sized(4.0f, 2.9f)
     );
 
-    private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
+    private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }
 

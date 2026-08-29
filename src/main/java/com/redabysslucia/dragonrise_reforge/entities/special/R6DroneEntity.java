@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities.special;
 
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -29,7 +30,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
-import net.neoforged.neoforge.network.NetworkHooks;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 import java.util.Optional;
@@ -75,16 +75,15 @@ public class R6DroneEntity extends Entity {
      * （客户端监听 = 主相机 = 无人机视角，距离 0 → 全音量），
      * 避免服务端 PlayerList.broadcast 按玩家实体位置过滤导致控制者收不到包。
      */
-    private void playDroneSound(RegistryObject<SoundEvent> sound, float volume) {
+    private void playDroneSound(DeferredHolder<SoundEvent, SoundEvent> sound, float volume) {
         if (this.level().isClientSide()) return;
         Player controller = this.getController();
         if (controller instanceof ServerPlayer sp && this.isMonitorControlling(controller)) {
-            sound.getHolder().ifPresent(holder ->
-                    sp.connection.send(new ClientboundSoundPacket(
-                            holder,
-                            SoundSource.PLAYERS,
-                            this.getX(), this.getY(), this.getZ(),
-                            volume, 1.0f, this.level().getRandom().nextLong())));
+            sp.connection.send(new ClientboundSoundPacket(
+                    net.minecraft.core.Holder.direct(sound.get()),
+                    SoundSource.PLAYERS,
+                    this.getX(), this.getY(), this.getZ(),
+                    volume, 1.0f, this.level().getRandom().nextLong()));
         } else {
             this.level().playSound(null, this.getX(), this.getY(), this.getZ(),
                     sound.get(), SoundSource.PLAYERS, volume, 1.0f);
@@ -147,8 +146,12 @@ public class R6DroneEntity extends Entity {
     public R6DroneEntity(EntityType<? extends R6DroneEntity> type, Level level) {
         super(type, level);
         // 原版 Entity.maxUpStep 默认 0.0f，move() 台阶逻辑要求 > 0 才生效。
-        // 设为 0.6 让无人车可以爬上 0.5 格的半砖/台阶。
-        this.setMaxUpStep(0.6f);
+        // 设为 0.6 让无人车可以爬上 0.5 格的半砖/台阶（1.21: maxUpStep 改为方法，需覆写）。
+    }
+
+    @Override
+    public float maxUpStep() {
+        return 0.6f;
     }
 
     @Override
@@ -259,7 +262,9 @@ public class R6DroneEntity extends Entity {
             if (!player.isShiftKeyDown()) {
                 if (this.getController() == null) {
                     this.entityData.set(CONTROLLER, Optional.of(player.getUUID()));
-                    MonitorItem.link(stack, this.getStringUUID());
+                    CompoundTag tag = NBTTool.getTag(stack);
+                    MonitorItem.link(tag, this.getStringUUID());
+                    NBTTool.saveTag(stack, tag);
                     player.displayClientMessage(
                             Component.translatable("tips.superbwarfare.monitor.linked").withStyle(ChatFormatting.GREEN), true);
                     if (!this.level().isClientSide()) {
@@ -289,9 +294,11 @@ public class R6DroneEntity extends Entity {
         if (controller != null) {
             ItemStack ctrlStack = controller.getMainHandItem();
             if (ctrlStack.is(ModItems.MONITOR.get())) {
-                String linked = ctrlStack.getOrCreateTag().getString(MonitorItem.LINKED_DRONE);
+                String linked = NBTTool.getTag(ctrlStack).getString(MonitorItem.LINKED_DRONE);
                 if (linked.equals(this.getStringUUID())) {
-                    MonitorItem.disLink(ctrlStack, controller);
+                    CompoundTag tag = NBTTool.getTag(ctrlStack);
+                    MonitorItem.disLink(tag, controller);
+                    NBTTool.saveTag(ctrlStack, tag);
                 }
             }
         }
@@ -327,9 +334,11 @@ public class R6DroneEntity extends Entity {
             if (stack.is(ModItems.MONITOR.get())) {
                 // 仅当 monitor 当前链接的确实是本无人车时才解除，
                 // 否则场景中有多辆无人车时打掉任意一辆会误断当前遥控的链接。
-                String linked = stack.getOrCreateTag().getString(MonitorItem.LINKED_DRONE);
+                String linked = NBTTool.getTag(stack).getString(MonitorItem.LINKED_DRONE);
                 if (linked.equals(this.getStringUUID())) {
-                    MonitorItem.disLink(stack, controller);
+                    CompoundTag tag = NBTTool.getTag(stack);
+                    MonitorItem.disLink(tag, controller);
+                    NBTTool.saveTag(stack, tag);
                 }
             }
         }
@@ -422,8 +431,8 @@ public class R6DroneEntity extends Entity {
     public boolean isMonitorControlling(Player player) {
         ItemStack stack = player.getMainHandItem();
         return stack.is(ModItems.MONITOR.get())
-                && stack.getOrCreateTag().getBoolean(MonitorItem.USING)
-                && stack.getOrCreateTag().getBoolean(MonitorItem.LINKED);
+                && NBTTool.getTag(stack).getBoolean(MonitorItem.USING)
+                && NBTTool.getTag(stack).getBoolean(MonitorItem.LINKED);
     }
 
     /** 渲染插值位置（相机/车身使用）。
@@ -503,11 +512,6 @@ public class R6DroneEntity extends Entity {
     @Override
     public boolean isPickable() {
         return !this.isRemoved();
-    }
-
-    @Override
-    public Packet<ClientGamePacketListener> getAddEntityPacket() {
-        return NetworkHooks.getEntitySpawningPacket(this);
     }
 
     // ---- 存档 ----

@@ -14,8 +14,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 
 @OnlyIn(Dist.CLIENT)
 public class SupplyProgressOverlay implements LayeredDraw.Layer {

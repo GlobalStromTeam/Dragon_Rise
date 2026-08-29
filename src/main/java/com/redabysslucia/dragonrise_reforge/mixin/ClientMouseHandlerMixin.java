@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.mixin;
 import com.atsuishio.superbwarfare.event.ClientMouseHandler;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -28,7 +29,7 @@ public class ClientMouseHandlerMixin {
 
         ItemStack stack = player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) return;
-        var tag = stack.getOrCreateTag();
+        var tag = NBTTool.getTag(stack);
         if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
         if (R6DroneEntity.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE)) != null) {

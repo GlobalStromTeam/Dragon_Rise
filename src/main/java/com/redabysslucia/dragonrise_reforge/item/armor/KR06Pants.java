@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.KR06PantsModel;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.KR06PantsModel;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.KR06PantsRenderer;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;

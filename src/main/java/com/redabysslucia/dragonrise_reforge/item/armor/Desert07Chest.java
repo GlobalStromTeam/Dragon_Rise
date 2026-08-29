@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.Desert07ChestModel;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.Desert07ChestModel;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.Desert07ChestRenderer;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;

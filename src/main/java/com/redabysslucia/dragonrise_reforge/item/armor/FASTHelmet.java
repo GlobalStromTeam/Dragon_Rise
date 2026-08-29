@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.FASTHelmetModel;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.FASTHelmetModel;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.FASTHelmetRenderer;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;

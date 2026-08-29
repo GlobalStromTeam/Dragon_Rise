@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.mixin;
 
 import com.atsuishio.superbwarfare.init.ModItems;
+import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import net.minecraft.client.Camera;
 import net.minecraft.client.CameraType;
@@ -48,10 +50,10 @@ public abstract class R6DroneCameraMixin {
         ItemStack stack = player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) return;
 
-        CompoundTag tag = stack.getOrCreateTag();
-        if (!tag.getBoolean("Using") || !tag.getBoolean("Linked")) return;
+        CompoundTag tag = NBTTool.getTag(stack);
+        if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
-        R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), tag.getString("LinkedDrone"));
+        R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
         if (drone == null) return;
 
         // 相机旋转 = 控制者玩家视角（原生即时，无 SBW 的平滑/滞后）

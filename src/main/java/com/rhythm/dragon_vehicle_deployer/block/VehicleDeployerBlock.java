@@ -1,6 +1,7 @@
 package com.rhythm.dragon_vehicle_deployer.block;
 
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import com.rhythm.dragon_vehicle_deployer.DragonVehicleDeployer;
 import com.rhythm.dragon_vehicle_deployer.block.entity.VehicleDeployerBlockEntity;
@@ -37,7 +38,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.network.NetworkHooks;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import javax.annotation.Nullable;
@@ -128,9 +128,9 @@ public class VehicleDeployerBlock extends BaseEntityBlock {
         // 普通右键：写入载具信息（需要创造模式和容器物品）
         if (!player.isCreative()) return ItemInteractionResult.FAIL;
 
-        var stack = player.getItemInHand(hand);
-        Item containerItem = ForgeRegistries.ITEMS.getValue(ResourceLocation.fromNamespaceAndPath("superbwarfare", "container"));
-        if (containerItem == null || stack.getItem() != containerItem) {
+        var heldStack = player.getItemInHand(hand);
+        Item containerItem = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("superbwarfare", "container"));
+        if (containerItem == null || heldStack.getItem() != containerItem) {
             player.displayClientMessage(Component.translatable("des.superbwarfare.vehicle_deployer.fail").withStyle(ChatFormatting.RED), true);
             return ItemInteractionResult.FAIL;
         }

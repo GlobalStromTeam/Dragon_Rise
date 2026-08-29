@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.atsuishio.superbwarfare.Mod;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
 import com.atsuishio.superbwarfare.tiers.ModArmorMaterial;
 import com.google.common.collect.HashMultimap;

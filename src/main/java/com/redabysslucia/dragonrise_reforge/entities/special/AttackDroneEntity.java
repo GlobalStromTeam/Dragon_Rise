@@ -90,7 +90,7 @@ public class AttackDroneEntity extends R6DroneEntity {
         // 无法 getValue 拿 SoundEvent —— 直接构造同名 SoundEvent 即可，
         // 客户端按 location 从 sounds.json 解析播放。
         var fireSound = net.minecraft.sounds.SoundEvent.createVariableRangeEvent(
-                new net.minecraft.resources.ResourceLocation("superbwarfare", "awm_fire_1p_s"));
+                net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("superbwarfare", "awm_fire_1p_s"));
         // 经 playDroneSound 遥控者专用包（客户端监听 = 主相机 = 无人机视角，音源在无人车处 → 距离 0 全音量）
         this.playDroneSound(fireSound, 1.0f);
     }

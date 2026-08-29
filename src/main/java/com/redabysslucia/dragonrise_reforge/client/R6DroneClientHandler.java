@@ -1,8 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.client;
 
-import com.atsuishio.superbwarfare.init.ModItems;
+
+
+import net.neoforged.neoforge.network.PacketDistributor;import net.neoforged.fml.common.EventBusSubscriber;import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.init.ModKeyMappings;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.client.sound.R6DroneLoopSoundInstance;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
@@ -16,7 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.client.event.InputEvent;
-import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 
@@ -30,7 +33,7 @@ import net.neoforged.fml.common.Mod;
  *    会被原版攻击逻辑消耗，MouseButton 事件更可靠。
  */
 @OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class R6DroneClientHandler {
 
     private static short lastKeys = -1;
@@ -48,7 +51,7 @@ public class R6DroneClientHandler {
         if (mc.player == null || mc.level == null) return;
         ItemStack stack = mc.player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) return;
-        var tag = stack.getTag();
+        var tag = NBTTool.getTag(stack);
         if (tag == null || !tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
         if (R6DroneEntity.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE)) == null) return;
         if (event.getButton() == 0) {
@@ -58,8 +61,7 @@ public class R6DroneClientHandler {
     }
 
     @SubscribeEvent
-    public static void onClientTick(TickEvent.ClientTickEvent event) {
-        if (event.phase != TickEvent.Phase.END) return;
+    public static void onClientTick(ClientTickEvent.Post event) {
 
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
@@ -74,7 +76,7 @@ public class R6DroneClientHandler {
             stopLoop(mc);
             return;
         }
-        CompoundTag tag = stack.getTag();
+        CompoundTag tag = NBTTool.getTag(stack);
         if (tag == null || !tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) {
             lastKeys = -1;
             stopLoop(mc);
@@ -99,7 +101,7 @@ public class R6DroneClientHandler {
 
         if (keys != lastKeys) {
             lastKeys = keys;
-            ModNetwork.PACKET_HANDLER.sendToServer(new R6DroneControlMessage(keys));
+            PacketDistributor.sendToServer(new R6DroneControlMessage(keys));
         }
 
         // ---- 移动循环音 ----

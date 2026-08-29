@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.mojang.blaze3d.platform.InputConstants;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.mojang.blaze3d.platform.InputConstants;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
@@ -13,7 +14,7 @@ import org.lwjgl.glfw.GLFW;
 
 import java.util.function.BiConsumer;
 
-@EventBusSubscriber(value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public enum ModKeyMappings {
 
     // NIGHT_VISION("nightvisionkey",GLFW.GLFW_KEY_X,"Toggle Realistic Night Vision Mode"),

@@ -1,11 +1,12 @@
 package com.rhythm.dragon_vehicle_deployer;
 
-import com.redabysslucia.dragonrise_reforge.client.overlay.HJ8Overlay;
-import com.rhythm.dragon_vehicle_deployer.block.VehicleDeployerBlock;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.rhythm.dragon_vehicle_deployer.block.VehicleDeployerBlock;
 import com.rhythm.dragon_vehicle_deployer.block.entity.VehicleDeployerBlockEntity;
 import com.rhythm.dragon_vehicle_deployer.client.screen.DeployerConfigScreen;
 import com.rhythm.dragon_vehicle_deployer.menu.ModMenuTypes;
 import com.rhythm.dragon_vehicle_deployer.network.ModNetwork;
+import com.redabysslucia.dragonrise_reforge.client.overlay.HJ8Overlay;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -16,18 +17,21 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.neoforged.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -46,10 +50,11 @@ public class DragonVehicleDeployer {
     public static final DeferredHolder<Item, Item> VEHICLE_DEPLOYER_BLOCK_ITEM = ITEMS.register("vehicle_deployer", () -> new BlockItem(VEHICLE_DEPLOYER_BLOCK.get(), new Item.Properties()));
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<VehicleDeployerBlockEntity>> VEHICLE_DEPLOYER_BLOCK_ENTITY = BLOCK_ENTITY_TYPES.register("vehicle_deployer", () -> BlockEntityType.Builder.of(VehicleDeployerBlockEntity::new, VEHICLE_DEPLOYER_BLOCK.get()).build(null));
 
-    public static void register(IEventBus modEventBus) {
+    public static void register(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(DragonVehicleDeployer::commonSetup);
+        modEventBus.addListener(ModNetwork::register);
 
-        net.neoforged.fml.ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
@@ -76,12 +81,7 @@ public class DragonVehicleDeployer {
         LOGGER.info("DRAGON VEHICLE DEPLOYER: Server starting");
     }
 
-    @SubscribeEvent
-    public static void registerOverlays(net.neoforged.neoforge.client.event.RegisterGuiOverlaysEvent event) {
-        event.registerBelowAll(HJ8Overlay.ID, new HJ8Overlay());
-    }
-
-    @EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onRegisterMenuScreens(RegisterMenuScreensEvent event) {

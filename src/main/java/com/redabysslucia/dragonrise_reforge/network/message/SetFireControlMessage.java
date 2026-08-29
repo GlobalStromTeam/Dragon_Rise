@@ -1,16 +1,24 @@
 package com.redabysslucia.dragonrise_reforge.network.message;
 
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import com.redabysslucia.dragonrise_reforge.firecontrol.TrajectoryMode;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
-import net.neoforged.neoforge.network.NetworkEvent;
+import net.minecraft.world.entity.player.Player;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-import java.util.function.Supplier;
+public class SetFireControlMessage implements CustomPacketPayload {
 
-public class SetFireControlMessage {
+    public static final CustomPacketPayload.Type<SetFireControlMessage> TYPE =
+            new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "set_fire_control"));
+
+    public static final StreamCodec<RegistryFriendlyByteBuf, SetFireControlMessage> STREAM_CODEC =
+            StreamCodec.of(SetFireControlMessage::encode, SetFireControlMessage::decode);
 
     private final int entityId;
     private final boolean clear;
@@ -36,7 +44,7 @@ public class SetFireControlMessage {
         return new SetFireControlMessage(entityId, true, BlockPos.ZERO, 0, TrajectoryMode.LOW, false);
     }
 
-    public static void encode(SetFireControlMessage msg, FriendlyByteBuf buf) {
+    public static void encode(RegistryFriendlyByteBuf buf, SetFireControlMessage msg) {
         buf.writeVarInt(msg.entityId);
         buf.writeBoolean(msg.clear);
         if (!msg.clear) {
@@ -47,7 +55,7 @@ public class SetFireControlMessage {
         }
     }
 
-    public static SetFireControlMessage decode(FriendlyByteBuf buf) {
+    public static SetFireControlMessage decode(RegistryFriendlyByteBuf buf) {
         int entityId = buf.readVarInt();
         boolean clear = buf.readBoolean();
         if (clear) {
@@ -60,9 +68,14 @@ public class SetFireControlMessage {
         return new SetFireControlMessage(entityId, false, target, radius, trajectoryMode, takeover);
     }
 
-    public static void handle(SetFireControlMessage msg, Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> {
-            ServerPlayer player = ctx.get().getSender();
+    @Override
+    public CustomPacketPayload.Type<? extends CustomPacketPayload> type() {
+        return TYPE;
+    }
+
+    public static void handle(SetFireControlMessage msg, IPayloadContext ctx) {
+        ctx.enqueueWork(() -> {
+            Player player = ctx.player();
             if (player == null) return;
             Entity entity = player.level().getEntity(msg.entityId);
             if (!(entity instanceof IndirectFireVehicleBase vehicle)) return;
@@ -77,6 +90,5 @@ public class SetFireControlMessage {
                 }
             }
         });
-        ctx.get().setPacketHandled(true);
     }
 }

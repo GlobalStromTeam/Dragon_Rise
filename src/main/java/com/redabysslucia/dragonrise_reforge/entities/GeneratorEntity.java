@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+
+import net.minecraft.network.syncher.SynchedEntityData;import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.inventory.menu.ChargingStationMenu;
 import com.atsuishio.superbwarfare.network.dataslot.ContainerEnergyData;
 import com.redabysslucia.dragonrise_reforge.config.server.MiscConfig;
@@ -21,11 +22,9 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.common.ForgeHooks;
-import net.neoforged.neoforge.common.capabilities.Capability;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.common.util.LazyOptional;
 import net.neoforged.neoforge.energy.EnergyStorage;
+import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.items.IItemHandlerModifiable;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
@@ -42,7 +41,7 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
     public static final int CHARGE_RADIUS = MiscConfig.CHARGING_STATION_CHARGE_RADIUS;
 
     private final NonNullList<ItemStack> generatorItems = NonNullList.withSize(2, ItemStack.EMPTY);
-    private LazyOptional<EnergyStorage> energyHandler;
+    private final EnergyStorage energyStorage = new EnergyStorage(MAX_ENERGY);
     private final ItemStackHandler itemHandler = new ItemStackHandler(2);
 
     public int fuelTick = 0;
@@ -55,12 +54,7 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
             return switch (index) {
                 case 0 -> GeneratorEntity.this.fuelTick;
                 case 1 -> GeneratorEntity.this.maxFuelTick;
-                case 2 -> {
-                    int[] energy = {0};
-                    GeneratorEntity.this.getCapability(ForgeCapabilities.ENERGY)
-                            .ifPresent(e -> energy[0] = e.getEnergyStored());
-                    yield energy[0];
-                }
+                case 2 -> GeneratorEntity.this.energyStorage.getEnergyStored();
                 case 3 -> GeneratorEntity.this.showRange ? 1L : 0L;
                 default -> 0L;
             };
@@ -71,8 +65,7 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
             switch (index) {
                 case 0 -> GeneratorEntity.this.fuelTick = (int) value;
                 case 1 -> GeneratorEntity.this.maxFuelTick = (int) value;
-                case 2 -> GeneratorEntity.this.getCapability(ForgeCapabilities.ENERGY)
-                        .ifPresent(e -> e.receiveEnergy((int) value, false));
+                case 2 -> GeneratorEntity.this.energyStorage.receiveEnergy((int) value, false);
                 case 3 -> GeneratorEntity.this.showRange = value == 1L;
             }
         }
@@ -85,7 +78,6 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
 
     public GeneratorEntity(EntityType<? extends GeneratorEntity> type, Level level) {
         super(type, level);
-        this.energyHandler = LazyOptional.of(() -> new EnergyStorage(MAX_ENERGY));
     }
 
     @Override
@@ -117,12 +109,12 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
 
         AABB searchBox = this.getBoundingBox().inflate(CHARGE_RADIUS);
         this.level().getEntitiesOfClass(Entity.class, searchBox).forEach(entity -> {
-            entity.getCapability(ForgeCapabilities.ENERGY).ifPresent(cap -> {
-                if (cap.canReceive()) {
-                    int charged = cap.receiveEnergy(Math.min(handler.getEnergyStored(), CHARGE_OTHER_SPEED * 20), false);
-                    handler.extractEnergy(charged, false);
-                }
-            });
+            IEnergyStorage cap = entity.getCapability(Capabilities.EnergyStorage.ENTITY, null);
+            if (cap == null) return;
+            if (cap.canReceive()) {
+                int charged = cap.receiveEnergy(Math.min(handler.getEnergyStored(), CHARGE_OTHER_SPEED * 20), false);
+                handler.extractEnergy(charged, false);
+            }
         });
         this.setChanged();
     }
@@ -131,12 +123,12 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
         ItemStack stack = generatorItems.get(SLOT_CHARGE);
         if (stack.isEmpty()) return;
 
-        stack.getCapability(ForgeCapabilities.ENERGY).ifPresent(cap -> {
-            if (cap.getEnergyStored() < cap.getMaxEnergyStored()) {
-                int charged = cap.receiveEnergy(Math.min(CHARGE_OTHER_SPEED, handler.getEnergyStored()), false);
-                handler.extractEnergy(Math.min(charged, handler.getEnergyStored()), false);
-            }
-        });
+        IEnergyStorage cap = stack.getCapability(Capabilities.EnergyStorage.ITEM);
+        if (cap == null) return;
+        if (cap.getEnergyStored() < cap.getMaxEnergyStored()) {
+            int charged = cap.receiveEnergy(Math.min(CHARGE_OTHER_SPEED, handler.getEnergyStored()), false);
+            handler.extractEnergy(Math.min(charged, handler.getEnergyStored()), false);
+        }
         this.setChanged();
     }
 
@@ -145,19 +137,22 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
 
         BlockPos pos = new BlockPos((int) this.getX(), (int) this.getY(), (int) this.getZ());
         for (Direction dir : Direction.values()) {
-            BlockEntity be = this.level().getBlockEntity(pos.relative(dir));
-            if (be == null || !be.getCapability(ForgeCapabilities.ENERGY).isPresent()) {
+            BlockPos target = pos.relative(dir);
+            BlockEntity be = this.level().getBlockEntity(target);
+            if (be == null) {
                 continue;
             }
-
-            be.getCapability(ForgeCapabilities.ENERGY).ifPresent(cap -> {
-                if (cap.canReceive() && cap.getEnergyStored() < cap.getMaxEnergyStored()) {
-                    int received = cap.receiveEnergy(Math.min(handler.getEnergyStored(), CHARGE_OTHER_SPEED), false);
-                    handler.extractEnergy(received, false);
-                    be.setChanged();
-                    this.setChanged();
-                }
-            });
+            IEnergyStorage cap = this.level().getCapability(Capabilities.EnergyStorage.BLOCK, target,
+                    be.getBlockState(), be, dir);
+            if (cap == null) {
+                continue;
+            }
+            if (cap.canReceive() && cap.getEnergyStored() < cap.getMaxEnergyStored()) {
+                int received = cap.receiveEnergy(Math.min(handler.getEnergyStored(), CHARGE_OTHER_SPEED), false);
+                handler.extractEnergy(received, false);
+                be.setChanged();
+                this.setChanged();
+            }
         }
     }
 
@@ -171,46 +166,34 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
 
         this.setDeltaMovement(this.getDeltaMovement().scale(0.85));
 
-        energyHandler.ifPresent(handler -> {
-            if (handler.getEnergyStored() > 0) {
-                chargeEntity(handler);
-            }
-            if (handler.getEnergyStored() > 0) {
-                chargeItemStack(handler);
-            }
-            if (handler.getEnergyStored() > 0) {
-                chargeBlock(handler);
-            }
-        });
+        EnergyStorage handler = this.energyStorage;
+        if (handler.getEnergyStored() > 0) {
+            chargeEntity(handler);
+        }
+        if (handler.getEnergyStored() > 0) {
+            chargeItemStack(handler);
+        }
+        if (handler.getEnergyStored() > 0) {
+            chargeBlock(handler);
+        }
 
         if (fuelTick > 0) {
             fuelTick--;
-            energyHandler.ifPresent(handler -> {
-                if (handler.getEnergyStored() < handler.getMaxEnergyStored()) {
-                    handler.receiveEnergy(CHARGE_SPEED, false);
-                }
-            });
+            if (handler.getEnergyStored() < handler.getMaxEnergyStored()) {
+                handler.receiveEnergy(CHARGE_SPEED, false);
+            }
         } else if (!generatorItems.get(SLOT_FUEL).isEmpty()) {
-            int[] flag = {0};
-            energyHandler.ifPresent(handler -> {
-                if (handler.getEnergyStored() >= handler.getMaxEnergyStored()) {
-                    flag[0] = 1;
-                }
-            });
-            if (flag[0] == 1) return;
+            if (handler.getEnergyStored() >= handler.getMaxEnergyStored()) return;
 
             ItemStack fuel = generatorItems.get(SLOT_FUEL);
-            int burnTime = ForgeHooks.getBurnTime(fuel, RecipeType.SMELTING);
+            int burnTime = fuel.getBurnTime(RecipeType.SMELTING);
 
-            if (fuel.getCapability(ForgeCapabilities.ENERGY).isPresent()) {
-                fuel.getCapability(ForgeCapabilities.ENERGY).ifPresent(itemEnergy -> {
-                    energyHandler.ifPresent(handler -> {
-                        int toExtract = Math.min(CHARGE_OTHER_SPEED, handler.getMaxEnergyStored() - handler.getEnergyStored());
-                        if (itemEnergy.canExtract() && handler.canReceive()) {
-                            handler.receiveEnergy(itemEnergy.extractEnergy(toExtract, false), false);
-                        }
-                    });
-                });
+            IEnergyStorage itemEnergy = fuel.getCapability(Capabilities.EnergyStorage.ITEM);
+            if (itemEnergy != null) {
+                int toExtract = Math.min(CHARGE_OTHER_SPEED, handler.getMaxEnergyStored() - handler.getEnergyStored());
+                if (itemEnergy.canExtract() && handler.canReceive()) {
+                    handler.receiveEnergy(itemEnergy.extractEnergy(toExtract, false), false);
+                }
                 this.setChanged();
             } else if (burnTime > 0) {
                 fuelTick = burnTime;
@@ -231,22 +214,22 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
                     fuel.shrink(1);
                 }
                 this.setChanged();
-            } else if (fuel.getItem().isEdible()) {
-                var properties = fuel.getFoodProperties(null);
-                if (properties == null) return;
+            } else {
+                var food = fuel.get(net.minecraft.core.component.DataComponents.FOOD);
+                if (food != null) {
+                    int nutrition = food.nutrition();
+                    float saturation = food.saturation() * 2.0f * nutrition;
+                    int tick = nutrition * 80 + (int) (saturation * 200);
 
-                int nutrition = properties.getNutrition();
-                float saturation = properties.getSaturationModifier() * 2.0f * nutrition;
-                int tick = nutrition * 80 + (int) (saturation * 200);
+                    if (fuel.hasCraftingRemainingItem()) {
+                        tick += 400;
+                    }
 
-                if (fuel.hasCraftingRemainingItem()) {
-                    tick += 400;
+                    fuel.shrink(1);
+                    fuelTick = tick;
+                    maxFuelTick = tick;
+                    this.setChanged();
                 }
-
-                fuel.shrink(1);
-                fuelTick = tick;
-                maxFuelTick = tick;
-                this.setChanged();
             }
         }
     }
@@ -256,14 +239,16 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
         super.readAdditionalSaveData(compound);
 
         if (compound.contains("Energy")) {
-            getCapability(ForgeCapabilities.ENERGY).ifPresent(e -> ((EnergyStorage) e).deserializeNBT(compound.get("Energy")));
+            if (compound.contains("Energy")) {
+                this.energyStorage.deserializeNBT(this.registryAccess(), compound.get("Energy"));
+            }
         }
         fuelTick = compound.getInt("FuelTick");
         maxFuelTick = compound.getInt("MaxFuelTick");
         showRange = compound.getBoolean("ShowRange");
         generatorItems.clear();
         for (int i = 0; i < 2; i++) {
-            generatorItems.add(ItemStack.of(compound.getCompound("Item" + i)));
+            generatorItems.add(ItemStack.parseOptional(this.registryAccess(), compound.getCompound("Item" + i)));
         }
     }
 
@@ -271,12 +256,12 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
     public void addAdditionalSaveData(@NotNull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
 
-        getCapability(ForgeCapabilities.ENERGY).ifPresent(e -> compound.put("Energy", ((EnergyStorage) e).serializeNBT()));
+        compound.put("Energy", this.energyStorage.serializeNBT(this.registryAccess()));
         compound.putInt("FuelTick", fuelTick);
         compound.putInt("MaxFuelTick", maxFuelTick);
         compound.putBoolean("ShowRange", showRange);
         for (int i = 0; i < generatorItems.size(); i++) {
-            compound.put("Item" + i, generatorItems.get(i).serializeNBT());
+            compound.put("Item" + i, generatorItems.get(i).save(this.registryAccess(), new CompoundTag()));
         }
     }
 
@@ -305,7 +290,7 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
 
     public void setGeneratorItem(int slot, ItemStack stack) {
         ItemStack itemstack = generatorItems.get(slot);
-        boolean flag = !stack.isEmpty() && ItemStack.isSameItemSameTags(itemstack, stack);
+        boolean flag = !stack.isEmpty() && ItemStack.isSameItemSameComponents(itemstack, stack);
         generatorItems.set(slot, stack);
         if (stack.getCount() > getMaxStackSize()) {
             stack.setCount(getMaxStackSize());
@@ -329,27 +314,9 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
         return new ChargingStationMenu(containerId, playerInventory, new GeneratorContainerBridge(this), this.dataAccess);
     }
 
-    @Override
-    public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
-        if (cap == ForgeCapabilities.ENERGY) {
-            return energyHandler.cast();
-        }
-        if (!this.isRemoved() && cap == ForgeCapabilities.ITEM_HANDLER) {
-            return LazyOptional.of(() -> itemHandler).cast();
-        }
-        return super.getCapability(cap, side);
-    }
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        energyHandler.invalidate();
-    }
-
-    @Override
-    public void reviveCaps() {
-        super.reviveCaps();
-        energyHandler = LazyOptional.of(() -> new EnergyStorage(MAX_ENERGY));
+    /** NeoForge 1.21 通过 RegisterCapabilitiesEvent 注册能力，这里只暴露存储本身。 */
+    public EnergyStorage getEnergyStorage() {
+        return this.energyStorage;
     }
 
     public static class GeneratorContainerBridge implements net.minecraft.world.Container {

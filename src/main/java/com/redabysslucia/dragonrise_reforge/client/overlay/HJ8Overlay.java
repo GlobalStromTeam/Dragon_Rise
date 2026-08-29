@@ -17,8 +17,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 
 import static com.atsuishio.superbwarfare.client.RenderHelper.preciseBlit;
 

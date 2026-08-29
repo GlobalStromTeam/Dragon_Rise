@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
+
+import net.minecraft.network.syncher.SynchedEntityData;import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;

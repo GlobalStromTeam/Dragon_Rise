@@ -29,7 +29,7 @@ public class ClusterChargeItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, Level level, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
+    public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag isAdvanced) {
         tooltipComponents.add(Component.translatable("des.dragonrise_reforge.cluster_charge").withStyle(ChatFormatting.GRAY));
     }
 

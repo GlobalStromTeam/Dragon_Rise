@@ -1,6 +1,7 @@
 package com.rhythm.dragon_vehicle_deployer.client.screen;
 
-import com.rhythm.dragon_vehicle_deployer.menu.DeployerConfigMenu;
+
+import net.neoforged.neoforge.network.PacketDistributor;import com.rhythm.dragon_vehicle_deployer.menu.DeployerConfigMenu;
 import com.rhythm.dragon_vehicle_deployer.network.DeployerSettingsPacket;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;

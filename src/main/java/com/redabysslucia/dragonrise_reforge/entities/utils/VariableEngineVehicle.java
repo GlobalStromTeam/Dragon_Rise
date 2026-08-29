@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities.utils;
 
-import com.atsuishio.superbwarfare.Mod;
+
+import net.minecraft.network.syncher.SynchedEntityData;import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.data.DataLoader;
 import com.atsuishio.superbwarfare.data.vehicle.DefaultVehicleData;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;

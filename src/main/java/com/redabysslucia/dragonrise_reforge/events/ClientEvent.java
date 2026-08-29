@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.events;
 
-import com.atsuishio.superbwarfare.client.RenderHelper;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.atsuishio.superbwarfare.client.RenderHelper;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.GunProp;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
@@ -19,8 +20,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.neoforge.client.event.RenderGuiOverlayEvent;
-import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.client.event.RenderFrameEvent;
+import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -45,7 +46,7 @@ import java.util.UUID;
  * 由服务端在炸弹生成时通过 OwnBombMessage 通知 UUID（见 CommonEvent），
  * 客户端用 UUID 集合判断"是本玩家投下的炸弹"。
  */
-@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class ClientEvent {
     private static float lastSyncCameraYRot = 0;
     private static float lastSyncCameraXRot = 0;
@@ -185,7 +186,7 @@ public class ClientEvent {
 
     /** 投弹吊舱视角（UseNacelleCamera 缩放中）显示提前落点计算环 */
     @SubscribeEvent
-    public static void onRenderGuiOverlayPost(RenderGuiOverlayEvent.Post event) {
+    public static void onRenderGuiOverlayPost(RenderGuiLayerEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null) return;
@@ -200,7 +201,7 @@ public class ClientEvent {
         Vec3 bombN = ClientEventHandler.bombHitPos;
         if (bombO.equals(Vec3.ZERO) && bombN.equals(Vec3.ZERO)) return;
 
-        float pt = event.getPartialTick();
+        float pt = event.getPartialTick().getRealtimeDeltaTicks();
         Vec3 pos = new Vec3(
                 Mth.lerp(pt, bombO.x, bombN.x),
                 Mth.lerp(pt, bombO.y, bombN.y),
@@ -236,7 +237,7 @@ public class ClientEvent {
      * 屏幕边缘并始终指向目标点。从投弹到爆炸全程显示。
      */
     @SubscribeEvent
-    public static void onRenderBombLockFrame(RenderGuiOverlayEvent.Post event) {
+    public static void onRenderBombLockFrame(RenderGuiLayerEvent.Post event) {
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
         if (player == null || player.level() == null) return;
@@ -245,7 +246,7 @@ public class ClientEvent {
         refreshBombList(player);
         if (bombsInWorld.isEmpty()) return;
 
-        float pt = event.getPartialTick();
+        float pt = event.getPartialTick().getRealtimeDeltaTicks();
         double cx = mc.getWindow().getGuiScaledWidth() / 2.0;
         double cy = mc.getWindow().getGuiScaledHeight() / 2.0;
         final double margin = 30.0;
@@ -282,8 +283,8 @@ public class ClientEvent {
                     GlStateManager.DestFactor.ZERO);
             RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
 
-            RenderHelper.blit(event.getGuiGraphics().pose(), BOMB_LOCK_FRAME,
-                    fx - 12f, fy - 12f, 0f, 0f, 24f, 24f, 24f, 24f, 1f);
+            event.getGuiGraphics().blit(BOMB_LOCK_FRAME,
+                    (int) (fx - 12f), (int) (fy - 12f), 0f, 0f, 24, 24, 24, 24);
         }
     }
 
@@ -294,7 +295,7 @@ public class ClientEvent {
         if (player == null) return;
 
         if (player.getVehicle() instanceof SyncCameraVehicle vehicle) {
-            float partialTicks = event.renderTickTime;
+            float partialTicks = event.getPartialTick().getRealtimeDeltaTicks();
 
             float prevYRot = vehicle.yRotO;
             float currYRot = vehicle.getYRot();

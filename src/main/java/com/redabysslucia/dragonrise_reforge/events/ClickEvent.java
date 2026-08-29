@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.events;
 
-import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
+
+
+import net.neoforged.neoforge.network.PacketDistributor;import net.neoforged.fml.common.EventBusSubscriber;import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import com.redabysslucia.dragonrise_reforge.network.EngineChangeModeMessage;
 import net.minecraft.client.Minecraft;
@@ -11,7 +13,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
 
-@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
 public class ClickEvent {
     @SubscribeEvent
     public static void onKeyPressed(InputEvent.Key event) {

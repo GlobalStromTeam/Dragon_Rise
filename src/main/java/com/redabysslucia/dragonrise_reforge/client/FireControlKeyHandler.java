@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+
+import net.neoforged.fml.common.EventBusSubscriber;import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.client.screen.FiringSolutionScreen;
 import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
@@ -12,7 +13,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(value = Dist.CLIENT, modid = com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class FireControlKeyHandler {
 
     @SubscribeEvent

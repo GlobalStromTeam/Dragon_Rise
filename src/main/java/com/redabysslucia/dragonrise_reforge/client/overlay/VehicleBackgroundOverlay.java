@@ -15,8 +15,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.gui.overlay.ForgeGui;
-import net.neoforged.neoforge.client.gui.overlay.IGuiOverlay;
 
 @OnlyIn(Dist.CLIENT)
 public class VehicleBackgroundOverlay implements LayeredDraw.Layer {
@@ -51,13 +49,13 @@ public class VehicleBackgroundOverlay implements LayeredDraw.Layer {
             );
             RenderSystem.setShaderColor(1, 1, 1, 1);
 
-            scopeScale = (float) Mth.lerp(0.5f * partialTick, scopeScale, 1.35f);
-            float f = Math.min(screenWidth, screenHeight);
-            float f1 = Math.min((float) screenWidth / f, (float) screenHeight / f) * scopeScale;
+            scopeScale = (float) Mth.lerp(0.5f * deltaTracker.getRealtimeDeltaTicks(), scopeScale, 1.35f);
+            float f = Math.min(guiGraphics.guiWidth(), guiGraphics.guiHeight());
+            float f1 = Math.min((float) guiGraphics.guiWidth() / f, (float) guiGraphics.guiHeight() / f) * scopeScale;
             float i = Mth.floor(f * f1);
             float j = Mth.floor(f * f1);
-            float k = (screenWidth - i) / 2f;
-            float l = (screenHeight - j) / 2f;
+            float k = (guiGraphics.guiWidth() - i) / 2f;
+            float l = (guiGraphics.guiHeight() - j) / 2f;
             float w = i * 21 / 9;
             RenderHelper.preciseBlit(guiGraphics, texture, k - (2 * w / 7), l, 0f, 0f, w, j, w, j);
 

@@ -2,12 +2,11 @@ package com.redabysslucia.dragonrise_reforge.events;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.GuidedBombEntity;
-import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.slf4j.Logger;
 
@@ -17,7 +16,7 @@ import org.slf4j.Logger;
  * 客户端无法用 getOwner() 判断归属，必须由服务端直接告知。
  * （注册在 FORGE 总线且不限 Dist，纯服务器与单机集成服务器均生效）
  */
-@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(bus = EventBusSubscriber.Bus.GAME)
 public class CommonEvent {
     private static final Logger LOGGER = Dragonrise_reforge.LOGGER;
 
@@ -28,7 +27,7 @@ public class CommonEvent {
 
         if (bomb.getOwner() instanceof ServerPlayer sp) {
             LOGGER.info("[BombHud] server: notify player {} bomb {}", sp.getGameProfile().getName(), bomb.getUUID());
-            ModNetwork.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> sp), new OwnBombMessage(bomb.getUUID()));
+            PacketDistributor.sendToPlayer(sp, new OwnBombMessage(bomb.getUUID()));
         }
     }
 }

@@ -355,8 +355,8 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
     }
 
     private int countBonusItem(VehicleEntity vehicle, Item bonusItem) {
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) {
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY, null);
+        if (handler == null) {
             return 0;
         }
 
@@ -382,7 +382,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             if (customItemId == null || customItemId.isEmpty()) return false;
             ResourceLocation itemLocation = ResourceLocation.tryParse(customItemId);
             if (itemLocation == null) return false;
-            Item customItem = ForgeRegistries.ITEMS.getValue(itemLocation);
+            Item customItem = BuiltInRegistries.ITEM.get(itemLocation);
             if (customItem == null) return false;
             int current = countBonusItem(vehicle, customItem);
             int target = Math.max(1, ammoRule.customItemCount);
@@ -473,7 +473,7 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
     }
 
     private String getVehicleId(VehicleEntity vehicle) {
-        ResourceLocation key = ForgeRegistries.ENTITY_TYPES.getKey(vehicle.getType());
+        ResourceLocation key = BuiltInRegistries.ENTITY_TYPE.getKey(vehicle.getType());
         return key != null ? key.toString() : "";
     }
 
@@ -490,9 +490,8 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
     }
 
     private int countBackupAmmoForConsumer(VehicleEntity vehicle, GunData gunData, AmmoConsumer consumer) {
-        var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
-        if (handlerOpt.isEmpty()) return 0;
-        IItemHandler handler = handlerOpt.get();
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY, null);
+        if (handler == null) return 0;
         int itemCount = consumer.count(gunData, handler);
         int loadAmount = consumer.getLoadAmount();
         return itemCount * loadAmount;
@@ -623,12 +622,10 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
             return false;
         }
 
-        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY);
+        IItemHandler handler = vehicle.getCapability(Capabilities.ItemHandler.ENTITY, null);
         if (handler == null) {
             return false;
         }
-
-        IItemHandler handler = handlerOpt.get();
         ItemStack stack = new ItemStack(customItem, toAdd);
         int inserted = InventoryTool.insertItem(handler, stack, toAdd);
         if (inserted < toAdd) {

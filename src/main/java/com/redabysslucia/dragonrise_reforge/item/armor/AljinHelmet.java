@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.AljinHelmetModel;
+
+import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.AljinHelmetModel;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.AljinHelmetRenderer;
 import com.atsuishio.superbwarfare.Mod;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;

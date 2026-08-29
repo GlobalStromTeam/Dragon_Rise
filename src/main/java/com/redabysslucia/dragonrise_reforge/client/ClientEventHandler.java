@@ -6,19 +6,20 @@ import com.redabysslucia.dragonrise_reforge.client.overlay.M270BallisticOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.SupplyProgressOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.VehicleBackgroundOverlay;
 import com.redabysslucia.dragonrise_reforge.resource.model.*;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
-import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
-import net.neoforged.neoforge.client.event.RegisterGuiOverlaysEvent;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
 
 @OnlyIn(Dist.CLIENT)
-@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEventHandler {
 
     @SubscribeEvent
-    public static void registerGuiOverlays(RegisterGuiLayersEvent event) {
+    public static void registerGuiLayers(RegisterGuiLayersEvent event) {
         event.registerBelowAll(
             ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "vehicle_background"),
             new VehicleBackgroundOverlay()
@@ -28,14 +29,14 @@ public class ClientEventHandler {
             new SupplyProgressOverlay()
         );
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_m270_ballistic",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "m270_ballistic"),
             new M270BallisticOverlay()
         );
         event.registerBelowAll(
-            Dragonrise_reforge.MODID + "_cannon_ballistic",
+            ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "cannon_ballistic"),
             new CannonBallisticOverlay()
         );
-        Dragonrise_reforge.LOGGER.info("Dragonrise overlays registered");
+        Dragonrise_reforge.LOGGER.info("Dragonrise gui layers registered");
     }
 
     @SubscribeEvent
