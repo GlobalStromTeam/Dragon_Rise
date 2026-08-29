@@ -62,9 +62,9 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(LOCKED, false);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(LOCKED, false);
     }
 
     /**

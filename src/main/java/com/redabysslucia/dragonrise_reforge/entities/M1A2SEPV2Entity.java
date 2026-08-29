@@ -34,10 +34,10 @@ public class M1A2SEPV2Entity extends VehicleEntity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
         // 默认拆卸状态
-        this.entityData.define(TUSK_INSTALLED, false);
+        builder.define(TUSK_INSTALLED, false);
     }
 
     @Override

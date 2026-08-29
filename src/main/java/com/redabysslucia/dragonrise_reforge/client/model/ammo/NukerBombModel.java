@@ -14,10 +14,10 @@ public class NukerBombModel extends GeoModel<NukerBombEntity> {
     }
 
     public ResourceLocation getModelResource(NukerBombEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "geo/nuclearbomb.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "geo/nuclearbomb.geo.json");
     }
 
     public ResourceLocation getTextureResource(NukerBombEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/nuclearbomb.png");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/entity/nuclearbomb.png");
     }
 }

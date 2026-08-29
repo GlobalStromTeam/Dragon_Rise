@@ -9,16 +9,16 @@ public class AAshellModel extends GeoModel<AAshellEntity> {
 
     @Override
     public ResourceLocation getAnimationResource(AAshellEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "animations/airbomb500kg.animation.json");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "animations/airbomb500kg.animation.json");
     }
 
     @Override
     public ResourceLocation getModelResource(AAshellEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "geo/small_cannon_shell.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "geo/small_cannon_shell.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(AAshellEntity entity) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/airbomb500kg.png");
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/entity/airbomb500kg.png");
     }
 }

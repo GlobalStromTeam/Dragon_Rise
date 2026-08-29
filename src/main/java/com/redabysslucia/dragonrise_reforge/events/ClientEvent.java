@@ -18,12 +18,12 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.RenderGuiOverlayEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.neoforge.client.event.RenderGuiOverlayEvent;
+import net.neoforged.neoforge.event.TickEvent;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
@@ -45,7 +45,7 @@ import java.util.UUID;
  * 由服务端在炸弹生成时通过 OwnBombMessage 通知 UUID（见 CommonEvent），
  * 客户端用 UUID 集合判断"是本玩家投下的炸弹"。
  */
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ClientEvent {
     private static float lastSyncCameraYRot = 0;
     private static float lastSyncCameraXRot = 0;
@@ -53,11 +53,11 @@ public class ClientEvent {
 
     /** 官方投弹落点环纹理（AircraftHud.BOMB_RING） */
     private static final ResourceLocation BOMB_RING =
-            new ResourceLocation("superbwarfare", "textures/overlay/crosshair/rex_circle.png");
+            ResourceLocation.fromNamespaceAndPath("superbwarfare", "textures/overlay/crosshair/rex_circle.png");
 
     /** 官方锁定框纹理（VehicleMainWeaponHudOverlay.FRAME_LOCK） */
     private static final ResourceLocation BOMB_LOCK_FRAME =
-            new ResourceLocation("superbwarfare", "textures/overlay/frame/frame_lock.png");
+            ResourceLocation.fromNamespaceAndPath("superbwarfare", "textures/overlay/frame/frame_lock.png");
 
     /** 世界中的制导炸弹（不分玩家，渲染时按 UUID 归属过滤；由 join 事件 + 兜底扫描维护） */
     private static final List<GuidedBombEntity> bombsInWorld = new ArrayList<>();

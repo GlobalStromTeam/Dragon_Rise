@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.datagen;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;

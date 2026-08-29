@@ -126,7 +126,7 @@ public class AntiTopWireGuideMissileEntity extends WireGuideMissileEntity implem
 
     @Override
     public ResourceLocation getModel() {
-        return new ResourceLocation("dragonrise_reforge", "projectile/anti_top_wire_guide_missile");
+        return ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "projectile/anti_top_wire_guide_missile");
     }
 
     @Override

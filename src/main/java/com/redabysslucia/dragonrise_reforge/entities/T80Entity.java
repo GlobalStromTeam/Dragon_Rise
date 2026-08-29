@@ -13,8 +13,8 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 import java.util.UUID;
 
@@ -73,11 +73,11 @@ public class T80Entity extends VehicleEntity implements IVehicleBackground {
 		var seatIndex = getSeatIndex(player);
 		// 一号位背景
 		if (seatIndex == 0) {
-			return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos1.png");
+			return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos1.png");
 		}
 		// 二号位背景
 		else if (seatIndex == 1) {
-			return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
+			return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
 		}
 		return null;
 	}

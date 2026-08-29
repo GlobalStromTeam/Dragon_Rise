@@ -3,43 +3,43 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModSounds {
     public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Dragonrise_reforge.MODID);
 
     public static final RegistryObject<SoundEvent> TERRORIST_IDLE = REGISTRY.register("terrorist_idle", () -> 
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_idle")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_idle")));
     
     public static final RegistryObject<SoundEvent> TERRORIST_STEP = REGISTRY.register("terrorist_step", () -> 
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_step")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_step")));
     
     public static final RegistryObject<SoundEvent> TERRORIST_HURT = REGISTRY.register("terrorist_hurt", () -> 
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_hurt")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_hurt")));
     
     public static final RegistryObject<SoundEvent> TERRORIST_DEATH = REGISTRY.register("terrorist_death", () -> 
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_death")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_death")));
     
     public static final RegistryObject<SoundEvent> TERRORIST_SHOOT = REGISTRY.register("terrorist_shoot", () -> 
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_shoot")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "terrorist_shoot")));
 
     public static final RegistryObject<SoundEvent> SUPPLY_STATION_CHARGING = REGISTRY.register("supply_station_charging", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_charging")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "supply_station_charging")));
 
     public static final RegistryObject<SoundEvent> SUPPLY_STATION_COMPLETE = REGISTRY.register("supply_station_complete", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_complete")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "supply_station_complete")));
 
     // 侦察无人车音效
     public static final RegistryObject<SoundEvent> R6_DRONE_MOVING = REGISTRY.register("r6_drone_moving", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_moving")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "r6_drone_moving")));
     public static final RegistryObject<SoundEvent> R6_DRONE_FAST = REGISTRY.register("r6_drone_fast", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_fast")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "r6_drone_fast")));
     public static final RegistryObject<SoundEvent> R6_DRONE_JUMP = REGISTRY.register("r6_drone_jump", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_jump")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "r6_drone_jump")));
     public static final RegistryObject<SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->
-        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_down")));
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "r6_drone_down")));
 
     /** 载具音效（开火/装填/引擎等）。仅写 sounds.json 不会被注册进 ForgeRegistries.SOUND_EVENTS，
      *  1.20.1 里 Level.playSound 需要 Holder<SoundEvent>，未注册的事件会静默失败。 */
@@ -100,7 +100,7 @@ public class ModSounds {
     static {
         for (String soundName : VEHICLE_SOUNDS) {
             REGISTRY.register(soundName, () ->
-                SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, soundName)));
+                SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, soundName)));
         }
     }
 }

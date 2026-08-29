@@ -32,8 +32,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.network.NetworkHooks;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.network.NetworkHooks;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import javax.annotation.Nullable;
 
@@ -122,7 +122,7 @@ public class VehicleDeployerBlock extends BaseEntityBlock {
         if (!player.isCreative()) return InteractionResult.FAIL;
 
         var stack = player.getItemInHand(hand);
-        Item containerItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation("superbwarfare", "container"));
+        Item containerItem = ForgeRegistries.ITEMS.getValue(ResourceLocation.fromNamespaceAndPath("superbwarfare", "container"));
         if (containerItem == null || stack.getItem() != containerItem) {
             player.displayClientMessage(Component.translatable("des.superbwarfare.vehicle_deployer.fail").withStyle(ChatFormatting.RED), true);
             return InteractionResult.FAIL;

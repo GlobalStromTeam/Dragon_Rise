@@ -7,8 +7,8 @@ import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
 public class Pak40Entity extends SyncCameraVehicle implements IVehicleBackground {
@@ -26,7 +26,7 @@ public class Pak40Entity extends SyncCameraVehicle implements IVehicleBackground
                 var seatIndex = getSeatIndex(player);
                 // 一号位背景
                 if (seatIndex == 1) {
-                        return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/zf3x8.png");
+                        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/zf3x8.png");
                 }
                 return null;
         }

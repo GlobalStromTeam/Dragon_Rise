@@ -1,11 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.events;
 
 import net.minecraft.server.MinecraftServer;
-import net.minecraftforge.event.ServerChatEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.neoforge.event.ServerChatEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ChatEventListener {
 
     @SubscribeEvent

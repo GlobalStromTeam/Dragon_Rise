@@ -20,9 +20,9 @@ import net.minecraft.resources.ResourceLocation;
 public class ClusterChargeRenderer extends EntityRenderer<ClusterChargeEntity> {
 
     private static final ResourceLocation MODEL =
-            new ResourceLocation("dragonrise_reforge", "models/bedrock/projectile/cluster_charge.geo.json");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/projectile/cluster_charge.geo.json");
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation("dragonrise_reforge", "textures/bedrock/projectile/cluster_charge.png");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/bedrock/projectile/cluster_charge.png");
 
     public ClusterChargeRenderer(EntityRendererProvider.Context context) {
         super(context);

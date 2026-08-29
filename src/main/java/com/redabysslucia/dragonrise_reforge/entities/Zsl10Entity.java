@@ -24,10 +24,10 @@ public class Zsl10Entity extends SyncCameraVehicle {
         }
 
         @Override
-        protected void defineSynchedData() {
-                super.defineSynchedData();
-                this.entityData.define(FLAP_STATE, 0);
-                this.entityData.define(FLAP_TIMER, 0);
+        protected void defineSynchedData(SynchedEntityData.Builder builder) {
+                super.defineSynchedData(builder);
+                builder.define(FLAP_STATE, 0);
+                builder.define(FLAP_TIMER, 0);
         }
 
         @Override

@@ -18,7 +18,7 @@ public class EngineChangeModeMessage {
         return new EngineChangeModeMessage();
     }
 
-    public static void handler(EngineChangeModeMessage message, java.util.function.Supplier<net.minecraftforge.network.NetworkEvent.Context> ctx) {
+    public static void handler(EngineChangeModeMessage message, java.util.function.Supplier<net.neoforged.neoforge.network.NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             var player = ctx.get().getSender();
             if (player == null) return;

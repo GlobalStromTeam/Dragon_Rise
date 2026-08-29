@@ -11,10 +11,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.material.FogType;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.event.RenderGuiEvent;
-import net.minecraftforge.client.event.RenderLevelStageEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.neoforged.neoforge.client.event.RenderGuiEvent;
+import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.bus.api.SubscribeEvent;
 import org.joml.Matrix4f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
@@ -24,14 +24,14 @@ import org.lwjgl.opengl.GL30;
 import java.io.IOException;
 import java.util.function.Function;
 import java.util.function.Predicate;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 public class OutlineRenderer {
     
     // 确保类被注册到事件总线上
     public static void register() {
         // 直接注册到事件总线
-        MinecraftForge.EVENT_BUS.register(OutlineRenderer.class);
+        NeoForge.EVENT_BUS.register(OutlineRenderer.class);
         System.out.println("OutlineRenderer registered to event bus");
     }
 
@@ -368,7 +368,7 @@ public class OutlineRenderer {
         mc.getEntityRenderDispatcher().setRenderShadow(false);
         mc.getEntityRenderDispatcher().setRenderHitBoxes(false);
 
-        float partialTick = mc.getFrameTime();
+        float partialTick = mc.getTimer().getGameTimeDeltaPartialTick(true);
 
         int renderDistanceChunks = mc.options.renderDistance().get();
         double renderDistanceBlocks = renderDistanceChunks * 16.0;

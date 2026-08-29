@@ -36,7 +36,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.DiodeBlock;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.items.ItemHandlerHelper;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -72,11 +72,11 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
 
     /** 发射音效：superbwarfare M79 榴弹发射器开火（1P 音效） */
     private static final SoundEvent FIRE_SOUND =
-            SoundEvent.createVariableRangeEvent(new ResourceLocation("superbwarfare", "m_79_fire_1p"));
+            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("superbwarfare", "m_79_fire_1p"));
 
     /** 启动音效：放置 0.2 秒后播放的 3 秒启动音（dragonrise_reforge:cluster_charge_starting） */
     private static final SoundEvent ARMING_SOUND =
-            SoundEvent.createVariableRangeEvent(new ResourceLocation("dragonrise_reforge", "cluster_charge_starting"));
+            SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "cluster_charge_starting"));
 
     /** 0 - 左上; 1 - 左下; 2 - 右下; 3 - 右上 */
     private int corner;
@@ -127,9 +127,9 @@ public class ClusterChargeEntity extends HangingEntity implements OwnableEntity 
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(OWNER_UUID, Optional.empty());
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(OWNER_UUID, Optional.empty());
     }
 
     @Override

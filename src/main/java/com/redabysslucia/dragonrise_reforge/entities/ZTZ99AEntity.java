@@ -7,8 +7,8 @@ import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
 public class ZTZ99AEntity extends VehicleEntity implements IVehicleBackground {
@@ -38,11 +38,11 @@ public class ZTZ99AEntity extends VehicleEntity implements IVehicleBackground {
         var seatIndex = getSeatIndex(player);
         // 圆形炮镜跟随 JSON 中配置的主炮控制位
         if (seatIndex == getTurretControllerIndex()) {
-            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos3.png");
+            return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos3.png");
         }
         // 二号位保留原有矩形观察窗；若同时是主炮控制位，优先显示圆形炮镜
         else if (seatIndex == 1) {
-            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
+            return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
         }
         return null;
     }

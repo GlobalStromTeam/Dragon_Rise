@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.network.message;
 
 import com.redabysslucia.dragonrise_reforge.events.ClientEvent;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraftforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.NetworkEvent;
 
 import java.util.UUID;
 import java.util.function.Supplier;

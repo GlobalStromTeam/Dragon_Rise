@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.integration;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fml.ModList;
+import net.neoforged.fml.ModList;
 
 import java.lang.reflect.Method;
 

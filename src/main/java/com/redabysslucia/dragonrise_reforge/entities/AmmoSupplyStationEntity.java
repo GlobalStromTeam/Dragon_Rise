@@ -23,9 +23,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -67,14 +67,14 @@ public class AmmoSupplyStationEntity extends VehicleEntity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(SUPPLY_RANGE, DEFAULT_SUPPLY_RANGE);
-        this.entityData.define(NON_MAGAZINE_FILL_AMOUNT, DEFAULT_NON_MAGAZINE_FILL);
-        this.entityData.define(SUPPLY_INTERVAL, DEFAULT_SUPPLY_INTERVAL);
-        this.entityData.define(SUPPLY_TIME, DEFAULT_SUPPLY_TIME);
-        this.entityData.define(ACTIVE, true);
-        this.entityData.define(SUPPLY_PROGRESS, 0f);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(SUPPLY_RANGE, DEFAULT_SUPPLY_RANGE);
+        builder.define(NON_MAGAZINE_FILL_AMOUNT, DEFAULT_NON_MAGAZINE_FILL);
+        builder.define(SUPPLY_INTERVAL, DEFAULT_SUPPLY_INTERVAL);
+        builder.define(SUPPLY_TIME, DEFAULT_SUPPLY_TIME);
+        builder.define(ACTIVE, true);
+        builder.define(SUPPLY_PROGRESS, 0f);
     }
 
     @Override

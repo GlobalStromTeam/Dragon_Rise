@@ -6,13 +6,13 @@ import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicle
 import com.redabysslucia.dragonrise_reforge.init.ModKeyMappings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.neoforge.client.event.InputEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 import org.lwjgl.glfw.GLFW;
 
-@Mod.EventBusSubscriber(value = Dist.CLIENT, modid = com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(value = Dist.CLIENT, modid = com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FireControlKeyHandler {
 
     @SubscribeEvent

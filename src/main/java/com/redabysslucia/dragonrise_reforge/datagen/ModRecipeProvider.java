@@ -10,8 +10,8 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
@@ -25,11 +25,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     private static ResourceLocation loc(String path) {
-        return new ResourceLocation(Dragonrise_reforge.MODID, path);
+        return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, path);
     }
 
     private static TagKey<Item> commonItemTag(String path) {
-        return TagKey.create(net.minecraft.core.registries.Registries.ITEM, new ResourceLocation("c", path));
+        return TagKey.create(net.minecraft.core.registries.Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", path));
     }
 
     private static String getItemName(Item item) {

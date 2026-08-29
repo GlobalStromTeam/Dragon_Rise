@@ -48,10 +48,10 @@ public class R9M133Entity extends VehicleEntity {
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(LOADED, false);
-        this.entityData.define(RELOAD_COOLDOWN, 0);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(LOADED, false);
+        builder.define(RELOAD_COOLDOWN, 0);
     }
 
     @Override

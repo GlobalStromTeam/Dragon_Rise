@@ -8,8 +8,8 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 @SuppressWarnings("removal")
 public class M113Entity extends SyncCameraVehicle implements IVehicleBackground {
@@ -29,7 +29,7 @@ public class M113Entity extends SyncCameraVehicle implements IVehicleBackground 
         var seatIndex = getSeatIndex(player);
         // 一号位背景
         if (seatIndex == 0) {
-            return new ResourceLocation(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
+            return ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "textures/overlay/vehicle/hud/testcroos2.png");
         }
         return null;
     }

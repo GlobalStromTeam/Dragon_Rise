@@ -4,11 +4,11 @@ import com.redabysslucia.dragonrise_reforge.item.*;
 import com.redabysslucia.dragonrise_reforge.item.armor.*;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.world.item.Item;
-import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.SpawnEggItem;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModItems {
 
@@ -59,7 +59,7 @@ public class ModItems {
     public static final RegistryObject<Item> KR06_PANTS = REGISTRY.register("kr06_pants", KR06Pants::new);
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
-        () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
+        () -> new SpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
     public static final RegistryObject<Item> UN_HELMET = REGISTRY.register("un_helmet", UNHelmet::new);
 
     public static final RegistryObject<Item> SPRAY_CAN = REGISTRY.register("spray_can", () -> new Item(new Item.Properties()));

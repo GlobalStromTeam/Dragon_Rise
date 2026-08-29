@@ -3,9 +3,9 @@ package com.redabysslucia.dragonrise_reforge.network;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.network.NetworkDirection;
-import net.minecraftforge.network.NetworkEvent;
-import net.minecraftforge.network.simple.SimpleChannel;
+import net.neoforged.neoforge.network.NetworkDirection;
+import net.neoforged.neoforge.network.NetworkEvent;
+import net.neoforged.neoforge.network.simple.SimpleChannel;
 
 import java.util.Optional;
 import java.util.function.BiConsumer;
@@ -16,7 +16,7 @@ import java.util.function.Supplier;
 @SuppressWarnings("removal")
 public class ModNetwork {
     private static final String PROTOCOL_VERSION = "1";
-    public static final SimpleChannel PACKET_HANDLER = net.minecraftforge.network.NetworkRegistry.newSimpleChannel(new ResourceLocation(Dragonrise_reforge.MODID, Dragonrise_reforge.MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
+    public static final SimpleChannel PACKET_HANDLER = net.neoforged.neoforge.network.NetworkRegistry.newSimpleChannel(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, Dragonrise_reforge.MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 
     public static int messageID = 0;
 

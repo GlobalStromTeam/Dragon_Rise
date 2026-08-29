@@ -1,8 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.entities.utils;
 
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 public interface IVehicleBackground {
 

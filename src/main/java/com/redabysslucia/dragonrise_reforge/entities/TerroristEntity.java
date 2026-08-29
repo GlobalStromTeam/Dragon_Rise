@@ -31,12 +31,12 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.network.NetworkHooks;
+import net.neoforged.neoforge.network.NetworkHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.GeoEntity;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.ParametersAreNonnullByDefault;
@@ -67,9 +67,9 @@ public class TerroristEntity extends Monster implements RangedAttackMob, GeoEnti
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(RUNNER, false);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(RUNNER, false);
     }
 
     @Nullable
@@ -259,7 +259,7 @@ public class TerroristEntity extends Monster implements RangedAttackMob, GeoEnti
         ++this.deathTime;
         if (this.deathTime == 140) {
             this.remove(TerroristEntity.RemovalReason.KILLED);
-            this.dropExperience();
+            this.dropExperience(this.getKillCredit());
         }
     }
 }

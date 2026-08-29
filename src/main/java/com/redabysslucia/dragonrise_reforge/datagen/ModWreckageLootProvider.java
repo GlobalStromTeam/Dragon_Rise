@@ -7,7 +7,7 @@ import com.redabysslucia.dragonrise_reforge.datagen.base.SbwWreckageLootProvider
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public class ModWreckageLootProvider extends SbwWreckageLootProvider {
 

@@ -23,13 +23,13 @@ import net.minecraft.world.phys.Vec3;
 public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
 
     private static final ResourceLocation MODEL =
-            new ResourceLocation("dragonrise_reforge", "models/bedrock/entity/r6_drone.geo.json");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/entity/r6_drone.geo.json");
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation("dragonrise_reforge", "textures/entity/r6_drone.png");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/r6_drone.png");
     private static final ResourceLocation ATTACK_MODEL =
-            new ResourceLocation("dragonrise_reforge", "models/bedrock/entity/attack_drone.geo.json");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/entity/attack_drone.geo.json");
     private static final ResourceLocation ATTACK_TEXTURE =
-            new ResourceLocation("dragonrise_reforge", "textures/entity/attack_drone.png");
+            ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/entity/attack_drone.png");
 
     public R6DroneRenderer(EntityRendererProvider.Context context) {
         super(context);

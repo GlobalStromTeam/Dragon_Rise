@@ -5,10 +5,10 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.GuidedBombEntity
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.network.PacketDistributor;
+import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.slf4j.Logger;
 
 /**
@@ -17,7 +17,7 @@ import org.slf4j.Logger;
  * 客户端无法用 getOwner() 判断归属，必须由服务端直接告知。
  * （注册在 FORGE 总线且不限 Dist，纯服务器与单机集成服务器均生效）
  */
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+@EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvent {
     private static final Logger LOGGER = Dragonrise_reforge.LOGGER;
 

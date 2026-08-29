@@ -45,7 +45,7 @@ public abstract class BedrockModelReloadListener<T> extends SimplePreparableRelo
         for (Map.Entry<ResourceLocation, net.minecraft.server.packs.resources.Resource> entry : modelConverter.listMatchingResources(resourceManager).entrySet()) {
             ResourceLocation location = entry.getKey();
             ResourceLocation id = modelConverter.fileToId(location);
-            id = new ResourceLocation(id.getNamespace(), id.getPath().replace(".geo", ""));
+            id = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath().replace(".geo", ""));
             try {
                 var reader = entry.getValue().openAsReader();
                 try {
@@ -69,7 +69,7 @@ public abstract class BedrockModelReloadListener<T> extends SimplePreparableRelo
             for (Map.Entry<ResourceLocation, net.minecraft.server.packs.resources.Resource> entry : animConverter.listMatchingResources(resourceManager).entrySet()) {
                 ResourceLocation location = entry.getKey();
                 ResourceLocation id = animConverter.fileToId(location);
-                id = new ResourceLocation(id.getNamespace(), id.getPath().replace(".animation", ""));
+                id = ResourceLocation.fromNamespaceAndPath(id.getNamespace(), id.getPath().replace(".animation", ""));
 
                 try {
                     var reader = entry.getValue().openAsReader();

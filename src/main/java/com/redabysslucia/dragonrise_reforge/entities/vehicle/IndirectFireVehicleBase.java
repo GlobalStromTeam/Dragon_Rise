@@ -65,14 +65,14 @@ public abstract class IndirectFireVehicleBase extends DragonriseVehicleBase impl
     }
 
     @Override
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(FIRE_CONTROL_ACTIVE, false);
-        this.entityData.define(FIRE_CONTROL_TARGET, BlockPos.ZERO);
-        this.entityData.define(FIRE_CONTROL_RADIUS, 0);
-        this.entityData.define(FIRE_CONTROL_TRAJECTORY, TrajectoryMode.LOW.ordinal());
-        this.entityData.define(FIRE_CONTROL_STATUS, FireControlStatus.INACTIVE.ordinal());
-        this.entityData.define(FIRE_CONTROL_TAKEOVER, false);
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(FIRE_CONTROL_ACTIVE, false);
+        builder.define(FIRE_CONTROL_TARGET, BlockPos.ZERO);
+        builder.define(FIRE_CONTROL_RADIUS, 0);
+        builder.define(FIRE_CONTROL_TRAJECTORY, TrajectoryMode.LOW.ordinal());
+        builder.define(FIRE_CONTROL_STATUS, FireControlStatus.INACTIVE.ordinal());
+        builder.define(FIRE_CONTROL_TAKEOVER, false);
     }
 
     @Override

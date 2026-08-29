@@ -20,9 +20,9 @@ import java.util.concurrent.CompletableFuture;
 public class VehicleLanguageGenerator implements DataProvider {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private final PackOutput output;
-    private final net.minecraftforge.common.data.ExistingFileHelper existingFileHelper;
+    private final net.neoforged.neoforge.common.data.ExistingFileHelper existingFileHelper;
 
-    public VehicleLanguageGenerator(PackOutput output, net.minecraftforge.common.data.ExistingFileHelper existingFileHelper) {
+    public VehicleLanguageGenerator(PackOutput output, net.neoforged.neoforge.common.data.ExistingFileHelper existingFileHelper) {
         this.output = output;
         this.existingFileHelper = existingFileHelper;
     }

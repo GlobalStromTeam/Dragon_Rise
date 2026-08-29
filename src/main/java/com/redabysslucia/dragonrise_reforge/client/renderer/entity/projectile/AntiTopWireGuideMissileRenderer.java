@@ -15,9 +15,9 @@ import net.minecraft.resources.ResourceLocation;
 
 public class AntiTopWireGuideMissileRenderer extends EntityRenderer<AntiTopWireGuideMissileEntity> {
 
-    private static final ResourceLocation MODEL = new ResourceLocation("dragonrise_reforge", "models/bedrock/projectile/anti_top_wire_guide_missile.geo.json");
-    private static final ResourceLocation TEXTURE = new ResourceLocation("dragonrise_reforge", "textures/bedrock/projectile/anti_top_wire_guide_missile.png");
-    private static final ResourceLocation FLARE_TEXTURE = new ResourceLocation("superbwarfare", "textures/bedrock/projectile/flare.png");
+    private static final ResourceLocation MODEL = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/projectile/anti_top_wire_guide_missile.geo.json");
+    private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/bedrock/projectile/anti_top_wire_guide_missile.png");
+    private static final ResourceLocation FLARE_TEXTURE = ResourceLocation.fromNamespaceAndPath("superbwarfare", "textures/bedrock/projectile/flare.png");
 
     public AntiTopWireGuideMissileRenderer(EntityRendererProvider.Context context) {
         super(context);

@@ -23,8 +23,8 @@ public class ZBD04AEntity extends IndirectFireVehicleBase {
         }
 
         @Override
-        protected void defineSynchedData() {
-                super.defineSynchedData();
+        protected void defineSynchedData(SynchedEntityData.Builder builder) {
+                super.defineSynchedData(builder);
                 entityData.define(FLAP_STATE, 0);
                 entityData.define(FLAP_TIMER, 0);
         }
