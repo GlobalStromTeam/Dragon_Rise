@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:amx56nato",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/amx56nato.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/amx56nato.png"
-  }
+    "ID":  "dragonrise_reforge:amx56nato",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/amx56nato.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/amx56nato.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/amx56nato.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/amx56nato.png"
+                   }
+               ]
 }

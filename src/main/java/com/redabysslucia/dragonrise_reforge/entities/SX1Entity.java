@@ -14,7 +14,7 @@ public class SX1Entity extends FireLightVisionVehicle {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
         }
 
 }

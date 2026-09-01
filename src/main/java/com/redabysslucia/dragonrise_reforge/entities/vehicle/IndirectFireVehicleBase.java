@@ -2,8 +2,9 @@ package com.redabysslucia.dragonrise_reforge.entities.vehicle;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.ShootParameters;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import com.atsuishio.superbwarfare.item.misc.FiringParametersItem;
 import com.atsuishio.superbwarfare.item.misc.FiringParametersItemKt;
 import com.redabysslucia.dragonrise_reforge.firecontrol.FireControlComputation;
@@ -32,7 +33,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.UUID;
 
-public abstract class IndirectFireVehicleBase extends GeoVehicleEntity implements IndirectFireVehicle {
+public abstract class IndirectFireVehicleBase extends DragonriseVehicleBase implements IndirectFireVehicle {
 
     // 主炮武器索引（对应 JSON 配置中的 "100MM_Cannon"）
     protected static final int MAIN_CANNON_WEAPON_INDEX = 1;

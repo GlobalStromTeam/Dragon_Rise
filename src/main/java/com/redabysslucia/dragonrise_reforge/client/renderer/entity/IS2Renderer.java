@@ -1,12 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
-import com.atsuishio.superbwarfare.client.renderer.entity.VehicleRenderer;
-import com.redabysslucia.dragonrise_reforge.client.model.entity.IS2Model;
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.IS2Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class IS2Renderer extends VehicleRenderer<IS2Entity> {
+public class IS2Renderer extends GeoVehicleRenderer<IS2Entity> {
         public IS2Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager,new IS2Model());
+                super(renderManager);
         }
 }

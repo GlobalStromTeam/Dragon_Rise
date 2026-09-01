@@ -1,14 +1,14 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.utils.GeoBasedParticleUtil;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class PZBJYEntity extends GeoVehicleEntity {
+public class PZBJYEntity extends VehicleEntity {
 
 	public PZBJYEntity(EntityType<?> pEntityType, Level pLevel) {
 		super(pEntityType, pLevel);
@@ -17,7 +17,7 @@ public class PZBJYEntity extends GeoVehicleEntity {
 	@Override
 	public DamageModifier getDamageModifier() {
 		return super.getDamageModifier()
-				.custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+				.custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
 	}
 
 	@Override

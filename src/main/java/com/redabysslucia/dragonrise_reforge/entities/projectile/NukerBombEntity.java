@@ -37,7 +37,17 @@ import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class NukerBombEntity extends DestroyableProjectile implements GeoEntity {
+
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
+
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+    }
 
     public NukerBombEntity(EntityType<? extends NukerBombEntity> type, Level level) {
         super(type, level);
@@ -61,7 +71,7 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
     }
 
     @Override
-    protected void onHitBlock(@NotNull BlockHitResult hit) {
+    public void onHitBlock(@NotNull BlockHitResult hit) {
         super.onHitBlock(hit);
         if (this.level() instanceof ServerLevel serverLevel) {
             causeNuclearExplosion(serverLevel);
@@ -90,10 +100,9 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
         // Damage explosion - NO DEFAULT PARTICLES (we use our own)
         new CustomExplosion.Builder(this)
                 .damageSource(ModDamageTypes.causeCustomExplosionDamage(serverLevel.registryAccess(), this, this.getOwner()))
-                .damage(this.getExplosionDamageValue())
+                .damage(this.getExplosionDamageValue() * 2.0F)
                 .radius(this.getExplosionRadiusValue())
                 .position(pos)
-                .damageMultiplier(2.0F)
                 .withParticleType(null) // Disable default SBW particles
                 .keepBlock() // Don't destroy blocks here, we do it ourselves
                 .explode();
@@ -520,14 +529,6 @@ public class NukerBombEntity extends DestroyableProjectile implements GeoEntity 
                 }
             });
         }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {}
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/churchill_vii.animation.json",
   "ID": "dragonrise_reforge:churchill_vii",
   "MaxHealth": 420,
   "MaxEnergy": 20000000,
@@ -28,14 +29,14 @@
     },
     {
       "Size": [1.008,0.489,1.1],
-      "Position": [0.0,0.423,0.057],
+      "Position": [0.0,0.423,0.099],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.886,0.367,0.428],
-      "Position": [0.0,0.545,-1.47],
+      "Position": [0.0,0.545,-1.428],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -46,9 +47,9 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.353,2.526,1.31],
+        "Position": [0.353,0.423,1.352],
         "Transform": "Turret",
-        "ZoomPosition": [0.353,0.876,1.31],
+        "ZoomPosition": [0.353,0.423,1.352],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -66,22 +67,46 @@
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.282,1.62,-1.603]
+      "Position": [1.282,1.62,-1.603],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [1.282,3.23,-1.603]
+      }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.282,1.62,-1.603]
+      "Position": [-1.282,1.62,-1.603],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-1.282,3.23,-1.603]
+      }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.282,1.62,-2.978]
+      "Position": [-1.282,1.62,-2.978],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-1.282,3.23,-2.978]
+      }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.282,1.62,-2.978]
+      "Position": [1.282,1.62,-2.978],
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [1.282,3.23,-2.978]
+      }
     }
   ],
   "Weapons": {
@@ -94,7 +119,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 200,
-      "Velocity": 30,
+      "Velocity": 20,
       "Damage": 420,
       "ExplosionDamage": 90,
       "ExplosionRadius": 4.8,
@@ -114,7 +139,7 @@
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 18,
+            "Velocity": 12,
             "Damage": 150,
             "ExplosionDamage": 125,
             "ExplosionRadius": 10.5,
@@ -137,7 +162,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.032,-2.13,3.875]
+          [0.032,-0.027,3.875]
         ],
         "Directions": [
           "Barrel"
@@ -155,7 +180,7 @@
       "RPM": 900,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -166,7 +191,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.193,-2.023,1.737]
+          [0.193,0.08,1.737]
         ],
         "Directions": [
           "Barrel"
@@ -194,7 +219,7 @@
       "RPM": 900,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -240,7 +265,7 @@
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [0.0,2.103,-0.042],
-  "BarrelPos": [0.0,2.48,1.087],
+  "BarrelPos": [0.0,0.377,1.129],
   "TurretTurnSpeed": [0.25,0.45],
   "TurretPitchRange": [-10,20],
   "HasDecoy": true,
@@ -262,7 +287,6 @@
     "@minecraft:tnt_minecart * 4",
     "@#superbwarfare:aerial_bomb * 12",
     "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
     "superbwarfare:projectile_explosion * 0.65",
@@ -321,5 +345,15 @@
     [-1.368,0.021,-2.567],
     [-1.241,0.021,2.745],
     [1.368,0.021,-2.567]
-  ]
+  ],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/churchill_vii.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/churchill_vii.png"
+  }
 }

@@ -14,7 +14,7 @@ public class T3485Entity extends FireLightVisionVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.32f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.32f) * damage);
     }
 
     @Override

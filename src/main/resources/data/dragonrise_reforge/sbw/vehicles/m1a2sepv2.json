@@ -1,39 +1,79 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/m1a2sepv2.animation.json",
   "ID": "dragonrise_reforge:m1a2sepv2",
   "MaxHealth": 620,
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [2,0.40625,0.78125],
-      "Position": [0,1.15625,3.34375]
+      "Size": [1.317,0.106,1.07],
+      "Position": [0.0,1.432,3.676],
+      "CustomRotate": [5.0,0.0,0.0]
     },
     {
-      "Size": [2,0.625,1.34375],
-      "Position": [0,1.0625,1.28125]
+      "Size": [1.317,0.106,0.383],
+      "Position": [0.0,1.036,4.806],
+      "CustomRotate": [-52.5,0.0,0.0]
     },
     {
-      "Size": [2,0.71875,1.375],
-      "Position": [0,1.15625,-1.125]
+      "Size": [1.317,0.325,1.07],
+      "Position": [0.0,0.851,3.65],
+      "CustomRotate": [-12.5,0.0,0.0]
     },
     {
-      "Part": "WheelLeft",
-      "Size": [0.40625,0.6875,4.40625],
-      "Position": [-1.65625,0.6875,-0.46875]
+      "Size": [1.317,0.606,3.195],
+      "Position": [0.0,0.945,-0.288]
     },
     {
-      "Part": "WheelRight",
-      "Size": [0.40625,0.6875,4.40625],
-      "Position": [1.65625,0.6875,-0.46875]
+      "Size": [2.005,0.106,3.445],
+      "Position": [-0.062,1.57,-0.538]
     },
     {
-      "Part": "MainEngine",
-      "Size": [1.9375,0.75,1.34375],
-      "Position": [0,1.3125,-3.71875]
+      "Size": [2.005,0.388,0.789],
+      "Position": [-0.062,1.601,-3.194]
     },
     {
+      "Size": [2.005,0.231,0.758],
+      "Position": [-0.062,1.598,-1.704],
+      "CustomRotate": [12.5,0.0,0.0]
+    },
+    {
+      "Size": [1.973,0.825,3.664],
+      "Position": [0.0,0.851,0.227],
+      "Part": "Collision"
+    },
+    {
+      "Size": [1.353,0.445,0.844],
+      "Position": [0.0,1.264,-2.556],
+      "Part": "MainEngine"
+    },
+    {
+      "Size": [0.288,0.673,4.203],
+      "Position": [-1.639,0.68,0.322],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.288,0.642,4.359],
+      "Position": [1.452,0.648,0.416],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [1.792,0.373,1.613],
+      "Position": [-0.031,0.735,-2.291],
       "Part": "Turret",
-      "Size": [2,0.5,2.6875],
-      "Position": [0,0.2,-1.0625],
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [1.792,0.53,1.425],
+      "Position": [-0.031,0.454,-0.541],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [1.511,0.405,0.456],
+      "Position": [0.0,0.517,1.303],
+      "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     }
@@ -47,7 +87,7 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [-1.03,-0.575,0.784],
+      "Position": [-0.844,-0.345,1.187],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -63,10 +103,8 @@
       "Transform": "WeaponStation",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0,0.1,0],
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [0,0,0],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -74,12 +112,13 @@
       "MinPitch": -9,
       "MaxPitch": 65,
       "Sensitivity": [0.57,0.75,0.9],
-      "HasThermalImaging": true
+      "HasThermalImaging": true,
+      "Position": [0.0170625, 0.3943375, 0.75351875]
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.625,0.8,-5.5],
+      "Position": [0.0,0.077,3.125],
       "MinYaw": -95,
       "MaxYaw": 95
     },
@@ -101,7 +140,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 110,
-      "Velocity": 83.95,
+      "Velocity": 55.9667,
       "Gravity": 0.05,
       "Damage": 500,
       "ExplosionDamage": 80,
@@ -122,7 +161,7 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 36.6,
+            "Velocity": 24.4,
             "Damage": 250,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
@@ -145,7 +184,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.1,-0.5,10.5]
+          [0.005,-0.042,7.204]
         ],
         "Directions": [
           "Barrel"
@@ -163,7 +202,7 @@
       "RPM": 700,
       "Damage": 10,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 28.4333,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -176,7 +215,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.12,0.15,0]
+          [-0.287,0.055,3.579]
         ],
         "Directions": [
           "Barrel"
@@ -204,7 +243,7 @@
       "RPM": 575,
       "Damage": 40,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 28.4333,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -215,7 +254,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [0,0.01,1.8]
+          [-0.025,0.158,1.312]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -249,12 +288,12 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume": 0.6
   },
-  "TurretPos": [0,2.1059375,0],
-  "BarrelPos": [0,0.1,0.6477125],
+  "TurretPos": [0.0,1.688,0.938],
+  "BarrelPos": [0.0,0.523,1.13],
   "TurretTurnSpeed": [3.765,4.2],
   "TurretPitchRange": [-10,20],
-  "PassengerWeaponStationPos": [-0.93,1.25,0.062],
-  "PassengerWeaponStationBarrelPos": [0,0.5,0],
+  "PassengerWeaponStationPos": [-0.937,1.25,0.063],
+  "PassengerWeaponStationBarrelPos": [0.0,0.5,0.063],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-9,65],
   "HasDecoy": true,
@@ -276,7 +315,6 @@
     "@minecraft:tnt_minecart * 4",
     "@#superbwarfare:aerial_bomb * 12",
     "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
     "superbwarfare:projectile_explosion * 0.65",
@@ -331,19 +369,19 @@
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [2,0,3.0625],
-    [-2,0,3.0625],
-    [2,0,1.0625],
-    [-2,0,1.0625],
-    [2,0,1.125],
-    [-2,0,1.125],
-    [2,0,0.1875],
-    [-2,0,0.1875],
-    [2,0,-0.8125],
-    [-2,0,-0.8125],
-    [2,0,-1.8125],
-    [-2,0,-1.8125],
-    [2,0,-2.8125],
-    [-2,0,-2.8125]
-  ]
+    [1.656,0.038,2.984],
+    [-1.669,0.038,-2.734],
+    [-1.669,0.038,2.922],
+    [1.656,0.038,-2.734]
+  ],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/m1a2sepv2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/m1a2sepv2green.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m1a2sepv2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m1a2sepv2.png"
+  }
 }

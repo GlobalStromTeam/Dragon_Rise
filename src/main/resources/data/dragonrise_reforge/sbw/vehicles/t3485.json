@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/t3485.animation.json",
   "ID": "dragonrise_reforge:t3485",
   "MaxHealth": 380,
   "MaxEnergy": 20000000,
@@ -53,9 +54,9 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.242,2.424,1.721],
+        "Position": [0.242,0.436,1.494],
         "Transform": "Turret",
-        "ZoomPosition": [0.242,0.774,1.721],
+        "ZoomPosition": [0.242,0.436,1.494],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -81,7 +82,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 180,
-      "Velocity": 39.5,
+      "Velocity": 26.3333,
       "Gravity": 0.05,
       "Damage": 380,
       "ExplosionDamage": 85,
@@ -102,7 +103,7 @@
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 39.5,
+            "Velocity": 26.3333,
             "Gravity": 0.05,
             "Damage": 130,
             "ExplosionDamage": 125,
@@ -126,7 +127,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.062,-2.066,14.078]
+          [-0.062,-0.078,3.078]
         ],
         "Directions": [
           "Barrel"
@@ -144,7 +145,7 @@
       "RPM": 950,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -155,7 +156,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.107,-2.042,12.708]
+          [0.107,-0.054,1.708]
         ],
         "Directions": [
           "Barrel"
@@ -183,7 +184,7 @@
       "RPM": 950,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -229,7 +230,7 @@
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [0.0,1.988,0.227],
-  "BarrelPos": [-0.339,2.375,1.308],
+  "BarrelPos": [-0.339,0.387,1.081],
   "TurretTurnSpeed": [0.32,0.58],
   "TurretPitchRange": [-10,22],
   "HasDecoy": true,
@@ -251,7 +252,6 @@
     "@minecraft:tnt_minecart * 4",
     "@#superbwarfare:aerial_bomb * 12",
     "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
     "superbwarfare:projectile_explosion * 0.65",
@@ -310,5 +310,15 @@
     [-1.625,0.0,-2.616],
     [-1.625,0.0,2.206],
     [1.625,0.0,-2.616]
-  ]
+  ],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/t3485.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/t3485.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/t3485.png"
+  }
 }

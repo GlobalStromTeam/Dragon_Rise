@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.mojang.math.Axis;
 import net.minecraft.resources.ResourceLocation;
@@ -12,14 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4d;
 import org.joml.Vector4d;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class DarkbearEntity extends GeoVehicleEntity {
+public class DarkbearEntity extends VehicleEntity {
 
         public DarkbearEntity(EntityType<DarkbearEntity> type, Level world) {
                 super(type, world);
@@ -28,29 +23,9 @@ public class DarkbearEntity extends GeoVehicleEntity {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
         }
-
-        private PlayState cannonFirePredicate(AnimationState<DarkbearEntity> event) {
-                if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.model.new"));
-                }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("nothing"));
-        }
-
-        private PlayState mgFirePredicate(AnimationState<DarkbearEntity> event) {
-                if (getShootAnimationTimer(1, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.model.new3"));
-                }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("nothing"));
-        }
-
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-        }
-
-        @Override
+@Override
         public Vec3 getShootPos(String weaponName, float ticks) {
                 if ("subcannon".equals(weaponName)) {
                         GunData data = getGunData(weaponName);

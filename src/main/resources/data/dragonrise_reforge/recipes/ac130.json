@@ -1,26 +1,17 @@
 {
-  "type": "superbwarfare:vehicle_assembly",
-  "pattern": [
-    "PPP",
-    "AAA",
-    "BBB"
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "2 superbwarfare:large_battery_pack",
+    "16 superbwarfare:steel_block",
+    "superbwarfare:heavy_armament_module",
+    "superbwarfare:medium_armament_module",
+    "superbwarfare:light_armament_module",
+    "4 superbwarfare:large_motor",
+    "4 superbwarfare:large_propeller",
+    "10 superbwarfare:wheel"
   ],
-  "key": {
-    "P": {
-      "item": "superbwarfare:steel_plate"
-    },
-    "A": {
-      "item": "superbwarfare:heavy_armament_module"
-    },
-    "B": {
-      "item": "superbwarfare:engine_module"
-    }
-  },
   "result": {
-    "item": "superbwarfare:vehicle_item",
-    "nbt": {
-      "EntityType": "dragonrise_reforge:ac130"
-    }
-  },
-  "energyCost": 1000000
+    "entity": "dragonrise_reforge:ac130"
+  }
 }

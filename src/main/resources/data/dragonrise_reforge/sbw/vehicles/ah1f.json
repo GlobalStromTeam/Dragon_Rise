@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/ah1f.animation.json",
   "ID": "dragonrise_reforge:ah1f",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
@@ -44,7 +45,8 @@
         "Position": [0.0,2.728,1.844],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0,5,-15]
+        "AircraftCameraPos": [0,5,-15],
+        "ZoomPosition": [0.0,2.728,1.844]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
@@ -68,7 +70,7 @@
         "Transform": "Barrel",
         "UseFixedCameraPos": true,
         "Position": [0.0,0.916,4.344],
-        "ZoomPosition": [0.0,1.1640625,7.2171875],
+        "ZoomPosition": [0.0,0.916,4.344],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -60,
@@ -94,7 +96,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "DefaultZoom": 3,
       "RPM": 625,
-      "Velocity": 40.4,
+      "Velocity": 26.9333,
       "Gravity": 0.05,
       "Damage": 55,
       "Magazine": 1200,
@@ -144,7 +146,7 @@
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 27.5,
+      "Velocity": 18.3333,
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,0.62,0.8],
@@ -179,7 +181,7 @@
       "Damage": 650,
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "CrosshairColor": "0xFFC700",
       "SoundInfo": {
@@ -195,6 +197,7 @@
       "DefaultZoom": 3,
       "Magazine": 8,
       "Template": "@Missile",
+      "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
       "ShootPos": {
         "Transform": "Vehicle",
@@ -246,7 +249,7 @@
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
@@ -298,7 +301,7 @@
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
@@ -354,6 +357,7 @@
   "Mass": 8.2,
   "AllowFreeCam": true,
   "HasDecoy": true,
+  "SmokeDecoy": false,
   "DamageModifiers": [
     "All - 10",
     "minecraft:lava + 10",
@@ -401,5 +405,15 @@
     [1.725,0.009,-0.919],
     [-1.725,0.009,2.362]
   ],
-  "TerrainCompatRotateRate": 0
+  "TerrainCompatRotateRate": 0,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+  }
 }

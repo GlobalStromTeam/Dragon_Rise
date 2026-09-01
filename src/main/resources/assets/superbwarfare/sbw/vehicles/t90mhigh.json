@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:t90mhigh",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/t90mhigh.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/t90mhigh.png"
-  }
+    "ID":  "dragonrise_reforge:t90mhigh",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/t90mhigh.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/t90mhigh.png"
+                   }
+               ]
 }

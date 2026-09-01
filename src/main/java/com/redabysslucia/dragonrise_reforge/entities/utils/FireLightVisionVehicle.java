@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities.utils;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.tools.OBB;
 import com.atsuishio.superbwarfare.tools.OBB.Part;
 
@@ -17,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
+public abstract class FireLightVisionVehicle extends DragonriseVehicleBase {
 
     // 存储实体的光源方块位置和放置时间
     private static final Map<FireLightVisionVehicle, LightInfo> lightInfoMap = new HashMap<>();
@@ -26,8 +25,8 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
     private int lightRemovalTimer = 0;
 
     @Override
-    public void vehicleShoot(LivingEntity living, String weaponName) {
-        super.vehicleShoot(living, weaponName);
+    public void vehicleShoot(LivingEntity living, String weaponName, Vec3 targetPos) {
+        super.vehicleShoot(living, weaponName, targetPos);
         // 处理炮口火光效果
         handleTurretFireLight(1); // 传入1表示正在开火
         // 设置删除计时器
@@ -55,9 +54,6 @@ public abstract class FireLightVisionVehicle extends GeoVehicleEntity {
                 handleTurretFireLight(0); // 传入0表示停止开火
             }
         }
-
-        // 处理栓绳拖拽
-        VehicleLeashData.tickLeash(this);
     }
 
     /**

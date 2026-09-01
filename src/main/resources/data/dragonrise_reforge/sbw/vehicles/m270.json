@@ -44,9 +44,10 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Barrel",
-        "ZoomPosition": [0,2,0],
+        "ZoomPosition": [0.131,2.291,0.594],
         "Direction": "Barrel",
-        "Position": [0.131,2.291,0.594]
+        "Position": [0.131,2.291,0.594],
+        "UseFixedCameraPos": true
       },
       "Transform": "Barrel",
       "Position": [0.875,0.584,2.553],
@@ -77,7 +78,7 @@
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 19.5,
+      "Velocity": 13,
       "ShootPos": {
         "Transform": "Barrel",
         "ShootPositionForHud": [0,0.62,0.8],
@@ -118,7 +119,7 @@
       "RPM": 450,
       "Magazine": 120,
       "EmptyReloadTime": 100,
-      "Velocity": 12,
+      "Velocity": 8,
       "Damage": 5,
       "HeatPerShoot": 6,
       "NaturalCooldown": 1,
@@ -185,7 +186,6 @@
     "superbwarfare:grapeshot_hit * 0.2",
     "@#superbwarfare:aerial_bomb * 1.4",
     "#superbwarfare:projectile * 1.0",
-    "superbwarfare:vehicle_strike * 10",
     "@superbwarfare:cannon_shell * 1.6",
     "@superbwarfare:small_cannon_shell * 1.8",
     "@superbwarfare:gun_grenade * 1.4",
@@ -211,5 +211,15 @@
     [-1.162,0.009,2.856],
     [1.163,0.009,-2.362]
   ],
-  "InertiaRotateRate": 2
+  "InertiaRotateRate": 2,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/m270.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/m270.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m270.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m270.png"
+  }
 }

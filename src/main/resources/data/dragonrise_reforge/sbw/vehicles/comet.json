@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/comet.animation.json",
   "ID": "dragonrise_reforge:comet",
   "MaxHealth": 350,
   "MaxEnergy": 20000000,
@@ -28,14 +29,14 @@
     },
     {
       "Size": [1.298,0.402,1.022],
-      "Position": [0.0,0.257,0.018],
+      "Position": [-0.003,0.257,0.325],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [1.053,0.377,0.98],
-      "Position": [0.0,0.447,-0.995],
+      "Position": [-0.003,0.447,-0.688],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -46,9 +47,9 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.379,2.317,1.119],
+        "Position": [0.376,0.381,1.426],
         "Transform": "Turret",
-        "ZoomPosition": [0.379,0.667,1.119],
+        "ZoomPosition": [0.376,0.381,1.426],
         "Direction": "Barrel"
       },
       "Transform": "Turret",
@@ -74,7 +75,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 170,
-      "Velocity": 32,
+      "Velocity": 21.3333,
       "Damage": 350,
       "ExplosionDamage": 80,
       "ExplosionRadius": 4.2,
@@ -94,7 +95,7 @@
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 20,
+            "Velocity": 13.3333,
             "Damage": 140,
             "ExplosionDamage": 120,
             "ExplosionRadius": 10,
@@ -117,7 +118,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.028,-1.977,4.089]
+          [0.028,-0.041,4.089]
         ],
         "Directions": [
           "Barrel"
@@ -135,7 +136,7 @@
       "RPM": 950,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 4,
@@ -145,7 +146,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.421,-1.924,1.22]
+          [-0.421,0.012,1.22]
         ],
         "Directions": [
           "Barrel"
@@ -173,7 +174,7 @@
       "RPM": 950,
       "Damage": 5,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 4,
@@ -218,7 +219,7 @@
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [0.003,1.936,-0.307],
-  "BarrelPos": [0.003,2.198,0.792],
+  "BarrelPos": [0.0,0.262,1.099],
   "TurretTurnSpeed": [0.3,0.55],
   "TurretPitchRange": [-10,22],
   "HasDecoy": true,
@@ -240,7 +241,6 @@
     "@minecraft:tnt_minecart * 4",
     "@#superbwarfare:aerial_bomb * 12",
     "All * 0.2",
-    "superbwarfare:vehicle_strike * 2.5",
     "minecraft:explosion * 2",
     "superbwarfare:custom_explosion * 0.65",
     "superbwarfare:projectile_explosion * 0.65",
@@ -299,5 +299,15 @@
     [-1.477,0.019,-2.564],
     [-1.366,0.019,2.106],
     [1.477,0.019,-2.564]
-  ]
+  ],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/comet.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/comet.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/comet.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/comet.png"
+  }
 }

@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/tunguska.animation.json",
   "ID": "dragonrise_reforge:tunguska",
   "MaxHealth": 350,
   "MaxEnergy": 6000000,
@@ -67,9 +68,9 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [0.431,3.541,-0.281],
+        "Position": [0.431,1.319,-0.213],
         "Transform": "Turret",
-        "ZoomPosition": [-0.062,2.5,-1.2],
+        "ZoomPosition": [0.431,1.319,-0.213],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -90,14 +91,24 @@
       "Transform": "Vehicle",
       "Position": [0.0,2.1687531250000003,-2.74074375],
       "MinYaw": -95,
-      "MaxYaw": 95
+      "MaxYaw": 95,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.7,0.1,-4.8],
       "MinYaw": -95,
-      "MaxYaw": 95
+      "MaxYaw": 95,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel"
+      }
     }
   ],
   "Weapons": {
@@ -109,7 +120,7 @@
       "ShellType": "AA",
       "DefaultZoom": 3,
       "RPM": 2000,
-      "Velocity": 56,
+      "Velocity": 37.3333,
       "Gravity": 0.05,
       "Damage": 23,
       "ExplosionDamage": 2,
@@ -167,7 +178,7 @@
       "RPM": 600,
       "Damage": 9.5,
       "BypassesArmor": 0.3,
-      "Velocity": 30,
+      "Velocity": 20,
       "RecoilTime": 22,
       "RecoilForce": 0.1,
       "HeatPerShoot": 4,
@@ -207,7 +218,7 @@
       "Damage": 120,
       "ExplosionDamage": 200,
       "ExplosionRadius": 5,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
@@ -290,7 +301,6 @@
     "@#superbwarfare:aa_missile * 0.5",
     "#superbwarfare:projectile * 0.1",
     "#superbwarfare:projectile_absolute * 0.7",
-    "#superbwarfare:vehicle_strike * 13",
     "@superbwarfare:mortar_shell * 1.1",
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8"
@@ -332,5 +342,15 @@
     [1.725,0.009,-4.106],
     [-1.725,0.009,2.362]
   ],
-  "InertiaRotateRate": 1.25
+  "InertiaRotateRate": 1.25,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/tunguska.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/tunguska.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/tunguska.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/tunguska.png"
+  }
 }

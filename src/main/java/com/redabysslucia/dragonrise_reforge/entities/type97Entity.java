@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import net.minecraft.world.entity.EntityType;
@@ -15,7 +15,7 @@ public class type97Entity extends SyncCameraVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
 
 //    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {

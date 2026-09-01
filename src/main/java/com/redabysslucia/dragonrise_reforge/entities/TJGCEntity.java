@@ -12,7 +12,7 @@ import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import lombok.val;
 import net.minecraft.core.Holder;
@@ -34,11 +34,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.network.PacketDistributor;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import java.util.List;
 
@@ -55,7 +50,7 @@ public class TJGCEntity extends VariableEngineVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
     }
 
     public void hitBlock(Vec3 pos, GunData gunData, Entity shooter) {
@@ -142,22 +137,6 @@ public class TJGCEntity extends VariableEngineVehicle {
         return Component.translatable(name, (int) (25 + data.heat.get()) + " " + "°C");
     }
 
-    private PlayState Sb(AnimationState<TJGCEntity> event) {
-        if (this.onGround()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("on"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("off"));
-        }
-    }
-
-    private PlayState Sb1(AnimationState<TJGCEntity> event) {
-        if (this.sprintInputDown()) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("enginon"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("enginoff"));
-        }
-    }
-
     public boolean shouldShowMissileOn(VehicleEntity vehicle, int... missileWeaponIndices) {
         for (var passenger : vehicle.getPassengers()) {
             int seatIndex = vehicle.getSeatIndex(passenger);
@@ -180,24 +159,7 @@ public class TJGCEntity extends VariableEngineVehicle {
         }
         return false;
     }
-
-    private PlayState MissileOn(AnimationState<TJGCEntity> event) {
-        if (shouldShowMissileOn(this, 1, 2, 3, 4)) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("missileon"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("missileoff"));
-        }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "sb", 0, this::Sb));
-        data.add(new AnimationController<>(this, "sb1", 0, this::Sb1));
-        data.add(new AnimationController<>(this, "missileon", 0, this::MissileOn));
-    }
-
-
-    @Override
+@Override
     public double getMouseSensitivity() {
         return zoomVehicle ? 0.1 : 0.25;
     }

@@ -1,5 +1,53 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mi24vRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.F15eRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3SupplyRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3ArmedRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ural4320SupplyRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ural4320Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ural4320Zu23Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Brdm2Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ChallengerDsRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mv3Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ztz96aRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.T72b3Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aavc7c1Renderer;
+
+
+
+
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1SbmRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MarkvRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
@@ -8,9 +56,28 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.DSHKRende
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.M2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hmg.qjz89Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AAshellRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Agm65CustomRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Aim120Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Aim9Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AirBomb500kgRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.AntiTopWireGuideMissileRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gbu12Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gbu24Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gb250Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Gb500Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.JdamErRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Kd88aRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Kh29Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Ls6IrRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Ls6Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Pl10Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Pl12Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Pl15Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R73Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R77Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.ClusterChargeRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.R6DroneRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,7 +87,7 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-                event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ARenderer::new);
+                event.registerEntityRenderer(ModEntities.ZTZ99A.get(), ZTZ99ASbmRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99AH.get(), ZTZ99AHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ99BH.get(), ZTZ99BHRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZTZ59A.get(), ZTZ59ARenderer::new);
@@ -33,6 +100,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AMX56.get(), AMX56Renderer::new);
                 event.registerEntityRenderer(ModEntities.CV90.get(), CV90Renderer::new);
                 event.registerEntityRenderer(ModEntities.JAS39E.get(), JAS39ERenderer::new);
+                event.registerEntityRenderer(ModEntities.FA18E.get(), FA18ERenderer::new);
                 event.registerEntityRenderer(ModEntities.KA50.get(), KA50Renderer::new);
                 event.registerEntityRenderer(ModEntities.T80.get(), T80Renderer::new);
                 event.registerEntityRenderer(ModEntities.T90MH.get(), T90MHRenderer::new);
@@ -128,6 +196,23 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.AKM.get(), AKMRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSU234.get(), ZSU234Renderer::new);
                 event.registerEntityRenderer(ModEntities.AASHELL.get(), AAshellRenderer::new);
+                event.registerEntityRenderer(ModEntities.AIM120.get(), Aim120Renderer::new);
+                event.registerEntityRenderer(ModEntities.AGM65.get(), Agm65CustomRenderer::new);
+                event.registerEntityRenderer(ModEntities.GBU12.get(), Gbu12Renderer::new);
+                event.registerEntityRenderer(ModEntities.AIM9.get(), Aim9Renderer::new);
+                event.registerEntityRenderer(ModEntities.PL12.get(), Pl12Renderer::new);
+                event.registerEntityRenderer(ModEntities.PL15.get(), Pl15Renderer::new);
+                event.registerEntityRenderer(ModEntities.R77.get(), R77Renderer::new);
+                event.registerEntityRenderer(ModEntities.PL10.get(), Pl10Renderer::new);
+                event.registerEntityRenderer(ModEntities.R73.get(), R73Renderer::new);
+                event.registerEntityRenderer(ModEntities.KD88A.get(), Kd88aRenderer::new);
+                event.registerEntityRenderer(ModEntities.KH29.get(), Kh29Renderer::new);
+                event.registerEntityRenderer(ModEntities.GB500.get(), Gb500Renderer::new);
+                event.registerEntityRenderer(ModEntities.GBU24.get(), Gbu24Renderer::new);
+                event.registerEntityRenderer(ModEntities.JDAM_ER.get(), JdamErRenderer::new);
+                event.registerEntityRenderer(ModEntities.LS6.get(), Ls6Renderer::new);
+                event.registerEntityRenderer(ModEntities.LS6_IR.get(), Ls6IrRenderer::new);
+                event.registerEntityRenderer(ModEntities.GB250.get(), Gb250Renderer::new);
                 event.registerEntityRenderer(ModEntities.AIRBOMB500KG.get(), AirBomb500kgRenderer::new);
                 event.registerEntityRenderer(ModEntities.ANTI_TOP_WIRE_GUIDE_MISSILE.get(), AntiTopWireGuideMissileRenderer::new);
                 event.registerEntityRenderer(ModEntities.L1A2.get(), L1A2Renderer::new);
@@ -146,5 +231,26 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZTD05.get(), Ztd05Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZBD05.get(), Zbd05Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZSL10.get(), Zsl10Renderer::new);
+
+                event.registerEntityRenderer(ModEntities.MARKV.get(), MarkvRenderer::new);
+
+                event.registerEntityRenderer(ModEntities.AAV7A1.get(), Aav7a1SbmRenderer::new);
+                event.registerEntityRenderer(ModEntities.AAV7A1.get(), Aav7a1Renderer::new);
+                event.registerEntityRenderer(ModEntities.AAVC7C1.get(), Aavc7c1Renderer::new);
+                event.registerEntityRenderer(ModEntities.T72B3.get(), T72b3Renderer::new);
+                event.registerEntityRenderer(ModEntities.ZTZ96A.get(), Ztz96aRenderer::new);
+                event.registerEntityRenderer(ModEntities.MV3.get(), Mv3Renderer::new);
+                event.registerEntityRenderer(ModEntities.CHALLENGER_DS.get(), ChallengerDsRenderer::new);
+                event.registerEntityRenderer(ModEntities.BRDM2.get(), Brdm2Renderer::new);
+                event.registerEntityRenderer(ModEntities.CLUSTER_CHARGE.get(), ClusterChargeRenderer::new);
+                event.registerEntityRenderer(ModEntities.R6_DRONE.get(), R6DroneRenderer::new);
+                event.registerEntityRenderer(ModEntities.ATTACK_DRONE.get(), R6DroneRenderer::new);
+                event.registerEntityRenderer(ModEntities.URAL4320_ZU23.get(), Ural4320Zu23Renderer::new);
+                event.registerEntityRenderer(ModEntities.URAL4320.get(), Ural4320Renderer::new);
+                event.registerEntityRenderer(ModEntities.URAL4320_SUPPLY.get(), Ural4320SupplyRenderer::new);
+                event.registerEntityRenderer(ModEntities.MV3_ARMED.get(), Mv3ArmedRenderer::new);
+                event.registerEntityRenderer(ModEntities.MV3_SUPPLY.get(), Mv3SupplyRenderer::new);
+                event.registerEntityRenderer(ModEntities.F15E.get(), F15eRenderer::new);
+                event.registerEntityRenderer(ModEntities.MI24V.get(), Mi24vRenderer::new);
         }
 }

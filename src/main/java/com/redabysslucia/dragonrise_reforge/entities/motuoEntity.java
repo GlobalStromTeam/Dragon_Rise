@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
@@ -14,7 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("removal")
-public class motuoEntity extends GeoVehicleEntity {
+public class motuoEntity extends VehicleEntity {
 
     public motuoEntity(EntityType<motuoEntity> type, Level world) {
         super(type, world);
@@ -71,7 +71,7 @@ public class motuoEntity extends GeoVehicleEntity {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.05f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.05f) * damage);
     }
 
 

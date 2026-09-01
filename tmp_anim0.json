@@ -1,0 +1,287 @@
+﻿{
+    "uuid":  "03e1ac5f-0ae1-46c1-de2b-00ce7269efef",
+    "name":  "起落架收",
+    "loop":  "hold",
+    "override":  false,
+    "length":  3,
+    "snapping":  24,
+    "selected":  false,
+    "group_name":  "",
+    "scope":  0,
+    "anim_time_update":  "",
+    "blend_weight":  "",
+    "start_delay":  "",
+    "loop_delay":  "",
+    "animators":  {
+                      "6bd12af2-815d-b1dd-a4cc-30e0ec461b1c":  {
+                                                                   "name":  "wheel3",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "a7db0dc9-1f80-7718-802e-02d626caeb15":  {
+                                                                   "name":  "wheel",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "9375b8f2-7d74-a094-6b64-8553572c5ed9":  {
+                                                                   "name":  "wheelL",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=ab743787-4e66-4a7f-f9a2-c733b7e43851; time=0.54167; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=2f05b353-8a9a-d147-b793-123dc2ca65fc; time=0; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=7e0b052d-c5dd-5f32-e9ac-8be835eb0a01; time=1; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=eae5fa90-475e-03cc-cf82-febcb77d66cc; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "206008cd-348c-63e9-31bb-e183423d31c6":  {
+                                                                   "name":  "group11",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=4aa350c2-af3a-db2c-d49b-ecaba1530721; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=84a8f668-fa4e-0f13-94d7-848d3a7e26bd; time=1; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "c0799383-4a8e-7cd2-0ad9-eecae41e96da":  {
+                                                                   "name":  "group12",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=2cd004b1-eab5-b016-60d1-c71fbfbc06cb; time=0.79167; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=9ebd69b1-af61-57cf-1a10-81aa28d47263; time=0; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "b2a9fd95-98b4-2acf-ed08-ee02701696e1":  {
+                                                                   "name":  "guajia",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "bac486ca-3533-7e51-94e0-84726fecf556":  {
+                                                                   "name":  "wheel1",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "7c516222-7811-139d-4ce1-922feb8d84ac":  {
+                                                                   "name":  "group2",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=b876df60-52af-ec13-e7d9-c9f74eae8517; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=60c8dee9-1aea-b620-393c-ab7b68b3d06e; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "0f0d6d6b-63b7-ae04-cb69-354d19060055":  {
+                                                                   "name":  "group3",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=ca0722d5-9f9f-face-9b3d-72991f0214d8; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=4cba3c55-b32d-2bdb-ab71-d855a4958349; time=1.5; color=-1; interpolation=linear}",
+                                                                                     "@{channel=position; data_points=System.Object[]; uuid=8fa82588-b914-8318-a8a1-0e9e47459e8c; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=position; data_points=System.Object[]; uuid=42483bc6-57aa-c59f-3f78-3478489b44ec; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "42625507-8c85-3190-24d3-a43986f72919":  {
+                                                                   "name":  "group4",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=d5a2b0eb-558d-c14a-37be-48f08d7ac856; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=9392fe90-0b85-1309-9ee8-68b980594f44; time=1.5; color=-1; interpolation=linear}",
+                                                                                     "@{channel=position; data_points=System.Object[]; uuid=b3a2997a-636f-8ebf-97fd-248384fef5d2; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=position; data_points=System.Object[]; uuid=f4dbf7a8-17d1-eb5f-52da-e7fe3ca6206e; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "4f878e89-e244-c079-3cb3-f69d4d89b402":  {
+                                                                   "name":  "wheelR2",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=02436821-0eda-f384-68a3-21095ac1c6d0; time=0; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=0c46f364-b926-b89e-02d1-a4b7cb522cea; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "b99426bf-5223-7314-b54d-3c2aafb07455":  {
+                                                                   "name":  "JAS39E",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "23324cfe-ca88-1787-e934-42fe44b8cc64":  {
+                                                                   "name":  "body",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "400af600-b247-4abd-e55c-9ac69ad00351":  {
+                                                                   "name":  "verticalTail",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "30a58b40-bcfc-0d24-2ebd-83229b6ad1ab":  {
+                                                                   "name":  "bone3",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "1cda2d0e-a4df-bb0a-c128-41df5c5f414d":  {
+                                                                   "name":  "bone13",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "7c0bf669-665f-3185-a376-12a0f6b369c9":  {
+                                                                   "name":  "yayi",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "e4f9fcf4-5fc1-39fb-0ce3-15a0c8775593":  {
+                                                                   "name":  "yayiR",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "ca457b9f-f5c5-3f40-5915-ec7d8030c0c5":  {
+                                                                   "name":  "yayiL",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "2d4f7141-305f-554b-137f-a1f7e07b3453":  {
+                                                                   "name":  "inlet",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "98b0bca4-17d1-9f60-a0af-739c61a42213":  {
+                                                                   "name":  "inside",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "772f9368-1ed3-c80f-53b0-8dad1fd46d25":  {
+                                                                   "name":  "engine",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "d685edfe-e9eb-919a-47cc-8c6f729bc94d":  {
+                                                                   "name":  "wing",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "869c08a4-3207-0872-7ab1-e245770cb529":  {
+                                                                   "name":  "gun",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "088d0650-ed6e-657b-45cd-4039090efac1":  {
+                                                                   "name":  "windows",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "1350b707-0562-f778-8511-713ef214148d":  {
+                                                                   "name":  "seet",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "c0da203c-a19c-b574-1e14-1818ea0f1ba3":  {
+                                                                   "name":  "bone12",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "27e33f12-6935-3b7a-8a45-984f1630c030":  {
+                                                                   "name":  "group",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "66540ed8-87e5-d5ea-4f11-c129324de593":  {
+                                                                   "name":  "bone2",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "e092291b-ec18-39cb-14af-da5752a2ae86":  {
+                                                                   "name":  "wheel2",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "4b476c58-7b6c-7c26-e276-d410a73aa4c9":  {
+                                                                   "name":  "group6",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=eaf72e50-4ae8-6a17-d34e-c84448fd4456; time=3; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=fe8f6055-5685-5a2e-3870-527b3b2f8d19; time=1; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "25ded7de-a9b2-90c3-a1ae-e7bc500d16d3":  {
+                                                                   "name":  "wheelL2",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=786481a2-a5d1-6d66-0b6a-99501c4bea96; time=0.54167; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=5fb10d1f-dd50-d607-c253-3ce37344e05d; time=0; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=3e849a32-65a8-91ef-a049-1112d08a2877; time=1; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=5fd2cb7c-f490-585f-3e69-978b2bf4e8ad; time=1.5; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "9fa29cee-287c-02bf-f746-8536067ad5b2":  {
+                                                                   "name":  "group7",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false,
+                                                                   "keyframes":  [
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=5ad35020-121a-00f8-7e7c-40c220607eea; time=0.79167; color=-1; interpolation=linear}",
+                                                                                     "@{channel=rotation; data_points=System.Object[]; uuid=70219b3a-3fec-7374-c7ad-31587d392b21; time=0; color=-1; interpolation=linear}"
+                                                                                 ]
+                                                               },
+                      "df576165-9538-16d2-a3cf-458d2954caa8":  {
+                                                                   "name":  "wingL",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "4bd65ff5-5f36-27cb-b72f-1c3ef93c0e3f":  {
+                                                                   "name":  "wingR",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "522e4760-e591-7d4f-9d80-1edeed5c387b":  {
+                                                                   "name":  "flapL",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               },
+                      "59ad6fed-f49c-09f2-5116-8bb5f06a25d1":  {
+                                                                   "name":  "flapR",
+                                                                   "type":  "bone",
+                                                                   "rotation_global":  false,
+                                                                   "quaternion_interpolation":  false
+                                                               }
+                  }
+}

@@ -4,11 +4,6 @@ import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 public class ZTZ99BHEntity extends FireLightVisionVehicle {
         public ZTZ99BHEntity(EntityType<?> pEntityType, Level pLevel) {
@@ -17,21 +12,9 @@ public class ZTZ99BHEntity extends FireLightVisionVehicle {
         @Override
         public DamageModifier getDamageModifier() {
                 return super.getDamageModifier()
-                        .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                        .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
         }
-        private PlayState cannonFirePredicate(AnimationState<ZTZ99BHEntity> event) {
-                if (getShootAnimationTimer(0, 0) > 0) {
-                        return event.setAndContinue(RawAnimation.begin().thenPlay("animation.ztz99a.fire"));
-                }
-                return event.setAndContinue(RawAnimation.begin().thenLoop("animation.ztz99a.idle"));
-        }
-
-        @Override
-        public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-                data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-        }
-
-        @Override
+@Override
         public int getTrackAnimationLength() {
                 return 80;
         }

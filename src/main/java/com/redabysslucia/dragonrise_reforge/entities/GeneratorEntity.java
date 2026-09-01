@@ -1,6 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.inventory.menu.ChargingStationMenu;
 import com.atsuishio.superbwarfare.network.dataslot.ContainerEnergyData;
 import com.redabysslucia.dragonrise_reforge.config.server.MiscConfig;
@@ -30,7 +30,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
-public class GeneratorEntity extends GeoVehicleEntity implements MenuProvider {
+public class GeneratorEntity extends VehicleEntity implements MenuProvider {
     private static final int SLOT_FUEL = 0;
     private static final int SLOT_CHARGE = 1;
     private static final int MAX_DATA_COUNT = 4;

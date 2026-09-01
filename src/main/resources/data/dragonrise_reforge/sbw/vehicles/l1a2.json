@@ -1,4 +1,5 @@
 {
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/l1a2.animation.json",
   "ID": "dragonrise_reforge:l1a2",
   "MaxHealth": 300,
   "MaxEnergy": 5000000,
@@ -28,42 +29,42 @@
     },
     {
       "Size": [0.844,0.719,2.0],
-      "Position": [0.0,0.719,-0.187],
+      "Position": [0.0,0.719,-0.651],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [1.406,0.219,1.094],
-      "Position": [0.0,0.219,0.281],
+      "Position": [0.0,0.219,-0.182],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [1.75,0.313,1.031],
-      "Position": [0.0,0.938,-0.094],
+      "Position": [0.0,0.938,-0.557],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.469,0.188,0.531],
-      "Position": [0.0,1.625,-0.906],
+      "Position": [0.0,1.625,-1.369],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.469,0.531,0.406],
-      "Position": [0.0,1.969,-1.844],
+      "Position": [0.0,1.969,-2.307],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.469,0.469,0.406],
-      "Position": [0.0,0.781,2.219],
+      "Position": [0.0,0.781,1.756],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -74,9 +75,9 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.062,4.125,-1.187],
+        "Position": [-0.062,2.375,-1.65],
         "Transform": "Turret",
-        "ZoomPosition": [-0.062,2.475,-1.187],
+        "ZoomPosition": [-0.062,2.375,-1.65],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -96,14 +97,26 @@
       "Transform": "Vehicle",
       "Position": [0.688,0.14,-4.812],
       "MinYaw": -95,
-      "MaxYaw": 95
+      "MaxYaw": 95,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.688,1.75,-4.812]
+      }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.687,0.14,-4.812],
       "MinYaw": -95,
-      "MaxYaw": 95
+      "MaxYaw": 95,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [-0.687,1.75,-4.812]
+      }
     }
   ],
   "Weapons": {
@@ -115,7 +128,7 @@
       "ShellType": "AA",
       "DefaultZoom": 3,
       "RPM": 1200,
-      "Velocity": 23,
+      "Velocity": 35,
       "Gravity": 0.03,
       "Damage": 23,
       "ExplosionDamage": 2,
@@ -144,8 +157,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008,-1.697,3.969],
-          [1.008,-1.697,3.969]
+          [-1.008,0.053,3.969],
+          [1.008,0.053,3.969]
         ],
         "Directions": [
           "Barrel"
@@ -173,7 +186,7 @@
       "RPM": 600,
       "Damage": 9.5,
       "BypassesArmor": 0.3,
-      "Velocity": 30,
+      "Velocity": 20,
       "RecoilTime": 22,
       "RecoilForce": 0.1,
       "HeatPerShoot": 4,
@@ -183,7 +196,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008,-1.697,3.969]
+          [-1.008,0.053,3.969]
         ],
         "Directions": [
           "Barrel"
@@ -213,7 +226,7 @@
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
-      "Velocity": 30,
+      "Velocity": 20,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
@@ -227,10 +240,10 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.773,-1.572,0.781],
-          [-1.773,-1.806,0.781],
-          [1.773,-1.806,0.781],
-          [1.773,-1.572,0.781]
+          [-1.773,0.178,0.781],
+          [-1.773,-0.056,0.781],
+          [1.773,-0.056,0.781],
+          [1.773,0.178,0.781]
         ],
         "Directions": [
           "Barrel"
@@ -267,7 +280,7 @@
   "TurretPos": [0.0,1.75,0.463],
   "TurretTurnSpeed": [12.5,10],
   "TurretPitchRange": [-15,70],
-  "BarrelPos": [0.0,2.638,-0.352],
+  "BarrelPos": [0.0,0.888,-0.815],
   "ThirdPersonCameraPos": [0,1,3],
   "HasDecoy": true,
   "UpStep": 1.5,
@@ -298,7 +311,6 @@
     "@#superbwarfare:aa_missile * 0.5",
     "#superbwarfare:projectile * 0.1",
     "#superbwarfare:projectile_absolute * 0.7",
-    "#superbwarfare:vehicle_strike * 13",
     "@superbwarfare:mortar_shell * 1.1",
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8"
@@ -340,5 +352,15 @@
     [-1.5,0.0,3.5],
     [1.5,0.0,-3.375]
   ],
-  "InertiaRotateRate": 1.25
+  "InertiaRotateRate": 1.25,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/l1a2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/l1a2.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/l1a2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/l1a2.png"
+  }
 }

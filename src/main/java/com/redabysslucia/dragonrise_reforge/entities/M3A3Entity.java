@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.network.chat.Component;
@@ -13,23 +13,23 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
 @SuppressWarnings("removal")
-public class M3A3Entity extends GeoVehicleEntity {
+public class M3A3Entity extends VehicleEntity {
 
     public static final EntityDataAccessor<Integer> MISSILE_STATE =
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
     public static final EntityDataAccessor<Integer> DEPLOY_TIMER =
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
+
+    // 客户端动画状态机缓存
+    private String lastMissileAnim = "";
 
     public M3A3Entity(EntityType<M3A3Entity> type, Level world) {
         super(type, world);
@@ -45,7 +45,7 @@ public class M3A3Entity extends GeoVehicleEntity {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.25f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
     }
 
     private final Map<UUID, Integer> lastMessageTick = new HashMap<>();
@@ -103,7 +103,10 @@ public class M3A3Entity extends GeoVehicleEntity {
     @Override
     public void tick() {
         super.tick();
-        if (level().isClientSide) return;
+        if (level().isClientSide) {
+            tickMissileAnimation();
+            return;
+        }
 
         int currentState = entityData.get(MISSILE_STATE);
         boolean anyMissileSelected = anyPassengerHasMissile();
@@ -139,14 +142,32 @@ public class M3A3Entity extends GeoVehicleEntity {
         }
     }
 
+    /**
+     * 客户端导弹架动画状态机：
+     *  - MISSILE_STATE 0=收起 1=展开中 2=展开 3=收起中
+     *  动画由 M3A3Renderer 手动控制（绕开引擎 Z 方向问题），此处不再播放动画文件。
+     */
+    @OnlyIn(Dist.CLIENT)
+    private void tickMissileAnimation() {
+    }
+
     @Override
     public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
         int seatIndex = getSeatIndex(living);
+        int selectedWeapon = seatIndex >= 0 ? getSelectedWeapon(seatIndex) : -1;
+
+        // 客户端：主炮（索引 0）开火时播放一次性后坐动画
+        if (level().isClientSide && selectedWeapon == 0) {
+            var ani = getAnimationInstance();
+            if (ani != null) {
+                ani.getContext().playAnimation("animation.m3a3.main_cannon", AnimationPlayType.PLAY_ONCE_STOP, 0);
+            }
+        }
+
         if (seatIndex < 0) {
             super.vehicleShoot(living, uuid, targetPos);
             return;
         }
-        int selectedWeapon = getSelectedWeapon(seatIndex);
         if (selectedWeapon != 1) {
             super.vehicleShoot(living, uuid, targetPos);
             return;
@@ -169,14 +190,21 @@ public class M3A3Entity extends GeoVehicleEntity {
         super.vehicleShoot(living, uuid, targetPos);
     }
 
-    private PlayState cannonFirePredicate(AnimationState<M3A3Entity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.maincannon"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("m3a3.nothinghappen.new"));
+    /**
+     * 获取导弹架状态（0=收起 1=展开中 2=展开 3=收起中）
+     */
+    public int getMissileState() {
+        return this.entityData.get(MISSILE_STATE);
     }
 
-    public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
+    /**
+     * 获取展开/收起剩余计时（tick，0~30）
+     */
+    public int getDeployTimer() {
+        return this.entityData.get(DEPLOY_TIMER);
+    }
+
+public boolean shouldShowMissileOn(VehicleEntity vehicle, int missileWeaponIndex) {
         for (var passenger : vehicle.getPassengers()) {
             int seatIndex = vehicle.getSeatIndex(passenger);
             if (seatIndex < 0) continue;
@@ -191,24 +219,4 @@ public class M3A3Entity extends GeoVehicleEntity {
         }
         return false;
     }
-
-    private PlayState MissileOn(AnimationState<M3A3Entity> event) {
-        int state = entityData.get(MISSILE_STATE);
-        if (state == 1) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.missile_deploy"));
-        } else if (state == 3) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("m3a3.animation.missile_retract"));
-        } else if (state == 2) {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("m3a3.animation.missile_hold"));
-        } else {
-            return event.setAndContinue(RawAnimation.begin().thenPlayAndHold("m3a3.animation.missile_off_hold"));
-        }
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "missileon", 0, this::MissileOn));
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-    }
-
 }

@@ -1,5 +1,52 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Mi24vEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.F15eEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mv3SupplyEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mv3ArmedEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320SupplyEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Zu23Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mv3Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ztz96aEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.T72b3Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Aavc7c1Entity;
+
+
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.MarkvEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Zsl10Entity;
 
 
@@ -45,9 +92,29 @@ import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Agm65CustomEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim120Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim9Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu24Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gb250Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gb500Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.JdamErEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Kd88aEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Kh29Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ls6Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ls6IrEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl12Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl15Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.R73Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.R77Entity;
 import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
@@ -431,6 +498,150 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.5f)
+    );
+
+    public static final RegistryObject<EntityType<FA18EEntity>> FA18E = register("fa18e",
+            EntityType.Builder.of(FA18EEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.5f)
+    );
+
+    public static final RegistryObject<EntityType<Aim120Entity>> AIM120 = register("aim120",
+            EntityType.Builder.<Aim120Entity>of((type, level) -> new Aim120Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Agm65CustomEntity>> AGM65 = register("agm65",
+            EntityType.Builder.<Agm65CustomEntity>of((type, level) -> new Agm65CustomEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Gbu12Entity>> GBU12 = register("gbu_12",
+            EntityType.Builder.<Gbu12Entity>of((type, level) -> new Gbu12Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Aim9Entity>> AIM9 = register("aim9",
+            EntityType.Builder.<Aim9Entity>of((type, level) -> new Aim9Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Pl12Entity>> PL12 = register("pl_12",
+            EntityType.Builder.<Pl12Entity>of((type, level) -> new Pl12Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Pl15Entity>> PL15 = register("pl_15",
+            EntityType.Builder.<Pl15Entity>of((type, level) -> new Pl15Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<R77Entity>> R77 = register("r_77",
+            EntityType.Builder.<R77Entity>of((type, level) -> new R77Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Pl10Entity>> PL10 = register("pl_10",
+            EntityType.Builder.<Pl10Entity>of((type, level) -> new Pl10Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<R73Entity>> R73 = register("r_73",
+            EntityType.Builder.<R73Entity>of((type, level) -> new R73Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Kd88aEntity>> KD88A = register("kd_88a",
+            EntityType.Builder.<Kd88aEntity>of((type, level) -> new Kd88aEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Kh29Entity>> KH29 = register("kh_29",
+            EntityType.Builder.<Kh29Entity>of((type, level) -> new Kh29Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Gb500Entity>> GB500 = register("gb_500",
+            EntityType.Builder.<Gb500Entity>of((type, level) -> new Gb500Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Gbu24Entity>> GBU24 = register("gbu_24",
+            EntityType.Builder.<Gbu24Entity>of((type, level) -> new Gbu24Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<JdamErEntity>> JDAM_ER = register("jdam_er",
+            EntityType.Builder.<JdamErEntity>of((type, level) -> new JdamErEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Ls6Entity>> LS6 = register("ls_6",
+            EntityType.Builder.<Ls6Entity>of((type, level) -> new Ls6Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Ls6IrEntity>> LS6_IR = register("ls_6_ir",
+            EntityType.Builder.<Ls6IrEntity>of((type, level) -> new Ls6IrEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<Gb250Entity>> GB250 = register("gb_250",
+            EntityType.Builder.<Gb250Entity>of((type, level) -> new Gb250Entity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
     );
 
     public static final RegistryObject<EntityType<SX1Entity>> SX1 = register("sx1",
@@ -1068,6 +1279,134 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<Zsl10Entity>> ZSL10 = register("zsl10",
             EntityType.Builder.of(Zsl10Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<MarkvEntity>> MARKV = register("markv",
+            EntityType.Builder.of(MarkvEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Aav7a1Entity>> AAV7A1 = register("aav7a1",
+            EntityType.Builder.of(Aav7a1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Aavc7c1Entity>> AAVC7C1 = register("aavc7c1",
+            EntityType.Builder.of(Aavc7c1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<T72b3Entity>> T72B3 = register("t72b3",
+            EntityType.Builder.of(T72b3Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ztz96aEntity>> ZTZ96A = register("ztz96a",
+            EntityType.Builder.of(Ztz96aEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3Entity>> MV3 = register("mv3",
+            EntityType.Builder.of(Mv3Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<ChallengerDsEntity>> CHALLENGER_DS = register("challenger_ds",
+            EntityType.Builder.of(ChallengerDsEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Brdm2Entity>> BRDM2 = register("brdm2",
+            EntityType.Builder.of(Brdm2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+
+    public static final RegistryObject<EntityType<ClusterChargeEntity>> CLUSTER_CHARGE = register("cluster_charge",
+            EntityType.Builder.<ClusterChargeEntity>of((type, level) -> new ClusterChargeEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(10)
+                    .setUpdateInterval(Integer.MAX_VALUE)
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final RegistryObject<EntityType<R6DroneEntity>> R6_DRONE = register("r6_drone",
+            EntityType.Builder.<R6DroneEntity>of((type, level) -> new R6DroneEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.4f, 0.2f)
+    );
+    public static final RegistryObject<EntityType<AttackDroneEntity>> ATTACK_DRONE = register("attack_drone",
+            EntityType.Builder.<AttackDroneEntity>of((type, level) -> new AttackDroneEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.4f, 0.2f)
+    );
+    public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
+            EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ural4320Entity>> URAL4320 = register("ural4320",
+            EntityType.Builder.of(Ural4320Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ural4320SupplyEntity>> URAL4320_SUPPLY = register("ural4320_supply",
+            EntityType.Builder.of(Ural4320SupplyEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3ArmedEntity>> MV3_ARMED = register("mv3_armed",
+            EntityType.Builder.of(Mv3ArmedEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mv3SupplyEntity>> MV3_SUPPLY = register("mv3_supply",
+            EntityType.Builder.of(Mv3SupplyEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<F15eEntity>> F15E = register("f15e",
+            EntityType.Builder.of(F15eEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mi24vEntity>> MI24V = register("mi24v",
+            EntityType.Builder.of(Mi24vEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

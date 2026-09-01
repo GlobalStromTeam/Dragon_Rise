@@ -6,6 +6,7 @@ import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.tools.CustomExplosion;
 import com.atsuishio.superbwarfare.tools.DamageHandler;
+import com.atsuishio.superbwarfare.tools.ParticleTool;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
@@ -30,7 +31,14 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
+    @Override
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return this.cache;
+    }
 
+    @Override
+    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+    }
 
     public AAshellEntity(EntityType<? extends AAshellEntity> type, Level level) {
         super(type, level);
@@ -45,7 +53,7 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
     }
 
     @Override
-    protected void onHitEntity(@NotNull EntityHitResult result) {
+    public void onHitEntity(@NotNull EntityHitResult result) {
         super.onHitEntity(result);
         Entity entity = result.getEntity();
 
@@ -95,12 +103,11 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
     private void causeExplode(Vec3 vec3, boolean hitEntity) {
         new CustomExplosion.Builder(this)
                 .attacker(this.getOwner())
-                .damage(getExplosionDamageValue())
+                .damage(getExplosionDamageValue() * 1.25F)
                 .radius(getExplosionRadiusValue())
                 .position(vec3)
-                .withParticleType(explosionParticleType(getExplosionRadiusValue()))
-                .destroyBlock(() -> hitEntity ? Explosion.BlockInteraction.KEEP : (ExplosionConfig.EXPLOSION_DESTROY.get() ? Explosion.BlockInteraction.DESTROY : Explosion.BlockInteraction.KEEP))
-                .damageMultiplier(1.25F)
+                .withParticleType(ParticleTool.particleTypeForRadius(getExplosionRadiusValue()))
+                .destroyBlock(!hitEntity)
                 .explode();
     }
 
@@ -126,17 +133,6 @@ public class AAshellEntity extends FastThrowableProjectile implements GeoEntity 
                 }
             }
         }
-    }
-
-
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
     }
 
     @Override

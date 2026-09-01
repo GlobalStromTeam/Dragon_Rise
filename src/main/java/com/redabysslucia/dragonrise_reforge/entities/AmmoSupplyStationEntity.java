@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.data.gun.AmmoConsumer;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.gun.GunProp;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.SeatInfo;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.tools.InventoryTool;
 import com.redabysslucia.dragonrise_reforge.config.SupplyStationConfig;
 import com.redabysslucia.dragonrise_reforge.config.SupplyStationDataLoader;
@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class AmmoSupplyStationEntity extends GeoVehicleEntity {
+public class AmmoSupplyStationEntity extends VehicleEntity {
 
     private static final EntityDataAccessor<Float> SUPPLY_RANGE =
             SynchedEntityData.defineId(AmmoSupplyStationEntity.class, EntityDataSerializers.FLOAT);
@@ -213,7 +213,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
 
     private boolean checkVehicleDamage() {
         for (Map.Entry<UUID, Float> entry : trackedVehicleHealth.entrySet()) {
-            GeoVehicleEntity vehicle = findTrackedVehicle(entry.getKey());
+            VehicleEntity vehicle = findTrackedVehicle(entry.getKey());
             if (vehicle == null || !vehicle.isAlive()) {
                 return true;
             }
@@ -226,7 +226,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
 
     private boolean checkTrackedVehiclesHavePlayer() {
         for (UUID uuid : trackedVehicleHealth.keySet()) {
-            GeoVehicleEntity vehicle = findTrackedVehicle(uuid);
+            VehicleEntity vehicle = findTrackedVehicle(uuid);
             if (vehicle == null) {
                 return false;
             }
@@ -237,11 +237,11 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return true;
     }
 
-    private GeoVehicleEntity findTrackedVehicle(UUID uuid) {
+    private VehicleEntity findTrackedVehicle(UUID uuid) {
         float range = getSupplyRange();
         AABB searchBox = this.getBoundingBox().inflate(range);
-        List<GeoVehicleEntity> vehicles = this.level().getEntitiesOfClass(
-                GeoVehicleEntity.class, searchBox,
+        List<VehicleEntity> vehicles = this.level().getEntitiesOfClass(
+                VehicleEntity.class, searchBox,
                 v -> v.isAlive() && v.getUUID().equals(uuid)
         );
         return vehicles.isEmpty() ? null : vehicles.get(0);
@@ -256,10 +256,10 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
     }
 
     private void startCharge() {
-        List<GeoVehicleEntity> vehicles = findNearbyVehicles();
+        List<VehicleEntity> vehicles = findNearbyVehicles();
         boolean anyNeedsAction = false;
         trackedVehicleHealth.clear();
-        for (GeoVehicleEntity vehicle : vehicles) {
+        for (VehicleEntity vehicle : vehicles) {
             boolean needsSupply = vehicleNeedsSupply(vehicle);
             boolean needsHeal = vehicleNeedsHealing(vehicle);
             boolean needsBonus = vehicleNeedsBonusItem(vehicle);
@@ -275,18 +275,18 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         }
     }
 
-    private List<GeoVehicleEntity> findNearbyVehicles() {
+    private List<VehicleEntity> findNearbyVehicles() {
         float range = getSupplyRange();
         AABB searchBox = this.getBoundingBox().inflate(range);
         return this.level().getEntitiesOfClass(
-                GeoVehicleEntity.class, searchBox,
+                VehicleEntity.class, searchBox,
                 v -> v.isAlive()
                     && v.distanceToSqr(this) <= range * range
                     && v.getPassengers().stream().anyMatch(p -> p instanceof Player)
         );
     }
 
-    private boolean vehicleNeedsSupply(GeoVehicleEntity vehicle) {
+    private boolean vehicleNeedsSupply(VehicleEntity vehicle) {
         SupplyStationConfig config = SupplyStationDataLoader.getConfig();
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
@@ -316,7 +316,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return false;
     }
 
-    private boolean vehicleNeedsHealing(GeoVehicleEntity vehicle) {
+    private boolean vehicleNeedsHealing(VehicleEntity vehicle) {
         SupplyStationConfig config = SupplyStationDataLoader.getConfig();
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
@@ -328,7 +328,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return vehicle.getHealth() < vehicle.getMaxHealth();
     }
 
-    private boolean vehicleNeedsBonusItem(GeoVehicleEntity vehicle) {
+    private boolean vehicleNeedsBonusItem(VehicleEntity vehicle) {
         SupplyStationConfig config = SupplyStationDataLoader.getConfig();
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
@@ -352,7 +352,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return current < target;
     }
 
-    private int countBonusItem(GeoVehicleEntity vehicle, Item bonusItem) {
+    private int countBonusItem(VehicleEntity vehicle, Item bonusItem) {
         var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
         if (handlerOpt.isEmpty()) {
             return 0;
@@ -369,7 +369,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return total;
     }
 
-    private boolean checkWeaponNeedsSupply(GeoVehicleEntity vehicle, GunData gunData,
+    private boolean checkWeaponNeedsSupply(VehicleEntity vehicle, GunData gunData,
                                             SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
                                             AmmoConsumer consumer) {
         String ammoKey = getAmmoKey(consumer);
@@ -406,9 +406,9 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
 
     private void performSupply() {
         SupplyStationConfig config = SupplyStationDataLoader.getConfig();
-        List<GeoVehicleEntity> vehicles = findNearbyVehicles();
+        List<VehicleEntity> vehicles = findNearbyVehicles();
 
-        for (GeoVehicleEntity vehicle : vehicles) {
+        for (VehicleEntity vehicle : vehicles) {
             resupplyVehicle(vehicle);
             healVehicle(vehicle, config);
             supplyBonusItem(vehicle, config);
@@ -419,7 +419,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
                 1.0f, 1.0f);
     }
 
-    private void healVehicle(GeoVehicleEntity vehicle, SupplyStationConfig config) {
+    private void healVehicle(VehicleEntity vehicle, SupplyStationConfig config) {
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
         float healPercent = vehicleRule.healPercent;
@@ -437,7 +437,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         vehicle.setHealth(newHealth);
     }
 
-    private void supplyBonusItem(GeoVehicleEntity vehicle, SupplyStationConfig config) {
+    private void supplyBonusItem(VehicleEntity vehicle, SupplyStationConfig config) {
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
         String bonusItemId = config.getEffectiveBonusItem(vehicleRule);
@@ -472,7 +472,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         InventoryTool.insertItem(handler, stack, toAdd);
     }
 
-    private String getVehicleId(GeoVehicleEntity vehicle) {
+    private String getVehicleId(VehicleEntity vehicle) {
         ResourceLocation key = ForgeRegistries.ENTITY_TYPES.getKey(vehicle.getType());
         return key != null ? key.toString() : "";
     }
@@ -489,7 +489,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return key != null ? key.toString() : "";
     }
 
-    private int countBackupAmmoForConsumer(GeoVehicleEntity vehicle, GunData gunData, AmmoConsumer consumer) {
+    private int countBackupAmmoForConsumer(VehicleEntity vehicle, GunData gunData, AmmoConsumer consumer) {
         var handlerOpt = vehicle.getCapability(ForgeCapabilities.ITEM_HANDLER).resolve();
         if (handlerOpt.isEmpty()) return 0;
         IItemHandler handler = handlerOpt.get();
@@ -498,7 +498,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return itemCount * loadAmount;
     }
 
-    private boolean resupplyVehicle(GeoVehicleEntity vehicle) {
+    private boolean resupplyVehicle(VehicleEntity vehicle) {
         SupplyStationConfig config = SupplyStationDataLoader.getConfig();
         String vehicleId = getVehicleId(vehicle);
         SupplyStationConfig.ResupplyRule vehicleRule = config.getRuleForVehicle(vehicleId);
@@ -541,7 +541,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return anyResupplied;
     }
 
-    private boolean resupplyWeapon(GeoVehicleEntity vehicle, GunData gunData,
+    private boolean resupplyWeapon(VehicleEntity vehicle, GunData gunData,
                                     SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
                                     int globalFallbackFill, AmmoConsumer consumer) {
         String ammoKey = getAmmoKey(consumer);
@@ -560,7 +560,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return resupplyFixedWeapon(vehicle, gunData, config, vehicleRule, ammoKey, globalFallbackFill, consumer);
     }
 
-    private boolean resupplyMagazineWeapon(GeoVehicleEntity vehicle, GunData gunData,
+    private boolean resupplyMagazineWeapon(VehicleEntity vehicle, GunData gunData,
                                             String ammoKey, AmmoConsumer consumer) {
         int magazine = gunData.get(GunProp.MAGAZINE);
         int currentAmmo = gunData.ammo.get();
@@ -580,7 +580,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return true;
     }
 
-    private boolean resupplyFixedWeapon(GeoVehicleEntity vehicle, GunData gunData,
+    private boolean resupplyFixedWeapon(VehicleEntity vehicle, GunData gunData,
                                          SupplyStationConfig config, SupplyStationConfig.ResupplyRule vehicleRule,
                                          String ammoKey, int globalFallbackFill, AmmoConsumer consumer) {
         SupplyStationConfig.AmmoTypeRule ammoRule = config.getAmmoRule(vehicleRule, ammoKey);
@@ -599,7 +599,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return true;
     }
 
-    private boolean resupplyPackageWeapon(GeoVehicleEntity vehicle, GunData gunData,
+    private boolean resupplyPackageWeapon(VehicleEntity vehicle, GunData gunData,
                                            SupplyStationConfig.AmmoTypeRule ammoRule) {
         String customItemId = ammoRule.customItem;
         if (customItemId == null || customItemId.isEmpty()) {
@@ -640,7 +640,7 @@ public class AmmoSupplyStationEntity extends GeoVehicleEntity {
         return inserted > 0;
     }
 
-    private void supplyBackupAmmoToVehicle(GeoVehicleEntity vehicle, int ammoAmount, AmmoConsumer consumer) {
+    private void supplyBackupAmmoToVehicle(VehicleEntity vehicle, int ammoAmount, AmmoConsumer consumer) {
         int loadAmount = consumer.getLoadAmount();
         if (loadAmount <= 0) {
             loadAmount = 1;

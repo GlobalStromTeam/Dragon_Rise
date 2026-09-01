@@ -1,18 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.atsuishio.superbwarfare.entity.vehicle.base.GeoVehicleEntity;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 @SuppressWarnings("removal")
-public class VT4A1Entity extends GeoVehicleEntity {
+public class VT4A1Entity extends VehicleEntity {
     public VT4A1Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -20,24 +15,9 @@ public class VT4A1Entity extends GeoVehicleEntity {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
-
-    private PlayState cannonFirePredicate(AnimationState<VT4A1Entity> event) {
-        if (getShootAnimationTimer(0, 0) > 0) {
-            return event.setAndContinue(RawAnimation.begin().thenPlay("animation.vt4a1.fire"));
-        }
-        return event.setAndContinue(RawAnimation.begin().thenLoop("animation.vt4a1.idle"));
-    }
-
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-        data.add(new AnimationController<>(this, "cannon", 0, this::cannonFirePredicate));
-    }
-
-
-
-    @Override
+@Override
     public int getTrackAnimationLength() {
         return 80;
     }

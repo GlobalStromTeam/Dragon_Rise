@@ -93,7 +93,7 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 100,
-      "Velocity": 78.75,
+      "Velocity": 52.5,
       "Damage": 350,
       "RecoilTime": 42,
       "RecoilForce": 1.0,
@@ -111,7 +111,7 @@
             "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/he_shell.png",
             "IsArmorPiercingProjectile": false,
             "IsHighExplosiveProjectile": true,
-            "Velocity": 41.5,
+            "Velocity": 27.6667,
             "Damage": 200,
             "ExplosionDamage": 40,
             "ExplosionRadius": 6,
@@ -129,7 +129,7 @@
             "Damage": 600,
             "ExplosionDamage": 60,
             "ExplosionRadius": 5,
-            "Velocity": 10,
+            "Velocity": 6.6667,
             "RecoilTime": 18,
             "RecoilForce": 0.05,
             "Crosshair": "@VehicleCommonMissile",
@@ -180,7 +180,7 @@
       "BypassesArmor": 0.2,
       "Magazine": 2600,
       "EmptyReloadTime": 160,
-      "Velocity": 25,
+      "Velocity": 31,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -221,7 +221,7 @@
       "Magazine": 600,
       "EmptyReloadTime": 100,
       "BypassesArmor": 0.2,
-      "Velocity": 25,
+      "Velocity": 16.6667,
       "Gravity": 0.05,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
@@ -262,7 +262,7 @@
     "Decrement": 0.005,
     "SteeringSpeed": 0.1
   },
-  "TurretPos": [-0.0375, 2.1390625, 0.03125],
+  "TurretPos": [-0.0375,2.1390625,0.03125],
   "TurretTurnSpeed": [1.2,2.445],
   "TurretPitchRange": [-5,18],
   "BarrelPos": [0.05843125,0.55538125,0.72135625],
@@ -295,7 +295,6 @@
     "@#superbwarfare:aerial_bomb * 3",
     "#superbwarfare:projectile * 0.25",
     "#superbwarfare:projectile_absolute * 0.85",
-    "superbwarfare:vehicle_strike * 4",
     "@superbwarfare:mortar_shell * 1.25",
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8",
@@ -339,5 +338,11 @@
     [-1.356,0.038,2.109],
     [1.344,0.038,-2.109]
   ],
-  "InertiaRotateRate": 1.25
+  "InertiaRotateRate": 1.25,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/zlt11.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/zlt11.png"
+    }
+  ]
 }

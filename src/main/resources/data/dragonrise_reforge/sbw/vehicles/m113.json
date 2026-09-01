@@ -46,7 +46,13 @@
       "MinPitch": -5,
       "MaxPitch": 5,
       "MinYaw": -30,
-      "MaxYaw": 30
+      "MaxYaw": 30,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.979,2.433,1.489]
+      }
     },
     {
       "BanHand": true,
@@ -56,8 +62,10 @@
       "CanRotateBody": true,
       "CameraPos": {
         "Position": [0.0,0.0,0.0],
-        "Transform": "Barrel",
-        "Direction": "Barrel"
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "UseFixedCameraPos": false,
+        "ZoomPosition": [0.0,3.242,-0.205]
       },
       "MinPitch": -20,
       "MaxPitch": 70,
@@ -75,7 +83,13 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
+      "CanRotateBody": true,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.0,2.523,0.658]
+      }
     },
     {
       "BanHand": true,
@@ -83,7 +97,13 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
+      "CanRotateBody": true,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.0,2.523,0.658]
+      }
     },
     {
       "BanHand": true,
@@ -91,7 +111,13 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
+      "CanRotateBody": true,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.0,2.523,0.658]
+      }
     },
     {
       "BanHand": true,
@@ -99,7 +125,13 @@
       "IsEnclosed": false,
       "Transform": "Vehicle",
       "Position": [0.0,0.913,0.658],
-      "CanRotateBody": true
+      "CanRotateBody": true,
+      "CameraPos": {
+        "UseFixedCameraPos": false,
+        "Transform": "Turret",
+        "Direction": "Barrel",
+        "ZoomPosition": [0.0,2.523,0.658]
+      }
     }
   ],
   "Weapons": {
@@ -111,7 +143,7 @@
       "RPM": 450,
       "Magazine": 120,
       "EmptyReloadTime": 100,
-      "Velocity": 15,
+      "Velocity": 10,
       "Gravity": 0.05,
       "Damage": 5,
       "HeatPerShoot": 6,
@@ -186,7 +218,6 @@
     "@#superbwarfare:aa_missile * 0.5",
     "#superbwarfare:projectile * 0.1",
     "#superbwarfare:projectile_absolute * 0.7",
-    "#superbwarfare:vehicle_strike * 13",
     "@superbwarfare:mortar_shell * 1.1",
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8"
@@ -209,5 +240,15 @@
     [1.624,0.011,-2.207],
     [-1.409,0.011,1.998]
   ],
-  "InertiaRotateRate": 2
+  "InertiaRotateRate": 2,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/m113.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/m113.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/m113.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/m113.png"
+  }
 }

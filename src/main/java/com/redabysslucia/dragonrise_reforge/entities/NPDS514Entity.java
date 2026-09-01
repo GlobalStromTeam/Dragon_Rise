@@ -7,6 +7,7 @@ import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
 public class NPDS514Entity extends AutoAimableEntity {
+
     public NPDS514Entity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -14,7 +15,7 @@ public class NPDS514Entity extends AutoAimableEntity {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.3f) * damage);
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
     }
 
 }

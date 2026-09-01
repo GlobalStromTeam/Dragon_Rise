@@ -4,11 +4,6 @@ import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
-import software.bernie.geckolib.core.animation.RawAnimation;
-import software.bernie.geckolib.core.object.PlayState;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
@@ -21,7 +16,7 @@ public class AC130Entity extends FireLightVisionVehicle {
     @Override
     public DamageModifier getDamageModifier() {
         return super.getDamageModifier()
-                .custom((source, damage) -> getSourceAngle(source, 0.2f) * damage * (getHealth() > 0.1f ? 0.5f : 0.05f));
+                .custom((entity, source, damage) -> getSourceAngle(source, 0.2f) * damage * (getHealth() > 0.1f ? 0.5f : 0.05f));
     }
 
     @Override

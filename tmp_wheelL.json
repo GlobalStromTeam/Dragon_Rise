@@ -1,0 +1,64 @@
+﻿{
+    "name":  "wheelL",
+    "type":  "bone",
+    "rotation_global":  false,
+    "quaternion_interpolation":  false,
+    "keyframes":  [
+                      {
+                          "channel":  "rotation",
+                          "data_points":  [
+                                              {
+                                                  "x":  "62.5",
+                                                  "y":  "0",
+                                                  "z":  "0"
+                                              }
+                                          ],
+                          "uuid":  "ab743787-4e66-4a7f-f9a2-c733b7e43851",
+                          "time":  0.54167,
+                          "color":  -1,
+                          "interpolation":  "linear"
+                      },
+                      {
+                          "channel":  "rotation",
+                          "data_points":  [
+                                              {
+                                                  "x":  "0",
+                                                  "y":  "0",
+                                                  "z":  "0"
+                                              }
+                                          ],
+                          "uuid":  "2f05b353-8a9a-d147-b793-123dc2ca65fc",
+                          "time":  0,
+                          "color":  -1,
+                          "interpolation":  "linear"
+                      },
+                      {
+                          "channel":  "rotation",
+                          "data_points":  [
+                                              {
+                                                  "x":  "87.6732028014",
+                                                  "y":  "-7.5831869049",
+                                                  "z":  "85.8697697194"
+                                              }
+                                          ],
+                          "uuid":  "7e0b052d-c5dd-5f32-e9ac-8be835eb0a01",
+                          "time":  1,
+                          "color":  -1,
+                          "interpolation":  "linear"
+                      },
+                      {
+                          "channel":  "rotation",
+                          "data_points":  [
+                                              {
+                                                  "x":  "87.6272088432",
+                                                  "y":  "-13.5781514334",
+                                                  "z":  "86.1199114943"
+                                              }
+                                          ],
+                          "uuid":  "eae5fa90-475e-03cc-cf82-febcb77d66cc",
+                          "time":  1.5,
+                          "color":  -1,
+                          "interpolation":  "linear"
+                      }
+                  ]
+}

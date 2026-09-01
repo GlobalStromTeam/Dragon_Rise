@@ -2,7 +2,7 @@
   "type": "superbwarfare:vehicle_assembling",
   "category": "civilian",
   "inputs": [
-    "1 #superbwarfare:storage_blocks/steel",
+    "1 superbwarfare:steel_block",
     "3 superbwarfare:wheel",
     "1 superbwarfare:motor"
   ],

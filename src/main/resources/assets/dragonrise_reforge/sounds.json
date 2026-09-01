@@ -1,4 +1,44 @@
 {
+  "r6_drone_moving": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:r6_drone/moving",
+        "stream": true
+      }
+    ]
+  },
+  "r6_drone_fast": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:r6_drone/fast",
+        "stream": true
+      }
+    ]
+  },
+  "r6_drone_jump": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:r6_drone/jump",
+        "stream": false
+      }
+    ]
+  },
+  "r6_drone_down": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:r6_drone/down",
+        "stream": false
+      }
+    ]
+  },
+  "cluster_charge_starting": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:cluster_charge/starting",
+        "stream": false
+      }
+    ]
+  },
   "tank_engine_loop3": {
     "sounds": [
       {

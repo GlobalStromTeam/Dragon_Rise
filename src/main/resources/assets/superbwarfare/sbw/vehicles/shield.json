@@ -1,7 +1,13 @@
 {
-  "ID": "dragonrise_reforge:shield",
-  "Model": {
-    "Model": "dragonrise_reforge:geo/shield.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/shield.png"
-  }
+    "ID":  "dragonrise_reforge:shield",
+    "Model":  {
+                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/shield.geo.json",
+                  "Texture":  "dragonrise_reforge:textures/entity/shield.png"
+              },
+    "Models":  [
+                   {
+                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/shield.geo.json",
+                       "Texture":  "dragonrise_reforge:textures/entity/shield.png"
+                   }
+               ]
 }
