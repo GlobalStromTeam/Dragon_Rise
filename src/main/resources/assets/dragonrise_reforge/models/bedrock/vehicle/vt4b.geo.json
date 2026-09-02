@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 30.8, 16]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [20.25, 23.7918, 34.1937]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "main",
@@ -3408,6 +3408,11 @@
 					]
 				},
 				{
+					"name": "barrel",
+					"parent": "bone",
+					"pivot": [0, 33.5418, -27.5563]
+				},
+				{
 					"name": "flare",
 					"parent": "barrel",
 					"pivot": [-0.69, 97.65, -122.51]
@@ -3416,11 +3421,6 @@
 					"name": "flare2",
 					"parent": "barrel",
 					"pivot": [-0.69, 97.65, -122.51]
-				},
-				{
-					"name": "barrel",
-					"parent": "bone",
-					"pivot": [0, 33.5418, -27.5563]
 				},
 				{
 					"name": "sdf",

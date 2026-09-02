@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.IkLocustEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Mi24vEntity;
 
 
@@ -1407,6 +1410,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Mi24vEntity>> MI24V = register("mi24v",
             EntityType.Builder.of(Mi24vEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<IkLocustEntity>> IK_LOCUST = register("ik_locust",
+            EntityType.Builder.of(IkLocustEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

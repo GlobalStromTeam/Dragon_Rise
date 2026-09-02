@@ -194,6 +194,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.IK_LOCUST.get()));
                     }
                     ).build()
     );

@@ -12,12 +12,12 @@
 			},
 			"bones": [
 				{
-					"name": "humvee",
-					"pivot": [0.615, -0.29537, 2.64]
+					"name": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "wheel",
-					"parent": "humvee",
+					"parent": "root",
 					"pivot": [0.615, -0.29537, 2.64]
 				},
 				{
@@ -929,8 +929,13 @@
 					]
 				},
 				{
+					"name": "base",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
 					"name": "door2",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -1467,7 +1472,7 @@
 				},
 				{
 					"name": "bone12",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -2188,7 +2193,7 @@
 				},
 				{
 					"name": "hanger",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -2993,7 +2998,7 @@
 				},
 				{
 					"name": "inside",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -3393,7 +3398,7 @@
 				},
 				{
 					"name": "body",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -4687,7 +4692,7 @@
 				},
 				{
 					"name": "bone9",
-					"parent": "humvee",
+					"parent": "base",
 					"pivot": [0.615, -0.29537, 2.64],
 					"cubes": [
 						{
@@ -5054,6 +5059,7 @@
 				},
 				{
 					"name": "tow",
+					"parent": "base",
 					"pivot": [-4.1, 17.87462, -6.1]
 				},
 				{
@@ -5062,14 +5068,14 @@
 					"pivot": [-4.1, 40.1025, -6.1]
 				},
 				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [-4.28, 84.18, -41.03]
-				},
-				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [-4.1, 39.8642, -6.1]
+				},
+				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [-4.28, 84.18, -41.03]
 				},
 				{
 					"name": "missile",

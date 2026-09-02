@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 30.8, -10]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [20.25, 23.7918, 8.1937]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "main",
@@ -3291,14 +3291,14 @@
 					]
 				},
 				{
-					"name": "flare3",
-					"parent": "passengerWeaponStationPitch",
-					"pivot": [-51.38, 105.22, 39.64]
-				},
-				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerWeaponStationYaw",
 					"pivot": [-13.5, 52.4418, 16.4437]
+				},
+				{
+					"name": "flare3",
+					"parent": "passengerWeaponStationPitch",
+					"pivot": [-51.38, 105.22, 39.64]
 				},
 				{
 					"name": "bone2",
@@ -3491,6 +3491,11 @@
 					]
 				},
 				{
+					"name": "barrel",
+					"parent": "bone",
+					"pivot": [0, 33.5418, -28.5563]
+				},
+				{
 					"name": "flare",
 					"parent": "barrel",
 					"pivot": [-3.06, 100.39, -166.75]
@@ -3499,11 +3504,6 @@
 					"name": "flare2",
 					"parent": "barrel",
 					"pivot": [-3.06, 100.39, -166.75]
-				},
-				{
-					"name": "barrel",
-					"parent": "bone",
-					"pivot": [0, 33.5418, -28.5563]
 				},
 				{
 					"name": "sdf",

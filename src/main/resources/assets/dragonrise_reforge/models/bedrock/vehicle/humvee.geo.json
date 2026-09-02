@@ -1,5 +1,5 @@
 {
-	"format_version": "1.12.0",
+	"format_version": "1.21.0",
 	"minecraft:geometry": [
 		{
 			"description": {
@@ -12,12 +12,12 @@
 			},
 			"bones": [
 				{
-					"name": "humvee",
-					"pivot": [0, 0, 1.5]
+					"name": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "wheel",
-					"parent": "humvee",
+					"parent": "root",
 					"pivot": [0, 0, 1.5]
 				},
 				{
@@ -930,8 +930,8 @@
 				},
 				{
 					"name": "base",
-					"parent": "humvee",
-					"pivot": [0, 38.64031, -14.45036]
+					"parent": "root",
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "turret",
@@ -983,14 +983,14 @@
 					]
 				},
 				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [0.08, 30.1, -41.61]
-				},
-				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 41.07428, -13.54264]
+				},
+				{
+					"name": "flare",
+					"parent": "barrel",
+					"pivot": [0.08, 30.1, -41.61]
 				},
 				{
 					"name": "M2sub2",
