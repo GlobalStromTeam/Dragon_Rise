@@ -15,7 +15,6 @@ public class BedrockVehicleModel extends BedrockModel {
     public static final Pattern WHEEL_PATTERN = Pattern.compile("^wheel(?<direction>[LR]).*$");
     public static final Pattern SHELL_PATTERN = Pattern.compile("^shell(?<id>\\d+)$");
     public static final Pattern TRACK_PATTERN = Pattern.compile("^track(?<type>Mov|Rot)(?<direction>[LR])(?<id>\\d+)$");
-    public static final Pattern FLARE_PATTERN = Pattern.compile("^flare.*");
     public static final Pattern DOG_TAG_PATTERN = Pattern.compile("^.*_dogTag$");
 
     public List<BedrockBone> leftWheels = new ArrayList<>();
@@ -27,7 +26,6 @@ public class BedrockVehicleModel extends BedrockModel {
     public List<BedrockBone> leftTrackRot = new ArrayList<>();
     public List<BedrockBone> rightTrackMove = new ArrayList<>();
     public List<BedrockBone> rightTrackRot = new ArrayList<>();
-    public List<BedrockBone> flareBones = new ArrayList<>();
     public List<BedrockBone> dogTagBones = new ArrayList<>();
 
     public BedrockVehicleModel(BedrockModelPOJO pojo) {
@@ -77,11 +75,6 @@ public class BedrockVehicleModel extends BedrockModel {
                     if (isL) leftTrackMoveMap.put(index, bone);
                     else rightTrackMoveMap.put(index, bone);
                 }
-            }
-
-            var flareMatcher = FLARE_PATTERN.matcher(name);
-            if (flareMatcher.matches()) {
-                flareBones.add(bone);
             }
 
             var dogTagMatcher = DOG_TAG_PATTERN.matcher(name);

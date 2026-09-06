@@ -15,7 +15,6 @@
     "MonitorItemMixin",
     "ClientMouseHandlerMixin",
     "R6DroneCameraMixin",
-    "ProjectileLightHelperMixin",
     "ClientEventHandlerDualSeekMixin",
     "ClientEventHandlerRadarLowAltLockMixin",
     "VehicleMainWeaponHudOverlayDualSeekMixin"

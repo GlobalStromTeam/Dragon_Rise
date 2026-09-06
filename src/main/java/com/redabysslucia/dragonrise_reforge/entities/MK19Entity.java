@@ -7,7 +7,7 @@ import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
 import com.atsuishio.superbwarfare.tools.FormatTool;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
-import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Math;
 import java.util.UUID;
 
-public class MK19Entity extends FireLightVisionVehicle {
+public class MK19Entity extends DragonriseVehicleBase {
 
     public MK19Entity(EntityType<MK19Entity> type, Level world) {
         super(type, world);

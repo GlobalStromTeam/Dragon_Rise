@@ -987,11 +987,7 @@
 					"parent": "turret",
 					"pivot": [0, 41.07428, -13.54264]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [0.08, 30.1, -41.61]
-				},
+				
 				{
 					"name": "M2sub2",
 					"parent": "barrel",

@@ -1,13 +1,13 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
-public class J8Entity extends FireLightVisionVehicle {
+public class J8Entity extends DragonriseVehicleBase {
 
     public J8Entity(EntityType<J8Entity> type, Level world) {
         super(type, world);

@@ -29,18 +29,18 @@ java {
 }
 
 minecraft {
-    mappings channel: mapping_channel, version: mapping_version
-    copyIdeResources = true
-    runs {
-        configureEach {
-            workingDirectory project.file('run')
-
-            property 'forge.logging.markers', 'REGISTRIES'
-
+    mappings channel: mapping_channe
             property 'forge.logging.console.level', 'debug'
 
-            mods {
-                "${mod_id}" {
+            mods {l, version: mapping_version
+            copyIdeResources = true
+            runs {
+                configureEach {
+                    workingDirectory project.file('run')
+
+                    property 'forge.logging.markers', 'REGISTRIES'
+
+                    "${mod_id}" {
                     source sourceSets.main
                 }
             }

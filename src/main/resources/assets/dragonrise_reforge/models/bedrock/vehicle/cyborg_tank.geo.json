@@ -1798,16 +1798,8 @@
 						}
 					]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [-0.12, 139.57, -142.75]
-				},
-				{
-					"name": "flare2",
-					"parent": "barrel",
-					"pivot": [-0.12, 139.57, -142.75]
-				},
+				
+				
 				{
 					"name": "bone4",
 					"parent": "barrel",

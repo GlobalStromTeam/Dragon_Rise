@@ -6073,11 +6073,7 @@
 						}
 					]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [-0.41, 23.42, -146.23]
-				},
+				
 				{
 					"name": "barrel",
 					"parent": "root",

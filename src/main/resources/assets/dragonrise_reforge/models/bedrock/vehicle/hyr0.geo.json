@@ -3535,16 +3535,8 @@
 						}
 					]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [1.42, 80.89, -334.95]
-				},
-				{
-					"name": "flare2",
-					"parent": "barrel",
-					"pivot": [1.42, 80.89, -334.95]
-				},
+				
+				
 				{
 					"name": "barrel",
 					"parent": "as",
@@ -4131,11 +4123,7 @@
 						}
 					]
 				},
-				{
-					"name": "flare3",
-					"parent": "passengerWeaponStationPitch",
-					"pivot": [15.6, 145.26, -36.13]
-				},
+				
 				{
 					"name": "passengerWeaponStationPitch",
 					"parent": "passengerWeaponStationYaw",

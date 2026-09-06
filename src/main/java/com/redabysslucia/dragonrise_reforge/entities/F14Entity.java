@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.mixins.CameraMixin;
-import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.sounds.SoundSource;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.Shadow;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 
-public class F14Entity extends FireLightVisionVehicle {
+public class F14Entity extends DragonriseVehicleBase {
 
     public F14Entity(EntityType<F14Entity> type, Level world) {
         super(type, world);

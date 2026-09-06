@@ -24,11 +24,7 @@
 					"parent": "tow",
 					"pivot": [0, 0, 0]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [-5.37, -77.15, 23.2]
-				},
+				
 				{
 					"name": "barrel",
 					"parent": "turret",
