@@ -3,7 +3,6 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -41,11 +40,6 @@ public class ZBL08Entity extends DragonriseVehicleBase {
                 this.entityData.define(FLAP_TIMER, 0);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
 
         private boolean isMoving() {
                 Vec3 motion = this.getDeltaMovement();

@@ -132,26 +132,21 @@
     },
     {
       "HidePassenger":  true,
-      "Transform":  "Turret",
+      "Transform":  "WeaponStation",
       "CameraPos":  {
-        "Transform":  "WeaponStationBarrel",
-        "ZoomPosition":  [
-          0.81103125,
-          0.8480875,
-          0.3828125
-        ],
+        "Transform":  "WeaponStation",
         "Direction":  "WeaponStationBarrel"
       },
       "Position":  [
-        -0.5805625,
-        0.3,
-        -0.47275625
+        0.0,
+        -1.0,
+        0.0
       ],
       "Weapons":  [
         "PassengerMachineGun"
       ],
       "CanRotateHead":  false,
-      "MinPitch":  -5,
+      "MinPitch":  -7.5,
       "MaxPitch":  60,
       "Sensitivity":  [
         0.57,
@@ -377,14 +372,10 @@
     -6,
     18
   ],
-  "PassengerWeaponStationPos":  [
-    -0.75805625,
-    1.1446375,
-    -0.57275625
-  ],
+  "PassengerWeaponStationPos":  [-0.6542375, 0.9609375, -0.45016875],
   "PassengerWeaponStationBarrelPos":  [
-    0,
-    0.35984375,
+    0.07,
+    0.15984375,
     0.0551625
   ],
   "PassengerWeaponStationTurnSpeed":  [
@@ -428,7 +419,8 @@
     "@#superbwarfare:at_rocket * 1.1",
     "@superbwarfare:gun_grenade * 1.25",
     "@superbwarfare:mortar_shell * 1.25",
-    "@superbwarfare:tm_62 * 2.5"
+    "@superbwarfare:tm_62 * 2.5",
+    "$entity.getSourceAngle(source, 0.3) * damage"
   ],
   "DestroyInfo":  {
     "ParticleType":  "Giant",

@@ -2,7 +2,6 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.mojang.math.Axis;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -20,11 +19,6 @@ public class DarkbearEntity extends VehicleEntity {
                 super(type, world);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-        }
 @Override
         public Vec3 getShootPos(String weaponName, float ticks) {
                 if ("subcannon".equals(weaponName)) {

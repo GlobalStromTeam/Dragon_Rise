@@ -1,7 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.Mod;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -68,11 +67,6 @@ public class motuoEntity extends VehicleEntity {
         super.bounceHorizontal(direction);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.05f) * damage);
-    }
 
 
 }

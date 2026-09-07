@@ -1,7 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -17,11 +16,6 @@ public class AV8BEntity extends VariableEngineVehicle {
         this.setEngineTypeList(List.of(EngineType.AIRCRAFT, EngineType.HELICOPTER));
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
-    }
 
 //    private PlayState Sb(AnimationState<AV8BEntity> event) {
 //        if (this.onGround()) {

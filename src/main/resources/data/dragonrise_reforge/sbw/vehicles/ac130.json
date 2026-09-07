@@ -609,7 +609,8 @@
                             "@superbwarfare:gun_grenade * 1.2",
                             "@superbwarfare:mortar_shell * 1.2",
                             "@superbwarfare:tm_62 * 2.5",
-                            "All - 20"
+                            "All - 20",
+                            "$entity.getSourceAngle(source, 0.2) * damage * (entity.getHealth() > 0.1 ? 0.5 : 0.05)"
                         ],
     "DestroyInfo":  {
                         "ParticleType":  "Giant",

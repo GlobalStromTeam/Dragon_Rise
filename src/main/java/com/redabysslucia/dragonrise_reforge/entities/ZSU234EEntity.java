@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -13,11 +12,6 @@ public class ZSU234EEntity extends VehicleEntity {
                 super(type, world);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
 
 //    private PlayState radar(AnimationState<ZSU234EEntity> event) {
 //

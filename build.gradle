@@ -29,18 +29,18 @@ java {
 }
 
 minecraft {
-    mappings channel: mapping_channe
-            property 'forge.logging.console.level', 'debug'
+    mappings channel: mapping_channel, version: mapping_version
 
-            mods {l, version: mapping_version
-            copyIdeResources = true
-            runs {
-                configureEach {
-                    workingDirectory project.file('run')
+    copyIdeResources = true
 
-                    property 'forge.logging.markers', 'REGISTRIES'
+    runs {
+        configureEach {
+            workingDirectory project.file('run')
 
-                    "${mod_id}" {
+            property 'forge.logging.markers', 'REGISTRIES'
+
+            mods {
+                "${mod_id}" {
                     source sourceSets.main
                 }
             }
@@ -48,12 +48,14 @@ minecraft {
 
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+            property 'forge.logging.console.level', 'debug'
         }
 
         server {
             property 'forge.enabledGameTestNamespaces', mod_id
             args '--nogui'
         }
+
         gameTestServer {
             property 'forge.enabledGameTestNamespaces', mod_id
         }

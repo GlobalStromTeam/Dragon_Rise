@@ -1,7 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities.special;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.utils.VehicleVecUtils;
 import com.mojang.math.Axis;
 import net.minecraft.resources.ResourceLocation;
@@ -19,11 +18,6 @@ public class CyborgTankEntity extends VehicleEntity {
         super(pEntityType, pLevel);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-    }
 @Override
     public float getTurretMaxHealth() {
         return 420;

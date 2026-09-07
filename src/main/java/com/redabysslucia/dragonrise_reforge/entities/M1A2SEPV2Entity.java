@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -89,11 +88,6 @@ public class M1A2SEPV2Entity extends VehicleEntity {
         this.entityData.set(TUSK_INSTALLED, installed);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-    }
 
     @Override
     public int getTrackAnimationLength() {

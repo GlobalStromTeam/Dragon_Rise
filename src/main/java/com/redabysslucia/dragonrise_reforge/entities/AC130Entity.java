@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -13,11 +12,6 @@ public class AC130Entity extends DragonriseVehicleBase {
         super(type, world);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.2f) * damage * (getHealth() > 0.1f ? 0.5f : 0.05f));
-    }
 
     @Override
     public double getMouseSensitivity() {

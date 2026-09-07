@@ -3,7 +3,6 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
 import com.atsuishio.superbwarfare.network.NetworkRegistry;
@@ -47,11 +46,6 @@ public class TJGCEntity extends VariableEngineVehicle {
         this.setEngineTypeList(List.of(EngineType.AIRCRAFT, EngineType.HELICOPTER));
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
-    }
 
     public void hitBlock(Vec3 pos, GunData gunData, Entity shooter) {
         if (level() instanceof ServerLevel serverLevel) {

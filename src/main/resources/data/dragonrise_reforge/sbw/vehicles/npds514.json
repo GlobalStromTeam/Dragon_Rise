@@ -146,7 +146,8 @@
                             "@superbwarfare:gun_grenade * 1.5",
                             "@superbwarfare:javelin_missile * 0.8",
                             "@superbwarfare:igla_9k38_missile * 0.75",
-                            "All - 8"
+                            "All - 8",
+                            "$entity.getSourceAngle(source, 0.3) * damage"
                         ],
     "ThirdPersonCameraPos":  [
                                  0,

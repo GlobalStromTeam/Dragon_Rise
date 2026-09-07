@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.tools.ParticleTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
@@ -25,11 +24,6 @@ public class T80Entity extends VehicleEntity implements IVehicleBackground {
 		super(pEntityType, pLevel);
 	}
 
-	@Override
-	public DamageModifier getDamageModifier() {
-		return super.getDamageModifier()
-				.custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-	}
 
 	@Override
 	public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {

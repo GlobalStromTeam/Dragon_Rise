@@ -3,7 +3,6 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -42,11 +41,6 @@ public class M3A3Entity extends VehicleEntity {
         this.entityData.define(DEPLOY_TIMER, 0);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-    }
 
     private final Map<UUID, Integer> lastMessageTick = new HashMap<>();
 

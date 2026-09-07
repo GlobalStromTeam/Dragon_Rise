@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.mojang.math.Axis;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
@@ -18,11 +17,6 @@ public class M4A2Entity extends SyncCameraVehicle {
         super(pEntityType, pLevel);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-    }
 
 //    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {
 //        if (getShootAnimationTimer(0, 0) > 0) {

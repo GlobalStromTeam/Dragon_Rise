@@ -501,7 +501,8 @@
     "#superbwarfare:projectile_absolute * 0.7",
     "@superbwarfare:mortar_shell * 1.1",
     "@superbwarfare:gun_grenade * 1.5",
-    "@superbwarfare:javelin_missile * 0.8"
+    "@superbwarfare:javelin_missile * 0.8",
+    "$entity.getSourceAngle(source, 0.25) * damage"
   ],
   "ThirdPersonCameraPos":  [
     0,

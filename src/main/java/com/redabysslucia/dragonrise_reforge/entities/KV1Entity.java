@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
@@ -13,11 +12,6 @@ public class KV1Entity extends SyncCameraVehicle {
         super(pEntityType, pLevel);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-    }
 
     @Override
     public int getTrackAnimationLength() {
