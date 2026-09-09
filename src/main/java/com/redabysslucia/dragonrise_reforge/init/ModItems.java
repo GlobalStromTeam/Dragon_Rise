@@ -57,6 +57,9 @@ public class ModItems {
     public static final RegistryObject<Item> KR06_HELMET = REGISTRY.register("kr06_helmet", KR06Helmet::new);
     public static final RegistryObject<Item> KR06_CHEST = REGISTRY.register("kr06_chest", KR06Chest::new);
     public static final RegistryObject<Item> KR06_PANTS = REGISTRY.register("kr06_pants", KR06Pants::new);
+    public static final RegistryObject<Item> JUNGLE07_HELMET = REGISTRY.register("jungle07_helmet", Jungle07Helmet::new);
+    public static final RegistryObject<Item> JUNGLE07_CHEST = REGISTRY.register("jungle07_chest", Jungle07Chest::new);
+    public static final RegistryObject<Item> JUNGLE07_PANTS = REGISTRY.register("jungle07_pants", Jungle07Pants::new);
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
@@ -66,6 +69,10 @@ public class ModItems {
     public static final RegistryObject<Item> CLUSTER_CHARGE = REGISTRY.register("cluster_charge", () -> new ClusterChargeItem(new Item.Properties()));
     public static final RegistryObject<Item> R6_DRONE = REGISTRY.register("r6_drone", () -> new R6DroneDeployerItem(new Item.Properties()));
     public static final RegistryObject<Item> ATTACK_DRONE = REGISTRY.register("attack_drone", () -> new AttackDroneDeployerItem(new Item.Properties()));
+    public static final RegistryObject<Item> SIGNAL_FLARE = REGISTRY.register("signal_flare",
+            () -> new SignalFlareItem(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> SIGNAL_GUN = REGISTRY.register("signal_gun",
+            () -> new SignalGunItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> KEVLAR = REGISTRY.register("kevlar", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> KV1_DEPLOYER = REGISTRY.register("kv1", KV1Deployer::new);
     public static final RegistryObject<Item> PAK40_DEPLOYER = REGISTRY.register("pak40", Pak40Deployer::new);

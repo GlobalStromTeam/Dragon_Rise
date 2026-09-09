@@ -72,3 +72,11 @@ mandatory = true
 versionRange = "[0.8.9,)"
 ordering = "AFTER"
 side = "BOTH"
+
+# Dynamic Lights (dynamiclights-reforged) — 照明弹大范围补光依赖（纯客户端特性）
+[[dependencies."${mod_id}"]]
+modId = "sodiumdynamiclights"
+mandatory = true
+versionRange = "[0.0.1,)"
+ordering = "NONE"
+side = "CLIENT"

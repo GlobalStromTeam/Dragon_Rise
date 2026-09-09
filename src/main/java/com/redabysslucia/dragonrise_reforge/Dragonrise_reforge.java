@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRenderer;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
+import com.redabysslucia.dragonrise_reforge.init.ModParticleTypes;
+import com.redabysslucia.dragonrise_reforge.init.ModRecipeSerializers;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import com.redabysslucia.dragonrise_reforge.init.ModTabs;
 import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
@@ -34,6 +36,8 @@ public class Dragonrise_reforge {
         ModEntities.REGISTRY.register(bus);
         ModTabs.TABS.register(bus);
         ModSounds.REGISTRY.register(bus);
+        ModRecipeSerializers.REGISTRY.register(bus);
+        ModParticleTypes.REGISTRY.register(bus);
         DragonVehicleDeployer.register(bus);
 
         bus.addListener(this::commonSetup);

@@ -239,12 +239,17 @@ public class ModTabs {
                         output.accept(ModItems.KR06_HELMET.get());
                         output.accept(ModItems.KR06_CHEST.get());
                         output.accept(ModItems.KR06_PANTS.get());
+                        output.accept(ModItems.JUNGLE07_HELMET.get());
+                        output.accept(ModItems.JUNGLE07_CHEST.get());
+                        output.accept(ModItems.JUNGLE07_PANTS.get());
 
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());
                         output.accept(ModItems.CLUSTER_CHARGE.get());
                         output.accept(ModItems.R6_DRONE.get());
                         output.accept(ModItems.ATTACK_DRONE.get());
+                        output.accept(ModItems.SIGNAL_FLARE.get());
+                        output.accept(ModItems.SIGNAL_GUN.get());
                         output.accept(ModItems.KEVLAR.get());
                         output.accept(ModItems.PAK40_DEPLOYER.get());
 //                        output.accept(ModItems.GENERATOR_DEPLOYER.get());

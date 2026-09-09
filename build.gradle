@@ -12,7 +12,8 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'net.minecraftforge.gradle' version '[6.0.16,6.2)'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+    id("org.spongepowered.mixin") version "0.7.+"
+    id("org.parchmentmc.librarian.forgegradle") version "1.+"
 }
 
 apply plugin: 'org.spongepowered.mixin'
@@ -140,6 +141,12 @@ dependencies {
     implementation(fg.deobf("net.createmod.ponder:Ponder-Forge-1.20.1:1.0.91"))
     implementation(fg.deobf("dev.engine-room.flywheel:flywheel-forge-1.20.1:1.0.5"))
     implementation(fg.deobf("me.shedaniel.cloth:cloth-config-forge:11.1.106"))
+
+    // 照明弹动态补光（机制同 HandheldMoon/盈月：借 dynamiclights-reforged 客户端管线抬高 lightmap）。
+    // reforged 1.0.9 运行时硬依赖 embeddium（其 API 类 OptionGUIConstructionEvent），必须保留。
+    implementation fg.deobf("curse.maven:dynamiclights-reforged-551736:6044481")
+    implementation fg.deobf("curse.maven:embeddium-908741:5681725")
+    implementation fg.deobf("curse.maven:rubidium-extra-654373:6101745")
 
 }
 

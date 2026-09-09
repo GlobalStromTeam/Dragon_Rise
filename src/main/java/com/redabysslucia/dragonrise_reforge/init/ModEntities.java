@@ -118,6 +118,8 @@ import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.SignalFlareEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.StarShellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
 import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
@@ -1365,6 +1367,18 @@ public class ModEntities {
                     .setTrackingRange(512)
                     .setUpdateInterval(1)
                     .sized(0.4f, 0.2f)
+    );
+    public static final RegistryObject<EntityType<SignalFlareEntity>> SIGNAL_FLARE = register("signal_flare",
+            EntityType.Builder.<SignalFlareEntity>of((type, level) -> new SignalFlareEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(128)
+                    .setUpdateInterval(1)
+                    .sized(0.2f, 0.2f)
+    );
+    public static final RegistryObject<EntityType<StarShellEntity>> STAR_SHELL = register("star_shell",
+            EntityType.Builder.<StarShellEntity>of((type, level) -> new StarShellEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.3f, 0.3f)
     );
     public static final RegistryObject<EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)

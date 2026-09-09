@@ -81,6 +81,8 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R7
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.ClusterChargeRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.R6DroneRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.SignalFlareRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.StarShellRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -248,6 +250,8 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.CLUSTER_CHARGE.get(), ClusterChargeRenderer::new);
                 event.registerEntityRenderer(ModEntities.R6_DRONE.get(), R6DroneRenderer::new);
                 event.registerEntityRenderer(ModEntities.ATTACK_DRONE.get(), R6DroneRenderer::new);
+                event.registerEntityRenderer(ModEntities.SIGNAL_FLARE.get(), SignalFlareRenderer::new);
+                event.registerEntityRenderer(ModEntities.STAR_SHELL.get(), StarShellRenderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320_ZU23.get(), Ural4320Zu23Renderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320.get(), Ural4320Renderer::new);
                 event.registerEntityRenderer(ModEntities.URAL4320_SUPPLY.get(), Ural4320SupplyRenderer::new);
