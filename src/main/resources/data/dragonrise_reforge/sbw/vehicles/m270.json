@@ -106,7 +106,7 @@
         "Fire3P": "superbwarfare:small_rocket_fire_3p",
         "VehicleReload3p": "superbwarfare:missile_reload",
         "VehicleReloadSoundTime": 7,
-        "Change": "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "Crosshair": "@Empty",
       "SoundRadius": 12
@@ -135,7 +135,7 @@
         "Fire3P": "dragonrise_reforge:mgfire11",
         "Fire3PFar": "dragonrise_reforge:mgfire11",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
       "AmmoType": "@HeavyAmmo",

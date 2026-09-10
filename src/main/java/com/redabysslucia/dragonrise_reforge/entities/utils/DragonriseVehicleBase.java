@@ -21,6 +21,7 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
     private boolean wasSplash;
     private boolean wasEngineOn;
     private int splashCheckCooldown;
+    private boolean gearAnimInitialized;
 
     public DragonriseVehicleBase(EntityType<?> type, Level level) {
         super(type, level);
@@ -34,6 +35,23 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
      * 返回 true（展开，如 ZTD05/ZBD05）时，陆地初始会先播放 splash_off 收起防浪板。
      */
     protected boolean isSplashDefaultOpen() {
+        return false;
+    }
+
+    /**
+     * 起落架在模型中的默认姿态是否为收起（需要初始播放放下动画）。
+     * 默认 false：绑定姿态即"放下"，初始无需动画；
+     * 返回 true 的载具（绑定姿态为收起）出生后处于放下状态时会先播放一次放下动画。
+     */
+    protected boolean isGearUpByDefault() {
+        return false;
+    }
+
+    /**
+     * 动画文件命名与内容是否相反（gear_up 文件内容是放下、gear_down 文件内容是收起）。
+     * 默认 false：gear_up=收起 / gear_down=放下（与 superb 引擎状态一致）。
+     */
+    protected boolean swapGearAnimations() {
         return false;
     }
 
@@ -51,19 +69,35 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
         if (animationInstance == null) return;
         var ctx = animationInstance.getContext();
 
-        boolean gearUp = (getGearUp() && getSynchedGearRot() > 0 && getSynchedGearRot() < 1) || getSynchedGearRot() == 1f;
-        boolean gearDown = (!getGearUp() && getSynchedGearRot() > 0 && getSynchedGearRot() < 1) || getSynchedGearRot() == 0f;
-
         String prefix = "animation." + EntityType.getKey(getType()).getPath();
         String gearUpAnim = prefix + ".gear_up";
         String gearDownAnim = prefix + ".gear_down";
 
+        // 动画命名与内容相反时对调：收起动作播 gear_down 文件、放下动作播 gear_up 文件
+        boolean swap = swapGearAnimations();
+        String retractAnim = swap ? gearDownAnim : gearUpAnim;   // 收起动作播放的动画
+        String extendAnim = swap ? gearUpAnim : gearDownAnim;    // 放下动作播放的动画
+
+        // 模型默认收起、但当前语义为"放下"（synchedGearRot == 0）的载具：
+        // 出生后主动播放一次放下动画，让轮子落下来（否则状态机只在状态变化时播放，
+        // 初始收起与"放下"状态不一致）。
+        if (!gearAnimInitialized) {
+            gearAnimInitialized = true;
+            if (isGearUpByDefault() && !getWasGearUp() && getSynchedGearRot() == 0f) {
+                ctx.stopAnimation(retractAnim, 0);
+                ctx.playAnimation(extendAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+            }
+        }
+
+        boolean gearUp = (getGearUp() && getSynchedGearRot() > 0 && getSynchedGearRot() < 1) || getSynchedGearRot() == 1f;
+        boolean gearDown = (!getGearUp() && getSynchedGearRot() > 0 && getSynchedGearRot() < 1) || getSynchedGearRot() == 0f;
+
         if (gearUp && !getWasGearUp()) {
-            ctx.stopAnimation(gearDownAnim, 0);
-            ctx.playAnimation(gearUpAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+            ctx.stopAnimation(extendAnim, 0);
+            ctx.playAnimation(retractAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
         } else if (gearDown && getWasGearUp()) {
-            ctx.stopAnimation(gearUpAnim, 0);
-            ctx.playAnimation(gearDownAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+            ctx.stopAnimation(retractAnim, 0);
+            ctx.playAnimation(extendAnim, AnimationPlayType.PLAY_ONCE_HOLD, 0);
         }
         setWasGearUp(gearUp);
     }

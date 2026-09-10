@@ -219,7 +219,7 @@
                                                                         "SoundInfo":  {
                                                                                           "Fire1P":  "superbwarfare:prism_tank_fire_low_1p",
                                                                                           "Fire3P":  "superbwarfare:prism_tank_fire_low_3p",
-                                                                                          "Change":  "superbwarfare:into_cannon"
+                                                                                          "Change":  "dragonrise_reforge:change_weapon"
                                                                                       }
                                                                     }
                                                    }
@@ -230,7 +230,7 @@
                                   "SoundInfo":  {
                                                     "Fire1P":  "superbwarfare:prism_tank_fire_high_1p",
                                                     "Fire3P":  "superbwarfare:prism_tank_fire_high_3p",
-                                                    "Change":  "superbwarfare:into_missile"
+                                                    "Change":  "dragonrise_reforge:change_weapon"
                                                 },
                                   "SoundRadius":  12,
                                   "ShootPos":  {
@@ -546,7 +546,7 @@
                                                      "Fire3P":  "superbwarfare:small_rocket_fire_3p",
                                                      "VehicleReload3p":  "superbwarfare:missile_reload",
                                                      "VehicleReloadSoundTime":  7,
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",
@@ -651,7 +651,7 @@
                                                         "Fire3P":  "superbwarfare:small_rocket_fire_3p",
                                                         "VehicleReload3p":  "superbwarfare:missile_reload",
                                                         "VehicleReloadSoundTime":  7,
-                                                        "Change":  "superbwarfare:into_missile"
+                                                        "Change":  "dragonrise_reforge:change_weapon"
                                                     },
                                       "Crosshair":  "@AirCraftCommon",
                                       "CrosshairColor":  "0x66FF00",
@@ -704,7 +704,7 @@
                                                    "Fire3P":  "superbwarfare:bomb_release",
                                                    "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                    "VehicleReloadSoundTime":  11,
-                                                   "Change":  "superbwarfare:into_missile"
+                                                   "Change":  "dragonrise_reforge:change_weapon"
                                                },
                                  "Crosshair":  "@AirBomb",
                                  "CrosshairColor":  "0x66FF00",
@@ -805,7 +805,7 @@
                                                         "Fire3P":  "superbwarfare:bomb_release",
                                                         "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                         "VehicleReloadSoundTime":  11,
-                                                        "Change":  "superbwarfare:into_missile",
+                                                        "Change":  "dragonrise_reforge:change_weapon",
                                                         "Locking":  "superbwarfare:missile_locking",
                                                         "Locked":  "superbwarfare:missile_locked"
                                                     },
@@ -929,7 +929,7 @@
                                                         "Fire3P":  "superbwarfare:bomb_release",
                                                         "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                         "VehicleReloadSoundTime":  11,
-                                                        "Change":  "superbwarfare:into_missile",
+                                                        "Change":  "dragonrise_reforge:change_weapon",
                                                         "Locking":  "superbwarfare:javelin_locking",
                                                         "Locked":  "superbwarfare:javelin_locked"
                                                     },
@@ -1031,7 +1031,7 @@
                                                            "Fire3P":  "superbwarfare:bomb_release",
                                                            "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                            "VehicleReloadSoundTime":  11,
-                                                           "Change":  "superbwarfare:into_missile",
+                                                           "Change":  "dragonrise_reforge:change_weapon",
                                                            "Locking":  "superbwarfare:javelin_locking",
                                                            "Locked":  "superbwarfare:javelin_locked"
                                                        },

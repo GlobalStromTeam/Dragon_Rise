@@ -2,18 +2,18 @@
   "ID": "dragonrise_reforge:ik_locust",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
-  "Gravity": 0.0,
+  "Gravity": 0.06,
   "TurretPos": [0.0,0.611,2.484],
   "TurretTurnSpeed": [15,15],
   "TurretPitchRange": [-40,10],
   "TurretYawRange": [-60,60],
   "BarrelPos": [0.0,-0.185,0.015],
   "TurretControllerIndex": 1,
-  "PassengerWeaponStationPos":  [0.0, 1.2693875, 2.77618125],
-  "PassengerWeaponStationBarrelPos":  [0.0, 1.2693875, 2.77618125],
-  "PassengerWeaponStationTurnSpeed":  [100, 100],
-  "PassengerWeaponStationPitchRange":  [10, -85],
-  "PassengerWeaponStationYawRange":  [-60, 60],
+  "PassengerWeaponStationPos": [0.0,0.679,0.24],
+  "PassengerWeaponStationBarrelPos": [0.0,0.001,0.0],
+  "PassengerWeaponStationTurnSpeed": [100,100],
+  "PassengerWeaponStationPitchRange": [10,-85],
+  "PassengerWeaponStationYawRange": [-60,60],
   "OBB": [
     {
       "Size": [1.505,0.731,0.695],
@@ -109,7 +109,7 @@
   ],
   "Seats": [
     {
-      "HidePassenger":  true,
+      "HidePassenger": true,
       "Transform": "Vehicle",
       "Position": [0.594,-0.344,2.875],
       "Sensitivity": [0,0,0],
@@ -135,15 +135,15 @@
       "HasThermalImaging": true
     },
     {
-      "HidePassenger":  true,
+      "HidePassenger": true,
       "Transform": "WeaponStationBarrel",
-      "Position": [0,-1.61,0.05],
+      "Position": [0.038,-0.298,3.636],
       "Sensitivity": [0.59,0.8,0.9],
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
         "UseFixedCameraPos": true,
-        "Position": [0.0, 0.0, 0.5],
-        "ZoomPosition": [0.0, 0.0, 0.5],
+        "Position": [0.0,0.0,0.5],
+        "ZoomPosition": [0.0,0.0,0.5],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -85,
@@ -169,7 +169,7 @@
       "DefaultZoom": 3,
       "RPM": 400,
       "Velocity": 32.3333,
-      "Gravity": 0.0,
+      "Gravity": 0.06,
       "Damage": 55,
       "ExplosionDamage": 15,
       "ExplosionRadius": 4,
@@ -186,7 +186,7 @@
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
         "Fire3PFar": "superbwarfare:mi_28_cannon_far",
         "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
@@ -217,7 +217,7 @@
       "Damage": 85,
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
-      "Gravity": 0.0,
+      "Gravity": 0.06,
       "Velocity": 24.6333,
       "ShootPos": {
         "Transform": "Vehicle",
@@ -236,7 +236,7 @@
         "Fire3P": "superbwarfare:small_rocket_fire_3p",
         "VehicleReload3p": "superbwarfare:missile_reload",
         "VehicleReloadSoundTime": 7,
-        "Change": "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "Crosshair": "@Empty",
       "SoundRadius": 12
@@ -254,14 +254,14 @@
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,
       "Velocity": 10,
-      "Gravity": 0.0,
+      "Gravity": 0.06,
       "CrosshairColor": "0xFFC700",
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 8
     },
@@ -323,7 +323,7 @@
       "ExplosionRadius": 12,
       "ProjectileLife": 1200,
       "Velocity": 10,
-      "Gravity": 0.0,
+      "Gravity": 0.06,
       "SeekWeaponInfo": {
         "SeekDirection": "Barrel",
         "SeekRange": 384,
@@ -350,7 +350,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locked"
       },
@@ -375,7 +375,7 @@
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
       "Velocity": 10,
-      "Gravity": 0.0,
+      "Gravity": 0.06,
       "SeekWeaponInfo": {
         "SeekDirection": "Default",
         "SeekRange": 384,
@@ -401,7 +401,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locking"
       },
@@ -417,11 +417,11 @@
     "Decrement": 0.8,
     "PitchSpeed": 1.8,
     "YawSpeed": 2.0,
-    "RollSpeed": 0.6,
-    "LiftSpeed": 0.0,
+    "RollSpeed": 1.5,
+    "LiftSpeed": 0.05,
     "SpeedRate": 1.2,
     "Resistance": 1.2,
-    "HasGear": false,
+    "HasGear": true,
     "EngineStartSound": "dragonrise_reforge:jet_engine_start",
     "EngineSoundVolume": 2
   },

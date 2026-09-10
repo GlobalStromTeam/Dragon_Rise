@@ -249,12 +249,12 @@
                                                     }
                                                 ],
                                    "SoundInfo":  {
-                                                     "Fire1P":  "dragonrise_reforge:t80_fire_1p",
-                                                     "Fire3P":  "dragonrise_reforge:t80_fire_3p",
-                                                     "Fire3PFar":  "dragonrise_reforge:t80_fire_3p_far",
-                                                     "Fire3PVeryFar":  "dragonrise_reforge:t80_fire_3p_far",
+                                                     "Fire1P":  "dragonrise_reforge:cannon_125mm_fire_1p",
+                                                     "Fire3P":  "dragonrise_reforge:cannon_125mm_fire_3p",
+                                                     "Fire3PFar":  "dragonrise_reforge:cannon_125mm_fire_3p_far",
+                                                     "Fire3PVeryFar":  "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
                                                      "VehicleReload":  "dragonrise_reforge:t80_reload",
-                                                     "Change":  "superbwarfare:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:t80_reload"
                                                                            ]
@@ -325,7 +325,7 @@
                                                                   "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                                   "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                                   "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                                  "Change":  "superbwarfare:into_cannon"
+                                                                  "Change":  "dragonrise_reforge:change_weapon"
                                                               },
                                                 "SoundRadius":  16
                                             }

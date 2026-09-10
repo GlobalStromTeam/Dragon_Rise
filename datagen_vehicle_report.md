@@ -1,6 +1,6 @@
 # 载具数据完整性报告
 
-生成时间：2026-09-01 15:59:32
+生成时间：2026-09-07 10:59:59
 
 前提：仅统计**模型含 Build 骨骼**的载具（防止误报/覆盖已完成载具）；本报告只读，不修改任何数据。
 
@@ -15,7 +15,7 @@
 
 ## 二、核心字段齐全的载具
 
-aav7a1, ah1f, brdm2, challenger_ds, f15e, ik_locust, j16, markv, mi24v, mv3, mv3_armed, ural4320, ural4320_supply, ural4320_zu23, ztd05
+aav7a1, ah1f, brdm2, challenger_ds, f15e, ik_fightcat, ik_locust, j16, markv, mi24v, mv3, mv3_armed, ural4320, ural4320_supply, ural4320_zu23, ztd05
 
 ## 三、跳过（模型缺失或无 Build 骨骼）
 

@@ -296,8 +296,8 @@
               "Fire3PVeryFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
               "VehicleReload":  "dragonrise_reforge:zbd04a_100mm_reload",
               "VehicleReloadSoundTime":  0,
-              "Change":  "superbwarfare:into_missile"
-            },
+              "Change":  "dragonrise_reforge:change_weapon"
+          },
             "SoundRadius":  12,
             "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_aps03.png"
           }
@@ -309,11 +309,11 @@
         "Fire3PFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
         "Fire3PVeryFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
         "VehicleReload":  "dragonrise_reforge:zbd04a_100mm_reload",
-        "Change":  "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds":  [
           "superbwarfare:into_cannon"
         ]
-      },
+    },
       "SoundRadius":  32,
       "ShootPos":  {
         "Transform":  "Barrel",
@@ -370,7 +370,7 @@
         "Fire3P":  "superbwarfare:qbz_191_fire_3p",
         "Fire3PFar":  "superbwarfare:qbz_191_hb_far",
         "Fire3PVeryFar":  "superbwarfare:qbz_191_hb_veryfar",
-        "Change":  "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius":  16
     },
@@ -396,12 +396,12 @@
       "Name":  "dragonrise_reforge:30mm_dtc04_30_apds",
       "Projectile":  "superbwarfare:small_cannon_shell",
       "SoundInfo":  {
-        "Fire1P":  "dragonrise_reforge:zbd04a_30mm_fire_1p",
-        "Fire3P":  "dragonrise_reforge:zbd04a_30mm_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
-        "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
-        "Change":  "superbwarfare:into_missile"
-      },
+        "Fire1P":  "dragonrise_reforge:cannon_30mm_fire_1p",
+        "Fire3P":  "dragonrise_reforge:cannon_30mm_fire_3p",
+        "Fire3PFar":  "dragonrise_reforge:cannon_30mm_fire_3p_far",
+        "Fire3PVeryFar":  "dragonrise_reforge:cannon_30mm_fire_3p_very_far",
+        "Change":  "dragonrise_reforge:change_weapon"
+    },
       "SoundRadius":  24,
       "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_ap.png",
       "AmmoType":  [

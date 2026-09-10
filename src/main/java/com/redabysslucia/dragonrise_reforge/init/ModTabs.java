@@ -151,6 +151,7 @@ public class ModTabs {
                         //架空工程船
                         output.accept(ContainerBlockItem.createInstance(ModEntities.syy651.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.IK_LOCUST.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.IK_FIGHTCAT.get()));
                     }
                     ).build()
     );

@@ -219,7 +219,7 @@
         "Fire3PFar": "dragonrise_reforge:t80_fire_3p_far",
         "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
         "VehicleReload": "superbwarfare:m_1a_2_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "superbwarfare:m_1a_2_reload"
         ]
@@ -278,7 +278,7 @@
         "Fire3PFar": "dragonrise_reforge:t80_fire_3p_far",
         "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
         "VehicleReload": "superbwarfare:m_1a_2_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "superbwarfare:m_1a_2_reload"
         ]
