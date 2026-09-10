@@ -4,7 +4,6 @@ import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
@@ -13,6 +12,7 @@ import net.minecraft.network.protocol.game.ClientboundSoundPacket;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -170,13 +170,6 @@ public class R6DroneEntity extends Entity {
             this.prevX = this.getX();
             this.prevY = this.getY();
             this.prevZ = this.getZ();
-            // 退出遥控视角后 advanceSmoothPosition 不再被相机 mixin 推进，
-            // 平滑位置会滞留在旧值（如半空）。此时置 smoothInit=false，
-            // 让渲染器回退到样条位置（跟随实体真实位置），避免模型滞留。
-            Player local = Minecraft.getInstance().player;
-            if (local == null || !this.isMonitorControlling(local)) {
-                this.smoothInit = false;
-            }
             return;
         }
 
@@ -341,40 +334,36 @@ public class R6DroneEntity extends Entity {
     }
 
     // ---- 相机/渲染辅助（控制端直接用玩家视角，即时无平滑）----
+    // 注意：控制端"是否本机玩家在遥控"的判断属于纯客户端逻辑（需访问 Minecraft），
+    // 已移至 R6DroneRenderer（client-only）。本实体只提供同步角度插值。
 
-    /** 控制端渲染车身时使用的偏航 */
+    /** 渲染车身时使用的偏航（同步角度插值；控制端覆盖由渲染器负责） */
     public float getRenderYaw(float partialTick) {
-        if (this.level().isClientSide()) {
-            Player local = Minecraft.getInstance().player;
-            if (local != null && this.getController() == local && this.isMonitorControlling(local)) {
-                return local.getYRot();
-            }
-        }
         return Mth.lerp(partialTick, this.yRotO, this.getYRot());
     }
 
-    /** 控制端渲染车身时使用的俯仰 */
+    /** 渲染车身时使用的俯仰（同步角度插值；控制端覆盖由渲染器负责） */
     public float getRenderPitch(float partialTick) {
-        if (this.level().isClientSide()) {
-            Player local = Minecraft.getInstance().player;
-            if (local != null && this.getController() == local && this.isMonitorControlling(local)) {
-                return local.getXRot();
-            }
-        }
         return Mth.lerp(partialTick, this.xRotO, this.getXRot());
+    }
+
+    /**
+     * 使平滑位置失效（smoothInit=false），渲染回退到样条位置。
+     * 由客户端渲染器在"本机玩家未遥控本车"时调用（原实体 tick 的客户端分支负责，
+     * 因引用 Minecraft 会导致专用服务器加载实体类失败，已移出）。
+     */
+    public void resetSmoothState() {
+        this.smoothInit = false;
     }
 
     // ---- 工具 ----
 
-    // 客户端查找缓存：findDrone 在渲染线程每帧被相机 mixin 调用，
-    // entitiesForRendering() 遍历全部实体是 O(N)，场景实体多时会造成掉帧卡顿。
-    // 缓存有效引用（跨 tick 复用），实体消失/换图/换 UUID 时自动失效重查。
-    private static R6DroneEntity cachedClientDrone;
-    private static String cachedClientDroneUuid;
-    private static long cachedClientDroneLevelTick = -1;
+    // 注意：客户端按 UUID 查找无人车（含缓存）属于纯客户端逻辑（需访问 ClientLevel.entitiesForRendering），
+    // 已移至 R6DroneClientLookup（client-only），避免 common 实体类引用 net.minecraft.client.*
+    // 导致专用服务器（DEDICATED_SERVER）加载本类失败。
 
-    /** 按监控平板 LinkedDrone 的 UUID 查找无人车（服务端/客户端通用） */
-    public static R6DroneEntity findDrone(Level level, String uuidString) {
+    /** 服务端按监控平板 LinkedDrone 的 UUID 查找无人车（专用服务器/集成服务器通用） */
+    public static R6DroneEntity findServerDrone(ServerLevel level, String uuidString) {
         if (uuidString == null || uuidString.length() != 36) return null;
         UUID uuid;
         try {
@@ -382,33 +371,7 @@ public class R6DroneEntity extends Entity {
         } catch (IllegalArgumentException e) {
             return null;
         }
-
-        if (level.isClientSide()) {
-            // 缓存命中：引用仍有效（同图、未移除、UUID 一致）则直接复用，避免每帧 O(N) 遍历
-            if (cachedClientDrone != null && !cachedClientDrone.isRemoved()
-                    && cachedClientDrone.level() == level
-                    && cachedClientDroneUuid != null && cachedClientDroneUuid.equals(uuidString)) {
-                return cachedClientDrone;
-            }
-            // 缓存失效：本 tick 已查过则不再重复遍历（结果为空说明确实不存在，保持 null）
-            long tick = level.getGameTime();
-            if (cachedClientDroneLevelTick == tick && cachedClientDroneUuid != null
-                    && cachedClientDroneUuid.equals(uuidString)) {
-                return cachedClientDrone;
-            }
-            cachedClientDroneLevelTick = tick;
-            cachedClientDroneUuid = uuidString;
-            cachedClientDrone = null;
-            for (Entity ent : ((net.minecraft.client.multiplayer.ClientLevel) level).entitiesForRendering()) {
-                if (ent.getUUID().equals(uuid) && ent instanceof R6DroneEntity drone) {
-                    cachedClientDrone = drone;
-                    break;
-                }
-            }
-            return cachedClientDrone;
-        }
-
-        Entity e = ((net.minecraft.server.level.ServerLevel) level).getEntities().get(uuid);
+        Entity e = level.getEntities().get(uuid);
         return e instanceof R6DroneEntity drone ? drone : null;
     }
 

@@ -43,7 +43,7 @@ public class R6DroneControlMessage {
             if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
             String linked = tag.getString(MonitorItem.LINKED_DRONE);
-            R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), linked);
+            R6DroneEntity drone = R6DroneEntity.findServerDrone(player.serverLevel(), linked);
             if (drone != null) {
                 drone.processInput(msg.keys);
             }

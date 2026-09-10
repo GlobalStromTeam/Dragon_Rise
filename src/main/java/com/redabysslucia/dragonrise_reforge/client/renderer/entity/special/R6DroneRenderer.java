@@ -5,6 +5,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import com.redabysslucia.dragonrise_reforge.resource.model.EntityModelReloadListener;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -19,6 +21,10 @@ import net.minecraft.world.phys.Vec3;
  * 车体朝向：控制端直接用玩家视角（即时跟随、与相机一致），其他客户端用同步角度。
  * 位置：LevelRenderer 把车体放在 lerp(xOld, x) 线性插值位置，这里修正到实体的
  * Catmull-Rom 样条位置（getRenderPosition），与相机 mixin 使用同一平滑位置，杜绝错位。
+ * <p>
+ * 本类是纯客户端类（client-only）：控制端"本机玩家是否在遥控本车"的判断、
+ * 平滑位置失效（resetSmoothState）都集中在这里 —— 原实现在 R6DroneEntity 中引用
+ * Minecraft/LocalPlayer，会导致专用服务器（DEDICATED_SERVER）加载 common 实体类失败。
  */
 public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
 
@@ -39,6 +45,13 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
         return entity instanceof com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
     }
 
+    /** 本机玩家是否正在遥控该无人车（渲染线程，每帧可安全访问 Minecraft） */
+    private static boolean isLocallyControlled(R6DroneEntity entity) {
+        LocalPlayer local = Minecraft.getInstance().player;
+        if (local == null) return false;
+        return entity.getController() == local && entity.isMonitorControlling(local);
+    }
+
     @Override
     public ResourceLocation getTextureLocation(R6DroneEntity entity) {
         return isAttack(entity) ? ATTACK_TEXTURE : TEXTURE;
@@ -53,6 +66,14 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
         var model = EntityModelReloadListener.INSTANCE.getModel(modelLoc);
         if (model == null) return;
 
+        // 本机玩家未遥控本车：平滑位置失效（advanceSmoothPosition 只由遥控相机推进，
+        // 退出遥控后其值滞留旧位置，须让渲染回退到样条位置，避免模型滞留半空）。
+        // 遥控中由 R6DroneCameraMixin 每帧 advanceSmoothPosition 推进，这里不重置。
+        boolean localControlling = isLocallyControlled(entity);
+        if (!localControlling) {
+            entity.resetSmoothState();
+        }
+
         poseStack.pushPose();
 
         // 位置修正：LevelRenderer 已把 poseStack 平移到线性插值位置 lerp(xOld, x)，
@@ -65,9 +86,17 @@ public class R6DroneRenderer extends EntityRenderer<R6DroneEntity> {
         double lz = Mth.lerp(partialTick, entity.zOld, entity.getZ());
         poseStack.translate(spline.x - lx, spline.y - ly, spline.z - lz);
 
-        // 车体朝向：控制端玩家视角（即时），否则同步角度
-        float bodyYaw = entity.getRenderYaw(partialTick);
-        float bodyXRot = entity.getRenderPitch(partialTick);
+        // 车体朝向：本机控制者直接用玩家视角（即时），否则同步角度
+        float bodyYaw;
+        float bodyXRot;
+        if (localControlling) {
+            LocalPlayer local = Minecraft.getInstance().player;
+            bodyYaw = local.getYRot();
+            bodyXRot = local.getXRot();
+        } else {
+            bodyYaw = entity.getRenderYaw(partialTick);
+            bodyXRot = entity.getRenderPitch(partialTick);
+        }
         poseStack.mulPose(Axis.YP.rotationDegrees(-bodyYaw));
         poseStack.mulPose(Axis.XP.rotationDegrees(-bodyXRot));
 

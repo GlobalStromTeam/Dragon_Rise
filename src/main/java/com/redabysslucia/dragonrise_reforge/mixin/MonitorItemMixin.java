@@ -33,7 +33,7 @@ public class MonitorItemMixin {
         if (tag == null || !tag.getBoolean(MonitorItem.USING)) return;
 
         String linked = tag.getString(MonitorItem.LINKED_DRONE);
-        if (R6DroneEntity.findDrone(level, linked) != null) {
+        if (com.redabysslucia.dragonrise_reforge.client.R6DroneClientLookup.findDrone(level, linked) != null) {
             ci.cancel();   // 我们的无人车：跳过 Using 复位（客户端/服务端都生效）
         }
     }

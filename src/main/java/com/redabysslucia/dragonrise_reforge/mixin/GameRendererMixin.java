@@ -33,7 +33,8 @@ public class GameRendererMixin {
         if (!stack.is(ModItems.MONITOR.get())) return;
         var tag = stack.getOrCreateTag();
         if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
-        if (R6DroneEntity.findDrone(mc.player.level(), tag.getString(MonitorItem.LINKED_DRONE)) != null) {
+        if (com.redabysslucia.dragonrise_reforge.client.R6DroneClientLookup
+                .findDrone(mc.player.level(), tag.getString(MonitorItem.LINKED_DRONE)) != null) {
             ci.cancel();
         }
     }

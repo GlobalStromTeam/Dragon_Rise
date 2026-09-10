@@ -51,7 +51,8 @@ public abstract class R6DroneCameraMixin {
         CompoundTag tag = stack.getOrCreateTag();
         if (!tag.getBoolean("Using") || !tag.getBoolean("Linked")) return;
 
-        R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), tag.getString("LinkedDrone"));
+        R6DroneEntity drone = com.redabysslucia.dragonrise_reforge.client.R6DroneClientLookup
+                .findDrone(player.level(), tag.getString("LinkedDrone"));
         if (drone == null) return;
 
         // 相机旋转 = 控制者玩家视角（原生即时，无 SBW 的平滑/滞后）
