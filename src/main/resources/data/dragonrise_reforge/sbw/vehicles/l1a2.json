@@ -148,7 +148,7 @@
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
         "Fire3PFar": "superbwarfare:lav_150_cannon_far",
         "Fire3PVeryFar": "superbwarfare:lav_150_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:small_shell_aa",
@@ -209,7 +209,7 @@
         "Fire3P": "superbwarfare:m_60_fire_3p",
         "Fire3PFar": "superbwarfare:m_60_far",
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 12
     },
@@ -254,7 +254,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locking"
       },

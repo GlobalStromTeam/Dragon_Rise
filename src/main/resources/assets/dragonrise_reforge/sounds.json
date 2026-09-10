@@ -775,4 +775,57 @@
       }
     ]
   }
+,  "cannon_125mm_fire_1p": {
+    "sounds": [
+      { "name": "dragonrise_reforge:cannon_125mm/fire_1p/125mm_fire_1p_01", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_1p/125mm_fire_1p_02", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_1p/125mm_fire_1p_03", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_1p/125mm_fire_1p_04", "stream": false }
+    ]
+  },
+  "cannon_125mm_fire_3p": {
+    "sounds": [
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_near/125mm_fire_3p_near_01", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_near/125mm_fire_3p_near_02", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_near/125mm_fire_3p_near_03", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_near/125mm_fire_3p_near_04", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_near/125mm_fire_3p_near_05", "stream": false }
+    ]
+  },
+  "cannon_125mm_fire_3p_far": {
+    "sounds": [
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_mid/125mm_fire_3p_mid_01", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_mid/125mm_fire_3p_mid_02", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_mid/125mm_fire_3p_mid_03", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_mid/125mm_fire_3p_mid_04", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_mid/125mm_fire_3p_mid_05", "stream": false }
+    ]
+  },
+  "cannon_125mm_fire_3p_very_far": {
+    "sounds": [
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_far/cannon_125mm_3p_far_01", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_far/cannon_125mm_3p_far_02", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_far/cannon_125mm_3p_far_03", "stream": false },
+      { "name": "dragonrise_reforge:cannon_125mm/fire_3p_far/cannon_125mm_3p_far_04", "stream": false }
+    ]
+  },
+  "auto_loader": {
+    "sounds": [
+      { "name": "dragonrise_reforge:common/auto_loader", "stream": false }
+    ]
+  },
+  "change_weapon": {
+    "sounds": [
+      { "name": "dragonrise_reforge:common/change_weapon_01", "stream": false },
+      { "name": "dragonrise_reforge:common/change_weapon_02", "stream": false },
+      { "name": "dragonrise_reforge:common/change_weapon_03", "stream": false }
+    ]
+  },
+  "s_coax_fire": {
+    "sounds": [
+      { "name": "dragonrise_reforge:s_coax_fire/fire_1p/warrior_coax_fire_initial_1p_01", "stream": false },
+      { "name": "dragonrise_reforge:s_coax_fire/fire_1p/warrior_coax_fire_initial_1p_02", "stream": false },
+      { "name": "dragonrise_reforge:s_coax_fire/fire_1p/warrior_coax_fire_initial_1p_03", "stream": false }
+    ]
+  }
 }

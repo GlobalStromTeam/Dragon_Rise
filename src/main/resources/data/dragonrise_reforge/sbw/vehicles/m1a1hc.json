@@ -192,7 +192,7 @@
         "Fire3PFar": "superbwarfare:m_1a_2_far",
         "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
         "VehicleReload": "dragonrise_reforge:m1a2_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "dragonrise_reforge:m1a2_reload"
         ]
@@ -245,7 +245,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     },
@@ -284,7 +284,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     }

@@ -233,12 +233,12 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "superbwarfare:ztz_99a_fire_1p",
-        "Fire3P": "superbwarfare:ztz_99a_fire_3p",
-        "Fire3PFar": "superbwarfare:ztz_99a_far",
-        "Fire3PVeryFar": "superbwarfare:ztz_99a_veryfar",
-        "VehicleReload": "superbwarfare:ztz_99a_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Fire1P": "dragonrise_reforge:cannon_125mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:cannon_125mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:cannon_125mm_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
+        "VehicleReload":  "dragonrise_reforge:auto_loader",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "dragonrise_reforge:ztz99a_reload"
         ]
@@ -288,11 +288,11 @@
       },
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire1P": "dragonrise_reforge:s_coax_fire",
         "Fire3P": "superbwarfare:m_60_fire_3p",
         "Fire3PFar": "superbwarfare:m_60_far",
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     },
@@ -333,7 +333,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     }

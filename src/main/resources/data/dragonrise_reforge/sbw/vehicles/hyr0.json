@@ -203,7 +203,7 @@
         "Fire3PFar":  "dragonrise_reforge:ztz99a_fire_3p_far",
         "Fire3PVeryFar":  "dragonrise_reforge:ztz99a_fire_3p_far",
         "VehicleReload":  "dragonrise_reforge:ztz99a_reload",
-        "Change":  "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds":  [
           "dragonrise_reforge:ztz99a_reload"
         ]
@@ -247,7 +247,7 @@
         "Fire3P":  "dragonrise_reforge:zbd04a_30mm_fire_3p",
         "Fire3PFar":  "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
         "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
-        "Change":  "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius":  24,
       "AmmoType":  "superbwarfare:small_shell_ap",
@@ -307,7 +307,7 @@
         "Fire3P":  "dragonrise_reforge:fire_sound_57mm",
         "Fire3PFar":  "dragonrise_reforge:fire_sound_57mm_far",
         "Fire3PVeryFar":  "dragonrise_reforge:fire_sound_57mm_far",
-        "Change":  "superbwarfare:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds":  [
           "dragonrise_reforge:ztz99a_reload"
         ]

@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.IkFightcatEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.IkLocustEntity;
 
 
@@ -1431,6 +1434,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<IkLocustEntity>> IK_LOCUST = register("ik_locust",
             EntityType.Builder.of(IkLocustEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<IkFightcatEntity>> IK_FIGHTCAT = register("ik_fightcat",
+            EntityType.Builder.of(IkFightcatEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

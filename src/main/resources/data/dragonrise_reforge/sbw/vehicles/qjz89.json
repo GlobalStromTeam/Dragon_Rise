@@ -109,7 +109,7 @@
         "Fire3P":  "dragonrise_reforge:mgfire1",
         "Fire3PFar":  "dragonrise_reforge:mgfire1",
         "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-        "Change":  "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius":  16
     }

@@ -351,7 +351,7 @@
                                                         "Fire3PFar":  "dragonrise_reforge:m1a2_fire_3p_far",
                                                         "Fire3PVeryFar":  "dragonrise_reforge:m1a2_fire_3p_far",
                                                         "VehicleReload":  "dragonrise_reforge:ztz99a_reload",
-                                                        "Change":  "dragonrise_reforge:into_cannon"
+                                                        "Change":  "dragonrise_reforge:change_weapon"
                                                     },
                                       "SoundRadius":  45,
                                       "ShootPos":  {
@@ -397,7 +397,7 @@
                                                        "Fire3P":  "superbwarfare:lav_150_cannon_fire_3p",
                                                        "Fire3PFar":  "superbwarfare:lav_150_cannon_far",
                                                        "Fire3PVeryFar":  "superbwarfare:lav_150_cannon_veryfar",
-                                                       "Change":  "superbwarfare:into_missile"
+                                                       "Change":  "dragonrise_reforge:change_weapon"
                                                    },
                                      "SoundRadius":  30,
                                      "AmmoType":  "superbwarfare:small_shell_ap",
@@ -454,7 +454,7 @@
                                                         "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                         "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                         "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                        "Change":  "superbwarfare:into_cannon"
+                                                        "Change":  "dragonrise_reforge:change_weapon"
                                                     },
                                       "SoundRadius":  25
                                   },
@@ -544,7 +544,7 @@
                                                           "Fire3P":  "superbwarfare:bomb_release",
                                                           "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                           "VehicleReloadSoundTime":  11,
-                                                          "Change":  "superbwarfare:into_missile",
+                                                          "Change":  "dragonrise_reforge:change_weapon",
                                                           "Locking":  "superbwarfare:missile_locking",
                                                           "Locked":  "superbwarfare:missile_locked"
                                                       },

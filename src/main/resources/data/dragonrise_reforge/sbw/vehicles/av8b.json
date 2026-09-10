@@ -186,7 +186,7 @@
                                    "Name":  "dragonrise_reforge:23mm",
                                    "SoundInfo":  {
                                                      "FireSoundInstances":  "dragonrise_reforge:fire_sound_30mm",
-                                                     "Change":  "superbwarfare:into_cannon"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",
@@ -265,7 +265,7 @@
                                                      "Fire3P":  "superbwarfare:small_rocket_fire_3p",
                                                      "VehicleReload3p":  "superbwarfare:missile_reload",
                                                      "VehicleReloadSoundTime":  7,
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",
@@ -320,7 +320,7 @@
                                                    "Fire3P":  "superbwarfare:bomb_release",
                                                    "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                    "VehicleReloadSoundTime":  11,
-                                                   "Change":  "superbwarfare:into_missile"
+                                                   "Change":  "dragonrise_reforge:change_weapon"
                                                },
                                  "Crosshair":  "@AirBomb",
                                  "CrosshairColor":  "0x66FF00",
@@ -376,7 +376,7 @@
                                                       "Fire3P":  "superbwarfare:bomb_release",
                                                       "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                       "VehicleReloadSoundTime":  11,
-                                                      "Change":  "superbwarfare:into_missile",
+                                                      "Change":  "dragonrise_reforge:change_weapon",
                                                       "Locking":  "superbwarfare:javelin_locking",
                                                       "Locked":  "superbwarfare:javelin_locking"
                                                   },

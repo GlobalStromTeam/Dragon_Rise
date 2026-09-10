@@ -127,7 +127,7 @@
                                                      "Fire3PFar":  "superbwarfare:m_1a_2_far",
                                                      "Fire3PVeryFar":  "superbwarfare:m_1a_2_veryfar",
                                                      "VehicleReload":  "dragonrise_reforge:m1a2_reload",
-                                                     "Change":  "superbwarfare:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:m1a2_reload"
                                                                            ]
