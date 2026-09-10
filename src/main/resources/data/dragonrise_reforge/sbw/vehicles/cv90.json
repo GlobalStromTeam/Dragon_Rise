@@ -240,10 +240,10 @@
                                    "Name":  "dragonrise_reforge:30mm_mk258_apfsds",
                                    "Projectile":  "superbwarfare:small_cannon_shell",
                                    "SoundInfo":  {
-                                                     "Fire1P":  "dragonrise_reforge:m2a3fire",
-                                                     "Fire3P":  "dragonrise_reforge:m2a3fire",
-                                                     "Fire3PFar":  "dragonrise_reforge:m2a3firefar",
-                                                     "Fire3PVeryFar":  "dragonrise_reforge:m2a3firefar",
+                                                     "Fire1P":  "dragonrise_reforge:cannon_25mm_fire_1p",
+                                                     "Fire3P":  "dragonrise_reforge:cannon_25mm_fire_3p",
+                                                     "Fire3PFar":  "dragonrise_reforge:cannon_25mm_fire_3p_far",
+                                                     "Fire3PVeryFar":  "dragonrise_reforge:cannon_25mm_fire_3p_very_far",
                                                      "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "SoundRadius":  24,

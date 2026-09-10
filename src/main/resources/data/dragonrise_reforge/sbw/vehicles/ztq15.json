@@ -271,10 +271,10 @@
                                                                          "RecoilForce":  0.05,
                                                                          "Crosshair":  "@VehicleCommonMissile",
                                                                          "SoundInfo":  {
-                                                                                           "Fire1P":  "dragonrise_reforge:zbd04a_100mm_fire_1p",
-                                                                                           "Fire3P":  "dragonrise_reforge:zbd04a_100mm_fire_3p",
-                                                                                           "Fire3PFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-                                                                                           "Fire3PVeryFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+                                                                                           "Fire1P":  "dragonrise_reforge:cannon_125mm_fire_1p",
+                                                                                           "Fire3P":  "dragonrise_reforge:cannon_125mm_fire_3p",
+                                                                                           "Fire3PFar":  "dragonrise_reforge:cannon_125mm_fire_3p_far",
+                                                                                           "Fire3PVeryFar":  "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
                                                                                            "VehicleReload":  "dragonrise_reforge:zbd04a_100mm_reload",
                                                                                            "Change":  "dragonrise_reforge:change_weapon"
                                                                                        },
@@ -284,10 +284,10 @@
                                                     }
                                                 ],
                                    "SoundInfo":  {
-                                                     "Fire1P":  "dragonrise_reforge:zbd04a_100mm_fire_1p",
-                                                     "Fire3P":  "dragonrise_reforge:zbd04a_100mm_fire_3p",
-                                                     "Fire3PFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-                                                     "Fire3PVeryFar":  "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+                                                     "Fire1P":  "dragonrise_reforge:cannon_125mm_fire_1p",
+                                                     "Fire3P":  "dragonrise_reforge:cannon_125mm_fire_3p",
+                                                     "Fire3PFar":  "dragonrise_reforge:cannon_125mm_fire_3p_far",
+                                                     "Fire3PVeryFar":  "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
                                                      "VehicleReload":  "dragonrise_reforge:zbd04a_100mm_reload",
                                                      "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
@@ -391,10 +391,10 @@
                                                 "Crosshair":  "@VehicleCommonGun",
                                                 "Name":  "dragonrise_reforge:W85",
                                                 "SoundInfo":  {
-                                                                  "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
-                                                                  "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
-                                                                  "Fire3PFar":  "superbwarfare:m_2_hb_far",
-                                                                  "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
+                                                                  "Fire1P":  "dragonrise_reforge:qjz89_fire_1p",
+                                                                  "Fire3P":  "dragonrise_reforge:qjz89_fire_3p",
+                                                                  "Fire3PFar":  "dragonrise_reforge:qjz89_fire_3p_far",
+                                                                  "Fire3PVeryFar":  "dragonrise_reforge:qjz89_fire_3p_very_far",
                                                                   "Change":  "dragonrise_reforge:change_weapon"
                                                               },
                                                 "SoundRadius":  16
@@ -421,10 +421,10 @@
                                        "CrosshairColor":  "0xFFC700",
                                        "Name":  "dragonrise_reforge:87",
                                        "SoundInfo":  {
-                                                         "Fire1P":  "dragonrise_reforge:zbd04a_30mm_fire_1p",
-                                                         "Fire3P":  "dragonrise_reforge:zbd04a_30mm_fire_3p",
-                                                         "Fire3PFar":  "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
-                                                         "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
+                                                         "Fire1P":  "dragonrise_reforge:cannon_30mm_fire_1p",
+                                                         "Fire3P":  "dragonrise_reforge:cannon_30mm_fire_3p",
+                                                         "Fire3PFar":  "dragonrise_reforge:cannon_30mm_fire_3p_far",
+                                                         "Fire3PVeryFar":  "dragonrise_reforge:cannon_30mm_fire_3p_very_far",
                                                          "Change":  "dragonrise_reforge:change_weapon"
                                                      },
                                        "SoundRadius":  24,
