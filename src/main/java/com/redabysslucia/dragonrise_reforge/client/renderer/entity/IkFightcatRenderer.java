@@ -1,0 +1,11 @@
+package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
+
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
+import com.redabysslucia.dragonrise_reforge.entities.IkFightcatEntity;
+import net.minecraft.client.renderer.entity.EntityRendererProvider;
+
+public class IkFightcatRenderer extends GeoVehicleRenderer<IkFightcatEntity> {
+    public IkFightcatRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager);
+    }
+}
