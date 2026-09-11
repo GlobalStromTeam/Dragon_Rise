@@ -65,8 +65,6 @@ public class ModSounds {
         "m1a2_fire_3p_far",
         "m1a2_reload",
         "m2a3_engine_loop",
-        "m2a3fire",
-        "m2a3firefar",
         "mgfire1",
         "mgfire11",
         "plane_loop",
@@ -91,9 +89,6 @@ public class ModSounds {
         "ztz59_fire_1p",
         "ztz59_fire_3p_far",
         "ztz99a_engine",
-        "ztz99a_fire_1p",
-        "ztz99a_fire_3p",
-        "ztz99a_fire_3p_far",
         "ztz99a_reload"
     };
 

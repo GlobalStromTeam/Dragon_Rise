@@ -12580,11 +12580,6 @@
 					"name": "TerrainCompatPos3",
 					"parent": "Obb",
 					"pivot": [19.7, 0, 23.75]
-				},
-				{
-					"name": "Build",
-					"parent": "Obb",
-					"pivot": [-0.15312, 30.38493, -14.98405]
 				}
 			]
 		}

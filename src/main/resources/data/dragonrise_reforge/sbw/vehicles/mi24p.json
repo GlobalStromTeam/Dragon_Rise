@@ -1,52 +1,67 @@
 {
-  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/ah1f.animation.json",
-  "ID": "dragonrise_reforge:ah1f",
+  "ID": "dragonrise_reforge:mi24v",
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
-  "TurretPos": [0.015,0.793,3.595],
+  "TurretPos": [-0.001,0.932,4.513],
   "TurretTurnSpeed": [15,15],
   "TurretPitchRange": [-40,10],
-  "BarrelPos": [-0.015,0.245,-0.001],
+  "BarrelPos": [0.0,0.0,0.0],
   "TurretControllerIndex": 1,
   "OBB": [
     {
-      "Size": [0.62,1.123,1.633],
-      "Position": [0.0,1.736,2.161]
+      "Size": [0.848,0.575,1.602],
+      "Position": [0.0,1.513,3.197]
     },
     {
-      "Size": [0.62,0.498,6.945],
-      "Position": [0.0,1.361,-1.964]
+      "Size": [0.848,0.388,0.82],
+      "Position": [0.0,2.451,2.416]
     },
     {
-      "Size": [1.995,0.155,0.602],
-      "Position": [0.0,1.517,0.005]
+      "Size": [0.848,0.106,2.133],
+      "Position": [0.0,1.044,-0.397]
     },
     {
-      "Size": [0.183,0.373,0.602],
-      "Position": [0.0,2.048,-8.745]
+      "Size": [0.094,0.95,2.133],
+      "Position": [-0.745,1.888,-0.397]
     },
     {
-      "Size": [0.183,0.592,0.914],
-      "Position": [0.0,3.017,-9.808]
+      "Size": [0.094,0.95,2.133],
+      "Position": [0.745,1.888,-0.397]
     },
     {
-      "Size": [0.656,0.87,1.58],
-      "Position": [0.0,2.555,-1.03],
+      "Size": [0.723,0.575,1.602],
+      "Position": [0.0,1.951,-3.866],
+      "CustomRotate": [15.0,0.0,0.0]
+    },
+    {
+      "Size": [0.473,0.356,2.656],
+      "Position": [0.0,2.507,-7.92],
+      "CustomRotate": [8.75,0.0,0.0]
+    },
+    {
+      "Size": [0.473,0.356,3.688],
+      "Position": [0.0,2.945,-6.888]
+    },
+    {
+      "Size": [1.473,0.841,2.102],
+      "Position": [0.0,0.961,0.014],
+      "Part": "Collision"
+    },
+    {
+      "Size": [0.789,0.57,2.281],
+      "Position": [0.0,3.202,-0.244],
       "Part": "MainEngine"
     }
   ],
   "Seats": [
     {
       "Transform": "Vehicle",
-      "Position": [0.0,1.146,1.697],
+      "Position": [0.0,0.993,2.488],
       "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0,2.728,1.844],
-        "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0,5,-15],
-        "ZoomPosition": [0.0,2.728,1.844]
+        "AircraftCameraPos": [-3.8,3.5,-15]
       },
       "CanRotateHead": false,
       "MinPitch": -80,
@@ -54,7 +69,7 @@
       "MinYaw": -80,
       "MaxYaw": 80,
       "Weapons": [
-        "Rocket"
+        "Rocket","Cannon"
       ],
       "DismountInfo": {
         "Transform": "Vehicle",
@@ -64,21 +79,13 @@
     },
     {
       "Transform": "Vehicle",
-      "Position": [0.0,0.709,3.259],
+      "Position": [0.0,0.227,4.05],
       "Sensitivity": [0.59,0.8,0.9],
-      "CameraPos": {
-        "Transform": "Barrel",
-        "UseFixedCameraPos": true,
-        "Position": [0.0,0.916,4.344],
-        "ZoomPosition": [0.0,0.916,4.344],
-        "ZoomDirection": "Barrel"
-      },
       "MinPitch": -60,
       "MaxPitch": 10,
       "MinYaw": -110,
       "MaxYaw": 110,
       "Weapons": [
-        "Cannon",
         "PassengerMissile"
       ],
       "DismountInfo": {
@@ -93,22 +100,22 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cannon_23mm.png",
       "DefaultZoom": 3,
-      "RPM": 625,
-      "Velocity": 26.9333,
+      "RPM": 900,
+      "Velocity": 32.3333,
       "Gravity": 0.05,
-      "Damage": 55,
-      "Magazine": 1200,
-      "EmptyReloadTime": 160,
-      "ExplosionDamage": 15,
-      "ExplosionRadius": 4,
+      "Damage": 18,
+      "ExplosionDamage": 8,
+      "ExplosionRadius": 2,
       "HeatPerShoot": 3,
       "NaturalCooldown": 1,
+      "Magazine": 350,
+      "EmptyReloadTime": 160,
       "RecoilTime": 31,
       "RecoilForce": 0.62,
       "Spread": 0.25,
-      "Name": "dragonrise_reforge:30mmM230",
+      "Name": "dragonrise_reforge:mi24v_cannon",
       "SoundInfo": {
         "Fire1P": "superbwarfare:mi_28_cannon_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
@@ -123,10 +130,11 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.0,-0.327,5.53]
+          [-0.734,1.176,4.954],
+          [-0.734,1.301,4.954]
         ],
         "Directions": [
-          "Barrel"
+          "Vehicle"
         ]
       }
     },
@@ -136,24 +144,26 @@
       "DefaultZoom": 2,
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
-      "Magazine": 14,
+      "Magazine": 80,
       "EmptyReloadTime": 200,
       "Projectile": "superbwarfare:small_rocket",
       "Spread": 0.25,
-      "Name": "dragonrise_reforge:70 mm Hydra-70 M247 rocket",
+      "Name": "dragonrise_reforge:mi24v_rocket",
       "RPM": 450,
-      "Damage": 85,
+      "Damage": 50,
       "ExplosionDamage": 42,
       "ExplosionRadius": 6,
       "Gravity": 0.05,
-      "Velocity": 18.3333,
+      "Velocity": 24.6333,
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,0.62,0.8],
         "ShootDirectionForHud": [0,0.018,1],
         "Positions": [
-          [1.77374375,1.39634375,2.52694375],
-          [-1.77374375,1.39634375,2.52694375]
+          [2.47973125,1.52745625,-1.93125],
+          [1.65151875,1.63370625,-1.8625],
+          [-2.47973125,1.52745625,-1.93125],
+          [-1.65151875,1.63370625,-1.8625]
         ],
         "Directions": [
           [0,0,1]
@@ -170,14 +180,14 @@
       "SoundRadius": 12
     },
     "@Missile": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_dyh.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd10.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
-      "RPM": 20,
+      "RPM": 12,
       "EmptyReloadTime": 240,
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Projectile": "superbwarfare:wire_guide_missile",
-      "Name": "dragonrise_reforge:dyh",
+      "Name": "dragonrise_reforge:mi24v_atgm",
       "Damage": 650,
       "ExplosionDamage": 80,
       "ExplosionRadius": 7,
@@ -191,11 +201,12 @@
         "VehicleReloadSoundTime": 11,
         "Change": "dragonrise_reforge:change_weapon"
       },
-      "SoundRadius": 8
+      "SoundRadius": 8,
+      "ShootPos": {}
     },
     "PassengerMissile": {
       "DefaultZoom": 3,
-      "Magazine": 8,
+      "Magazine": 4,
       "Template": "@Missile",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
@@ -203,14 +214,10 @@
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,1.0625,5.625],
         "Positions": [
-          [2.69939375,1.2435125,2.6317125],
-          [2.70360625,0.96335625,2.53489375],
-          [2.34610625,1.27616875,2.53489375],
-          [2.34610625,0.96335625,2.53489375],
-          [-2.70360625,1.27616875,2.53489375],
-          [-2.70360625,0.96335625,2.53489375],
-          [-2.34610625,1.27616875,2.53489375],
-          [-2.34189375,0.9307,2.53489375]
+          [3.4861125,1.39785625,-1.99375],
+          [3.1298625,1.39785625,-1.99375],
+          [-3.1298625,1.39785625,-1.99375],
+          [-3.4861125,1.39785625,-1.99375]
         ],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
@@ -226,7 +233,7 @@
           "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "dragonrise_reforge:ba11_1",
+            "Name": "dragonrise_reforge:mi24v_asm_ground",
             "SeekWeaponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
@@ -245,10 +252,11 @@
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
-      "Name": "dragonrise_reforge:ba11_2",
+      "Name": "dragonrise_reforge:mi24v_asm_entity",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
+      "ProjectileLife": 1200,
       "Velocity": 10,
       "Gravity": 0.05,
       "SeekWeaponInfo": {
@@ -297,7 +305,7 @@
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:ty90",
+      "Name": "dragonrise_reforge:mi24v_aam",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,
@@ -395,25 +403,25 @@
     "CrashPassengers": true
   },
   "HUDColor": "0xFFC700",
-  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/ah1f_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_aircraft.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/mi24p_icon.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_aircraft.png",
+  "VehicleContainerType": "Small",
   "Type": "Helicopter",
   "HudType": "@Helicopter",
   "TerrainCompat": [
-    [-1.725,0.009,-0.919],
-    [1.725,0.009,2.362],
-    [1.725,0.009,-0.919],
-    [-1.725,0.009,2.362]
+    [0.0,0.0,2.047],
+    [-1.481,0.25,-2.141],
+    [1.481,0.234,-2.125]
   ],
   "TerrainCompatRotateRate": 0,
   "Models": [
     {
-      "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
-      "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/mi24p.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/mi24v.png"
     }
   ],
   "Model": {
-    "Model": "dragonrise_reforge:models/bedrock/vehicle/ah1f.geo.json",
-    "Texture": "dragonrise_reforge:textures/entity/ah1f.png"
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/mi24p.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/mi24v.png"
   }
 }

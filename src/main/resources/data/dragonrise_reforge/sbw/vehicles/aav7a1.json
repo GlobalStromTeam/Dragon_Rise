@@ -398,7 +398,7 @@
         "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
         "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
         "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:grenade_40mm",
@@ -446,12 +446,12 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:M2HB",
       "SoundInfo": {
-        "Fire1P":  "dragonrise_reforge:m2_fire_1p",
-        "Fire3P":  "dragonrise_reforge:m2_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:m2_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:m2_fire_3p_very_far",
-        "Change":  "dragonrise_reforge:change_weapon"
-    },
+        "Fire1P": "dragonrise_reforge:m2_fire_1p",
+        "Fire3P": "dragonrise_reforge:m2_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m2_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m2_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
       "SoundRadius": 16
     }
   },

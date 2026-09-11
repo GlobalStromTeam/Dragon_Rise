@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Bkan1cRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mi24pRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.IkFightcatRenderer;
 
 
@@ -264,5 +270,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.MI24V.get(), Mi24vRenderer::new);
                 event.registerEntityRenderer(ModEntities.IK_LOCUST.get(), IkLocustRenderer::new);
                 event.registerEntityRenderer(ModEntities.IK_FIGHTCAT.get(), IkFightcatRenderer::new);
+                event.registerEntityRenderer(ModEntities.MI24P.get(), Mi24pRenderer::new);
+                event.registerEntityRenderer(ModEntities.BKAN1C.get(), Bkan1cRenderer::new);
         }
 }
