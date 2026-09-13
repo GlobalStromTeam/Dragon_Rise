@@ -154,7 +154,7 @@
         "Fire3P": "dragonrise_reforge:mgfire1",
         "Fire3PFar": "dragonrise_reforge:mgfire1",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:heavy_ammo",
@@ -208,7 +208,7 @@
         "Fire3P": "superbwarfare:qbz_191_fire_3p",
         "Fire3PFar": "superbwarfare:qbz_191_hb_far",
         "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     }

@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Bkan1cEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Mi24pEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.IkFightcatEntity;
 
 
@@ -1441,6 +1447,20 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<IkFightcatEntity>> IK_FIGHTCAT = register("ik_fightcat",
             EntityType.Builder.of(IkFightcatEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Mi24pEntity>> MI24P = register("mi24p",
+            EntityType.Builder.of(Mi24pEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Bkan1cEntity>> BKAN1C = register("bkan1c",
+            EntityType.Builder.of(Bkan1cEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

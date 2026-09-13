@@ -21493,11 +21493,6 @@
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "Build",
-					"parent": "Obb",
-					"pivot": [0, 0, 0]
-				},
-				{
 					"name": "CannonPos1",
 					"parent": "Obb",
 					"pivot": [0.0119, 41.673, -33.2578]

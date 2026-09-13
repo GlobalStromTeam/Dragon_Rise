@@ -276,12 +276,12 @@
       },
       "Name": "dragonrise_reforge:QJZ89",
       "SoundInfo": {
-        "Fire1P":  "dragonrise_reforge:qjz89_fire_1p",
-        "Fire3P":  "dragonrise_reforge:qjz89_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:qjz89_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:qjz89_fire_3p_very_far",
-        "Change":  "dragonrise_reforge:change_weapon"
-    },
+        "Fire1P": "dragonrise_reforge:qjz89_fire_1p",
+        "Fire3P": "dragonrise_reforge:qjz89_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:qjz89_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:qjz89_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
       "SoundRadius": 16
     }
   },

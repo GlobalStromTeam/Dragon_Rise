@@ -47,42 +47,10 @@
       }
     ]
   },
-  "tank_engine_loop2": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:tankengine/tank_engine_loop_2",
-        "stream": false
-      }
-    ]
-  },
-  "tank_engine_loop1": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:tankengine/tank_engine_loop_1",
-        "stream": false
-      }
-    ]
-  },
   "m2a3_engine_loop": {
     "sounds": [
       {
         "name": "dragonrise_reforge:tankengine/m2a3_engine_loop",
-        "stream": false
-      }
-    ]
-  },
-  "m2a3firefar": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:firesound/m2a3firefar",
-        "stream": false
-      }
-    ]
-  },
-  "m2a3fire": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:firesound/m2a3fire",
         "stream": false
       }
     ]
@@ -137,22 +105,6 @@
       }
     ]
   },
-  "wheel_loop2": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:tankengine/wheel_engine_loop_2",
-        "stream": false
-      }
-    ]
-  },
-  "25mm400rpm1": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:firesound/25mm400rpm1",
-        "stream": false
-      }
-    ]
-  },
   "fire_sound_57mm_far": {
     "sounds": [
       {
@@ -169,14 +121,6 @@
       }
     ]
   },
-  "wheel": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:radio/wheel",
-        "stream": false
-      }
-    ]
-  },
   "fire_sound_30mm": {
     "sounds": [
       {
@@ -189,14 +133,6 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:type100/type100_engine",
-        "stream": false
-      }
-    ]
-  },
-  "radio": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:radio/high_way_to_hell",
         "stream": false
       }
     ]
@@ -257,30 +193,6 @@
       }
     ]
   },
-  "m3a3_engine": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:m3a3/m3a3_engine",
-        "stream": false
-      }
-    ]
-  },
-  "m3a3_fire": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:m3a3/m3a3_fire",
-        "stream": false
-      }
-    ]
-  },
-  "m3a3_fire_far": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:m3a3/m3a3_fire_far",
-        "stream": false
-      }
-    ]
-  },
   "t80_reload": {
     "sounds": [
       {
@@ -337,49 +249,10 @@
       }
     ]
   },
-  "bmpt_music": {
-    "sounds": [{
-      "name": "dragonrise_reforge:bmpt/bmpt_music",
-      "stream": false
-    }],
-    "stream": true
-  },
   "ztz99a_reload": {
     "sounds": [
       {
         "name": "dragonrise_reforge:common/common_reload_autoloader_short",
-        "stream": false
-      }
-    ]
-  },
-  "ztz99a_fire_1p": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:common/common_fire_1p",
-        "stream": false
-      }
-    ]
-  },
-  "ztz99a_fire_3p": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p",
-        "stream": false
-      }
-    ]
-  },
-  "ztz99a_fire_3p_far": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p_far_1",
-        "stream": false
-      },
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p_far_2",
-        "stream": false
-      },
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p_far_3",
         "stream": false
       }
     ]
@@ -508,30 +381,6 @@
       }
     ]
   },
-  "zbd04a_engine": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:zbd04a/zbd04a_engine",
-        "stream": false
-      }
-    ]
-  },
-  "cn_light_mg": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:common/common_fire_3p",
-        "stream": false
-      }
-    ]
-  },
-  "amx56_reload": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:amx56/amx56_reload",
-        "stream": false
-      }
-    ]
-  },
   "jet_engine": {
     "sounds": [
       {
@@ -638,14 +487,6 @@
       }
     ]
   },
-    "57_cannon_1p": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:firesound/57mm",
-        "stream": false
-      }
-    ]
-  },
   "ztz59_fire_1p": {
     "sounds": [
       {
@@ -674,14 +515,6 @@
       },
       {
         "name": "dragonrise_reforge:ztz59/cannon_100mm_d10t_shot_far_03",
-        "stream": false
-      }
-    ]
-  },
-  "ztz59_engine": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:ztz59/t54_engine",
         "stream": false
       }
     ]
@@ -740,24 +573,6 @@
   },
   "terrorist_shoot": {
     "sounds": ["dragonrise_reforge:terrorist/terrorist_shoot"]
-  },
-  "plane_high_speed": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:jetengine/plane_high_speed",
-        "attenuation_distance": 256,
-        "stream": true
-      }
-    ]
-  },
-  "plane_supersonic_loop": {
-    "sounds": [
-      {
-        "name": "dragonrise_reforge:jetengine/plane_supersonic_loop",
-        "attenuation_distance": 25,
-        "stream": true
-      }
-    ]
   },
   "supply_station_charging": {
     "sounds": [
