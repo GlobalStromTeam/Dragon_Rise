@@ -10,7 +10,7 @@
     {
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [1.152,0.234,1.214],
+      "Position": [0.95,0.022,1.169],
       "CameraPos": {
         "Transform": "Barrel",
         "ZoomPosition": [0,0.626,1.526],
@@ -18,6 +18,8 @@
       },
       "MinPitch": -3,
       "MaxPitch": 65,
+      "MaxYaw": 30,
+      "MinYaw": -30,
       "Sensitivity": [0.42,0.55,0.9],
       "Weapons": [
         "Main"
