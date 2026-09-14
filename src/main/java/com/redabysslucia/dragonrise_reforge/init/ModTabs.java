@@ -200,6 +200,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24P.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
+
+                        //其他 重型坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
                     }
                     ).build()
     );

@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.SilverhandMkIvEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Bkan1cEntity;
 
 
@@ -1465,6 +1468,13 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<SilverhandMkIvEntity>> SILVERHAND_MK_IV = register("silverhand_mk_iv",
+            EntityType.Builder.of(SilverhandMkIvEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.8f, 3.7f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {

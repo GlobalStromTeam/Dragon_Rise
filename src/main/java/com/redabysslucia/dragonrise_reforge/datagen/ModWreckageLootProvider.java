@@ -35,6 +35,7 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.PANZER4.get(), createTankLoot(3, 1));
         add(ModEntities.M4A2.get(), createTankLoot(3, 1));
         add(ModEntities.M4A2105.get(), createTankLoot(3, 1));
+        add(ModEntities.SILVERHAND_MK_IV.get(), createTankLoot(6, 1));
 
         // 轻型坦克/装甲车
         add(ModEntities.ZTQ15.get(), createLightTankLoot(4));
