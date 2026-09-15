@@ -203,6 +203,8 @@ public class ModTabs {
 
                         //其他 重型坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                     }
                     ).build()
     );
