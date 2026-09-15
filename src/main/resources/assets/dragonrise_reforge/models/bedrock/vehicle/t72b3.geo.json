@@ -7433,11 +7433,6 @@
 					"pivot": [-0.0131, 31.398, -117.2578]
 				},
 				{
-					"name": "CannonPos2",
-					"parent": "Obb",
-					"pivot": [-6.5131, 30.398, -26.2578]
-				},
-				{
 					"name": "SeatsPos1",
 					"parent": "Obb",
 					"pivot": [9.5, 38.25, -16]
