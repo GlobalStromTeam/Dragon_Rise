@@ -202,10 +202,10 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:qbz_191_fire_1p",
-        "Fire3P": "superbwarfare:qbz_191_fire_3p",
-        "Fire3PFar": "superbwarfare:qbz_191_hb_far",
-        "Fire3PVeryFar": "superbwarfare:qbz_191_hb_veryfar",
+        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire3P": "superbwarfare:m_60_fire_3p",
+        "Fire3PFar": "superbwarfare:m_60_far",
+        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
         "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16

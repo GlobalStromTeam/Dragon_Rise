@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.M1126Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.M1296Entity;
 
 
@@ -1481,6 +1484,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<M1296Entity>> M1296 = register("m1296",
             EntityType.Builder.of(M1296Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<M1126Entity>> M1126 = register("m1126",
+            EntityType.Builder.of(M1126Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

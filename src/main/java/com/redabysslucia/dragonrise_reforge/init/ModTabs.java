@@ -92,6 +92,9 @@ public class ModTabs {
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1126.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M270.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEE.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
@@ -125,6 +128,8 @@ public class ModTabs {
 
                         //瑞典 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
+                        //瑞典 自行火炮
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
                         //瑞典 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
                         //瑞典 固定翼
@@ -199,9 +204,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24P.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                     }
                     ).build()
     );

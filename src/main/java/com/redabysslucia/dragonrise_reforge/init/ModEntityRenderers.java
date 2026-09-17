@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M1126Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.M1296Renderer;
 
 
@@ -280,5 +283,6 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.BKAN1C.get(), Bkan1cRenderer::new);
                 event.registerEntityRenderer(ModEntities.M1128.get(), M1128Renderer::new);
                 event.registerEntityRenderer(ModEntities.M1296.get(), M1296Renderer::new);
+                event.registerEntityRenderer(ModEntities.M1126.get(), M1126Renderer::new);
         }
 }
