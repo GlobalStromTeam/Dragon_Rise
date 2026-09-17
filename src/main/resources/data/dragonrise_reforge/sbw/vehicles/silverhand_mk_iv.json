@@ -193,8 +193,12 @@
     },
     "MachineGun": {
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aphe.png",
-      "BoundBonesYaw": ["move_hullGunYaw"],
-      "BoundBonesPitch": ["move_hullGunPitch"],
+      "BoundBonesYaw": [
+        "move_hullGunYaw"
+      ],
+      "BoundBonesPitch": [
+        "move_hullGunPitch"
+      ],
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Projectile": "superbwarfare:cannon_shell",

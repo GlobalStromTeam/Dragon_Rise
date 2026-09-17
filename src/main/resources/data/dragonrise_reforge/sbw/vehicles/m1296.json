@@ -18,11 +18,11 @@
       "CustomRotate": [-35.0,0.0,0.0]
     },
     {
-      "Size": [1.911,0.294,2.539],
+      "Size": [1.911,0.419,2.07],
       "Position": [0.031,3.383,-2.085]
     },
     {
-      "Size": [1.973,0.794,4.039],
+      "Size": [1.973,1.7,5.57],
       "Position": [0.0,0.883,0.04],
       "Part": "Collision"
     },
@@ -104,7 +104,7 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.734,0.812,-4.125],
+      "Position": [0.707,1.573,3.392],
       "CameraPos": {
         "UseSimulate3P": true,
         "Simulate3PPos": [6,1]
@@ -200,7 +200,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.002,-0.005,2.516]
+          [-0.002,-0.005,2.516],
+          [0.009,0.494,0.579]
         ],
         "Directions": [
           "Barrel"

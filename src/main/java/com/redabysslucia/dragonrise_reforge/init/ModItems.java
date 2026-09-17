@@ -60,6 +60,9 @@ public class ModItems {
     public static final RegistryObject<Item> JUNGLE07_HELMET = REGISTRY.register("jungle07_helmet", Jungle07Helmet::new);
     public static final RegistryObject<Item> JUNGLE07_CHEST = REGISTRY.register("jungle07_chest", Jungle07Chest::new);
     public static final RegistryObject<Item> JUNGLE07_PANTS = REGISTRY.register("jungle07_pants", Jungle07Pants::new);
+    public static final RegistryObject<Item> JUNGLE07_MEDIC_HELMET = REGISTRY.register("jungle07_medic_helmet", Jungle07MedicHelmet::new);
+    public static final RegistryObject<Item> JUNGLE07_MEDIC_CHEST = REGISTRY.register("jungle07_medic_chest", Jungle07MedicChest::new);
+    public static final RegistryObject<Item> JUNGLE07_MEDIC_PANTS = REGISTRY.register("jungle07_medic_pants", Jungle07MedicPants::new);
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));

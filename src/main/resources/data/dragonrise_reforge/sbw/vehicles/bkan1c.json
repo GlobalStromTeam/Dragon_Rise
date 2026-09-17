@@ -16,10 +16,10 @@
         "ZoomPosition": [0,0.626,1.526],
         "Direction": "Barrel"
       },
-      "MinPitch": -3,
-      "MaxPitch": 65,
-      "MaxYaw": 30,
+      "MinPitch": -15,
+      "MaxPitch": 30,
       "MinYaw": -30,
+      "MaxYaw": 30,
       "Sensitivity": [0.42,0.55,0.9],
       "Weapons": [
         "Main"

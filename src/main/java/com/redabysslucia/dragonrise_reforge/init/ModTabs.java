@@ -89,6 +89,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A1HC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
+                        //美国 轮式火力支援车
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
@@ -166,6 +169,10 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T3485.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KV1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T3476.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.KV2.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.T26B.get()));
+                        //苏联 装甲车辆
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.BA10.get()));
 
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));
@@ -203,8 +210,6 @@ public class ModTabs {
 
                         //其他 重型坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                     }
                     ).build()
     );
@@ -250,6 +255,9 @@ public class ModTabs {
                         output.accept(ModItems.JUNGLE07_HELMET.get());
                         output.accept(ModItems.JUNGLE07_CHEST.get());
                         output.accept(ModItems.JUNGLE07_PANTS.get());
+                        output.accept(ModItems.JUNGLE07_MEDIC_HELMET.get());
+                        output.accept(ModItems.JUNGLE07_MEDIC_CHEST.get());
+                        output.accept(ModItems.JUNGLE07_MEDIC_PANTS.get());
 
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());

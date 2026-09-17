@@ -40,6 +40,11 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         // 轻型坦克/装甲车
         add(ModEntities.ZTQ15.get(), createLightTankLoot(4));
         add(ModEntities.M10BOOKER.get(), createLightTankLoot(4));
+        add(ModEntities.M1296.get(), createLightTankLoot(3));
+        add(ModEntities.M1128.get(), createLightTankLoot(4));
+        add(ModEntities.BA10.get(), createLightVehicleLoot(2));
+        add(ModEntities.T26B.get(), createLightTankLoot(3));
+        add(ModEntities.KV2.get(), createTankLoot(5, 1));
         add(ModEntities.R2S25M.get(), createLightTankLoot(3));
         add(ModEntities.BMP3.get(), createLightTankLoot(3));
         add(ModEntities.BMPT72.get(), createLightTankLoot(4));

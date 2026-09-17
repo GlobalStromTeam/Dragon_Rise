@@ -1,5 +1,14 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.T26bEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Kv2Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Ba10Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.SilverhandMkIvEntity;
 
 
@@ -1491,6 +1500,27 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<M1296Entity>> M1296 = register("m1296",
             EntityType.Builder.of(M1296Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Ba10Entity>> BA10 = register("ba10",
+            EntityType.Builder.of(Ba10Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Kv2Entity>> KV2 = register("kv2",
+            EntityType.Builder.of(Kv2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<T26bEntity>> T26B = register("t26b",
+            EntityType.Builder.of(T26bEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
