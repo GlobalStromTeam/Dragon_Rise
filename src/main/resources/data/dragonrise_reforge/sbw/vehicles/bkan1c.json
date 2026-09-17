@@ -54,7 +54,7 @@
       "ShootAnimationTime": 30,
       "Crosshair": "@VehicleRuApc",
       "CrosshairColor": "0x00ff66",
-      "Name": "weapon.superbwarfare.cannon_ap",
+      "Name": "dragonrise_reforge:155mm_m60",
       "SoundInfo": {
         "Fire1P": "superbwarfare:plz_05_fire_1p",
         "Fire3P": "superbwarfare:plz_05_fire_3p",
@@ -76,7 +76,7 @@
             "Damage": 450,
             "ExplosionDamage": 260,
             "ExplosionRadius": 14,
-            "Name": "weapon.superbwarfare.cannon_he"
+            "Name": "dragonrise_reforge:155mm_m60_he"
           }
         },
         {
@@ -89,7 +89,7 @@
             "Damage": 600,
             "ExplosionDamage": 240,
             "ExplosionRadius": 7,
-            "Name": "weapon.superbwarfare.cannon_cm"
+            "Name": "dragonrise_reforge:155mm_m60_cm"
           }
         },
         {
@@ -102,7 +102,7 @@
             "Damage": 300,
             "ExplosionDamage": 40,
             "ExplosionRadius": 11,
-            "Name": "weapon.superbwarfare.cannon_wp"
+            "Name": "dragonrise_reforge:155mm_m60_wp"
           }
         }
       ],
@@ -170,7 +170,7 @@
   "EngineSound": "superbwarfare:plz_05_engine",
   "ThirdPersonCameraPos": [-0.8669625,1.5,5],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/bkan1c_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/se_land.png",
   "VehicleContainerType": "Medium",
   "Type": "Tank",
   "CollisionLevel": {

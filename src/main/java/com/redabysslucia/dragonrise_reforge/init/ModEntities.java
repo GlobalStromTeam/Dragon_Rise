@@ -12,6 +12,9 @@ import com.redabysslucia.dragonrise_reforge.entities.Ba10Entity;
 import com.redabysslucia.dragonrise_reforge.entities.SilverhandMkIvEntity;
 
 
+import com.redabysslucia.dragonrise_reforge.entities.M1126Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.M1296Entity;
 
 
@@ -1484,13 +1487,6 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<SilverhandMkIvEntity>> SILVERHAND_MK_IV = register("silverhand_mk_iv",
-            EntityType.Builder.of(SilverhandMkIvEntity::new, MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(2)
-                    .fireImmune()
-                    .sized(4.8f, 3.7f)
-    );
     public static final RegistryObject<EntityType<M1128Entity>> M1128 = register("m1128",
             EntityType.Builder.of(M1128Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1500,6 +1496,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<M1296Entity>> M1296 = register("m1296",
             EntityType.Builder.of(M1296Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<M1126Entity>> M1126 = register("m1126",
+            EntityType.Builder.of(M1126Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

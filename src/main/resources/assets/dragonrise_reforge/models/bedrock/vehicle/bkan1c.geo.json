@@ -2302,13 +2302,13 @@
 					]
 				},
 				{
-					"name": "body",
+					"name": "base",
 					"parent": "root",
 					"pivot": [0, 0, -10]
 				},
 				{
 					"name": "mianbody",
-					"parent": "body",
+					"parent": "base",
 					"pivot": [0, 0, -10],
 					"cubes": [
 						{
@@ -2954,7 +2954,7 @@
 				},
 				{
 					"name": "bodydeco",
-					"parent": "body",
+					"parent": "base",
 					"pivot": [0, 0, -10],
 					"cubes": [
 						{
@@ -3363,7 +3363,7 @@
 				},
 				{
 					"name": "turret",
-					"parent": "root",
+					"parent": "base",
 					"pivot": [0.31104, 26.32592, 22.03677]
 				},
 				{
