@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.client.event;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.client.compat.DynamicLightsCompat;
 import com.redabysslucia.dragonrise_reforge.entities.special.StarShellEntity;
 import me.jellysquid.mods.sodium.client.render.SodiumWorldRenderer;
 import net.minecraft.client.Minecraft;
@@ -11,7 +12,6 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import toni.sodiumdynamiclights.SodiumDynamicLights;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -22,16 +22,19 @@ import java.util.Set;
 
 /**
  * 照明弹补光「刷新调度」（客户端）。
- *
+ * <p>
  * 光照数据本身没问题（光已烘焙进 72 格范围）；此前所有重建尝试（vanilla setSectionDirty /
  * setBlocksDirty / sodium scheduleRebuildForChunk…）都无效，且 SodiumWorldRenderer.reload()
  * 在 ClientTickEvent 里调用会崩（checkDeviceActive：需要 GL 上下文）。结论：embeddium 的
  * 重建调度必须在【渲染帧（RenderTickEvent，GL 活跃）】内发起 —— reforged 自身的有效调用
  * （WorldRendererMixin.beforeRender → updateAll）正是渲染期。
- *
+ * <p>
  * 因此全部逻辑移到 RenderTickEvent：事件（悬停开始 / 消失）触发把光区 section 入队，
  * 每个渲染 tick 限量把队列交给 SodiumWorldRenderer.scheduleRebuildForChunk（embeddium
  * 原生调度，渲染期执行必然生效）。
+ * <p>
+ * <b>软依赖</b>：本类只在安装了动态光影时才有意义（照明弹的光源由动态光影管线提供，
+ * 没有它就没有光需要重排），未安装时整个事件直接跳过。
  */
 @Mod.EventBusSubscriber(modid = Dragonrise_reforge.MODID, value = Dist.CLIENT)
 public class StarShellLightManager {
@@ -57,6 +60,8 @@ public class StarShellLightManager {
     @SubscribeEvent
     public static void onRenderTick(TickEvent.RenderTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
+        // 软依赖：未安装动态光影 → 照明弹不产生动态光源，也就没有光照需要重排，整段跳过
+        if (!DynamicLightsCompat.isLoaded()) return;
         Minecraft mc = Minecraft.getInstance();
         if (mc.level == null || mc.player == null || mc.levelRenderer == null) return;
 
@@ -96,10 +101,7 @@ public class StarShellLightManager {
             if (!seen.contains(e.getKey())) {
                 Tracked t = e.getValue();
                 if (t.hovering) {
-                    SodiumDynamicLights dl = SodiumDynamicLights.get();
-                    if (dl != null && t.entity instanceof toni.sodiumdynamiclights.DynamicLightSource dls) {
-                        dl.removeLightSource(dls);
-                    }
+                    DynamicLightsCompat.removeLightSource(t.entity);
                     requestRefresh(t.sx, t.sy, t.sz);
                 }
                 it.remove();

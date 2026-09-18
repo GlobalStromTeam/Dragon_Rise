@@ -74,9 +74,12 @@ ordering = "AFTER"
 side = "BOTH"
 
 # Dynamic Lights (dynamiclights-reforged) — 照明弹大范围补光依赖（纯客户端特性）
+# 【软依赖】非必需：未安装时本 mod 正常加载与运行，仅照明弹的「大范围动态补光」不生效
+# （注入该 mod 类的 mixin 在 dynamiclights.mixins.json 中已设为 required=false）。
+# ordering=AFTER 必需：我们要把 mixin 注入到它的类上，必须排在它之后加载。
 [[dependencies."${mod_id}"]]
 modId = "sodiumdynamiclights"
-mandatory = true
+mandatory = false
 versionRange = "[0.0.1,)"
-ordering = "NONE"
+ordering = "AFTER"
 side = "CLIENT"

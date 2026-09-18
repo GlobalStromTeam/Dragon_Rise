@@ -144,6 +144,8 @@ dependencies {
 
     // 照明弹动态补光（机制同 HandheldMoon/盈月：借 dynamiclights-reforged 客户端管线抬高 lightmap）。
     // reforged 1.0.9 运行时硬依赖 embeddium（其 API 类 OptionGUIConstructionEvent），必须保留。
+    // 该依赖在本 mod 中为【软依赖】：未安装时信号装备不提供（见 compat/SoftDependencies），
+    // 相关 mixin 单独放在 required=false 的 dynamiclights.mixins.json，因此注入失败不会崩溃。
     implementation fg.deobf("curse.maven:dynamiclights-reforged-551736:6044481")
     implementation fg.deobf("curse.maven:embeddium-908741:5681725")
     implementation fg.deobf("curse.maven:rubidium-extra-654373:6101745")

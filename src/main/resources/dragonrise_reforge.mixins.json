@@ -4,8 +4,10 @@
   "package": "com.redabysslucia.dragonrise_reforge.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "dragonrise_reforge.refmap.json",
+  "plugin": "com.redabysslucia.dragonrise_reforge.mixin.DragonriseMixinPlugin",
   "mixins": [
-    "FireControlTurretAimMixin"
+    "FireControlTurretAimMixin",
+    "MonitorItemServerMixin"
   ],
   "client": [
     "AircraftHudMixin",
