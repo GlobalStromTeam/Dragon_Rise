@@ -89,9 +89,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A1HC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M10BOOKER.get()));
-                        //美国 轮式火力支援车
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1128.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.M1296.get()));
                         //美国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M3A3.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M113.get()));
@@ -193,6 +190,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.LVT.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AAV7A1.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AAVC7C1.get()));
+                        //美国 登陆艇
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.LCM.get()));
                         //美国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F4U.get()));
 

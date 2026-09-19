@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.LcmEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.T26bEntity;
 
 
@@ -1535,6 +1538,13 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.8f, 3.7f)
+    );
+    public static final RegistryObject<EntityType<LcmEntity>> LCM = register("lcm",
+            EntityType.Builder.of(LcmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
