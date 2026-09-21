@@ -24,6 +24,15 @@ public final class VehicleCombatConfig {
     /** 单侧履带损坏时是否冻结该侧履带与负重轮（true = 该侧完全不动，车体仍可正常行驶/转向）。 */
     public static final boolean FREEZE_DEAD_TRACK_SIDE = true;
 
+    /** 单侧履带损坏时，前进/后退是否自动叠加"朝报废侧转向"的输入（左坏=叠加 A，右坏=叠加 D）。 */
+    public static final boolean DEAD_TRACK_STEER_TO_DEAD_SIDE = true;
+
+    /**
+     * 单侧履带损坏时的功率上限（1.0 为正常满功率；0.25 = 功率减少 75%）。
+     * <p>在引擎计算前每 tick 限幅，保证本 tick 的位移也按限幅后的功率计算。
+     */
+    public static final float DEAD_TRACK_POWER_CAP = 0.25f;
+
     private VehicleCombatConfig() {
     }
 }

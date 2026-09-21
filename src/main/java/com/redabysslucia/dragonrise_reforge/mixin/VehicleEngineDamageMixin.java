@@ -22,9 +22,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * 本 mixin 改为：
  * <ul>
  *   <li><b>履带车</b>（{@code trackEngine}，天然不含轮式）：
- *       <b>单侧履带报废只冻结该侧履带与负重轮</b>（该侧完全不动），
- *       不禁用前进/后退、不归零功率 —— 车体仍可行驶，卓越前线自带的偏航
- *       （{@code i = ±3}）会让它向坏的一侧跑偏；<b>双侧</b>履带报废则等同发动机失效。</li>
+ *       <b>单侧履带报废</b>时——① 冻结该侧履带与负重轮（该侧完全不动）；
+ *       ② 试图前进/后退时自动叠加"朝报废侧转向"的输入（左坏=叠加 A，右坏=叠加 D），
+ *       于是按 W 等同于 W+A、按 S 等同于 S+A；
+ *       ③ 功率上限压到 {@link VehicleCombatConfig#DEAD_TRACK_POWER_CAP}（默认 0.25，即减少 75%）。
+ *       <b>双侧</b>履带报废则等同发动机失效。</li>
  *   <li><b>发动机失效</b>（{@code mainEngineDamaged}）→ 清空全部行驶输入并把功率归零，
  *       同时在引擎函数末尾把水平位移锁死 → 载具完全无法移动。
  *       覆盖 {@code trackEngine} / {@code wheelEngine} / {@code shipEngine} / {@code helicopterEngine}。</li>
@@ -53,12 +55,45 @@ public abstract class VehicleEngineDamageMixin {
         vehicle.setDeltaMovement(0.0, delta.y, 0.0);
     }
 
-    /** 履带车：仅"发动机失效 / 双侧履带报废"限制行驶；单侧报废不做行驶限制。 */
+    /** 履带车：仅"发动机失效 / 双侧履带报废"限制行驶；单侧报废走"向坏侧转向 + 功率限幅"。 */
     private static void dragonrise$applyTrackDamage(VehicleEntity vehicle) {
         boolean left = vehicle.getLeftWheelDamaged();
         boolean right = vehicle.getRightWheelDamaged();
         if (vehicle.getMainEngineDamaged() || (left && right)) {
             dragonrise$lockAllDrivingInputs(vehicle);
+            return;
+        }
+        if (left ^ right) {
+            dragonrise$applyDeadTrackHandling(vehicle, left);
+        }
+    }
+
+    /**
+     * 单侧履带报废的处理：
+     * <ol>
+     *   <li>试图前进/后退时，自动叠加"朝报废侧转向"的输入 —— 左侧履带报废时按 W 等同于 W+A、
+     *       按 S 等同于 S+A；右侧报废同理（右边是叠加 D）。</li>
+     *   <li>功率上限压到 {@link VehicleCombatConfig#DEAD_TRACK_POWER_CAP}（默认 0.25，即减少 75%）。
+     *       在引擎计算前限幅，所以本 tick 的位移也是按限幅后的功率算的。</li>
+     * </ol>
+     *
+     * @param leftDead 报废的是否为左侧履带
+     */
+    private static void dragonrise$applyDeadTrackHandling(VehicleEntity vehicle, boolean leftDead) {
+        if (VehicleCombatConfig.DEAD_TRACK_STEER_TO_DEAD_SIDE
+                && (vehicle.forwardInputDown() || vehicle.backInputDown())) {
+            if (leftDead) {
+                vehicle.setLeftInputDown(true);
+            } else {
+                vehicle.setRightInputDown(true);
+            }
+        }
+
+        float cap = VehicleCombatConfig.DEAD_TRACK_POWER_CAP;
+        if (vehicle.getPower() > cap) {
+            vehicle.setPower(cap);
+        } else if (vehicle.getPower() < -cap) {
+            vehicle.setPower(-cap);
         }
     }
 
