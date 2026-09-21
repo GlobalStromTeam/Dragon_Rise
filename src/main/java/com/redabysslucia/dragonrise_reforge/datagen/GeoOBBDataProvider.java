@@ -110,16 +110,18 @@ public class GeoOBBDataProvider implements DataProvider {
             double turretCustomPitch = extractTurretCustomPitch(geoJson);
 
             JsonArray turretPos = hasSeatsPos1 ? extractTurretPos(geoJson) : null;
-            double turretPivotY = turretPos != null ? turretPos.get(1).getAsDouble() * 16.0 : 0.0;
             JsonArray barrelPos = hasSeatsPos1 ? extractBarrelPos(geoJson, turretPos, turretCustomPitch) : null;
-            double barrelPosY = barrelPos != null ? barrelPos.get(1).getAsDouble() : 0.0;
-            double barrelPivotY = barrelPosY * 16.0;
             JsonArray obbList = extractOBBList(geoJson, turretPos, turretCustomPitch);
-            Map<String, JsonArray> weaponPositions = extractWeaponPositions(geoJson, barrelPivotY, turretPivotY, turretCustomPitch);
+            Map<String, JsonArray> weaponPositions = extractWeaponPositions(geoJson, turretCustomPitch);
             Map<Integer, JsonArray> seatsPositions = extractSeatsPositions(geoJson);
             Map<Integer, Double> seatsOrientations = extractSeatsOrientations(geoJson);
             Map<Integer, JsonArray> seatsCameraPositions = extractSeatsCameraPositions(geoJson);
             List<JsonArray> terrainCompatPositions = extractTerrainCompatPositions(geoJson);
+
+            // 遥控武器站链条：PassengerWeaponStationPos = 武器站Yaw 相对炮塔，
+            // PassengerWeaponStationBarrelPos = 武器站Pitch 相对 Yaw。
+            // 座位（Transform=WeaponStation / WeaponStationBarrel）相对化也要用，故提前到座位处理之前计算。
+            JsonArray[] pwsChain = extractPassengerWeaponStationChain(geoJson, turretCustomPitch);
 
             String baseName = geoFile.getFileName().toString().replace(".geo.json", "");
             Path vehicleFile = dragonriseOutputPath.resolve(baseName + ".json");
@@ -192,26 +194,21 @@ public class GeoOBBDataProvider implements DataProvider {
                             adjustedPositions.add(adjustedPos);
                         }
 
-                        // 坦克武器按炮塔/炮管相对化；飞机武器一律读取骨骼直接坐标（绝对坐标），不做相对化
+                        // 坦克武器按炮塔/炮管相对化：三轴分别减去枢轴
+                        // （Barrel 帧原点 = TurretPos + BarrelPos，Turret 帧原点 = TurretPos）；
+                        // 飞机武器一律读取骨骼直接坐标（绝对坐标），不做相对化
                         if (hasSeatsPos1 && !isAircraft) {
                             if ("Barrel".equals(transform) && barrelPos != null && turretPos != null) {
-                                double barrelY = barrelPos.get(1).getAsDouble();
-                                double turretY = turretPos.get(1).getAsDouble();
                                 for (int i = 0; i < adjustedPositions.size(); i++) {
                                     JsonArray pos = adjustedPositions.get(i).getAsJsonArray();
                                     untiltAroundTurret(pos, turretPos, turretCustomPitch);
-                                    double y = pos.get(1).getAsDouble();
-                                    y = y - barrelY - turretY;
-                                    pos.set(1, new com.google.gson.JsonPrimitive(round(y, 3)));
+                                    relativizeToPivots(pos, turretPos, barrelPos);
                                 }
                             } else if ("Turret".equals(transform) && turretPos != null) {
-                                double turretY = turretPos.get(1).getAsDouble();
                                 for (int i = 0; i < adjustedPositions.size(); i++) {
                                     JsonArray pos = adjustedPositions.get(i).getAsJsonArray();
                                     untiltAroundTurret(pos, turretPos, turretCustomPitch);
-                                    double y = pos.get(1).getAsDouble();
-                                    y = y - turretY;
-                                    pos.set(1, new com.google.gson.JsonPrimitive(round(y, 3)));
+                                    relativizeToPivots(pos, turretPos);
                                 }
                             }
                         }
@@ -284,43 +281,31 @@ public class GeoOBBDataProvider implements DataProvider {
                         if (seatsPositions.containsKey(index)) {
                             JsonArray pos = seatsPositions.get(index);
                             String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
-                            if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
-                                JsonArray adjustedPos = new JsonArray();
-                                adjustedPos.add(round(pos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
-                                adjustedPos.add(round(pos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
-                                adjustedPos.add(round(pos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
-                                seat.add("Position", adjustedPos);
-                            } else {
-                                seat.add("Position", pos);
-                            }
+                            seat.add("Position", relativizeSeatPosition(pos, seatTransform, turretPos, barrelPos,
+                                    pwsChain != null ? pwsChain[0] : null, pwsChain != null ? pwsChain[1] : null));
                             if (seatsOrientations.containsKey(index)) {
                                 seat.addProperty("Orientation", round(seatsOrientations.get(index), 1));
                             }
                         }
 
                         if (seatsCameraPositions.containsKey(index)) {
-                            applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                            applyCameraPos(seat, index, seatsPositions, seatsCameraPositions, turretPos, barrelPos,
+                                    pwsChain != null ? pwsChain[0] : null, pwsChain != null ? pwsChain[1] : null, isAircraft);
                         }
                     }
                 } else if (seatsElement.isJsonObject() && seatsPositions.containsKey(1)) {
                     JsonObject seat = seatsElement.getAsJsonObject();
                     JsonArray pos = seatsPositions.get(1);
                     String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
-                    if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
-                        JsonArray adjustedPos = new JsonArray();
-                        adjustedPos.add(round(pos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
-                        adjustedPos.add(round(pos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
-                        adjustedPos.add(round(pos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
-                        seat.add("Position", adjustedPos);
-                    } else {
-                        seat.add("Position", pos);
-                    }
+                    seat.add("Position", relativizeSeatPosition(pos, seatTransform, turretPos, barrelPos,
+                            pwsChain != null ? pwsChain[0] : null, pwsChain != null ? pwsChain[1] : null));
                     if (seatsOrientations.containsKey(1)) {
                         seat.addProperty("Orientation", round(seatsOrientations.get(1), 1));
                     }
 
                     if (seatsCameraPositions.containsKey(1)) {
-                        applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos, isAircraft);
+                        applyCameraPos(seat, 1, seatsPositions, seatsCameraPositions, turretPos, barrelPos,
+                                pwsChain != null ? pwsChain[0] : null, pwsChain != null ? pwsChain[1] : null, isAircraft);
                     }
                 }
             }
@@ -333,9 +318,6 @@ public class GeoOBBDataProvider implements DataProvider {
                 vehicleJson.add("TerrainCompat", terrainCompatArray);
             }
 
-            // 遥控武器站链条：PassengerWeaponStationPos = 武器站Yaw 相对炮塔（pws.pivot + pwsYaw.pivot），
-            // PassengerWeaponStationBarrelPos = 武器站Pitch 相对 Yaw（pitch.pivot）
-            JsonArray[] pwsChain = extractPassengerWeaponStationChain(geoJson, turretCustomPitch);
             if (pwsChain != null) {
                 vehicleJson.add("PassengerWeaponStationPos", pwsChain[0]);
                 vehicleJson.add("PassengerWeaponStationBarrelPos", pwsChain[1]);
@@ -791,6 +773,55 @@ public class GeoOBBDataProvider implements DataProvider {
         pos.set(2, new com.google.gson.JsonPrimitive(round(-(nz + turretZ) / 16.0, 3)));
     }
 
+    /**
+     * 把载具空间绝对坐标换算成相对枢轴坐标：三轴分别减去给定枢轴的分量。
+     * 与 superb 的变换链一致：Turret 帧原点 = TurretPos；Barrel 帧原点 = TurretPos + BarrelPos；
+     * WeaponStation 帧原点 = TurretPos + PassengerWeaponStationPos；
+     * WeaponStationBarrel 帧原点 = TurretPos + PassengerWeaponStationPos + PassengerWeaponStationBarrelPos。
+     */
+    private void relativizeToPivots(JsonArray pos, JsonArray... pivots) {
+        for (int axis = 0; axis < 3; axis++) {
+            double value = pos.get(axis).getAsDouble();
+            for (JsonArray pivot : pivots) {
+                value -= pivot.get(axis).getAsDouble();
+            }
+            pos.set(axis, new com.google.gson.JsonPrimitive(round(value, 3)));
+        }
+    }
+
+    /**
+     * 座位坐标相对化：按座位 Transform 选择 superb 实际使用的枢轴链；
+     * Vehicle / VehicleFlat 等保持绝对坐标，缺少枢轴数据时也保持原值。
+     */
+    private JsonArray relativizeSeatPosition(JsonArray pos, String seatTransform, JsonArray turretPos,
+                                             JsonArray barrelPos, JsonArray pwsPos, JsonArray pwsBarrelPos) {
+        JsonArray adjusted = new JsonArray();
+        adjusted.add(pos.get(0).getAsDouble());
+        adjusted.add(pos.get(1).getAsDouble());
+        adjusted.add(pos.get(2).getAsDouble());
+
+        if (turretPos == null || seatTransform == null) {
+            return adjusted;
+        }
+
+        if ("Turret".equals(seatTransform)) {
+            relativizeToPivots(adjusted, turretPos);
+        } else if ("Barrel".equals(seatTransform)) {
+            if (barrelPos != null) {
+                relativizeToPivots(adjusted, turretPos, barrelPos);
+            }
+        } else if ("WeaponStation".equals(seatTransform)) {
+            if (pwsPos != null) {
+                relativizeToPivots(adjusted, turretPos, pwsPos);
+            }
+        } else if ("WeaponStationBarrel".equals(seatTransform)) {
+            if (pwsPos != null && pwsBarrelPos != null) {
+                relativizeToPivots(adjusted, turretPos, pwsPos, pwsBarrelPos);
+            }
+        }
+        return adjusted;
+    }
+
     private JsonArray extractTurretPos(JsonObject geoJson) {
         if (!geoJson.has("minecraft:geometry")) {
             return null;
@@ -879,7 +910,7 @@ public class GeoOBBDataProvider implements DataProvider {
         return null;
     }
 
-    private Map<String, JsonArray> extractWeaponPositions(JsonObject geoJson, double barrelY, double turretY, double theta) {
+    private Map<String, JsonArray> extractWeaponPositions(JsonObject geoJson, double theta) {
         Map<String, JsonArray> weaponPositions = new HashMap<>();
 
         if (!geoJson.has("minecraft:geometry")) {
@@ -923,15 +954,15 @@ public class GeoOBBDataProvider implements DataProvider {
                 String boneName = bone.get("name").getAsString();
 
                 if (boneName.startsWith("CannonPos") && bone.has("pivot")) {
-                    addWeaponPosition(weaponPositions, "Cannon", boneName, "CannonPos", bone, barrelY, turretY);
+                    addWeaponPosition(weaponPositions, "Cannon", boneName, "CannonPos", bone);
                 } else if (boneName.startsWith("MachineGunPos") && bone.has("pivot")) {
-                    addWeaponPosition(weaponPositions, "MachineGun", boneName, "MachineGunPos", bone, barrelY, turretY);
+                    addWeaponPosition(weaponPositions, "MachineGun", boneName, "MachineGunPos", bone);
                 } else if (boneName.startsWith("MissilePos") && bone.has("pivot")) {
-                    addWeaponPosition(weaponPositions, "Missile", boneName, "MissilePos", bone, barrelY, turretY);
+                    addWeaponPosition(weaponPositions, "Missile", boneName, "MissilePos", bone);
                 } else if (boneName.startsWith("BombPos") && bone.has("pivot")) {
-                    addWeaponPosition(weaponPositions, "Bomb", boneName, "BombPos", bone, barrelY, turretY);
+                    addWeaponPosition(weaponPositions, "Bomb", boneName, "BombPos", bone);
                 } else if (boneName.startsWith("RocketPos") && bone.has("pivot")) {
-                    addWeaponPosition(weaponPositions, "Rocket", boneName, "RocketPos", bone, barrelY, turretY);
+                    addWeaponPosition(weaponPositions, "Rocket", boneName, "RocketPos", bone);
                 } else if (boneName.startsWith("PassengerMachineGunPos") && bone.has("pivot")) {
                     if (pitchPivot != null) {
                         // 枪口直接坐标减去俯仰枢轴直接坐标，得到相对武器站炮管的位置；随炮塔倾斜时绕 X 反向旋转 -theta 补偿
@@ -953,8 +984,8 @@ public class GeoOBBDataProvider implements DataProvider {
                         pos.add(round(-oz / 16.0, 3));
                         weaponPositions.computeIfAbsent("PassengerMachineGun", k -> new JsonArray()).add(pos);
                     } else {
-                        JsonArray pos = new JsonArray();
-                        addWeaponPosition(weaponPositions, "PassengerMachineGun", boneName, "PassengerMachineGunPos", bone, barrelY, turretY);
+                        // 模型缺少 passengerWeaponStationPitch 时无法算出相对枢轴坐标，保持绝对坐标
+                        addWeaponPosition(weaponPositions, "PassengerMachineGun", boneName, "PassengerMachineGunPos", bone);
                     }
                 }
             }
@@ -1259,6 +1290,7 @@ public class GeoOBBDataProvider implements DataProvider {
     private void applyCameraPos(JsonObject seat, int seatIndex,
                                 Map<Integer, JsonArray> seatsPositions,
                                 Map<Integer, JsonArray> seatsCameraPositions, JsonArray turretPos,
+                                JsonArray barrelPos, JsonArray pwsPos, JsonArray pwsBarrelPos,
                                 boolean isAircraft) {
         JsonObject cameraPos;
         if (seat.has("CameraPos")) {
@@ -1269,15 +1301,14 @@ public class GeoOBBDataProvider implements DataProvider {
         }
         String seatTransform = seat.has("Transform") ? seat.get("Transform").getAsString() : "";
 
+        // 相机位的坐标系由 CameraPos.Transform 决定（没有才回退座位 Transform），
+        // 例如座位是 Vehicle 而相机挂在炮管 Barrel 上的情况。
+        String cameraTransform = cameraPos.has("Transform")
+                ? cameraPos.get("Transform").getAsString() : seatTransform;
         if (seatsCameraPositions.containsKey(seatIndex)) {
             JsonArray camPos = seatsCameraPositions.get(seatIndex);
-            JsonArray adjusted = camPos;
-            if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
-                adjusted = new JsonArray();
-                adjusted.add(round(camPos.get(0).getAsDouble() - turretPos.get(0).getAsDouble(), 3));
-                adjusted.add(round(camPos.get(1).getAsDouble() - turretPos.get(1).getAsDouble(), 3));
-                adjusted.add(round(camPos.get(2).getAsDouble() - turretPos.get(2).getAsDouble(), 3));
-            }
+            JsonArray adjusted = relativizeSeatPosition(camPos, cameraTransform, turretPos, barrelPos,
+                    pwsPos, pwsBarrelPos);
             cameraPos.addProperty("UseFixedCameraPos", true);
             cameraPos.add("Position", adjusted);
             cameraPos.add("ZoomPosition", adjusted);
@@ -1300,24 +1331,15 @@ public class GeoOBBDataProvider implements DataProvider {
             }
 
             // 未提供额外视角位置时，ZoomPosition 使用 SeatsPos 原始坐标（不减去 1.61 玩家身高），
-            // 并按座位相同的方式处理炮塔相对偏移。
+            // 并按本方法刚写入的相机 Transform 相对化。
             if (seatsPositions.containsKey(seatIndex)) {
                 JsonArray rawPos = seatsPositions.get(seatIndex);
-                double zoomX = rawPos.get(0).getAsDouble();
-                double zoomY = rawPos.get(1).getAsDouble() + 1.61;
-                double zoomZ = rawPos.get(2).getAsDouble();
-
-                if (("Turret".equals(seatTransform) || "WeaponStation".equals(seatTransform)) && turretPos != null) {
-                    zoomX -= turretPos.get(0).getAsDouble();
-                    zoomY -= turretPos.get(1).getAsDouble();
-                    zoomZ -= turretPos.get(2).getAsDouble();
-                }
-
-                JsonArray zoom = new JsonArray();
-                zoom.add(round(zoomX, 3));
-                zoom.add(round(zoomY, 3));
-                zoom.add(round(zoomZ, 3));
-                cameraPos.add("ZoomPosition", zoom);
+                JsonArray zoomRaw = new JsonArray();
+                zoomRaw.add(rawPos.get(0));
+                zoomRaw.add(round(rawPos.get(1).getAsDouble() + 1.61, 3));
+                zoomRaw.add(rawPos.get(2));
+                cameraPos.add("ZoomPosition", relativizeSeatPosition(zoomRaw, cameraTransform,
+                        turretPos, barrelPos, pwsPos, pwsBarrelPos));
             }
         }
     }
@@ -1445,7 +1467,7 @@ public class GeoOBBDataProvider implements DataProvider {
         return new JsonArray[]{pos, barrelPos};
     }
 
-    private void addWeaponPosition(Map<String, JsonArray> weaponPositions, String weaponName, String boneName, String prefix, JsonObject bone, double barrelY, double turretY) {
+    private void addWeaponPosition(Map<String, JsonArray> weaponPositions, String weaponName, String boneName, String prefix, JsonObject bone) {
         JsonArray positions;
         if (weaponPositions.containsKey(weaponName)) {
             positions = weaponPositions.get(weaponName);

@@ -50,7 +50,7 @@
         "UseFixedCameraPos": true
       },
       "Transform": "Barrel",
-      "Position": [0.875,0.584,2.553],
+      "Position": [0.875,-0.597,5.74],
       "Weapons": [
         "Rocket"
       ],

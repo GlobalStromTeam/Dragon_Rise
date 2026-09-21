@@ -65,7 +65,7 @@
         "Direction": "Barrel",
         "UseFixedCameraPos": false
       },
-      "Position": [-0.562,2.106,-0.562],
+      "Position": [0.085,-1.222,-0.656],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -155,7 +155,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.087,-0.505,3.246]
+          [0.084,-0.505,2.226]
         ],
         "Directions": [
           "Barrel"
