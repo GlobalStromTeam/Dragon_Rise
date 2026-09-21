@@ -21,9 +21,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * </ul>
  * 本 mixin 改为：
  * <ul>
- *   <li><b>履带车</b>（{@code trackEngine}，天然不含轮式）：单侧履带报废 → 禁前进/后退输入，
- *       只保留转向 → 只能原地转向；报废侧履带值强制归零（该侧履带完全不动）。
- *       双侧报废 → 等同发动机失效。</li>
+ *   <li><b>履带车</b>（{@code trackEngine}，天然不含轮式）：
+ *       <b>单侧履带报废只冻结该侧履带与负重轮</b>（该侧完全不动），
+ *       不禁用前进/后退、不归零功率 —— 车体仍可行驶，卓越前线自带的偏航
+ *       （{@code i = ±3}）会让它向坏的一侧跑偏；<b>双侧</b>履带报废则等同发动机失效。</li>
  *   <li><b>发动机失效</b>（{@code mainEngineDamaged}）→ 清空全部行驶输入并把功率归零，
  *       同时在引擎函数末尾把水平位移锁死 → 载具完全无法移动。
  *       覆盖 {@code trackEngine} / {@code wheelEngine} / {@code shipEngine} / {@code helicopterEngine}。</li>
@@ -37,7 +38,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = VehicleEngineUtils.class, remap = false)
 public abstract class VehicleEngineDamageMixin {
 
-    /** 发动机失效：清空所有行驶输入并归零功率（沿用卓越前线自身的做法）。 */
+    /** 发动机失效 / 双侧履带报废：清空所有行驶输入并归零功率（沿用卓越前线自身的做法）。 */
     private static void dragonrise$lockAllDrivingInputs(VehicleEntity vehicle) {
         vehicle.setForwardInputDown(false);
         vehicle.setBackInputDown(false);
@@ -52,19 +53,27 @@ public abstract class VehicleEngineDamageMixin {
         vehicle.setDeltaMovement(0.0, delta.y, 0.0);
     }
 
-    /** 履带车：单侧报废只允许原地转向；双侧报废等同发动机失效。 */
+    /** 履带车：仅"发动机失效 / 双侧履带报废"限制行驶；单侧报废不做行驶限制。 */
     private static void dragonrise$applyTrackDamage(VehicleEntity vehicle) {
         boolean left = vehicle.getLeftWheelDamaged();
         boolean right = vehicle.getRightWheelDamaged();
         if (vehicle.getMainEngineDamaged() || (left && right)) {
             dragonrise$lockAllDrivingInputs(vehicle);
+        }
+    }
+
+    /** 冻结报废侧的履带与负重轮（该侧完全不动），另一侧照常。 */
+    private static void dragonrise$freezeDeadTrackSide(VehicleEntity vehicle) {
+        if (!VehicleCombatConfig.FREEZE_DEAD_TRACK_SIDE) {
             return;
         }
-        if (VehicleCombatConfig.DEAD_TRACK_PIVOT_ONLY && (left || right)) {
-            // 单侧履带报废：禁前进/后退并归零功率（该侧履带无法带动车体直行），只保留转向 → 只能原地转向
-            vehicle.setForwardInputDown(false);
-            vehicle.setBackInputDown(false);
-            vehicle.setPower(0f);
+        if (vehicle.getLeftWheelDamaged()) {
+            vehicle.setLeftTrack(0f);
+            vehicle.setLeftWheelRot(0f);
+        }
+        if (vehicle.getRightWheelDamaged()) {
+            vehicle.setRightTrack(0f);
+            vehicle.setRightWheelRot(0f);
         }
     }
 
@@ -77,14 +86,10 @@ public abstract class VehicleEngineDamageMixin {
 
     @Inject(method = "trackEngine", at = @At("TAIL"))
     private static void dragonrise$trackEngineTail(VehicleEntity vehicle, EngineInfo.Track info, CallbackInfo ci) {
+        dragonrise$freezeDeadTrackSide(vehicle);
+
         boolean left = vehicle.getLeftWheelDamaged();
         boolean right = vehicle.getRightWheelDamaged();
-        if (left) {
-            vehicle.setLeftTrack(0f);
-        }
-        if (right) {
-            vehicle.setRightTrack(0f);
-        }
         if (vehicle.getMainEngineDamaged() || (left && right)) {
             dragonrise$lockHorizontalMovement(vehicle);
         }

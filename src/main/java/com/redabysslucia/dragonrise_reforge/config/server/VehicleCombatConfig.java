@@ -21,8 +21,8 @@ public final class VehicleCombatConfig {
     /** 维修工具是否把部件血量完全恢复。 */
     public static final boolean REPAIR_TOOL_FULL_PART_REPAIR = true;
 
-    /** 单侧履带损坏时是否只允许原地转向（true = 不能直行，只能转向）。 */
-    public static final boolean DEAD_TRACK_PIVOT_ONLY = true;
+    /** 单侧履带损坏时是否冻结该侧履带与负重轮（true = 该侧完全不动，车体仍可正常行驶/转向）。 */
+    public static final boolean FREEZE_DEAD_TRACK_SIDE = true;
 
     private VehicleCombatConfig() {
     }
