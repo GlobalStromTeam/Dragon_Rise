@@ -142,7 +142,7 @@
     {
       "HidePassenger": true,
       "Transform": "Barrel",
-      "Position": [-1.0,1.703,1.375],
+      "Position": [-0.044,-1.383,-0.175],
       "CanRotateHead": false,
       "MinPitch": -12,
       "MaxPitch": 40,
