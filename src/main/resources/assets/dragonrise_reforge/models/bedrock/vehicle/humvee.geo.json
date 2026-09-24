@@ -13,7 +13,7 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 0, 0]
+					"pivot": [0, 0, 0.75]
 				},
 				{
 					"name": "wheel",
@@ -987,7 +987,6 @@
 					"parent": "turret",
 					"pivot": [0, 41.07428, -13.54264]
 				},
-				
 				{
 					"name": "M2sub2",
 					"parent": "barrel",

@@ -18,7 +18,7 @@
 				{
 					"name": "wheel",
 					"parent": "root",
-					"pivot": [0.615, -0.29537, 2.64]
+					"pivot": [0.615, 8.52611, -2.0409]
 				},
 				{
 					"name": "wheel1",
@@ -5072,7 +5072,6 @@
 					"parent": "turret",
 					"pivot": [-4.1, 39.8642, -6.1]
 				},
-				
 				{
 					"name": "missile",
 					"parent": "barrel",

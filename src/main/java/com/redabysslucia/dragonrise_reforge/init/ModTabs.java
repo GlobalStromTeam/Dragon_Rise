@@ -129,7 +129,7 @@ public class ModTabs {
                         //瑞典 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
                         //瑞典 自行火炮
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
+                        //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
                         //瑞典 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CV90.get()));
                         //瑞典 固定翼
@@ -210,7 +210,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24P.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
+                        //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
 
                         //其他 重型坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));

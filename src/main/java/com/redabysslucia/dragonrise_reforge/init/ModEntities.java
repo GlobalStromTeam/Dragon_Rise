@@ -24,7 +24,7 @@ import com.redabysslucia.dragonrise_reforge.entities.M1296Entity;
 import com.redabysslucia.dragonrise_reforge.entities.M1128Entity;
 
 
-import com.redabysslucia.dragonrise_reforge.entities.Bkan1cEntity;
+//import com.redabysslucia.dragonrise_reforge.entities.Bkan1cEntity;
 
 
 import com.redabysslucia.dragonrise_reforge.entities.Mi24pEntity;
@@ -1483,13 +1483,13 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-    public static final RegistryObject<EntityType<Bkan1cEntity>> BKAN1C = register("bkan1c",
-            EntityType.Builder.of(Bkan1cEntity::new, MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(2)
-                    .fireImmune()
-                    .sized(4.0f, 2.9f)
-    );
+    //public static final RegistryObject<EntityType<Bkan1cEntity>> BKAN1C = register("bkan1c",
+    //        EntityType.Builder.of(Bkan1cEntity::new, MobCategory.MISC)
+    //                .setTrackingRange(512)
+    //                .setUpdateInterval(2)
+    //                .fireImmune()
+    //                .sized(4.0f, 2.9f)
+    //);
     public static final RegistryObject<EntityType<M1128Entity>> M1128 = register("m1128",
             EntityType.Builder.of(M1128Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
