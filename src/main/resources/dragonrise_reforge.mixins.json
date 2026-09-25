@@ -7,12 +7,7 @@
   "plugin": "com.redabysslucia.dragonrise_reforge.mixin.DragonriseMixinPlugin",
   "mixins": [
     "FireControlTurretAimMixin",
-    "MonitorItemServerMixin",
-    "VehicleRegenMixin",
-    "VehiclePartRegenMixin",
-    "VehicleEngineDamageMixin",
-    "VehicleTurretSpeedMixin",
-    "RepairToolVehicleMixin"
+    "MonitorItemServerMixin"
   ],
   "client": [
     "AircraftHudMixin",
