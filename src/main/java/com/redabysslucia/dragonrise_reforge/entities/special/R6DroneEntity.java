@@ -3,9 +3,9 @@ package com.redabysslucia.dragonrise_reforge.entities.special;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.NBTTool;
+import com.redabysslucia.dragonrise_reforge.client.R6DroneClientAccess;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.Packet;
@@ -176,7 +176,7 @@ public class R6DroneEntity extends Entity {
             // 退出遥控视角后 advanceSmoothPosition 不再被相机 mixin 推进，
             // 平滑位置会滞留在旧值（如半空）。此时置 smoothInit=false，
             // 让渲染器回退到样条位置（跟随实体真实位置），避免模型滞留。
-            Player local = Minecraft.getInstance().player;
+            Player local = R6DroneClientAccess.localPlayer();
             if (local == null || !this.isMonitorControlling(local)) {
                 this.smoothInit = false;
             }
@@ -354,7 +354,7 @@ public class R6DroneEntity extends Entity {
     /** 控制端渲染车身时使用的偏航 */
     public float getRenderYaw(float partialTick) {
         if (this.level().isClientSide()) {
-            Player local = Minecraft.getInstance().player;
+            Player local = R6DroneClientAccess.localPlayer();
             if (local != null && this.getController() == local && this.isMonitorControlling(local)) {
                 return local.getYRot();
             }
@@ -365,7 +365,7 @@ public class R6DroneEntity extends Entity {
     /** 控制端渲染车身时使用的俯仰 */
     public float getRenderPitch(float partialTick) {
         if (this.level().isClientSide()) {
-            Player local = Minecraft.getInstance().player;
+            Player local = R6DroneClientAccess.localPlayer();
             if (local != null && this.getController() == local && this.isMonitorControlling(local)) {
                 return local.getXRot();
             }
@@ -408,7 +408,7 @@ public class R6DroneEntity extends Entity {
             cachedClientDroneLevelTick = tick;
             cachedClientDroneUuid = uuidString;
             cachedClientDrone = null;
-            for (Entity ent : ((net.minecraft.client.multiplayer.ClientLevel) level).entitiesForRendering()) {
+            for (Entity ent : R6DroneClientAccess.entitiesForRendering(level)) {
                 if (ent.getUUID().equals(uuid) && ent instanceof R6DroneEntity drone) {
                     cachedClientDrone = drone;
                     break;
