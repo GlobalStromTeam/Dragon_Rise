@@ -246,9 +246,10 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
         fuelTick = compound.getInt("FuelTick");
         maxFuelTick = compound.getInt("MaxFuelTick");
         showRange = compound.getBoolean("ShowRange");
-        generatorItems.clear();
-        for (int i = 0; i < 2; i++) {
-            generatorItems.add(ItemStack.parseOptional(this.registryAccess(), compound.getCompound("Item" + i)));
+        // generatorItems 是 NonNullList.withSize 创建的定长列表，不支持 add()；按槽位 set。
+        // generatorItems is a fixed-size NonNullList.withSize list, so add() throws; set each slot instead.
+        for (int i = 0; i < generatorItems.size(); i++) {
+            generatorItems.set(i, ItemStack.parseOptional(this.registryAccess(), compound.getCompound("Item" + i)));
         }
     }
 
@@ -260,8 +261,10 @@ public class GeneratorEntity extends VehicleEntity implements MenuProvider {
         compound.putInt("FuelTick", fuelTick);
         compound.putInt("MaxFuelTick", maxFuelTick);
         compound.putBoolean("ShowRange", showRange);
+        // 1.21 的 ItemStack.save() 遇到空物品会抛异常；saveOptional 对空槽写入空标签，与 parseOptional 对应。
+        // In 1.21 ItemStack.save() throws on an empty stack; saveOptional writes an empty tag, matching parseOptional.
         for (int i = 0; i < generatorItems.size(); i++) {
-            compound.put("Item" + i, generatorItems.get(i).save(this.registryAccess(), new CompoundTag()));
+            compound.put("Item" + i, generatorItems.get(i).saveOptional(this.registryAccess()));
         }
     }
 

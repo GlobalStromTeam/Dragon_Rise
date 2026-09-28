@@ -13,10 +13,12 @@ import net.minecraft.world.phys.Vec3;
 @SuppressWarnings("removal")
 public class ZBD04AEntity extends IndirectFireVehicleBase {
 
+        // 1.21 的 SynchedEntityData 要求 ID 连续分配，必须用 defineId；固定 ID（100/101）会让实体无法生成。
+        // 1.21 SynchedEntityData requires sequential IDs, so use defineId; fixed IDs (100/101) made the entity fail to spawn.
         private static final EntityDataAccessor<Integer> FLAP_STATE =
-                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
         private static final EntityDataAccessor<Integer> FLAP_TIMER =
-                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
         private int lastFlapCheckTick = 0;
 
         public ZBD04AEntity(EntityType<ZBD04AEntity> type, Level world) {

@@ -52,9 +52,12 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
      * 锁定状态标记（entityData 同步到客户端）：
      * 服务端在 tick 中按 guideType==1（锁定地面）或 targetUUID 有效（锁定实体）写入；
      * 客户端锁定框仅对已锁定炸弹渲染（guideType 是普通字段，不跨客户端同步）。
+     * <p>
+     * 1.21 的 SynchedEntityData 要求 ID 连续分配，必须用 defineId；原固定 ID 200 会让炸弹无法生成。
+     * 1.21 SynchedEntityData requires sequential IDs, so this uses defineId; the old fixed ID 200 made the bomb fail to spawn.
      */
     private static final EntityDataAccessor<Boolean> LOCKED =
-            new EntityDataAccessor<>(200, EntityDataSerializers.BOOLEAN);
+            SynchedEntityData.defineId(GuidedBombEntity.class, EntityDataSerializers.BOOLEAN);
 
     /** 客户端查询：该炸弹是否处于锁定状态 */
     public boolean isLocked() {
