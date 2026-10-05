@@ -31,6 +31,7 @@ public class ModItems {
     public static final RegistryObject<Item> ZU23_DEPLOYER = REGISTRY.register("zu23", ZU23Deployer::new);
     public static final RegistryObject<Item> qjz89_DEPLOYER = REGISTRY.register("qjz89", qjz89Deployer::new);
     public static final RegistryObject<Item> DSHK_DEPLOYER = REGISTRY.register("dshk", DSHKDeployer::new);
+    public static final RegistryObject<Item> SPG9_DEPLOYER = REGISTRY.register("spg9", SPG9Deployer::new);
     public static final RegistryObject<Item> M2_DEPLOYER = REGISTRY.register("m2", M2Deployer::new);
     public static final RegistryObject<Item> SHIELD_DEPLOYER = REGISTRY.register("shield", SHIELDDeployer::new);
     public static final RegistryObject<Item> AMMO_SUPPLY_STATION_DEPLOYER = REGISTRY.register("ammo_supply_station", AmmoSupplyStationDeployer::new);

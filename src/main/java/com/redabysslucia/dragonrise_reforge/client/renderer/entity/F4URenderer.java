@@ -5,7 +5,7 @@ import com.redabysslucia.dragonrise_reforge.entities.CamelEntity;
 import com.redabysslucia.dragonrise_reforge.entities.F4UEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class F4URenderer extends GeoVehicleRenderer<F4UEntity> {
+public class F4URenderer extends RotorVehicleRenderer<F4UEntity> {
         public F4URenderer(EntityRendererProvider.Context renderManager) {
 
             super(renderManager);

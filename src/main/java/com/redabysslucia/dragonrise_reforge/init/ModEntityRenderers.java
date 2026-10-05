@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Spg9Renderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.K1a1Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Chonmaho5Renderer;
 
 
@@ -312,5 +318,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.LCM.get(), LcmRenderer::new);
                 event.registerEntityRenderer(ModEntities.M1A2SEPV1.get(), M1a2sepv1Renderer::new);
                 event.registerEntityRenderer(ModEntities.CHONMAHO5.get(), Chonmaho5Renderer::new);
+                event.registerEntityRenderer(ModEntities.K1A1.get(), K1a1Renderer::new);
+                event.registerEntityRenderer(ModEntities.SPG9.get(), Spg9Renderer::new);
         }
 }

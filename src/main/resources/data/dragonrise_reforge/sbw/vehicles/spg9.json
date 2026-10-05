@@ -1,0 +1,110 @@
+{
+  "ID": "dragonrise_reforge:spg9",
+  "MaxHealth": 100,
+  "MaxEnergy": 0,
+  "TurretPos": [0.0,0.719,-0.278],
+  "TurretTurnSpeed": [5,6],
+  "TurretPitchRange": [-5,30],
+  "BarrelPos": [0.0,0.125,-0.199],
+  "Seats": {
+    "Transform": "Turret",
+    "Position": [0.338,-1.179,-0.009],
+    "MinPitch": -10,
+    "MaxPitch": 30,
+    "Weapons": [
+      "Cannon"
+    ],
+    "Sensitivity": [0.55,0.75,1.0],
+    "DismountInfo": {
+      "Transform": "Turret",
+      "Position": [0,0.75,0]
+    }
+  },
+  "UsePassengerCreativeAmmoBox": true,
+  "Weapons": {
+    "Cannon": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Spread": 0.02,
+      "CrosshairColor": "0x00ff66",
+      "Projectile": "superbwarfare:cannon_shell",
+      "IsArmorPiercingProjectile": true,
+      "DefaultZoom": 3,
+      "Magazine": 1,
+      "EmptyReloadTime": 90,
+      "Velocity": 12.0,
+      "Gravity": 0.05,
+      "Damage": 240,
+      "ExplosionDamage": 60,
+      "ExplosionRadius": 3.5,
+      "RecoilTime": 30,
+      "RecoilForce": 0.09,
+      "ShootShake": [6,7,40],
+      "ShootAnimationTime": 30,
+      "Crosshair": "@VehicleCommonGun",
+      "AmmoType": "superbwarfare:medium_shell_ap",
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [0.005,0.216,1.657]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      },
+      "Name": "dragonrise_reforge:PG9",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
+        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
+        "Fire3PFar": "superbwarfare:bmp_2_cannon_fire_3p",
+        "Fire3PVeryFar": "superbwarfare:bmp_2_cannon_fire_3p",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
+      "SoundRadius": 24
+    }
+  },
+  "ThirdPersonCameraPos": [-0.4,1.1,-1.6],
+  "Mass": 0.1,
+  "DamageModifiers": [
+    "minecraft:lava * 2.667",
+    "All * 1.75",
+    "@minecraft:tnt * 3",
+    "@minecraft:tnt_minecart * 3"
+  ],
+  "VehicleContainerType": "Mini",
+  "EngineType": "Fixed",
+  "HasLowHealthWarning": false,
+  "SelfHurtPercent": 0,
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/spg9_icon.png",
+  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/defense.png",
+  "Type": "Defense",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/spg9.png"
+    }
+  ],
+  "OBB": [
+    {
+      "Size": [0.078,0.109,0.294],
+      "Position": [0.0,0.781,-0.193]
+    },
+    {
+      "Size": [0.357,0.633,1.491],
+      "Position": [0.0,0.627,0.119],
+      "Part": "Collision"
+    },
+    {
+      "Size": [0.078,0.078,1.575],
+      "Position": [0.0,0.343,0.491],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/spg9.png"
+  }
+}

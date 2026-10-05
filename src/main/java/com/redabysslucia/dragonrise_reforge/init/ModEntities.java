@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Spg9Entity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.K1a1Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Chonmaho5Entity;
 
 
@@ -1561,6 +1567,20 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Chonmaho5Entity>> CHONMAHO5 = register("chonmaho5",
             EntityType.Builder.of(Chonmaho5Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<K1a1Entity>> K1A1 = register("k1a1",
+            EntityType.Builder.of(K1a1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Spg9Entity>> SPG9 = register("spg9",
+            EntityType.Builder.of(Spg9Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
