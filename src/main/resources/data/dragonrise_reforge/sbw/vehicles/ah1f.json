@@ -198,7 +198,7 @@
       "Magazine": 8,
       "Template": "@Missile",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+      "Crosshair": "@VehicleCommonSeekMissile",
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,1.0625,5.625],
@@ -226,7 +226,7 @@
           "Ammo": "superbwarfare:large_anti_ground_missile",
           "ShouldUnload": false,
           "Override": {
-            "Name": "dragonrise_reforge:ba11_1",
+            "Name": "dragonrise_reforge:dyh_ground",
             "SeekWeaponInfo": {
               "SeekDirection": "Barrel",
               "SeekRange": 384,
@@ -239,13 +239,13 @@
           }
         }
       ],
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ba11.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_dyh.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:kh_39",
-      "Name": "dragonrise_reforge:ba11_2",
+      "Name": "dragonrise_reforge:dyh",
       "Damage": 1100,
       "ExplosionDamage": 180,
       "ExplosionRadius": 12,
@@ -282,7 +282,7 @@
         "Locked": "superbwarfare:javelin_locked"
       },
       "CrosshairColor": "0xFFC700",
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+      "Crosshair": "@VehicleCommonSeekMissile",
       "SoundRadius": 8,
       "AvailableFireModes": [
         "Semi"
@@ -290,14 +290,14 @@
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_aim9.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 4,
       "EmptyReloadTime": 260,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:ty90",
+      "Name": "dragonrise_reforge:aim9",
       "Damage": 260,
       "ExplosionDamage": 90,
       "ExplosionRadius": 6,

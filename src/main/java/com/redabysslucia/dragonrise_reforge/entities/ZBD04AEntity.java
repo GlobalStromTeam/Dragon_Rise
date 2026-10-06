@@ -1,7 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.world.entity.EntityType;
@@ -9,7 +8,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
 @SuppressWarnings("removal")
-public class ZBD04AEntity extends IndirectFireVehicleBase {
+public class ZBD04AEntity extends VehicleEntity {
 
         private static final EntityDataAccessor<Integer> FLAP_STATE =
                 new EntityDataAccessor<>(100, EntityDataSerializers.INT);

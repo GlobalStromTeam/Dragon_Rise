@@ -6,7 +6,6 @@
   "refmap": "dragonrise_reforge.refmap.json",
   "plugin": "com.redabysslucia.dragonrise_reforge.mixin.DragonriseMixinPlugin",
   "mixins": [
-    "FireControlTurretAimMixin",
     "MonitorItemServerMixin",
     "VehicleDirectionArmorMixin"
   ],

@@ -314,7 +314,7 @@
                                       "ProjectileLife":  40,
                                       "Crosshair":  "@VehicleUsApc",
                                       "CrosshairColor":  "0x66FF00",
-                                      "Name":  "dragonrise_reforge:30mm_dtc04_30_apds",
+                                      "Name":  "dragonrise_reforge:30mm_mk258_apfsds",
                                       "Projectile":  "superbwarfare:small_cannon_shell",
                                       "SoundInfo":  {
                                                         "Fire1P":  "dragonrise_reforge:cannon_30mm_fire_1p",
@@ -336,7 +336,7 @@
                                                                             "Damage":  15,
                                                                             "ExplosionDamage":  18,
                                                                             "ExplosionRadius":  5,
-                                                                            "Name":  "dragonrise_reforge:30mm_dty02_30_hei"
+                                                                            "Name":  "dragonrise_reforge:30mm_mk258_he"
                                                                         }
                                                        },
                                                        {

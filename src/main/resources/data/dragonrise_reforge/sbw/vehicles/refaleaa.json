@@ -181,7 +181,7 @@
     "HudType":  "@Aircraft",
     "Weapons":  {
                     "Cannon":  {
-                                   "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_aa.png",
+                                   "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
                                    "DefaultFireMode":  "Auto",
                                    "AvailableFireModes":  "Auto",
                                    "Projectile":  "superbwarfare:small_cannon_shell",
@@ -202,7 +202,7 @@
                                    "ShootAnimationTime":  3,
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",
-                                   "Name":  "weapon.superbwarfare.25mm_cannon_aa",
+                                   "Name":  "dragonrise_reforge:30mm_defa",
                                    "SoundInfo":  {
                                                      "FireSoundInstances":  "dragonrise_reforge:fire_sound_30mm",
                                                      "Change":  "dragonrise_reforge:change_weapon"

@@ -180,7 +180,7 @@
       "SoundRadius": 12
     },
     "@Missile": {
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_akd10.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png",
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "RPM": 12,
@@ -209,7 +209,7 @@
       "Magazine": 4,
       "Template": "@Missile",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+      "Crosshair": "@VehicleCommonSeekMissile",
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,1.0625,5.625],
@@ -246,7 +246,7 @@
           }
         }
       ],
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ba11.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/kh_39.png",
       "DefaultZoom": 3,
       "DefaultFireMode": "Semi",
       "Magazine": 4,
@@ -290,7 +290,7 @@
         "Locked": "superbwarfare:javelin_locked"
       },
       "CrosshairColor": "0xFFC700",
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+      "Crosshair": "@VehicleCommonSeekMissile",
       "SoundRadius": 8,
       "AvailableFireModes": [
         "Semi"
@@ -298,7 +298,7 @@
     },
     "DriverAAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ru_9m336.png",
       "DefaultZoom": 2,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
@@ -404,7 +404,7 @@
   },
   "HUDColor": "0xFFC700",
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/mi24p_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_aircraft.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ru_aircraft.png",
   "VehicleContainerType": "Small",
   "Type": "Helicopter",
   "HudType": "@Helicopter",

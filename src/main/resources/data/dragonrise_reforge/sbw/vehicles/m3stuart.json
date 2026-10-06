@@ -145,7 +145,7 @@
       "ShootAnimationTime":  40,
       "Crosshair":  "@VehicleDynamicCross",
       "CrosshairColor":  "0x00ff66",
-      "Name":  "dragonrise_reforge:M74",
+      "Name":  "dragonrise_reforge:37mm_m6",
       "AmmoType":  "superbwarfare:small_shell_ap",
       "SoundInfo":  {
         "Fire1P":  "dragonrise_reforge:us_37_shoot",
