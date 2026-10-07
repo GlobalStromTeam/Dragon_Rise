@@ -4,8 +4,8 @@
 		{
 			"description": {
 				"identifier": "geometry.jungle07_pants",
-				"texture_width": 128,
-				"texture_height": 128,
+				"texture_width": 256,
+				"texture_height": 256,
 				"visible_bounds_width": 3,
 				"visible_bounds_height": 3.5,
 				"visible_bounds_offset": [
@@ -57,25 +57,23 @@
 							"uv": {
 								"north": {
 									"uv": [
-										58.5,
-										8.5
+										222.5,
+										4.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"east": {
 									"uv": [
-										58,
-										0
+										232.5,
+										4.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"south": {
 									"uv": [
@@ -144,25 +142,23 @@
 							"uv": {
 								"north": {
 									"uv": [
-										48.5,
-										8.5
+										242.5,
+										4.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"east": {
 									"uv": [
-										48,
-										0
+										132.0,
+										25.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"south": {
 									"uv": [
@@ -571,47 +567,43 @@
 							"uv": {
 								"north": {
 									"uv": [
-										48.5,
-										16.5
+										142.0,
+										25.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"east": {
 									"uv": [
-										48.5,
-										24
+										162.0,
+										25.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"south": {
 									"uv": [
-										67.5,
-										8.5
+										152.0,
+										25.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"west": {
 									"uv": [
-										67.5,
-										0
+										172.0,
+										25.0
 									],
 									"uv_size": [
-										7,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										7.0
+									]
 								},
 								"up": {
 									"uv": [
@@ -660,47 +652,43 @@
 							"uv": {
 								"north": {
 									"uv": [
-										58.5,
-										16.5
+										182.0,
+										25.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"east": {
 									"uv": [
-										58.5,
-										24
+										202.0,
+										25.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"south": {
 									"uv": [
-										77.5,
-										8.5
+										192.0,
+										25.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"west": {
 									"uv": [
-										77.5,
-										0
+										212.0,
+										25.0
 									],
 									"uv_size": [
-										8,
-										8
-									],
-									"uv_rotation": 90
+										8.0,
+										8.0
+									]
 								},
 								"up": {
 									"uv": [

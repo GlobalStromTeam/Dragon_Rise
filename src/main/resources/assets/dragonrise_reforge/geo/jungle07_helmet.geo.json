@@ -4,8 +4,8 @@
 		{
 			"description": {
 				"identifier": "geometry.jungle07_helmet",
-				"texture_width": 128,
-				"texture_height": 128,
+				"texture_width": 256,
+				"texture_height": 256,
 				"visible_bounds_width": 3,
 				"visible_bounds_height": 3.5,
 				"visible_bounds_offset": [
@@ -918,14 +918,13 @@
 								},
 								"west": {
 									"uv": [
-										42,
-										42
+										132.0,
+										4.0
 									],
 									"uv_size": [
-										8.5,
-										-15.5
-									],
-									"uv_rotation": 90
+										15.5,
+										8.5
+									]
 								},
 								"up": {
 									"uv": [
