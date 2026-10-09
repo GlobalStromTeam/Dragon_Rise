@@ -133,6 +133,7 @@ import com.redabysslucia.dragonrise_reforge.entities.*;
 import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import com.redabysslucia.dragonrise_reforge.entities.KV1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.MissileShellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
@@ -1237,6 +1238,15 @@ public class ModEntities {
                     .setTrackingRange(64)
                     .setUpdateInterval(3)
                     .sized(0.6f, 2f)
+    );
+
+    /** 红箭8 发射后向后弹出的空发射筒（纯表现，3 秒后消失） */
+    public static final RegistryObject<EntityType<MissileShellEntity>> MISSILE_SHELL = register("missile_shell",
+            EntityType.Builder.<MissileShellEntity>of(MissileShellEntity::new, MobCategory.MISC)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
     );
 
     public static final RegistryObject<EntityType<Ah1fEntity>> AH1F = register("ah1f",

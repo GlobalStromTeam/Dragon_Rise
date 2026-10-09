@@ -97,6 +97,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1Rendere
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1SbmRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MarkvRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.MissileShellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.HJ8Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.atmg.R9M133Renderer;
@@ -270,6 +271,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.TJGC.get(), TJGCRenderer::new);
                 event.registerEntityRenderer(ModEntities.TERRORIST.get(), TerroristRenderer::new);
                 event.registerEntityRenderer(ModEntities.NUKERBOMB.get(), NukerBombRenderer::new);
+                event.registerEntityRenderer(ModEntities.MISSILE_SHELL.get(), MissileShellRenderer::new);
                 event.registerEntityRenderer(ModEntities.AH1F.get(), Ah1fRenderer::new);
                 event.registerEntityRenderer(ModEntities.M113.get(), M113Renderer::new);
                 event.registerEntityRenderer(ModEntities.LEOPARD2A4.get(), Leopard2a4Renderer::new);

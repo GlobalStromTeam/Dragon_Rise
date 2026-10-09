@@ -13,12 +13,12 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 6, -1]
+					"pivot": [0, 0, 0]
 				},
 				{
 					"name": "base",
 					"parent": "root",
-					"pivot": [0, 6, -3],
+					"pivot": [0, 0, 0],
 					"cubes": [
 						{
 							"origin": [-0.8, 5, -5],
@@ -405,7 +405,6 @@
 						}
 					]
 				},
-				
 				{
 					"name": "barrel",
 					"parent": "turret",

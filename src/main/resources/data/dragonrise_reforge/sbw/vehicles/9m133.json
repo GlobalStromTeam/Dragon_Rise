@@ -114,7 +114,7 @@
                         ],
     "EngineType":  "Fixed",
     "HudType":  "@Land",
-    "VehicleContainerType":  "Empty",
+    "VehicleContainerType":  "One",
     "HasLowHealthWarning":  false,
     "SelfHurtPercent":  0,
     "VehicleIcon":  "dragonrise_reforge:textures/vehicle_icon/9m133_icon.png",
