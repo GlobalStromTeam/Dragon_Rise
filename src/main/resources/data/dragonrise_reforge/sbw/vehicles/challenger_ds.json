@@ -365,7 +365,7 @@
   },
   "ThirdPersonCameraPos": [-0.8669625,1.5,5],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/challenger_ds_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/uk_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,

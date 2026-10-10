@@ -14,7 +14,8 @@
     "FastThrowableProjectileSelfHitMixin",
     "AircraftEngineRemotePilotMixin",
     "MonitorItemServerMixin",
-    "VehicleDirectionArmorMixin"
+    "VehicleDirectionArmorMixin",
+    "GunDataReloadCacheMixin"
   ],
   "client": [
     "AircraftHudMixin",
