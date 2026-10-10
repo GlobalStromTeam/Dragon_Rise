@@ -60,6 +60,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.JF17.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SHUANGWEIXIE.get()));
 
                         //俄罗斯 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));

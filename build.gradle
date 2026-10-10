@@ -80,6 +80,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     mavenCentral()
     flatDir { dirs 'libs' }
+    // 本地 maven 仓库：存放需要 ForgeGradle remap 的第三方生产版 mod jar（如 sbw_addition）
+    maven { url = uri("${projectDir}/local_repo") }
     maven { url 'https://maven.aliyun.com/repository/public/' }
 
     maven {
@@ -149,6 +151,11 @@ dependencies {
     implementation fg.deobf("curse.maven:dynamiclights-reforged-551736:6044481")
     implementation fg.deobf("curse.maven:embeddium-908741:5681725")
     implementation fg.deobf("curse.maven:rubidium-extra-654373:6101745")
+
+    // SBW 附属模组 sbw_addition：走本地 maven 仓库（local_repo/），
+    // 这样 ForgeGradle 才能把生产版 jar 从 SRG 命名空间 remap 到开发端 named 命名空间；
+    // 直接 files() 依赖不会 remap，dev 启动会报 NoSuchMethodError。
+    implementation fg.deobf("sbw_addition:sbw_addition:1.1.33-all")
 
 }
 

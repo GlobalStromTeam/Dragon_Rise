@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.client;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.client.compat.DynamicLightsCompat;
 import com.redabysslucia.dragonrise_reforge.client.overlay.M270BallisticOverlay;
+import com.redabysslucia.dragonrise_reforge.client.overlay.RemoteAircraftHudOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.SupplyProgressOverlay;
 import com.redabysslucia.dragonrise_reforge.client.overlay.VehicleBackgroundOverlay;
 import com.redabysslucia.dragonrise_reforge.client.particle.SignalSmokeParticle;
@@ -61,6 +62,11 @@ public class ClientEventHandler {
         event.registerBelowAll(
             Dragonrise_reforge.MODID + "_m270_ballistic",
             new M270BallisticOverlay()
+        );
+        // 遥控固定翼（HudType @Aircraft）时补官方战斗机 HUD
+        event.registerBelowAll(
+            RemoteAircraftHudOverlay.ID,
+            new RemoteAircraftHudOverlay()
         );
         Dragonrise_reforge.LOGGER.info("Dragonrise overlays registered");
     }

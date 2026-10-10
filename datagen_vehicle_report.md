@@ -1,6 +1,6 @@
 # 载具数据完整性报告
 
-生成时间：2026-10-06 19:18:25
+生成时间：2026-10-08 21:39:40
 
 前提：仅统计**模型含 Build 骨骼**的载具（防止误报/覆盖已完成载具）；本报告只读，不修改任何数据。
 
@@ -10,6 +10,7 @@
 
 | 载具 | 缺失字段数 | 缺失字段 |
 |---|---|---|
+| shuangweixie | 47 | RepairCooldown, RepairAmount, SelfHurtAmount, Radar, UpStep, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, DamageModifiers, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HornSound, ThirdPersonCameraPos, ForwardTowed, RotateOffsetHeight, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretControllerIndex, TurretCustomPitch, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompat, TerrainCompatRotateRate, InertiaRotateRate |
 | spg9 | 43 | RepairCooldown, RepairAmount, SelfHurtAmount, Radar, UpStep, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, EngineInfo, EngineSound, HornSound, ForwardTowed, RotateOffsetHeight, CollisionLevel, TurretYawRange, TurretControllerIndex, TurretCustomPitch, HudType, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, Gravity, TerrainCompat, TerrainCompatRotateRate, InertiaRotateRate |
 
 ## 二、核心字段齐全的载具

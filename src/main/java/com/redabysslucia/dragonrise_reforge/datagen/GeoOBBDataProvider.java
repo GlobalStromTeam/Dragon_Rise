@@ -645,6 +645,9 @@ public class GeoOBBDataProvider implements DataProvider {
                 // 根据骨骼名称设置特殊部件属性（支持带编号后缀的变体如 MainEngineObb1、WheelLeftObb2 等）
                 if (boneName.startsWith("MainEngineObb")) {
                     obbEntry.addProperty("Part", "MainEngine");
+                } else if (boneName.startsWith("SubEngineObb")) {
+                    // 副引擎（双发载具的第二个引擎，如双尾蝎的两台发动机）
+                    obbEntry.addProperty("Part", "SubEngine");
                 } else if (boneName.startsWith("WheelRightObb")) {
                     obbEntry.addProperty("Part", "WheelRight");
                 } else if (boneName.startsWith("WheelLeftObb")) {

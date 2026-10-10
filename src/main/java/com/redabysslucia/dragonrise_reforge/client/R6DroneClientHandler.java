@@ -46,6 +46,11 @@ public class R6DroneClientHandler {
     public static void onMouseButton(InputEvent.MouseButton.Pre event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.level == null) return;
+        // 打开了界面（ESC 菜单/背包/聊天）时不拦截，否则界面按钮点不动（与本模组双尾蝎处理器同样的修正）
+        if (mc.screen != null) {
+            attackHeld = false;
+            return;
+        }
         ItemStack stack = mc.player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) return;
         var tag = stack.getTag();
