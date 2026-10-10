@@ -8,6 +8,72 @@
       "Size": [1.973,0.841,5.445],
       "Position": [0.0,0.836,0.321],
       "Part": "Collision"
+    },
+    {
+      "Size":  [
+        1,
+        1.1875,
+        5
+      ],
+      "Position":  [
+        0,
+        1.125,
+        1.3125
+      ]
+    },
+    {
+      "Part":  "WheelLeft",
+      "Size":  [
+        0.75,
+        1.0625,
+        6.1875
+      ],
+      "Position":  [
+        -1.75,
+        1,
+        -0.125
+      ]
+    },
+    {
+      "Part":  "WheelRight",
+      "Size":  [
+        0.75,
+        1.0625,
+        6.1875
+      ],
+      "Position":  [
+        1.75,
+        1,
+        -0.125
+      ]
+    },
+    {
+      "Part":  "MainEngine",
+      "Size":  [
+        2,
+        1.0625,
+        3.3125
+      ],
+      "Position":  [
+        0,
+        1.55,
+        -3.525
+      ]
+    },
+    {
+      "Part":  "Turret",
+      "Size":  [
+        2,
+        0.53125,
+        4.03125
+      ],
+      "Position":  [
+        0,
+        -0.28825,
+        -1.89625
+      ],
+      "Transform":  "Turret",
+      "Rotation":  "Turret"
     }
   ],
   "Seats": [
@@ -36,7 +102,7 @@
         "Transform": "WeaponStationBarrel",
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [0.47,-1.353,0.613],
+      "Position": [0.47,-1.285,0.657],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -114,8 +180,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.005,-0.456,7.218],
-          [-0.584,-0.239,1.597]
+          [0.005,-0.141,7.231]
         ],
         "Directions": [
           "Barrel"
@@ -208,7 +273,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [0.031,0.029,3.274]
+          [0.031,0.171,3.27]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -233,10 +298,10 @@
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [-0.011,3.33,0.68],
-  "BarrelPos": [0.011,-0.728,1.888],
+  "BarrelPos": [0.011,-0.645,1.918],
   "TurretTurnSpeed": [2.625,3.575],
   "TurretPitchRange": [-7,15],
-  "PassengerWeaponStationPos": [0.516,1.038,-1.532],
+  "PassengerWeaponStationPos": [0.516,0.97,-1.576],
   "PassengerWeaponStationBarrelPos": [0.0,0.0,0.0],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-6,85],

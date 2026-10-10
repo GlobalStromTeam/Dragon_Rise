@@ -645,5 +645,9 @@
   "weapon.superbwarfare.fim_92_missile": "FIM-92 Stinger",
   "weapon.superbwarfare.laser_auto": "Automatic Laser Cannon",
   "weapon.superbwarfare.laser_semi": "Semi-Automatic Laser Cannon",
-  "weapon.superbwarfare.tow_missile": "BGM-71 TOW"
+  "weapon.superbwarfare.tow_missile": "BGM-71 TOW",
+  "skin.dragonrise_reforge.ztq15.sand": "Desert Camouflage",
+  "skin.dragonrise_reforge.ztq15.green": "Factory Green",
+  "skin.dragonrise_reforge.ztz96a.195th": "195th Blue Brigade",
+  "skin.dragonrise_reforge.ztz96a.sand": "Desert Camouflage"
 }

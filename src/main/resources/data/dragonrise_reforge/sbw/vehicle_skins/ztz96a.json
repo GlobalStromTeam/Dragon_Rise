@@ -1,0 +1,18 @@
+{
+  "Skins": [
+    {
+      "Id": "195th",
+      "Name": "朱日和蓝军旅",
+      "Description": "Component#skin.dragonrise_reforge.ztz96a.195th",
+      "Texture": "dragonrise_reforge:textures/entity/ztz96a_195th.png",
+      "Priority": 2
+    },
+    {
+      "Id": "sand",
+      "Name": "沙漠迷彩",
+      "Description": "Component#skin.dragonrise_reforge.ztz96a.sand",
+      "Texture": "dragonrise_reforge:textures/entity/ztz96a_sand.png",
+      "Priority": 3
+    }
+  ]
+}

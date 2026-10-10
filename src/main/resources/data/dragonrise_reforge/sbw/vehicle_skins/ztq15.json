@@ -1,0 +1,18 @@
+{
+  "Skins": [
+    {
+      "Id": "sand",
+      "Name": "沙漠迷彩",
+      "Description": "Component#skin.dragonrise_reforge.ztq15.sand",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_sand.png",
+      "Priority": 2
+    },
+    {
+      "Id": "green",
+      "Name": "出厂绿涂装",
+      "Description": "Component#skin.dragonrise_reforge.ztq15.green",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_green.png",
+      "Priority": 3
+    }
+  ]
+}

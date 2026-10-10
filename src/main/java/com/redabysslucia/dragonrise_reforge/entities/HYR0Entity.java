@@ -101,6 +101,20 @@ public class HYR0Entity extends VehicleEntity {
         return Math.abs(motion.x) < STILL_SPEED && Math.abs(motion.z) < STILL_SPEED;
     }
 
+    /**
+     * 是否任意一门武器正在开火。
+     * 用卓越前线的 {@code GunData.shootTimer}（开火时被置为 max(+3,5)、每 tick 减 1）判断，
+     * 遍历 {@link #getGunDataMap()} 所以主炮/同轴机枪/车顶武器站乃至以后新增的武器都会覆盖。
+     */
+    private boolean isAnyWeaponFiring() {
+        for (var data : this.getGunDataMap().values()) {
+            if (data != null && data.shootTimer.get() > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void baseTick() {
         super.baseTick();
@@ -117,7 +131,7 @@ public class HYR0Entity extends VehicleEntity {
         }
     }
 
-    /** 服务端：干扰键（上升沿）切形态 + 行进中强制变回车 */
+    /** 服务端：干扰键（上升沿）切形态 + 开火 / 行进中强制变回车 */
     private void serverTreeTick() {
         // 纯上升沿检测：按住只切换一次，松手再按才切换。
         // （不改 decoyInputDown 本身：客户端可能每 tick 重发输入，置 false 会立刻产生新的上升沿）
@@ -127,10 +141,18 @@ public class HYR0Entity extends VehicleEntity {
 
         boolean still = isStill();
 
-        // 行进中：强制变回车
-        if (isTree() && !still) {
-            setTree(false);
-            return;
+        if (isTree()) {
+            // 任意一门武器开火 → 暴露，立刻变回车（炮口火焰/后坐会盖不住伪装）
+            if (isAnyWeaponFiring()) {
+                setTree(false);
+                sendMessage("§c开火暴露：幻影伪装已解除");
+                return;
+            }
+            // 开始移动 → 强制变回车
+            if (!still) {
+                setTree(false);
+                return;
+            }
         }
 
         if (!pressed) {

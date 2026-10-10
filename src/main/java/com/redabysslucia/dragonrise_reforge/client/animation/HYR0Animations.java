@@ -17,8 +17,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  *   <li>同轴机枪 {@code animation.main_machine_gun.idle}：开火期间循环，停火淡出</li>
  *   <li>车顶武器站 {@code animation.passenger_machine_gun.fire}：开火期间循环，停火淡出</li>
  * </ul>
- * 另外负责"幻影坦克"变树动画：{@code animation.turn_to_tree.on}（PLAY_ONCE_HOLD，停在树的姿态）/
- * {@code animation.turn_to_tree.off}（PLAY_ONCE_STOP，回到车）。
+ * 另外负责"幻影坦克"变树动画：{@code animation.turn_to_tree.on}（PLAY_ONCE_HOLD，停在树的姿态）；
+ * 变回车不播动画，直接停掉变树动画即刻恢复原始姿态（见 {@link #playTurnToTree}）。
  */
 @OnlyIn(Dist.CLIENT)
 public final class HYR0Animations {
@@ -42,7 +42,15 @@ public final class HYR0Animations {
     private HYR0Animations() {
     }
 
-    /** 变树 / 变回车：两者互斥，切换时把另一个淡出 */
+    /**
+     * 变树 / 变回车。
+     * <p>
+     * <b>变树</b>：播放 {@code animation.turn_to_tree.on}（PLAY_ONCE_HOLD，动画结束后停在树的姿态）。<br>
+     * <b>变回车</b>：<b>不播放</b> {@code animation.turn_to_tree.off}，而是直接把变树动画停掉
+     * （fade = 0，无过渡）—— 模型立刻回到原始静止姿态：{@code root.scale} 恢复 1（载具出现）、
+     * {@code OU} 恢复静止尺寸（树消失），所以是"触发即变回车"，没有 5 秒回退动画。
+     * 履带的显隐由 {@code HYR0Renderer} 按 {@code isTree()} 每帧处理，因此也随之一同瞬间恢复。
+     */
     public static void playTurnToTree(HYR0Entity entity, boolean toTree) {
         var anim = entity.getAnimationInstance();
         if (anim == null) {
@@ -51,10 +59,10 @@ public final class HYR0Animations {
         var context = anim.getContext();
         if (toTree) {
             context.playAnimation(TREE_ON, AnimationPlayType.PLAY_ONCE_HOLD, 0);
-            context.stopAnimation(TREE_OFF, 4);
+            context.stopAnimation(TREE_OFF, 0);
         } else {
-            context.playAnimation(TREE_OFF, AnimationPlayType.PLAY_ONCE_STOP, 0);
-            context.stopAnimation(TREE_ON, 4);
+            context.stopAnimation(TREE_ON, 0);      // 立即生效：模型回到原始（载具）姿态
+            context.stopAnimation(TREE_OFF, 0);     // 保险：确保回退动画也不残留
         }
     }
 
