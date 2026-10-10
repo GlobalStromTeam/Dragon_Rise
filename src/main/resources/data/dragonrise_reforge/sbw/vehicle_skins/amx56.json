@@ -11,6 +11,7 @@
       "Id": "nato",
       "Name": "NATO 涂装",
       "Description": "使用喷漆罐喷涂的 NATO 涂装",
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/amx56.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/amx56nato.png",
       "Priority": 0
     },

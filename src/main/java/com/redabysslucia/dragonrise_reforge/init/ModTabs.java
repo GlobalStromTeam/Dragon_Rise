@@ -132,6 +132,9 @@ public class ModTabs {
                         //德国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
+                        //英国 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHALLENGER_DS.get()));
+
                         //瑞典 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.STRV103.get()));
                         //瑞典 自行火炮
@@ -207,7 +210,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.COMET.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CHURCHILL_VII.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MARKV.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CHALLENGER_DS.get()));
                         //英国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAMEL.get()));
 
