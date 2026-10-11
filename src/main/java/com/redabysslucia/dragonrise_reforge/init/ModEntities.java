@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Spg9Entity;
 
 
@@ -1591,6 +1597,20 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Spg9Entity>> SPG9 = register("spg9",
             EntityType.Builder.of(Spg9Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Zsd89aEntity>> ZSD89A = register("zsd89a",
+            EntityType.Builder.of(Zsd89aEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Zsd89aCoveredEntity>> ZSD89A_COVERED = register("zsd89a_covered",
+            EntityType.Builder.of(Zsd89aCoveredEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

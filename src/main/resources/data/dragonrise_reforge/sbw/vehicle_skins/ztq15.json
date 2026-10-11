@@ -13,6 +13,13 @@
       "Description": "Component#skin.dragonrise_reforge.ztq15.green",
       "Texture": "dragonrise_reforge:textures/entity/ztq15_green.png",
       "Priority": 3
+    },
+    {
+      "Id": "jungle",
+      "Name": "jungle",
+      "Description": "使用喷漆罐喷涂的 jungle涂装",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_jungle.png",
+      "Priority": 0
     }
   ]
 }

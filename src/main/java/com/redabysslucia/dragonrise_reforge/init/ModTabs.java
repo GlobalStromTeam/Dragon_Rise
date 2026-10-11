@@ -33,6 +33,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));
                         //中国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
+                        //中国 装甲车辆（ZSD-89A 两种构型）
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
@@ -218,6 +221,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
 
                     }
                     ).build()
