@@ -1,4 +1,6 @@
 {
+  "message.dragonrise_reforge.ammo_loaded": "Loaded %s round(s) into the drone",
+  "message.dragonrise_reforge.ammo_no_container": "This drone has no ammo container",
   "CRC F1 12,7mm": "12.7mm CRC-F1 Machine Gun",
   "block.dragonrise_reforge.vehicle_deployer": "Vehicle Deployer",
   "container.dragonrise_reforge.deployer_config": "Deployer Configuration",

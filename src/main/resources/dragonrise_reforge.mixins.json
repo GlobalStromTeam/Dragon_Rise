@@ -6,6 +6,11 @@
   "refmap": "dragonrise_reforge.refmap.json",
   "plugin": "com.redabysslucia.dragonrise_reforge.mixin.DragonriseMixinPlugin",
   "mixins": [
+    "VehicleChangeWeaponSoundMixin",
+    "DroneDestroyKeepWreckMixin",
+    "VehicleFireMessageRemoteMixin",
+    "SwitchVehicleWeaponMessageRemoteMixin",
+    "InventoryToolRemotePilotBoxMixin",
     "MouseMoveMessageSeatOneOnlyMixin",
     "VehicleMovementMessageSeatOneOnlyMixin",
     "DroneUnlinkSafetyMixin",
@@ -18,6 +23,9 @@
     "GunDataReloadCacheMixin"
   ],
   "client": [
+    "ClientEventHandlerRemoteGunShootMixin",
+    "VehicleMainWeaponHudOverlayRemoteMixin",
+    "AircraftHudWeaponNameMixin",
     "AircraftHudMixin",
     "AircraftHudRemotePilotMixin",
     "DroneHudRemoteSuppressMixin",

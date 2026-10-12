@@ -1,4 +1,6 @@
 {
+  "message.dragonrise_reforge.ammo_loaded": "已为无人机装填弹药（%s 发/枚）",
+  "message.dragonrise_reforge.ammo_no_container": "本机没有弹药容器，无法装填",
   "CRC F1 12,7mm": "12.7mm CRC-F1 机枪",
   "block.dragonrise_reforge.vehicle_deployer": "载具部署器",
   "container.dragonrise_reforge.deployer_config": "部署器配置",
