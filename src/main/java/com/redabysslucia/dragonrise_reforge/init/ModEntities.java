@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aEntity;
 
 
 import com.redabysslucia.dragonrise_reforge.entities.Spg9Entity;
@@ -181,6 +183,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import com.redabysslucia.dragonrise_reforge.entities.IedEntity;
 
 @net.minecraftforge.fml.common.Mod.EventBusSubscriber(bus = net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -1606,6 +1609,20 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 1.9f)
     );
+    public static final RegistryObject<EntityType<Zsd89aEntity>> ZSD89A = register("zsd89a",
+            EntityType.Builder.of(Zsd89aEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Zsd89aCoveredEntity>> ZSD89A_COVERED = register("zsd89a_covered",
+            EntityType.Builder.of(Zsd89aCoveredEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
@@ -1615,5 +1632,9 @@ public class ModEntities {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(TERRORIST.get(), TerroristEntity.createAttributes().build());
     }
+
+    public static final RegistryObject<EntityType<IedEntity>> IED = register("ied",
+            EntityType.Builder.<IedEntity>of(IedEntity::new, MobCategory.MISC)
+                    .setTrackingRange(64).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
 
 }

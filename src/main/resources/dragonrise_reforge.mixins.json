@@ -20,7 +20,8 @@
     "AircraftEngineRemotePilotMixin",
     "MonitorItemServerMixin",
     "VehicleDirectionArmorMixin",
-    "GunDataReloadCacheMixin"
+    "GunDataReloadCacheMixin",
+    "DetonatorItemMixin"
   ],
   "client": [
     "ClientEventHandlerRemoteGunShootMixin",

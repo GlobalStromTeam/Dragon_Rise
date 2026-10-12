@@ -33,6 +33,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD05.get()));
                         //中国 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBD04A.get()));
+                        //中国 装甲车辆（ZSD-89A 两种构型）
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZBL08.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
@@ -219,6 +222,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type97.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
 
                     }
                     ).build()
@@ -230,6 +234,9 @@ public class ModTabs {
                     .icon(() -> new ItemStack(ModItems.MISC_ICON.get()))
                     .displayItems((param, output) -> {
                         output.accept(ModItems.MK19_DEPLOYER.get());
+                        //土制遥控炸弹 / 男孩牌手机（官方 C4 与起爆器的换皮）
+                        output.accept(ModItems.IED.get());
+                        output.accept(ModItems.PHONE.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
                         output.accept(ModItems.HJ8_DEPLOYER.get());
                         output.accept(ModItems.R9M133_DEPLOYER.get());

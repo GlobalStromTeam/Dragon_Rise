@@ -9,6 +9,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import com.redabysslucia.dragonrise_reforge.items.IedItem;
+import com.redabysslucia.dragonrise_reforge.items.PhoneItem;
 
 public class ModItems {
 
@@ -28,6 +30,8 @@ public class ModItems {
     public static final RegistryObject<Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
     public static final RegistryObject<Item> HJ8_DEPLOYER = REGISTRY.register("hj8", HJ8Deployer::new);
     public static final RegistryObject<Item> R9M133_DEPLOYER = REGISTRY.register("9m133", R9M133Deployer::new);
+    public static final RegistryObject<Item> IED = REGISTRY.register("ied", IedItem::new);
+    public static final RegistryObject<Item> PHONE = REGISTRY.register("phone", PhoneItem::new);
     public static final RegistryObject<Item> ZU23_DEPLOYER = REGISTRY.register("zu23", ZU23Deployer::new);
     public static final RegistryObject<Item> qjz89_DEPLOYER = REGISTRY.register("qjz89", qjz89Deployer::new);
     public static final RegistryObject<Item> DSHK_DEPLOYER = REGISTRY.register("dshk", DSHKDeployer::new);
