@@ -1,31 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.shuangweixie.idle": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 0.5,
-			"bones": {
-				"bone13": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.5": [90, 0, 0]
-					}
-				},
-				"bone10": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.5": [90, 0, 0]
-					}
-				},
-				"bone12": {
-					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.5": [90, 0, 0]
-					}
-				}
-			}
-		},
-		"animation.shuangweixie.startup": {
+		"animation.shuangweixie.gear_up": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.5,
 			"bones": {
@@ -79,7 +55,7 @@
 				}
 			}
 		},
-		"animation.shuangweixie.shutdown": {
+		"animation.shuangweixie.gear_down": {
 			"loop": "hold_on_last_frame",
 			"animation_length": 1.5,
 			"bones": {

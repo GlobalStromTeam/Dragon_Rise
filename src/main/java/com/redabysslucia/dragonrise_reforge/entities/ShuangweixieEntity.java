@@ -1,5 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
+import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineInfo;
 import com.atsuishio.superbwarfare.entity.vehicle.DroneEntity;
 import com.atsuishio.superbwarfare.entity.vehicle.utils.VehicleEngineUtils;
@@ -49,6 +50,21 @@ public class ShuangweixieEntity extends DroneEntity {
     /** DroneEntity.baseTick() 末尾的无人机自稳系数（roll *= 0.9），固定翼需要完整坡度，见 {@link #baseTick()} */
     private static final float DRONE_ROLL_DAMP = 0.9f;
 
+    /** 起落架收起动画（见 shuangweixie.animation.json） */
+    private static final String GEAR_UP_ANIM = "animation.shuangweixie.gear_up";
+
+    /** 起落架放下动画 */
+    private static final String GEAR_DOWN_ANIM = "animation.shuangweixie.gear_down";
+
+    /**
+     * 上一 tick 起落架是否处于"收起"状态（仅客户端）。
+     * <p>
+     * 与 superb 本体 A10 / 本模组 F18 一致：收放本身由 superb 的固定翼引擎
+     * （{@code VehicleEngineUtils.aircraftEngine}，需载具数据 {@code HasGear=true}）按空格键推进，
+     * 这里只负责在"收起/放下"翻转时播放对应动画。
+     */
+    private boolean dr$wasGearUp;
+
     /**
      * 遥控者当前席位号在监控平板 NBT 上的键（每个遥控者各自的平板存一份）。
      * SBW 原生座位切换只服务真乘客，遥控者不在载具上，所以席位由本模组自己维护：
@@ -83,6 +99,9 @@ public class ShuangweixieEntity extends DroneEntity {
     public void baseTick() {
         super.baseTick();   // 内含 VehicleEntity.baseTick → travel()（上面那套飞机引擎）
 
+        // 起落架收放动画（空格键触发），仅客户端
+        this.dr$tickGearAnimation();
+
         // DroneEntity.baseTick() 在 super 之后会执行 setZRot(getRoll() * 0.9f)（无人机自稳阻尼）。
         // 那是四轴的自稳，对固定翼来说每 tick 削掉 10% 坡度会压不出杆，这里反算回去。
         this.setZRot(this.getRoll() / DRONE_ROLL_DAMP);
@@ -96,6 +115,39 @@ public class ShuangweixieEntity extends DroneEntity {
             this.setXRot(this.getXRot() * 0.75f);
             this.setZRot(this.getRoll() * 0.75f);
         }
+    }
+
+    /**
+     * 起落架收放动画状态机（参照 superb 本体 A10 / 本模组 {@code DragonriseVehicleBase}）。
+     * <p>
+     * 收放逻辑由 superb 固定翼引擎按空格键推进（{@code gearUp} / {@code synchedGearRot}，
+     * 需载具数据 {@code HasGear=true}）：空中按空格收起、触地自动放下。
+     * 这里只在"收起/放下"状态翻转时播放对应动画，并保持到最后一帧（PLAY_ONCE_HOLD）。
+     * 出生时绑定姿态即"放下"、{@code synchedGearRot=0}，故无需初始动画。
+     */
+    private void dr$tickGearAnimation() {
+        if (!this.level().isClientSide()) {
+            return;
+        }
+        var ani = this.getAnimationInstance();
+        if (ani == null) {
+            return;
+        }
+        var ctx = ani.getContext();
+
+        boolean gearUp = (this.getGearUp() && this.getSynchedGearRot() > 0 && this.getSynchedGearRot() < 1)
+                || this.getSynchedGearRot() == 1f;
+        boolean gearDown = (!this.getGearUp() && this.getSynchedGearRot() > 0 && this.getSynchedGearRot() < 1)
+                || this.getSynchedGearRot() == 0f;
+
+        if (gearUp && !this.dr$wasGearUp) {
+            ctx.stopAnimation(GEAR_DOWN_ANIM, 0);
+            ctx.playAnimation(GEAR_UP_ANIM, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+        } else if (gearDown && this.dr$wasGearUp) {
+            ctx.stopAnimation(GEAR_UP_ANIM, 0);
+            ctx.playAnimation(GEAR_DOWN_ANIM, AnimationPlayType.PLAY_ONCE_HOLD, 0);
+        }
+        this.dr$wasGearUp = gearUp;
     }
 
     /**

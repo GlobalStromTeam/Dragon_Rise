@@ -23,7 +23,7 @@
     "ClampPitch": 60,
     "ClampRoll": 60,
     "GearRotateAngle": 85,
-    "HasGear": false,
+    "HasGear": true,
     "EnergyCostRate": 256,
     "EngineSoundVolume": 0.9
   },
