@@ -139,6 +139,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.IedRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {
@@ -330,5 +331,6 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.SPG9.get(), Spg9Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A.get(), Zsd89aRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
+                event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);
         }
 }

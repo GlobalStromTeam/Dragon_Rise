@@ -233,6 +233,9 @@ public class ModTabs {
                     .icon(() -> new ItemStack(ModItems.MISC_ICON.get()))
                     .displayItems((param, output) -> {
                         output.accept(ModItems.MK19_DEPLOYER.get());
+                        //土制遥控炸弹 / 男孩牌手机（官方 C4 与起爆器的换皮）
+                        output.accept(ModItems.IED.get());
+                        output.accept(ModItems.PHONE.get());
                         output.accept(ModItems.ZU23_DEPLOYER.get());
                         output.accept(ModItems.HJ8_DEPLOYER.get());
                         output.accept(ModItems.R9M133_DEPLOYER.get());

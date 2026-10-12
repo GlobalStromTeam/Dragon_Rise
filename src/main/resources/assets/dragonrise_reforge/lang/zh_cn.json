@@ -653,5 +653,9 @@
   "weapon.superbwarfare.fim_92_missile": "毒刺",
   "weapon.superbwarfare.laser_auto": "自动激光炮",
   "weapon.superbwarfare.laser_semi": "半自动激光炮",
-  "weapon.superbwarfare.tow_missile": "陶"
+  "weapon.superbwarfare.tow_missile": "陶",
+  "item.dragonrise_reforge.ied": "土制遥控炸弹",
+  "item.dragonrise_reforge.phone": "男孩牌手机",
+  "item.dragonrise_reforge.ied.desc": "路边炸弹。用男孩牌手机遥控引爆：铃声在手机与炸弹处同时响起，铃声结束即起爆。",
+  "item.dragonrise_reforge.phone.desc": "老式直板手机，接上土制炸弹的引信后就成了遥控起爆器。"
 }

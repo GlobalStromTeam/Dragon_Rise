@@ -1,4 +1,13 @@
 {
+  "ied": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:ied",
+        "stream": false
+      }
+    ]
+  },
   "r6_drone_moving": {
     "sounds": [
       {

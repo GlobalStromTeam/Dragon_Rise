@@ -40,6 +40,8 @@ public class ModSounds {
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_jump")));
     public static final RegistryObject<SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_down")));
+        public static final RegistryObject<SoundEvent> IED = REGISTRY.register("ied", () ->
+                SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "ied")));
 
     /** 载具音效（开火/装填/引擎等）。仅写 sounds.json 不会被注册进 ForgeRegistries.SOUND_EVENTS，
      *  1.20.1 里 Level.playSound 需要 Holder<SoundEvent>，未注册的事件会静默失败。 */

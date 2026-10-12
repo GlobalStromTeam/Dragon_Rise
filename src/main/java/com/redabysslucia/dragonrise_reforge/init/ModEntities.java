@@ -184,6 +184,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import com.redabysslucia.dragonrise_reforge.entities.IedEntity;
 
 @net.minecraftforge.fml.common.Mod.EventBusSubscriber(bus = net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
@@ -1625,5 +1626,9 @@ public class ModEntities {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(TERRORIST.get(), TerroristEntity.createAttributes().build());
     }
+
+    public static final RegistryObject<EntityType<IedEntity>> IED = register("ied",
+            EntityType.Builder.<IedEntity>of(IedEntity::new, MobCategory.MISC)
+                    .setTrackingRange(64).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
 
 }

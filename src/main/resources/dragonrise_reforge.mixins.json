@@ -9,7 +9,8 @@
     "FireControlTurretAimMixin",
     "MonitorItemServerMixin",
     "VehicleDirectionArmorMixin",
-    "GunDataReloadCacheMixin"
+    "GunDataReloadCacheMixin",
+    "DetonatorItemMixin"
   ],
   "client": [
     "AircraftHudMixin",
