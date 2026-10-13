@@ -105,47 +105,38 @@ rc4.log：mixin 全部通过，零 mixin 错误
          [04:39:31] TextureAtlas / flywheel shader / simplebedrockmodel 加载
 ```
 
-### 🔴 当前阻塞：客户端在资源重载阶段卡住（非崩溃）
+### ✅ 客户端已成功启动（截图确认）
 
-`rc4.log` 到 19129 字节后 **10.5 分钟无新增**，且进程 CPU 增量仅 **0.45s / 8s**
-（117 线程、3.2 GB 内存）—— 是**卡在等待**，不是"加载慢"。
-
-最后几条日志（无任何异常/堆栈）：
+之前的"卡住"是**误判** —— 线程栈显示 `Render thread` 停在
 
 ```
-[04:39:26] Reloading ResourceManager: vanilla, ..., mod/simplebedrockmodel, mod/dragonrise_reforge, ...
-[04:39:26] DRAGON VEHICLE DEPLOYER: COMMON SETUP
-[04:39:26] DragonRise:Reforge HELLO FROM COMMON SETUP     <- 模组初始化已完成
-[04:39:26] DragonRise:Reforge DIRT BLOCK >> minecraft:dirt
-[04:39:31] simplebedrockmodel: Loaded 0 particle definitions
-[04:39:31] AnimationLoader: Loaded 0 entity animations
-（之后停止）
+RenderSystem.limitDisplayFPS  →  glfwWaitEventsTimeout
+Minecraft.runTick
 ```
 
-**排查方向**（按可能性排序）：
+这是**主循环的空闲限帧路径**：游戏已经跑起来、在主菜单等待输入，日志不增长只是
+因为没有新事件。截图确认 `Minecraft NeoForge* 1.21.1` 主菜单正常显示，
+模组全部加载（Sodium / GeckoLib / SuperbWarfare / SimpleBedrockModel /
+Curios / Flywheel / Ponder / AcceleratedRendering 等）。
 
-1. **某个 reload listener 阻塞**。本分支的 SBM 模型由
-   `VehicleModelReloadListener` / `ArmorModelReloadListener` /
-   `EntityModelReloadListener` / `ItemModelReloadListener` /
-   `ProjectileModelReloadListener` / `BlockModelReloadListener` /
-   `VehicleLODModelReloadListener` 加载（见 `ClientEventHandler#registerReloadListeners`），
-   共 225+ 个 geo 模型。1.20.1 侧用 7 个 listener，1.21.1 侧也要核对是否重复注册或路径不对。
-2. **网络 payload 注册问题**：`ModNetwork.register` 在 mod 构造期跑，
-   若某个 `TYPE`/`STREAM_CODEC` 为 null 可能静默卡住（本轮刚重写过这些消息类）。
-3. **`SignalSmokeOption` / `ModParticleTypes`**：粒子类型 codec 是本轮新写的，
-   若 `codec()` 返回 null 会在注册/序列化期出问题。
-4. **动态光源软依赖**：`StarShellLightManager` 的 `RenderFrameEvent.Pre` 处理器每帧跑，
-   若 `DynamicLightsCompat` 判断有误会空转（但那只影响帧率，不至于卡死加载）。
+`run/logs/latest.log` 里本模组的证据：
 
-取证手段建议：
 ```
-# 卡住时抓线程栈（最直接）
-jstack <pid> > stack.txt
-# 或让 JVM 自己 dump
-# 在 runClient 的 JVM 参数里加 -XX:+HeapDumpOnOutOfMemoryError 不适用；
-# 用 jcmd <pid> Thread.print
+Dragonrise SBM model reload listeners registered
+Dragonrise gui layers registered
+HELLO FROM COMMON SETUP
 ```
-`jcmd <pid> Thread.print` 能直接看出卡在哪个 listener / 锁上。
+
+**教训**：`runClient` 起来后日志停住不等于卡死 —— 先用 `jcmd <pid> Thread.print`
+看 Render thread 栈，若停在 `glfwWaitEventsTimeout` 就是正常的空闲等待。
+
+### 剩余的非致命问题（不影响启动）
+
+| 现象 | 说明 |
+|---|---|
+| `Entity dragonrise_reforge:terrorist has no attributes` | `ModEntities.registerAttributes` 只注册了 TERRORIST，仍有实体没注册；旧有代码没写完整 |
+| `Entity dragonrise_reforge:nukerbomb has no attributes` | 同上 |
+| `File ...sounds/terrorist/*.ogg` 找不到 | 音效文件缺失（TERRORIST_IDLE/STEP/HURT 在 ModSounds 注册了但资源没有） |
 
 ### 下一步
 
