@@ -30,9 +30,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = AircraftHud.class, remap = false)
 public class AircraftHudMixin {
 
+    // 1.21.1：AircraftHud#render 已去掉 Gui 参数，注入处理器签名同步收窄。
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void dragonrise$skipBombScope(
-            VehicleEntity vehicle, Player player, Gui gui,
+            VehicleEntity vehicle, Player player,
             GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight,
             CallbackInfo ci) {
         if (!ClientEventHandler.zoomVehicle) return;
@@ -49,7 +50,7 @@ public class AircraftHudMixin {
 
     @Inject(method = "render", at = @At("RETURN"))
     private void dragonrise$rearSeatWeaponName(
-            VehicleEntity vehicle, Player player, Gui gui,
+            VehicleEntity vehicle, Player player,
             GuiGraphics guiGraphics, float partialTick, int screenWidth, int screenHeight,
             CallbackInfo ci) {
         // 仅后座（非一号位）：一号位由官方 HUD 渲染，此处跳过

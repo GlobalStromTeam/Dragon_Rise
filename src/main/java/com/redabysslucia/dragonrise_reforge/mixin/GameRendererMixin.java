@@ -26,8 +26,12 @@ public class GameRendererMixin {
      * 遥控本项目无人车且处于第一人称相机类型时，隐藏手持物品（监控平板），
      * 避免无人车视角里看到玩家手上的物品。
      */
+    // 1.21.1：GameRenderer#renderItemInHand 的签名是
+    //   (Camera, float partialTick, Matrix4f matrix)
+    // —— 1.20.1 的首参 PoseStack 被挪到了末尾且换成了 Matrix4f。
+    // 参数顺序必须与目标方法一致，否则 Mixin 在 APPLY 阶段报 Invalid descriptor。
     @Inject(method = "renderItemInHand", at = @At("HEAD"), cancellable = true)
-    private void dr$hideHeldItemForR6Drone(PoseStack poseStack, Camera camera, float partialTick, CallbackInfo ci) {
+    private void dr$hideHeldItemForR6Drone(Camera camera, float partialTick, org.joml.Matrix4f matrix, CallbackInfo ci) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null) return;
         var stack = mc.player.getMainHandItem();

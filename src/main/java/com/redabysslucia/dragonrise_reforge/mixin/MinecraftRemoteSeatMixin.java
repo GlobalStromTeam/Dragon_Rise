@@ -1,25 +1,30 @@
 package com.redabysslucia.dragonrise_reforge.mixin;
 
-import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.init.ModItems;
-import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.init.ModKeyMappings;
-import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.network.message.send.SwitchVehicleWeaponMessage;
-import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
-import com.redabysslucia.dragonrise_reforge.mixin.MouseMoveMessageSeatOneOnlyMixin;
 import com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSwitchMessage;
-import com.redabysslucia.dragonrise_reforge.network.ModNetwork;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.world.item.ItemStack;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * 遥控驾驶时用数字键切遥控席位 / 切武器（客户端）。
+ *
+ * <p>拦截 {@code Minecraft#handleKeybinds}：官方骑乘载具时数字键 = 切武器、
+ * Shift+数字 = 切席位；遥控者不在载具上，走不到官方那条路径，所以这里自己接管。
+ *
+ * <p>注意：1.20.1 时代本类漏了 {@code @Mixin} 注解（编译能过、运行期 Mixin 准备阶段
+ * 才报 "is missing an @Mixin annotation" 并中断启动）。合并后补上。
+ */
+@Mixin(Minecraft.class)
 public class MinecraftRemoteSeatMixin {
 
     @Inject(method = "handleKeybinds()V", at = @At("HEAD"), cancellable = true)
