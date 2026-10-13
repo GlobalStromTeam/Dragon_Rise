@@ -165,13 +165,13 @@
                                    "HeatPerShoot":  1.5,
                                    "NaturalCooldown":  0.5,
                                    "Spread":  0.5,
-                                   "Name":  "dragonrise_reforge:m61a4",
+                                   "Name":  "dragonrise_reforge:vickers_303",
                                    "SoundInfo":  {
                                                      "Fire1P":  "superbwarfare:coax_fire_1p",
                                                      "Fire3P":  "superbwarfare:m_60_fire_3p",
                                                      "Fire3PFar":  "superbwarfare:m_60_far",
                                                      "Fire3PVeryFar":  "superbwarfare:m_60_veryfar",
-                                                     "Change":  "superbwarfare:into_cannon"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",

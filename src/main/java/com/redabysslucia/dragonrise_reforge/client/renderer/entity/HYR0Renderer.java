@@ -1,60 +1,169 @@
 package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 
+import com.atsuishio.superbwarfare.client.model.entity.VehicleModelInstance;
 import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
+import com.github.mcmodderanchor.simplebedrockmodel.v2.common.model.runtime.BoneState;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.hyr0.HYR0TrackCurves;
 import com.redabysslucia.dragonrise_reforge.entities.HYR0Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.util.Mth;
 
 /**
- * 参照官方 M1A2Renderer 的履带曲线驱动实现。
- * 曲线由模型轮组几何生成（像素位移，与动画模板单位一致），t ∈ [0,80] 一圈，46 节。总弧长约 321 像素。
+ * HYR0 履带：**每侧两条独立履带**（前组、后组），所以要覆盖卓越前线的单链驱动。
+ * <p>
+ * 卓越前线的 {@code GeoVehicleRenderer.transformCustomModelPart} 按骨骼名 {@code track(Mov|Rot)[LR]\d+}
+ * 驱动履带，公式是 {@code t = wrap(leftTrack + distance * index)} —— 每侧只有一条曲线，46 个链节全部排在
+ * 同一条环上；HYR0 每侧是"前组 18 节 + 后组 28 节"两条独立的环，所以这里在 {@code super} 之后
+ * 用两条各自的曲线重新排布全部 92 个链节（super 已经放好的位置会被覆盖）。
+ * <p>
+ * 曲线数据见 {@link HYR0TrackCurves}（由模型轮组几何生成）：
+ * <ul>
+ *   <li>前环：3 个 Ø1.08 轮，周长 134.3px，18 节</li>
+ *   <li>后环：4 个 Ø1.08 轮 + 后上方 Ø0.85 导引轮，周长 201.0px，28 节</li>
+ * </ul>
+ * 左右两侧几何相同（仅 x 镜像），共用这两条曲线；相位取车轮转角换算成像素
+ * （{@code 1.5 * wheelRot * 轮半径}，与车轮骨骼的旋转用同一个值），所以履带与车轮永远同步。
  */
 public class HYR0Renderer extends GeoVehicleRenderer<HYR0Entity> {
 
-        public HYR0Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
-        }
+    /** 履带环的行进方向：+1 = 按曲线 t 增大方向跑（顶边朝 -z），-1 = 反向（实机验证后取 -1） */
+    private static final float TRACK_DIRECTION = -1f;
+    /** 链节自转（绕 X 轴贴向曲线切线）的符号：+1 = 直接取曲线朝向，-1 = 取相反数 */
+    private static final float LINK_ROT_SIGN = 1f;
+    /** 与 GeoVehicleRenderer 里车轮骨骼的旋转倍率一致（bone.rotation.rotationX(1.5f * wheelRot)） */
+    private static final float WHEEL_SPIN_SCALE = 1.5f;
+    /** 牵引轮半径（模型单位，直径 17.28px）—— 履带线速度 = 车轮角速度 × 此半径 */
+    private static final float DRIVE_WHEEL_RADIUS = 17.28f / 2f;
 
-    private static final float[] MOVE_Y = { 6.531f, 6.006f, 4.665f, 3.104f, 2.007f, 1.209f, 0.411f, -0.387f, -1.185f, -1.983f, -2.781f, -3.579f, -4.377f, -5.175f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.518f, -5.509f, -4.992f, -3.8f, -2.246f, -0.737f, 0.331f, 0.684f, 0.746f, 0.808f, 0.871f, 0.933f, 0.995f, 1.057f, 1.119f, 1.182f, 1.244f, 1.306f, 1.368f, 1.431f, 1.493f, 1.555f, 1.617f, 1.679f, 1.742f, 1.804f, 1.866f, 1.928f, 1.99f, 2.053f, 2.115f, 2.177f, 2.239f, 2.301f, 2.364f, 2.426f, 2.488f, 2.55f, 2.612f, 2.675f, 2.737f, 2.799f, 2.861f, 2.923f, 2.986f, 3.048f, 3.11f, 3.172f, 3.234f, 3.297f, 3.359f, 3.421f, 3.483f, 3.545f, 3.608f, 3.67f, 3.732f, 3.794f, 3.856f, 3.919f, 3.981f, 4.043f, 4.105f, 4.168f, 4.23f, 4.292f, 4.354f, 4.416f, 4.479f, 4.541f, 4.603f, 4.665f, 4.727f, 4.79f, 4.852f, 4.914f, 4.976f, 5.038f, 5.101f, 5.163f, 5.225f, 5.287f, 5.349f, 5.412f, 5.474f, 5.536f, 5.598f, 5.66f, 5.723f, 5.785f, 5.847f, 5.909f, 5.971f, 6.034f, 6.096f, 6.158f, 6.22f, 6.282f, 6.345f, 6.407f, 6.469f, 6.531f };
-
-    private static final float[] MOVE_Z = { 168.859f, 170.343f, 171.168f, 170.966f, 169.832f, 168.44f, 167.048f, 165.655f, 164.263f, 162.871f, 161.478f, 160.086f, 158.694f, 157.302f, 155.788f, 154.183f, 152.578f, 150.973f, 149.369f, 147.764f, 146.159f, 144.554f, 142.949f, 141.344f, 139.74f, 138.135f, 136.53f, 134.925f, 133.32f, 131.715f, 130.111f, 128.506f, 126.901f, 125.296f, 123.691f, 122.087f, 120.482f, 118.877f, 117.272f, 115.667f, 114.062f, 112.458f, 110.853f, 109.248f, 107.643f, 106.038f, 104.433f, 102.829f, 101.224f, 99.619f, 98.014f, 96.409f, 94.804f, 93.2f, 91.595f, 89.99f, 88.385f, 86.78f, 85.176f, 83.571f, 81.966f, 80.361f, 78.756f, 77.151f, 75.547f, 73.942f, 72.337f, 70.732f, 69.127f, 67.522f, 65.918f, 64.313f, 62.708f, 61.103f, 59.498f, 57.894f, 56.289f, 54.684f, 53.079f, 51.474f, 49.869f, 48.265f, 46.66f, 45.055f, 43.45f, 41.845f, 40.24f, 38.636f, 37.031f, 35.426f, 33.821f, 32.216f, 30.611f, 29.007f, 27.402f, 25.797f, 24.192f, 22.587f, 20.983f, 19.378f, 17.773f, 16.273f, 15.225f, 14.905f, 15.396f, 16.57f, 18.119f, 19.723f, 21.326f, 22.93f, 24.534f, 26.137f, 27.741f, 29.344f, 30.948f, 32.552f, 34.155f, 35.759f, 37.363f, 38.966f, 40.57f, 42.173f, 43.777f, 45.381f, 46.984f, 48.588f, 50.191f, 51.795f, 53.399f, 55.002f, 56.606f, 58.21f, 59.813f, 61.417f, 63.02f, 64.624f, 66.228f, 67.831f, 69.435f, 71.039f, 72.642f, 74.246f, 75.849f, 77.453f, 79.057f, 80.66f, 82.264f, 83.867f, 85.471f, 87.075f, 88.678f, 90.282f, 91.886f, 93.489f, 95.093f, 96.696f, 98.3f, 99.904f, 101.507f, 103.111f, 104.715f, 106.318f, 107.922f, 109.525f, 111.129f, 112.733f, 114.336f, 115.94f, 117.543f, 119.147f, 120.751f, 122.354f, 123.958f, 125.562f, 127.165f, 128.769f, 130.372f, 131.976f, 133.58f, 135.183f, 136.787f, 138.391f, 139.994f, 141.598f, 143.201f, 144.805f, 146.409f, 148.012f, 149.616f, 151.219f, 152.823f, 154.427f, 156.03f, 157.634f, 159.238f, 160.841f, 162.445f, 164.048f, 165.652f, 167.256f, 168.859f };
-
-    private static final float[] ROT_X = { 0f, -38.95f, -77.9f, -116.85f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -150.18f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -180f, -184.17f, -213.85f, -243.53f, -273.2f, -302.88f, -332.55f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f, -357.78f };
-
-    private static final float[] TIMES = { 0f, 0.4f, 0.8f, 1.2f, 1.6f, 2f, 2.4f, 2.8f, 3.2f, 3.6f, 4f, 4.4f, 4.8f, 5.2f, 5.6f, 6f, 6.4f, 6.8f, 7.2f, 7.6f, 8f, 8.4f, 8.8f, 9.2f, 9.6f, 10f, 10.4f, 10.8f, 11.2f, 11.6f, 12f, 12.4f, 12.8f, 13.2f, 13.6f, 14f, 14.4f, 14.8f, 15.2f, 15.6f, 16f, 16.4f, 16.8f, 17.2f, 17.6f, 18f, 18.4f, 18.8f, 19.2f, 19.6f, 20f, 20.4f, 20.8f, 21.2f, 21.6f, 22f, 22.4f, 22.8f, 23.2f, 23.6f, 24f, 24.4f, 24.8f, 25.2f, 25.6f, 26f, 26.4f, 26.8f, 27.2f, 27.6f, 28f, 28.4f, 28.8f, 29.2f, 29.6f, 30f, 30.4f, 30.8f, 31.2f, 31.6f, 32f, 32.4f, 32.8f, 33.2f, 33.6f, 34f, 34.4f, 34.8f, 35.2f, 35.6f, 36f, 36.4f, 36.8f, 37.2f, 37.6f, 38f, 38.4f, 38.8f, 39.2f, 39.6f, 40f, 40.4f, 40.8f, 41.2f, 41.6f, 42f, 42.4f, 42.8f, 43.2f, 43.6f, 44f, 44.4f, 44.8f, 45.2f, 45.6f, 46f, 46.4f, 46.8f, 47.2f, 47.6f, 48f, 48.4f, 48.8f, 49.2f, 49.6f, 50f, 50.4f, 50.8f, 51.2f, 51.6f, 52f, 52.4f, 52.8f, 53.2f, 53.6f, 54f, 54.4f, 54.8f, 55.2f, 55.6f, 56f, 56.4f, 56.8f, 57.2f, 57.6f, 58f, 58.4f, 58.8f, 59.2f, 59.6f, 60f, 60.4f, 60.8f, 61.2f, 61.6f, 62f, 62.4f, 62.8f, 63.2f, 63.6f, 64f, 64.4f, 64.8f, 65.2f, 65.6f, 66f, 66.4f, 66.8f, 67.2f, 67.6f, 68f, 68.4f, 68.8f, 69.2f, 69.6f, 70f, 70.4f, 70.8f, 71.2f, 71.6f, 72f, 72.4f, 72.8f, 73.2f, 73.6f, 74f, 74.4f, 74.8f, 75.2f, 75.6f, 76f, 76.4f, 76.8f, 77.2f, 77.6f, 78f, 78.4f, 78.8f, 79.2f, 79.6f, 80f };
-
-    private static final float[] ROT_TIMES = { 0f, 0.4f, 0.8f, 1.2f, 1.6f, 2f, 2.4f, 2.8f, 3.2f, 3.6f, 4f, 4.4f, 4.8f, 5.2f, 5.6f, 6f, 6.4f, 6.8f, 7.2f, 7.6f, 8f, 8.4f, 8.8f, 9.2f, 9.6f, 10f, 10.4f, 10.8f, 11.2f, 11.6f, 12f, 12.4f, 12.8f, 13.2f, 13.6f, 14f, 14.4f, 14.8f, 15.2f, 15.6f, 16f, 16.4f, 16.8f, 17.2f, 17.6f, 18f, 18.4f, 18.8f, 19.2f, 19.6f, 20f, 20.4f, 20.8f, 21.2f, 21.6f, 22f, 22.4f, 22.8f, 23.2f, 23.6f, 24f, 24.4f, 24.8f, 25.2f, 25.6f, 26f, 26.4f, 26.8f, 27.2f, 27.6f, 28f, 28.4f, 28.8f, 29.2f, 29.6f, 30f, 30.4f, 30.8f, 31.2f, 31.6f, 32f, 32.4f, 32.8f, 33.2f, 33.6f, 34f, 34.4f, 34.8f, 35.2f, 35.6f, 36f, 36.4f, 36.8f, 37.2f, 37.6f, 38f, 38.4f, 38.8f, 39.2f, 39.6f, 40f, 40.4f, 40.8f, 41.2f, 41.6f, 42f, 42.4f, 42.8f, 43.2f, 43.6f, 44f, 44.4f, 44.8f, 45.2f, 45.6f, 46f, 46.4f, 46.8f, 47.2f, 47.6f, 48f, 48.4f, 48.8f, 49.2f, 49.6f, 50f, 50.4f, 50.8f, 51.2f, 51.6f, 52f, 52.4f, 52.8f, 53.2f, 53.6f, 54f, 54.4f, 54.8f, 55.2f, 55.6f, 56f, 56.4f, 56.8f, 57.2f, 57.6f, 58f, 58.4f, 58.8f, 59.2f, 59.6f, 60f, 60.4f, 60.8f, 61.2f, 61.6f, 62f, 62.4f, 62.8f, 63.2f, 63.6f, 64f, 64.4f, 64.8f, 65.2f, 65.6f, 66f, 66.4f, 66.8f, 67.2f, 67.6f, 68f, 68.4f, 68.8f, 69.2f, 69.6f, 70f, 70.4f, 70.8f, 71.2f, 71.6f, 72f, 72.4f, 72.8f, 73.2f, 73.6f, 74f, 74.4f, 74.8f, 75.2f, 75.6f, 76f, 76.4f, 76.8f, 77.2f, 77.6f, 78f, 78.4f, 78.8f, 79.2f, 79.6f, 80f };
-
-    private static float sample(float[] times, float[] keys, float t) {
-        if (t <= times[0]) return keys[0];
-        int n = times.length;
-        if (t >= times[n - 1]) return keys[n - 1];
-        int lo = 0, hi = n - 1;
-        while (hi - lo > 1) {
-            int mid = (lo + hi) >> 1;
-            if (times[mid] <= t) lo = mid; else hi = mid;
-        }
-        float f = (t - times[lo]) / (times[hi] - times[lo]);
-        return Mth.lerp(f, keys[lo], keys[hi]);
+    public HYR0Renderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager);
     }
 
-        @Override
-        public float getBoneMoveY(float t) {
-                return sample(TIMES, MOVE_Y, t);
+    @Override
+    public void transformCustomModelPart(HYR0Entity entity, VehicleModelInstance instance, PoseStack poseStack,
+                                        float entityYaw, float partialTicks) {
+        // 车轮旋转、车体摇晃、炮塔等都交给 super；它顺手按单链放好的履带位置随后会被覆盖
+        super.transformCustomModelPart(entity, instance, poseStack, entityYaw, partialTicks);
+
+        TrackBones bones = TrackBones.get(instance);
+        if (bones == null) {
+            return;     // LOD 模型或骨骼名不匹配时不处理
         }
 
-        @Override
-        public float getBoneMoveZ(float t) {
-                return sample(TIMES, MOVE_Z, t);
+        // 变树形态：隐藏所有履带块（两块 46 节 × 2 侧）。
+        // 履带骨骼在模型里是并列的独立骨骼，不在 root 之下，所以 root 缩放为 0 时它们仍会露出来。
+        boolean tree = entity.isTree();
+        bones.setVisible(!tree);
+        if (tree) {
+            return;     // 已隐藏，不必再按曲线摆位
         }
 
-        @Override
-        public float getBoneRotX(float t) {
-                return sample(ROT_TIMES, ROT_X, t);
+        float leftPhase = TRACK_DIRECTION * WHEEL_SPIN_SCALE * getLeftWheelRot() * DRIVE_WHEEL_RADIUS;
+        float rightPhase = TRACK_DIRECTION * WHEEL_SPIN_SCALE * getRightWheelRot() * DRIVE_WHEEL_RADIUS;
+
+        driveLoop(bones.leftMov, bones.leftRot, 0, HYR0TrackCurves.FRONT_LINK_COUNT,
+                HYR0TrackCurves.FRONT_LOOP_LENGTH, HYR0TrackCurves.FRONT_Y, HYR0TrackCurves.FRONT_Z,
+                HYR0TrackCurves.FRONT_ROT, leftPhase);
+        driveLoop(bones.leftMov, bones.leftRot, HYR0TrackCurves.FRONT_LINK_COUNT, HYR0TrackCurves.LINKS_PER_SIDE,
+                HYR0TrackCurves.REAR_LOOP_LENGTH, HYR0TrackCurves.REAR_Y, HYR0TrackCurves.REAR_Z,
+                HYR0TrackCurves.REAR_ROT, leftPhase);
+
+        driveLoop(bones.rightMov, bones.rightRot, 0, HYR0TrackCurves.FRONT_LINK_COUNT,
+                HYR0TrackCurves.FRONT_LOOP_LENGTH, HYR0TrackCurves.FRONT_Y, HYR0TrackCurves.FRONT_Z,
+                HYR0TrackCurves.FRONT_ROT, rightPhase);
+        driveLoop(bones.rightMov, bones.rightRot, HYR0TrackCurves.FRONT_LINK_COUNT, HYR0TrackCurves.LINKS_PER_SIDE,
+                HYR0TrackCurves.REAR_LOOP_LENGTH, HYR0TrackCurves.REAR_Y, HYR0TrackCurves.REAR_Z,
+                HYR0TrackCurves.REAR_ROT, rightPhase);
+    }
+
+    /**
+     * 把 [from, to) 区间的链节按给定环的曲线排布。
+     * 环内链节等距（节距 = 环长 / 节数），相位以像素为单位在环上循环。
+     */
+    private void driveLoop(BoneState[] movBones, BoneState[] rotBones, int from, int to, float loopLength,
+                           float[] curveY, float[] curveZ, float[] curveRot, float phase) {
+        int count = to - from;
+        if (count <= 0) {
+            return;
+        }
+        float pitch = loopLength / count;
+
+        for (int k = 0; k < count; k++) {
+            int index = from + k;
+            if (index >= movBones.length || movBones[index] == null) {
+                continue;
+            }
+
+            // 环上位置 → 曲线采样下标（曲线按弧长等分，所以是线性的）
+            float t = phase + pitch * k;
+            t = ((t % loopLength) + loopLength) % loopLength;
+            float u = t / loopLength * (HYR0TrackCurves.SAMPLES - 1);
+            int i0 = (int) u;
+            int i1 = Math.min(i0 + 1, HYR0TrackCurves.SAMPLES - 1);
+            float f = u - i0;
+
+            BoneState mov = movBones[index];
+            // 与 super 的写法一致：把枢轴折进 y/z
+            float pivotY = 0f;
+            float pivotZ = 0f;
+            var definition = mov.definition();
+            if (definition != null) {
+                pivotY = definition.pivotY() * 16f;
+                pivotZ = definition.pivotZ() * 16f;
+            }
+            mov.y = pivotY + Mth.lerp(f, curveY[i0], curveY[i1]);
+            mov.z = pivotZ + Mth.lerp(f, curveZ[i0], curveZ[i1]);
+
+            if (rotBones != null && index < rotBones.length && rotBones[index] != null) {
+                rotBones[index].rotation.rotationX(LINK_ROT_SIGN * Mth.lerp(f, curveRot[i0], curveRot[i1]) * Mth.DEG_TO_RAD);
+            }
+        }
+    }
+
+    /** 每侧 46 个 trackMov / trackRot 骨骼引用（按模型编号），按模型实例缓存 */
+    private static final class TrackBones {
+
+        private static VehicleModelInstance cachedInstance;
+        private static TrackBones cached;
+
+        final BoneState[] leftMov = new BoneState[HYR0TrackCurves.LINKS_PER_SIDE];
+        final BoneState[] rightMov = new BoneState[HYR0TrackCurves.LINKS_PER_SIDE];
+        final BoneState[] leftRot = new BoneState[HYR0TrackCurves.LINKS_PER_SIDE];
+        final BoneState[] rightRot = new BoneState[HYR0TrackCurves.LINKS_PER_SIDE];
+        int found;
+
+        static TrackBones get(VehicleModelInstance instance) {
+            if (instance == cachedInstance && cached != null) {
+                return cached;
+            }
+            TrackBones bones = new TrackBones();
+            for (int i = 0; i < HYR0TrackCurves.LINKS_PER_SIDE; i++) {
+                bones.leftMov[i] = instance.getBone("trackMovL" + i);
+                bones.rightMov[i] = instance.getBone("trackMovR" + i);
+                bones.leftRot[i] = instance.getBone("trackRotL" + i);
+                bones.rightRot[i] = instance.getBone("trackRotR" + i);
+                if (bones.leftMov[i] != null && bones.rightMov[i] != null) {
+                    bones.found++;
+                }
+            }
+            if (bones.found == 0) {
+                return null;
+            }
+            cachedInstance = instance;
+            cached = bones;
+            return bones;
         }
 
-        @Override
-        public float getTrackDistance() {
-                return 80f / 46f;
+        /** 变树时隐藏、变回来时恢复全部履带块（Mov 与 Rot 都要设，链节几何在 Rot 上） */
+        void setVisible(boolean visible) {
+            for (BoneState[] group : new BoneState[][]{leftMov, rightMov, leftRot, rightRot}) {
+                for (BoneState bone : group) {
+                    if (bone != null) {
+                        bone.visible = visible;
+                    }
+                }
+            }
         }
+    }
 }

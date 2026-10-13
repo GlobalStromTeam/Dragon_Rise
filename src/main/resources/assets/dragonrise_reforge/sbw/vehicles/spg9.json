@@ -1,0 +1,15 @@
+{
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/spg9.animation.json",
+  "ID": "dragonrise_reforge:spg9",
+  "Model": {
+    "Animation": "dragonrise_reforge:animations/bedrock/vehicle/spg9.animation.json",
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/spg9.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/spg9.png"
+    }
+  ]
+}

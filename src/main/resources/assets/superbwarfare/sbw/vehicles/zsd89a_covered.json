@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:zsd89a_covered",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/zsd89a_covered.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/zsd89a_covered.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/zsd89a_covered.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/zsd89a_covered.png"
+    }
+  ]
+}

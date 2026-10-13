@@ -206,7 +206,7 @@
                                                      "Fire3PFar":  "dragonrise_reforge:cyborg_tank_fire_3p_far",
                                                      "Fire3PVeryFar":  "dragonrise_reforge:cyborg_tank_fire_3p_very_far",
                                                      "VehicleReload":  "dragonrise_reforge:cyborg_tank_reload",
-                                                     "Change":  "superbwarfare:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:cyborg_tank_reload"
                                                                            ]
@@ -217,7 +217,7 @@
                                                     "Positions":  [
                                                                       [
                                                                           0.1,
-                                                                          -0.5,
+                                                                          0.0,
                                                                           0.5
                                                                       ]
                                                                   ],
@@ -264,7 +264,7 @@
                                                          "Fire3P":  "dragonrise_reforge:cyborg_tank_fire_coax",
                                                          "Fire3PFar":  "dragonrise_reforge:cyborg_tank_fire_coax_far",
                                                          "Fire3PVeryFar":  "dragonrise_reforge:cyborg_tank_fire_coax_far",
-                                                         "Change":  "superbwarfare:into_cannon"
+                                                         "Change":  "dragonrise_reforge:change_weapon"
                                                      },
                                        "SoundRadius":  16
                                    },
@@ -311,7 +311,7 @@
                                                                   "Fire3P":  "dragonrise_reforge:cyborg_tank_fire_station",
                                                                   "Fire3PFar":  "dragonrise_reforge:cyborg_tank_fire_station_far",
                                                                   "Fire3PVeryFar":  "dragonrise_reforge:cyborg_tank_fire_station_far",
-                                                                  "Change":  "superbwarfare:into_cannon"
+                                                                  "Change":  "dragonrise_reforge:change_weapon"
                                                               },
                                                 "SoundRadius":  16
                                             }
@@ -405,7 +405,8 @@
                             "@#superbwarfare:at_rocket * 1.1",
                             "@superbwarfare:gun_grenade * 1.25",
                             "@superbwarfare:mortar_shell * 1.25",
-                            "@superbwarfare:tm_62 * 2.5"
+                            "@superbwarfare:tm_62 * 2.5",
+                            "$entity.getSourceAngle(source, 0.3) * damage"
                         ],
     "DestroyInfo":  {
                         "ParticleType":  "Giant",

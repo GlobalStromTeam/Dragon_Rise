@@ -112,7 +112,7 @@
               ],
     "Weapons":  {
                     "Cannon":  {
-                                   "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_aa.png",
+                                   "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/cannon_23mm.png",
                                    "DefaultFireMode":  "Auto",
                                    "AvailableFireModes":  "Auto",
                                    "Projectile":  "superbwarfare:small_cannon_shell",
@@ -133,13 +133,13 @@
                                    "ShootAnimationTime":  3,
                                    "Crosshair":  "@VehicleCommonGunDynamic",
                                    "CrosshairColor":  "0x66FF00",
-                                   "Name":  "weapon.superbwarfare.25mm_cannon_aa",
+                                   "Name":  "dragonrise_reforge:cannon_23mm_aa",
                                    "SoundInfo":  {
                                                      "Fire1P":  "superbwarfare:lav_150_cannon_fire_1p",
                                                      "Fire3P":  "superbwarfare:lav_150_cannon_fire_3p",
                                                      "Fire3PFar":  "superbwarfare:lav_150_cannon_far",
                                                      "Fire3PVeryFar":  "superbwarfare:lav_150_cannon_veryfar",
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "SoundRadius":  24,
                                    "AmmoType":  "superbwarfare:small_shell_aa",
@@ -194,7 +194,7 @@
                                             "Magazine":  4,
                                             "EmptyReloadTime":  320,
                                             "Projectile":  "superbwarfare:ru_9m336_missile",
-                                            "Name":  "dragonrise_reforge:missile_fb10",
+                                            "Name":  "dragonrise_reforge:missile_9m37",
                                             "Damage":  100,
                                             "ExplosionDamage":  170,
                                             "ExplosionRadius":  4,
@@ -242,7 +242,7 @@
                                                               "Fire3P":  "superbwarfare:bomb_release",
                                                               "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                               "VehicleReloadSoundTime":  11,
-                                                              "Change":  "superbwarfare:into_missile",
+                                                              "Change":  "dragonrise_reforge:change_weapon",
                                                               "Locking":  "superbwarfare:javelin_locking",
                                                               "Locked":  "superbwarfare:javelin_locking"
                                                           },
@@ -319,7 +319,8 @@
                             "@superbwarfare:gun_grenade * 1.5",
                             "@superbwarfare:javelin_missile * 0.8",
                             "@superbwarfare:igla_9k38_missile * 0.75",
-                            "All - 11"
+                            "All - 11",
+                            "$entity.getSourceAngle(source, 0.25) * damage"
                         ],
     "VehicleContainerType":  "Small",
     "DestroyInfo":  {

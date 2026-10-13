@@ -115,14 +115,14 @@
   "Weapons": {
     "AAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_fb10.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
       "DefaultZoom": 4,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 8,
       "EmptyReloadTime": 320,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:missile_fb10",
+      "Name": "dragonrise_reforge:missile_9m37",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
@@ -158,7 +158,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locking"
       },
@@ -212,7 +212,8 @@
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8",
     "@superbwarfare:igla_9k38_missile * 0.75",
-    "All - 11"
+    "All - 11",
+    "$entity.getSourceAngle(source, 0.25) * damage"
   ],
   "VehicleContainerType": "Small",
   "DestroyInfo": {

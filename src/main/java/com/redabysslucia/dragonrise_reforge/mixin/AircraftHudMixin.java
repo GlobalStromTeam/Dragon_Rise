@@ -54,6 +54,11 @@ public class AircraftHudMixin {
             CallbackInfo ci) {
         // 仅后座（非一号位）：一号位由官方 HUD 渲染，此处跳过
         if (player == vehicle.getFirstPassenger()) return;
+
+        // Remote-pilot guard: a remote operator is not a real rear-seat passenger.
+        // Without this, the white weapon name is drawn centered under the crosshair,
+        // duplicating the bottom-right weapon HUD we now show for remote pilots.
+        if (player.getVehicle() != vehicle) return;
         // 仅本包双座飞机（不影响 AC-130 等官方多座载具的炮手 HUD）
         if (!"dragonrise_reforge".equals(net.minecraft.world.entity.EntityType.getKey(vehicle.getType()).getNamespace())) return;
         // 吊舱视角（UseNacelleCamera + 缩放）时不显示武器名称

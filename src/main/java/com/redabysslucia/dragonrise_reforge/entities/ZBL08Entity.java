@@ -1,9 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,10 +21,10 @@ public class ZBL08Entity extends DragonriseVehicleBase {
 
         // 防浪板状态: 0=关闭, 1=展开中, 2=已展开, 3=关闭中
         private static final EntityDataAccessor<Integer> FLAP_STATE =
-                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBL08Entity.class, EntityDataSerializers.INT);
         // 动画计时器
         private static final EntityDataAccessor<Integer> FLAP_TIMER =
-                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBL08Entity.class, EntityDataSerializers.INT);
 
         private int lastShootWarningTick = 0;
 
@@ -41,11 +39,6 @@ public class ZBL08Entity extends DragonriseVehicleBase {
                 builder.define(FLAP_TIMER, 0);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
 
         private boolean isMoving() {
                 Vec3 motion = this.getDeltaMovement();

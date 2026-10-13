@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.mixin;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.NBTTool;
+import com.redabysslucia.dragonrise_reforge.client.R6DroneClientLookup;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import net.minecraft.client.Camera;
 import net.minecraft.client.CameraType;
@@ -53,7 +54,10 @@ public abstract class R6DroneCameraMixin {
         CompoundTag tag = NBTTool.getTag(stack);
         if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
-        R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
+        // 必须走客户端专用查找器：R6DroneEntity.findDrone 在 1.20.1 侧已被移除，
+        // 它原来引用 net.minecraft.client.* ，被 Forge dist cleaner 判定为
+        // 专用服务端非法类引用（"Attempted to load class ... for invalid dist DEDICATED_SERVER"）。
+        R6DroneEntity drone = R6DroneClientLookup.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
         if (drone == null) return;
 
         // 相机旋转 = 控制者玩家视角（原生即时，无 SBW 的平滑/滞后）

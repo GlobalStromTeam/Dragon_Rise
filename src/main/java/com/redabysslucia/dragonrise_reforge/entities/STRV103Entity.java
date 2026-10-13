@@ -1,8 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
@@ -13,11 +11,6 @@ public class STRV103Entity extends VehicleEntity {
                 super(type, world);
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
 
 
 }

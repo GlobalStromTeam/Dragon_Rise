@@ -13,7 +13,7 @@
 			"bones": [
 				{
 					"name": "base",
-					"pivot": [2.43656, 22.69397, -15.75],
+					"pivot": [0, 0, 0],
 					"cubes": [
 						{
 							"origin": [-5, 7.49814, -2.5874],
@@ -1505,11 +1505,6 @@
 					]
 				},
 				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [8.06, 71.69, -104.75]
-				},
-				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 19.37138, -4.12504],
@@ -1543,6 +1538,7 @@
 						}
 					]
 				},
+				
 				{
 					"name": "b",
 					"parent": "barrel",

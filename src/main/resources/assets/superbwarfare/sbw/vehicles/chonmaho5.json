@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:chonmaho5",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/chonmaho5.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/chonmaho5.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/chonmaho5.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/chonmaho5.png"
+    }
+  ]
+}

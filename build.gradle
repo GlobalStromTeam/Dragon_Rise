@@ -75,6 +75,13 @@ repositories {
         url = "https://maven.theillusivec4.top/"
     }
 
+    // Sodium 走 Modrinth（maven.modrinth:sodium:...）
+    maven {
+        name = 'Modrinth'
+        url 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+
     maven {
         name = 'GeckoLib'
         url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
@@ -117,7 +124,21 @@ dependencies {
     implementation "com.github.mcmodderanchor:simplebedrockmodel:2.5.1.1-neoforge-mc1.21.1"
 
     implementation "curse.maven:accelerated-rendering-1314021:8179086"
-    runtimeOnly "maven.modrinth:sodium:mc1.21-0.6.0-beta.2-neoforge"
+    // Sodium：编译期需要 SodiumWorldRenderer（StarShellLightManager 用它调度光照重建）
+    compileOnly "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+    runtimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+
+    // ---- 照明弹动态补光（软依赖）----
+    //
+    // 1.20.1 侧用 curse.maven:dynamiclights-reforged-551736:6044481 引入（见 1.20.1/main 的 build.gradle）。
+    // 1.21.1 对应文件号是 6044477。CurseMaven 只提供该构件的 POM、Gradle 不会去下 jar，
+    // 所以沿用 1.21.1 Architectury 工程的做法：预先取回 jar 放 local_repo，再以本地文件依赖接入。
+    // 该 jar 是 official(Mojang) 映射的 1.21.1 构建（同时带 mods.toml 与 neoforge.mods.toml），
+    // 因此可以直接参与编译。
+    //
+    // 只 compileOnly：运行时由玩家自行安装。DynamicLightsCompat#isLoaded 会在未安装时跳过全部引用，
+    // 避免 NoClassDefFoundError 让游戏崩溃。
+    compileOnly files("local_repo/curse/maven/dynamiclights-reforged-551736/6044477/dynamiclights-reforged-551736-6044477.jar")
 }
 
 tasks.named('processResources', ProcessResources).configure {

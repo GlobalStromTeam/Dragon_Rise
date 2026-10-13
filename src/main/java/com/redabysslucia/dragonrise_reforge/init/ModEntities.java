@@ -1,135 +1,203 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.entities.Mi24vEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.F15eEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Mv3SupplyEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Mv3ArmedEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Ural4320SupplyEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Ural4320Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Ural4320Zu23Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Mv3Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Ztz96aEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.T72b3Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Aavc7c1Entity;
-
-
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.MarkvEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Zsl10Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Zbd05Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Ztd05Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.DarkbearEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.M1a1hcEntity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.M270Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Flarakpz1Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.Leopard2a4Entity;
-
-
-import com.redabysslucia.dragonrise_reforge.entities.M113Entity;
-
-
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.*;
-import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
-import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
-import com.redabysslucia.dragonrise_reforge.entities.KV1Entity;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AA625EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Aavc7c1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.AC130Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AH64Entity;
+import com.redabysslucia.dragonrise_reforge.entities.AKMEEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AMX56Entity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.HJ8Entity;
 import com.redabysslucia.dragonrise_reforge.entities.atmg.R9M133Entity;
+import com.redabysslucia.dragonrise_reforge.entities.AV8BEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ba10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.BMD4MEntity;
+import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
+import com.redabysslucia.dragonrise_reforge.entities.BMPT72Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.CamelEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Chonmaho5Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ChurchillVIIEntity;
+import com.redabysslucia.dragonrise_reforge.entities.CM34Entity;
+import com.redabysslucia.dragonrise_reforge.entities.CometEntity;
+import com.redabysslucia.dragonrise_reforge.entities.CSK181Entity;
+import com.redabysslucia.dragonrise_reforge.entities.CV90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.DarkbearEntity;
+import com.redabysslucia.dragonrise_reforge.entities.EC665Entity;
+import com.redabysslucia.dragonrise_reforge.entities.F14Entity;
+import com.redabysslucia.dragonrise_reforge.entities.F15eEntity;
+import com.redabysslucia.dragonrise_reforge.entities.F16CEntity;
+import com.redabysslucia.dragonrise_reforge.entities.F4UEntity;
+import com.redabysslucia.dragonrise_reforge.entities.FA18EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.FAVAEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Flarakpz1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.GeneratorEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.DSHKEntity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.M2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.hmg.qjz89Entity;
+import com.redabysslucia.dragonrise_reforge.entities.HumveeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.HumveetowEntity;
+import com.redabysslucia.dragonrise_reforge.entities.HYR0Entity;
+import com.redabysslucia.dragonrise_reforge.entities.IedEntity;
+import com.redabysslucia.dragonrise_reforge.entities.IkFightcatEntity;
+import com.redabysslucia.dragonrise_reforge.entities.IkLocustEntity;
+import com.redabysslucia.dragonrise_reforge.entities.IS2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J10CEntity;
+import com.redabysslucia.dragonrise_reforge.entities.J10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J11Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J15TEntity;
+import com.redabysslucia.dragonrise_reforge.entities.J16Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J20Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J20VTOLEntity;
+import com.redabysslucia.dragonrise_reforge.entities.J35Entity;
+import com.redabysslucia.dragonrise_reforge.entities.J8Entity;
+import com.redabysslucia.dragonrise_reforge.entities.JAS39EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.JF17Entity;
+import com.redabysslucia.dragonrise_reforge.entities.K1a1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.KA50Entity;
+import com.redabysslucia.dragonrise_reforge.entities.KV1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Kv2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.L1A2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.LcmEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Leopard2a4Entity;
+import com.redabysslucia.dragonrise_reforge.entities.LVTEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M1126Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M1128Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M113Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M1296Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M1a1hcEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M1a2sepv1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M1A2SEPV2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M270Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M3A3Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M3StuartEntity;
+import com.redabysslucia.dragonrise_reforge.entities.M4A2105Entity;
+import com.redabysslucia.dragonrise_reforge.entities.M4A2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.MarkvEntity;
+import com.redabysslucia.dragonrise_reforge.entities.MausEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Mi24pEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Mi24vEntity;
+import com.redabysslucia.dragonrise_reforge.entities.MK19Entity;
+import com.redabysslucia.dragonrise_reforge.entities.motuoEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Mv3ArmedEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Mv3Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Mv3SupplyEntity;
+import com.redabysslucia.dragonrise_reforge.entities.NH90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.NPDS114Entity;
+import com.redabysslucia.dragonrise_reforge.entities.NPDS514Entity;
+import com.redabysslucia.dragonrise_reforge.entities.NPDS810Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Pak40Entity;
+import com.redabysslucia.dragonrise_reforge.entities.PANZER4Entity;
+import com.redabysslucia.dragonrise_reforge.entities.PershingEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Project640Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AAshellEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Agm65CustomEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim120Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Aim9Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AirBomb500kgEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.AntiTopWireGuideMissileEntity;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
-import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu24Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Gb250Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Gb500Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu12Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Gbu24Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.JdamErEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Kd88aEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Kh29Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Ls6Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Ls6IrEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.MissileShellEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.NukerBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl10Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl12Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.Pl15Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.R73Entity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.R77Entity;
-import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
-import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.PZBJYEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Q5Entity;
+import com.redabysslucia.dragonrise_reforge.entities.R2S25MEntity;
+import com.redabysslucia.dragonrise_reforge.entities.REFALEAAEntity;
+import com.redabysslucia.dragonrise_reforge.entities.REFALEEntity;
+import com.redabysslucia.dragonrise_reforge.entities.S2S38Entity;
+import com.redabysslucia.dragonrise_reforge.entities.SD905Entity;
+import com.redabysslucia.dragonrise_reforge.entities.SHIELDEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.SilverhandMkIvEntity;
+import com.redabysslucia.dragonrise_reforge.entities.SpacebagEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.AttackDroneEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.ClusterChargeEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.CyborgTankEntity;
 import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
-import com.redabysslucia.dragonrise_reforge.entities.Ah1fEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.SignalFlareEntity;
+import com.redabysslucia.dragonrise_reforge.entities.special.StarShellEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Spg9Entity;
+import com.redabysslucia.dragonrise_reforge.entities.STRV103Entity;
+import com.redabysslucia.dragonrise_reforge.entities.SU24Entity;
+import com.redabysslucia.dragonrise_reforge.entities.SU24MEntity;
+import com.redabysslucia.dragonrise_reforge.entities.SX1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.syy651Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T26bEntity;
+import com.redabysslucia.dragonrise_reforge.entities.T3476Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T3485Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T72b3Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T80BEntity;
+import com.redabysslucia.dragonrise_reforge.entities.T80Entity;
+import com.redabysslucia.dragonrise_reforge.entities.T90MHEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TerroristEntity;
-import com.redabysslucia.dragonrise_reforge.entities.AmmoSupplyStationEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TESTEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TigerEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TJGCEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TOYOTASEIKIEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TunguskaEntity;
+import com.redabysslucia.dragonrise_reforge.entities.TYPE100Entity;
+import com.redabysslucia.dragonrise_reforge.entities.type3Entity;
+import com.redabysslucia.dragonrise_reforge.entities.type97Entity;
+import com.redabysslucia.dragonrise_reforge.entities.type97QEntity;
+import com.redabysslucia.dragonrise_reforge.entities.UH60Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320SupplyEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ural4320Zu23Entity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.TestShipEntity;
+import com.redabysslucia.dragonrise_reforge.entities.VT4A1Entity;
+import com.redabysslucia.dragonrise_reforge.entities.VT4BEntity;
+import com.redabysslucia.dragonrise_reforge.entities.WLHGZU23Entity;
+import com.redabysslucia.dragonrise_reforge.entities.WLSCEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Z10AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Z10MEEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Z20Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Z9Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zbd05Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZBL08Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZLT11Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsd89aEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsl10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZSU234EEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ztd05Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZTQ15Entity;
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ59AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ztz96aEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AHEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ZTZ99BHEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ZU23Entity;
+import com.redabysslucia.dragonrise_reforge.init.ModEntities;
+import com.redabysslucia.dragonrise_reforge.mixin.MinecraftRemoteSeatMixin;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
-@net.neoforged.fml.common.EventBusSubscriber(bus = net.neoforged.fml.common.EventBusSubscriber.Bus.MOD)
 public class ModEntities {
 
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, Dragonrise_reforge.MODID);
@@ -1190,6 +1258,15 @@ public class ModEntities {
                     .sized(0.6f, 2f)
     );
 
+    /** 红箭8 发射后向后弹出的空发射筒（纯表现，3 秒后消失） */
+    public static final DeferredHolder<EntityType<?>, EntityType<MissileShellEntity>> MISSILE_SHELL = register("missile_shell",
+            EntityType.Builder.<MissileShellEntity>of(MissileShellEntity::new, MobCategory.MISC)
+                    .setTrackingRange(64)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
     public static final DeferredHolder<EntityType<?>, EntityType<Ah1fEntity>> AH1F = register("ah1f",
             EntityType.Builder.of(Ah1fEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1364,6 +1441,18 @@ public class ModEntities {
                     .setUpdateInterval(1)
                     .sized(0.4f, 0.2f)
     );
+    public static final DeferredHolder<EntityType<?>, EntityType<SignalFlareEntity>> SIGNAL_FLARE = register("signal_flare",
+            EntityType.Builder.<SignalFlareEntity>of((type, level) -> new SignalFlareEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(128)
+                    .setUpdateInterval(1)
+                    .sized(0.2f, 0.2f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<StarShellEntity>> STAR_SHELL = register("star_shell",
+            EntityType.Builder.<StarShellEntity>of((type, level) -> new StarShellEntity(type, level), MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .sized(0.3f, 0.3f)
+    );
     public static final DeferredHolder<EntityType<?>, EntityType<Ural4320Zu23Entity>> URAL4320_ZU23 = register("ural4320_zu23",
             EntityType.Builder.of(Ural4320Zu23Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
@@ -1413,6 +1502,139 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
+    public static final DeferredHolder<EntityType<?>, EntityType<IkLocustEntity>> IK_LOCUST = register("ik_locust",
+            EntityType.Builder.of(IkLocustEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<IkFightcatEntity>> IK_FIGHTCAT = register("ik_fightcat",
+            EntityType.Builder.of(IkFightcatEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Mi24pEntity>> MI24P = register("mi24p",
+            EntityType.Builder.of(Mi24pEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    //public static final DeferredHolder<EntityType<?>, EntityType<Bkan1cEntity>> BKAN1C = register("bkan1c",
+    //        EntityType.Builder.of(Bkan1cEntity::new, MobCategory.MISC)
+    //                .setTrackingRange(512)
+    //                .setUpdateInterval(2)
+    //                .fireImmune()
+    //                .sized(4.0f, 2.9f)
+    //);
+    public static final DeferredHolder<EntityType<?>, EntityType<M1128Entity>> M1128 = register("m1128",
+            EntityType.Builder.of(M1128Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<M1296Entity>> M1296 = register("m1296",
+            EntityType.Builder.of(M1296Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<M1126Entity>> M1126 = register("m1126",
+            EntityType.Builder.of(M1126Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Ba10Entity>> BA10 = register("ba10",
+            EntityType.Builder.of(Ba10Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Kv2Entity>> KV2 = register("kv2",
+            EntityType.Builder.of(Kv2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<T26bEntity>> T26B = register("t26b",
+            EntityType.Builder.of(T26bEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<SilverhandMkIvEntity>> SILVERHAND_MK_IV = register("silverhand_mk_iv",
+            EntityType.Builder.of(SilverhandMkIvEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.8f, 3.7f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<LcmEntity>> LCM = register("lcm",
+            EntityType.Builder.of(LcmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<M1a2sepv1Entity>> M1A2SEPV1 = register("m1a2sepv1",
+            EntityType.Builder.of(M1a2sepv1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Chonmaho5Entity>> CHONMAHO5 = register("chonmaho5",
+            EntityType.Builder.of(Chonmaho5Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<K1a1Entity>> K1A1 = register("k1a1",
+            EntityType.Builder.of(K1a1Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Spg9Entity>> SPG9 = register("spg9",
+            EntityType.Builder.of(Spg9Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<ShuangweixieEntity>> SHUANGWEIXIE = register("shuangweixie",
+            EntityType.Builder.of(ShuangweixieEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 1.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Zsd89aEntity>> ZSD89A = register("zsd89a",
+            EntityType.Builder.of(Zsd89aEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Zsd89aCoveredEntity>> ZSD89A_COVERED = register("zsd89a_covered",
+            EntityType.Builder.of(Zsd89aCoveredEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
     private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
@@ -1423,4 +1645,9 @@ public class ModEntities {
         event.put(TERRORIST.get(), TerroristEntity.createAttributes().build());
     }
 
+    public static final DeferredHolder<EntityType<?>, EntityType<IedEntity>> IED = register("ied",
+            EntityType.Builder.<IedEntity>of(IedEntity::new, MobCategory.MISC)
+                    .setTrackingRange(64).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
 }
+

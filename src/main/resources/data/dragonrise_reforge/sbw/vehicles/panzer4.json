@@ -170,7 +170,7 @@
                                                      "Fire3PFar":  "dragonrise_reforge:m1a2_fire_3p_far",
                                                      "Fire3PVeryFar":  "dragonrise_reforge:m1a2_fire_3p_far",
                                                      "VehicleReload":  "dragonrise_reforge:ztz99a_reload",
-                                                     "Change":  "dragonrise_reforge:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:into_cannon"
                                                                            ]
@@ -181,7 +181,7 @@
                                                     "Positions":  [
                                                                       [
                                                                           0.1,
-                                                                          -0.5,
+                                                                          0.0,
                                                                           11.5
                                                                       ]
                                                                   ],
@@ -229,12 +229,12 @@
                                                          "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                          "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                          "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                         "Change":  "superbwarfare:into_cannon"
+                                                         "Change":  "dragonrise_reforge:change_weapon"
                                                      },
                                        "SoundRadius":  16
                                    },
                     "PassengerMachineGun":  {
-                                                "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+                                                "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
@@ -266,13 +266,13 @@
                                                                                 ]
                                                              },
                                                 "Crosshair":  "@VehicleDynamicCross",
-                                                "Name":  "CRC F1 12,7mm",
+                                                "Name":  "dragonrise_reforge:mg34",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
                                                                   "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                                   "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                                   "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                                  "Change":  "superbwarfare:into_cannon"
+                                                                  "Change":  "dragonrise_reforge:change_weapon"
                                                               },
                                                 "SoundRadius":  16
                                             }
@@ -344,7 +344,8 @@
                             "@#superbwarfare:at_rocket * 1.1",
                             "@superbwarfare:gun_grenade * 1.25",
                             "@superbwarfare:mortar_shell * 1.25",
-                            "@superbwarfare:tm_62 * 2.5"
+                            "@superbwarfare:tm_62 * 2.5",
+                            "$entity.getSourceAngle(source, 0.3) * damage"
                         ],
     "DestroyInfo":  {
                         "ParticleType":  "Giant",

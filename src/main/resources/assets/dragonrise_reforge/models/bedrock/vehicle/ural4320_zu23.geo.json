@@ -7327,11 +7327,7 @@
 						}
 					]
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [6.85503, 86.87979, -58.84655]
-				},
+				
 				{
 					"name": "b6",
 					"parent": "barrel",
@@ -10747,11 +10743,6 @@
 				},
 				{
 					"name": "Car",
-					"parent": "Obb",
-					"pivot": [0, 0, 0]
-				},
-				{
-					"name": "Build",
 					"parent": "Obb",
 					"pivot": [0, 0, 0]
 				},

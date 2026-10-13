@@ -35,10 +35,18 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.PANZER4.get(), createTankLoot(3, 1));
         add(ModEntities.M4A2.get(), createTankLoot(3, 1));
         add(ModEntities.M4A2105.get(), createTankLoot(3, 1));
+        add(ModEntities.SILVERHAND_MK_IV.get(), createTankLoot(6, 1));
+        add(ModEntities.K1A1.get(), createTankLoot(6, 1));
 
         // 轻型坦克/装甲车
         add(ModEntities.ZTQ15.get(), createLightTankLoot(4));
         add(ModEntities.M10BOOKER.get(), createLightTankLoot(4));
+        add(ModEntities.M1296.get(), createLightTankLoot(3));
+        add(ModEntities.M1128.get(), createLightTankLoot(4));
+        add(ModEntities.BA10.get(), createLightVehicleLoot(2));
+        add(ModEntities.T26B.get(), createLightTankLoot(3));
+        add(ModEntities.KV2.get(), createTankLoot(5, 1));
+        add(ModEntities.LCM.get(), createLightVehicleLoot(3));
         add(ModEntities.R2S25M.get(), createLightTankLoot(3));
         add(ModEntities.BMP3.get(), createLightTankLoot(3));
         add(ModEntities.BMPT72.get(), createLightTankLoot(4));
@@ -76,6 +84,7 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.MK19.get(), createLightVehicleLoot(1));
         add(ModEntities.ZU23.get(), createLightVehicleLoot(1));
         add(ModEntities.DSHK.get(), createLightVehicleLoot(1));
+        add(ModEntities.SPG9.get(), createLightVehicleLoot(1));
         add(ModEntities.M2.get(), createLightVehicleLoot(1));
         add(ModEntities.qjz89.get(), createLightVehicleLoot(1));
         add(ModEntities.AKM.get(), createLightVehicleLoot(1));

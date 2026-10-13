@@ -4,12 +4,8 @@
                        "animation.vt4a1.idle":  {
                                                     "loop":  true,
                                                     "bones":  {
-                                                                  "flare":  {
-                                                                                "scale":  0
-                                                                            },
-                                                                  "flare2":  {
-                                                                                 "scale":  0
-                                                                             }
+                                                                  
+                                                                  
                                                               }
                                                 },
                        "animation.vt4a1.fire":  {
@@ -324,49 +320,14 @@
                        "animation.cannon.idle":  {
                                                      "loop":  true,
                                                      "bones":  {
-                                                                   "flare":  {
-                                                                                 "scale":  0
-                                                                             }
+                                                                   
                                                                }
                                                  },
                        "animation.cannon.fire":  {
                                                      "loop":  "hold_on_last_frame",
                                                      "animation_length":  2,
                                                      "bones":  {
-                                                                   "flare":  {
-                                                                                 "scale":  {
-                                                                                               "0.0":  [
-                                                                                                           0,
-                                                                                                           0,
-                                                                                                           0
-                                                                                                       ],
-                                                                                               "0.0083":  [
-                                                                                                              6,
-                                                                                                              6,
-                                                                                                              6
-                                                                                                          ],
-                                                                                               "0.05":  [
-                                                                                                            8,
-                                                                                                            8,
-                                                                                                            8
-                                                                                                        ],
-                                                                                               "0.075":  [
-                                                                                                             1,
-                                                                                                             1,
-                                                                                                             1
-                                                                                                         ],
-                                                                                               "0.0917":  [
-                                                                                                              0,
-                                                                                                              0,
-                                                                                                              0
-                                                                                                          ],
-                                                                                               "0.15":  [
-                                                                                                            0,
-                                                                                                            0,
-                                                                                                            0
-                                                                                                        ]
-                                                                                           }
-                                                                             },
+                                                                   
                                                                    "bone18":  {
                                                                                   "position":  {
                                                                                                    "0.0417":  [
@@ -675,97 +636,27 @@
                        "animation.machine_gun.idle":  {
                                                           "loop":  true,
                                                           "bones":  {
-                                                                        "flare2":  {
-                                                                                       "scale":  0
-                                                                                   }
+                                                                        
                                                                     }
                                                       },
                        "animation.machine_gun.fire":  {
                                                           "loop":  "hold_on_last_frame",
                                                           "animation_length":  0.15,
                                                           "bones":  {
-                                                                        "flare2":  {
-                                                                                       "scale":  {
-                                                                                                     "0.0":  [
-                                                                                                                 0,
-                                                                                                                 0,
-                                                                                                                 0
-                                                                                                             ],
-                                                                                                     "0.0083":  [
-                                                                                                                    6,
-                                                                                                                    6,
-                                                                                                                    6
-                                                                                                                ],
-                                                                                                     "0.05":  [
-                                                                                                                  8,
-                                                                                                                  8,
-                                                                                                                  8
-                                                                                                              ],
-                                                                                                     "0.075":  [
-                                                                                                                   1,
-                                                                                                                   1,
-                                                                                                                   1
-                                                                                                               ],
-                                                                                                     "0.0917":  [
-                                                                                                                    0,
-                                                                                                                    0,
-                                                                                                                    0
-                                                                                                                ],
-                                                                                                     "0.15":  [
-                                                                                                                  0,
-                                                                                                                  0,
-                                                                                                                  0
-                                                                                                              ]
-                                                                                                 }
-                                                                                   }
+                                                                        
                                                                     }
                                                       },
                        "animation.passenger_machine_gun.idle":  {
                                                                     "loop":  true,
                                                                     "bones":  {
-                                                                                  "flare3":  {
-                                                                                                 "scale":  0
-                                                                                             }
+                                                                                  
                                                                               }
                                                                 },
                        "animation.passenger_machine_gun.fire":  {
                                                                     "loop":  "hold_on_last_frame",
                                                                     "animation_length":  0.15,
                                                                     "bones":  {
-                                                                                  "flare3":  {
-                                                                                                 "scale":  {
-                                                                                                               "0.0":  [
-                                                                                                                           0,
-                                                                                                                           0,
-                                                                                                                           0
-                                                                                                                       ],
-                                                                                                               "0.0083":  [
-                                                                                                                              6,
-                                                                                                                              6,
-                                                                                                                              6
-                                                                                                                          ],
-                                                                                                               "0.05":  [
-                                                                                                                            8,
-                                                                                                                            8,
-                                                                                                                            8
-                                                                                                                        ],
-                                                                                                               "0.075":  [
-                                                                                                                             1,
-                                                                                                                             1,
-                                                                                                                             1
-                                                                                                                         ],
-                                                                                                               "0.0917":  [
-                                                                                                                              0,
-                                                                                                                              0,
-                                                                                                                              0
-                                                                                                                          ],
-                                                                                                               "0.15":  [
-                                                                                                                            0,
-                                                                                                                            0,
-                                                                                                                            0
-                                                                                                                        ]
-                                                                                                           }
-                                                                                             }
+                                                                                  
                                                                               }
                                                                 }
                    }

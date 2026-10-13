@@ -42,6 +42,10 @@ public class ModSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->
         SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "r6_drone_down")));
 
+    /** IED 引爆音效（1.20.1 侧新增） */
+    public static final DeferredHolder<SoundEvent, SoundEvent> IED = REGISTRY.register("ied", () ->
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "ied")));
+
     /** 载具音效（开火/装填/引擎等）。仅写 sounds.json 不会被注册进 ForgeRegistries.SOUND_EVENTS，
      *  1.20.1 里 Level.playSound 需要 Holder<SoundEvent>，未注册的事件会静默失败。 */
     private static final String[] VEHICLE_SOUNDS = {
@@ -66,8 +70,6 @@ public class ModSounds {
         "m1a2_fire_3p_far",
         "m1a2_reload",
         "m2a3_engine_loop",
-        "m2a3fire",
-        "m2a3firefar",
         "mgfire1",
         "mgfire11",
         "plane_loop",
@@ -92,9 +94,6 @@ public class ModSounds {
         "ztz59_fire_1p",
         "ztz59_fire_3p_far",
         "ztz99a_engine",
-        "ztz99a_fire_1p",
-        "ztz99a_fire_3p",
-        "ztz99a_fire_3p_far",
         "ztz99a_reload"
     };
 

@@ -39,7 +39,7 @@
       "CustomRotate": [2.0,0.0,0.0]
     },
     {
-      "Size": [1.973,0.794,4.039],
+      "Size": [1.973,0.8,4.039],
       "Position": [0.0,0.8,0.04],
       "Part": "Collision"
     },
@@ -233,12 +233,12 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "superbwarfare:ztz_99a_fire_1p",
-        "Fire3P": "superbwarfare:ztz_99a_fire_3p",
-        "Fire3PFar": "superbwarfare:ztz_99a_far",
-        "Fire3PVeryFar": "superbwarfare:ztz_99a_veryfar",
-        "VehicleReload": "superbwarfare:ztz_99a_reload",
-        "Change": "superbwarfare:into_cannon",
+        "Fire1P": "dragonrise_reforge:cannon_125mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:cannon_125mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:cannon_125mm_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
+        "VehicleReload":  "dragonrise_reforge:auto_loader",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "dragonrise_reforge:ztz99a_reload"
         ]
@@ -247,8 +247,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.001,-0.396,7.327],
-          [-0.376,0.022,2.15]
+          [0.001,0.104,7.327],
+          [0.124,0.022,2.15]
         ],
         "Directions": [
           "Barrel"
@@ -288,11 +288,11 @@
       },
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
+        "Fire1P": "dragonrise_reforge:s_coax_fire",
         "Fire3P": "superbwarfare:m_60_fire_3p",
         "Fire3PFar": "superbwarfare:m_60_far",
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     },
@@ -329,12 +329,12 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:88C",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
-        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
-        "Fire3PFar": "superbwarfare:m_2_hb_far",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
-      },
+        "Fire1P":  "dragonrise_reforge:qjz89_fire_1p",
+        "Fire3P":  "dragonrise_reforge:qjz89_fire_3p",
+        "Fire3PFar":  "dragonrise_reforge:qjz89_fire_3p_far",
+        "Fire3PVeryFar":  "dragonrise_reforge:qjz89_fire_3p_very_far",
+        "Change":  "dragonrise_reforge:change_weapon"
+    },
       "SoundRadius": 16
     }
   },

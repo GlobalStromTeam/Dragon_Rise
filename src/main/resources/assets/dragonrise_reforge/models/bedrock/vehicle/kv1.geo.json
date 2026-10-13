@@ -7,8 +7,8 @@
 				"texture_width": 512,
 				"texture_height": 512,
 				"visible_bounds_width": 14,
-				"visible_bounds_height": 4.5,
-				"visible_bounds_offset": [0, 1.75, 0]
+				"visible_bounds_height": 5,
+				"visible_bounds_offset": [0, 1.5, 0]
 			},
 			"bones": [
 				{
@@ -4684,6 +4684,25 @@
 				{
 					"name": "Obb",
 					"pivot": [0, 0, -18.35837]
+				},
+				{
+					"name": "CollisionObb",
+					"parent": "Obb",
+					"pivot": [0, 15.12275, 9.32688],
+					"cubes": [
+						{
+							"origin": [-33.3, -1.07225, -51.37312],
+							"size": [66.6, 32.39, 121.4],
+							"uv": {
+								"north": {"uv": [1016, 1016], "uv_size": [4, 4]},
+								"east": {"uv": [1016, 1016], "uv_size": [4, 4]},
+								"south": {"uv": [1016, 1016], "uv_size": [4, 4]},
+								"west": {"uv": [1016, 1016], "uv_size": [4, 4]},
+								"up": {"uv": [1016, 1016], "uv_size": [4, 4]},
+								"down": {"uv": [1016, 1016], "uv_size": [4, 4]}
+							}
+						}
+					]
 				},
 				{
 					"name": "Obb1",

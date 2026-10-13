@@ -1198,11 +1198,6 @@
 					"pivot": [-16.7, 0.6, 24.75]
 				},
 				{
-					"name": "Build",
-					"parent": "Obb",
-					"pivot": [0, 0, 0]
-				},
-				{
 					"name": "root",
 					"pivot": [0, 0, 0]
 				},

@@ -2366,16 +2366,8 @@
 						"explode2": [0, 49, -5.2]
 					}
 				},
-				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [1.43, 75.28, -191.03]
-				},
-				{
-					"name": "flare2",
-					"parent": "barrel",
-					"pivot": [1.43, 75.28, -191.03]
-				},
+				
+				
 				{
 					"name": "barrel",
 					"parent": "turret",

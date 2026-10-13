@@ -176,13 +176,13 @@
                                    "ShootAnimationTime":  3,
                                    "Crosshair":  "@VehicleUsApc",
                                    "CrosshairColor":  "0x66FF00",
-                                   "Name":  "dragonrise_reforge:04mc",
+                                   "Name":  "dragonrise_reforge:20mm_anm2",
                                    "SoundInfo":  {
                                                      "Fire1P":  "superbwarfare:lav_150_cannon_fire_1p",
                                                      "Fire3P":  "superbwarfare:lav_150_cannon_fire_3p",
                                                      "Fire3PFar":  "superbwarfare:lav_150_cannon_far",
                                                      "Fire3PVeryFar":  "superbwarfare:lav_150_cannon_veryfar",
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "SoundRadius":  24,
                                    "AmmoType":  "superbwarfare:small_shell_ap",
@@ -225,7 +225,7 @@
                                    "EmptyReloadTime":  160,
                                    "Projectile":  "superbwarfare:small_rocket",
                                    "Spread":  0.4,
-                                   "Name":  "dragonrise_reforge:huo_fa6",
+                                   "Name":  "dragonrise_reforge:hvar",
                                    "RPM":  450,
                                    "Damage":  80,
                                    "ExplosionDamage":  40,
@@ -294,7 +294,7 @@
                                                      "Fire3P":  "superbwarfare:small_rocket_fire_3p",
                                                      "VehicleReload3p":  "superbwarfare:missile_reload",
                                                      "VehicleReloadSoundTime":  7,
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@AirCraftCommon",
                                    "CrosshairColor":  "0x66FF00",
@@ -357,7 +357,7 @@
                                                    "Fire3P":  "superbwarfare:bomb_release",
                                                    "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                    "VehicleReloadSoundTime":  11,
-                                                   "Change":  "superbwarfare:into_missile"
+                                                   "Change":  "dragonrise_reforge:change_weapon"
                                                },
                                  "Crosshair":  "@AirBomb",
                                  "CrosshairColor":  "0x66FF00",

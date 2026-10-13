@@ -5,6 +5,7 @@ import net.minecraft.network.syncher.SynchedEntityData;import com.redabysslucia.
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
@@ -13,10 +14,10 @@ public class Zsl10Entity extends SyncCameraVehicle {
 
         // 防浪板状态: 0=关闭, 1=展开中, 2=已展开, 3=关闭中
         private static final EntityDataAccessor<Integer> FLAP_STATE =
-                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(Zsl10Entity.class, EntityDataSerializers.INT);
         // 动画计时器
         private static final EntityDataAccessor<Integer> FLAP_TIMER =
-                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(Zsl10Entity.class, EntityDataSerializers.INT);
 
         private int waterCheckCooldown = 0;
 

@@ -60,14 +60,14 @@
   "Weapons": {
     "AAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_fb10.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
       "DefaultZoom": 4,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 2,
       "EmptyReloadTime": 150,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:missile_fb10",
+      "Name": "dragonrise_reforge:roland",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,
@@ -97,7 +97,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locking"
       },
@@ -163,7 +163,7 @@
     "ExplosionRadius": 8
   },
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/flarakpz1_icon.png",
-  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/gm_land.png",
   "Type": "APC",
   "CollisionLevel": {
     "Level": 3,

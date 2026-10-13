@@ -121,7 +121,7 @@
   ],
   "Weapons": {
     "Cannon": {
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_aa.png",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_aa.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Projectile": "superbwarfare:small_cannon_shell",
@@ -142,13 +142,13 @@
       "ShootAnimationTime": 3,
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.25mm_cannon_aa",
+      "Name": "dragonrise_reforge:cannon_35mm_aa",
       "SoundInfo": {
         "Fire1P": "superbwarfare:lav_150_cannon_fire_1p",
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
         "Fire3PFar": "superbwarfare:lav_150_cannon_far",
         "Fire3PVeryFar": "superbwarfare:lav_150_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:small_shell_aa",
@@ -157,8 +157,8 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008,0.053,3.969],
-          [1.008,0.053,3.969]
+          [-1.008, 0.053, 4.321],
+          [1.008, 0.053, 4.321]
         ],
         "Directions": [
           "Barrel"
@@ -196,7 +196,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008,0.053,3.969]
+          [-1.008,0.053,4.321]
         ],
         "Directions": [
           "Barrel"
@@ -209,7 +209,7 @@
         "Fire3P": "superbwarfare:m_60_fire_3p",
         "Fire3PFar": "superbwarfare:m_60_far",
         "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 12
     },
@@ -240,10 +240,10 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.773,0.178,0.781],
-          [-1.773,-0.056,0.781],
-          [1.773,-0.056,0.781],
-          [1.773,0.178,0.781]
+          [-1.773, 0.178, 1.133],
+          [-1.773, -0.056, 1.133],
+          [1.773, -0.056, 1.133],
+          [1.773, 0.178, 1.133]
         ],
         "Directions": [
           "Barrel"
@@ -254,7 +254,7 @@
         "Fire3P": "superbwarfare:bomb_release",
         "VehicleReload3p": "superbwarfare:bomb_reload",
         "VehicleReloadSoundTime": 11,
-        "Change": "superbwarfare:into_missile",
+        "Change":  "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
         "Locked": "superbwarfare:javelin_locking"
       },
@@ -313,7 +313,8 @@
     "#superbwarfare:projectile_absolute * 0.7",
     "@superbwarfare:mortar_shell * 1.1",
     "@superbwarfare:gun_grenade * 1.5",
-    "@superbwarfare:javelin_missile * 0.8"
+    "@superbwarfare:javelin_missile * 0.8",
+    "$entity.getSourceAngle(source, 0.25) * damage"
   ],
   "VehicleContainerType": "Small",
   "DestroyInfo": {

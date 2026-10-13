@@ -222,13 +222,13 @@
                                    "Spread":  0.6,
                                    "Crosshair":  "@VehicleCommonGun",
                                    "CrosshairColor":  "0xFFC700",
-                                   "Name":  "dragonrise_reforge:mk19",
+                                   "Name":  "dragonrise_reforge:m2hb",
                                    "SoundInfo":  {
                                                      "Fire1P":  "dragonrise_reforge:zbd04a_30mm_fire_1p",
                                                      "Fire3P":  "dragonrise_reforge:zbd04a_30mm_fire_3p",
                                                      "Fire3PFar":  "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
                                                      "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "SoundRadius":  24,
                                    "AmmoType":  "@HeavyAmmo",
@@ -286,7 +286,8 @@
                             "@superbwarfare:gun_grenade * 1.4",
                             "@superbwarfare:rgo_grenade * 3",
                             "@superbwarfare:hand_grenade * 2.5",
-                            "@superbwarfare:mortar_shell * 2"
+                            "@superbwarfare:mortar_shell * 2",
+                            "$entity.getSourceAngle(source, 0.25) * damage"
                         ],
     "VehicleContainerType":  "Huge",
     "DestroyInfo":  {

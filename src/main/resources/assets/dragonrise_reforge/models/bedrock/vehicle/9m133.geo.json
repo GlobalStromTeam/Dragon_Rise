@@ -207,17 +207,12 @@
 					]
 				},
 				{
-					"name": "flare",
-					"parent": "barrel",
-					"pivot": [7.09, 41.33, 18.37]
-				},
-				{
 					"name": "barrel",
 					"parent": "turret",
 					"pivot": [0, 20.29638, 0]
 				},
 				{
-					"name": "missile",
+					"name": "move_missile",
 					"parent": "barrel",
 					"pivot": [0.00802, 24.77043, 1.3734],
 					"rotation": [0, -90, 0],

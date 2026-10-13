@@ -1,0 +1,25 @@
+{
+  "Skins": [
+    {
+      "Id": "green",
+      "Name": "绿色涂装",
+      "Description": "使用喷漆罐喷涂的 绿色涂装涂装",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_green.png",
+      "Priority": 0
+    },
+    {
+      "Id": "jungle",
+      "Name": "jungle",
+      "Description": "使用喷漆罐喷涂的 jungle涂装",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_jungle.png",
+      "Priority": 0
+    },
+    {
+      "Id": "sand",
+      "Name": "沙漠涂装",
+      "Description": "使用喷漆罐喷涂的 沙漠涂装涂装",
+      "Texture": "dragonrise_reforge:textures/entity/ztq15_sand.png",
+      "Priority": 0
+    }
+  ]
+}

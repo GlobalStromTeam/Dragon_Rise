@@ -42,6 +42,15 @@ public class VehicleSkinGenerator implements DataProvider {
     /** 非涂装的贴图后缀（跳过，不生成皮肤条目） */
     private static final Set<String> EXCLUDED_SUFFIXES = Set.of("icon", "glow", "icon_item", "outline");
 
+    /**
+     * 是否为非涂装后缀（不生成皮肤条目）：固定的非涂装名（icon / glow / …），
+     * 以及皮肤自带的发光贴图 {@code {涂装ID}_glow}
+     * （例如 tjgc_skin.png 的发光贴图 tjgc_skin_glow.png 属于 skin 涂装，不是独立涂装）。
+     */
+    private static boolean isExcludedSuffix(String suffix) {
+        return EXCLUDED_SUFFIXES.contains(suffix) || suffix.endsWith("_glow");
+    }
+
     /** 涂装 ID → 显示名（可扩展；未命名的直接用 ID） */
     private static final Map<String, String> SKIN_NAMES = new TreeMap<>();
 
@@ -97,7 +106,7 @@ public class VehicleSkinGenerator implements DataProvider {
                         for (String id : idsByLengthDesc) {
                             if (name.length() > id.length() + 1 && name.startsWith(id + "_")) {
                                 String suffix = name.substring(id.length() + 1);
-                                if (!EXCLUDED_SUFFIXES.contains(suffix)) {
+                                if (!isExcludedSuffix(suffix)) {
                                     skinsByVehicle.computeIfAbsent(id, k -> new TreeSet<>()).add(suffix);
                                 }
                                 break; // 已匹配到最长 id，停止

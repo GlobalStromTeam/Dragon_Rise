@@ -118,7 +118,7 @@
         "Fire3PFar": "dragonrise_reforge:m1a2_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:m1a2_fire_3p_far",
         "VehicleReload": "dragonrise_reforge:ztz99a_reload",
-        "Change": "dragonrise_reforge:into_cannon",
+        "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
           "dragonrise_reforge:into_cannon"
         ]
@@ -127,7 +127,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.0,-0.003,3.078]
+          [0.0,-0.003,1.828]
         ],
         "Directions": [
           "Barrel"
@@ -156,7 +156,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.419,0.021,1.52]
+          [0.419,0.021,0.27]
         ],
         "Directions": [
           "Barrel"
@@ -169,7 +169,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     },
@@ -208,7 +208,7 @@
         "Fire3P": "superbwarfare:m_2_hb_fire_3p",
         "Fire3PFar": "superbwarfare:m_2_hb_far",
         "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Change":  "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     }
@@ -266,7 +266,8 @@
     "@#superbwarfare:at_rocket * 1.1",
     "@superbwarfare:gun_grenade * 1.25",
     "@superbwarfare:mortar_shell * 1.25",
-    "@superbwarfare:tm_62 * 2.5"
+    "@superbwarfare:tm_62 * 2.5",
+    "$entity.getSourceAngle(source, 0.30) * damage"
   ],
   "DestroyInfo": {
     "ParticleType": "Giant",

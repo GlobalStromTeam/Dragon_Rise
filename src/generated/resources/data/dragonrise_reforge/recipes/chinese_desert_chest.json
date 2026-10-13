@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    },
+    "D": {
+      "tag": "forge:dyes/orange"
+    }
+  },
+  "pattern": [
+    "KDK",
+    "K K",
+    "K K"
+  ],
+  "result": {
+    "item": "dragonrise_reforge:chinese_desert_chest"
+  },
+  "show_notification": true
+}

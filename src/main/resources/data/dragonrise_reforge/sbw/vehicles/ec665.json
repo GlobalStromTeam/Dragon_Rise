@@ -239,7 +239,7 @@
                                                      "Fire3P":  "superbwarfare:bmp_2_cannon_fire_3p",
                                                      "Fire3PFar":  "superbwarfare:mi_28_cannon_far",
                                                      "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
-                                                     "Change":  "superbwarfare:into_cannon"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@VehicleCommonGunDynamic",
                                    "CrosshairColor":  "0xFFC700",
@@ -313,7 +313,7 @@
                                                      "Fire3P":  "superbwarfare:small_rocket_fire_3p",
                                                      "VehicleReload3p":  "superbwarfare:missile_reload",
                                                      "VehicleReloadSoundTime":  7,
-                                                     "Change":  "superbwarfare:into_missile"
+                                                     "Change":  "dragonrise_reforge:change_weapon"
                                                  },
                                    "Crosshair":  "@Empty",
                                    "SoundRadius":  12
@@ -337,7 +337,7 @@
                                                        "Fire3P":  "superbwarfare:bomb_release",
                                                        "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                        "VehicleReloadSoundTime":  11,
-                                                       "Change":  "superbwarfare:into_missile"
+                                                       "Change":  "dragonrise_reforge:change_weapon"
                                                    },
                                      "SoundRadius":  8
                                  },
@@ -346,7 +346,7 @@
                                              "Magazine":  8,
                                              "Template":  "@Missile",
                                              "AmmoType":  "superbwarfare:medium_anti_ground_missile",
-                                             "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+                                             "Crosshair":  "@VehicleCommonSeekMissile",
                                              "ShootPos":  {
                                                               "Transform":  "Vehicle",
                                                               "ShootPositionForHud":  [
@@ -410,7 +410,7 @@
                                                              "Ammo":  "superbwarfare:large_anti_ground_missile",
                                                              "ShouldUnload":  false,
                                                              "Override":  {
-                                                                              "Name":  "dragonrise_reforge:ba11_1",
+                                                                              "Name":  "dragonrise_reforge:dyh_ground",
                                                                               "SeekWeaponInfo":  {
                                                                                                      "SeekDirection":  "Barrel",
                                                                                                      "SeekRange":  384,
@@ -423,13 +423,13 @@
                                                                           }
                                                          }
                                                      ],
-                                        "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ba11.png",
+                                        "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_dyh.png",
                                         "DefaultZoom":  3,
                                         "DefaultFireMode":  "Semi",
                                         "Magazine":  4,
                                         "EmptyReloadTime":  260,
                                         "Projectile":  "superbwarfare:kh_39",
-                                        "Name":  "dragonrise_reforge:ba11_2",
+                                        "Name":  "dragonrise_reforge:dyh",
                                         "Damage":  1100,
                                         "ExplosionDamage":  180,
                                         "ExplosionRadius":  12,
@@ -480,12 +480,12 @@
                                                           "Fire3P":  "superbwarfare:bomb_release",
                                                           "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                           "VehicleReloadSoundTime":  11,
-                                                          "Change":  "superbwarfare:into_missile",
+                                                          "Change":  "dragonrise_reforge:change_weapon",
                                                           "Locking":  "superbwarfare:javelin_locking",
                                                           "Locked":  "superbwarfare:javelin_locked"
                                                       },
                                         "CrosshairColor":  "0xFFC700",
-                                        "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
+                                        "Crosshair":  "@VehicleCommonSeekMissile",
                                         "SoundRadius":  8,
                                         "AvailableFireModes":  [
                                                                    "Semi"
@@ -493,14 +493,14 @@
                                     },
                     "DriverAAMissile":  {
                                             "AmmoType":  "superbwarfare:medium_anti_air_missile",
-                                            "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_ty90.png",
+                                            "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
                                             "DefaultZoom":  2,
                                             "DefaultFireMode":  "Semi",
                                             "AvailableFireModes":  "Semi",
                                             "Magazine":  4,
                                             "EmptyReloadTime":  260,
                                             "Projectile":  "superbwarfare:ru_9m336_missile",
-                                            "Name":  "dragonrise_reforge:ty90",
+                                            "Name":  "dragonrise_reforge:mistral",
                                             "Damage":  260,
                                             "ExplosionDamage":  90,
                                             "ExplosionRadius":  6,
@@ -551,7 +551,7 @@
                                                               "Fire3P":  "superbwarfare:bomb_release",
                                                               "VehicleReload3p":  "superbwarfare:bomb_reload",
                                                               "VehicleReloadSoundTime":  11,
-                                                              "Change":  "superbwarfare:into_missile",
+                                                              "Change":  "dragonrise_reforge:change_weapon",
                                                               "Locking":  "superbwarfare:javelin_locking",
                                                               "Locked":  "superbwarfare:javelin_locking"
                                                           },

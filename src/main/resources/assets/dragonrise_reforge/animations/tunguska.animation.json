@@ -4,12 +4,8 @@
     "animation.tunguska.idle": {
       "animation_length": 0.25,
       "bones": {
-        "flare": {
-          "scale": 0
-        },
-        "flare2": {
-          "scale": 0
-        }
+        
+        
       }
     },
     "animation.tunguska.fire": {

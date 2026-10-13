@@ -8198,11 +8198,6 @@
 					"pivot": [0, 28.4, 28]
 				},
 				{
-					"name": "Build",
-					"parent": "Obb",
-					"pivot": [0, 28.4, 28]
-				},
-				{
 					"name": "NacellePos",
 					"pivot": [14.1, 10.675, -29.25]
 				},

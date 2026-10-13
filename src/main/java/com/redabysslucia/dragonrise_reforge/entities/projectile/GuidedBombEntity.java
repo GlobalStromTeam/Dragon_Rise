@@ -54,7 +54,7 @@ public abstract class GuidedBombEntity extends MissileProjectile implements Basi
      * 客户端锁定框仅对已锁定炸弹渲染（guideType 是普通字段，不跨客户端同步）。
      */
     private static final EntityDataAccessor<Boolean> LOCKED =
-            new EntityDataAccessor<>(200, EntityDataSerializers.BOOLEAN);
+            SynchedEntityData.defineId(GuidedBombEntity.class, EntityDataSerializers.BOOLEAN);
 
     /** 客户端查询：该炸弹是否处于锁定状态 */
     public boolean isLocked() {

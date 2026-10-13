@@ -1,15 +1,17 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.item.*;
 import com.redabysslucia.dragonrise_reforge.item.armor.*;
-import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.items.IedItem;
+import com.redabysslucia.dragonrise_reforge.items.PhoneItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModItems {
 
@@ -29,9 +31,12 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);
     public static final DeferredHolder<Item, Item> HJ8_DEPLOYER = REGISTRY.register("hj8", HJ8Deployer::new);
     public static final DeferredHolder<Item, Item> R9M133_DEPLOYER = REGISTRY.register("9m133", R9M133Deployer::new);
+    public static final DeferredHolder<Item, Item> IED = REGISTRY.register("ied", IedItem::new);
+    public static final DeferredHolder<Item, Item> PHONE = REGISTRY.register("phone", PhoneItem::new);
     public static final DeferredHolder<Item, Item> ZU23_DEPLOYER = REGISTRY.register("zu23", ZU23Deployer::new);
     public static final DeferredHolder<Item, Item> qjz89_DEPLOYER = REGISTRY.register("qjz89", qjz89Deployer::new);
     public static final DeferredHolder<Item, Item> DSHK_DEPLOYER = REGISTRY.register("dshk", DSHKDeployer::new);
+    public static final DeferredHolder<Item, Item> SPG9_DEPLOYER = REGISTRY.register("spg9", SPG9Deployer::new);
     public static final DeferredHolder<Item, Item> M2_DEPLOYER = REGISTRY.register("m2", M2Deployer::new);
     public static final DeferredHolder<Item, Item> SHIELD_DEPLOYER = REGISTRY.register("shield", SHIELDDeployer::new);
     public static final DeferredHolder<Item, Item> AMMO_SUPPLY_STATION_DEPLOYER = REGISTRY.register("ammo_supply_station", AmmoSupplyStationDeployer::new);
@@ -58,6 +63,21 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> KR06_HELMET = REGISTRY.register("kr06_helmet", KR06Helmet::new);
     public static final DeferredHolder<Item, Item> KR06_CHEST = REGISTRY.register("kr06_chest", KR06Chest::new);
     public static final DeferredHolder<Item, Item> KR06_PANTS = REGISTRY.register("kr06_pants", KR06Pants::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_HELMET = REGISTRY.register("jungle07_helmet", Jungle07Helmet::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_CHEST = REGISTRY.register("jungle07_chest", Jungle07Chest::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_PANTS = REGISTRY.register("jungle07_pants", Jungle07Pants::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_MEDIC_HELMET = REGISTRY.register("jungle07_medic_helmet", Jungle07MedicHelmet::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_MEDIC_CHEST = REGISTRY.register("jungle07_medic_chest", Jungle07MedicChest::new);
+    public static final DeferredHolder<Item, Item> JUNGLE07_MEDIC_PANTS = REGISTRY.register("jungle07_medic_pants", Jungle07MedicPants::new);
+    public static final DeferredHolder<Item, Item> UKRAINIAN_SOLDIER_HELMET = REGISTRY.register("ukrainian_soldier_helmet", UkrainianSoldierHelmet::new);
+    public static final DeferredHolder<Item, Item> UKRAINIAN_SOLDIER_CHEST = REGISTRY.register("ukrainian_soldier_chest", UkrainianSoldierChest::new);
+    public static final DeferredHolder<Item, Item> UKRAINIAN_SOLDIER_PANTS = REGISTRY.register("ukrainian_soldier_pants", UkrainianSoldierPants::new);
+    public static final DeferredHolder<Item, Item> CHINESE_DESERT_HELMET = REGISTRY.register("chinese_desert_helmet", ChineseDesertHelmet::new);
+    public static final DeferredHolder<Item, Item> CHINESE_DESERT_CHEST = REGISTRY.register("chinese_desert_chest", ChineseDesertChest::new);
+    public static final DeferredHolder<Item, Item> CHINESE_DESERT_PANTS = REGISTRY.register("chinese_desert_pants", ChineseDesertPants::new);
+    public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_HELMET = REGISTRY.register("russian_soldier_helmet", RussianSoldierHelmet::new);
+    public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_CHEST = REGISTRY.register("russian_soldier_chest", RussianSoldierChest::new);
+    public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_PANTS = REGISTRY.register("russian_soldier_pants", RussianSoldierPants::new);
 
     public static final DeferredHolder<Item, Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new SpawnEggItem(ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));
@@ -67,6 +87,10 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> CLUSTER_CHARGE = REGISTRY.register("cluster_charge", () -> new ClusterChargeItem(new Item.Properties()));
     public static final DeferredHolder<Item, Item> R6_DRONE = REGISTRY.register("r6_drone", () -> new R6DroneDeployerItem(new Item.Properties()));
     public static final DeferredHolder<Item, Item> ATTACK_DRONE = REGISTRY.register("attack_drone", () -> new AttackDroneDeployerItem(new Item.Properties()));
+    public static final DeferredHolder<Item, Item> SIGNAL_FLARE = REGISTRY.register("signal_flare",
+            () -> new SignalFlareItem(new Item.Properties().stacksTo(16)));
+    public static final DeferredHolder<Item, Item> SIGNAL_GUN = REGISTRY.register("signal_gun",
+            () -> new SignalGunItem(new Item.Properties().stacksTo(1)));
     public static final DeferredHolder<Item, Item> KEVLAR = REGISTRY.register("kevlar", () -> new Item(new Item.Properties()));
     public static final DeferredHolder<Item, Item> KV1_DEPLOYER = REGISTRY.register("kv1", KV1Deployer::new);
     public static final DeferredHolder<Item, Item> PAK40_DEPLOYER = REGISTRY.register("pak40", Pak40Deployer::new);

@@ -143,7 +143,7 @@
                                    "ShootAnimationTime":  40,
                                    "Crosshair":  "@VehicleDynamicCross",
                                    "CrosshairColor":  "0x00ff66",
-                                   "Name":  "dragonrise_reforge:type11",
+                                   "Name":  "dragonrise_reforge:47mm_type1",
                                    "AmmoType":  "superbwarfare:small_shell_ap",
                                    "SoundInfo":  {
                                                      "Fire1P":  "dragonrise_reforge:us_37_shoot",
@@ -151,7 +151,7 @@
                                                      "Fire3PFar":  "dragonrise_reforge:us_37_shoot",
                                                      "Fire3PVeryFar":  "dragonrise_reforge:us_37_shoot",
                                                      "VehicleReload":  "dragonrise_reforge:hand_reload3s",
-                                                     "Change":  "dragonrise_reforge:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:into_cannon"
                                                                            ]
@@ -162,7 +162,7 @@
                                                     "Positions":  [
                                                                       [
                                                                           0.1,
-                                                                          -0.4282375,
+                                                                          0.0717625,
                                                                           0.80946875
                                                                       ]
                                                                   ],
@@ -205,18 +205,18 @@
                                                                        ]
                                                     },
                                        "Crosshair":  "@VehicleDynamicCross",
-                                       "Name":  "dragonrise_reforge:m1919",
+                                       "Name":  "dragonrise_reforge:type97_mg",
                                        "SoundInfo":  {
                                                          "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
                                                          "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                          "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                          "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                         "Change":  "superbwarfare:into_cannon"
+                                                         "Change":  "dragonrise_reforge:change_weapon"
                                                      },
                                        "SoundRadius":  16
                                    },
                     "PassengerMachineGun":  {
-                                                "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+                                                "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/7_7mm.png",
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
@@ -247,13 +247,13 @@
                                                                                 ]
                                                              },
                                                 "Crosshair":  "@VehicleDynamicCross",
-                                                "Name":  "dragonrise_reforge:m2",
+                                                "Name":  "dragonrise_reforge:type97_mg",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
                                                                   "Fire3P":  "superbwarfare:m_2_hb_fire_3p",
                                                                   "Fire3PFar":  "superbwarfare:m_2_hb_far",
                                                                   "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-                                                                  "Change":  "superbwarfare:into_cannon"
+                                                                  "Change":  "dragonrise_reforge:change_weapon"
                                                               },
                                                 "SoundRadius":  16
                                             }
@@ -335,7 +335,8 @@
                             "@superbwarfare:gun_grenade * 1.25",
                             "@superbwarfare:mortar_shell * 1.25",
                             "@superbwarfare:tm_62 * 2.5",
-                            "All - 20"
+                            "All - 20",
+                            "$entity.getSourceAngle(source, 0.3) * damage"
                         ],
     "DestroyInfo":  {
                         "ParticleType":  "Giant",

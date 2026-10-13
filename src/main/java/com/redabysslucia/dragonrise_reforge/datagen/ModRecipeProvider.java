@@ -239,5 +239,135 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('N', Tags.Items.DYES_BLACK)
                 .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
                 .save(writer, loc(getItemName(ModItems.KR06_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_HELMET.get())
+                .pattern("KGK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('G', Tags.Items.DYES_GREEN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_CHEST.get())
+                .pattern("KGK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('G', Tags.Items.DYES_GREEN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_PANTS.get())
+                .pattern("KGK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('G', Tags.Items.DYES_GREEN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_MEDIC_HELMET.get())
+                .pattern("KRK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('R', Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_MEDIC_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_MEDIC_CHEST.get())
+                .pattern("KRK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('R', Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_MEDIC_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.JUNGLE07_MEDIC_PANTS.get())
+                .pattern("KRK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('R', Tags.Items.DYES_RED)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.JUNGLE07_MEDIC_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.UKRAINIAN_SOLDIER_HELMET.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_CYAN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.UKRAINIAN_SOLDIER_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.UKRAINIAN_SOLDIER_CHEST.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_CYAN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.UKRAINIAN_SOLDIER_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.UKRAINIAN_SOLDIER_PANTS.get())
+                .pattern("K K")
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_CYAN)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.UKRAINIAN_SOLDIER_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CHINESE_DESERT_HELMET.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_ORANGE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.CHINESE_DESERT_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CHINESE_DESERT_CHEST.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_ORANGE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.CHINESE_DESERT_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.CHINESE_DESERT_PANTS.get())
+                .pattern("K K")
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_ORANGE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.CHINESE_DESERT_PANTS.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.RUSSIAN_SOLDIER_HELMET.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_WHITE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.RUSSIAN_SOLDIER_HELMET.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.RUSSIAN_SOLDIER_CHEST.get())
+                .pattern("KDK")
+                .pattern("K K")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_WHITE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.RUSSIAN_SOLDIER_CHEST.get())));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.RUSSIAN_SOLDIER_PANTS.get())
+                .pattern("K K")
+                .pattern("KDK")
+                .pattern("K K")
+                .define('K', ModItems.KEVLAR.get())
+                .define('D', Tags.Items.DYES_WHITE)
+                .unlockedBy(getHasName(ModItems.KEVLAR.get()), has(ModItems.KEVLAR.get()))
+                .save(writer, loc(getItemName(ModItems.RUSSIAN_SOLDIER_PANTS.get())));
     }
 }

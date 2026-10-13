@@ -126,7 +126,9 @@ public class VehicleJavaGenerator implements DataProvider {
             }
 
         } catch (Exception e) {
-            throw new RuntimeException("Failed to process: " + geoFile.getFileName(), e);
+            // 单个模型解析/生成失败（例如空文件、半成品模型）不应中断整个生成器：
+            // 打印警告后跳过，继续处理其余模型。
+            System.err.println("[VehicleJavaGenerator] 跳过无法处理的模型 " + geoFile.getFileName() + " -> " + e);
         }
     }
 

@@ -1,6 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.utils.SyncCameraVehicle;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
@@ -17,11 +16,6 @@ public class M4A2105Entity extends SyncCameraVehicle implements IVehicleBackgrou
         super(pEntityType, pLevel);
     }
 
-    @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.3f) * damage);
-    }
 
 //    private PlayState cannonFirePredicate(AnimationState<PANZER4Entity> event) {
 //        if (getShootAnimationTimer(0, 0) > 0) {

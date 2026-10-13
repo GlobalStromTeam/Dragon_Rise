@@ -3,15 +3,13 @@ package com.redabysslucia.dragonrise_reforge.entities;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.data.vehicle.subdata.EngineType;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
 import com.atsuishio.superbwarfare.init.ModDamageTypes;
 import com.atsuishio.superbwarfare.init.ModSounds;
 // NetworkRegistry import removed - not available in NeoForge 1.21.1
 import com.atsuishio.superbwarfare.tools.DamageHandler;
 import com.atsuishio.superbwarfare.tools.SeekTool;
-import com.redabysslucia.dragonrise_reforge.entities.utils.FireLightVisionVehicle;
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
 import com.redabysslucia.dragonrise_reforge.entities.utils.IVehicleBackground;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.VariableEngineVehicle;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ParticleTypes;
@@ -29,27 +27,59 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.List;
+import java.util.Set;
 
 import static com.atsuishio.superbwarfare.event.ClientEventHandler.zoomVehicle;
 import static com.atsuishio.superbwarfare.tools.ParticleTool.sendParticle;
 
 public class TJGCEntity extends VariableEngineVehicle {
 
+    /**
+     * 展开导弹发射架的武器键（与 tjgc.json 的 Weapons / 座位武器表键名一致）。
+     * 选中这些武器时发射架展开（animation.tjgc.missile_on），其余（Laser / Bomb）收拢。
+     */
+    private static final Set<String> MISSILE_RACK_WEAPONS = Set.of(
+            "Rocket", "BigRocket", "AAMissile", "ATMissile", "BigATMissile");
+
     public TJGCEntity(EntityType<TJGCEntity> type, Level world) {
         super(type, world);
         this.setEngineTypeList(List.of(EngineType.AIRCRAFT, EngineType.HELICOPTER));
     }
 
+    // ---------------- 动画状态机：起落架 / 发射架 ----------------
+    // 基类 DragonriseVehicleBase 负责驱动状态机（升空收、落地放；切换武器展开/收拢发射架），
+    // 这里只提供 tjgc 动画文件里的命名与展开条件。
+
+    /** 起落架收起 = animation.tjgc.bay_off */
     @Override
-    public DamageModifier getDamageModifier() {
-        return super.getDamageModifier()
-                .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage * (getHealth() > 0.1f ? 0.4f : 0.05f));
+    protected String gearRetractAnimation(String prefix) {
+        return prefix + ".bay_off";
     }
+
+    /** 起落架放下 = animation.tjgc.bay_on */
+    @Override
+    protected String gearExtendAnimation(String prefix) {
+        return prefix + ".bay_on";
+    }
+
+    /** 当前是否有座位选中了需要发射架的武器 */
+    @Override
+    protected boolean isMissileRackDeployed() {
+        for (var passenger : getPassengers()) {
+            int seatIndex = getSeatIndex(passenger);
+            if (seatIndex < 0) continue;
+
+            String weaponName = getGunName(seatIndex);
+            if (weaponName != null && MISSILE_RACK_WEAPONS.contains(weaponName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     public void hitBlock(Vec3 pos, GunData gunData, Entity shooter) {
         if (level() instanceof ServerLevel serverLevel) {

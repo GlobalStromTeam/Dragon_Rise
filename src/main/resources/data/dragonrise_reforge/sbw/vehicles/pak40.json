@@ -106,7 +106,7 @@
                                    "ShootAnimationTime":  40,
                                    "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/non.png",
                                    "CrosshairColor":  "0x00ff66",
-                                   "Name":  "dragonrise_reforge:type59ap",
+                                   "Name":  "dragonrise_reforge:75mmAPHE",
                                    "AmmoType":  "superbwarfare:large_shell_ap",
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
@@ -127,7 +127,7 @@
                                                      "Fire3PFar":  "superbwarfare:m_1a_2_far",
                                                      "Fire3PVeryFar":  "superbwarfare:m_1a_2_veryfar",
                                                      "VehicleReload":  "dragonrise_reforge:m1a2_reload",
-                                                     "Change":  "superbwarfare:into_cannon",
+                                                     "Change":  "dragonrise_reforge:change_weapon",
                                                      "CancellableSounds":  [
                                                                                "dragonrise_reforge:m1a2_reload"
                                                                            ]

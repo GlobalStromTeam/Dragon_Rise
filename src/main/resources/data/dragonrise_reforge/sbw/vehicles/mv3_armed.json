@@ -268,7 +268,7 @@
         "Position": [0.00064375,0.06838125,1.25930625],
         "Transform": "Barrel",
         "Positions": [
-          [-0.187,0.054,3.135]
+          [0.001,0.054,1.315]
         ],
         "Directions": [
           "Barrel"
@@ -276,11 +276,11 @@
       },
       "Name": "dragonrise_reforge:QJZ89",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:mgfire1",
-        "Fire3P": "dragonrise_reforge:mgfire1",
-        "Fire3PFar": "dragonrise_reforge:mgfire1",
-        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
-        "Change": "superbwarfare:into_cannon"
+        "Fire1P": "dragonrise_reforge:qjz89_fire_1p",
+        "Fire3P": "dragonrise_reforge:qjz89_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:qjz89_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:qjz89_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 16
     }

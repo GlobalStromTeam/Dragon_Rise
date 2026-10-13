@@ -1,22 +1,21 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-
-import net.minecraft.network.syncher.SynchedEntityData;import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.damage.DamageModifier;
-import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
+import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 
-@SuppressWarnings("removal")
-public class ZBD04AEntity extends IndirectFireVehicleBase {
+public class ZBD04AEntity extends VehicleEntity {
 
         private static final EntityDataAccessor<Integer> FLAP_STATE =
-                new EntityDataAccessor<>(100, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
         private static final EntityDataAccessor<Integer> FLAP_TIMER =
-                new EntityDataAccessor<>(101, EntityDataSerializers.INT);
+                SynchedEntityData.defineId(ZBD04AEntity.class, EntityDataSerializers.INT);
         private int lastFlapCheckTick = 0;
 
         public ZBD04AEntity(EntityType<ZBD04AEntity> type, Level world) {
@@ -74,9 +73,4 @@ public class ZBD04AEntity extends IndirectFireVehicleBase {
                 }
         }
 
-        @Override
-        public DamageModifier getDamageModifier() {
-                return super.getDamageModifier()
-                        .custom((entity, source, damage) -> getSourceAngle(source, 0.25f) * damage);
-        }
 }

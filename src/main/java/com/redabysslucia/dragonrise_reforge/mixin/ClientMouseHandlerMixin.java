@@ -32,7 +32,8 @@ public class ClientMouseHandlerMixin {
         var tag = NBTTool.getTag(stack);
         if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
-        if (R6DroneEntity.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE)) != null) {
+        if (com.redabysslucia.dragonrise_reforge.client.R6DroneClientLookup
+                .findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE)) != null) {
             cir.setReturnValue(original);
         }
     }

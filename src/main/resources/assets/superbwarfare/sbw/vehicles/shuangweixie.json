@@ -1,0 +1,15 @@
+{
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/shuangweixie.animation.json",
+  "ID": "dragonrise_reforge:shuangweixie",
+  "Model": {
+    "Animation": "dragonrise_reforge:animations/bedrock/vehicle/shuangweixie.animation.json",
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/shuangweixie.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/shuangweixie.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/shuangweixie.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/shuangweixie.png"
+    }
+  ]
+}

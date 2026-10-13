@@ -6,7 +6,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.Random;
 
-public abstract class SyncCameraVehicle extends FireLightVisionVehicle {
+public abstract class SyncCameraVehicle extends DragonriseVehicleBase {
     
     private final Random random = new Random();
     private int shakeCooldown = 0;

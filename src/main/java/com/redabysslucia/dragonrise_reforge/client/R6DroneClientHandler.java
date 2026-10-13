@@ -49,11 +49,16 @@ public class R6DroneClientHandler {
     public static void onMouseButton(InputEvent.MouseButton.Pre event) {
         Minecraft mc = Minecraft.getInstance();
         if (mc.player == null || mc.level == null) return;
+        // 打开了界面（ESC 菜单/背包/聊天）时不拦截，否则界面按钮点不动（与本模组双尾蝎处理器同样的修正）
+        if (mc.screen != null) {
+            attackHeld = false;
+            return;
+        }
         ItemStack stack = mc.player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) return;
         var tag = NBTTool.getTag(stack);
         if (tag == null || !tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
-        if (R6DroneEntity.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE)) == null) return;
+        if (R6DroneClientLookup.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE)) == null) return;
         if (event.getButton() == 0) {
             attackHeld = event.getAction() != 0; // 1=按下, 0=释放
             event.setCanceled(true); // 拦截原版攻击，避免挥动手臂/破坏方块
@@ -82,7 +87,7 @@ public class R6DroneClientHandler {
             stopLoop(mc);
             return;
         }
-        R6DroneEntity drone = R6DroneEntity.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE));
+        R6DroneEntity drone = R6DroneClientLookup.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE));
         if (drone == null) {
             lastKeys = -1;
             stopLoop(mc);

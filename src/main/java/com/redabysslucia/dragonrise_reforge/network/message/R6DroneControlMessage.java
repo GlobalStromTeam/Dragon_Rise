@@ -47,15 +47,16 @@ public class R6DroneControlMessage implements CustomPacketPayload {
 
     public static void handle(R6DroneControlMessage msg, IPayloadContext ctx) {
         ctx.enqueueWork(() -> {
-            Player player = ctx.player();
-            if (player == null) return;
+            // 该消息只由客户端发往服务端，因此这里一定是 ServerPlayer；
+            // serverLevel() 只存在于 ServerPlayer 上（1.20.1 的 Player.serverLevel 已收窄）。
+            if (!(ctx.player() instanceof net.minecraft.server.level.ServerPlayer player)) return;
             ItemStack stack = player.getMainHandItem();
             if (!stack.is(ModItems.MONITOR.get())) return;
             var tag = NBTTool.getTag(stack);
             if (!tag.getBoolean(MonitorItem.USING) || !tag.getBoolean(MonitorItem.LINKED)) return;
 
             String linked = tag.getString(MonitorItem.LINKED_DRONE);
-            R6DroneEntity drone = R6DroneEntity.findDrone(player.level(), linked);
+            R6DroneEntity drone = R6DroneEntity.findServerDrone(player.serverLevel(), linked);
             if (drone != null) {
                 drone.processInput(msg.keys);
             }
