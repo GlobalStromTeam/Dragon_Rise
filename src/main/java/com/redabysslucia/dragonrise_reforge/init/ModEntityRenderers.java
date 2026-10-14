@@ -1,5 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.IedRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.MissileShellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
@@ -71,9 +72,18 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ztz96aRendere
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
+/**
+ * 实体渲染器注册。
+ *
+ * <p><b>注意</b>：本类最初漏了 {@code @EventBusSubscriber} 注解（1.20.1 时代就这样，
+ * 移植时也没补），于是 {@code registerEntityRenderers} 从未被调用、
+ * {@code EntityRenderDispatcher} 的 renderer map 全空 —— 任何本模组实体进入画面都会
+ * 在 {@code EntityRenderDispatcher.shouldRender} 里 NPE
+ * （{@code "entityrenderer" is null}），表现为进世界即崩溃。
+ */
+@EventBusSubscriber(modid = Dragonrise_reforge.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
