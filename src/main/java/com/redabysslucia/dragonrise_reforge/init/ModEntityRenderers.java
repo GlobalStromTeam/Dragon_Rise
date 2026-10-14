@@ -265,5 +265,9 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZSD89A.get(), Zsd89aRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
                 event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);
+                // TESTSHIP 之前漏注册 —— 实体注册了但没有渲染器，
+                // 客户端一旦渲染到它，EntityRenderDispatcher#shouldRender 会拿到 null renderer 而 NPE
+                // （崩溃点：LevelRenderer.renderLevel -> EntityRenderDispatcher.shouldRender）。
+                event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
         }
 }
