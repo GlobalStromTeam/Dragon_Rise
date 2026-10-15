@@ -77,6 +77,40 @@ public class ShuangweixieEntity extends DroneEntity {
         super(type, world);
     }
 
+    // ==================== 受击反馈（音效 / 粒子） ====================
+
+    /**
+     * 让双尾蝎在被攻击时发出受击音效。
+     *
+     * <p><b>为什么必须覆写：</b>SBW 的无人机基类把受击音关掉了 ——
+     * <pre>
+     *   VehicleEntity.shouldSendHitSounds()  →  iconst_1（true，普通载具有受击音）
+     *   DroneEntity.shouldSendHitSounds()    →  iconst_0（false，无人机没有）
+     * </pre>
+     * 而双尾蝎继承的是 {@link DroneEntity}，于是白拿了那个 {@code false}。
+     *
+     * <p><b>SBW 本体在哪里用它</b>（反汇编 {@code PlayerEventHandler.onAttackEntity} 确认）：
+     * <pre>
+     *   VehicleEntity vehicle = TraceTool.playerFindLookingPos(player, ...);
+     *   if (vehicle != null) {
+     *       if (vehicle.shouldSendHitSounds()) {
+     *           vehicle.level().playSound(player, BlockPos.containing(命中点),
+     *                   ModSounds.HIT.get(), SoundSource.PLAYERS, ...);   // ← 就是这一声
+     *       }
+     *       if (vehicle.shouldSendHitParticles()) { ... }
+     *   }
+     * </pre>
+     * 也就是「玩家挥击/攻击键打到载具」时的金属受击音。返回 false 时这一整段被跳过。
+     *
+     * <p>双尾蝎是机身 11.5 格的大型飞行器，被打了没反馈不合理，所以这里恢复成 true
+     * （与普通载具一致）。注意本方法<b>只</b>控制这一声受击音，
+     * 不影响引擎音、开火音、以及 sbw_addition 那套按材质播放的弹着音。
+     */
+    @Override
+    public boolean shouldSendHitSounds() {
+        return true;
+    }
+
     // ==================== 飞行：交给 SBW 的固定翼引擎 ====================
 
     @Override
