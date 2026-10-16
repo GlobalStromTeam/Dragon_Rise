@@ -22,6 +22,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Math;
 
 import javax.annotation.Nullable;
@@ -221,7 +222,12 @@ public class VehicleDeployerBlockEntity extends BlockEntity implements MenuProvi
             this.lastOccupiedGameTime = world.getGameTime();
         } else if (this.vehicleWasOccupied) {
             long idleTicks = world.getGameTime() - this.lastOccupiedGameTime;
-            if (idleTicks >= timeout * 20L) {
+            // ESPETRO-PATCH(vehdel): 只有仍停在部署器旁（<8 格）的闲置载具才回收补刷；
+            // 被玩家开走后（在里面阵亡/下线）的载具永不被这条路径删除。
+            // 阈值 64.0 = 8 格（平方距离），方块中心 Vec3.atCenterOf(getBlockPos()) 为基准；
+            // 部署器本体出车点是「中心 +(0,1,0) 抖动 0.1」，即距中心约 1.0 格，8 格余量足够。
+            if (idleTicks >= timeout * 20L
+                    && entity.position().distanceToSqr(Vec3.atCenterOf(this.getBlockPos())) < 64.0) {
                 entity.discard();
                 this.spawnedVehicleUUID = null;
                 this.vehicleWasOccupied = false;
