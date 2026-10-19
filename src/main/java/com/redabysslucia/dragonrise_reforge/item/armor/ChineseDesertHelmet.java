@@ -1,7 +1,5 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
-import com.redabysslucia.dragonrise_reforge.client.model.armor.ChineseDesertHelmetModel;
-import com.redabysslucia.dragonrise_reforge.client.renderer.armor.ChineseDesertHelmetRenderer;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
 import com.atsuishio.superbwarfare.tiers.ModArmorMaterial;
@@ -16,18 +14,18 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
-import software.bernie.geckolib.animatable.GeoItem;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.core.animation.AnimatableManager;
-import software.bernie.geckolib.renderer.GeoArmorRenderer;
-import software.bernie.geckolib.renderer.GeoItemRenderer;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.UUID;
 import java.util.function.Consumer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorItemRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorRenderer;
+import net.minecraft.resources.ResourceLocation;
 
-public class ChineseDesertHelmet extends ArmorItem implements GeoItem {
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+public class ChineseDesertHelmet extends ArmorItem {
+    /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/chinese_desert_helmet.geo.json */
+    public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/armor/chinese_desert_helmet.geo.json");
+    /** SBM armor texture: assets/dragonrise_reforge/textures/armor/chinese_desert.png */
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/chinese_desert.png");
 
     public ChineseDesertHelmet() {
         super(ModArmorMaterial.CEMENTED_CARBIDE, Type.HELMET, new Properties());
@@ -36,22 +34,19 @@ public class ChineseDesertHelmet extends ArmorItem implements GeoItem {
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private GeoArmorRenderer<?> renderer;
-            private GeoItemRenderer<ChineseDesertHelmet> itemRenderer;
-
             @Override
             public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                if (this.renderer == null)
-                    this.renderer = new ChineseDesertHelmetRenderer();
-                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-                return this.renderer;
+                SbmArmorRenderer renderer = SbmArmorRenderer.get(GEO, equipmentSlot, TEXTURE);
+                if (renderer == null) {
+                    return original;
+                }
+                renderer.preparePose(livingEntity, itemStack, equipmentSlot, original);
+                return renderer;
             }
 
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                if (this.itemRenderer == null)
-                    this.itemRenderer = new GeoItemRenderer<>(new ChineseDesertHelmetModel());
-                return this.itemRenderer;
+                return SbmArmorItemRenderer.get(GEO, TEXTURE);
             }
         });
     }
@@ -68,12 +63,4 @@ public class ChineseDesertHelmet extends ArmorItem implements GeoItem {
         return map;
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 }
