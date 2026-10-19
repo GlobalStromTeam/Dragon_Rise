@@ -11,14 +11,13 @@ import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import software.bernie.geckolib.animatable.GeoItem;
 
 @Mixin(value = VehicleAssemblingScreen.class)
 public abstract class VehicleAssemblingScreenMixin {
 
     /**
      * 拦截 renderDefaultItemModel 中对 ItemRenderer.renderStatic 的调用。
-     * 对于 GeoItem（护甲），用 GeoItemRenderer (BER) 渲染 3D 模型；
+     * 对于带自定义 BER 的物品（护甲走 SBM 的 SbmArmorItemRenderer），用 BER 渲染 3D 模型；
      * 其他物品保持原版平坦图标渲染。
      */
     @Redirect(
@@ -32,7 +31,7 @@ public abstract class VehicleAssemblingScreenMixin {
                                       int packedLight, int packedOverlay, PoseStack poseStack,
                                       net.minecraft.client.renderer.MultiBufferSource bufferSource,
                                       net.minecraft.world.level.Level level, int seed) {
-        if (stack.getItem() instanceof GeoItem && !stack.is(ModItems.CONTAINER.get())) {
+        if (!stack.is(ModItems.CONTAINER.get())) {
             IClientItemExtensions extensions = IClientItemExtensions.of(stack);
             BlockEntityWithoutLevelRenderer ber = extensions.getCustomRenderer();
             if (ber != null) {

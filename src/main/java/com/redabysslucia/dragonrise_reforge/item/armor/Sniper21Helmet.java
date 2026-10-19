@@ -1,8 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.item.armor;
 
 
-import net.minecraft.world.item.component.ItemAttributeModifiers;import com.redabysslucia.dragonrise_reforge.client.model.armor.Sniper21HelmetModel;
-import com.redabysslucia.dragonrise_reforge.client.renderer.armor.Sniper21HelmetRenderer;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
 import com.atsuishio.superbwarfare.tiers.ModArmorMaterial;
@@ -17,18 +16,18 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
-import software.bernie.geckolib.animatable.GeoItem;
-import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
-import software.bernie.geckolib.animation.AnimatableManager;
-import software.bernie.geckolib.renderer.GeoArmorRenderer;
-import software.bernie.geckolib.renderer.GeoItemRenderer;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.UUID;
 import java.util.function.Consumer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorItemRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorRenderer;
+import net.minecraft.resources.ResourceLocation;
 
-public class Sniper21Helmet extends ArmorItem implements GeoItem {
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+public class Sniper21Helmet extends ArmorItem {
+    /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/sniper21_helmet.geo.json */
+    public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/armor/sniper21_helmet.geo.json");
+    /** SBM armor texture: assets/dragonrise_reforge/textures/armor/sniper21_helmet.png */
+    public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/sniper21_helmet.png");
 
     public Sniper21Helmet() {
         super(ModArmorMaterial.CEMENTED_CARBIDE, Type.HELMET, new Properties());
@@ -37,22 +36,19 @@ public class Sniper21Helmet extends ArmorItem implements GeoItem {
     @Override
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
-            private GeoArmorRenderer<?> renderer;
-            private GeoItemRenderer<Sniper21Helmet> itemRenderer;
-
             @Override
             public HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                if (this.renderer == null)
-                    this.renderer = new Sniper21HelmetRenderer();
-                this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-                return this.renderer;
+                SbmArmorRenderer renderer = SbmArmorRenderer.get(GEO, equipmentSlot, TEXTURE);
+                if (renderer == null) {
+                    return original;
+                }
+                renderer.preparePose(livingEntity, itemStack, equipmentSlot, original);
+                return renderer;
             }
 
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                if (this.itemRenderer == null)
-                    this.itemRenderer = new GeoItemRenderer<>(new Sniper21HelmetModel());
-                return this.itemRenderer;
+                return SbmArmorItemRenderer.get(GEO, TEXTURE);
             }
         });
     }
@@ -62,12 +58,4 @@ public class Sniper21Helmet extends ArmorItem implements GeoItem {
         return super.getDefaultAttributeModifiers(stack);
     }
 
-    @Override
-    public void registerControllers(AnimatableManager.ControllerRegistrar data) {
-    }
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
 }
