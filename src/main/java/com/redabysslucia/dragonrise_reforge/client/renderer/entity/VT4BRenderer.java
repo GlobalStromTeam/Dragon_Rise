@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.VT4A1Entity;
 import com.redabysslucia.dragonrise_reforge.entities.VT4BEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class VT4BRenderer extends GeoVehicleRenderer<VT4BEntity> {
+public class VT4BRenderer extends AnimatedTrackedVehicleRenderer<VT4BEntity> {
         public VT4BRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "vt4b");
         }
 }

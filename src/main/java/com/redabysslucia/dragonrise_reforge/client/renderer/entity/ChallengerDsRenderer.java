@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ChallengerDsRenderer extends GeoVehicleRenderer<ChallengerDsEntity> {
+public class ChallengerDsRenderer extends AnimatedTrackedVehicleRenderer<ChallengerDsEntity> {
     public ChallengerDsRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+        super(renderManager, "challenger_ds");
     }
 }

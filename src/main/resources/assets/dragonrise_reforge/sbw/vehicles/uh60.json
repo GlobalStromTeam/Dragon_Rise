@@ -1,17 +1,15 @@
 {
-    "ID":  "dragonrise_reforge:uh60",
-    "Model":  {
-                  "Model":  "dragonrise_reforge:models/bedrock/vehicle/uh60.geo.json",
-                  "Texture":  "dragonrise_reforge:textures/entity/uh60.png"
-              },
-    "MouseSpeed":  [
-                       0.3,
-                       0.3
-                   ],
-    "Models":  [
-                   {
-                       "Model":  "dragonrise_reforge:models/bedrock/vehicle/uh60.geo.json",
-                       "Texture":  "dragonrise_reforge:textures/entity/uh60.png"
-                   }
-               ]
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/uh60.animation.json",
+  "ID": "dragonrise_reforge:uh60",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/uh60.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/uh60.png"
+  },
+  "MouseSpeed": [0.3,0.3],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/uh60.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/uh60.png"
+    }
+  ]
 }

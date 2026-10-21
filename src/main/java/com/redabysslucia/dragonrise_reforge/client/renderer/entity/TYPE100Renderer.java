@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.TYPE100Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class TYPE100Renderer extends GeoVehicleRenderer<TYPE100Entity> {
+public class TYPE100Renderer extends AnimatedTrackedVehicleRenderer<TYPE100Entity> {
         public TYPE100Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "type100");
         }
 }

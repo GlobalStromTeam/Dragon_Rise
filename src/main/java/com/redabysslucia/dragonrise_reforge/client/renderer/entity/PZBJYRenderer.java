@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.PZBJYEntity;
 import com.redabysslucia.dragonrise_reforge.entities.TYPE100Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class PZBJYRenderer extends GeoVehicleRenderer<PZBJYEntity> {
+public class PZBJYRenderer extends AnimatedTrackedVehicleRenderer<PZBJYEntity> {
         public PZBJYRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "pzbjy");
         }
 }

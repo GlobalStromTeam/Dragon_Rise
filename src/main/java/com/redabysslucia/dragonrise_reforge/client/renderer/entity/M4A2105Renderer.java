@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.M4A2105Entity;
 import com.redabysslucia.dragonrise_reforge.entities.M4A2Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class M4A2105Renderer extends GeoVehicleRenderer<M4A2105Entity> {
+public class M4A2105Renderer extends AnimatedTrackedVehicleRenderer<M4A2105Entity> {
         public M4A2105Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "m4a2_105");
         }
 }

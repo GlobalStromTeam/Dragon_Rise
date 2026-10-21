@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:merkava_mk4",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/merkava_mk4.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/merkava_mk4.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/merkava_mk4.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/merkava_mk4.png"
+    }
+  ]
+}

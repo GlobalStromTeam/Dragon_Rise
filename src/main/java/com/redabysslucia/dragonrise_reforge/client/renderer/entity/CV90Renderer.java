@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.CV90Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class CV90Renderer extends GeoVehicleRenderer<CV90Entity> {
+public class CV90Renderer extends AnimatedTrackedVehicleRenderer<CV90Entity> {
         public CV90Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "cv90");
         }
 }

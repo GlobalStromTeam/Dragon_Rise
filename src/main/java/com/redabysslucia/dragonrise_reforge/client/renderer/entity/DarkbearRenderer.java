@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.DarkbearEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class DarkbearRenderer extends GeoVehicleRenderer<DarkbearEntity> {
+public class DarkbearRenderer extends AnimatedTrackedVehicleRenderer<DarkbearEntity> {
         public DarkbearRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "darkbear");
         }
 }

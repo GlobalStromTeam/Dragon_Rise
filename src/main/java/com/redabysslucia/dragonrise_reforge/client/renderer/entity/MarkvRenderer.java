@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.MarkvEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class MarkvRenderer extends GeoVehicleRenderer<MarkvEntity> {
+public class MarkvRenderer extends AnimatedTrackedVehicleRenderer<MarkvEntity> {
         public MarkvRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "markv");
         }
 }

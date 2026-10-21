@@ -153,6 +153,9 @@ public class ModTabs {
                         //韩国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.K1A1.get()));
 
+                        //以色列 坦克
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MERKAVA_MK4.get()));
+
                         //虚构/特殊
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TJGC.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HYR0.get()));

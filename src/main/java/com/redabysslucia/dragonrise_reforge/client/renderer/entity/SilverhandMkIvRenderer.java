@@ -18,8 +18,8 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
  * （SBW {@code VehicleModelReloadListener.PATTERNS}：{@code ^move_.*}、{@code ^turret$} 等），
  * 其余骨骼会被折进静态几何，{@code instance.getBone(name)} 返回 null，绑定骨骼会静默失效。
  */
-public class SilverhandMkIvRenderer extends GeoVehicleRenderer<SilverhandMkIvEntity> {
+public class SilverhandMkIvRenderer extends AnimatedTrackedVehicleRenderer<SilverhandMkIvEntity> {
     public SilverhandMkIvRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+        super(renderManager, "silverhand_mk_iv");
     }
 }

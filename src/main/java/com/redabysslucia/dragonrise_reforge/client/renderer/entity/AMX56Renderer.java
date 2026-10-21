@@ -5,6 +5,7 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.atsuishio.superbwarfare.entity.vehicle.VehicleModelEntry;
 import com.atsuishio.superbwarfare.resource.model.VehicleModelReloadListener;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.redabysslucia.dragonrise_reforge.client.animation.VehicleTrackAnimation;
 import com.redabysslucia.dragonrise_reforge.entities.AMX56Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +26,7 @@ import net.minecraft.resources.ResourceLocation;
  * {@code root/base/main}），所以 {@code root} 与 {@code base} 相关的处理（残骸隐藏、车体后坐晃动）对它不生效；
  * {@code turret}、{@code barrel}、车轮骨骼与 {@code passengerWeaponStation} 名字一致，炮塔、车轮、武器站仍会正常动。
  */
-public class AMX56Renderer extends GeoVehicleRenderer<AMX56Entity> {
+public class AMX56Renderer extends AnimatedTrackedVehicleRenderer<AMX56Entity> {
 
     /** 触发换模型的皮肤 id（见 data/dragonrise_reforge/sbw/vehicle_skins/amx56.json） */
     private static final String NATO_SKIN = "nato";
@@ -38,9 +39,15 @@ public class AMX56Renderer extends GeoVehicleRenderer<AMX56Entity> {
 
     private VehicleModelEntry natoEntry;
     private boolean natoUnavailable;
+    private int natoGeneration = -1;
 
     public AMX56Renderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+        super(renderManager, "amx56");
+    }
+
+    @Override
+    protected String trackProfileId(VehicleModelInstance model) {
+        return model.getBone("trackProfile_amx56nato") != null ? "amx56nato" : "amx56";
     }
 
     @Override
@@ -56,6 +63,11 @@ public class AMX56Renderer extends GeoVehicleRenderer<AMX56Entity> {
 
     /** 惰性构建北约模型条目（模型缺失时退回默认模型，不影响渲染） */
     private VehicleModelEntry natoEntry() {
+        if (natoGeneration != VehicleTrackAnimation.generation()) {
+            natoGeneration = VehicleTrackAnimation.generation();
+            natoEntry = null;
+            natoUnavailable = false;
+        }
         if (natoEntry == null && !natoUnavailable) {
             var model = VehicleModelReloadListener.INSTANCE.getModel(NATO_MODEL);
             if (model == null) {

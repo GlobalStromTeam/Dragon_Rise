@@ -72,6 +72,8 @@ public class ClientEventHandler {
 
     @SubscribeEvent
     public static void registerReloadListeners(RegisterClientReloadListenersEvent event) {
+        event.registerReloadListener((net.minecraft.server.packs.resources.ResourceManagerReloadListener)
+                com.redabysslucia.dragonrise_reforge.client.animation.VehicleTrackAnimation::reload);
         event.registerReloadListener(VehicleModelReloadListener.INSTANCE);
         event.registerReloadListener(VehicleLODModelReloadListener.INSTANCE);
         event.registerReloadListener(ArmorModelReloadListener.INSTANCE);

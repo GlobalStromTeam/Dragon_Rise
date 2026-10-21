@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.TunguskaEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class TunguskaRenderer extends GeoVehicleRenderer<TunguskaEntity> {
+public class TunguskaRenderer extends AnimatedTrackedVehicleRenderer<TunguskaEntity> {
         public TunguskaRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "tunguska");
         }
 }

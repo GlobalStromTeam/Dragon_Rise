@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.ZTZ99AEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ZTZ99BHEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ZTZ99BHRenderer extends GeoVehicleRenderer<ZTZ99BHEntity> {
+public class ZTZ99BHRenderer extends AnimatedTrackedVehicleRenderer<ZTZ99BHEntity> {
         public ZTZ99BHRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "ztz99bh");
         }
 }

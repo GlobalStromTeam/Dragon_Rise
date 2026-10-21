@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.BMPT72Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class BMPT72Renderer extends GeoVehicleRenderer<BMPT72Entity> {
+public class BMPT72Renderer extends AnimatedTrackedVehicleRenderer<BMPT72Entity> {
         public BMPT72Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "bmpt72");
         }
 }

@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.type3Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class type3Renderer extends GeoVehicleRenderer<type3Entity> {
+public class type3Renderer extends AnimatedTrackedVehicleRenderer<type3Entity> {
         public type3Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "type3");
         }
 }

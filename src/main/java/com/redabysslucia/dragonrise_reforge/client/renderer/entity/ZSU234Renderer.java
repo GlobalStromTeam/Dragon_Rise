@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.AA625EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ZSU234EEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ZSU234Renderer extends GeoVehicleRenderer<ZSU234EEntity> {
+public class ZSU234Renderer extends AnimatedTrackedVehicleRenderer<ZSU234EEntity> {
         public ZSU234Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "zsu234");
         }
 }

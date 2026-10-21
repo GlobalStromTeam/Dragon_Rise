@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.MerkavaMk4Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
 
 
@@ -1617,7 +1620,13 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
-
+    public static final RegistryObject<EntityType<MerkavaMk4Entity>> MERKAVA_MK4 = register("merkava_mk4",
+            EntityType.Builder.of(MerkavaMk4Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }

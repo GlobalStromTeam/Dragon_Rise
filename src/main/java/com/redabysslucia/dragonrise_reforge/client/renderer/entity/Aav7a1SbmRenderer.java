@@ -4,9 +4,9 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class Aav7a1SbmRenderer extends GeoVehicleRenderer<Aav7a1Entity> {
+public class Aav7a1SbmRenderer extends AnimatedTrackedVehicleRenderer<Aav7a1Entity> {
 
     public Aav7a1SbmRenderer(EntityRendererProvider.Context context) {
-        super(context);
+        super(context, "aav7a1");
     }
 }
