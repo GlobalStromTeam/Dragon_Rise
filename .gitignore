@@ -136,3 +136,6 @@ src/generated/**/.cache/
 
 # 数据生成输出日志
 datagen_output.txt
+
+# 本地 maven 仓库：存放 sbw_addition 等需要 remap 的生产版 jar（jar 本身已被 *.jar 忽略，这里忽略整个目录）
+local_repo/
