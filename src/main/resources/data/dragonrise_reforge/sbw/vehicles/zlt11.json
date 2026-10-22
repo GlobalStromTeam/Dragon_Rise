@@ -134,10 +134,10 @@
             "RecoilForce": 0.05,
             "Crosshair": "@VehicleCommonMissile",
             "SoundInfo": {
-              "Fire1P":  "dragonrise_reforge:cannon_125mm_fire_1p",
-              "Fire3P":  "dragonrise_reforge:cannon_125mm_fire_3p",
-              "Fire3PFar":  "dragonrise_reforge:cannon_125mm_fire_3p_far",
-              "Fire3PVeryFar":  "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
+              "Fire1P":  "superbwarfare:m_1a_2_fire_1p",
+              "Fire3P":  "superbwarfare:m_1a_2_fire_3p",
+              "Fire3PFar":  "superbwarfare:m_1a_2_far",
+              "Fire3PVeryFar":  "superbwarfare:m_1a_2_veryfar",
               "VehicleReload3p": "superbwarfare:medium_missile_reload",
               "VehicleReloadSoundTime": 28,
               "Change":  "dragonrise_reforge:change_weapon"
@@ -148,10 +148,10 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P":  "dragonrise_reforge:cannon_125mm_fire_1p",
-        "Fire3P":  "dragonrise_reforge:cannon_125mm_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:cannon_125mm_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
+        "Fire1P":  "superbwarfare:m_1a_2_fire_1p",
+        "Fire3P":  "superbwarfare:m_1a_2_fire_3p",
+        "Fire3PFar":  "superbwarfare:m_1a_2_far",
+        "Fire3PVeryFar":  "superbwarfare:m_1a_2_veryfar",
         "VehicleReload": "dragonrise_reforge:ztz99a_reload",
         "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
@@ -243,10 +243,10 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:W85",
       "SoundInfo": {
-        "Fire1P":  "dragonrise_reforge:qjz89_fire_1p",
-        "Fire3P":  "dragonrise_reforge:qjz89_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:qjz89_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:qjz89_fire_3p_very_far",
+        "Fire1P":  "dragonrise_reforge:mgfire1",
+        "Fire3P":  "dragonrise_reforge:mgfire1",
+        "Fire3PFar":  "dragonrise_reforge:mgfire1",
+        "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
         "Change":  "dragonrise_reforge:change_weapon"
     },
       "SoundRadius": 16

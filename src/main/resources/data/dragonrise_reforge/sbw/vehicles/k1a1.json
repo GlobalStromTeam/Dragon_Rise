@@ -156,10 +156,10 @@
         }
       ],
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:cannon_125mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:cannon_125mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:cannon_125mm_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:cannon_125mm_fire_3p_very_far",
+        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
+        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
+        "Fire3PFar": "superbwarfare:m_1a_2_far",
+        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
         "VehicleReload": "dragonrise_reforge:hand_load",
         "Change": "dragonrise_reforge:change_weapon",
         "CancellableSounds": [

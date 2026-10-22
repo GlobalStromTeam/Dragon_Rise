@@ -397,9 +397,9 @@
       "Projectile":  "superbwarfare:small_cannon_shell",
       "SoundInfo":  {
         "Fire1P":  "dragonrise_reforge:cannon_30mm_fire_1p",
-        "Fire3P":  "dragonrise_reforge:cannon_30mm_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:cannon_30mm_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:cannon_30mm_fire_3p_very_far",
+        "Fire3P":  "superbwarfare:bmp_2_cannon_fire_3p",
+        "Fire3PFar":  "superbwarfare:mi_28_cannon_far",
+        "Fire3PVeryFar":  "superbwarfare:mi_28_cannon_veryfar",
         "Change":  "dragonrise_reforge:change_weapon"
     },
       "SoundRadius":  24,
