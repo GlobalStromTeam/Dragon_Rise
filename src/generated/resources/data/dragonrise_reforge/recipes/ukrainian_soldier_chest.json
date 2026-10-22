@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    },
+    "D": {
+      "tag": "forge:dyes/cyan"
+    }
+  },
+  "pattern": [
+    "KDK",
+    "K K",
+    "K K"
+  ],
+  "result": {
+    "item": "dragonrise_reforge:ukrainian_soldier_chest"
+  },
+  "show_notification": true
+}

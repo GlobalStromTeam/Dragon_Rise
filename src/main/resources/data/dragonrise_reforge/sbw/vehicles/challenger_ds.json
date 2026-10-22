@@ -178,7 +178,7 @@
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleUsTank",
       "CrosshairColor": "0x00ff66",
-      "Name": "dragonrise_reforge:M829A1",
+      "Name": "dragonrise_reforge:L27A1",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
         {
@@ -211,7 +211,7 @@
         "Transform": "Barrel",
         "Positions": [
           [0.001, -0.004, 5.14],
-          [-0.19, -0.01, -0.048]
+          [0.31, -0.01, -0.048]
         ],
         "Directions": [
           "Barrel"

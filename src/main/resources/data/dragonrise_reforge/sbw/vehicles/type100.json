@@ -217,7 +217,7 @@
                                    "ShootAnimationTime":  40,
                                    "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
                                    "CrosshairColor":  "#da2d2d",
-                                   "Name":  "dragonrise_reforge:newcnap",
+                                   "Name":  "dragonrise_reforge:dtc10105",
                                    "AmmoType":  [
                                                     "superbwarfare:large_shell_ap",
                                                     {
@@ -230,7 +230,7 @@
                                                                          "Damage":  250,
                                                                          "ExplosionDamage":  120,
                                                                          "ExplosionRadius":  10,
-                                                                         "Name":  "dragonrise_reforge:newcnhe"
+                                                                         "Name":  "dragonrise_reforge:dtb10105"
                                                                      }
                                                     }
                                                 ],
@@ -251,7 +251,7 @@
                                                     "Positions":  [
                                                                       [
                                                                           0.1,
-                                                                          -0.5,
+                                                                          0.0,
                                                                           6.0
                                                                       ]
                                                                   ],
@@ -338,7 +338,7 @@
                                                                                 ]
                                                              },
                                                 "Crosshair":  "@VehicleCommonGun",
-                                                "Name":  "dragonrise_reforge:M2HB",
+                                                "Name":  "dragonrise_reforge:88C",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "dragonrise_reforge:m2_fire_1p",
                                                                   "Fire3P":  "dragonrise_reforge:m2_fire_3p",

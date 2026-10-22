@@ -1,11 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
-import com.redabysslucia.dragonrise_reforge.entities.vehicle.IndirectFireVehicleBase;
+import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 
 @SuppressWarnings("removal")
-public class BMP3Entity extends IndirectFireVehicleBase {
+public class BMP3Entity extends VehicleEntity {
 
         public BMP3Entity(EntityType<BMP3Entity> type, Level world) {
                 super(type, world);

@@ -75,7 +75,7 @@ side = "BOTH"
 
 # Dynamic Lights (dynamiclights-reforged) — 照明弹大范围补光依赖（纯客户端特性）
 # 【软依赖】非必需：未安装时本 mod 正常加载与运行，仅照明弹的「大范围动态补光」不生效
-# （注入该 mod 类的 mixin 在 dynamiclights.mixins.json 中已设为 required=false）。
+# （注入该 mod 类的 3 个 mixin 由 DragonriseMixinPlugin 在未安装时跳过，因此不会崩溃）。
 # ordering=AFTER 必需：我们要把 mixin 注入到它的类上，必须排在它之后加载。
 [[dependencies."${mod_id}"]]
 modId = "sodiumdynamiclights"
@@ -83,3 +83,13 @@ mandatory = false
 versionRange = "[0.0.1,)"
 ordering = "AFTER"
 side = "CLIENT"
+
+# SBW Addition (sbw_addition) — SBW 附属模组，用于开发期联动的 API 引用
+# 【软依赖】非必需：未安装时本 mod 正常加载与运行，联动功能不生效
+# ordering=AFTER：若双方存在联动，需要排在它之后以便识别
+[[dependencies."${mod_id}"]]
+modId = "sbw_addition"
+mandatory = false
+versionRange = "[1.1.0,)"
+ordering = "AFTER"
+side = "BOTH"

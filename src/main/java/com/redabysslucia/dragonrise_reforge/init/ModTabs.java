@@ -63,6 +63,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.JF17.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SHUANGWEIXIE.get()));
 
                         //俄罗斯 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
@@ -278,6 +279,15 @@ public class ModTabs {
                         output.accept(ModItems.JUNGLE07_MEDIC_HELMET.get());
                         output.accept(ModItems.JUNGLE07_MEDIC_CHEST.get());
                         output.accept(ModItems.JUNGLE07_MEDIC_PANTS.get());
+                        output.accept(ModItems.UKRAINIAN_SOLDIER_HELMET.get());
+                        output.accept(ModItems.UKRAINIAN_SOLDIER_CHEST.get());
+                        output.accept(ModItems.UKRAINIAN_SOLDIER_PANTS.get());
+                        output.accept(ModItems.CHINESE_DESERT_HELMET.get());
+                        output.accept(ModItems.CHINESE_DESERT_CHEST.get());
+                        output.accept(ModItems.CHINESE_DESERT_PANTS.get());
+                        output.accept(ModItems.RUSSIAN_SOLDIER_HELMET.get());
+                        output.accept(ModItems.RUSSIAN_SOLDIER_CHEST.get());
+                        output.accept(ModItems.RUSSIAN_SOLDIER_PANTS.get());
 
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());

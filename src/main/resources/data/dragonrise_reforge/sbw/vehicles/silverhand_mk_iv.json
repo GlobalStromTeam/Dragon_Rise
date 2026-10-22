@@ -246,7 +246,7 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "Positions": [
-          [-0.587,2.406,5.5]
+          [-0.087,2.406,5.5]
         ],
         "DefaultTransform": "Default",
         "DefaultBarrelDirection": [0,0,1],

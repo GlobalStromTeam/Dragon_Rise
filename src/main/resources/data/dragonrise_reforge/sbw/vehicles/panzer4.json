@@ -181,7 +181,7 @@
                                                     "Positions":  [
                                                                       [
                                                                           0.1,
-                                                                          -0.5,
+                                                                          0.0,
                                                                           11.5
                                                                       ]
                                                                   ],
@@ -234,7 +234,7 @@
                                        "SoundRadius":  16
                                    },
                     "PassengerMachineGun":  {
-                                                "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+                                                "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
@@ -266,7 +266,7 @@
                                                                                 ]
                                                              },
                                                 "Crosshair":  "@VehicleDynamicCross",
-                                                "Name":  "CRC F1 12,7mm",
+                                                "Name":  "dragonrise_reforge:mg34",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
                                                                   "Fire3P":  "superbwarfare:m_2_hb_fire_3p",

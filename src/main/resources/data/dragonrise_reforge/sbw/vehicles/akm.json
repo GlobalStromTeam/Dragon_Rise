@@ -115,14 +115,14 @@
   "Weapons": {
     "AAMissile": {
       "AmmoType": "superbwarfare:medium_anti_air_missile",
-      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_fb10.png",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aam.png",
       "DefaultZoom": 4,
       "DefaultFireMode": "Semi",
       "AvailableFireModes": "Semi",
       "Magazine": 8,
       "EmptyReloadTime": 320,
       "Projectile": "superbwarfare:ru_9m336_missile",
-      "Name": "dragonrise_reforge:missile_fb10",
+      "Name": "dragonrise_reforge:missile_9m37",
       "Damage": 100,
       "ExplosionDamage": 170,
       "ExplosionRadius": 4,

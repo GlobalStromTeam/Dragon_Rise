@@ -360,7 +360,7 @@
                                                                          [
                                                                              0.0,
                                                                              2.0,
-                                                                             -5.0
+                                                                             -4.5
                                                                          ]
                                                                      ],
                                                        "Directions":  [
@@ -459,14 +459,14 @@
                                       "SoundRadius":  25
                                   },
                     "SeekMissile":  {
-                                        "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_yj88c.png",
+                                        "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_dyh.png",
                                         "DefaultZoom":  2,
                                         "DefaultFireMode":  "Semi",
                                         "AvailableFireModes":  "Semi",
                                         "Magazine":  8,
                                         "EmptyReloadTime":  200,
                                         "Projectile":  "superbwarfare:agm_65",
-                                        "Name":  "dragonrise_reforge:yj88c",
+                                        "Name":  "dragonrise_reforge:dyh",
                                         "Damage":  1100,
                                         "ExplosionDamage":  180,
                                         "ExplosionRadius":  12,

@@ -68,6 +68,15 @@ public class ModItems {
     public static final RegistryObject<Item> JUNGLE07_MEDIC_HELMET = REGISTRY.register("jungle07_medic_helmet", Jungle07MedicHelmet::new);
     public static final RegistryObject<Item> JUNGLE07_MEDIC_CHEST = REGISTRY.register("jungle07_medic_chest", Jungle07MedicChest::new);
     public static final RegistryObject<Item> JUNGLE07_MEDIC_PANTS = REGISTRY.register("jungle07_medic_pants", Jungle07MedicPants::new);
+    public static final RegistryObject<Item> UKRAINIAN_SOLDIER_HELMET = REGISTRY.register("ukrainian_soldier_helmet", UkrainianSoldierHelmet::new);
+    public static final RegistryObject<Item> UKRAINIAN_SOLDIER_CHEST = REGISTRY.register("ukrainian_soldier_chest", UkrainianSoldierChest::new);
+    public static final RegistryObject<Item> UKRAINIAN_SOLDIER_PANTS = REGISTRY.register("ukrainian_soldier_pants", UkrainianSoldierPants::new);
+    public static final RegistryObject<Item> CHINESE_DESERT_HELMET = REGISTRY.register("chinese_desert_helmet", ChineseDesertHelmet::new);
+    public static final RegistryObject<Item> CHINESE_DESERT_CHEST = REGISTRY.register("chinese_desert_chest", ChineseDesertChest::new);
+    public static final RegistryObject<Item> CHINESE_DESERT_PANTS = REGISTRY.register("chinese_desert_pants", ChineseDesertPants::new);
+    public static final RegistryObject<Item> RUSSIAN_SOLDIER_HELMET = REGISTRY.register("russian_soldier_helmet", RussianSoldierHelmet::new);
+    public static final RegistryObject<Item> RUSSIAN_SOLDIER_CHEST = REGISTRY.register("russian_soldier_chest", RussianSoldierChest::new);
+    public static final RegistryObject<Item> RUSSIAN_SOLDIER_PANTS = REGISTRY.register("russian_soldier_pants", RussianSoldierPants::new);
 
     public static final RegistryObject<Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new ForgeSpawnEggItem(() -> ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));

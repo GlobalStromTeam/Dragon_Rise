@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    },
+    "D": {
+      "tag": "forge:dyes/white"
+    }
+  },
+  "pattern": [
+    "KDK",
+    "K K"
+  ],
+  "result": {
+    "item": "dragonrise_reforge:russian_soldier_helmet"
+  },
+  "show_notification": true
+}
