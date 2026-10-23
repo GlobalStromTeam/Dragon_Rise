@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.M10BookerEntity;
 import com.redabysslucia.dragonrise_reforge.entities.R2S25MEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class R2S25MRenderer extends GeoVehicleRenderer<R2S25MEntity> {
+public class R2S25MRenderer extends AnimatedTrackedVehicleRenderer<R2S25MEntity> {
     public R2S25MRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+        super(renderManager, "2s25m");
     }
 }

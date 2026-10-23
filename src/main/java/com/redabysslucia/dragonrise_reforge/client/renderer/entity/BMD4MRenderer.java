@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.BMD4MEntity;
 import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class BMD4MRenderer extends GeoVehicleRenderer<BMD4MEntity> {
+public class BMD4MRenderer extends AnimatedTrackedVehicleRenderer<BMD4MEntity> {
         public BMD4MRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "bmd4m");
         }
 }

@@ -5,8 +5,8 @@ import com.redabysslucia.dragonrise_reforge.entities.type97Entity;
 import com.redabysslucia.dragonrise_reforge.entities.type97QEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class type97QRenderer extends GeoVehicleRenderer<type97QEntity> {
+public class type97QRenderer extends AnimatedTrackedVehicleRenderer<type97QEntity> {
         public type97QRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "type97q");
         }
 }

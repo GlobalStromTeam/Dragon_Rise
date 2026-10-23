@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.init;
 import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
 
 
+import com.redabysslucia.dragonrise_reforge.entities.MerkavaMk4Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Zsd89aEntity;
@@ -1621,6 +1622,13 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Zsd89aCoveredEntity>> ZSD89A_COVERED = register("zsd89a_covered",
             EntityType.Builder.of(Zsd89aCoveredEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<MerkavaMk4Entity>> MERKAVA_MK4 = register("merkava_mk4",
+            EntityType.Builder.of(MerkavaMk4Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

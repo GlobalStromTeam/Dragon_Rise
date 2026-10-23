@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.IS2Entity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class IS2Renderer extends GeoVehicleRenderer<IS2Entity> {
+public class IS2Renderer extends AnimatedTrackedVehicleRenderer<IS2Entity> {
         public IS2Renderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "is2");
         }
 }

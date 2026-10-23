@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.ChurchillVIIEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class ChurchillVIIRenderer extends GeoVehicleRenderer<ChurchillVIIEntity> {
+public class ChurchillVIIRenderer extends AnimatedTrackedVehicleRenderer<ChurchillVIIEntity> {
     public ChurchillVIIRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager);
+        super(renderManager, "churchill_vii");
     }
 }

@@ -4,8 +4,8 @@ import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.redabysslucia.dragonrise_reforge.entities.LVTEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
-public class LVTRenderer extends GeoVehicleRenderer<LVTEntity> {
+public class LVTRenderer extends AnimatedTrackedVehicleRenderer<LVTEntity> {
         public LVTRenderer(EntityRendererProvider.Context renderManager) {
-                super(renderManager);
+                super(renderManager, "lvt");
         }
 }
