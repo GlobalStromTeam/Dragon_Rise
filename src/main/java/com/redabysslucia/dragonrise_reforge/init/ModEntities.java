@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Zsd89aCoveredEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Zsd89aEntity;
@@ -1618,6 +1621,14 @@ public class ModEntities {
     );
     public static final RegistryObject<EntityType<Zsd89aCoveredEntity>> ZSD89A_COVERED = register("zsd89a_covered",
             EntityType.Builder.of(Zsd89aCoveredEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+        public static final RegistryObject<EntityType<CavEntity>> CAV = register("cav",
+            EntityType.Builder.of(CavEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

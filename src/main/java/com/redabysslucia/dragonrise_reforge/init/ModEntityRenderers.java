@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ShuangweixieRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aCoveredRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aRenderer;
@@ -332,5 +335,6 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZSD89A.get(), Zsd89aRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
                 event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);
+                event.registerEntityRenderer(ModEntities.CAV.get(), CavRenderer::new);
         }
 }

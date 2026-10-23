@@ -223,6 +223,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
 
                     }
                     ).build()
