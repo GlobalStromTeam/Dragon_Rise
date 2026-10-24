@@ -55,6 +55,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R7
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R77Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ShuangweixieRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.SilverhandMkIvRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.ClusterChargeRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.CyborgTankRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.special.R6DroneRenderer;
@@ -263,6 +264,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.M1296.get(), M1296Renderer::new);
                 event.registerEntityRenderer(ModEntities.M1126.get(), M1126Renderer::new);
                 event.registerEntityRenderer(ModEntities.SILVERHAND_MK_IV.get(), SilverhandMkIvRenderer::new);
+                event.registerEntityRenderer(ModEntities.CAV.get(), CavRenderer::new);
                 event.registerEntityRenderer(ModEntities.BA10.get(), Ba10Renderer::new);
                 event.registerEntityRenderer(ModEntities.KV2.get(), Kv2Renderer::new);
                 event.registerEntityRenderer(ModEntities.T26B.get(), T26bRenderer::new);

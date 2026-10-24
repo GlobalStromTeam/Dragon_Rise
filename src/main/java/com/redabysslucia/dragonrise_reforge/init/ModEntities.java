@@ -19,6 +19,7 @@ import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
 import com.redabysslucia.dragonrise_reforge.entities.BMPT72Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.CamelEntity;
+import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Chonmaho5Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ChurchillVIIEntity;
@@ -1578,6 +1579,14 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.8f, 3.7f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<CavEntity>> CAV = register("cav",
+            EntityType.Builder.of(CavEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
     public static final DeferredHolder<EntityType<?>, EntityType<LcmEntity>> LCM = register("lcm",
             EntityType.Builder.of(LcmEntity::new, MobCategory.MISC)

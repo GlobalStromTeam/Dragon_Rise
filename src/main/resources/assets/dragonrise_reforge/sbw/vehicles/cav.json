@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:cav",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/cav.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/cav.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/cav.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/cav.png"
+    }
+  ]
+}

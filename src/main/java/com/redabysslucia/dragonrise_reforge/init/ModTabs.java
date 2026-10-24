@@ -160,6 +160,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
                         //中国 民用/娱乐
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
