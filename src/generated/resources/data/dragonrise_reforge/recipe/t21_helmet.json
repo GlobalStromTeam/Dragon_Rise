@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "D": {
+      "tag": "c:dyes/green"
+    },
+    "G": {
+      "tag": "c:dyes/gray"
+    },
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    }
+  },
+  "pattern": [
+    "KGK",
+    "KDK"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dragonrise_reforge:t21_helmet"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    },
+    "R": {
+      "tag": "c:dyes/red"
+    }
+  },
+  "pattern": [
+    "KRK",
+    "K K",
+    "K K"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dragonrise_reforge:jungle07_medic_chest"
+  }
+}

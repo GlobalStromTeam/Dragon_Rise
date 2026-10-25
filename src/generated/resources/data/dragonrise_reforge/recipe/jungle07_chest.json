@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "tag": "c:dyes/green"
+    },
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
+    }
+  },
+  "pattern": [
+    "KGK",
+    "K K",
+    "K K"
+  ],
+  "result": {
+    "count": 1,
+    "id": "dragonrise_reforge:jungle07_chest"
+  }
+}
