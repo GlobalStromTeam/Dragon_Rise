@@ -1,10 +1,10 @@
 package com.redabysslucia.dragonrise_reforge.mixin;
 
-import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
+import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.client.CameraType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.InteractionHand;
@@ -18,25 +18,29 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
- * 进入遥控时直接进<b>第一人称</b>，而不是官方默认的"第三人称背面"。
+ * 进入遥控时决定<b>用哪一套 HUD</b>：把相机类型钉到与机型配置一致的那一档。
  * <p>
- * 官方 {@code MonitorItem.use} 在开启 Using 时会把相机强制切成 {@code THIRD_PERSON_BACK}
- * （并记下原相机类型，退出时还原）。对 SBW 自家无人机没毛病，但对本机有两个后果：
- * <ol>
- *   <li>官方战斗机 HUD 按 {@code cameraType} 选"第一/第三人称"那套元素，
- *       于是进操控先看到的是第三人称 HUD，要按 F5 循环到第一人称才变战斗机 HUD；</li>
- *   <li>而相机本身（SBW 把 FIRST_PERSON 与 THIRD_PERSON_BACK 同等对待）已经在机身内，
- *       画面与 HUD 就不是一套，看着别扭。</li>
- * </ol>
- * 本 mixin 在该方法返回后补一步：如果这次是遥控本模组的固定翼，就把相机改成第一人称
- * ——即"机头光电球第一人称 + 第一人称战斗机 HUD"，F5 之后照样可以切到机外视角看自己的飞机。
+ * 官方 {@code MonitorItem.use} 开启 Using 时会把相机强制切成 {@code THIRD_PERSON_BACK}
+ * （并记下原类型，退出时还原）。SBW 的 {@code AircraftHud}／{@code VehicleCrosshairOverlay}
+ * 都是靠 {@code cameraType} 选"第一人称 / 第三人称"两套元素的 ——
+ * 而遥控相机本身由 {@code RemoteAircraftCameraMixin} 在 {@code Camera.setup} 的 HEAD 接管，
+ * 它把 {@code FIRST_PERSON} 与 {@code THIRD_PERSON_BACK} 当作同一档（都放机位），
+ * 所以<b>相机类型只影响 HUD 样式，不影响画面机位</b>。
+ * <p>
+ * 于是这里按载具数据 {@code EngineInfo.ThirdPersonHud} 选：
+ * <ul>
+ *   <li>{@code true} → 钉成 {@code THIRD_PERSON_BACK}：小圆环准星 + 命中点准星 + 武器信息
+ *       （本模组的察打无人机用这套，机身外观和第一人称那套座舱 HUD 不搭）；</li>
+ *   <li>{@code false}（缺省）→ 钉成 {@code FIRST_PERSON}：座舱式 HUD（双尾蝎仍走这条）。</li>
+ * </ul>
+ * 两种情况下 F5 都还能临时切视角，下次右键平板会重新按配置钉回来。
  */
 @Mixin(MonitorItem.class)
 public class MonitorItemCameraMixin {
 
     @Inject(method = "use", at = @At("RETURN"))
-    private void dragonrise$firstPersonForRemoteAircraft(Level level, Player player, InteractionHand hand,
-                                                         CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
+    private void dragonrise$cameraTypeForRemoteAircraft(Level level, Player player, InteractionHand hand,
+                                                        CallbackInfoReturnable<InteractionResultHolder<ItemStack>> cir) {
         if (!level.isClientSide()) {
             return;
         }
@@ -49,13 +53,18 @@ public class MonitorItemCameraMixin {
             return;
         }
         var drone = EntityFindUtil.findDrone(level, tag.getString("LinkedDrone"));
-        if (!(drone instanceof ShuangweixieEntity)) {
+        if (!(drone instanceof AbstractRemotePilotDrone aircraft)) {
             return;
         }
 
+        // 相机类型在这两档之间只影响 HUD 样式；机位与朝向由 RemoteAircraftCameraMixin 统一接管
+        CameraType want = aircraft.dr$thirdPersonHud()
+                ? CameraType.THIRD_PERSON_BACK
+                : CameraType.FIRST_PERSON;
+
         Minecraft mc = Minecraft.getInstance();
-        if (mc.options.getCameraType() == CameraType.THIRD_PERSON_BACK) {
-            mc.options.setCameraType(CameraType.FIRST_PERSON);
+        if (mc.options.getCameraType() != want) {
+            mc.options.setCameraType(want);
         }
     }
 }
