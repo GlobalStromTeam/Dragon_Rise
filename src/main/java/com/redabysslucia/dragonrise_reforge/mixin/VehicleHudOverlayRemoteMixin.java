@@ -20,7 +20,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * </pre>
  * 遥控者不骑乘，两处都拿不到载具 -> 整套 HUD（武器列表就在其中）不渲染。
  * 这里把两处的 player.vehicle 取值改判为"该玩家正在遥控的飞机"，
- * HUD 的布局/贴图/逻辑全部沿用官方实现（座位索引由 ShuangweixieEntity#getSeatIndex 提供）。
+ * HUD 的布局/贴图/逻辑全部沿用官方实现（座位索引由 AbstractRemotePilotDrone#getSeatIndex 提供）。
  * <p>
  * <b>目标持有者必须写准</b>：字节码里 (1) 是 Player.getVehicle()、(2) 是 LocalPlayer.getVehicle()，
  * 写成 Entity 会注入失败（此前正是如此，导致客户端启动即崩）。

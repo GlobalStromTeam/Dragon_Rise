@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.network.message;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
@@ -54,7 +54,7 @@ public class RemoteSeatSwitchMessage {
             }
 
             var drone = EntityFindUtil.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
-            if (!(drone instanceof ShuangweixieEntity aircraft)) {
+            if (!(drone instanceof AbstractRemotePilotDrone aircraft)) {
                 return;
             }
 

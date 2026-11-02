@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.util;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -32,13 +32,13 @@ public final class RemotePilotHelper {
     }
 
     /** 单 tick 缓存：一次路径扫描里会对每个候选实体问一遍，避免重复扫实体表 */
-    private record Cached(long tick, Level level, ShuangweixieEntity aircraft) {
+    private record Cached(long tick, Level level, AbstractRemotePilotDrone aircraft) {
     }
 
     private static final Map<UUID, Cached> CACHE = new HashMap<>();
 
-    /** 该玩家此刻遥控的飞机（主手监控平板 Using + Linked 且指向本模组双尾蝎）；没有返回 null */
-    public static ShuangweixieEntity remoteAircraft(Player player) {
+    /** 该玩家此刻遥控的无人机（主手监控平板 Using + Linked 且指向本模组任一遥控机）；没有返回 null */
+    public static AbstractRemotePilotDrone remoteAircraft(Player player) {
         if (player == null) {
             return null;
         }
@@ -48,12 +48,12 @@ public final class RemotePilotHelper {
             return cached.aircraft();
         }
 
-        ShuangweixieEntity found = resolve(player);
+        AbstractRemotePilotDrone found = resolve(player);
         CACHE.put(player.getUUID(), new Cached(tick, player.level(), found));
         return found;
     }
 
-    private static ShuangweixieEntity resolve(Player player) {
+    private static AbstractRemotePilotDrone resolve(Player player) {
         // 热路径：不能用 getOrCreateTag 给物品凭空造 NBT
         ItemStack stack = player.getMainHandItem();
         if (!stack.is(ModItems.MONITOR.get())) {
@@ -64,7 +64,7 @@ public final class RemotePilotHelper {
             return null;
         }
         var drone = EntityFindUtil.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
-        return drone instanceof ShuangweixieEntity aircraft ? aircraft : null;
+        return drone instanceof AbstractRemotePilotDrone aircraft ? aircraft : null;
     }
 
     /**
@@ -135,7 +135,7 @@ public final class RemotePilotHelper {
         if (level == null || sound == null) {
             return;
         }
-        ShuangweixieEntity controller = controllerShip(vehicle);
+        AbstractRemotePilotDrone controller = controllerShip(vehicle);
         if (controller != null) {
             Player pilot = controller.getController();
             if (pilot != null && pilot.distanceTo(vehicle) > 16.0f) {
@@ -146,9 +146,9 @@ public final class RemotePilotHelper {
         level.playSound(except, entity, sound, source, volume, pitch);
     }
 
-    /** 若该实体是本模组飞机则返回它（否则 null） */
-    private static ShuangweixieEntity controllerShip(net.minecraft.world.entity.Entity entity) {
-        return entity instanceof ShuangweixieEntity aircraft ? aircraft : null;
+    /** 若该实体是本模组的遥控无人机（双尾蝎 / DGSW MK L2）则返回它（否则 null） */
+    private static AbstractRemotePilotDrone controllerShip(net.minecraft.world.entity.Entity entity) {
+        return entity instanceof AbstractRemotePilotDrone aircraft ? aircraft : null;
     }
 
     public static net.minecraft.world.entity.Entity vehicleOrRemoteAircraft(
@@ -167,12 +167,12 @@ public final class RemotePilotHelper {
      * 玩家是否正手持"已激活"的监控平板遥控本模组飞机；是则返回那架飞机，否则 null。
      * 语义等同 {@link #remoteAircraft(Player)}，只是名字更贴近调用处（用于 remap = false 的 mixin）。
      */
-    public static ShuangweixieEntity activeRemoteMonitor(Player player) {
+    public static AbstractRemotePilotDrone activeRemoteMonitor(Player player) {
         return remoteAircraft(player);
     }
 
     public static int remoteSeat(Player player) {
-        ShuangweixieEntity aircraft = remoteAircraft(player);
+        AbstractRemotePilotDrone aircraft = remoteAircraft(player);
         return aircraft == null ? -1 : aircraft.dr$remoteSeat(player);
     }
 
@@ -185,5 +185,40 @@ public final class RemotePilotHelper {
             return false;
         }
         return remoteAircraft(player) == entity;
+    }
+
+    // ==================== 解绑诊断日志 ====================
+
+    /** 跳过日志限流（撞击每 tick 都可能触发，别刷屏） */
+    private static long LAST_SKIP_LOG_MS;
+
+    /**
+     * 记录一次"确实执行了"的解绑 —— 用于定位"遥控器莫名解绑"到底走的哪条路径。
+     * <p>
+     * 卓越前线的 {@code DroneEntity} 会在这几处解绑操控者主手平板：
+     * {@code destroy}（无人机被打爆）、{@code interact}（玩家自己右键解绑）、
+     * {@code hitEntityCrash} / {@code baseTick}（挂着炸弹撞毁/自爆）。
+     * 正常游玩时前两种才是预期路径；日志里出现哪一条，就说明是哪种情况。
+     */
+    public static void logDroneUnlink(Entity drone, Player player, String site) {
+        com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.LOGGER.info(
+                "[DR-LINK] 解绑 site={} drone={} player={}",
+                site,
+                drone == null ? "?" : drone.getStringUUID() + "/" + drone.getType().toShortString(),
+                player == null ? "?" : player.getGameProfile().getName());
+    }
+
+    /** 记录一次"被拦下来的"解绑（平板链的不是那台机）—— 限流 1 秒一次 */
+    public static void logDroneUnlinkSkip(Entity drone, Player player, String site) {
+        long now = System.currentTimeMillis();
+        if (now - LAST_SKIP_LOG_MS < 1000L) {
+            return;
+        }
+        LAST_SKIP_LOG_MS = now;
+        com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.LOGGER.info(
+                "[DR-LINK] 拦下解绑 site={} drone={} player={}（平板链的是别的机）",
+                site,
+                drone == null ? "?" : drone.getStringUUID() + "/" + drone.getType().toShortString(),
+                player == null ? "?" : player.getGameProfile().getName());
     }
 }

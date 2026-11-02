@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.mixin;
 
 import com.atsuishio.superbwarfare.entity.vehicle.DroneEntity;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import com.redabysslucia.dragonrise_reforge.util.RemotePilotHelper;
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -39,7 +39,7 @@ public class DroneDestroyKeepWreckMixin {
             at = @At(value = "INVOKE", remap = true,
                     target = "Lcom/atsuishio/superbwarfare/entity/vehicle/DroneEntity;discard()V"))
     private void dragonrise$keepWreck(DroneEntity self) {
-        if (self instanceof ShuangweixieEntity aircraft && aircraft.isWreck()) {
+        if (self instanceof AbstractRemotePilotDrone aircraft && aircraft.isWreck()) {
             com.redabysslucia.dragonrise_reforge.Dragonrise_reforge.LOGGER.info(
                     "[DR-WRECK] 保留残骸 {}", aircraft.getStringUUID());
             return;     // 已经是残骸：留下它

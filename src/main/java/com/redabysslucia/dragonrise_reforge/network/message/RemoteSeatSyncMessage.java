@@ -1,7 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.network.message;
 
 import com.atsuishio.superbwarfare.init.ModItems;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.ItemStack;
@@ -46,7 +46,7 @@ public class RemoteSeatSyncMessage {
             if (!stack.is(ModItems.MONITOR.get())) {
                 return;
             }
-            stack.getOrCreateTag().putInt(ShuangweixieEntity.DR_REMOTE_SEAT, msg.index);
+            stack.getOrCreateTag().putInt(AbstractRemotePilotDrone.DR_REMOTE_SEAT, msg.index);
         });
         ctx.get().setPacketHandled(true);
     }

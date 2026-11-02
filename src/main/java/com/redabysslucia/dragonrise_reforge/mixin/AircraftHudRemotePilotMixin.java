@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * <pre>if (player !== vehicle.getFirstPassenger()) return</pre>
  * 遥控驾驶时玩家不在载具上，这句直接让 HUD 不渲染。这里把它重定向为：
  * 真有乘员就按原样；没有乘员但当前玩家在本载具上<b>占着座位</b>（{@code getSeatIndex >= 0}，
- * 遥控者由 {@code ShuangweixieEntity#getSeatIndex} 返回座位号）时，就把该玩家当作一号乘员返回。
+ * 遥控者由 {@code AbstractRemotePilotDrone#getSeatIndex} 返回座位号）时，就把该玩家当作一号乘员返回。
  * <p>
  * 只影响这一个方法内部；对真人驾驶的载具完全等价（真乘员走原路径）。
  * <p>

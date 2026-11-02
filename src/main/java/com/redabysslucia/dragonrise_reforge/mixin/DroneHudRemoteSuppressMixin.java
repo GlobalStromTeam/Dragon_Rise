@@ -6,7 +6,7 @@ import com.atsuishio.superbwarfare.entity.vehicle.DroneEntity;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 /**
- * 遥控双尾蝎时不再画官方无人机 HUD。
+ * 遥控本模组无人机（双尾蝎 / DGSW MK L2）时不再画官方无人机 HUD。
  * <p>
  * 本机是 {@code HudType: "@Aircraft"} 的固定翼，遥控 HUD 改由
  * {@code RemoteAircraftHudOverlay} 渲染战斗机 HUD；两套 HUD 叠在一起会互相压字，
@@ -40,7 +40,7 @@ public class DroneHudRemoteSuppressMixin {
             return;
         }
         DroneEntity drone = EntityFindUtil.findDrone(mc.player.level(), tag.getString(MonitorItem.LINKED_DRONE));
-        if (drone instanceof ShuangweixieEntity) {
+        if (drone instanceof AbstractRemotePilotDrone) {
             ci.cancel();
         }
     }

@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * 该默认方法为多个弹射物类共用（{@code FastThrowableProjectile} 等），改这一处覆盖面最广。
  * <b>remap</b>：注入目标是原版 {@code Entity.getVehicle()}，需走 refmap（默认 remap = true）。
  */
-@Mixin(targets = "com.atsuishio.superbwarfare.entity.projectile.IAdvancedHitDetection$DefaultImpls")
+@Mixin(value = com.atsuishio.superbwarfare.entity.projectile.IAdvancedHitDetection.DefaultImpls.class)
 public class AdvancedHitDetectionSelfHitMixin {
 
     @Redirect(method = "findEntitiesOnPath", at = @At(value = "INVOKE", ordinal = 0,
