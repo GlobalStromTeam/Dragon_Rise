@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.mixin;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.tools.InventoryTool;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.world.entity.player.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -35,7 +35,7 @@ public class InventoryToolRemotePilotBoxMixin {
     @Inject(method = "hasCreativeAmmoBoxForVehicle", at = @At("HEAD"), cancellable = true, require = 0)
     private static void dragonrise$remotePilotCreativeBox(VehicleEntity vehicle,
                                                           CallbackInfoReturnable<Boolean> cir) {
-        if (!(vehicle instanceof ShuangweixieEntity aircraft)) {
+        if (!(vehicle instanceof AbstractRemotePilotDrone aircraft)) {
             return;
         }
         Player controller = aircraft.getController();

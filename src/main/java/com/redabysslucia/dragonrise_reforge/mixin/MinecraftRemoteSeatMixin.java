@@ -5,7 +5,7 @@ import com.atsuishio.superbwarfare.init.ModKeyMappings;
 import com.atsuishio.superbwarfare.network.message.send.SwitchVehicleWeaponMessage;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
 import com.atsuishio.superbwarfare.tools.NBTTool;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSwitchMessage;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -45,7 +45,7 @@ public class MinecraftRemoteSeatMixin {
             return;
         }
         var drone = EntityFindUtil.findDrone(player.level(), tag.getString("LinkedDrone"));
-        if (!(drone instanceof ShuangweixieEntity aircraft)) {
+        if (!(drone instanceof AbstractRemotePilotDrone aircraft)) {
             return;
         }
 

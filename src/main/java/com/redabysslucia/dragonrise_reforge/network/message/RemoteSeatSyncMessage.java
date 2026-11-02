@@ -3,7 +3,7 @@ package com.redabysslucia.dragonrise_reforge.network.message;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -60,7 +60,7 @@ public class RemoteSeatSyncMessage implements CustomPacketPayload {
                 return;
             }
             var tag = NBTTool.getTag(stack);
-            tag.putInt(ShuangweixieEntity.DR_REMOTE_SEAT, msg.index);
+            tag.putInt(AbstractRemotePilotDrone.DR_REMOTE_SEAT, msg.index);
             NBTTool.saveTag(stack, tag);
         });
     }

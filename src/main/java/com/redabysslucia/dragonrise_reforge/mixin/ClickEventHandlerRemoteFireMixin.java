@@ -4,7 +4,7 @@ import com.atsuishio.superbwarfare.event.ClickEventHandler;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.init.ModItems;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import com.redabysslucia.dragonrise_reforge.util.RemotePilotHelper;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -32,7 +32,7 @@ public class ClickEventHandlerRemoteFireMixin {
     @Inject(method = "handleWeaponFirePress", at = @At("HEAD"), cancellable = true)
     private void dragonrise$remoteFireInsteadOfDroneCommand(Player player, ItemStack stack, CallbackInfo ci) {
         // 只用本模组 helper：本 mixin remap = false，自身调原版成员打包后会 NoSuchMethodError。
-        ShuangweixieEntity aircraft = RemotePilotHelper.activeRemoteMonitor(player);
+        AbstractRemotePilotDrone aircraft = RemotePilotHelper.activeRemoteMonitor(player);
         if (aircraft == null) {
             return;
         }

@@ -5,7 +5,7 @@ import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
 import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
@@ -69,7 +69,7 @@ public class RemoteSeatSwitchMessage implements CustomPacketPayload {
             }
 
             var drone = EntityFindUtil.findDrone(player.level(), tag.getString(MonitorItem.LINKED_DRONE));
-            if (!(drone instanceof ShuangweixieEntity aircraft)) {
+            if (!(drone instanceof AbstractRemotePilotDrone aircraft)) {
                 return;
             }
 

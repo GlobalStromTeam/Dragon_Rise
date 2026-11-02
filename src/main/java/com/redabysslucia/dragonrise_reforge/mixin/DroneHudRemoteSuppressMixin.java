@@ -12,7 +12,7 @@ import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.tools.NBTTool;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -46,7 +46,7 @@ public class DroneHudRemoteSuppressMixin {
             return;
         }
         DroneEntity drone = EntityFindUtil.findDrone(mc.player.level(), tag.getString(MonitorItem.LINKED_DRONE));
-        if (drone instanceof ShuangweixieEntity) {
+        if (drone instanceof AbstractRemotePilotDrone) {
             ci.cancel();
         }
     }

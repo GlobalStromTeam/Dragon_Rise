@@ -7,7 +7,7 @@ import com.atsuishio.superbwarfare.item.misc.MonitorItem;
 import com.atsuishio.superbwarfare.network.message.send.SwitchVehicleWeaponMessage;
 import com.atsuishio.superbwarfare.tools.EntityFindUtil;
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
-import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
+import com.redabysslucia.dragonrise_reforge.entities.AbstractRemotePilotDrone;
 import com.redabysslucia.dragonrise_reforge.entities.ZBD04AEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
@@ -23,7 +23,7 @@ import net.neoforged.neoforge.client.event.ViewportEvent;
 public class RemoteAircraftClientHandler {
 
     /** 当前正在遥控的飞机；没在遥控返回 null */
-    public static ShuangweixieEntity controlledAircraft() {
+    public static AbstractRemotePilotDrone controlledAircraft() {
         Minecraft mc = Minecraft.getInstance();
         LocalPlayer player = mc.player;
         if (player == null || mc.level == null) {
@@ -38,7 +38,7 @@ public class RemoteAircraftClientHandler {
             return null;
         }
         var drone = EntityFindUtil.findDrone(mc.level, tag.getString(MonitorItem.LINKED_DRONE));
-        return drone instanceof ShuangweixieEntity aircraft ? aircraft : null;
+        return drone instanceof AbstractRemotePilotDrone aircraft ? aircraft : null;
     }
 
     @SubscribeEvent
@@ -51,7 +51,7 @@ public class RemoteAircraftClientHandler {
             return;
         }
 
-        ShuangweixieEntity aircraft = controlledAircraft();
+        AbstractRemotePilotDrone aircraft = controlledAircraft();
         if (aircraft == null) {
             ClientEventHandler.holdFireVehicle = false;
             return;
@@ -68,7 +68,7 @@ public class RemoteAircraftClientHandler {
 
     @SubscribeEvent
     public static void onMouseScroll(InputEvent.MouseScrollingEvent event) {
-        ShuangweixieEntity aircraft = controlledAircraft();
+        AbstractRemotePilotDrone aircraft = controlledAircraft();
         if (aircraft == null) {
             return;
         }
@@ -101,7 +101,7 @@ public class RemoteAircraftClientHandler {
      */
     @SubscribeEvent
     public static void onComputeCameraAngles(ViewportEvent.ComputeCameraAngles event) {
-        ShuangweixieEntity aircraft = controlledAircraft();
+        AbstractRemotePilotDrone aircraft = controlledAircraft();
         if (aircraft == null) {
             return;
         }
