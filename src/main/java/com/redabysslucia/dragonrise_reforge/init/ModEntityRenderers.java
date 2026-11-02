@@ -53,6 +53,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Pl
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Pl15Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R73Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R77Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.DgswMkL2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ShuangweixieRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.SilverhandMkIvRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
@@ -274,6 +275,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.K1A1.get(), K1a1Renderer::new);
                 event.registerEntityRenderer(ModEntities.SPG9.get(), Spg9Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHUANGWEIXIE.get(), ShuangweixieRenderer::new);
+                event.registerEntityRenderer(ModEntities.DGSW_MK_L2.get(), DgswMkL2Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A.get(), Zsd89aRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
                 event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);

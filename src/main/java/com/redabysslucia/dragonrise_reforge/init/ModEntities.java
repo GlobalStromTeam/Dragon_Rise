@@ -126,6 +126,7 @@ import com.redabysslucia.dragonrise_reforge.entities.REFALEEntity;
 import com.redabysslucia.dragonrise_reforge.entities.S2S38Entity;
 import com.redabysslucia.dragonrise_reforge.entities.SD905Entity;
 import com.redabysslucia.dragonrise_reforge.entities.SHIELDEntity;
+import com.redabysslucia.dragonrise_reforge.entities.DgswMkL2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.ShuangweixieEntity;
 import com.redabysslucia.dragonrise_reforge.entities.SilverhandMkIvEntity;
 import com.redabysslucia.dragonrise_reforge.entities.SpacebagEntity;
@@ -1629,6 +1630,13 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 1.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<DgswMkL2Entity>> DGSW_MK_L2 = register("dgsw_mk_l2",
+            EntityType.Builder.of(DgswMkL2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(5.0f, 1.6f)
     );
     public static final DeferredHolder<EntityType<?>, EntityType<Zsd89aEntity>> ZSD89A = register("zsd89a",
             EntityType.Builder.of(Zsd89aEntity::new, MobCategory.MISC)
