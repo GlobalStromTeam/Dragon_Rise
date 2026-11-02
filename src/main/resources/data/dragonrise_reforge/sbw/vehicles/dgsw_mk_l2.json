@@ -1,0 +1,267 @@
+{
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/dgsw_mk_l2.animation.json",
+  "ID": "dragonrise_reforge:dgsw_mk_l2",
+  "MaxHealth": 60,
+  "MaxEnergy": 20000,
+  "Mass": 0.6,
+  "VehicleContainerType": "Mini",
+  "SendHitParticles": false,
+  "SelfHurtPercent": 0,
+  "HasLowHealthWarning": false,
+  "EngineSound": "superbwarfare:drone_engine",
+  "EngineInfo": {
+    "MouseToBarrel": 0.5,
+    "LockBodyPitch": true,
+    "CameraFollowBarrel": true,
+    "ThirdPersonHud": true
+  },
+  "Type": "Drone",
+  "HudType": "@Aircraft",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/dgsw_mk_l2_icon.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_aircraft.png",
+  "ThirdPersonCameraPos": [
+    0,
+    1.2,
+    3
+  ],
+  "UsePassengerCreativeAmmoBox": true,
+  "BarrelPos": [
+    0.0189,
+    0.9685,
+    0.7247
+  ],
+  "TurretPitchRange": [
+    -60,
+    0
+  ],
+  "TurretTurnSpeed": [
+    6,
+    12
+  ],
+  "TurretYawRange": [
+    0,
+    0
+  ],
+  "TurretControllerIndex": 0,
+  "Seats": [
+    {
+      "IsEnclosed": true,
+      "HidePassenger": true,
+      "Transform": "Vehicle",
+      "Position": [
+        0,
+        0.97,
+        0.3
+      ],
+      "CanRotateHead": false,
+      "Sensitivity": [
+        0,
+        0,
+        0
+      ],
+      "CameraPos": {
+        "Transform": "Barrel",
+        "Position": [
+          0,
+          0.02,
+          0.88
+        ],
+        "UseFixedCameraPos": true,
+        "UseAircraftCamera": true,
+        "AircraftCameraPos": [
+          0,
+          2.75,
+          -14
+        ]
+      },
+      "DismountInfo": {
+        "Transform": "Vehicle",
+        "Position": [
+          0,
+          0.9,
+          0
+        ],
+        "CanEject": false
+      },
+      "Weapons": [
+        "Cannon"
+      ]
+    }
+  ],
+  "Weapons": {
+    "Cannon": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_ap.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "DefaultZoom": 3,
+      "RPM": 600,
+      "Velocity": 18,
+      "Damage": 45,
+      "ExplosionDamage": 8,
+      "ExplosionRadius": 2,
+      "HeatPerShoot": 4,
+      "NaturalCooldown": 1,
+      "RecoilTime": 31,
+      "RecoilForce": 0.62,
+      "ShootAnimationTime": 3,
+      "Spread": 1,
+      "ProjectileLife": 40,
+      "Crosshair": "@AirCraftCommon",
+      "CrosshairColor": "0x66FF00",
+      "Name": "weapon.superbwarfare.30mm_2a42_ap",
+      "Projectile": "superbwarfare:small_cannon_shell",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
+        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
+        "Fire3PFar": "superbwarfare:mi_28_cannon_far",
+        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Change": "superbwarfare:into_missile"
+      },
+      "SoundRadius": 24,
+      "AmmoType": [
+        "superbwarfare:small_shell_ap",
+        {
+          "Ammo": "superbwarfare:small_shell_he",
+          "Override": {
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_he.png",
+            "Velocity": 15,
+            "Damage": 12,
+            "ExplosionDamage": 14,
+            "ExplosionRadius": 5,
+            "Name": "weapon.superbwarfare.30mm_2a42_he"
+          }
+        },
+        {
+          "Ammo": "superbwarfare:small_shell_gs",
+          "Override": {
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_gs.png",
+            "Spread": 3,
+            "Velocity": 10,
+            "Damage": 7,
+            "ProjectileAmount": 12,
+            "DamageReduce": {
+              "Type": "Shotgun"
+            },
+            "ExplosionDamage": 0,
+            "ExplosionRadius": 0,
+            "Projectile": "superbwarfare:projectile",
+            "Name": "weapon.superbwarfare.30mm_2a42_gs"
+          }
+        }
+      ],
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            0,
+            -1.14,
+            2.3631
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ],
+        "ShootDirectionForHud": "Barrel"
+      }
+    }
+  },
+  "OBB": [
+    {
+      "Part": "Collision",
+      "Size": [
+        1.4187,
+        0.9685,
+        1.989
+      ],
+      "Position": [
+        0,
+        0.9685,
+        0.472
+      ]
+    },
+    {
+      "Size": [
+        1.4594,
+        0.2063,
+        1.0869
+      ],
+      "Position": [
+        1.0732,
+        1.4605,
+        -1.451
+      ]
+    },
+    {
+      "Size": [
+        1.4594,
+        0.2063,
+        1.0869
+      ],
+      "Position": [
+        -1.0732,
+        1.4605,
+        -1.451
+      ]
+    },
+    {
+      "Size": [
+        1.4594,
+        0.2063,
+        1.0869
+      ],
+      "Position": [
+        1.0732,
+        1.398,
+        1.201
+      ]
+    },
+    {
+      "Size": [
+        1.4594,
+        0.2063,
+        1.0869
+      ],
+      "Position": [
+        -1.0732,
+        1.398,
+        1.201
+      ]
+    },
+    {
+      "Part": "MainEngine",
+      "Size": [
+        0.5,
+        0.18,
+        0.6
+      ],
+      "Position": [
+        0,
+        1.78,
+        -0.15
+      ]
+    },
+    {
+      "Part": "Body",
+      "Size": [
+        0.32,
+        0.22,
+        0.55
+      ],
+      "Position": [
+        0.02,
+        0.93,
+        0.45
+      ]
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/dgsw_mk_l2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/dgsw_mk_l2.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/dgsw_mk_l2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/dgsw_mk_l2.png"
+    }
+  ]
+}
