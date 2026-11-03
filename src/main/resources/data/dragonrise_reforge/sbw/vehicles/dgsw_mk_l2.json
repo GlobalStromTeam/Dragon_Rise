@@ -84,7 +84,8 @@
         "CanEject": false
       },
       "Weapons": [
-        "Cannon"
+        "Cannon",
+        "Grenade"
       ]
     }
   ],
@@ -149,6 +150,53 @@
           }
         }
       ],
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            0,
+            -1.14,
+            2.3631
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ],
+        "ShootDirectionForHud": "Barrel"
+      }
+    },
+    "Grenade": {
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "superbwarfare:gun_grenade",
+      "DefaultZoom": 3,
+      "RPM": 280,
+      "Magazine": 20,
+      "EmptyReloadTime": 100,
+      "Velocity": 8,
+      "Gravity": 0.05,
+      "Damage": 55,
+      "ExplosionDamage": 10,
+      "ExplosionRadius": 5,
+      "HeatPerShoot": 6,
+      "NaturalCooldown": 1,
+      "RecoilTime": 31,
+      "RecoilForce": 1.62,
+      "ShootAnimationTime": 3,
+      "Spread": 1.2,
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0xFFC700",
+      "Name": "dragonrise_reforge:mk19",
+      "SoundInfo": {
+        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
+        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
+        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
+      "SoundRadius": 24,
+      "AmmoType": "superbwarfare:grenade_40mm",
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/grenade.png",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
