@@ -105,6 +105,19 @@
       "Part":  "Turret",
       "Transform":  "Turret",
       "Rotation":  "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.6085,
+        1.101,
+        4.1255
+      ],
+      "Position": [
+        -0.0055,
+        1.108,
+        0.0345
+      ]
     }
   ],
   "Seats":  [
@@ -292,13 +305,7 @@
       "EmptyReloadTime":  20,
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0.007875,
-            0.0135125,
-            3.42135
-          ]
-        ],
+        "Positions":  [[0.007497, 0.013888, 2.414556]],
         "Directions":  [
           "Barrel"
         ]
@@ -327,13 +334,7 @@
       "AmmoType":  "@RifleAmmo",
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0.2929125,
-            0.020525,
-            0.33541875
-          ]
-        ],
+        "Positions":  [[0.292538, 0.020899, 0.398931]],
         "Directions":  [
           "Barrel"
         ]

@@ -1400,7 +1400,6 @@
 					"parent": "base",
 					"pivot": [-0.125, 34.6, -5.7]
 				},
-				
 				{
 					"name": "bone16",
 					"parent": "turret",
@@ -2810,7 +2809,7 @@
 					"pivot": [-2.3, -2.9, -66.675]
 				},
 				{
-					"name": "missile3",
+					"name": "move_missile2",
 					"parent": "missile",
 					"pivot": [-2.3, -2.9, -66.675],
 					"cubes": [
@@ -2887,7 +2886,7 @@
 					]
 				},
 				{
-					"name": "missile4",
+					"name": "move_missile3",
 					"parent": "missile",
 					"pivot": [-2.3, -2.9, -66.675],
 					"cubes": [

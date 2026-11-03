@@ -20,13 +20,13 @@ public class M1A2SEPV2Renderer extends GeoVehicleRenderer<M1A2SEPV2Entity> {
                 super(renderManager);
         }
 
-        // Tusk 套件：默认拆卸（隐藏），左键近战点击 10 次切换安装/拆卸（隐藏/显示骨骼）
+        // 附加装甲（TUSK）：默认拆卸（隐藏骨骼），由「附加装甲套件 / 拆卸套件」右键切换
         @Override
         public void transformCustomModelPart(M1A2SEPV2Entity entity, VehicleModelInstance instance,
                                              PoseStack poseStack, float entityYaw, float partialTicks) {
                 super.transformCustomModelPart(entity, instance, poseStack, entityYaw, partialTicks);
 
-                boolean installed = entity.isTuskInstalled();
+                boolean installed = entity.hasAddonArmor();
                 BoneState tusk = instance.getBone("move_tusk");
                 if (tusk != null) {
                         tusk.visible = installed;

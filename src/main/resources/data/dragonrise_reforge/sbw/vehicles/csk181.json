@@ -80,6 +80,19 @@
                                      2.21875
                                  ],
                     "Part":  "MainEngine"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.25,
+                    1.1875,
+                    3.125
+                  ],
+                  "Position": [
+                    0.0,
+                    1.1875,
+                    -0.0625
+                  ]
                 }
             ],
     "Seats":  [
@@ -102,17 +115,9 @@
                                    ],
                       "CameraPos":  {
                                         "UseFixedCameraPos":  true,
-                                        "Position":  [
-                                                         0.37441875,
-                                                         0.14028125,
-                                                         0.428175
-                                                     ],
+                                        "Position":  [0.374619, 0.136033, 0.428228],
                                         "Transform":  "Barrel",
-                                        "ZoomPosition":  [
-                                                             0.37441875,
-                                                             0.14028125,
-                                                             0.428175
-                                                         ],
+                                        "ZoomPosition":  [0.374619, 0.136033, 0.428228],
                                         "Direction":  "Barrel"
                                     },
                       "MinPitch":  -6,
@@ -216,13 +221,7 @@
                                                 "AmmoType":  "@HeavyAmmo",
                                                 "ShootPos":  {
                                                                  "Transform":  "Barrel",
-                                                                 "Positions":  [
-                                                                                   [
-                                                                                       0.13718125,
-                                                                                       0.22520625,
-                                                                                       1.4770125
-                                                                                   ]
-                                                                               ],
+                                                                 "Positions":  [[0.136661, 0.225181, 1.548971]],
                                                                  "Directions":  [
                                                                                     "Barrel"
                                                                                 ]
@@ -271,13 +270,7 @@
                                        "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
                                        "ShootPos":  {
                                                         "Transform":  "Barrel",
-                                                        "Positions":  [
-                                                                          [
-                                                                              -0.13281875,
-                                                                              0.14926875,
-                                                                              0.7345125
-                                                                          ]
-                                                                      ],
+                                                        "Positions":  [[-0.133338, 0.149243, 0.806472]],
                                                         "Directions":  [
                                                                            "Barrel"
                                                                        ]
@@ -313,11 +306,7 @@
                              -6,
                              60
                          ],
-    "BarrelPos":  [
-                      -0.01510625,
-                      0.150025,
-                      -0.06275625
-                  ],
+    "BarrelPos":  [-0.015306, 0.154273, -0.062809],
     "HasDecoy":  true,
     "UpStep":  2.25,
     "TurretControllerIndex":  1,

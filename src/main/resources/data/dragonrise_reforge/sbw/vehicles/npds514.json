@@ -15,11 +15,7 @@
                              -32.5,
                              90
                          ],
-    "BarrelPos":  [
-                      0.0,
-                      0.4890625,
-                      0.0
-                  ],
+    "BarrelPos":  [-0.060935, 0.487222, -0.001557],
     "MaxEnergy":  5000000,
     "Seats":  {
                   "HidePassenger":  true,
@@ -98,18 +94,7 @@
                                                     },
                                  "ShootPos":  {
                                                   "Transform":  "Barrel",
-                                                  "Positions":  [
-                                                                    [
-                                                                        -0.46860625,
-                                                                        0.27979375,
-                                                                        0.1101
-                                                                    ],
-                                                                    [
-                                                                        0.96860625,
-                                                                        0.27979375,
-                                                                        0.1101
-                                                                    ]
-                                                                ],
+                                                  "Positions":  [[-0.81839, 0.483524, 6.140524], [0.827948, 0.483524, 6.140524]],
                                                   "Directions":  [
                                                                      "Barrel"
                                                                  ]
@@ -169,5 +154,33 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/npds514.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/npds514.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Body",
+        "Size": [
+          2.642178,
+          0.675704,
+          2.553968
+        ],
+        "Position": [
+          -0.000452,
+          0.311321,
+          -0.073858
+        ]
+      },
+      {
+        "Part": "Collision",
+        "Size": [
+          2.642178,
+          0.675704,
+          2.553968
+        ],
+        "Position": [
+          -0.000452,
+          0.311321,
+          -0.073858
+        ]
+      }
+    ]
 }

@@ -128,11 +128,8 @@
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
-        "Transform": "Barrel",
-        "Positions": [
-          [-0.734,1.176,4.954],
-          [-0.734,1.301,4.954]
-        ],
+        "Transform": "Vehicle",
+        "Positions": [[-0.733631, 1.176438, 4.953613], [-0.733631, 1.301438, 4.953613]],
         "Directions": [
           "Vehicle"
         ]
@@ -271,12 +268,7 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,1.0625,5.625],
-        "Positions": [
-          [2.19,1,2.29],
-          [2.19,0.64,2.29],
-          [2.59,1,2.29],
-          [2.59,0.64,2.29]
-        ],
+        "Positions": [[3.486114, 1.397856, -1.99375], [3.129864, 1.397856, -1.99375], [-3.129864, 1.397856, -1.99375], [-3.486114, 1.397856, -1.99375]],
         "ViewDirection": "Barrel",
         "BoundUpWithAmmoAmount": true
       },
@@ -323,12 +315,7 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "ShootPositionForHud": [0,1.0625,5.625],
-        "Positions": [
-          [1.006,1.932,0],
-          [1.006,1.67,0],
-          [1.193,1.932,0],
-          [1.193,1.67,0]
-        ],
+        "Positions": [[3.486114, 1.397856, -1.99375], [3.129864, 1.397856, -1.99375], [-3.129864, 1.397856, -1.99375], [-3.486114, 1.397856, -1.99375]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {

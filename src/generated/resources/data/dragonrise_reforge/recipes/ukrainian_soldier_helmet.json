@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "key": {
-    "K": {
-      "item": "dragonrise_reforge:kevlar"
-    },
     "D": {
       "tag": "forge:dyes/cyan"
+    },
+    "K": {
+      "item": "dragonrise_reforge:kevlar"
     }
   },
   "pattern": [

@@ -103,6 +103,19 @@
         0.5,
         0.0625
       ]
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.3125,
+        0.90625,
+        2.875
+      ],
+      "Position": [
+        0.0,
+        0.90625,
+        0.0
+      ]
     }
   ],
   "Seats":  [
@@ -223,13 +236,7 @@
       "SoundRadius":  32,
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0.1301875,
-            -0.01015625,
-            12.00215625
-          ]
-        ],
+        "Positions":  [[0.030188, -0.010155, 1.82029]],
         "Directions":  [
           "Barrel"
         ]
@@ -301,13 +308,7 @@
       "AmmoType":  "@HeavyAmmo",
       "ShootPos":  {
         "Transform":  "WeaponStationBarrel",
-        "Positions":  [
-          [
-            -0.008925,
-            0.1546875,
-            0.4275
-          ]
-        ],
+        "Positions":  [[-0.008926, 0.154686, 1.080935]],
         "Directions":  [
           "WeaponStationBarrel"
         ]

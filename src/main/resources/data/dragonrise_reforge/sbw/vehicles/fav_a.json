@@ -16,11 +16,7 @@
                              -3,
                              45
                          ],
-    "BarrelPos":  [
-                      0,
-                      0.15,
-                      0
-                  ],
+    "BarrelPos":  [0.00669, 0.090605, 0.002909],
     "TurretControllerIndex":  2,
     "OBB":  [
                 {
@@ -110,6 +106,19 @@
                                      -3.9875
                                  ],
                     "Part":  "WheelRight"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.375,
+                    0.765625,
+                    3.09375
+                  ],
+                  "Position": [
+                    0.0,
+                    0.734375,
+                    -1.71875
+                  ]
                 }
             ],
     "Seats":  [
@@ -149,11 +158,7 @@
                       "BanHand":  false,
                       "Transform":  "Vehicle",
                       "CameraPos":  {
-                                        "Position":  [
-                                                         0.0,
-                                                         0.0,
-                                                         0.0
-                                                     ],
+                                        "Position":  [-0.00669, 0.059395, -0.002909],
                                         "Transform":  "Barrel",
                                         "Direction":  "Barrel"
                                     },
@@ -240,13 +245,7 @@
                                    "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0,
-                                                                          0,
-                                                                          0
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.014595, 0.110966, 1.667995]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]

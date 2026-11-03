@@ -78,11 +78,7 @@
         0.3125,
         1.1875
       ],
-      "Position":  [
-        0.0625,
-        -0.75,
-        -0.125
-      ],
+      "Position":  [0.0625, 0.291375, -0.064833],
       "Part":  "Turret",
       "Transform":  "Turret",
       "Rotation":  "Turret"
@@ -92,27 +88,15 @@
     {
       "HidePassenger":  true,
       "Transform":  "Turret",
-      "Position":  [
-        0.73629375,
-        -2.098225,
-        0.6659
-      ],
+      "Position":  [0.736294, -1.05685, 0.726067],
       "CanRotateHead":  false,
       "MinPitch":  -6,
       "MaxPitch":  60,
       "CameraPos":  {
         "UseFixedCameraPos":  false,
-        "Position":  [
-          0.73629375,
-          -0.398225,
-          0.6659
-        ],
+        "Position":  [0.736294, 0.64315, 0.726067],
         "Transform":  "Turret",
-        "ZoomPosition":  [
-          0.73629375,
-          -0.398225,
-          0.6659
-        ],
+        "ZoomPosition":  [0.736294, 0.64315, 0.726067],
         "Direction":  "Barrel"
       },
       "Weapons":  [
@@ -277,13 +261,7 @@
             "RecoilForce":  0.05,
             "ShootPos":  {
               "Transform":  "Barrel",
-              "Positions":  [
-                [
-                  0.12213125,
-                  0.0,
-                  6.0
-                ]
-              ],
+              "Positions":  [[0.021534, -0.029511, 2.801818]],
               "Directions":  [
                 "Barrel"
               ]
@@ -317,13 +295,7 @@
       "SoundRadius":  32,
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0.12213125,
-            0.0,
-            6.0
-          ]
-        ],
+        "Positions":  [[0.021534, -0.029511, 2.801818]],
         "Directions":  [
           "Barrel"
         ]
@@ -352,13 +324,7 @@
       "AmmoType":  "@RifleAmmo",
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            -0.25920625,
-            -0.00930625,
-            0.53975625
-          ]
-        ],
+        "Positions":  [[-0.276025, -0.010967, 0.235051]],
         "Directions":  [
           "Barrel"
         ]
@@ -423,13 +389,7 @@
       "EmptyReloadTime":  20,
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            -0.16506875,
-            -0.006325,
-            3.0
-          ]
-        ],
+        "Positions":  [[-0.165667, -0.032135, 2.341704]],
         "Directions":  [
           "Barrel"
         ]
@@ -452,11 +412,7 @@
     "SteeringSpeed":  0.1
   },
   "TurretCustomPitch":  1.75,
-  "TurretPos":  [
-    0.1328625,
-    2.9998,
-    -0.7106
-  ],
+  "TurretPos":  [0.132862, 1.958425, -0.770767],
   "TurretTurnSpeed":  [
     6.125,
     3.295
@@ -465,11 +421,7 @@
     -6,
     60
   ],
-  "BarrelPos":  [
-    0.1896625,
-    -0.7705,
-    0.88538125
-  ],
+  "BarrelPos":  [0.189613, 0.275313, 0.875482],
   "HasDecoy":  true,
   "UpStep":  2.25,
   "RotateOffsetHeight":  0.5,

@@ -82,6 +82,19 @@
                     "Part":  "Turret",
                     "Transform":  "Turret",
                     "Rotation":  "Turret"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.75,
+                    1.038113,
+                    3.71875
+                  ],
+                  "Position": [
+                    0.0,
+                    1.024387,
+                    -0.03125
+                  ]
                 }
             ],
     "Seats":  [
@@ -300,13 +313,7 @@
                                          "SoundRadius":  32,
                                          "ShootPos":  {
                                                           "Transform":  "Barrel",
-                                                          "Positions":  [
-                                                                            [
-                                                                                0.02008125,
-                                                                                -0.0163125,
-                                                                                8.395125
-                                                                            ]
-                                                                        ],
+                                                          "Positions":  [[0.018828, -0.012253, 2.891419]],
                                                           "Directions":  [
                                                                              "Barrel"
                                                                          ]
@@ -335,13 +342,7 @@
                                            "AmmoType":  "@RifleAmmo",
                                            "ShootPos":  {
                                                             "Transform":  "Barrel",
-                                                            "Positions":  [
-                                                                              [
-                                                                                  -0.3269,
-                                                                                  -0.01535625,
-                                                                                  6.19715625
-                                                                              ]
-                                                                          ],
+                                                            "Positions":  [[-0.15487, -0.020276, 2.366205]],
                                                             "Directions":  [
                                                                                "Barrel"
                                                                            ]
@@ -406,13 +407,7 @@
                                    "EmptyReloadTime":  20,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          -0.15361875,
-                                                                          -0.0243375,
-                                                                          6.0
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.15487, -0.020276, 2.366205]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]

@@ -61,6 +61,19 @@
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.942,
+        1.1145,
+        4.5455
+      ],
+      "Position": [
+        0.0,
+        1.1235,
+        -1.0645
+      ]
     }
   ],
   "Seats": [

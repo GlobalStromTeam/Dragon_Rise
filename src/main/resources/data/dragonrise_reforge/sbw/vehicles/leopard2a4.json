@@ -96,6 +96,19 @@
                     "Part":  "Turret",
                     "Transform":  "Turret",
                     "Rotation":  "Turret"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    2.009,
+                    1.008,
+                    4.1625
+                  ],
+                  "Position": [
+                    -0.031,
+                    1.014,
+                    -0.7995
+                  ]
                 }
             ],
     "Seats":  [
@@ -248,13 +261,7 @@
                                    "SoundRadius":  32,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.157,
-                                                                          -2.088,
-                                                                          9.139
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.00027, 0.00088, 4.483348]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -283,13 +290,7 @@
                                        "AmmoType":  "@RifleAmmo",
                                        "ShootPos":  {
                                                         "Transform":  "Barrel",
-                                                        "Positions":  [
-                                                                          [
-                                                                              -0.281,
-                                                                              -1.882,
-                                                                              7.467
-                                                                          ]
-                                                                      ],
+                                                        "Positions":  [[-0.289294, -0.008514, 7.234616]],
                                                         "Directions":  [
                                                                            "Barrel"
                                                                        ]
@@ -370,11 +371,7 @@
                       1.873,
                       -0.233
                   ],
-    "BarrelPos":  [
-                      0.006,
-                      2.263,
-                      1.087
-                  ],
+    "BarrelPos":  [0.014294, 0.389514, 1.319384],
     "TurretTurnSpeed":  [
                             3.765,
                             4.2

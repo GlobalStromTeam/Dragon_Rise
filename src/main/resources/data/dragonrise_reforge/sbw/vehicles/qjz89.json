@@ -92,13 +92,7 @@
           -0.9375
         ],
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            -0.00064375,
-            0.0689,
-            1.25905625
-          ]
-        ],
+        "Positions":  [[0.000531, 0.065358, 1.157103]],
         "Directions":  [
           "Barrel"
         ]
@@ -137,6 +131,34 @@
     {
       "Model":  "dragonrise_reforge:models/bedrock/vehicle/qjz89.geo.json",
       "Texture":  "dragonrise_reforge:textures/entity/qjz89.png"
+    }
+  ],
+  "OBB": [
+    {
+      "Part": "Body",
+      "Size": [
+        0.510188,
+        0.276354,
+        0.788469
+      ],
+      "Position": [
+        0.0,
+        0.246264,
+        -0.020974
+      ]
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        0.510188,
+        0.276354,
+        0.788469
+      ],
+      "Position": [
+        0.0,
+        0.246264,
+        -0.020974
+      ]
     }
   ]
 }

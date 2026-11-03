@@ -94,4 +94,11 @@ public class ModItems {
     public static final RegistryObject<Item> KV1_DEPLOYER = REGISTRY.register("kv1", KV1Deployer::new);
     public static final RegistryObject<Item> PAK40_DEPLOYER = REGISTRY.register("pak40", Pak40Deployer::new);
 
+    /** 附加装甲套件：右键可安装附加装甲的载具，最大生命值 +10%，安装后消耗 */
+    public static final RegistryObject<Item> ADDON_ARMOR_KIT = REGISTRY.register("addon_armor_kit",
+            () -> new AddonArmorKitItem(new Item.Properties().stacksTo(16)));
+    /** 附加装甲拆卸套件：右键已安装附加装甲的载具拆下，并把套件回收进背包 */
+    public static final RegistryObject<Item> ADDON_ARMOR_REMOVAL_KIT = REGISTRY.register("addon_armor_removal_kit",
+            () -> new AddonArmorRemovalKitItem(new Item.Properties().stacksTo(1)));
+
 }

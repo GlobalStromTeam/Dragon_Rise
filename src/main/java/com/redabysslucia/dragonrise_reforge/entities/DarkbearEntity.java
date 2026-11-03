@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.LevelWeaponStationTransforms;
 import com.mojang.math.Axis;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
@@ -17,6 +18,21 @@ public class DarkbearEntity extends VehicleEntity {
 
         public DarkbearEntity(EntityType<DarkbearEntity> type, Level world) {
                 super(type, world);
+        }
+
+        @Override
+        public Matrix4d getGunTransform(float partialTicks) {
+                return LevelWeaponStationTransforms.getGunTransform(this, partialTicks);
+        }
+
+        @Override
+        public Matrix4d getPassengerWeaponStationBarrelTransform(float partialTicks) {
+                return LevelWeaponStationTransforms.getBarrelTransform(this, partialTicks);
+        }
+
+        @Override
+        public Vec3 getPassengerWeaponStationVector(float partialTicks) {
+                return LevelWeaponStationTransforms.getDirection(this, partialTicks);
         }
 
 @Override

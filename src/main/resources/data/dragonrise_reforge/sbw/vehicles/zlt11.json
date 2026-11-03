@@ -42,6 +42,19 @@
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.640625,
+        1.148438,
+        4.429688
+      ],
+      "Position": [
+        0.0,
+        1.101562,
+        -0.304688
+      ]
     }
   ],
   "Seats": [
@@ -69,7 +82,7 @@
       "Transform": "Turret",
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [0,0.1,0],
+        "ZoomPosition": [0.020132, 0.319409, 0.09312],
         "Direction": "WeaponStationBarrel"
       },
       "Position": [0.662,0.1,-0.718],
@@ -161,9 +174,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.0016875,-0.00550625,8.13850625]
-        ],
+        "Positions": [[0.001741, 0.008793, 5.712806]],
         "Directions": [
           "Barrel"
         ]
@@ -233,9 +244,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [0,-0.01,1.8]
-        ],
+        "Positions": [[0.024643, 0.161662, 1.610576]],
         "Directions": [
           "WeaponStationBarrel"
         ]
@@ -268,8 +277,8 @@
   "TurretTurnSpeed": [1.2,2.445],
   "TurretPitchRange": [-5,18],
   "BarrelPos": [0.05843125,0.55538125,0.72135625],
-  "PassengerWeaponStationPos": [-0.58,1.0963625,-0.0020625],
-  "PassengerWeaponStationBarrelPos": [0,0.35984375,0.05],
+  "PassengerWeaponStationPos": [-0.600132, 1.236797, -0.045183],
+  "PassengerWeaponStationBarrelPos": [0.0, 0.0, 0.0],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-6,85],
   "ThirdPersonCameraPos": [0,1,3],

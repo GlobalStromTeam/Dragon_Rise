@@ -47,6 +47,19 @@
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.998,
+        0.991,
+        3.585
+      ],
+      "Position": [
+        0.0,
+        0.991,
+        -0.656
+      ]
     }
   ],
   "Seats": [
@@ -126,9 +139,7 @@
       "SoundRadius": 36,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.0,-0.003,1.828]
-        ],
+        "Positions": [[0.000407, 0.031338, 4.766144]],
         "Directions": [
           "Barrel"
         ]

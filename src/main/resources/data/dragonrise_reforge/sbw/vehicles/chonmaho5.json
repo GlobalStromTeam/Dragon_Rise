@@ -67,7 +67,7 @@
         "UseFixedCameraPos": false,
         "Transform": "WeaponStation",
         "Direction": "WeaponStationBarrel",
-        "ZoomPosition": [0.0,0.4,0.0]
+        "ZoomPosition": [-0.011843,0.338559,-0.005984]
       },
       "Transform": "Turret",
       "Position": [-0.628,-1.592,-0.406],
@@ -231,12 +231,12 @@
       "ShootAnimationTime": 1,
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
-        "Transform": "WeaponStationBarrel",
+        "Transform": "WeaponStation",
         "Positions": [
           [-0.856,2.741,0.959]
         ],
         "Directions": [
-          "WeaponStationBarrel"
+          [0,0,1]
         ]
       },
       "Crosshair": "@VehicleCommonGun",
@@ -271,7 +271,7 @@
   "BarrelPos": [-0.026,-0.216,1.156],
   "TurretTurnSpeed": [4,3],
   "TurretPitchRange": [-6,18],
-  "PassengerWeaponStationPos": [-0.72,0.47,-0.04],
+  "PassengerWeaponStationPos": [-0.708157,0.531441,-0.034016],
   "PassengerWeaponStationBarrelPos": [0.18,-0.14,0.01],
   "PassengerWeaponStationTurnSpeed": [18,12],
   "PassengerWeaponStationPitchRange": [-15,70],

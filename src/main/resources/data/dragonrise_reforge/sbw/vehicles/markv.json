@@ -2,7 +2,7 @@
   "ID": "dragonrise_reforge:markv",
   "MaxHealth": 300,
   "MaxEnergy": 20000000,
-  "PassengerWeaponStationPos": [-0.01378125,1.52239375,-1.32325625],
+  "PassengerWeaponStationPos": [-3.342328, 0.0, 0.15784],
   "PassengerWeaponStationBarrelPos": [0,0.36458125,0.22325625],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-5,60],
@@ -56,6 +56,19 @@
     {
       "Size": [0.44,0.538,3.554],
       "Position": [-1.308,1.538,0.437]
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        2.1455,
+        1.223,
+        3.991
+      ],
+      "Position": [
+        0.0005,
+        1.223,
+        0.0
+      ]
     }
   ],
   "Seats": [

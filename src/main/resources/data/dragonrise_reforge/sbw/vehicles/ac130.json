@@ -148,6 +148,19 @@
                                      -0.031
                                  ],
                     "Part":  "WheelLeft"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    2.094,
+                    2.6565,
+                    13.9065
+                  ],
+                  "Position": [
+                    0.0,
+                    2.6565,
+                    -2.9065
+                  ]
                 }
             ],
     "Seats":  [
@@ -356,13 +369,7 @@
                                       "SoundRadius":  45,
                                       "ShootPos":  {
                                                        "Transform":  "Vehicle",
-                                                       "Positions":  [
-                                                                         [
-                                                                             0.0,
-                                                                             2.0,
-                                                                             -4.5
-                                                                         ]
-                                                                     ],
+                                                       "Positions":  [[4.71875, 1.902715, -6.053891]],
                                                        "Directions":  [
                                                                           "Passenger"
                                                                       ]
@@ -436,13 +443,7 @@
                                       "AmmoType":  "@HeavyAmmo",
                                       "ShootPos":  {
                                                        "Transform":  "Vehicle",
-                                                       "Positions":  [
-                                                                         [
-                                                                             -1.5,
-                                                                             2.2,
-                                                                             4.5
-                                                                         ]
-                                                                     ],
+                                                       "Positions":  [[3.239062, 1.620391, 4.109724]],
                                                        "Directions":  [
                                                                           "Passenger"
                                                                       ]

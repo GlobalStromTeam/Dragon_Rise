@@ -48,11 +48,7 @@
         0.375,
         1.03125
       ],
-      "Position": [
-        0.0,
-        0,
-        -0.15625
-      ],
+      "Position": [-0.079135, 0.294509, -0.156253],
       "Transform": "Turret",
       "Rotation": "Turret",
       "Part": "Turret"
@@ -63,11 +59,7 @@
         0.3125,
         0.28125
       ],
-      "Position": [
-        0.0,
-        0,
-        1.15625
-      ],
+      "Position": [-0.079135, 0.294509, 1.156247],
       "Transform": "Turret",
       "Rotation": "Turret",
       "Part": "Turret"
@@ -99,6 +91,19 @@
         0.0625
       ],
       "Part": "WheelRight"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.625,
+        0.78125,
+        3.03125
+      ],
+      "Position": [
+        0.0,
+        0.71875,
+        0.03125
+      ]
     }
   ],
   "Seats": [
@@ -106,25 +111,13 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [
-          0.52404375,
-          0.8413875,
-          -0.09385625
-        ],
+        "Position": [0.444909, 1.135896, -0.093859],
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [
-          0.52404375,
-          0.8413875,
-          -0.09385625
-        ]
+        "ZoomPosition": [0.444909, 1.135896, -0.093859]
       },
       "Transform": "Turret",
-      "Position": [
-        0.5680625,
-        -0.1292625,
-        -0.1235375
-      ],
+      "Position": [0.488928, 0.165246, -0.12354],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -144,26 +137,14 @@
       "Transform": "Turret",
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [
-          0.052121,
-          0.376765,
-          -0.554818
-        ],
+        "Position": [-0.088437, 0.36986, -0.463202],
         "Transform": "WeaponStationBarrel",
-        "ZoomPosition": [
-          0.042076,
-          0.303926,
-          -0.45649375
-        ],
+        "ZoomPosition": [-0.098482, 0.297021, -0.364877],
         "Direction": "WeaponStationBarrel",
         "MinPitch": -6,
         "MaxPitch": 60
       },
-      "Position": [
-        -0.58608125,
-        0.10638125,
-        -0.2587625
-      ],
+      "Position": [-0.665216, 0.40089, -0.258765],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -234,13 +215,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [
-            0.140524,
-            -0.307824,
-            2.32135
-          ]
-        ],
+        "Positions": [[0.059325, -0.012964, 4.420528]],
         "Directions": [
           "Barrel"
         ]
@@ -270,13 +245,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [
-            -0.205489,
-            -0.241445,
-            0.49891
-          ]
-        ],
+        "Positions": [[-0.297368, 0.046501, 0.415148]],
         "Directions": [
           "Barrel"
         ]
@@ -315,13 +284,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [
-            0.083851,
-            -0.002664,
-            1.035549
-          ]
-        ],
+        "Positions": [[-0.030879, 0.049864, 1.262141]],
         "Directions": [
           "WeaponStationBarrel"
         ]
@@ -354,11 +317,7 @@
     "SteeringSpeed": 0.15,
     "EngineSoundVolume": 0.8
   },
-  "TurretPos": [
-    -0.103179,
-    1.75,
-    0.09385625
-  ],
+  "TurretPos": [-0.024044, 1.455491, 0.093859],
   "BarrelPos": [
     -0.05871875,
     0.2890125,
@@ -372,16 +331,8 @@
     -10,
     25
   ],
-  "PassengerWeaponStationPos": [
-    -0.501055,
-    0.756672,
-    -0.155176
-  ],
-  "PassengerWeaponStationBarrelPos": [
-    -0.036264,
-    0.064548,
-    0.086912
-  ],
+  "PassengerWeaponStationPos": [-0.507146, 0.847634, -0.191133],
+  "PassengerWeaponStationBarrelPos": [0.03125, 0.275, 0.03125],
   "PassengerWeaponStationTurnSpeed": [
     15.75,
     8.47

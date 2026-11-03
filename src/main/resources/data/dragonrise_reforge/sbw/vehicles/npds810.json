@@ -97,13 +97,7 @@
                                                     },
                                  "ShootPos":  {
                                                   "Transform":  "Barrel",
-                                                  "Positions":  [
-                                                                    [
-                                                                        0.11875,
-                                                                        0.675,
-                                                                        0.1875
-                                                                    ]
-                                                                ],
+                                                  "Positions":  [[0.118186, 0.603478, 6.237281]],
                                                   "Directions":  [
                                                                      "Barrel"
                                                                  ]
@@ -163,5 +157,33 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/npds810.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/npds810.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Body",
+        "Size": [
+          2.642178,
+          0.675704,
+          2.553968
+        ],
+        "Position": [
+          -0.000452,
+          0.311321,
+          -0.073858
+        ]
+      },
+      {
+        "Part": "Collision",
+        "Size": [
+          2.642178,
+          0.675704,
+          2.553968
+        ],
+        "Position": [
+          -0.000452,
+          0.311321,
+          -0.073858
+        ]
+      }
+    ]
 }

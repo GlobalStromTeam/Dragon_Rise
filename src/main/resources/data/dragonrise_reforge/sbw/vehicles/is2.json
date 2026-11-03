@@ -80,6 +80,19 @@
                                      0.625,
                                      -0.46875
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.65625,
+                    0.96875,
+                    3.59375
+                  ],
+                  "Position": [
+                    0.0,
+                    0.96875,
+                    -0.46875
+                  ]
                 }
             ],
     "Seats":  [
@@ -87,25 +100,13 @@
                       "HidePassenger":  true,
                       "CameraPos":  {
                                         "UseFixedCameraPos":  true,
-                                        "Position":  [
-                                                         0.5125,
-                                                         0.725,
-                                                         1.8375
-                                                     ],
+                                        "Position":  [0.5125, 0.444806, 1.837499],
                                         "Transform":  "Turret",
-                                        "ZoomPosition":  [
-                                                             0.5125,
-                                                             0.725,
-                                                             1.8375
-                                                         ],
+                                        "ZoomPosition":  [0.5125, 0.444806, 1.837499],
                                         "Direction":  "Barrel"
                                     },
                       "Transform":  "Turret",
-                      "Position":  [
-                                       0,
-                                       -0.73,
-                                       1.812
-                                   ],
+                      "Position":  [0.0, -1.010193, 1.811999],
                       "Weapons":  [
                                       "Cannon",
                                       "MachineGun"
@@ -179,13 +180,7 @@
                                    "SoundRadius":  35,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.1,
-                                                                          0.0,
-                                                                          11.5
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.001944, 0.004567, 5.533647]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -212,13 +207,7 @@
                                        "AmmoType":  "@HeavyAmmo",
                                        "ShootPos":  {
                                                         "Transform":  "Barrel",
-                                                        "Positions":  [
-                                                                          [
-                                                                              0.4,
-                                                                              0.15,
-                                                                              11.85
-                                                                          ]
-                                                                      ],
+                                                        "Positions":  [[0.178085, -0.174983, 4.903548]],
                                                         "Directions":  [
                                                                            "Barrel"
                                                                        ]
@@ -255,13 +244,7 @@
                                                 "AmmoType":  "@HeavyAmmo",
                                                 "ShootPos":  {
                                                                  "Transform":  "WeaponStationBarrel",
-                                                                 "Positions":  [
-                                                                                   [
-                                                                                       0,
-                                                                                       -0.01,
-                                                                                       1.8
-                                                                                   ]
-                                                                               ],
+                                                                 "Positions":  [[0.0, -0.290193, 1.799999]],
                                                                  "Directions":  [
                                                                                     "WeaponStationBarrel"
                                                                                 ]
@@ -294,16 +277,8 @@
                        "SteeringSpeed":  0.05,
                        "EngineSoundVolume":  1.0
                    },
-    "TurretPos":  [
-                      0,
-                      1.6584375,
-                      0.3631375
-                  ],
-    "BarrelPos":  [
-                      0,
-                      0.36,
-                      0.75
-                  ],
+    "TurretPos":  [0.0, 1.938631, 0.363138],
+    "BarrelPos":  [0.046757, 0.487026, 1.532456],
     "TurretTurnSpeed":  [
                             0.18,
                             0.3

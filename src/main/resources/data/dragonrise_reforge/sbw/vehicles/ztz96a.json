@@ -60,7 +60,7 @@
     },
     {
       "Size": [0.855,0.342,0.738],
-      "Position": [0.545,0.27,0.35],
+      "Position": [0.544834, 0.260463, 0.412481],
       "CustomRotate": [0.0,-12.5,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -68,7 +68,7 @@
     },
     {
       "Size": [0.855,0.342,0.738],
-      "Position": [-0.361,0.27,0.35],
+      "Position": [-0.361166, 0.260463, 0.412481],
       "CustomRotate": [0.0,12.5,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -76,7 +76,7 @@
     },
     {
       "Size": [0.636,0.342,0.738],
-      "Position": [-0.113,0.254,0.803],
+      "Position": [-0.113166, 0.244463, 0.865481],
       "CustomRotate": [0.0,-30.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -84,7 +84,7 @@
     },
     {
       "Size": [0.636,0.342,0.738],
-      "Position": [0.297,0.254,0.803],
+      "Position": [0.296834, 0.244463, 0.865481],
       "CustomRotate": [0.0,30.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -92,7 +92,7 @@
     },
     {
       "Size": [0.636,0.342,0.738],
-      "Position": [0.092,0.395,0.354],
+      "Position": [0.091834, 0.385463, 0.416481],
       "CustomRotate": [15.0,0.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -100,7 +100,7 @@
     },
     {
       "Size": [0.636,0.342,0.738],
-      "Position": [0.655,0.397,0.292],
+      "Position": [0.654834, 0.387463, 0.354481],
       "CustomRotate": [15.221,-9.656,-2.613],
       "Part": "Turret",
       "Transform": "Turret",
@@ -108,7 +108,7 @@
     },
     {
       "Size": [0.636,0.342,0.738],
-      "Position": [-0.471,0.397,0.292],
+      "Position": [-0.471166, 0.387463, 0.354481],
       "CustomRotate": [15.221,9.656,2.613],
       "Part": "Turret",
       "Transform": "Turret",
@@ -116,7 +116,7 @@
     },
     {
       "Size": [0.855,0.436,1.175],
-      "Position": [0.436,0.42,-1.272],
+      "Position": [0.435834, 0.410463, -1.209519],
       "CustomRotate": [0.0,10.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -124,7 +124,7 @@
     },
     {
       "Size": [0.855,0.436,1.175],
-      "Position": [-0.252,0.42,-1.272],
+      "Position": [-0.252166, 0.410463, -1.209519],
       "CustomRotate": [0.0,-10.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
@@ -132,7 +132,7 @@
     },
     {
       "Size": [0.917,0.28,1.238],
-      "Position": [0.092,0.641,-1.326],
+      "Position": [0.091834, 0.631463, -1.263519],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -143,12 +143,12 @@
       "HidePassenger": true,
       "CameraPos": {
         "Transform": "Turret",
-        "ZoomPosition": [0.811,0.916,0.35],
+        "ZoomPosition": [0.810834, 0.906463, 0.412481],
         "Direction": "Barrel",
         "UseFixedCameraPos": false
       },
       "Transform": "Turret",
-      "Position": [0.811,-0.694,0.35],
+      "Position": [0.810834, -0.703537, 0.412481],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -164,11 +164,11 @@
       "Transform": "Turret",
       "CameraPos": {
         "Transform": "Turret",
-        "ZoomPosition": [-0.587,1.798,-0.43],
+        "ZoomPosition": [-0.587166, 1.788463, -0.367519],
         "Direction": "WeaponStationBarrel",
         "UseFixedCameraPos": false
       },
-      "Position": [-0.587,0.188,-0.43],
+      "Position": [-0.587166, 0.178463, -0.367519],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -246,10 +246,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.001,0.104,7.327],
-          [0.124,0.022,2.15]
-        ],
+        "Positions": [[0.000744, -0.006605, 5.795852]],
         "Directions": [
           "Barrel"
         ]
@@ -279,9 +276,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.376,0.022,2.15]
-        ],
+        "Positions": [[-0.375758, 0.047896, 0.499571]],
         "Directions": [
           "Barrel"
         ]
@@ -319,9 +314,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [-0.019,0.077,1.395]
-        ],
+        "Positions": [[-0.021768, 0.154464, 1.365835]],
         "Directions": [
           "WeaponStationBarrel"
         ]
@@ -354,12 +347,12 @@
     "SteeringSpeed": 0.15,
     "EngineSoundVolume": 0.8
   },
-  "TurretPos": [-0.092,1.798,0.317],
-  "BarrelPos": [0.092,0.208,1.29],
+  "TurretPos": [-0.091834, 1.807537, 0.254519],
+  "BarrelPos": [0.091834, 0.308266, 1.209054],
   "TurretTurnSpeed": [7,3.765],
   "TurretPitchRange": [-6,18],
-  "PassengerWeaponStationPos": [-0.587,0.937,-0.398],
-  "PassengerWeaponStationBarrelPos": [0.029,0.32,0.736],
+  "PassengerWeaponStationPos": [-0.586888, 0.917387, -0.525351],
+  "PassengerWeaponStationBarrelPos": [0.029088, 0.376471, 0.709113],
   "PassengerWeaponStationTurnSpeed": [15.75,8.47],
   "PassengerWeaponStationPitchRange": [-5,60],
   "HasDecoy": true,

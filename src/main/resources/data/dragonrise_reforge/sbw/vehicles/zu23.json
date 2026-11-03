@@ -16,11 +16,7 @@
                              -5,
                              70
                          ],
-    "BarrelPos":  [
-                      0,
-                      0.6,
-                      0.25
-                  ],
+    "BarrelPos":  [0.0, 0.665277, 0.380888],
     "Seats":  {
                   "Transform":  "Turret",
                   "Position":  [
@@ -33,11 +29,7 @@
                   "CameraPos":  {
                                     "Transform":  "Barrel",
                                     "UseFixedCameraPos":  true,
-                                    "Position":  [
-                                                     0,
-                                                     1.4,
-                                                     0.6
-                                                 ],
+                                    "Position":  [0.0, 1.334723, 0.469112],
                                     "Direction":  "Barrel"
                                 },
                   "Weapons":  [
@@ -95,18 +87,7 @@
                                    "EmptyReloadTime":  100,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.1609375,
-                                                                          0.2890625,
-                                                                          0.5
-                                                                      ],
-                                                                      [
-                                                                          -0.1609375,
-                                                                          0.2890625,
-                                                                          0.5
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[0.160097, 0.289292, 3.492187], [-0.160097, 0.289292, 3.492187]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -137,5 +118,33 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/zu23.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/zu23.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Body",
+        "Size": [
+          1.389792,
+          0.31875,
+          1.632587
+        ],
+        "Position": [
+          0.0,
+          0.34375,
+          -0.059195
+        ]
+      },
+      {
+        "Part": "Collision",
+        "Size": [
+          1.389792,
+          0.31875,
+          1.632587
+        ],
+        "Position": [
+          0.0,
+          0.34375,
+          -0.059195
+        ]
+      }
+    ]
 }

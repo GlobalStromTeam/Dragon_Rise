@@ -78,6 +78,19 @@
                                      0.5625,
                                      -0.25
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.5625,
+                    1.1875,
+                    4.8125
+                  ],
+                  "Position": [
+                    0.0,
+                    1.1875,
+                    0.25
+                  ]
                 }
             ],
     "Seats":  [
@@ -159,13 +172,7 @@
                                    "SoundRadius":  32,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.1,
-                                                                          0.0717625,
-                                                                          0.80946875
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[0.0, 0.071764, 1.768844]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]

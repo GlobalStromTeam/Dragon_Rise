@@ -125,5 +125,33 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/9m133.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/9m133.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Body",
+        "Size": [
+          0.51797,
+          0.454922,
+          0.60461
+        ],
+        "Position": [
+          0.13153,
+          0.454922,
+          0.0
+        ]
+      },
+      {
+        "Part": "Collision",
+        "Size": [
+          0.51797,
+          0.454922,
+          0.60461
+        ],
+        "Position": [
+          0.13153,
+          0.454922,
+          0.0
+        ]
+      }
+    ]
 }

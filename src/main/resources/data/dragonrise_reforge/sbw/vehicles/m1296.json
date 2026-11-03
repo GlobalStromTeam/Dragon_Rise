@@ -239,9 +239,7 @@
       "EmptyReloadTime": 200,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.002,-0.003,2.57]
-        ],
+        "Positions": [[-0.001638, -0.001976, 2.546783]],
         "Directions": [
           "Barrel"
         ]
@@ -270,9 +268,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.009,0.494,0.579]
-        ],
+        "Positions": [[-0.004922, 0.316996, 1.335415]],
         "Directions": [
           "Barrel"
         ]

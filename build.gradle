@@ -182,7 +182,8 @@ tasks.named('jar', Jar).configure {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : mod_authors,
-                "Implementation-Timestamp": java.time.Instant.now().toString()
+                // 不要在这里放 java.time.Instant.now()：jar 任务的 manifest 是 @Nested 输入，
+                // 每次配置都变会导致 :jar 永远 UP-TO-DATE 失败，连带 :reobfJar（9~17s）每次都重跑。
         ])
     }
 

@@ -149,6 +149,19 @@
       "Part":  "Turret",
       "Transform":  "Turret",
       "Rotation":  "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.6085,
+        1.136,
+        3.934
+      ],
+      "Position": [
+        -0.0055,
+        1.136,
+        0.491
+      ]
     }
   ],
   "Seats":  [
@@ -337,13 +350,7 @@
       "AmmoType":  "@HeavyAmmo",
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0,
-            -0.01,
-            1.8
-          ]
-        ],
+        "Positions":  [[0.02592, 0.062539, 0.767586]],
         "Directions":  [
           "Barrel"
         ]

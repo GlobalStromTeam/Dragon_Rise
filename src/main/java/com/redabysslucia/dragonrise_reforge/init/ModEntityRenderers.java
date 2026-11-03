@@ -1,10 +1,6 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
-
-
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MerkavaMk4Renderer;
-import com.redabysslucia.dragonrise_reforge.client.renderer.entity.DgswMkL2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ShuangweixieRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aCoveredRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aRenderer;
@@ -334,11 +330,9 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.K1A1.get(), K1a1Renderer::new);
                 event.registerEntityRenderer(ModEntities.SPG9.get(), Spg9Renderer::new);
                 event.registerEntityRenderer(ModEntities.SHUANGWEIXIE.get(), ShuangweixieRenderer::new);
-                event.registerEntityRenderer(ModEntities.DGSW_MK_L2.get(), DgswMkL2Renderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A.get(), Zsd89aRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
                 event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);
                 event.registerEntityRenderer(ModEntities.MERKAVA_MK4.get(), MerkavaMk4Renderer::new);
-                event.registerEntityRenderer(ModEntities.CAV.get(), CavRenderer::new);
         }
 }

@@ -1,8 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
-import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
+import com.redabysslucia.dragonrise_reforge.entities.utils.MissileFireGate;
 import net.minecraft.core.Vec3i;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -41,11 +41,6 @@ public class ZBL08Entity extends DragonriseVehicleBase {
         }
 
 
-        private boolean isMoving() {
-                Vec3 motion = this.getDeltaMovement();
-                return Math.abs(motion.x) > 0.01 || Math.abs(motion.z) > 0.01;
-        }
-
         @Override
         public boolean canShoot(LivingEntity living) {
                 int seatIndex = getSeatIndex(living);
@@ -53,7 +48,8 @@ public class ZBL08Entity extends DragonriseVehicleBase {
                 int selectedWeapon = getSelectedWeapon(seatIndex);
                 if (selectedWeapon != 2) return super.canShoot(living);
 
-                if (isMoving()) {
+                // 速度门槛：±14 km/h 以内允许发射（门限统一在 MissileFireGate）
+                if (!MissileFireGate.canFireMissile(this)) {
                         if (level().isClientSide && living instanceof Player player
                                         && this.tickCount - lastShootWarningTick > 20) {
                                 lastShootWarningTick = this.tickCount;
@@ -79,7 +75,7 @@ public class ZBL08Entity extends DragonriseVehicleBase {
                         return;
                 }
 
-                if (isMoving()) {
+                if (!MissileFireGate.canFireMissile(this)) {
                         if (living instanceof Player player && this.tickCount - lastShootWarningTick > 20) {
                                 player.displayClientMessage(Component.translatable("message.dragonrise_reforge.zbl08_stop_to_shoot"), true);
                                 lastShootWarningTick = this.tickCount;

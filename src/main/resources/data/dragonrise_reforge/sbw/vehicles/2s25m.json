@@ -154,6 +154,19 @@
                                      1.21875,
                                      -1.5
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.71875,
+                    1.001127,
+                    3.71875
+                  ],
+                  "Position": [
+                    -0.03125,
+                    0.936373,
+                    -0.09375
+                  ]
                 }
             ],
     "Seats":  [
@@ -313,13 +326,7 @@
                                    "SoundRadius":  32,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.0958625,
-                                                                          -0.01620625,
-                                                                          1.85724375
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.004135, -0.016206, 6.002386]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -349,13 +356,7 @@
                                        "AmmoType":  "@RifleAmmo",
                                        "ShootPos":  {
                                                         "Transform":  "Barrel",
-                                                        "Positions":  [
-                                                                          [
-                                                                              -0.28853125,
-                                                                              0.0561375,
-                                                                              0.3896375
-                                                                          ]
-                                                                      ],
+                                                        "Positions":  [[-0.288533, 0.056137, 0.531056]],
                                                         "Directions":  [
                                                                            "Barrel"
                                                                        ]
@@ -393,13 +394,7 @@
                                                 "AmmoType":  "@HeavyAmmo",
                                                 "ShootPos":  {
                                                                  "Transform":  "WeaponStationBarrel",
-                                                                 "Positions":  [
-                                                                                   [
-                                                                                       0.0678875,
-                                                                                       0.02698125,
-                                                                                       0.55034375
-                                                                                   ]
-                                                                               ],
+                                                                 "Positions":  [[0.06789, 0.026982, 0.598499]],
                                                                  "Directions":  [
                                                                                     "WeaponStationBarrel"
                                                                                 ]

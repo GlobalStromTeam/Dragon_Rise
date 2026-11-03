@@ -6075,7 +6075,7 @@
 				},
 				
 				{
-					"name": "barrel",
+					"name": "turret",
 					"parent": "root",
 					"pivot": [-0.00573, 16.61049, -57.49856],
 					"cubes": [
@@ -6117,8 +6117,8 @@
 					]
 				},
 				{
-					"name": "turret",
-					"parent": "barrel",
+					"name": "barrel",
+					"parent": "turret",
 					"pivot": [0.23312, 12.6904, -57.51624],
 					"cubes": [
 						{

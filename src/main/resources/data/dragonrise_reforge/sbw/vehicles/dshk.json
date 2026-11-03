@@ -87,13 +87,7 @@
       "AmmoType":  "@HeavyAmmo",
       "ShootPos":  {
         "Transform":  "Barrel",
-        "Positions":  [
-          [
-            0.00285,
-            0.20235625,
-            1.39030625
-          ]
-        ],
+        "Positions":  [[0.000531, 0.196608, 1.284728]],
         "Directions":  [
           "Barrel"
         ]
@@ -132,6 +126,34 @@
     {
       "Model":  "dragonrise_reforge:models/bedrock/vehicle/dshk.geo.json",
       "Texture":  "dragonrise_reforge:textures/entity/dshk.png"
+    }
+  ],
+  "OBB": [
+    {
+      "Part": "Body",
+      "Size": [
+        0.510188,
+        0.183795,
+        0.788469
+      ],
+      "Position": [
+        0.0,
+        0.153705,
+        -0.052224
+      ]
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        0.510188,
+        0.183795,
+        0.788469
+      ],
+      "Position": [
+        0.0,
+        0.153705,
+        -0.052224
+      ]
     }
   ]
 }

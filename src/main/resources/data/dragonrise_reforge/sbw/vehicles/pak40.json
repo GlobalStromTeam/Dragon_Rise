@@ -19,11 +19,7 @@
                            -35,
                            35
                        ],
-    "BarrelPos":  [
-                      -0.063,
-                      1.122,
-                      -0.293
-                  ],
+    "BarrelPos":  [-0.062951, 1.122177, -0.188319],
     "TurretControllerIndex":  1,
     "MaxEnergy":  0,
     "Seats":  [
@@ -110,13 +106,7 @@
                                    "AmmoType":  "superbwarfare:large_shell_ap",
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0.013,
-                                                                          -0.014,
-                                                                          3.594
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[0.062951, -0.048967, 3.916495]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -259,6 +249,19 @@
                     "Part":  "Turret",
                     "Transform":  "Turret",
                     "Rotation":  "Turret"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.125,
+                    0.513,
+                    0.625
+                  ],
+                  "Position": [
+                    0.013,
+                    0.466,
+                    -0.109
+                  ]
                 }
             ],
     "TerrainCompat":  [

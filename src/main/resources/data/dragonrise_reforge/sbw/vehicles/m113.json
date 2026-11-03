@@ -34,6 +34,19 @@
       "Size": [0.322,0.544,2.884],
       "Position": [1.409,0.555,-0.214],
       "Part": "WheelLeft"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.767,
+        1.173608,
+        2.9405
+      ],
+      "Position": [
+        -0.036,
+        1.184392,
+        -0.1585
+      ]
     }
   ],
   "Seats": [
@@ -167,9 +180,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.095,0.13,1.312]
-        ],
+        "Positions": [[-0.105265, 0.130244, 1.243099]],
         "Directions": [
           "Barrel"
         ]

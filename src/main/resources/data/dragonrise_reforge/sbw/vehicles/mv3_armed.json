@@ -267,9 +267,7 @@
         "UseFixedCameraPos": true,
         "Position": [0.00064375,0.06838125,1.25930625],
         "Transform": "Barrel",
-        "Positions": [
-          [0.001,0.054,1.315]
-        ],
+        "Positions": [[0.001031, 0.064876, 1.157165]],
         "Directions": [
           "Barrel"
         ]

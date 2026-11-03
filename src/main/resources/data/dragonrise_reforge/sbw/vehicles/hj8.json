@@ -125,5 +125,33 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/hj8.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/hj8.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Body",
+        "Size": [
+          0.510963,
+          0.451571,
+          0.590009
+        ],
+        "Position": [
+          0.12464,
+          0.436253,
+          0.0
+        ]
+      },
+      {
+        "Part": "Collision",
+        "Size": [
+          0.510963,
+          0.451571,
+          0.590009
+        ],
+        "Position": [
+          0.12464,
+          0.436253,
+          0.0
+        ]
+      }
+    ]
 }

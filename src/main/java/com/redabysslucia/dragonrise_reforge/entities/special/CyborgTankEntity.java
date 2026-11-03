@@ -9,7 +9,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import org.joml.Matrix4d;
+import org.joml.Vector3d;
 import org.joml.Vector4d;
 
 @SuppressWarnings("removal")
@@ -66,6 +68,19 @@ public class CyborgTankEntity extends VehicleEntity {
 
         transformG.translate(worldPosition.x, worldPosition.y, worldPosition.z);
 
+        transformG.rotate(Axis.XP.rotationDegrees(getCompensatedGunPitch(partialTicks)));
+        return transformG;
+    }
+
+    @Override
+    public Vec3 getPassengerWeaponStationVector(float partialTicks) {
+        Vector3d direction = getPassengerWeaponStationBarrelTransform(partialTicks)
+                .transformDirection(new Vector3d(0, 0, 1));
+        return new Vec3(direction.x, direction.y, direction.z);
+    }
+
+    /** The body-mounted station stabilizes against hull pitch and roll. */
+    public float getCompensatedGunPitch(float partialTicks) {
         float a = this.getGunYRot(partialTicks);
         float r = (Mth.abs(a) - 90f) / 90f;
         float r2;
@@ -84,8 +99,7 @@ public class CyborgTankEntity extends VehicleEntity {
         float xV = Mth.lerp(partialTicks, this.xRotO, this.getXRot());
         float z = Mth.lerp(partialTicks, this.getPrevRoll(), this.getRoll());
 
-        transformG.rotate(Axis.XP.rotationDegrees(x + r * xV + r2 * z));
-        return transformG;
+        return x + r * xV + r2 * z;
     }
 
     @Override

@@ -68,6 +68,19 @@
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.906,
+        0.969,
+        4.031
+      ],
+      "Position": [
+        0.0,
+        0.969,
+        -0.281
+      ]
     }
   ],
   "Seats": [
@@ -156,10 +169,7 @@
       "EmptyReloadTime": 200,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-1.008, 0.053, 4.321],
-          [1.008, 0.053, 4.321]
-        ],
+        "Positions": [[-1.009543, 0.061867, 4.262195], [1.009543, 0.061867, 4.262195]],
         "Directions": [
           "Barrel"
         ],

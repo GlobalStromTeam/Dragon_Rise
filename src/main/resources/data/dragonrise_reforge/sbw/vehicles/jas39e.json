@@ -157,10 +157,7 @@
         "Transform": "Vehicle",
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.0625,5.625],
-        "Positions": [
-          [-4.625,1.875,-3.062],
-          [4.625,1.875,-3.062]
-        ],
+        "Positions": [[-4.609375, 1.984375, -3.625], [4.609375, 1.984375, -3.625]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -215,10 +212,7 @@
         "Transform": "Vehicle",
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.53,0],
-        "Positions": [
-          [-3.062,1.406,-2.5],
-          [3.063,1.406,-2.5]
-        ],
+        "Positions": [[-3.0625, 1.5, -2.5], [3.0625, 1.5, -2.5]],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -271,10 +265,7 @@
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.406,-1.562],
         "BoundUpWithAmmoAmount": true,
-        "Positions": [
-          [-2.037,1.406,-1.562],
-          [2.038,1.406,-1.562]
-        ]
+        "Positions": [[-2.0375, 1.5, -1.375], [2.0375, 1.5, -1.375]]
       },
       "AmmoType": [
         {
@@ -296,10 +287,7 @@
               "ShootDirectionForHud": [0,-0.02,1],
               "BoundUpWithAmmoAmount": true,
               "ViewPosition": [-0.75,0.438,2.313],
-              "Positions": [
-                [-2.037,1.406,-1.562],
-                [2.038,1.406,-1.562]
-              ]
+              "Positions": [[-2.0375, 1.5, -1.375], [2.0375, 1.5, -1.375]]
             },
             "SeekWeaponInfo": {
               "SeekDirection": "ClientCamera",
@@ -371,11 +359,7 @@
         "ViewDirection": "Default",
         "ShootPositionForHud": [0,1.125,-0.875],
         "BoundUpWithAmmoAmount": true,
-        "Positions": [
-          [-0.619,1.125,-0.875],
-          [0.619,1.125,-0.875],
-          [0.0,1.125,-0.875]
-        ]
+        "Positions": [[-0.61875, 1.125, -1.5625], [0.61875, 1.125, -1.5625], [0.0, 1.125, -1.5625]]
       },
       "AmmoType": [
         {
@@ -416,11 +400,7 @@
               ],
               "ViewPosition": [-0.75,0.438,2.313],
               "ViewDirection": "Bomb",
-              "Positions": [
-                [-0.619,1.125,-0.875],
-                [0.619,1.125,-0.875],
-                [0,1.125,-0.875]
-              ]
+              "Positions": [[-0.61875, 1.125, -1.5625], [0.61875, 1.125, -1.5625], [0.0, 1.125, -1.5625]]
             },
             "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/gb_500.png",
             "ProjectileDummyInfo": {

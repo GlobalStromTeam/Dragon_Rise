@@ -223,9 +223,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.001,-0.002,5.046]
-        ],
+        "Positions": [[-0.00041, 0.005733, 5.038942]],
         "Directions": [
           "Barrel"
         ]
@@ -254,9 +252,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.408,0.047,1.077]
-        ],
+        "Positions": [[-0.408617, 0.04686, 1.075044]],
         "Directions": [
           "Barrel"
         ]
@@ -295,9 +291,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [0.02,0.187,1.101]
-        ],
+        "Positions": [[0.017827, 0.184279, 1.048672]],
         "Directions": [
           "WeaponStationBarrel"
         ]
@@ -348,9 +342,7 @@
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [-0.195,0.124,0.651]
-        ],
+        "Positions": [[-0.195641, 0.127043, 0.560697]],
         "Directions": [
           "WeaponStationBarrel"
         ]

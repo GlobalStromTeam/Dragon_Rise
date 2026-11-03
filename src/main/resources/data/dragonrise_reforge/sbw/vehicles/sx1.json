@@ -2,11 +2,7 @@
     "ID":  "dragonrise_reforge:sx1",
     "MaxHealth":  100,
     "MaxEnergy":  5000000,
-    "TurretPos":  [
-                      0,
-                      2.266825,
-                      -2.20038125
-                  ],
+    "TurretPos":  [-0.004364, 2.361118, -2.058163],
     "TurretTurnSpeed":  [
                             12,
                             11.5
@@ -15,11 +11,7 @@
                              -3,
                              45
                          ],
-    "BarrelPos":  [
-                      0,
-                      2.40430625,
-                      -2.197475
-                  ],
+    "BarrelPos":  [0.015246, 0.171202, 0.013237],
     "TurretControllerIndex":  2,
     "OBB":  [
                 {
@@ -109,6 +101,19 @@
                                      -3.6875
                                  ],
                     "Part":  "WheelRight"
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.375,
+                    0.765625,
+                    3.09375
+                  ],
+                  "Position": [
+                    0.0,
+                    0.734375,
+                    -1.71875
+                  ]
                 }
             ],
     "Seats":  [
@@ -149,11 +154,7 @@
                                    ],
                       "CanRotateBody":  true,
                       "CameraPos":  {
-                                        "Position":  [
-                                                         0.0,
-                                                         0.0,
-                                                         0.0
-                                                     ],
+                                        "Position":  [-0.010882, 2.138811, -2.35293],
                                         "Transform":  "Barrel",
                                         "Direction":  "Barrel"
                                     },
@@ -235,13 +236,7 @@
                                    "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0,
-                                                                          -1.85,
-                                                                          0.5
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-0.034074, 0.172768, 1.609468]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]

@@ -65,6 +65,19 @@
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
+    },
+    {
+      "Part": "Collision",
+      "Size": [
+        1.938,
+        0.960671,
+        4.088073
+      ],
+      "Position": [
+        0.0,
+        0.966671,
+        0.114073
+      ]
     }
   ],
   "Seats": [
@@ -209,9 +222,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.01,-0.05,3.946]
-        ],
+        "Positions": [[-0.000208, -0.05535, 3.933493]],
         "Directions": [
           "Barrel"
         ]
@@ -279,9 +290,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.01,0.638,1.634]
-        ],
+        "Positions": [[0.006317, 0.640896, 1.603282]],
         "Directions": [
           "Barrel"
         ]

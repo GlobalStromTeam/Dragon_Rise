@@ -64,7 +64,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.J8.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.Q5.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SHUANGWEIXIE.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.DGSW_MK_L2.get()));
 
                         //俄罗斯 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T90MH.get()));
@@ -227,7 +226,6 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.type3.get()));
                         //output.accept(ContainerBlockItem.createInstance(ModEntities.BKAN1C.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD89A_COVERED.get()));
-                        output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
 
                     }
                     ).build()

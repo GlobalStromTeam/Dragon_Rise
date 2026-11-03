@@ -18,6 +18,19 @@
                                      0.6,
                                      0
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    0.55,
+                    0.6,
+                    0.1
+                  ],
+                  "Position": [
+                    0.0,
+                    0.6,
+                    0.0
+                  ]
                 }
             ],
     "EngineType":  "Fixed",

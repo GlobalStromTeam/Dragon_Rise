@@ -80,6 +80,19 @@
                                      0.53125,
                                      -0.5625
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.59375,
+                    0.875,
+                    2.96875
+                  ],
+                  "Position": [
+                    0.0,
+                    0.875,
+                    -0.53125
+                  ]
                 }
             ],
     "Seats":  [
@@ -87,24 +100,12 @@
                       "HidePassenger":  true,
                       "CameraPos":  {
                                         "UseFixedCameraPos":  true,
-                                        "Position":  [
-                                                         0.3125,
-                                                         0.525,
-                                                         1.4375
-                                                     ],
+                                        "Position":  [0.3125, 2.183438, 1.4375],
                                         "Transform":  "Turret",
-                                        "ZoomPosition":  [
-                                                             0.3125,
-                                                             0.525,
-                                                             1.4375
-                                                         ]
+                                        "ZoomPosition":  [0.3125, 2.183438, 1.4375]
                                     },
                       "Transform":  "Turret",
-                      "Position":  [
-                                       0,
-                                       -0.73,
-                                       0.2625
-                                   ],
+                      "Position":  [0.0, 0.928438, 0.2625],
                       "Weapons":  [
                                       "Cannon",
                                       "MachineGun"
@@ -178,13 +179,7 @@
                                    "SoundRadius":  32,
                                    "ShootPos":  {
                                                     "Transform":  "Barrel",
-                                                    "Positions":  [
-                                                                      [
-                                                                          0,
-                                                                          0,
-                                                                          11.5
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[0.014967, -0.027484, 1.904793]],
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
@@ -211,13 +206,7 @@
                                        "AmmoType":  "@HeavyAmmo",
                                        "ShootPos":  {
                                                         "Transform":  "Barrel",
-                                                        "Positions":  [
-                                                                          [
-                                                                              0.4,
-                                                                              0.15,
-                                                                              11.85
-                                                                          ]
-                                                                      ],
+                                                        "Positions":  [[0.391283, 0.068438, 12.1125]],
                                                         "Directions":  [
                                                                            "Barrel"
                                                                        ]
@@ -254,13 +243,7 @@
                                                 "AmmoType":  "@HeavyAmmo",
                                                 "ShootPos":  {
                                                                  "Transform":  "WeaponStationBarrel",
-                                                                 "Positions":  [
-                                                                                   [
-                                                                                       0,
-                                                                                       -0.01,
-                                                                                       1.8
-                                                                                   ]
-                                                                               ],
+                                                                 "Positions":  [[0.0, 1.648438, 1.8]],
                                                                  "Directions":  [
                                                                                     "WeaponStationBarrel"
                                                                                 ]
@@ -293,16 +276,8 @@
                        "SteeringSpeed":  0.1,
                        "EngineSoundVolume":  1.0
                    },
-    "TurretPos":  [
-                      0,
-                      1.6584375,
-                      0.2625
-                  ],
-    "BarrelPos":  [
-                      0,
-                      0.36,
-                      1.0375
-                  ],
+    "TurretPos":  [0.0, 0.0, 0.2625],
+    "BarrelPos":  [0.008717, 2.1, 0.775],
     "TurretTurnSpeed":  [
                             0.325,
                             0.675

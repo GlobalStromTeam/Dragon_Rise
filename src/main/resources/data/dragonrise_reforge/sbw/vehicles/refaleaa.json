@@ -125,6 +125,19 @@
                                      1.67196875,
                                      -3.233425
                                  ]
+                },
+                {
+                  "Part": "Collision",
+                  "Size": [
+                    1.15625,
+                    1.500162,
+                    7.124713
+                  ],
+                  "Position": [
+                    0.03125,
+                    1.390557,
+                    -0.546213
+                  ]
                 }
             ],
     "Seats":  {
@@ -210,13 +223,7 @@
                                    "AmmoType":  "superbwarfare:small_shell_aa",
                                    "ShootPos":  {
                                                     "Transform":  "Vehicle",
-                                                    "Positions":  [
-                                                                      [
-                                                                          -1.22975,
-                                                                          1.6139375,
-                                                                          0.26315625
-                                                                      ]
-                                                                  ],
+                                                    "Positions":  [[-1.229748, 1.61394, 0.664]],
                                                     "Directions":  [
                                                                        [
                                                                            0,

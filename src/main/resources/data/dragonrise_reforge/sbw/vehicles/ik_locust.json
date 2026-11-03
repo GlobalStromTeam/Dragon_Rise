@@ -3,11 +3,11 @@
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
   "Gravity": 0.06,
-  "TurretPos": [0.0,0.611,2.484],
+  "TurretPos": [0.0, 0.414525, 2.524681],
   "TurretTurnSpeed": [15,15],
   "TurretPitchRange": [-40,10],
   "TurretYawRange": [-60,60],
-  "BarrelPos": [0.0,-0.185,0.015],
+  "BarrelPos": [0.0, -0.18555, 0.0],
   "TurretControllerIndex": 1,
   "PassengerWeaponStationPos": [0.0,0.679,0.24],
   "PassengerWeaponStationBarrelPos": [0.0,0.001,0.0],
@@ -101,7 +101,7 @@
     },
     {
       "Size": [0.136,0.248,0.144],
-      "Position": [0.0,-0.249,0.026],
+      "Position": [0.0, -0.052525, -0.014681],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -137,13 +137,13 @@
     {
       "HidePassenger": true,
       "Transform": "WeaponStationBarrel",
-      "Position": [0.038,-0.298,3.636],
+      "Position": [0.038, -0.101525, 3.595319],
       "Sensitivity": [0.59,0.8,0.9],
       "CameraPos": {
         "Transform": "WeaponStationBarrel",
         "UseFixedCameraPos": true,
-        "Position": [0.0,0.0,0.5],
-        "ZoomPosition": [0.0,0.0,0.5],
+        "Position": [0.0, 0.196475, 0.459319],
+        "ZoomPosition": [0.0, 0.196475, 0.459319],
         "ZoomDirection": "Barrel"
       },
       "MinPitch": -85,
@@ -194,9 +194,7 @@
       "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.001,-0.02,0.707]
-        ],
+        "Positions": [[-0.000819, -0.130305, 0.68093]],
         "Directions": [
           "Barrel"
         ]

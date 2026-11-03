@@ -67,11 +67,7 @@
         0.53125,
         4.03125
       ],
-      "Position":  [
-        0,
-        -0.28825,
-        -1.89625
-      ],
+      "Position":  [-0.000494, -0.314482, -1.750527],
       "Transform":  "Turret",
       "Rotation":  "Turret"
     }
@@ -84,7 +80,7 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.917,-1.612,1.82],
+      "Position": [0.916506, -1.638232, 1.965723],
       "Weapons": [
         "Cannon",
         "MainMachineGun"
@@ -102,7 +98,7 @@
         "Transform": "WeaponStationBarrel",
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [0.47,-1.285,0.657],
+      "Position": [0.469506, -1.311232, 0.802723],
       "Weapons": [
         "PassengerMachineGun"
       ],
@@ -179,9 +175,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.005,-0.141,7.231]
-        ],
+        "Positions": [[-0.000494, -0.036608, 7.147805]],
         "Directions": [
           "Barrel"
         ]
@@ -218,9 +212,7 @@
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/hyr0/cannon_20mm.png",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.584,-0.169,1.606]
-        ],
+        "Positions": [[-0.585227, -0.013422, 1.331265]],
         "Directions": [
           "Barrel"
         ]
@@ -272,9 +264,7 @@
       "AmmoType": "superbwarfare:small_shell_ap",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [0.031,0.171,3.27]
-        ],
+        "Positions": [[0.023967, 0.219342, 2.303576]],
         "Directions": [
           "WeaponStationBarrel"
         ]
@@ -297,7 +287,7 @@
     "SteeringSpeed": 0.13,
     "EngineSoundVolume": 1.0
   },
-  "TurretPos": [-0.011,3.33,0.68],
+  "TurretPos": [-0.010506, 3.356232, 0.534277],
   "BarrelPos": [0.011,-0.645,1.918],
   "TurretTurnSpeed": [2.625,3.575],
   "TurretPitchRange": [-7,15],

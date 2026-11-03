@@ -15,5 +15,20 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/t90mhight.png"
                    }
-               ]
+               ],
+    "OBB": [
+      {
+        "Part": "Collision",
+        "Size": [
+          1.9375,
+          0.820178,
+          3.3125
+        ],
+        "Position": [
+          0.0,
+          0.742322,
+          0.1875
+        ]
+      }
+    ]
 }

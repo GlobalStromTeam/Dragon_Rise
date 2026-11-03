@@ -122,9 +122,7 @@
       "SoundRadius": 22,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.032,0.035,0.707]
-        ],
+        "Positions": [[0.009716, -0.034565, 1.602265]],
         "Directions": [
           "Barrel"
         ]
@@ -157,13 +155,9 @@
       },
       "SoundRadius": 14,
       "ShootPos": {
-        "Transform": "Turret",
-        "Positions": [
-          [-0.283,0.343,-0.423]
-        ],
-        "Directions": [
-          "Barrel"
-        ]
+        "Transform": "Barrel",
+        "Positions": [[-0.282679, -0.065066, 0.359717]],
+        "Directions": [[0, 0, 1]]
       }
     }
   },
@@ -182,7 +176,7 @@
     "EngineSoundVolume": 1.0
   },
   "TurretPos": [0.028,2.004,-1.507],
-  "BarrelPos": [0.797,0.336,0.46],
+  "BarrelPos": [-0.015575, 0.399157, 0.709921],
   "TurretTurnSpeed": [1.5,2.5],
   "TurretPitchRange": [-8,25],
   "HasDecoy": true,

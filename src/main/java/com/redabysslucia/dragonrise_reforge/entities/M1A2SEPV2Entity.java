@@ -1,27 +1,37 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.entities.utils.AddonArmorHelper;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nonnull;
 
+/**
+ * M1A2 SEPv2。
+ *
+ * <p>附加装甲（TUSK 套件）：
+ * <ul>
+ *     <li>是否安装同时写在 NBT（{@code TuskInstalled}）与同步数据位（渲染隐藏/显示
+ *         {@code move_tusk} / {@code move_tuskbody} 两根骨骼）里；</li>
+ *     <li>安装 / 拆卸走「附加装甲套件 / 附加装甲拆卸套件」物品，见
+ *         {@code events.AddonArmorInteraction}；</li>
+ *     <li>安装后最大生命值 +10%（覆写 {@link #getMaxHealth()}）。</li>
+ * </ul>
+ */
 @SuppressWarnings("removal")
-public class M1A2SEPV2Entity extends VehicleEntity {
+public class M1A2SEPV2Entity extends VehicleEntity implements AddonArmorVehicle {
 
-    // Tusk 套件安装状态（false=已拆卸/默认，true=已安装）；由左键近战点击 10 次切换
-    public static final EntityDataAccessor<Boolean> TUSK_INSTALLED =
+    /** 附加装甲是否已安装（客户端渲染骨骼、服务端血量上限共用） */
+    public static final EntityDataAccessor<Boolean> ADDON_ARMOR_INSTALLED =
             SynchedEntityData.defineId(M1A2SEPV2Entity.class, EntityDataSerializers.BOOLEAN);
 
-    private int tuskClickCount = 0;
+    /** 见 {@link M1a2sepv1Entity} 里同名字段的注释：super 初始化 HEALTH 时本类同步位还未定义 */
+    private boolean addonArmorDataReady;
 
     private final Float[][] PitchAdjustments = {
             {150f, 180f, 17f, 0f, -10f},
@@ -35,59 +45,39 @@ public class M1A2SEPV2Entity extends VehicleEntity {
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        // 默认拆卸状态
-        this.entityData.define(TUSK_INSTALLED, false);
+        this.entityData.define(ADDON_ARMOR_INSTALLED, false);
+        this.addonArmorDataReady = true;
+    }
+
+    @Override
+    public float getMaxHealth() {
+        return AddonArmorHelper.maxHealth(super.getMaxHealth(),
+                this.addonArmorDataReady && this.entityData.get(ADDON_ARMOR_INSTALLED));
     }
 
     @Override
     public void addAdditionalSaveData(@Nonnull CompoundTag compound) {
         super.addAdditionalSaveData(compound);
-        compound.putBoolean("TuskInstalled", isTuskInstalled());
+        compound.putBoolean("TuskInstalled", hasAddonArmor());
     }
 
     @Override
     public void readAdditionalSaveData(@Nonnull CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         if (compound.contains("TuskInstalled")) {
-            setTuskInstalled(compound.getBoolean("TuskInstalled"));
+            setAddonArmor(compound.getBoolean("TuskInstalled"));
         }
     }
 
     @Override
-    public boolean hurt(DamageSource source, float amount) {
-        // 玩家近战点击（直接伤害源=玩家自身）：计数 10 次切换 Tusk 套件，点击不造成伤害
-        if (!level().isClientSide()
-                && source.getEntity() instanceof Player player
-                && source.getDirectEntity() == source.getEntity()) {
-            tuskClickCount++;
-            if (tuskClickCount >= 10) {
-                tuskClickCount = 0;
-                boolean installed = !isTuskInstalled();
-                setTuskInstalled(installed);
-                player.displayClientMessage(Component.translatable(
-                        installed
-                                ? "message.dragonrise_reforge.m1a2sepv2.tusk_installed"
-                                : "message.dragonrise_reforge.m1a2sepv2.tusk_removed"), true);
-                this.level().playSound(null, this.blockPosition(),
-                        SoundEvents.ITEM_FRAME_REMOVE_ITEM,
-                        this.getSoundSource(), 0.8F, 1.2F);
-            }
-            return false;
-        }
-        return super.hurt(source, amount);
+    public boolean hasAddonArmor() {
+        return this.entityData.get(ADDON_ARMOR_INSTALLED);
     }
 
-    /**
-     * Tusk 套件是否已安装（true=显示，false=隐藏/拆卸）
-     */
-    public boolean isTuskInstalled() {
-        return this.entityData.get(TUSK_INSTALLED);
+    @Override
+    public void setAddonArmor(boolean installed) {
+        this.entityData.set(ADDON_ARMOR_INSTALLED, installed);
     }
-
-    public void setTuskInstalled(boolean installed) {
-        this.entityData.set(TUSK_INSTALLED, installed);
-    }
-
 
     @Override
     public int getTrackAnimationLength() {

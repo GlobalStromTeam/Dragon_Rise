@@ -183,9 +183,7 @@
       "SoundRadius": 32,
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [0.005,-0.042,5.136]
-        ],
+        "Positions": [[0.01312, -0.042944, 5.15075]],
         "Directions": [
           "Barrel"
         ]
@@ -214,9 +212,7 @@
       "AmmoType": "@RifleAmmo",
       "ShootPos": {
         "Transform": "Barrel",
-        "Positions": [
-          [-0.287,0.055,1.510613]
-        ],
+        "Positions": [[-0.285036, 0.053877, 1.482394]],
         "Directions": [
           "Barrel"
         ]
@@ -253,9 +249,7 @@
       "AmmoType": "@HeavyAmmo",
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
-        "Positions": [
-          [-0.025,0.158,1.312]
-        ],
+        "Positions": [[-0.011386, 0.16305, 1.548894]],
         "Directions": [
           "WeaponStationBarrel"
         ]
