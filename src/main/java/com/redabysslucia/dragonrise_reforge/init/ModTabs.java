@@ -40,6 +40,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CM34.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSL10.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.HJ8.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.R9M133.get()));
                         //中国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AA625E.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SX1.get()));
@@ -84,14 +87,18 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.URAL4320_ZU23.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.URAL4320.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.URAL4320_SUPPLY.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SPG9.get()));
                         //俄罗斯 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.S2S38.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TUNGUSKA.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSU234.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZU23.get()));
                         //俄罗斯 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.KA50.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24V.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MI24P.get()));
+                        //俄罗斯 固定翼
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SU24M.get()));
 
                         //美国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.M1A2SEPV2.get()));
@@ -111,6 +118,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.HUMVEETOW.get()));
                         //美国 轻型车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FAVA.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MK19.get()));
                         //美国 直升机
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
@@ -136,6 +144,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));
                         //德国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.PAK40.get()));
 
                         //英国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CHALLENGER_DS.get()));
@@ -161,6 +170,9 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SHIELD.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SPACEBAG.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.TEST.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
                         //中国 民用/娱乐
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
