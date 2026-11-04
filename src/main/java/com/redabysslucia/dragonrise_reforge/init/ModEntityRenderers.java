@@ -1,6 +1,10 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.DgswMkL2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MerkavaMk4Renderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.TestShipRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd05Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.ShuangweixieRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aCoveredRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Zsd89aRenderer;
@@ -334,5 +338,13 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.ZSD89A_COVERED.get(), Zsd89aCoveredRenderer::new);
                 event.registerEntityRenderer(ModEntities.IED.get(), IedRenderer::new);
                 event.registerEntityRenderer(ModEntities.MERKAVA_MK4.get(), MerkavaMk4Renderer::new);
+                // 下面四个实体一直在 ModEntities 里注册着，但渲染器注册在 b160b6f0「履带」那次
+                // 错误合并里被整段删掉了（DGSW/CAV 是本分支提交的，ZSD05/TESTSHIP 是更早就漏的）。
+                // 没有渲染器的实体一旦被渲染，EntityRenderDispatcher#shouldRender 会拿到 null
+                // 直接 NPE 崩客户端 —— 这就是 runClient 崩溃的原因。
+                event.registerEntityRenderer(ModEntities.DGSW_MK_L2.get(), DgswMkL2Renderer::new);
+                event.registerEntityRenderer(ModEntities.CAV.get(), CavRenderer::new);
+                event.registerEntityRenderer(ModEntities.ZSD05.get(), Zsd05Renderer::new);
+                event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
         }
 }
