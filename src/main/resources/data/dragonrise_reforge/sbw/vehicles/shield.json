@@ -40,6 +40,7 @@
     "VehicleContainerType":  "One",
     "SendHitParticles":  false,
     "Type":  "Artillery",
+    "VehicleIcon":  "dragonrise_reforge:textures/vehicle_icon/shield_icon.png",
     "Models":  [
                    {
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/shield.geo.json",

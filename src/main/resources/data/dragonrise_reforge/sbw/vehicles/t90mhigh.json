@@ -10,6 +10,7 @@
                       1.959,
                       1.465
                   ],
+    "VehicleIcon":  "dragonrise_reforge:textures/vehicle_icon/t90mhigh_icon.png",
     "Models":  [
                    {
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/t90mhigh.geo.json",
