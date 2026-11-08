@@ -49,6 +49,7 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.LCM.get(), createLightVehicleLoot(3));
         add(ModEntities.R2S25M.get(), createLightTankLoot(3));
         add(ModEntities.BMP3.get(), createLightTankLoot(3));
+        add(ModEntities.BTR90.get(), createLightTankLoot(3));
         add(ModEntities.BMPT72.get(), createLightTankLoot(4));
         add(ModEntities.ZBD04A.get(), createLightTankLoot(3));
         add(ModEntities.ZBL08.get(), createLightTankLoot(3));
@@ -106,6 +107,10 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.J11.get(), createAircraftLoot(5));
         add(ModEntities.J15T.get(), createAircraftLoot(5));
         add(ModEntities.J16.get(), createAircraftLoot(6));
+        add(ModEntities.MIG29M.get(), createAircraftLoot(6));
+        add(ModEntities.EF2000.get(), createAircraftLoot(6));
+        add(ModEntities.SU30SM.get(), createAircraftLoot(6));
+        add(ModEntities.JH7.get(), createAircraftLoot(6));
         add(ModEntities.J20.get(), createAircraftLoot(8));
         add(ModEntities.J20VTOL.get(), createAircraftLoot(8));
         add(ModEntities.J35.get(), createAircraftLoot(5));
@@ -117,7 +122,6 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.F16C.get(), createAircraftLoot(5));
         add(ModEntities.F4U.get(), createAircraftLoot(3));
         add(ModEntities.REFALE.get(), createAircraftLoot(5));
-        add(ModEntities.REFALEAA.get(), createAircraftLoot(6));
         add(ModEntities.AV8B.get(), createAircraftLoot(4));
         add(ModEntities.syy651.get(), createAircraftLoot(4));
         add(ModEntities.HYR0.get(), createAircraftLoot(6));

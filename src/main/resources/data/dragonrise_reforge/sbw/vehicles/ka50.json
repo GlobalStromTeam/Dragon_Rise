@@ -114,16 +114,8 @@
                 },
                 {
                   "Part": "Collision",
-                  "Size": [
-                    1.34375,
-                    1.34375,
-                    6.65625
-                  ],
-                  "Position": [
-                    0.0,
-                    1.34375,
-                    -1.71875
-                  ]
+                  "Size": [1.34375, 1.32450276, 6.65625],
+                  "Position": [0.0, 1.36299724, -1.71875]
                 }
             ],
     "Seats":  [
@@ -277,7 +269,12 @@
                                     "RPM":  120,
                                     "CrosshairColor":  "0xFFC700",
                                     "Name":  "dragonrise_reforge:9m127",
-                                    "AmmoType":  "superbwarfare:medium_anti_ground_missile",
+                                    "AmmoType":  [
+                                      {
+                                        "Ammo": "superbwarfare:medium_anti_ground_missile",
+                                        "ShouldUnload": false
+                                      }
+                                    ],
                                     "Projectile":  "superbwarfare:wire_guide_missile",
                                     "Magazine":  12,
                                     "EmptyReloadTime":  520,
@@ -290,68 +287,12 @@
                                     "RecoilForce":  0.65,
                                     "ShootPos":  {
                                                      "Transform":  "Vehicle",
-                                                     "Positions":  [
-                                                                       [2.587934, 1.305485, -0.355572],
-                                                                       [
-                                                                         2.869184,
-                                                                         1.305485,
-                                                                         -0.355572
-                                                                       ],
-                                                                       [
-                                                                         2.962934,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         2.806684,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         2.494184,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         2.650434,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         -2.587934,
-                                                                         1.305485,
-                                                                         -0.355572
-                                                                       ],
-                                                                       [
-                                                                         -2.869184,
-                                                                         1.305485,
-                                                                         -0.355572
-                                                                       ],
-                                                                       [
-                                                                         -2.962934,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         -2.806684,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         -2.494184,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ],
-                                                                       [
-                                                                         -2.650434,
-                                                                         1.024407,
-                                                                         -0.345757
-                                                                       ]
-                                                                   ],
+                                                     "Positions":  [[2.587934, 1.267685, -1.3866386], [2.869184, 1.267685, -1.3866386], [2.962934, 0.986607, -1.3768236], [2.806684, 0.986607, -1.3768236], [2.494184, 0.986607, -1.3768236], [2.650434, 0.986607, -1.3768236], [-2.587934, 1.267685, -1.3866386], [-2.869184, 1.267685, -1.3866386], [-2.962934, 0.986607, -1.3768236], [-2.806684, 0.986607, -1.3768236], [-2.494184, 0.986607, -1.3768236], [-2.650434, 0.986607, -1.3768236]],
                                                      "Directions":  [
                                                                         "Vehicle"
                                                                     ],
-                                                     "ViewDirection":  "Vehicle"
+                                                     "ViewDirection":  "Vehicle",
+                                                     "BoundUpWithAmmoAmount": true
                                                  },
                                     "Crosshair":  "@VehicleCommonMissile",
                                     "SoundInfo":  {
@@ -362,7 +303,29 @@
                                                       "Change":  "dragonrise_reforge:change_weapon"
                                                   },
                                     "SoundRadius":  12,
-                                    "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_9m127.png"
+                                    "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_9m127.png",
+                                    "ProjectileDummyInfo": {
+                                      "Offset": [
+                                        -0.0,
+                                        -0.252,
+                                        -1.03125
+                                      ],
+                                      "Rotate": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "Scale": [
+                                        0.15,
+                                        0.15,
+                                        0.9998221
+                                      ]
+                                    },
+                                    "AddShooterDeltaMovement": false,
+                                    "ProjectileLife": 400,
+                                    "UseNacelleCamera": false,
+                                    "CrosshairZooming": "@Empty",
+                                    "SeekWeaponInfo": {}
                                 }
                 },
     "EngineType":  "Helicopter",

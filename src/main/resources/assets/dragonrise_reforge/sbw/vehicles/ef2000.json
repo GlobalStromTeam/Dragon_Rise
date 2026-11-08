@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:ef2000",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ef2000.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ef2000.png"
+    }
+  ],
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/ef2000.animation.json"
+}

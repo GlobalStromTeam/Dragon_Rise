@@ -466,7 +466,7 @@
                                         "AvailableFireModes":  "Semi",
                                         "Magazine":  8,
                                         "EmptyReloadTime":  200,
-                                        "Projectile":  "superbwarfare:agm_65",
+                                        "Projectile":  "dragonrise_reforge:ac130_missile",
                                         "Name":  "dragonrise_reforge:dyh",
                                         "Damage":  1100,
                                         "ExplosionDamage":  180,
@@ -496,48 +496,7 @@
                                                                                      1.53,
                                                                                      0
                                                                                  ],
-                                                         "Positions":  [
-                                                                           [
-                                                                               14.61599375,
-                                                                               3.8415375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               14.95974375,
-                                                                               3.8415375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               14.61599375,
-                                                                               4.2790375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               14.95974375,
-                                                                               4.2790375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               -14.61599375,
-                                                                               3.8415375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               -14.95974375,
-                                                                               3.8415375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               -14.61599375,
-                                                                               4.2790375,
-                                                                               -2.2128125
-                                                                           ],
-                                                                           [
-                                                                               -14.95974375,
-                                                                               4.2790375,
-                                                                               -2.2128125
-                                                                           ]
-                                                                       ],
+                                                         "Positions":  [[14.613083, 3.594772, -1.93625], [14.956833, 3.594772, -1.93625], [14.613083, 4.032272, -1.93625], [14.956833, 4.032272, -1.93625], [-14.613083, 3.594772, -1.93625], [-14.956833, 3.594772, -1.93625], [-14.613083, 4.032272, -1.93625], [-14.956833, 4.032272, -1.93625]],
                                                          "BoundUpWithAmmoAmount":  true
                                                      },
                                         "SoundInfo":  {
@@ -551,7 +510,27 @@
                                                       },
                                         "Crosshair":  "@VehicleCommonSeekMissile",
                                         "CrosshairColor":  "0x66FF00",
-                                        "SoundRadius":  8
+                                        "SoundRadius":  8,
+                                        "ProjectileDummyInfo": {
+                                          "Offset": [
+                                            -0.0,
+                                            -0.4022602,
+                                            0.0
+                                          ],
+                                          "Rotate": [
+                                            0,
+                                            0,
+                                            0
+                                          ],
+                                          "Scale": [
+                                            1.0,
+                                            1.0,
+                                            1.0
+                                          ]
+                                        },
+                                        "ProjectileLife": 400,
+                                        "UseNacelleCamera": false,
+                                        "CrosshairZooming": "@Empty"
                                     }
                 },
     "HUDColor":  "0xFFC700",

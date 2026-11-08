@@ -1,5 +1,26 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Ef2000Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Mig29mEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.R550Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.MicaEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Btr90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Magic2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ec665AtgmEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Kh25Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.AasmEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ty90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Lj11Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Akd10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Agm114Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ac130MissileEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Sd905BombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyHvarEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyR60Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyAim54Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.TjgcBombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Jh7Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Su30smEntity;
 import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
 
 
@@ -450,13 +471,6 @@ public class ModEntities {
                     .sized(4.5f, 2.9f)
     );
 
-    public static final RegistryObject<EntityType<REFALEAAEntity>> REFALEAA = register("refaleaa",
-            EntityType.Builder.of(REFALEAAEntity::new, MobCategory.MISC)
-                    .setTrackingRange(512)
-                    .setUpdateInterval(2)
-                    .fireImmune()
-                    .sized(4.5f, 2.9f)
-    );
 
     public static final RegistryObject<EntityType<AV8BEntity>> AV8B = register("av8b",
             EntityType.Builder.of(AV8BEntity::new, MobCategory.MISC)
@@ -706,6 +720,19 @@ public class ModEntities {
                     .sized(0.5f, 0.5f)
     );
 
+    public static final RegistryObject<EntityType<Btr90Entity>> BTR90 = register("btr90",
+            EntityType.Builder.of(Btr90Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.3f, 3.2f)
+    );
+
+    public static final RegistryObject<EntityType<TjgcBombEntity>> TJGC_BOMB = register("tjgc_bomb",
+            EntityType.Builder.<TjgcBombEntity>of(TjgcBombEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.8f, 0.8f)
+    );
+
     public static final RegistryObject<EntityType<Gb250Entity>> GB250 = register("gb_250",
             EntityType.Builder.<Gb250Entity>of((type, level) -> new Gb250Entity(type, level), MobCategory.MISC)
                     .setTrackingRange(512)
@@ -790,6 +817,22 @@ public class ModEntities {
             EntityType.Builder.of(J16Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<Su30smEntity>> SU30SM = register("su30sm",
+            EntityType.Builder.of(Su30smEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final RegistryObject<EntityType<Jh7Entity>> JH7 = register("jh7",
+            EntityType.Builder.of(Jh7Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
                     .fireImmune()
                     .sized(4.0f, 2.7f)
     );
@@ -1665,6 +1708,74 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
+
+    public static final RegistryObject<EntityType<LegacyAim54Entity>> LEGACY_AIM54 = register("aim54",
+            EntityType.Builder.<LegacyAim54Entity>of(LegacyAim54Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<LegacyR60Entity>> LEGACY_R60 = register("r60",
+            EntityType.Builder.<LegacyR60Entity>of(LegacyR60Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<LegacyHvarEntity>> LEGACY_HVAR = register("hvar",
+            EntityType.Builder.<LegacyHvarEntity>of(LegacyHvarEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Sd905BombEntity>> LEGACY_SD905_BOMB = register("sd905_bomb",
+            EntityType.Builder.<Sd905BombEntity>of(Sd905BombEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Ac130MissileEntity>> LEGACY_AC130_MISSILE = register("ac130_missile",
+            EntityType.Builder.<Ac130MissileEntity>of(Ac130MissileEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Agm114Entity>> LEGACY_AGM114 = register("agm114",
+            EntityType.Builder.<Agm114Entity>of(Agm114Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Akd10Entity>> LEGACY_AKD10 = register("akd10",
+            EntityType.Builder.<Akd10Entity>of(Akd10Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Lj11Entity>> LEGACY_LJ11 = register("lj11",
+            EntityType.Builder.<Lj11Entity>of(Lj11Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Ty90Entity>> LEGACY_TY90 = register("ty90",
+            EntityType.Builder.<Ty90Entity>of(Ty90Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<AasmEntity>> LEGACY_AASM = register("aasm",
+            EntityType.Builder.<AasmEntity>of(AasmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Kh25Entity>> LEGACY_KH25 = register("kh25",
+            EntityType.Builder.<Kh25Entity>of(Kh25Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Ec665AtgmEntity>> LEGACY_EC665_ATGM = register("ec665_atgm",
+            EntityType.Builder.<Ec665AtgmEntity>of(Ec665AtgmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Magic2Entity>> LEGACY_MAGIC2 = register("magic2",
+            EntityType.Builder.<Magic2Entity>of(Magic2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<MicaEntity>> MICA = register("mica",
+            EntityType.Builder.<MicaEntity>of(MicaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<R550Entity>> R550 = register("r550",
+            EntityType.Builder.<R550Entity>of(R550Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final RegistryObject<EntityType<Mig29mEntity>> MIG29M = register("mig29m",
+            EntityType.Builder.<Mig29mEntity>of(Mig29mEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
+
+    public static final RegistryObject<EntityType<Ef2000Entity>> EF2000 = register("ef2000",
+            EntityType.Builder.<Ef2000Entity>of(Ef2000Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
