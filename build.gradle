@@ -172,3 +172,38 @@ tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.compilerArgs.add('-Xlint:-removal')
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 护甲 geo 规范校验（SBM v2 渲染约定）
+//   ./gradlew armorGeoCheck   → node tools/armor_geo_norm.mjs --check
+//   ./gradlew armorGeoFix     → node tools/armor_geo_norm.mjs --fix
+// 枢轴写错（例如 armorBody 用 22 而不是 24）会让整件护甲位移，
+// 历史上表现为“胸甲飞到头上”。`check` 依赖它，所以 build 会顺带校验。
+// ─────────────────────────────────────────────────────────────────────────────
+def nodeAvailable = {
+    try {
+        return new ProcessBuilder('node', '--version').redirectErrorStream(true).start().waitFor() == 0
+    } catch (Exception ignored) {
+        return false
+    }
+}
+
+tasks.register('armorGeoCheck', Exec) {
+    group = 'verification'
+    description = '校验护甲 geo 是否符合 SBM 枢轴/骨骼规范（不合规则失败）'
+    workingDir = projectDir
+    commandLine 'node', 'tools/armor_geo_norm.mjs', '--check'
+    onlyIf { nodeAvailable() }
+}
+
+tasks.register('armorGeoFix', Exec) {
+    group = 'verification'
+    description = '把护甲 geo 的枢轴自动修到规范值（先备份到 build/armor_geo_backup/）'
+    workingDir = projectDir
+    commandLine 'node', 'tools/armor_geo_norm.mjs', '--fix'
+    onlyIf { nodeAvailable() }
+}
+
+tasks.named('check') {
+    dependsOn 'armorGeoCheck'
+}

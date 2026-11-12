@@ -299,6 +299,21 @@ public class ModTabs {
                         output.accept(ModItems.RUSSIAN_SOLDIER_HELMET.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_CHEST.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_PANTS.get());
+        output.accept(ModItems.HAOM_HELMET.get());
+        output.accept(ModItems.HAOM_CHEST.get());
+        output.accept(ModItems.HAOM_PANTS.get());
+        output.accept(ModItems.JUAW_HELMET.get());
+        output.accept(ModItems.JUAW_CHEST.get());
+        output.accept(ModItems.JUAW_PANTS.get());
+        output.accept(ModItems.ADE3_HELMET.get());
+        output.accept(ModItems.ADE3_CHEST.get());
+        output.accept(ModItems.ADE3_PANTS.get());
+        output.accept(ModItems.SAWKM1_HELMET.get());
+        output.accept(ModItems.SAWKM1_CHEST.get());
+        output.accept(ModItems.SAWKM1_PANTS.get());
+        output.accept(ModItems.HONF_HELMET.get());
+        output.accept(ModItems.HONF_CHEST.get());
+        output.accept(ModItems.HONF_PANTS.get());
 
 //                        output.accept(ModItems.TERRORIST_SPAWN_EGG.get());
                         output.accept(ModItems.SPRAY_CAN.get());

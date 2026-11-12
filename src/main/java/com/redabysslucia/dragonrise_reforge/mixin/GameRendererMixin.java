@@ -8,20 +8,13 @@ import com.redabysslucia.dragonrise_reforge.entities.special.R6DroneEntity;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
-import net.minecraft.world.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
-    @Inject(at = @At("HEAD"), method = "getNightVisionScale(Lnet/minecraft/world/entity/LivingEntity;F)F", cancellable = true)
-    private static void getNightVisionScale(LivingEntity living, float num, CallbackInfoReturnable<Float> callback) {
-        callback.setReturnValue(0f);
-    }
-
     /**
      * 遥控本项目无人车且处于第一人称相机类型时，隐藏手持物品（监控平板），
      * 避免无人车视角里看到玩家手上的物品。

@@ -78,6 +78,21 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_HELMET = REGISTRY.register("russian_soldier_helmet", RussianSoldierHelmet::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_CHEST = REGISTRY.register("russian_soldier_chest", RussianSoldierChest::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_PANTS = REGISTRY.register("russian_soldier_pants", RussianSoldierPants::new);
+    public static final DeferredHolder<Item, Item> HAOM_HELMET = REGISTRY.register("haom_helmet", HaomHelmet::new);
+    public static final DeferredHolder<Item, Item> HAOM_CHEST = REGISTRY.register("haom_chest", HaomChest::new);
+    public static final DeferredHolder<Item, Item> HAOM_PANTS = REGISTRY.register("haom_pants", HaomPants::new);
+    public static final DeferredHolder<Item, Item> JUAW_HELMET = REGISTRY.register("juaw_helmet", JuawHelmet::new);
+    public static final DeferredHolder<Item, Item> JUAW_CHEST = REGISTRY.register("juaw_chest", JuawChest::new);
+    public static final DeferredHolder<Item, Item> JUAW_PANTS = REGISTRY.register("juaw_pants", JuawPants::new);
+    public static final DeferredHolder<Item, Item> ADE3_HELMET = REGISTRY.register("ade3_helmet", Ade3Helmet::new);
+    public static final DeferredHolder<Item, Item> ADE3_CHEST = REGISTRY.register("ade3_chest", Ade3Chest::new);
+    public static final DeferredHolder<Item, Item> ADE3_PANTS = REGISTRY.register("ade3_pants", Ade3Pants::new);
+    public static final DeferredHolder<Item, Item> SAWKM1_HELMET = REGISTRY.register("sawkm1_helmet", Sawkm1Helmet::new);
+    public static final DeferredHolder<Item, Item> SAWKM1_CHEST = REGISTRY.register("sawkm1_chest", Sawkm1Chest::new);
+    public static final DeferredHolder<Item, Item> SAWKM1_PANTS = REGISTRY.register("sawkm1_pants", Sawkm1Pants::new);
+    public static final DeferredHolder<Item, Item> HONF_HELMET = REGISTRY.register("honf_helmet", HonfHelmet::new);
+    public static final DeferredHolder<Item, Item> HONF_CHEST = REGISTRY.register("honf_chest", HonfChest::new);
+    public static final DeferredHolder<Item, Item> HONF_PANTS = REGISTRY.register("honf_pants", HonfPants::new);
 
     public static final DeferredHolder<Item, Item> TERRORIST_SPAWN_EGG = REGISTRY.register("terrorist_spawn_egg",
         () -> new SpawnEggItem(ModEntities.TERRORIST.get(), -11584987, -14014413, new Item.Properties()));

@@ -25,6 +25,7 @@
     "HasLowHealthWarning":  false,
     "SelfHurtPercent":  0,
     "VehicleContainerType":  "One",
+    "VehicleIcon":  "dragonrise_reforge:textures/vehicle_icon/shield_icon.png",
     "SendHitParticles":  false,
     "Type":  "Artillery",
     "Models":  [

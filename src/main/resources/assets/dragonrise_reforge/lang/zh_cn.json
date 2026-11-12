@@ -660,5 +660,20 @@
   "weapon.superbwarfare.fim_92_missile": "毒刺",
   "weapon.superbwarfare.laser_auto": "自动激光炮",
   "weapon.superbwarfare.laser_semi": "半自动激光炮",
-  "weapon.superbwarfare.tow_missile": "陶"
+  "weapon.superbwarfare.tow_missile": "陶",
+  "item.dragonrise_reforge.haom_helmet": "HAOM 士兵头盔",
+  "item.dragonrise_reforge.haom_chest": "HAOM 士兵作战服",
+  "item.dragonrise_reforge.haom_pants": "HAOM 士兵护腿",
+  "item.dragonrise_reforge.juaw_helmet": "JUAW 士兵头盔",
+  "item.dragonrise_reforge.juaw_chest": "JUAW 士兵作战服",
+  "item.dragonrise_reforge.juaw_pants": "JUAW 士兵护腿",
+  "item.dragonrise_reforge.ade3_helmet": "ADE3 士兵头盔",
+  "item.dragonrise_reforge.ade3_chest": "ADE3 士兵作战服",
+  "item.dragonrise_reforge.ade3_pants": "ADE3 士兵护腿",
+  "item.dragonrise_reforge.sawkm1_helmet": "SAWKM-1 士兵头盔",
+  "item.dragonrise_reforge.sawkm1_chest": "SAWKM-1 士兵作战服",
+  "item.dragonrise_reforge.sawkm1_pants": "SAWKM-1 士兵护腿",
+  "item.dragonrise_reforge.honf_helmet": "HONF 士兵头盔",
+  "item.dragonrise_reforge.honf_chest": "HONF 士兵作战服",
+  "item.dragonrise_reforge.honf_pants": "HONF 士兵护腿"
 }

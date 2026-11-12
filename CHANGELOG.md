@@ -2,6 +2,21 @@
 
 > 本次改动覆盖：载具物品栏、牵引系统移除、SBM 渲染迁移、datagen 工具链增强、载具皮肤系统。
 
+## 零、护甲流水线工具（后续对话/接手必读）
+
+新增一套可复用脚本，入口文档：**`tools/README.md`**（工具索引）+ **`docs/护甲模型规范.md`**（数据规范）。
+
+| 工具 | 作用 |
+|---|---|
+| `tools/geo_to_armor.mjs` | **首选**：把 Blockbench 导出的护甲 geo 规整成 SBM 可用格式（枢轴归位 / 合并 `group*` 额外骨 / 版本统一 1.12.0） |
+| `tools/bbmodel_to_armor_geo.mjs` | `.bbmodel` → 护甲 geo + 贴图（自动选主贴图、按区域分骨、`--strip-rotation` 还原静姿） |
+| `tools/armor_geo_norm.mjs` | 护甲 geo 校验/修复；Gradle 侧 `armorGeoCheck` / `armorGeoFix`（`build` 会自动跑） |
+| `tools/make_armor_icons.py` | 512×512 物品图标，离线渲染（复用 1201 的 `vehicle_icon_render.py`），按槽位过滤骨骼 |
+| `tools/gen_armor_set.mjs` | 批量生成物品类 / `ModItems` 注册 / 创造栏 / 语言 / 物品模型 / 装配配方；贴图按 SHA-256 去重共用 |
+| `tools/bake_uv_rotation.py` | 把残留 `uv_rotation` 烘进图集（SBM/GeckoLib 都不读该字段） |
+
+关键不变量：`armorBody` 枢轴必须 `[0,24,0]`（写成 22 会让胸甲整体飘到头上）；`armor*` 与 `biped*` 父骨同值；cube 用模型空间绝对坐标；`uv_rotation` 必须为 0；贴图为声明尺寸的整数倍。
+
 ## 一、载具物品栏
 
 - **移除物品栏自定义 Mixin**（`DefaultVehicleDataMixin` / `VehicleContainerTypeMixin` / `SmallVehicleContainerMenuMixin`），载具物品栏恢复 SuperbWarfare 本体纯净行为（3×9、6×9、6×13、6×17 等按数据配置）
