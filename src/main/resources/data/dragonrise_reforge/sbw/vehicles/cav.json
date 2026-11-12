@@ -201,6 +201,7 @@
     [1.703,0.0,-3.345],
     [-1.702,0.0,-3.345]
   ],
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cav_icon.png",
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/cav.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/cav.png"
