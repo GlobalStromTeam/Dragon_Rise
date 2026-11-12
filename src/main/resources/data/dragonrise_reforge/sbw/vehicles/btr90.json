@@ -455,10 +455,10 @@
       "Name": "dragonrise_reforge:30mm_3ubr8_apds",
       "Projectile": "superbwarfare:small_cannon_shell",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:cannon_30mm_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:mi_28_cannon_far",
-        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Fire1P": "dragonrise_reforge:2a42_fire_1p",
+        "Fire3P": "dragonrise_reforge:2a42_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:2a42_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:2a42_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
@@ -531,13 +531,13 @@
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "Name": "dragonrise_reforge:pkt",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
+        "Fire1P": "dragonrise_reforge:pkt_fire_1p",
+        "Fire3P": "dragonrise_reforge:pkt_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:pkt_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:pkt_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon"
       },
-      "SoundRadius": 16
+      "SoundRadius": 12
     },
     "Missile": {
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_9m117m1.png",
@@ -567,10 +567,10 @@
       "CrosshairColor": "0xFFC700",
       "Name": "dragonrise_reforge:9m113",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:zbd04a_100mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:zbd04a_100mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:zbd04a_100mm_fire_3p_far",
+        "Fire1P": "dragonrise_reforge:9m113_fire_1p",
+        "Fire3P": "dragonrise_reforge:9m113_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:9m113_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:9m113_fire_3p_very_far",
         "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
         "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon"
@@ -609,10 +609,10 @@
       "CrosshairColor": "0xFFC700",
       "Name": "dragonrise_reforge:ag17",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:zbd04a_30mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:zbd04a_30mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:zbd04a_30mm_fire_3p_far",
-        "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
+        "Fire1P": "dragonrise_reforge:ag17_fire_1p",
+        "Fire3P": "dragonrise_reforge:ag17_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:ag17_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:ag17_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,

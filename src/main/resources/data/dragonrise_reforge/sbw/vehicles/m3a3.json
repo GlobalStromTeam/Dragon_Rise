@@ -156,10 +156,10 @@
       "Name": "dragonrise_reforge:25mm_m791_apds",
       "Projectile": "superbwarfare:small_cannon_shell",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:cannon_25mm_fire_1p",
-        "Fire3P": "dragonrise_reforge:cannon_25mm_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:cannon_25mm_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:cannon_25mm_fire_3p_very_far",
+        "Fire1P": "dragonrise_reforge:m242_fire_1p",
+        "Fire3P": "dragonrise_reforge:m242_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m242_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m242_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 24,
@@ -228,13 +228,13 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:m240",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
+        "Fire1P": "dragonrise_reforge:m240_fire_1p",
+        "Fire3P": "dragonrise_reforge:m240_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m240_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m240_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon"
       },
-      "SoundRadius": 16
+      "SoundRadius": 12
     },
     "Missile": {
       "DefaultFireMode": "Semi",
@@ -268,11 +268,11 @@
       },
       "Crosshair": "@VehicleCommonMissile",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
-        "VehicleReload3p": "superbwarfare:medium_missile_reload",
-        "VehicleReloadSoundTime": 28,
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:tow_fire_1p",
+        "Fire3P": "dragonrise_reforge:tow_fire_3p",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload"
       },
       "SoundRadius": 12,
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
