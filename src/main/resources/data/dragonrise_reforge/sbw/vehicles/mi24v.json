@@ -43,8 +43,8 @@
       "Position": [0.0,2.945,-6.888]
     },
     {
-      "Size": [1.473,0.841,2.102],
-      "Position": [0.0,0.961,0.014],
+      "Size": [1.473, 0.89598344, 2.102],
+      "Position": [0.0, 0.90601656, 0.014],
       "Part": "Collision"
     },
     {
@@ -203,23 +203,277 @@
       "ShootPos": {}
     },
     "PassengerMissile": {
-      "DefaultZoom": 3,
-      "Magazine": 4,
-      "Template": "@Missile",
-      "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Crosshair": "@VehicleCommonSeekMissile",
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png",
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "RPM": 12,
+      "EmptyReloadTime": 240,
+      "Projectile": "superbwarfare:wire_guide_missile",
+      "Name": "dragonrise_reforge:mi24v_atgm",
+      "Damage": 650,
+      "ExplosionDamage": 80,
+      "ExplosionRadius": 7,
+      "Velocity": 10,
+      "Gravity": 0.05,
+      "CrosshairColor": "0xFFC700",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "superbwarfare:bomb_reload",
+        "VehicleReloadSoundTime": 11,
+        "Change": "dragonrise_reforge:change_weapon"
+      },
+      "SoundRadius": 8,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0,1.0625,5.625],
+        "ShootPositionForHud": [
+          0,
+          1.0625,
+          5.625
+        ],
         "Positions": [
-          [3.4861125,1.39785625,-1.99375],
-          [3.1298625,1.39785625,-1.99375],
-          [-3.1298625,1.39785625,-1.99375],
-          [-3.4861125,1.39785625,-1.99375]
+          [
+            3.4861125,
+            1.3600562,
+            -3.0248166
+          ],
+          [
+            3.1298625,
+            1.3600562,
+            -3.0248166
+          ],
+          [
+            -3.1298625,
+            1.3600562,
+            -3.0248166
+          ],
+          [
+            -3.4861125,
+            1.3600562,
+            -3.0248166
+          ]
         ],
         "BoundUpWithAmmoAmount": true,
         "ViewDirection": "Barrel"
-      }
+      },
+      "DefaultZoom": 3,
+      "Magazine": 4,
+      "Crosshair": "@VehicleCommonSeekMissile",
+      "ProjectileDummyInfo": {
+        "Offset": [
+          -0.0,
+          -0.252,
+          -1.03125
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          0.15,
+          0.15,
+          0.9998221
+        ]
+      },
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:medium_anti_ground_missile",
+          "ShouldUnload": false
+        },
+        {
+          "Ammo": "superbwarfare:large_anti_ground_missile",
+          "ShouldUnload": false,
+          "Override": {
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/kh_39.png",
+            "DefaultZoom": 3,
+            "DefaultFireMode": "Semi",
+            "Magazine": 4,
+            "EmptyReloadTime": 260,
+            "Projectile": "superbwarfare:kh_39",
+            "Name": "dragonrise_reforge:mi24v_asm_entity",
+            "Damage": 1100,
+            "ExplosionDamage": 180,
+            "ExplosionRadius": 12,
+            "ProjectileLife": 1200,
+            "Velocity": 10,
+            "Gravity": 0.05,
+            "SeekWeaponInfo": {
+              "SeekDirection": "Barrel",
+              "SeekRange": 384,
+              "SeekAngle": 20,
+              "SeekTime": 20,
+              "MaxTargetHeight": 32,
+              "MinTargetSize": 0.9,
+              "OnlyLockEntity": true
+            },
+            "ShootPos": {
+              "Transform": "Vehicle",
+              "ShootPositionForHud": [
+                0,
+                1.0625,
+                5.625
+              ],
+              "Positions": [
+                [
+                  3.4861125,
+                  1.3600562,
+                  -2.930771
+                ],
+                [
+                  3.1298625,
+                  1.3600562,
+                  -2.930771
+                ],
+                [
+                  -3.1298625,
+                  1.3600562,
+                  -2.930771
+                ],
+                [
+                  -3.4861125,
+                  1.3600562,
+                  -2.930771
+                ]
+              ],
+              "ViewDirection": "Barrel",
+              "BoundUpWithAmmoAmount": true
+            },
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:bomb_release",
+              "Fire3P": "superbwarfare:bomb_release",
+              "VehicleReload3p": "superbwarfare:bomb_reload",
+              "VehicleReloadSoundTime": 11,
+              "Change": "dragonrise_reforge:change_weapon",
+              "Locking": "superbwarfare:javelin_locking",
+              "Locked": "superbwarfare:javelin_locked"
+            },
+            "CrosshairColor": "0xFFC700",
+            "Crosshair": "@VehicleCommonSeekMissile",
+            "SoundRadius": 8,
+            "AvailableFireModes": [
+              "Semi"
+            ],
+            "ProjectileDummyInfo": {
+              "Offset": [
+                -0.0,
+                -0.252,
+                -1.7746447
+              ],
+              "Rotate": [
+                0,
+                0,
+                0
+              ],
+              "Scale": [
+                0.1150509,
+                0.15,
+                0.5280048
+              ]
+            },
+            "AddShooterDeltaMovement": false,
+            "UseNacelleCamera": false,
+            "CrosshairZooming": "@Empty"
+          }
+        },
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false,
+          "Override": {
+            "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ru_9m336.png",
+            "DefaultZoom": 2,
+            "DefaultFireMode": "Semi",
+            "AvailableFireModes": "Semi",
+            "Magazine": 4,
+            "EmptyReloadTime": 260,
+            "Projectile": "superbwarfare:ru_9m336_missile",
+            "Name": "dragonrise_reforge:mi24v_aam",
+            "Damage": 260,
+            "ExplosionDamage": 90,
+            "ExplosionRadius": 6,
+            "Velocity": 10,
+            "Gravity": 0.05,
+            "SeekWeaponInfo": {
+              "SeekDirection": "Default",
+              "SeekRange": 384,
+              "SeekAngle": 20,
+              "SeekTime": 20,
+              "MinTargetHeight": 5,
+              "MinTargetSize": 0.1,
+              "OnlyLockEntity": true
+            },
+            "ShootPos": {
+              "Transform": "Vehicle",
+              "ShootPositionForHud": [
+                0,
+                1.0625,
+                5.625
+              ],
+              "Positions": [
+                [
+                  3.4880617,
+                  1.3600562,
+                  -2.8484237
+                ],
+                [
+                  3.1318117,
+                  1.3600562,
+                  -2.8484237
+                ],
+                [
+                  -3.1279133,
+                  1.3600562,
+                  -2.8484237
+                ],
+                [
+                  -3.4841633,
+                  1.3600562,
+                  -2.8484237
+                ]
+              ],
+              "BoundUpWithAmmoAmount": true
+            },
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:bomb_release",
+              "Fire3P": "superbwarfare:bomb_release",
+              "VehicleReload3p": "superbwarfare:bomb_reload",
+              "VehicleReloadSoundTime": 11,
+              "Change": "dragonrise_reforge:change_weapon",
+              "Locking": "superbwarfare:javelin_locking",
+              "Locked": "superbwarfare:javelin_locking"
+            },
+            "CrosshairColor": "0xFFC700",
+            "Crosshair": "@VehicleCommonSeekMissile",
+            "SoundRadius": 8,
+            "ProjectileDummyInfo": {
+              "Offset": [
+                0.0129944,
+                -0.252,
+                -0.8546737
+              ],
+              "Rotate": [
+                0,
+                0,
+                0
+              ],
+              "Scale": [
+                0.15,
+                0.15,
+                1.0
+              ]
+            },
+            "AddShooterDeltaMovement": false,
+            "ProjectileLife": 400,
+            "UseNacelleCamera": false,
+            "CrosshairZooming": "@Empty"
+          }
+        }
+      ],
+      "AddShooterDeltaMovement": false,
+      "ProjectileLife": 400,
+      "UseNacelleCamera": false,
+      "CrosshairZooming": "@Empty",
+      "SeekWeaponInfo": {}
     },
     "SeekMissile": {
       "AmmoType": [

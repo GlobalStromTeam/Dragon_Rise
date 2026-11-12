@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:mig29m",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/mig29m.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/mig29m.png"
+    }
+  ],
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/mig29m.animation.json"
+}

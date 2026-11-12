@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:btr90",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/btr90.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/btr90.png"
+    }
+  ],
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/btr90.animation.json"
+}

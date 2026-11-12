@@ -138,57 +138,59 @@
                   ]
                 }
             ],
-    "Seats":  {
-                  "IsEnclosed":  true,
-                  "Transform":  "Vehicle",
-                  "Position":  [
-                                   0.021875,
-                                   1.083875,
-                                   3.66529375
-                               ],
-                  "CanRotateHead":  false,
-                  "Sensitivity":  [
-                                      0,
-                                      0,
-                                      0
-                                  ],
-                  "CameraPos":  {
-                                    "Transform":  "Vehicle",
-                                    "Position":  [
-                                                     0.021875,
-                                                     2.783875,
-                                                     3.66529375
-                                                 ],
-                                    "UseFixedCameraPos":  true,
-                                    "UseAircraftCamera":  true,
-                                    "AircraftCameraPos":  [
-                                                              0,
-                                                              2.75,
-                                                              -14
-                                                          ]
-                                },
-                  "DismountInfo":  {
-                                       "Transform":  "Vehicle",
-                                       "Position":  [
-                                                        1.6,
-                                                        0.5,
-                                                        3.8
-                                                    ],
-                                       "CanEject":  true,
-                                       "EjectPosition":  [
-                                                             0,
-                                                             4.2,
-                                                             3.7
-                                                         ],
-                                       "EjectDirection":  "Up",
-                                       "EjectForce":  4
-                                   },
-                  "Weapons":  [
-                                  "Cannon",
-                                  "Missile"
-                              ],
-                  "HasThermalImaging":  true
-              },
+    "Seats":  [
+      {
+        "IsEnclosed": true,
+        "Transform": "Vehicle",
+        "Position": [
+          0.021875,
+          1.083875,
+          3.66529375
+        ],
+        "CanRotateHead": false,
+        "Sensitivity": [
+          0,
+          0,
+          0
+        ],
+        "CameraPos": {
+          "Transform": "Vehicle",
+          "Position": [
+            0.021875,
+            2.783875,
+            3.66529375
+          ],
+          "UseFixedCameraPos": true,
+          "UseAircraftCamera": true,
+          "AircraftCameraPos": [
+            0,
+            2.75,
+            -14
+          ]
+        },
+        "DismountInfo": {
+          "Transform": "Vehicle",
+          "Position": [
+            1.6,
+            0.5,
+            3.8
+          ],
+          "CanEject": true,
+          "EjectPosition": [
+            0,
+            4.2,
+            3.7
+          ],
+          "EjectDirection": "Up",
+          "EjectForce": 4
+        },
+        "Weapons": [
+          "Cannon",
+          "Missile"
+        ],
+        "HasThermalImaging": true
+      }
+    ],
     "HudType":  "@Aircraft",
     "Weapons":  {
                     "Cannon":  {
@@ -238,14 +240,19 @@
                                                 }
                                },
                     "Missile":  {
-                                    "AmmoType":  "superbwarfare:medium_anti_air_missile",
+                                    "AmmoType":  [
+                                      {
+                                        "Ammo": "superbwarfare:medium_anti_air_missile",
+                                        "ShouldUnload": false
+                                      }
+                                    ],
                                     "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl_8.png",
                                     "DefaultZoom":  2,
                                     "DefaultFireMode":  "Semi",
                                     "AvailableFireModes":  "Semi",
                                     "Magazine":  6,
                                     "EmptyReloadTime":  260,
-                                    "Projectile":  "superbwarfare:ru_9m336_missile",
+                                    "Projectile":  "dragonrise_reforge:pl_10",
                                     "Name":  "dragonrise_reforge:pl8",
                                     "Damage":  260,
                                     "ExplosionDamage":  90,
@@ -268,38 +275,7 @@
                                                                                  1.0625,
                                                                                  5.625
                                                                              ],
-                                                     "Positions":  [
-                                                                       [
-                                                                           3.6695,
-                                                                           1.05591875,
-                                                                           -3.89415
-                                                                       ],
-                                                                       [
-                                                                           2.63869375,
-                                                                           1.19084375,
-                                                                           -2.3807625
-                                                                       ],
-                                                                       [
-                                                                           1.65106875,
-                                                                           1.2879875,
-                                                                           -0.799475
-                                                                       ],
-                                                                       [
-                                                                           -3.6695,
-                                                                           1.05591875,
-                                                                           -3.89415
-                                                                       ],
-                                                                       [
-                                                                           -2.63869375,
-                                                                           1.19084375,
-                                                                           -2.3807625
-                                                                       ],
-                                                                       [
-                                                                           -1.65106875,
-                                                                           1.2879875,
-                                                                           -0.799475
-                                                                       ]
-                                                                   ],
+                                                     "Positions":  [[3.6678682, 0.6968865, -5.8207156], [2.6370651, 0.8318084, -4.2448281], [1.649437, 0.9289521, -2.6635438], [-3.6647731, 0.6968861, -5.8207156], [-2.63397, 0.8318079, -4.2448281], [-1.6463419, 0.9289517, -2.6635438]],
                                                      "BoundUpWithAmmoAmount":  true
                                                  },
                                     "SoundInfo":  {
@@ -313,7 +289,28 @@
                                                   },
                                     "CrosshairColor":  "0xFFC700",
                                     "Crosshair":  "@VehicleCommonSeekMissile",
-                                    "SoundRadius":  8
+                                    "SoundRadius":  8,
+                                    "ProjectileDummyInfo": {
+                                      "Offset": [
+                                        -0.0011509,
+                                        -0.5643799,
+                                        -1.8007378
+                                      ],
+                                      "Rotate": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                      ]
+                                    },
+                                    "AddShooterDeltaMovement": false,
+                                    "ProjectileLife": 400,
+                                    "UseNacelleCamera": false,
+                                    "CrosshairZooming": "@Empty"
                                 }
                 },
     "UpStep":  1.1,

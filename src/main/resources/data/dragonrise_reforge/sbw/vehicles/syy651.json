@@ -115,68 +115,62 @@
                 },
                 {
                   "Part": "Collision",
-                  "Size": [
-                    0.625,
-                    1.548228,
-                    7.09375
-                  ],
-                  "Position": [
-                    0.0,
-                    1.389272,
-                    -1.40625
-                  ]
+                  "Size": [0.625, 1.54840519, 7.09375],
+                  "Position": [0.0, 1.38909481, -1.40625]
                 }
             ],
-    "Seats":  {
-                  "IsEnclosed":  true,
-                  "Transform":  "Vehicle",
-                  "Position":  [
-                                   0.0,
-                                   1.2,
-                                   3.75
-                               ],
-                  "CanRotateHead":  false,
-                  "Sensitivity":  [
-                                      0,
-                                      0,
-                                      0
-                                  ],
-                  "Weapons":  [
-                                  "Cannon",
-                                  "Missile"
-                              ],
-                  "CameraPos":  {
-                                    "Transform":  "Vehicle",
-                                    "Position":  [
-                                                     0.0,
-                                                     2.9375,
-                                                     4.0
-                                                 ],
-                                    "UseFixedCameraPos":  true,
-                                    "UseAircraftCamera":  true,
-                                    "AircraftCameraPos":  [
-                                                              2,
-                                                              4,
-                                                              -14
-                                                          ]
-                                },
-                  "DismountInfo":  {
-                                       "Transform":  "Vehicle",
-                                       "Position":  [
-                                                        1.6,
-                                                        0.5,
-                                                        3.8
-                                                    ],
-                                       "CanEject":  true,
-                                       "EjectPosition":  [
-                                                             0,
-                                                             4.2,
-                                                             3.7
-                                                         ],
-                                       "EjectDirection":  "Up",
-                                       "EjectForce":  4
-                                   }
-              },
+    "Seats":  [
+      {
+        "IsEnclosed": true,
+        "Transform": "Vehicle",
+        "Position": [
+          0.0,
+          1.2,
+          3.75
+        ],
+        "CanRotateHead": false,
+        "Sensitivity": [
+          0,
+          0,
+          0
+        ],
+        "Weapons": [
+          "Cannon",
+          "Missile"
+        ],
+        "CameraPos": {
+          "Transform": "Vehicle",
+          "Position": [
+            0.0,
+            2.9375,
+            4.0
+          ],
+          "UseFixedCameraPos": true,
+          "UseAircraftCamera": true,
+          "AircraftCameraPos": [
+            2,
+            4,
+            -14
+          ]
+        },
+        "DismountInfo": {
+          "Transform": "Vehicle",
+          "Position": [
+            1.6,
+            0.5,
+            3.8
+          ],
+          "CanEject": true,
+          "EjectPosition": [
+            0,
+            4.2,
+            3.7
+          ],
+          "EjectDirection": "Up",
+          "EjectForce": 4
+        }
+      }
+    ],
     "HudType":  "@Aircraft",
     "Weapons":  {
                     "Cannon":  {
@@ -228,26 +222,122 @@
                                     "AvailableFireModes":  "Semi",
                                     "Magazine":  4,
                                     "EmptyReloadTime":  200,
-                                    "Projectile":  "superbwarfare:agm_65",
+                                    "Projectile":  "dragonrise_reforge:pl_12",
                                     "Name":  "dragonrise_reforge:pl12",
                                     "Damage":  1100,
                                     "ExplosionDamage":  180,
                                     "ExplosionRadius":  12,
                                     "AddShooterDeltaMovement":  true,
-                                    "Velocity":  10,
+                                    "Velocity":  3.75,
                                     "Gravity":  0.05,
                                     "SeekWeaponInfo":  {
-                                                           "SeekDirection":  "Default",
-                                                           "SeekRange":  400,
+                                                           "SeekDirection":  "ClientCamera",
+                                                           "SeekRange":  1536,
                                                            "SeekAngle":  20,
                                                            "SeekTime":  10,
                                                            "MinTargetSize":  0.9,
-                                                           "OnlyLockEntity":  true
+                                                           "OnlyLockEntity":  true,
+                                                           "MaxGuidedRange": 48000,
+                                                           "MaxTargetHeight": 32
                                                        },
                                     "AmmoType":  [
                                                      {
-                                                         "Ammo":  "superbwarfare:large_anti_ground_missile",
+                                                         "Ammo":  "superbwarfare:medium_anti_air_missile",
                                                          "ShouldUnload":  false
+                                                     },
+                                                     {
+                                                       "Ammo": "superbwarfare:medium_anti_air_missile",
+                                                       "ShouldUnload": false,
+                                                       "Override": {
+                                                         "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl12.png",
+                                                         "DefaultZoom": 2,
+                                                         "DefaultFireMode": "Semi",
+                                                         "AvailableFireModes": "Semi",
+                                                         "Magazine": 4,
+                                                         "EmptyReloadTime": 200,
+                                                         "Projectile": "dragonrise_reforge:pl_15",
+                                                         "Name": "dragonrise_reforge:pl_15",
+                                                         "Damage": 1100,
+                                                         "ExplosionDamage": 180,
+                                                         "ExplosionRadius": 12,
+                                                         "AddShooterDeltaMovement": true,
+                                                         "Velocity": 3.75,
+                                                         "ProjectileLife": 3600,
+                                                         "SeekWeaponInfo": {
+                                                           "SeekDirection": "ClientCamera",
+                                                           "MaxGuidedRange": 48000,
+                                                           "MaxTargetHeight": 32,
+                                                           "SeekRange": 1536,
+                                                           "SeekAngle": 20,
+                                                           "SeekTime": 10,
+                                                           "MinTargetSize": 0.9,
+                                                           "OnlyLockEntity": true
+                                                         },
+                                                         "ProjectileDummyInfo": {
+                                                           "Offset": [
+                                                             0.0132319,
+                                                             -0.5830924,
+                                                             -2.2024291
+                                                           ],
+                                                           "Rotate": [
+                                                             0,
+                                                             0,
+                                                             0
+                                                           ],
+                                                           "Scale": [
+                                                             1.0,
+                                                             1.0,
+                                                             1.0
+                                                           ]
+                                                         },
+                                                         "ShootPos": {
+                                                           "Transform": "Vehicle",
+                                                           "ViewDirection": "Default",
+                                                           "ShootPositionForHud": [
+                                                             0,
+                                                             1.53,
+                                                             0
+                                                           ],
+                                                           "Positions": [
+                                                             [
+                                                               -2.6915796,
+                                                               0.7959566,
+                                                               -5.1225298
+                                                             ],
+                                                             [
+                                                               -2.0290796,
+                                                               0.9209566,
+                                                               -4.6850298
+                                                             ],
+                                                             [
+                                                               2.7180434,
+                                                               0.7959566,
+                                                               -5.1225298
+                                                             ],
+                                                             [
+                                                               2.0555434,
+                                                               0.9209566,
+                                                               -4.6850298
+                                                             ]
+                                                           ],
+                                                           "BoundUpWithAmmoAmount": true
+                                                         },
+                                                         "SoundInfo": {
+                                                           "Fire1P": "superbwarfare:bomb_release",
+                                                           "Fire3P": "superbwarfare:bomb_release",
+                                                           "VehicleReload3p": "superbwarfare:bomb_reload",
+                                                           "VehicleReloadSoundTime": 11,
+                                                           "Change": "dragonrise_reforge:change_weapon",
+                                                           "Locking": "superbwarfare:missile_locking",
+                                                           "Locked": "superbwarfare:missile_locked"
+                                                         },
+                                                         "Crosshair": "@AirCraftMissile",
+                                                         "CrosshairZooming": "@AirCraftCommon",
+                                                         "CrosshairColor": "0x66FF00",
+                                                         "SoundRadius": 8,
+                                                         "Gravity": 0.05,
+                                                         "UseNacelleCamera": false
+                                                       }
                                                      }
                                                  ],
                                     "ShootPos":  {
@@ -258,28 +348,7 @@
                                                                                  1.53,
                                                                                  0
                                                                              ],
-                                                     "Positions":  [
-                                                                       [
-                                                                           -2.70726875,
-                                                                           0.9553375,
-                                                                           -2.5304375
-                                                                       ],
-                                                                       [
-                                                                           -2.04476875,
-                                                                           1.0803375,
-                                                                           -2.0929375
-                                                                       ],
-                                                                       [
-                                                                           2.70726875,
-                                                                           0.9553375,
-                                                                           -2.5304375
-                                                                       ],
-                                                                       [
-                                                                           2.04476875,
-                                                                           1.0803375,
-                                                                           -2.0929375
-                                                                       ]
-                                                                   ],
+                                                     "Positions":  [[-2.7044361, 0.8291185, -4.7763342], [-2.0419361, 0.9541185, -4.3388342], [2.7051869, 0.8291185, -4.7763342], [2.0426869, 0.9541185, -4.3388342]],
                                                      "BoundUpWithAmmoAmount":  true
                                                  },
                                     "SoundInfo":  {
@@ -291,9 +360,29 @@
                                                       "Locking":  "superbwarfare:missile_locking",
                                                       "Locked":  "superbwarfare:missile_locked"
                                                   },
-                                    "Crosshair":  "@VehicleCommonSeekMissile",
+                                    "Crosshair":  "@AirCraftMissile",
                                     "CrosshairColor":  "0x66FF00",
-                                    "SoundRadius":  8
+                                    "SoundRadius":  8,
+                                    "ProjectileLife": 3600,
+                                    "CrosshairZooming": "@AirCraftCommon",
+                                    "UseNacelleCamera": false,
+                                    "ProjectileDummyInfo": {
+                                      "Offset": [
+                                        0.0003754,
+                                        -0.5499306,
+                                        -1.8562334
+                                      ],
+                                      "Rotate": [
+                                        0,
+                                        0,
+                                        0
+                                      ],
+                                      "Scale": [
+                                        1.0,
+                                        1.0,
+                                        1.0
+                                      ]
+                                    }
                                 }
                 },
     "UpStep":  1.1,

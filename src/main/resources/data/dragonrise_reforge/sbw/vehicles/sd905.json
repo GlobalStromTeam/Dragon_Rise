@@ -148,9 +148,8 @@
                       "MinYaw":  -110,
                       "MaxYaw":  110,
                       "Weapons":  [
-                                      "Cannon",
-                                      "PassengerMissile"
-                                  ],
+                        "Cannon"
+                      ],
                       "DismountInfo":  {
                                            "Transform":  "Vehicle",
                                            "Position":  [
@@ -169,7 +168,8 @@
                                        -0.5625,
                                        0.625,
                                        -0.4375
-                                   ]
+                                   ],
+                      "Weapons": []
                   },
                   {
                       "HidePassenger":  false,
@@ -179,7 +179,8 @@
                                        0.5625,
                                        0.625,
                                        -0.4375
-                                   ]
+                                   ],
+                      "Weapons": []
                   }
               ],
     "Weapons":  {
@@ -223,7 +224,12 @@
                                                 }
                                },
                     "Bomb":  {
-                                 "AmmoType":  "superbwarfare:medium_aerial_bomb",
+                                 "AmmoType":  [
+                                   {
+                                     "Ammo": "superbwarfare:medium_aerial_bomb",
+                                     "ShouldUnload": false
+                                   }
+                                 ],
                                  "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/500kg.png",
                                  "DefaultZoom":  2,
                                  "DefaultFireMode":  "Auto",
@@ -231,7 +237,7 @@
                                  "Magazine":  12,
                                  "RPM":  60,
                                  "EmptyReloadTime":  250,
-                                 "Projectile":  "superbwarfare:mk_82",
+                                 "Projectile":  "dragonrise_reforge:sd905_bomb",
                                  "Gravity":  0.05,
                                  "Spread":  0.5,
                                  "Name":  "dragonrise_reforge:500kg",
@@ -247,7 +253,7 @@
                                                                               0
                                                                           ],
                                                   "ShootDirectionForHud":  "Bomb",
-                                                  "Positions":  [[-1.286817, 0.424195, 0.398849], [-0.818067, 0.424195, 0.398849], [0.818067, 0.424195, 0.398849], [1.286817, 0.424195, 0.398849], [-1.286817, 0.424195, -0.444901], [-0.818067, 0.424195, -0.444901], [0.818067, 0.424195, -0.444901], [1.286817, 0.424195, -0.444901], [-1.286817, 0.424195, -1.288652], [-0.818067, 0.424195, -1.288652], [0.818067, 0.424195, -1.288652], [1.286817, 0.424195, -1.288652]],
+                                                  "Positions":  [[-1.2868169, 0.172195, 0.3988488], [-0.8180669, 0.172195, 0.3988488], [0.8180675, 0.172195, 0.3988488], [1.2868175, 0.172195, 0.3988488], [-1.2868169, 0.172195, -0.4449012], [-0.8180669, 0.172195, -0.4449012], [0.8180675, 0.172195, -0.4449012], [1.2868175, 0.172195, -0.4449012], [-1.2868169, 0.172195, -1.2886519], [-0.8180669, 0.172195, -1.2886519], [0.8180675, 0.172195, -1.2886519], [1.2868175, 0.172195, -1.2886519]],
                                                   "BoundUpWithAmmoAmount":  true,
                                                   "Directions":  [
                                                                      "DeltaMovement"
@@ -268,7 +274,28 @@
                                                    "VehicleReloadSoundTime":  80,
                                                    "Change":  "dragonrise_reforge:change_weapon"
                                                },
-                                 "SoundRadius":  8
+                                 "SoundRadius":  8,
+                                 "ProjectileDummyInfo": {
+                                   "Offset": [
+                                     -0.0,
+                                     -0.4508738,
+                                     0.0
+                                   ],
+                                   "Rotate": [
+                                     0,
+                                     0,
+                                     0
+                                   ],
+                                   "Scale": [
+                                     1.0,
+                                     1.0,
+                                     1.0
+                                   ]
+                                 },
+                                 "ProjectileLife": 400,
+                                 "UseNacelleCamera": false,
+                                 "CrosshairZooming": "@Empty",
+                                 "SeekWeaponInfo": {}
                              }
                 },
     "EngineType":  "AirShip",

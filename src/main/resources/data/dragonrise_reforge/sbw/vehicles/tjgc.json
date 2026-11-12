@@ -128,16 +128,8 @@
     },
     {
       "Part": "Collision",
-      "Size": [
-        1.375,
-        1.5625,
-        8.59375
-      ],
-      "Position": [
-        0.0,
-        1.5625,
-        -0.03125
-      ]
+      "Size": [1.375, 1.58228311, 8.59375],
+      "Position": [0.0, 1.54271689, -0.03125]
     }
   ],
   "Seats":  {
@@ -376,7 +368,7 @@
       "AvailableFireModes":  "Semi",
       "Magazine":  1,
       "EmptyReloadTime":  150,
-      "Projectile":  "superbwarfare:mk_82",
+      "Projectile":  "dragonrise_reforge:tjgc_bomb",
       "Gravity":  0.05,
       "Spread":  0.5,
       "Name":  "dragonrise_reforge:neo",
@@ -386,19 +378,9 @@
       "Velocity":  0.6333,
       "ShootPos":  {
         "Transform":  "Vehicle",
-        "ShootPositionForHud":  [
-          0,
-          1.171875,
-          0.0625
-        ],
+        "ShootPositionForHud":  [-0.0, 1.20625, 1.79375],
         "ShootDirectionForHud":  "Bomb",
-        "Positions":  [
-          [
-            0.0,
-            1.6112625,
-            1.34975625
-          ]
-        ],
+        "Positions":  [[-0.0, 1.20625, 1.79375]],
         "BoundUpWithAmmoAmount":  true,
         "Directions":  [
           "DeltaMovement"
@@ -419,7 +401,24 @@
       },
       "Crosshair":  "@AirBomb",
       "CrosshairColor":  "0x66FF00",
-      "SoundRadius":  8
+      "SoundRadius":  8,
+      "ProjectileDummyInfo": {
+        "Offset": [
+          0.0,
+          -0.4,
+          0.0
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          1,
+          1,
+          1
+        ]
+      }
     },
     "AAMissile":  {
       "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/tjgc/aam.png",
