@@ -26,6 +26,14 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> SOC_TAB_ICON = REGISTRY.register("soc_tab_icon", () -> new Item(new Item.Properties()));
     public static final DeferredHolder<Item, Item> WW2_TAB_ICON = REGISTRY.register("ww2_tab_icon", () -> new Item(new Item.Properties()));
 
+    /** 附加装甲套件：右键受支持的载具即可为它安装附加装甲（最大生命值 +10%） */
+    public static final DeferredHolder<Item, Item> ADDON_ARMOR_KIT = REGISTRY.register("addon_armor_kit",
+            () -> new AddonArmorKitItem(new Item.Properties().stacksTo(16)));
+
+    /** 附加装甲拆卸套件：右键已安装附加装甲的载具拆下，并把套件回收进背包 */
+    public static final DeferredHolder<Item, Item> ADDON_ARMOR_REMOVAL_KIT = REGISTRY.register("addon_armor_removal_kit",
+            () -> new AddonArmorRemovalKitItem(new Item.Properties().stacksTo(1)));
+
     public static final DeferredHolder<Item, Item> MISC_ICON = REGISTRY.register("misc_icon", () -> new Item(new Item.Properties()));
 
     public static final DeferredHolder<Item, Item> MK19_DEPLOYER = REGISTRY.register("mk19", MK19Deployer::new);

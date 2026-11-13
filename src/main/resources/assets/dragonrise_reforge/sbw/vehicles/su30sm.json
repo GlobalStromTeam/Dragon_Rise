@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:su30sm",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/su30sm.animation.json",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/su30sm.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/su30sm.png"
+    }
+  ]
+}

@@ -38,21 +38,20 @@ const SETS = [
 }
 
 const SLOTS = [
-  { key: 'helmet', cap: 'Helmet', type: 'Type.HELMET', zh: '头盔', en: 'Helmet', kevlar: 5 },
-  { key: 'chest', cap: 'Chest', type: 'Type.CHESTPLATE', zh: '作战服', en: 'Chestplate', kevlar: 8 },
-  { key: 'pants', cap: 'Pants', type: 'Type.LEGGINGS', zh: '护腿', en: 'Leggings', kevlar: 7 },
+  { key: 'helmet', cap: 'Helmet', type: 'Type.HELMET', zh: '头盔', en: 'Helmet', kevlar: 5, defense: 7 },
+  { key: 'chest', cap: 'Chest', type: 'Type.CHESTPLATE', zh: '作战服', en: 'Chestplate', kevlar: 8, defense: 8 },
+  { key: 'pants', cap: 'Pants', type: 'Type.LEGGINGS', zh: '护腿', en: 'Leggings', kevlar: 7, defense: 6 },
 ];
 
 const javaClass = (set, slot) => `package com.redabysslucia.dragonrise_reforge.item.armor;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
-import com.atsuishio.superbwarfare.tiers.ModArmorMaterial;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -68,6 +67,9 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * ${set.cap} 护甲（${slot.zh}）。整套模型共用同一份 geo：{@code models/bedrock/armor/${set.key}.geo.json}，
  * 由 SBM 的按槽位可见性（armorHead / armorBody+双臂 / 双腿+boots）决定显示哪一部分。
+ *
+ * <p>数值对齐下界合金：护甲 ${slot.defense}、韧性 3.0、击退抗性 0.1、附魔能力 15、
+ * 耐久 ${slot.type}.getDurability(37)。
  */
 public class ${set.cap}${slot.cap} extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/${set.key}.geo.json */
@@ -76,7 +78,8 @@ public class ${set.cap}${slot.cap} extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/${set.tex}.png");
 
     public ${set.cap}${slot.cap}() {
-        super(ModArmorMaterial.CEMENTED_CARBIDE, ${slot.type}, new Properties());
+        super(ModArmorMaterials.NETHERITE_HEAVY, ${slot.type},
+                new Properties().durability(${slot.type}.getDurability(ModArmorMaterials.NETHERITE_DURABILITY_FACTOR)));
     }
 
     @Override

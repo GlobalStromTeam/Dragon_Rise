@@ -5,6 +5,7 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.IedRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.MissileShellRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.NukerBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.*;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.*;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aav7a1SbmRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Aavc7c1Renderer;
@@ -283,5 +284,22 @@ public class ModEntityRenderers {
                 // 客户端一旦渲染到它，EntityRenderDispatcher#shouldRender 会拿到 null renderer 而 NPE
                 // （崩溃点：LevelRenderer.renderLevel -> EntityRenderDispatcher.shouldRender）。
                 event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
+                event.registerEntityRenderer(ModEntities.BTR90.get(), Btr90Renderer::new);
+                event.registerEntityRenderer(ModEntities.TJGC_BOMB.get(), TjgcBombRenderer::new);
+                event.registerEntityRenderer(ModEntities.SU30SM.get(), Su30smRenderer::new);
+                event.registerEntityRenderer(ModEntities.JH7.get(), Jh7Renderer::new);
+                event.registerEntityRenderer(ModEntities.ZSD05.get(), Zsd05Renderer::new);
+                event.registerEntityRenderer(ModEntities.MERKAVA_MK4.get(), MerkavaMk4Renderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_AIM54.get(), LegacyAim54Renderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_R60.get(), LegacyR60Renderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_HVAR.get(), LegacyHvarRenderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_AC130_MISSILE.get(), Ac130MissileRenderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_AASM.get(), AasmRenderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_KH25.get(), Kh25Renderer::new);
+                event.registerEntityRenderer(ModEntities.LEGACY_EC665_ATGM.get(), Ec665AtgmRenderer::new);
+                event.registerEntityRenderer(ModEntities.MICA.get(), MicaRenderer::new);
+                event.registerEntityRenderer(ModEntities.R550.get(), R550Renderer::new);
+                event.registerEntityRenderer(ModEntities.MIG29M.get(), Mig29mRenderer::new);
+                event.registerEntityRenderer(ModEntities.EF2000.get(), Ef2000Renderer::new);
         }
 }

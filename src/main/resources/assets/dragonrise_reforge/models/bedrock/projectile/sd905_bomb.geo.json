@@ -1,0 +1,142 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.sd905_bomb",
+        "texture_width": 512,
+        "texture_height": 512,
+        "visible_bounds_width": 1.75,
+        "visible_bounds_height": 1.397747564417433,
+        "visible_bounds_offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      "bones": [
+        {
+          "name": "bone24",
+          "pivot": [
+            -12.91031,
+            90.09789,
+            527.37746
+          ]
+        },
+        {
+          "name": "bone4",
+          "parent": "bone24",
+          "pivot": [
+            -12.91031,
+            90.09789,
+            527.37746
+          ]
+        },
+        {
+          "name": "bone5",
+          "parent": "bone4",
+          "pivot": [
+            120.12501,
+            51.9177,
+            31.92195
+          ]
+        },
+        {
+          "name": "bomb1",
+          "parent": "bone5",
+          "pivot": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cubes": [
+            {
+              "origin": [
+                -2.25,
+                -2.25,
+                -6.0
+              ],
+              "size": [
+                4.5,
+                4.5,
+                12
+              ],
+              "pivot": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "rotation": [
+                180,
+                0,
+                -135
+              ],
+              "uv": {
+                "north": {
+                  "uv": [
+                    115,
+                    349
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "east": {
+                  "uv": [
+                    340,
+                    67
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                },
+                "south": {
+                  "uv": [
+                    118,
+                    349
+                  ],
+                  "uv_size": [
+                    3,
+                    3
+                  ]
+                },
+                "west": {
+                  "uv": [
+                    89,
+                    340
+                  ],
+                  "uv_size": [
+                    8,
+                    3
+                  ]
+                },
+                "up": {
+                  "uv": [
+                    28,
+                    340
+                  ],
+                  "uv_size": [
+                    3,
+                    8
+                  ]
+                },
+                "down": {
+                  "uv": [
+                    97,
+                    348
+                  ],
+                  "uv_size": [
+                    3,
+                    -8
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

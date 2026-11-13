@@ -2,12 +2,11 @@ package com.redabysslucia.dragonrise_reforge.item.armor;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
-import com.atsuishio.superbwarfare.tiers.ModArmorMaterial;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -23,6 +22,9 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Haom 护甲（护腿）。整套模型共用同一份 geo：{@code models/bedrock/armor/haom.geo.json}，
  * 由 SBM 的按槽位可见性（armorHead / armorBody+双臂 / 双腿+boots）决定显示哪一部分。
+ *
+ * <p>数值对齐下界合金：护甲 6、韧性 3.0、击退抗性 0.1、附魔能力 15、
+ * 耐久 Type.LEGGINGS.getDurability(37)。
  */
 public class HaomPants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/haom.geo.json */
@@ -31,7 +33,8 @@ public class HaomPants extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/haom.png");
 
     public HaomPants() {
-        super(ModArmorMaterial.CEMENTED_CARBIDE, Type.LEGGINGS, new Properties());
+        super(ModArmorMaterials.NETHERITE_HEAVY, Type.LEGGINGS,
+                new Properties().durability(Type.LEGGINGS.getDurability(ModArmorMaterials.NETHERITE_DURABILITY_FACTOR)));
     }
 
     @Override

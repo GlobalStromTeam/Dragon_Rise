@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:jh7",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/jh7.animation.json",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/jh7.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/jh7.png"
+    }
+  ]
+}

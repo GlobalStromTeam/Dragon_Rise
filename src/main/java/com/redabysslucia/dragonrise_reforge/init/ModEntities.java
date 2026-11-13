@@ -200,6 +200,30 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
+import com.redabysslucia.dragonrise_reforge.entities.Btr90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Ef2000Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Jh7Entity;
+import com.redabysslucia.dragonrise_reforge.entities.MerkavaMk4Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Mig29mEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.AasmEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ac130MissileEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Agm114Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Akd10Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ec665AtgmEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Kh25Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyAim54Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyHvarEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.LegacyR60Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Lj11Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Magic2Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.MicaEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.R550Entity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Sd905BombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.TjgcBombEntity;
+import com.redabysslucia.dragonrise_reforge.entities.projectile.Ty90Entity;
+import com.redabysslucia.dragonrise_reforge.entities.Su30smEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Zsd05Entity;
+
 public class ModEntities {
 
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, Dragonrise_reforge.MODID);
@@ -1665,6 +1689,190 @@ public class ModEntities {
     public static final DeferredHolder<EntityType<?>, EntityType<IedEntity>> IED = register("ied",
             EntityType.Builder.<IedEntity>of(IedEntity::new, MobCategory.MISC)
                     .setTrackingRange(64).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Btr90Entity>> BTR90 = register("btr90",
+            EntityType.Builder.of(Btr90Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.3f, 3.2f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<TjgcBombEntity>> TJGC_BOMB = register("tjgc_bomb",
+            EntityType.Builder.of(TjgcBombEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.8f, 0.8f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Su30smEntity>> SU30SM = register("su30sm",
+            EntityType.Builder.of(Su30smEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Jh7Entity>> JH7 = register("jh7",
+            EntityType.Builder.of(Jh7Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.0f, 2.7f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Zsd05Entity>> ZSD05 = register("zsd05",
+            EntityType.Builder.of(Zsd05Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<MerkavaMk4Entity>> MERKAVA_MK4 = register("merkava_mk4",
+            EntityType.Builder.of(MerkavaMk4Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<LegacyAim54Entity>> LEGACY_AIM54 = register("aim54",
+            EntityType.Builder.of(LegacyAim54Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<LegacyR60Entity>> LEGACY_R60 = register("r60",
+            EntityType.Builder.of(LegacyR60Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<LegacyHvarEntity>> LEGACY_HVAR = register("hvar",
+            EntityType.Builder.of(LegacyHvarEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Sd905BombEntity>> LEGACY_SD905_BOMB = register("sd905_bomb",
+            EntityType.Builder.of(Sd905BombEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Ac130MissileEntity>> LEGACY_AC130_MISSILE = register("ac130_missile",
+            EntityType.Builder.of(Ac130MissileEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Agm114Entity>> LEGACY_AGM114 = register("agm114",
+            EntityType.Builder.of(Agm114Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Akd10Entity>> LEGACY_AKD10 = register("akd10",
+            EntityType.Builder.of(Akd10Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Lj11Entity>> LEGACY_LJ11 = register("lj11",
+            EntityType.Builder.of(Lj11Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Ty90Entity>> LEGACY_TY90 = register("ty90",
+            EntityType.Builder.of(Ty90Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<AasmEntity>> LEGACY_AASM = register("aasm",
+            EntityType.Builder.of(AasmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Kh25Entity>> LEGACY_KH25 = register("kh25",
+            EntityType.Builder.of(Kh25Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Ec665AtgmEntity>> LEGACY_EC665_ATGM = register("ec665_atgm",
+            EntityType.Builder.of(Ec665AtgmEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Magic2Entity>> LEGACY_MAGIC2 = register("magic2",
+            EntityType.Builder.of(Magic2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<MicaEntity>> MICA = register("mica",
+            EntityType.Builder.of(MicaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<R550Entity>> R550 = register("r550",
+            EntityType.Builder.of(R550Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(0.5f, 0.5f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Mig29mEntity>> MIG29M = register("mig29m",
+            EntityType.Builder.of(Mig29mEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.5f, 2.9f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Ef2000Entity>> EF2000 = register("ef2000",
+            EntityType.Builder.of(Ef2000Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(1)
+                    .fireImmune()
+                    .sized(4.5f, 2.9f)
+    );
 
 }
 

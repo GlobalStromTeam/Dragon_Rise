@@ -170,6 +170,13 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CYBORG_TANK.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.DARKBEAR.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SILVERHAND_MK_IV.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.BTR90.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SU30SM.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.JH7.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.ZSD05.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MERKAVA_MK4.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MIG29M.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.EF2000.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SHIELD.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SPACEBAG.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TEST.get()));

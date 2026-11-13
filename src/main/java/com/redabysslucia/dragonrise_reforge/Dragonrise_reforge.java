@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge;
 
 import com.mojang.logging.LogUtils;
 import com.redabysslucia.dragonrise_reforge.client.outline.render.OutlineRenderer;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import com.redabysslucia.dragonrise_reforge.init.ModEntities;
 import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModParticleTypes;
@@ -29,6 +30,7 @@ public class Dragonrise_reforge {
         public Dragonrise_reforge(IEventBus bus, ModContainer modContainer) {
 
         ModItems.register(bus);
+        ModArmorMaterials.register(bus);
         ModEntities.REGISTRY.register(bus);
         ModTabs.TABS.register(bus);
         ModSounds.REGISTRY.register(bus);
