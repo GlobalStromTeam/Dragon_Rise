@@ -1,0 +1,16 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "land",
+  "inputs": [
+    "14 superbwarfare:steel_block",
+    "superbwarfare:heavy_armament_module",
+    "superbwarfare:large_battery_pack",
+    "2 superbwarfare:track",
+    "superbwarfare:large_motor",
+    "2 superbwarfare:cemented_carbide_block",
+    "superbwarfare:armor_plate"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:k1a1"
+  }
+}

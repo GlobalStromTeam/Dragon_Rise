@@ -98,6 +98,23 @@ public class ModItems {
     public static final RegistryObject<Item> ADDON_ARMOR_KIT = REGISTRY.register("addon_armor_kit",
             () -> new AddonArmorKitItem(new Item.Properties().stacksTo(16)));
     /** 附加装甲拆卸套件：右键已安装附加装甲的载具拆下，并把套件回收进背包 */
+    
+    // ---- 1.21.1 同步过来的护甲（Ade3 / Haom / Honf / Juaw / Sawkm1） ----
+    public static final RegistryObject<Item> ADE3_HELMET = REGISTRY.register("ade3_helmet", () -> new Ade3Helmet());
+    public static final RegistryObject<Item> ADE3_CHEST = REGISTRY.register("ade3_chest", () -> new Ade3Chest());
+    public static final RegistryObject<Item> ADE3_PANTS = REGISTRY.register("ade3_pants", () -> new Ade3Pants());
+    public static final RegistryObject<Item> HAOM_HELMET = REGISTRY.register("haom_helmet", () -> new HaomHelmet());
+    public static final RegistryObject<Item> HAOM_CHEST = REGISTRY.register("haom_chest", () -> new HaomChest());
+    public static final RegistryObject<Item> HAOM_PANTS = REGISTRY.register("haom_pants", () -> new HaomPants());
+    public static final RegistryObject<Item> HONF_HELMET = REGISTRY.register("honf_helmet", () -> new HonfHelmet());
+    public static final RegistryObject<Item> HONF_CHEST = REGISTRY.register("honf_chest", () -> new HonfChest());
+    public static final RegistryObject<Item> HONF_PANTS = REGISTRY.register("honf_pants", () -> new HonfPants());
+    public static final RegistryObject<Item> JUAW_HELMET = REGISTRY.register("juaw_helmet", () -> new JuawHelmet());
+    public static final RegistryObject<Item> JUAW_CHEST = REGISTRY.register("juaw_chest", () -> new JuawChest());
+    public static final RegistryObject<Item> JUAW_PANTS = REGISTRY.register("juaw_pants", () -> new JuawPants());
+    public static final RegistryObject<Item> SAWKM1_HELMET = REGISTRY.register("sawkm1_helmet", () -> new Sawkm1Helmet());
+    public static final RegistryObject<Item> SAWKM1_CHEST = REGISTRY.register("sawkm1_chest", () -> new Sawkm1Chest());
+    public static final RegistryObject<Item> SAWKM1_PANTS = REGISTRY.register("sawkm1_pants", () -> new Sawkm1Pants());
     public static final RegistryObject<Item> ADDON_ARMOR_REMOVAL_KIT = REGISTRY.register("addon_armor_removal_kit",
             () -> new AddonArmorRemovalKitItem(new Item.Properties().stacksTo(1)));
 

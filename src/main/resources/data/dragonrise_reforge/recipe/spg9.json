@@ -1,0 +1,13 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "land",
+  "inputs": [
+    "4 superbwarfare:steel_block",
+    "superbwarfare:light_armament_module",
+    "superbwarfare:armor_plate",
+    "superbwarfare:motor"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:spg9"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "6 superbwarfare:steel_block",
+    "superbwarfare:light_armament_module",
+    "2 superbwarfare:medium_battery_pack",
+    "4 superbwarfare:propeller",
+    "4 superbwarfare:motor"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:dgsw_mk_l2"
+  }
+}

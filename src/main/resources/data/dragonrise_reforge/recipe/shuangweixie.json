@@ -1,0 +1,14 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "aircraft",
+  "inputs": [
+    "10 superbwarfare:steel_block",
+    "2 superbwarfare:large_propeller",
+    "2 superbwarfare:large_motor",
+    "superbwarfare:large_battery_pack",
+    "3 superbwarfare:wheel"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:shuangweixie"
+  }
+}
