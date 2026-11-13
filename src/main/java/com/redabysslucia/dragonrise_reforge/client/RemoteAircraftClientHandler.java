@@ -53,19 +53,29 @@ public class RemoteAircraftClientHandler {
         return drone instanceof AbstractRemotePilotDrone aircraft ? aircraft : null;
     }
 
+    /**
+     * 是否由本处理器置起了 {@code holdFireVehicle}。
+     * <p>
+     * 这个状态位是 SBW 的<b>全局</b>单例：任何载具的自动武器连发都靠它。非遥控玩家（主手不是
+     * 控制终端）根本不该碰它 —— 一旦在这里无条件清零，玩家按住左键连发时只要再按一下右键开镜
+     * （或任何鼠标事件），连发就会被掐断，而且看起来像"切换放大倍率把自动武器停掉了"。
+     * 只有我们自己置起来的，才有资格清回去。
+     */
+    private static boolean remoteFiring;
+
     @SubscribeEvent
     public static void onMouseButton(InputEvent.MouseButton.Pre event) {
         Minecraft mc = Minecraft.getInstance();
         // 打开了任何界面（ESC 菜单 / 背包 / 聊天…）：一律不拦截，否则界面按钮点不动。
-        // 同时清掉开火状态 —— 界面会吞掉"松开左键"事件，不清就会卡在连发上。
+        // 界面的开合 SBW 自己在 handleVehicleGunShoot 开头就会清状态位，这里只管收回我们的。
         if (mc.screen != null) {
-            ClientEventHandler.holdFireVehicle = false;
+            releaseRemoteFire();
             return;
         }
 
         AbstractRemotePilotDrone aircraft = controlledAircraft();
         if (aircraft == null) {
-            ClientEventHandler.holdFireVehicle = false;
+            releaseRemoteFire();
             return;
         }
         if (event.getButton() != 0) {
@@ -74,8 +84,18 @@ public class RemoteAircraftClientHandler {
 
         // 拦掉原版左键（避免挥手臂/挖方块）；真正的开火由 SBW 原生的
         // handleVehicleGunShoot 循环按武器射速驱动，这里只负责把"按住/松开"转成它的状态位。
+        boolean firing = event.getAction() != 0;    // 1 = 按下, 0 = 释放
         event.setCanceled(true);
-        ClientEventHandler.holdFireVehicle = event.getAction() != 0;
+        ClientEventHandler.holdFireVehicle = firing;
+        remoteFiring = firing;
+    }
+
+    /** 只清我们自己的连发状态，绝不误伤玩家用普通载具武器按住的连发。 */
+    private static void releaseRemoteFire() {
+        if (remoteFiring) {
+            ClientEventHandler.holdFireVehicle = false;
+            remoteFiring = false;
+        }
     }
 
     @SubscribeEvent
