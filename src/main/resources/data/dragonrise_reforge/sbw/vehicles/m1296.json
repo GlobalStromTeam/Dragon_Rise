@@ -217,7 +217,9 @@
         "Fire3P": "dragonrise_reforge:cannon_25mm_fire_3p",
         "Fire3PFar": "dragonrise_reforge:cannon_25mm_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:cannon_25mm_fire_3p_very_far",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "minecraft:intentionally_empty",
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 24,
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_ap.png",
@@ -276,13 +278,19 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:M240",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:m240_fire_1p",
+        "Fire3P": "dragonrise_reforge:m240_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m240_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m240_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:coax_reload_8s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:coax_reload_8s"
+        ]
       },
-      "SoundRadius": 16
+      "SoundRadius": 12
     },
     "PassengerMachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
@@ -317,11 +325,17 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:M2HB",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:m2_fire_1p",
-        "Fire3P": "dragonrise_reforge:m2_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:m2_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:m2_fire_3p_very_far",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:m2hb_fire_1p",
+        "Fire3P": "dragonrise_reforge:m2hb_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m2hb_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m2hb_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:hmg_reload_8s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:hmg_reload_8s"
+        ]
       },
       "SoundRadius": 16
     }

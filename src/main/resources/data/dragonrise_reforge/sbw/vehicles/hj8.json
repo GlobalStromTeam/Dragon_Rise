@@ -92,8 +92,11 @@
                                                                     ]
                                                  },
                                     "SoundInfo":  {
-                                                      "Fire1P":  "superbwarfare:bmp_2_missile_fire_1p",
-                                                      "Fire3P":  "superbwarfare:bmp_2_missile_fire_3p"
+                                                      "Fire1P":  "dragonrise_reforge:hj8_fire_1p",
+                                                      "Fire3P":  "dragonrise_reforge:9m113_fire_3p",
+                                                      "Change": "dragonrise_reforge:change_weapon",
+                                                      "VehicleReload": "minecraft:intentionally_empty",
+                                                      "VehicleReload3p": "minecraft:intentionally_empty"
                                                   },
                                     "SoundRadius":  12,
                                     "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
@@ -126,32 +129,5 @@
                        "Texture":  "dragonrise_reforge:textures/entity/hj8.png"
                    }
                ],
-    "OBB": [
-      {
-        "Part": "Body",
-        "Size": [
-          0.510963,
-          0.451571,
-          0.590009
-        ],
-        "Position": [
-          0.12464,
-          0.436253,
-          0.0
-        ]
-      },
-      {
-        "Part": "Collision",
-        "Size": [
-          0.510963,
-          0.451571,
-          0.590009
-        ],
-        "Position": [
-          0.12464,
-          0.436253,
-          0.0
-        ]
-      }
-    ]
+    "OBB": []
 }

@@ -268,8 +268,11 @@
                                                                     ]
                                                  },
                                     "SoundInfo":  {
-                                                      "Fire1P":  "superbwarfare:bmp_2_missile_fire_1p",
-                                                      "Fire3P":  "superbwarfare:bmp_2_missile_fire_3p"
+                                                      "Fire1P":  "dragonrise_reforge:tow_fire_1p",
+                                                      "Fire3P":  "dragonrise_reforge:tow_fire_3p",
+                                                      "Change": "dragonrise_reforge:change_weapon",
+                                                      "VehicleReload": "minecraft:intentionally_empty",
+                                                      "VehicleReload3p": "minecraft:intentionally_empty"
                                                   },
                                     "SoundRadius":  12,
                                     "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",

@@ -28,7 +28,7 @@
 					"parent": "bipedBody",
 					"pivot": [
 						0,
-						22,
+						24,
 						0
 					],
 					"cubes": [

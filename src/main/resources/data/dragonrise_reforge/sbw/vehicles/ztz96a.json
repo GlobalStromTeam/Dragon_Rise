@@ -228,20 +228,36 @@
             "ExplosionDamage": 60,
             "ExplosionRadius": 5,
             "Name": "dragonrise_reforge:gp125",
-            "Gravity": 0.05
+            "Gravity": 0.05,
+            "SoundInfo": {
+              "Fire1P": "dragonrise_reforge:aps03_fire_1p",
+              "Fire3P": "dragonrise_reforge:aps03_fire_3p",
+              "Fire3PFar": "dragonrise_reforge:aps03_fire_3p_far",
+              "Fire3PVeryFar": "dragonrise_reforge:aps03_fire_3p_very_far",
+              "Change": "dragonrise_reforge:change_weapon",
+              "VehicleReload": "dragonrise_reforge:auto_loader",
+              "VehicleReloadSoundTime": 0,
+              "CancellableSounds": [
+                "dragonrise_reforge:auto_loader"
+              ],
+              "VehicleReload3p": "minecraft:intentionally_empty"
+            },
+            "SoundRadius": 12
           }
         }
       ],
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
-        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
-        "Fire3PFar": "superbwarfare:m_1a_2_far",
-        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
+        "Fire1P": "dragonrise_reforge:zpt98_fire_1p",
+        "Fire3P": "dragonrise_reforge:zpt98_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:zpt98_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:zpt98_fire_3p_very_far",
         "VehicleReload":  "dragonrise_reforge:auto_loader",
         "Change":  "dragonrise_reforge:change_weapon",
         "CancellableSounds": [
-          "dragonrise_reforge:ztz99a_reload"
-        ]
+          "dragonrise_reforge:auto_loader"
+        ],
+        "VehicleReloadSoundTime": 0,
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 32,
       "ShootPos": {
@@ -283,13 +299,19 @@
       },
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:m2_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:qjt_fire_1p",
+        "Fire3P": "dragonrise_reforge:qjt_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:qjt_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:qjt_fire_3p_very_far",
+        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:coax_reload_8s",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:coax_reload_8s"
+        ],
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
-      "SoundRadius": 16
+      "SoundRadius": 12
     },
     "PassengerMachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
@@ -322,11 +344,17 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:88C",
       "SoundInfo": {
-        "Fire1P":  "dragonrise_reforge:mgfire1",
-        "Fire3P":  "dragonrise_reforge:mgfire1",
-        "Fire3PFar":  "dragonrise_reforge:mgfire1",
-        "Fire3PVeryFar":  "superbwarfare:m_2_hb_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Fire1P":  "dragonrise_reforge:qjc88_fire_1p",
+        "Fire3P":  "dragonrise_reforge:qjc88_fire_3p",
+        "Fire3PFar":  "dragonrise_reforge:qjc88_fire_3p_far",
+        "Fire3PVeryFar":  "dragonrise_reforge:qjc88_fire_3p_very_far",
+        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:hmg_reload_8s",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:hmg_reload_8s"
+        ],
+        "VehicleReload3p": "minecraft:intentionally_empty"
     },
       "SoundRadius": 16
     }

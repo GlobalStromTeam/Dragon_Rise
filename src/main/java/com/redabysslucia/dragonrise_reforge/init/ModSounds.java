@@ -40,6 +40,15 @@ public class ModSounds {
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_jump")));
     public static final RegistryObject<SoundEvent> R6_DRONE_DOWN = REGISTRY.register("r6_drone_down", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "r6_drone_down")));
+
+    public static final RegistryObject<SoundEvent> M3A3_TOW_RAISE_1P = REGISTRY.register("m3a3_tow_raise_1p", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "m3a3_tow_raise_1p")));
+    public static final RegistryObject<SoundEvent> M3A3_TOW_RAISE_3P = REGISTRY.register("m3a3_tow_raise_3p", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "m3a3_tow_raise_3p")));
+    public static final RegistryObject<SoundEvent> M3A3_TOW_LOWER_1P = REGISTRY.register("m3a3_tow_lower_1p", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "m3a3_tow_lower_1p")));
+    public static final RegistryObject<SoundEvent> M3A3_TOW_LOWER_3P = REGISTRY.register("m3a3_tow_lower_3p", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "m3a3_tow_lower_3p")));
         public static final RegistryObject<SoundEvent> IED = REGISTRY.register("ied", () ->
                 SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "ied")));
 

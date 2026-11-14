@@ -146,32 +146,5 @@
                        "Texture":  "dragonrise_reforge:textures/entity/npds114.png"
                    }
                ],
-    "OBB": [
-      {
-        "Part": "Body",
-        "Size": [
-          1.328638,
-          0.102148,
-          1.345717
-        ],
-        "Position": [
-          0.000562,
-          0.103628,
-          -0.039854
-        ]
-      },
-      {
-        "Part": "Collision",
-        "Size": [
-          1.328638,
-          0.102148,
-          1.345717
-        ],
-        "Position": [
-          0.000562,
-          0.103628,
-          -0.039854
-        ]
-      }
-    ]
+    "OBB": []
 }

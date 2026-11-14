@@ -4,6 +4,7 @@ import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.data.gun.GunData;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
+import com.redabysslucia.dragonrise_reforge.client.sound.M3A3RackSoundInstance;
 import com.redabysslucia.dragonrise_reforge.entities.utils.MissileFireGate;
 import com.redabysslucia.dragonrise_reforge.entities.utils.M3A3ModelTransforms;
 import com.redabysslucia.dragonrise_reforge.entities.utils.AddonArmorHelper;
@@ -52,8 +53,10 @@ public class M3A3Entity extends VehicleEntity implements AddonArmorVehicle {
     /** 发射架展开/收起一次所需的 tick，必须与 M3A3Renderer 里的 30 保持一致 */
     private static final int RACK_ANIM_TICKS = M3A3ModelTransforms.RACK_ANIM_TICKS;
 
-    // 客户端动画状态机缓存
-    private String lastMissileAnim = "";
+    // 只在发射架开始运动或反向时触发一次，不在保持姿态时重复播放。
+    private int lastRackSoundState;
+    @OnlyIn(Dist.CLIENT)
+    private M3A3RackSoundInstance rackSound;
 
     public M3A3Entity(EntityType<M3A3Entity> type, Level world) {
         super(type, world);
@@ -225,6 +228,13 @@ public class M3A3Entity extends VehicleEntity implements AddonArmorVehicle {
      */
     @OnlyIn(Dist.CLIENT)
     private void tickMissileAnimation() {
+        int state = getMissileState();
+        if (state == lastRackSoundState) return;
+        lastRackSoundState = state;
+        if (state != 1 && state != 3) return;
+
+        if (rackSound != null) rackSound.stopPlayback();
+        rackSound = M3A3RackSoundInstance.play(this, state == 1);
     }
 
     @Override

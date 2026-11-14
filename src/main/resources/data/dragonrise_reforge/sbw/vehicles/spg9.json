@@ -56,13 +56,19 @@
       },
       "Name": "dragonrise_reforge:PG9",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PVeryFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:spg9_fire_1p",
+        "Fire3P": "dragonrise_reforge:spg9_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:spg9_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:spg9_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:manual_reload_4s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:manual_reload_4s"
+        ]
       },
-      "SoundRadius": 24
+      "SoundRadius": 32
     }
   },
   "ThirdPersonCameraPos": [-0.4,1.1,-1.6],
@@ -86,24 +92,7 @@
       "Texture": "dragonrise_reforge:textures/entity/spg9.png"
     }
   ],
-  "OBB": [
-    {
-      "Size": [0.078,0.109,0.294],
-      "Position": [0.0,0.781,-0.193]
-    },
-    {
-      "Size": [0.357,0.633,1.491],
-      "Position": [0.0,0.627,0.119],
-      "Part": "Collision"
-    },
-    {
-      "Size": [0.078,0.078,1.575],
-      "Position": [0.0,0.343,0.491],
-      "Part": "Turret",
-      "Transform": "Turret",
-      "Rotation": "Turret"
-    }
-  ],
+  "OBB": [],
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/spg9.png"

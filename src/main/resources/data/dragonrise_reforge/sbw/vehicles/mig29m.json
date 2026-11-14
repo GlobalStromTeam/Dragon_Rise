@@ -556,11 +556,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonSeekMissile",
@@ -649,11 +650,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftCommon",
@@ -710,11 +712,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:javelin_locking",
-              "Locked": "superbwarfare:javelin_locking"
+              "Locked": "superbwarfare:javelin_locking",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "CrosshairColor": "0xFFC700",
             "Crosshair": "@VehicleCommonSeekMissile",
@@ -808,11 +811,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftCommon",
@@ -889,11 +893,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:missile_locking",
-              "Locked": "superbwarfare:missile_locked"
+              "Locked": "superbwarfare:missile_locked",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "Crosshair": "@AirCraftMissile",
             "CrosshairZooming": "@AirCraftNacelle",
@@ -987,11 +992,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftNacelle",
@@ -1086,11 +1092,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:missile_locking",
-              "Locked": "superbwarfare:missile_locked"
+              "Locked": "superbwarfare:missile_locked",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "Crosshair": "@AirCraftMissile",
             "CrosshairZooming": "@AirCraftCommon",

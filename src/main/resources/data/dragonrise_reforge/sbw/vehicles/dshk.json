@@ -94,11 +94,17 @@
       },
       "Name":  "dragonrise_reforge:DShK",
       "SoundInfo":  {
-        "Fire1P":  "dragonrise_reforge:dshk_fire_1p",
-        "Fire3P":  "dragonrise_reforge:dshk_fire_3p",
-        "Fire3PFar":  "dragonrise_reforge:dshk_fire_3p_far",
-        "Fire3PVeryFar":  "dragonrise_reforge:dshk_fire_3p_very_far",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Fire1P":  "dragonrise_reforge:dshk12_7_fire_1p",
+        "Fire3P":  "dragonrise_reforge:dshk12_7_fire_3p",
+        "Fire3PFar":  "dragonrise_reforge:dshk12_7_fire_3p_far",
+        "Fire3PVeryFar":  "dragonrise_reforge:kord_fire_3p_very_far",
+        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:hmg_reload_5s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:hmg_reload_5s"
+        ]
     },
       "SoundRadius":  16
     }
@@ -128,32 +134,5 @@
       "Texture":  "dragonrise_reforge:textures/entity/dshk.png"
     }
   ],
-  "OBB": [
-    {
-      "Part": "Body",
-      "Size": [
-        0.510188,
-        0.183795,
-        0.788469
-      ],
-      "Position": [
-        0.0,
-        0.153705,
-        -0.052224
-      ]
-    },
-    {
-      "Part": "Collision",
-      "Size": [
-        0.510188,
-        0.183795,
-        0.788469
-      ],
-      "Position": [
-        0.0,
-        0.153705,
-        -0.052224
-      ]
-    }
-  ]
+  "OBB": []
 }

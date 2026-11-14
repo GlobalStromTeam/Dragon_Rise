@@ -107,6 +107,16 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
         return prefix + ".missile_off";
     }
 
+    /** 防浪板"展开"动作播放的动画名（默认 animation.&lt;载具id&gt;.splash_on）。 */
+    protected String splashOnAnimation(String prefix) {
+        return prefix + ".splash_on";
+    }
+
+    /** 防浪板"收起"动作播放的动画名（默认 animation.&lt;载具id&gt;.splash_off）。 */
+    protected String splashOffAnimation(String prefix) {
+        return prefix + ".splash_off";
+    }
+
     @Override
     public void baseTick() {
         super.baseTick();
@@ -193,7 +203,13 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
         setWasGearUp(gearUp);
     }
 
-    private void tickSplashAnimation() {
+    /**
+     * 防浪板状态机：入水播放 splash_on、出水播放 splash_off（PLAY_ONCE_HOLD），每 10 tick 检查一次。
+     *
+     * <p>默认实现在基类里，所有两栖载具共用；需要独立演化（例如单独调时间/角度）的载具
+     * 可以在子类覆写本方法，自带一份 {@code wasSplash} / 冷却状态，互不影响。
+     */
+    protected void tickSplashAnimation() {
         if (!level().isClientSide()) return;
         if (--splashCheckCooldown > 0) return;
         splashCheckCooldown = 10;
@@ -204,8 +220,8 @@ public abstract class DragonriseVehicleBase extends VehicleEntity {
 
         boolean inWater = isInWater();
         String prefix = "animation." + EntityType.getKey(getType()).getPath();
-        String splashOn = prefix + ".splash_on";
-        String splashOff = prefix + ".splash_off";
+        String splashOn = splashOnAnimation(prefix);
+        String splashOff = splashOffAnimation(prefix);
 
         if (inWater && !wasSplash) {
             ctx.stopAnimation(splashOff, 0);
