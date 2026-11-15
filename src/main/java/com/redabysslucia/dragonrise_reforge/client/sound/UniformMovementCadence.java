@@ -7,13 +7,15 @@ public final class UniformMovementCadence {
     private static final double MIN_MOVEMENT = 0.002;
     private static final double TELEPORT_DISTANCE = 1.5;
     private static final int STOP_GRACE_TICKS = 4;
+    private static final double PLAYBACK_FREQUENCY = 3.0;
     private boolean positioned;
     private boolean movedThisTick;
     private double lastX;
     private double lastZ;
     private double travelled;
     private int quietTicks;
-    private int ticksSinceSound;
+    private double ticksSinceSound;
+    private double fragmentTicks = 14;
     private Movement movement = Movement.IDLE;
 
     /** Called once per client tick. Returns true only when a new movement fragment is due. */
@@ -32,7 +34,7 @@ public final class UniformMovementCadence {
             reset();
             return false;
         }
-        ticksSinceSound++;
+        ticksSinceSound += PLAYBACK_FREQUENCY;
         if (distance <= MIN_MOVEMENT) {
             if (++quietTicks >= STOP_GRACE_TICKS) reset();
             return false;
@@ -48,13 +50,19 @@ public final class UniformMovementCadence {
         if (movement != requested) {
             movement = requested;
             travelled = 0;
+            ticksSinceSound = 0;
+            return true;
         }
-        travelled += distance;
+        travelled += distance * PLAYBACK_FREQUENCY;
         double stride = requested == Movement.CROUCH ? 0.9 : requested == Movement.SPRINT ? 1.65 : 1.5;
         int minimumTicks = requested == Movement.CROUCH ? 9 : requested == Movement.SPRINT ? 5 : 6;
-        if (travelled >= stride && ticksSinceSound >= minimumTicks) {
+        // Previously fragments could not overlap, so their length also limited the cadence.
+        // Speed up that reference clock together with the distance rhythm, not the audio itself.
+        double interval = Math.max(minimumTicks, Math.ceil(fragmentTicks));
+        if (travelled >= stride && ticksSinceSound >= interval) {
             travelled %= stride;
-            ticksSinceSound = 0;
+            // Retain sub-tick timing without banking idle time for a later burst.
+            ticksSinceSound = Math.min(ticksSinceSound - interval, PLAYBACK_FREQUENCY);
             return true;
         }
         return false;
@@ -66,6 +74,10 @@ public final class UniformMovementCadence {
 
     public boolean movedThisTick() {
         return movedThisTick;
+    }
+
+    public void fragmentDurationTicks(double ticks) {
+        fragmentTicks = ticks;
     }
 
     private void reset() {

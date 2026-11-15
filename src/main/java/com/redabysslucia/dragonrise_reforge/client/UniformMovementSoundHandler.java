@@ -69,16 +69,10 @@ public final class UniformMovementSoundHandler {
             Movement movement = state.cadence.movement();
             if (movement == Movement.IDLE) {
                 state.sounds.forEach(UniformMovementSoundInstance::fadeOut);
-                state.fragmentDue = false;
                 state.playingMovement = Movement.IDLE;
-            } else {
-                state.fragmentDue |= due || state.playingMovement != movement;
-                boolean playing = state.sounds.stream().anyMatch(s -> !s.fading() && !s.isStopped());
-                if (state.fragmentDue && state.cadence.movedThisTick() && (!playing || state.playingMovement != movement)) {
-                    state.play(client, movement);
-                    state.fragmentDue = false;
-                    state.playingMovement = movement;
-                }
+            } else if (due && state.cadence.movedThisTick()) {
+                state.play(client, movement);
+                state.playingMovement = movement;
             }
             if ((!equipped || !nearby) && state.sounds.isEmpty()) WEARERS.remove(id);
         }
@@ -97,13 +91,15 @@ public final class UniformMovementSoundHandler {
     }
 
     private static final class Wearer {
+        // Full OGG durations in 20 Hz ticks; only the trigger clock is accelerated.
+        private static final double[] WALK_FRAGMENT_TICKS = {13.5, 14.0, 13.94};
+        private static final double[] SPRINT_FRAGMENT_TICKS = {6.6, 6.8, 11.4};
         private final Player player;
         private final UniformMovementCadence cadence = new UniformMovementCadence();
         private final ArrayDeque<UniformMovementSoundInstance> sounds = new ArrayDeque<>();
         private int lastWalk = -1;
         private int lastSprint = -1;
         private Movement playingMovement = Movement.IDLE;
-        private boolean fragmentDue;
 
         private Wearer(Player player) {
             this.player = player;
@@ -116,9 +112,9 @@ public final class UniformMovementSoundHandler {
                     (previous + 1 + player.getRandom().nextInt(2)) % 3;
             if (sprint) lastSprint = variant;
             else lastWalk = variant;
-            // Let a same-state fragment finish naturally; crossfade only state changes.
-            sounds.forEach(UniformMovementSoundInstance::fadeOut);
-            while (sounds.size() >= 2) client.getSoundManager().stop(sounds.removeFirst());
+            // Same-state fragments overlap at full length; only state changes crossfade.
+            if (playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
+            cadence.fragmentDurationTicks((sprint ? SPRINT_FRAGMENT_TICKS : WALK_FRAGMENT_TICKS)[variant]);
             var event = (sprint ? ModSounds.UNIFORM_GEAR_SPRINT : ModSounds.UNIFORM_GEAR_WALK).get(variant).get();
             UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, movement == Movement.CROUCH);
             sounds.addLast(sound);
