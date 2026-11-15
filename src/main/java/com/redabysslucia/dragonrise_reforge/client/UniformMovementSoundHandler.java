@@ -6,7 +6,6 @@ import com.redabysslucia.dragonrise_reforge.client.sound.UniformAirborneTracker.
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementCadence;
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementCadence.Movement;
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementSoundInstance;
-import com.redabysslucia.dragonrise_reforge.init.ModItems;
 import com.redabysslucia.dragonrise_reforge.init.ModSounds;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -14,10 +13,13 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ArmorItem;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;
@@ -50,7 +52,9 @@ public final class UniformMovementSoundHandler {
         Set<UUID> seen = new HashSet<>();
         for (Player player : client.level.players()) {
             UUID id = player.getUUID();
-            boolean equipped = player.getItemBySlot(EquipmentSlot.CHEST).is(ModItems.RUSSIAN_SOLDIER_CHEST.get());
+            // A wearer has one cadence even when both garments qualify.
+            boolean equipped = isUniform(player.getItemBySlot(EquipmentSlot.CHEST), EquipmentSlot.CHEST)
+                    || isUniform(player.getItemBySlot(EquipmentSlot.LEGS), EquipmentSlot.LEGS);
             boolean nearby = listener.distanceToSqr(player) <= AUDIBLE_DISTANCE_SQUARED;
             Wearer state = WEARERS.get(id);
             if (state != null && state.player != player) {
@@ -88,6 +92,12 @@ public final class UniformMovementSoundHandler {
             entry.getValue().stop(client);
             return true;
         });
+    }
+
+    private static boolean isUniform(ItemStack stack, EquipmentSlot slot) {
+        if (!(stack.getItem() instanceof ArmorItem armor) || armor.getEquipmentSlot() != slot) return false;
+        var id = ForgeRegistries.ITEMS.getKey(armor);
+        return id != null && Dragonrise_reforge.MODID.equals(id.getNamespace());
     }
 
     private static boolean eligible(Player player, boolean equippedAndNearby) {
