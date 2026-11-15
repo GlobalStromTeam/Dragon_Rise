@@ -7,7 +7,7 @@ public final class UniformMovementCadence {
     private static final double MIN_MOVEMENT = 0.002;
     private static final double TELEPORT_DISTANCE = 1.5;
     private static final int STOP_GRACE_TICKS = 4;
-    private static final double PLAYBACK_FREQUENCY = 3.0;
+    private static final double PLAYBACK_FREQUENCY = 1.5;
     private boolean positioned;
     private boolean movedThisTick;
     private double lastX;
