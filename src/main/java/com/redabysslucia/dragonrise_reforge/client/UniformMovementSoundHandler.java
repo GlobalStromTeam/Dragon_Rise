@@ -91,9 +91,8 @@ public final class UniformMovementSoundHandler {
     }
 
     private static final class Wearer {
-        // Full OGG durations in 20 Hz ticks; only the trigger clock is accelerated.
+        // Crouch retains its separately tuned cadence; normal gaits use vanilla step distance.
         private static final double[] WALK_FRAGMENT_TICKS = {13.5, 14.0, 13.94, 14.05351474, 14.11882086, 13.37868481};
-        private static final double[] SPRINT_FRAGMENT_TICKS = {6.6, 6.8, 11.4, 6.87891156, 9.20090703, 8.90929705};
         private final Player player;
         private final UniformMovementCadence cadence = new UniformMovementCadence();
         private final ArrayDeque<UniformMovementSoundInstance> sounds = new ArrayDeque<>();
@@ -116,7 +115,7 @@ public final class UniformMovementSoundHandler {
             else lastWalk = variant;
             // Same-state fragments overlap at full length; only state changes crossfade.
             if (playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
-            cadence.fragmentDurationTicks((sprint ? SPRINT_FRAGMENT_TICKS : WALK_FRAGMENT_TICKS)[variant]);
+            if (movement == Movement.CROUCH) cadence.fragmentDurationTicks(WALK_FRAGMENT_TICKS[variant]);
             var event = events.get(variant).get();
             UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, movement == Movement.CROUCH);
             sounds.addLast(sound);
