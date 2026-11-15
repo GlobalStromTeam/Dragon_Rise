@@ -1,6 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.client;
 
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
+import com.redabysslucia.dragonrise_reforge.client.sound.UniformAirborneTracker;
+import com.redabysslucia.dragonrise_reforge.client.sound.UniformAirborneTracker.Action;
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementCadence;
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementCadence.Movement;
 import com.redabysslucia.dragonrise_reforge.client.sound.UniformMovementSoundInstance;
@@ -62,19 +64,24 @@ public final class UniformMovementSoundHandler {
                 WEARERS.put(id, state);
             }
             seen.add(id);
-            Movement requested = eligible(player, equipped && nearby) ?
+            boolean eligible = eligible(player, equipped && nearby);
+            Action action = state.airborne.update(player.getX(), player.getY(), player.getZ(), player.onGround(), eligible);
+            Movement requested = eligible && player.onGround() ?
                     player.isCrouching() ? Movement.CROUCH : player.isSprinting() ? Movement.SPRINT : Movement.WALK : Movement.IDLE;
             boolean due = state.cadence.update(player.getX(), player.getZ(), requested);
             state.sounds.removeIf(s -> s.isStopped() || (s.age() > 2 && !client.getSoundManager().isActive(s)));
+            state.actionSounds.removeIf(s -> s.isStopped() || (s.age() > 2 && !client.getSoundManager().isActive(s)));
+            if (!eligible) state.actionSounds.forEach(UniformMovementSoundInstance::fadeOut);
             Movement movement = state.cadence.movement();
             if (movement == Movement.IDLE) {
                 state.sounds.forEach(UniformMovementSoundInstance::fadeOut);
                 state.playingMovement = Movement.IDLE;
-            } else if (due && state.cadence.movedThisTick()) {
-                state.play(client, movement);
+            } else if (due && state.cadence.movedThisTick() && action != Action.LAND) {
+                state.play(client, movement, false);
                 state.playingMovement = movement;
             }
-            if ((!equipped || !nearby) && state.sounds.isEmpty()) WEARERS.remove(id);
+            if (action != Action.NONE) state.play(client, Movement.WALK, true);
+            if ((!equipped || !nearby) && state.sounds.isEmpty() && state.actionSounds.isEmpty()) WEARERS.remove(id);
         }
         WEARERS.entrySet().removeIf(entry -> {
             if (seen.contains(entry.getKey())) return false;
@@ -85,7 +92,7 @@ public final class UniformMovementSoundHandler {
 
     private static boolean eligible(Player player, boolean equippedAndNearby) {
         return equippedAndNearby && player.isAlive() && !player.isRemoved() && !player.isSpectator() && !player.isSilent()
-                && player.onGround() && !player.isPassenger() && !player.isInWaterOrBubble() && !player.isInLava()
+                && !player.isPassenger() && !player.isInWaterOrBubble() && !player.isInLava()
                 && !player.isSwimming() && !player.isFallFlying() && !player.getAbilities().flying
                 && (player.getPose() == Pose.STANDING || player.getPose() == Pose.CROUCHING);
     }
@@ -95,7 +102,9 @@ public final class UniformMovementSoundHandler {
         private static final double[] WALK_FRAGMENT_TICKS = {13.5, 14.0, 13.94, 14.05351474, 14.11882086, 13.37868481};
         private final Player player;
         private final UniformMovementCadence cadence = new UniformMovementCadence();
+        private final UniformAirborneTracker airborne = new UniformAirborneTracker();
         private final ArrayDeque<UniformMovementSoundInstance> sounds = new ArrayDeque<>();
+        private final ArrayDeque<UniformMovementSoundInstance> actionSounds = new ArrayDeque<>();
         private int lastWalk = -1;
         private int lastSprint = -1;
         private Movement playingMovement = Movement.IDLE;
@@ -104,7 +113,7 @@ public final class UniformMovementSoundHandler {
             this.player = player;
         }
 
-        private void play(Minecraft client, Movement movement) {
+        private void play(Minecraft client, Movement movement, boolean oneShot) {
             boolean sprint = movement == Movement.SPRINT;
             var events = sprint ? ModSounds.UNIFORM_GEAR_SPRINT : ModSounds.UNIFORM_GEAR_WALK;
             int count = events.size();
@@ -114,17 +123,19 @@ public final class UniformMovementSoundHandler {
             if (sprint) lastSprint = variant;
             else lastWalk = variant;
             // Same-state fragments overlap at full length; only state changes crossfade.
-            if (playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
+            if (!oneShot && playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
             if (movement == Movement.CROUCH) cadence.fragmentDurationTicks(WALK_FRAGMENT_TICKS[variant]);
             var event = events.get(variant).get();
             UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, movement == Movement.CROUCH);
-            sounds.addLast(sound);
+            (oneShot ? actionSounds : sounds).addLast(sound);
             client.getSoundManager().play(sound);
         }
 
         private void stop(Minecraft client) {
             sounds.forEach(s -> client.getSoundManager().stop(s));
+            actionSounds.forEach(s -> client.getSoundManager().stop(s));
             sounds.clear();
+            actionSounds.clear();
         }
     }
 }
