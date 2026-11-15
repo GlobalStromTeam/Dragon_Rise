@@ -15,7 +15,7 @@ public class ModSounds {
 
     private static java.util.List<RegistryObject<SoundEvent>> registerMovementSounds(String prefix) {
         java.util.List<RegistryObject<SoundEvent>> sounds = new java.util.ArrayList<>();
-        for (int variant = 1; variant <= 3; variant++) {
+        for (int variant = 1; variant <= 6; variant++) {
             String name = prefix + "_" + variant;
             sounds.add(REGISTRY.register(name, () -> SoundEvent.createFixedRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, name), 8)));

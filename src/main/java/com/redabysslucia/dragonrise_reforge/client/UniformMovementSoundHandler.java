@@ -92,8 +92,8 @@ public final class UniformMovementSoundHandler {
 
     private static final class Wearer {
         // Full OGG durations in 20 Hz ticks; only the trigger clock is accelerated.
-        private static final double[] WALK_FRAGMENT_TICKS = {13.5, 14.0, 13.94};
-        private static final double[] SPRINT_FRAGMENT_TICKS = {6.6, 6.8, 11.4};
+        private static final double[] WALK_FRAGMENT_TICKS = {13.5, 14.0, 13.94, 14.05351474, 14.11882086, 13.37868481};
+        private static final double[] SPRINT_FRAGMENT_TICKS = {6.6, 6.8, 11.4, 6.87891156, 9.20090703, 8.90929705};
         private final Player player;
         private final UniformMovementCadence cadence = new UniformMovementCadence();
         private final ArrayDeque<UniformMovementSoundInstance> sounds = new ArrayDeque<>();
@@ -107,15 +107,17 @@ public final class UniformMovementSoundHandler {
 
         private void play(Minecraft client, Movement movement) {
             boolean sprint = movement == Movement.SPRINT;
+            var events = sprint ? ModSounds.UNIFORM_GEAR_SPRINT : ModSounds.UNIFORM_GEAR_WALK;
+            int count = events.size();
             int previous = sprint ? lastSprint : lastWalk;
-            int variant = previous < 0 ? player.getRandom().nextInt(3) :
-                    (previous + 1 + player.getRandom().nextInt(2)) % 3;
+            int variant = previous < 0 ? player.getRandom().nextInt(count) :
+                    (previous + 1 + player.getRandom().nextInt(count - 1)) % count;
             if (sprint) lastSprint = variant;
             else lastWalk = variant;
             // Same-state fragments overlap at full length; only state changes crossfade.
             if (playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
             cadence.fragmentDurationTicks((sprint ? SPRINT_FRAGMENT_TICKS : WALK_FRAGMENT_TICKS)[variant]);
-            var event = (sprint ? ModSounds.UNIFORM_GEAR_SPRINT : ModSounds.UNIFORM_GEAR_WALK).get(variant).get();
+            var event = events.get(variant).get();
             UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, movement == Movement.CROUCH);
             sounds.addLast(sound);
             client.getSoundManager().play(sound);

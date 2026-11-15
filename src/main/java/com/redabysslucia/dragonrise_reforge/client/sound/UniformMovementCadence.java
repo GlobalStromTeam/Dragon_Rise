@@ -34,7 +34,8 @@ public final class UniformMovementCadence {
             reset();
             return false;
         }
-        ticksSinceSound += PLAYBACK_FREQUENCY;
+        double frequency = PLAYBACK_FREQUENCY * (requested == Movement.CROUCH ? 0.5 : 1.0);
+        ticksSinceSound += frequency;
         if (distance <= MIN_MOVEMENT) {
             if (++quietTicks >= STOP_GRACE_TICKS) reset();
             return false;
@@ -53,7 +54,7 @@ public final class UniformMovementCadence {
             ticksSinceSound = 0;
             return true;
         }
-        travelled += distance * PLAYBACK_FREQUENCY;
+        travelled += distance * frequency;
         double stride = requested == Movement.CROUCH ? 0.9 : requested == Movement.SPRINT ? 1.65 : 1.5;
         int minimumTicks = requested == Movement.CROUCH ? 9 : requested == Movement.SPRINT ? 5 : 6;
         // Previously fragments could not overlap, so their length also limited the cadence.
@@ -62,7 +63,7 @@ public final class UniformMovementCadence {
         if (travelled >= stride && ticksSinceSound >= interval) {
             travelled %= stride;
             // Retain sub-tick timing without banking idle time for a later burst.
-            ticksSinceSound = Math.min(ticksSinceSound - interval, PLAYBACK_FREQUENCY);
+            ticksSinceSound = Math.min(ticksSinceSound - interval, frequency);
             return true;
         }
         return false;
