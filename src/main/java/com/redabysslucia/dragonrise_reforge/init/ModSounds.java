@@ -10,6 +10,19 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModSounds {
     public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Dragonrise_reforge.MODID);
 
+    public static final java.util.List<RegistryObject<SoundEvent>> UNIFORM_GEAR_WALK = registerMovementSounds("uniform_gear_walk");
+    public static final java.util.List<RegistryObject<SoundEvent>> UNIFORM_GEAR_SPRINT = registerMovementSounds("uniform_gear_sprint");
+
+    private static java.util.List<RegistryObject<SoundEvent>> registerMovementSounds(String prefix) {
+        java.util.List<RegistryObject<SoundEvent>> sounds = new java.util.ArrayList<>();
+        for (int variant = 1; variant <= 3; variant++) {
+            String name = prefix + "_" + variant;
+            sounds.add(REGISTRY.register(name, () -> SoundEvent.createFixedRangeEvent(
+                    ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, name), 8)));
+        }
+        return java.util.List.copyOf(sounds);
+    }
+
     public static final RegistryObject<SoundEvent> TERRORIST_IDLE = REGISTRY.register("terrorist_idle", () -> 
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_idle")));
     

@@ -2067,5 +2067,65 @@
         "stream": false
       }
     ]
+  },
+  "uniform_gear_walk_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
   }
 }
