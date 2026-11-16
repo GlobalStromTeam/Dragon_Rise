@@ -146,8 +146,8 @@
       "ShootShake": [8,10,60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
-      "CrosshairColor": "0x00ff66",
+      "Crosshair": "@VehicleUsTank",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:M900",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -168,7 +168,7 @@
           "Ammo": "superbwarfare:medium_anti_ground_missile",
           "Override": {
             "Spread": 0.5,
-            "CrosshairColor": "0xFFC700",
+            "CrosshairColor": "0x66FF00",
             "Name": "dragonrise_reforge:LAHAT",
             "Projectile": "superbwarfare:wire_guide_missile",
             "IsArmorPiercingProjectile": true,
@@ -220,7 +220,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 800,
@@ -243,7 +243,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleUsTank",
       "Name": "dragonrise_reforge:M240",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m240_fire_1p",
@@ -265,7 +265,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
@@ -409,5 +409,6 @@
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/m1128.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/m1128.png"
-  }
+  },
+  "HUDColor": "0x66FF00"
 }

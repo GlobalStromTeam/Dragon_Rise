@@ -182,8 +182,8 @@
       ],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0x00ff66",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
+      "CrosshairColor": "0xFF0000",
       "Name": "dragonrise_reforge:type59ap",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -227,7 +227,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0xFF0000",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 800,
@@ -250,7 +250,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "Name": "dragonrise_reforge:type54lmg",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:pkt_fire_1p",
@@ -272,7 +272,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0xFF0000",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
@@ -295,7 +295,7 @@
           "WeaponStationBarrel"
         ]
       },
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:54T",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:dshk12_7_fire_1p",
@@ -313,7 +313,7 @@
       "SoundRadius": 16
     }
   },
-  "HUDColor": "0x00ff66",
+  "HUDColor": "0xFF0000",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

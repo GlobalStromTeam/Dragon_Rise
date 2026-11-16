@@ -111,7 +111,7 @@
       "BypassesArmor": 0.3,
       "Velocity": 20,
       "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
+      "CrosshairColor": "0x66FF00",
       "HeatPerShoot": 4,
       "NaturalCooldown": 1,
       "SoundInfo": {
@@ -144,7 +144,9 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x66FF00"
     },
     "Cannon": {
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/he.png",
@@ -164,8 +166,8 @@
       "ShootShake": [8,10,60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "@VehicleDynamicCross",
-      "CrosshairColor": "0x00ff66",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:M1he",
       "AmmoType": "superbwarfare:large_shell_he",
       "SoundInfo": {
@@ -186,14 +188,15 @@
         "Directions": [
           "Barrel"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "MachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 500,
@@ -218,7 +221,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonCannon",
       "Name": "dragonrise_reforge:m1919",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -234,7 +237,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
@@ -257,7 +260,7 @@
           "WeaponStationBarrel"
         ]
       },
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonGun",
       "Name": "dragonrise_reforge:m2",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -269,7 +272,7 @@
       "SoundRadius": 16
     }
   },
-  "HUDColor": "0x00ff66",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

@@ -121,8 +121,9 @@
         "VehicleReloadSoundTime": 7,
         "Change":  "dragonrise_reforge:change_weapon"
       },
-      "Crosshair": "@Empty",
-      "SoundRadius": 12
+      "Crosshair": "@VehicleCommonCannon",
+      "SoundRadius": 12,
+      "CrosshairColor": "0x66FF00"
     },
     "Cannon": {
       "DefaultFireMode": "Auto",
@@ -141,7 +142,7 @@
       "ShootAnimationTime": 3,
       "Spread": 0.6,
       "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:M2HB",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m2hb_fire_1p",
@@ -240,5 +241,6 @@
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/m270.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/m270.png"
-  }
+  },
+  "HUDColor": "0x66FF00"
 }

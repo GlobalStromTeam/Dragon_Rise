@@ -57,8 +57,8 @@
                                    "RecoilForce":  1.62,
                                    "ShootAnimationTime":  3,
                                    "Spread":  1.2,
-                                   "Crosshair":  "@VehicleCommonGun",
-                                   "CrosshairColor":  "0xFFC700",
+                                   "Crosshair":  "@VehicleCommonGunDynamic",
+                                   "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:mk19",
                                    "SoundInfo":  {
                                                      "Fire1P":  "dragonrise_reforge:mk19_fire_1p",
@@ -110,5 +110,6 @@
                        "Texture":  "dragonrise_reforge:textures/entity/mk19.png"
                    }
                ],
-    "OBB": []
+    "OBB": [],
+    "HUDColor": "0x66FF00"
 }

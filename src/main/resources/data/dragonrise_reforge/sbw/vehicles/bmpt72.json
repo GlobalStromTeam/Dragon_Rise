@@ -170,7 +170,7 @@
                                     "ShootAnimationTime":  3,
                                     "Spread":  1,
                                     "ProjectileLife":  40,
-                                    "Crosshair":  "@VehicleUsApc",
+                                    "Crosshair":  "@VehicleRuApc",
                                     "CrosshairColor":  "0x66FF00",
                                     "Name":  "dragonrise_reforge:30mm_apt_ap",
                                     "Projectile":  "superbwarfare:small_cannon_shell",
@@ -229,7 +229,7 @@
                                     "ShootAnimationTime":  3,
                                     "Spread":  0.25,
                                     "ProjectileLife":  40,
-                                    "Crosshair":  "@VehicleUsApc",
+                                    "Crosshair":  "@VehicleRuApc",
                                     "CrosshairColor":  "0x66FF00",
                                     "Name":  "dragonrise_reforge:30mm_apt_ap",
                                     "Projectile":  "superbwarfare:small_cannon_shell",
@@ -277,7 +277,7 @@
                                            "DefaultZoom":  3,
                                            "HeatPerShoot":  4,
                                            "NaturalCooldown":  1,
-                                           "CrosshairColor":  "0xFFC700",
+                                           "CrosshairColor":  "0x66FF00",
                                            "AmmoType":  "@RifleAmmo",
                                            "Projectile":  "superbwarfare:projectile",
                                            "RPM":  600,
@@ -298,7 +298,7 @@
                                                                                "Barrel"
                                                                            ]
                                                         },
-                                           "Crosshair":  "@VehicleCommonGun",
+                                           "Crosshair":  "@VehicleRuApc",
                                            "Name":  "weapon.superbwarfare.7_62mm_coax",
                                            "SoundInfo":  {
                                                              "Fire1P":  "dragonrise_reforge:m240_fire_1p",
@@ -322,7 +322,7 @@
                                     "DefaultZoom":  3,
                                     "HeatPerShoot":  0.5,
                                     "Spread":  0.5,
-                                    "CrosshairColor":  "0xFFC700",
+                                    "CrosshairColor":  "0x66FF00",
                                     "Name":  "weapon.superbwarfare.9m120_missile",
                                     "AmmoType":  "superbwarfare:medium_anti_ground_missile",
                                     "Projectile":  "superbwarfare:wire_guide_missile",
@@ -379,7 +379,7 @@
                                     "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png"
                                 }
                 },
-    "HUDColor":  "0xFFC700",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0.052,

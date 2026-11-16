@@ -82,8 +82,8 @@
       "ShootShake": [5,7,40],
       "Spread": 0.03,
       "ShootAnimationTime": 26,
-      "Crosshair": "@VehicleDynamicCross",
-      "CrosshairColor": "0x8B0000",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0xFF0000",
       "Name": "dragonrise_reforge:45mm_ap",
       "AmmoType": [
         "superbwarfare:medium_shell_ap",
@@ -118,7 +118,8 @@
         "Directions": [
           "Barrel"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "MachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
@@ -135,8 +136,8 @@
       "NaturalCooldown": 1,
       "ShootAnimationTime": 1,
       "AmmoType": "@HeavyAmmo",
-      "Crosshair": "@VehicleDynamicCross",
-      "CrosshairColor": "0x8B0000",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0xFF0000",
       "Name": "dragonrise_reforge:dt",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -157,7 +158,7 @@
       }
     }
   },
-  "HUDColor": "0x8B0000",
+  "HUDColor": "0xFF0000",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

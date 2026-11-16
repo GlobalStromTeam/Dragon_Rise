@@ -23,8 +23,8 @@
       "ShootShake": [0.5,0.5,0.5],
       "Spread": 0.03,
       "ShootAnimationTime": 35,
-      "Crosshair": "@VehicleDynamicCross",
-      "CrosshairColor": "0x8B0000",
+      "Crosshair": "@VehicleCnTank",
+      "CrosshairColor": "0x66FF00",
       "Name": "weapon.dragonrise_reforge.cav_cannon",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -211,5 +211,6 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/cav.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/cav.png"
     }
-  ]
+  ],
+  "HUDColor": "0x66FF00"
 }

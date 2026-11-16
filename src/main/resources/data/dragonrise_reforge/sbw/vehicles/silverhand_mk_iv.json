@@ -150,7 +150,7 @@
       "ShootShake": [5,7,40],
       "Spread": 0.04,
       "ShootAnimationTime": 32,
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonCannon",
       "CrosshairColor": "0x3A6EA5",
       "Name": "dragonrise_reforge:silverhand_40mm_ap",
       "AmmoType": [
@@ -189,7 +189,8 @@
         "Directions": [
           "Barrel"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "MachineGun": {
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/aphe.png",
@@ -215,7 +216,7 @@
       "ShootShake": [7,9,50],
       "Spread": 0.02,
       "ShootAnimationTime": 38,
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonCannon",
       "CrosshairColor": "0x3A6EA5",
       "Name": "dragonrise_reforge:silverhand_68mm_ap",
       "AmmoType": [
@@ -253,7 +254,8 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     }
   },
   "HUDColor": "0x3A6EA5",

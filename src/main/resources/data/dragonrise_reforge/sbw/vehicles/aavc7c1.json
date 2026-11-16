@@ -253,7 +253,7 @@
       "Position": [1.125,1.578,1.375]
     }
   ],
-  "HUDColor": "0xFFC700",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0.052,

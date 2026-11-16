@@ -112,12 +112,12 @@
         "Locked": "superbwarfare:javelin_locking",
         "VehicleReload": "minecraft:intentionally_empty"
       },
-      "CrosshairColor": "0xFFC700",
+      "CrosshairColor": "0x66FF00",
       "Crosshair": "@VehicleCommonSeekMissile",
       "SoundRadius": 8
     }
   },
-  "HUDColor": "0xFFC700",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0.052,

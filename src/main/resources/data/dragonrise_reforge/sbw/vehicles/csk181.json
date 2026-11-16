@@ -203,7 +203,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "0x00ff66",
+                                                "CrosshairColor":  "0x66FF00",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  600,
@@ -226,7 +226,7 @@
                                                                                     "Barrel"
                                                                                 ]
                                                              },
-                                                "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
+                                                "Crosshair":  "@VehicleCommonGun",
                                                 "Name":  "dragonrise_reforge:54T",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "dragonrise_reforge:dshk12_7_fire_1p",
@@ -261,8 +261,8 @@
                                        "RecoilForce":  0.05,
                                        "ShootAnimationTime":  3,
                                        "Spread":  1.2,
-                                       "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
-                                       "CrosshairColor":  "0xFFC700",
+                                       "Crosshair":  "@VehicleCommonGunDynamic",
+                                       "CrosshairColor":  "0x66FF00",
                                        "Name":  "dragonrise_reforge:87",
                                        "SoundInfo":  {
                                                          "Fire1P":  "dragonrise_reforge:ag17_fire_1p",
@@ -289,7 +289,7 @@
                                                     }
                                    }
                 },
-    "HUDColor":  "0xFFC700",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Wheel",
     "EngineInfo":  {
                        "Buoyancy":  0.052,

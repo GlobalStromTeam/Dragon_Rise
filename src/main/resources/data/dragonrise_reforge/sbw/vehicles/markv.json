@@ -193,8 +193,8 @@
       "ShootShake": [0.5,0.5,0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
-      "CrosshairColor": "#da2d2d",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:of6",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -222,7 +222,9 @@
             "ExplosionRadius": 0,
             "ProjectileAmount": 36,
             "Velocity": 10,
-            "Name": "weapon.superbwarfare.cannon_gs"
+            "Name": "weapon.superbwarfare.cannon_gs",
+            "Crosshair": "@VehicleCommonCannon",
+            "CrosshairColor": "0x66FF00"
           }
         }
       ],
@@ -246,7 +248,8 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "Cannon1": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/ap_shell.png",
@@ -266,8 +269,8 @@
       "ShootShake": [0.5,0.5,0.5],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
-      "CrosshairColor": "#da2d2d",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:of6",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -305,7 +308,8 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "@MG": {
       "DefaultFireMode": "Auto",
@@ -319,7 +323,7 @@
       "BypassesArmor": 0.3,
       "Velocity": 20,
       "Crosshair": "@VehicleCommonGun",
-      "CrosshairColor": "0xFFC700",
+      "CrosshairColor": "0x66FF00",
       "HeatPerShoot": 4,
       "NaturalCooldown": 1,
       "SoundInfo": {
@@ -352,7 +356,9 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x66FF00"
     },
     "MG2": {
       "Template": "@MG",
@@ -365,7 +371,9 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x66FF00"
     },
     "MG3": {
       "Template": "@MG",
@@ -378,10 +386,12 @@
         "Directions": [
           "Passenger"
         ]
-      }
+      },
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x66FF00"
     }
   },
-  "HUDColor": "#da2d2d",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

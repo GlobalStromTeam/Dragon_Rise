@@ -145,8 +145,8 @@
                                                   ],
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  40,
-                                   "Crosshair":  "@VehicleDynamicCross",
-                                   "CrosshairColor":  "0x00ff66",
+                                   "Crosshair":  "@VehicleCommonCannon",
+                                   "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:75mmAPHE",
                                    "AmmoType":  [
                                                     "superbwarfare:large_shell_ap",
@@ -183,14 +183,15 @@
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
-                                                }
+                                                },
+                                   "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
                                },
                     "MachineGun":  {
                                        "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
                                        "DefaultFireMode":  "Auto",
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
-                                       "CrosshairColor":  "0x00ff66",
+                                       "CrosshairColor":  "0x66FF00",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  975,
@@ -211,7 +212,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleDynamicCross",
+                                       "Crosshair":  "@VehicleCommonCannon",
                                        "Name":  "dragonrise_reforge:mg42",
                                        "SoundInfo":  {
                                                          "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
@@ -227,7 +228,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "0x00ff66",
+                                                "CrosshairColor":  "0x66FF00",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  600,
@@ -246,7 +247,7 @@
                                                                  "Positions":  [[0.016075, -0.171408, 1.498471]],
                                                                  "Directions":  [[0, 0, 1]]
                                                              },
-                                                "Crosshair":  "@VehicleDynamicCross",
+                                                "Crosshair":  "@VehicleCommonGun",
                                                 "Name":  "dragonrise_reforge:mg34",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
@@ -258,7 +259,7 @@
                                                 "SoundRadius":  16
                                             }
                 },
-    "HUDColor":  "0x00ff66",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0,

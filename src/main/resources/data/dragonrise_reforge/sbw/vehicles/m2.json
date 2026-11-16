@@ -69,7 +69,7 @@
       "DefaultFireMode":  "Auto",
       "AvailableFireModes":  "Auto",
       "Spread":  0.25,
-      "CrosshairColor":  "0x00ff66",
+      "CrosshairColor":  "0x66FF00",
       "Projectile":  "superbwarfare:projectile",
       "DefaultZoom":  3,
       "RPM":  600,
@@ -106,7 +106,8 @@
           "dragonrise_reforge:hmg_reload_5s"
         ]
       },
-      "SoundRadius":  16
+      "SoundRadius":  16,
+      "Crosshair": "@VehicleCommonGun"
     }
   },
   "ThirdPersonCameraPos":  [
@@ -157,5 +158,6 @@
       "Texture":  "dragonrise_reforge:textures/entity/m2.png"
     }
   ],
-  "OBB": []
+  "OBB": [],
+  "HUDColor": "0x66FF00"
 }

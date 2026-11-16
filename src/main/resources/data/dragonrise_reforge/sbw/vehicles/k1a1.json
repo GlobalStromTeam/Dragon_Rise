@@ -209,7 +209,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleUsTank",
       "Name": "dragonrise_reforge:M60E2",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m240_fire_1p",

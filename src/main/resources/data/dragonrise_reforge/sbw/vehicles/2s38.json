@@ -189,8 +189,8 @@
                                                   ],
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  20,
-                                   "Crosshair":  "@VehicleUsApc",
-                                   "CrosshairColor":  "0x00ff66",
+                                   "Crosshair":  "@VehicleCommonGunDynamic",
+                                   "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:3UBM22",
                                    "Gravity":  0.05,
                                    "AmmoType":  [
@@ -246,7 +246,7 @@
                                        "DefaultFireMode":  "Auto",
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
-                                       "CrosshairColor":  "0x00ff66",
+                                       "CrosshairColor":  "0x66FF00",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  600,
@@ -287,7 +287,7 @@
                                        "SoundRadius":  12
                                    }
                 },
-    "HUDColor":  "0xFFC700",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0.052,

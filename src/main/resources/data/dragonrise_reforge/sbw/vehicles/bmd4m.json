@@ -191,8 +191,8 @@
                                                         ],
                                          "Spread":  0.02,
                                          "ShootAnimationTime":  40,
-                                         "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
-                                         "CrosshairColor":  "0x00ff66",
+                                         "Crosshair":  "@VehicleRuApc",
+                                         "CrosshairColor":  "0x66FF00",
                                          "Name":  "dragonrise_reforge:3of70",
                                          "AmmoType":  [
                                                           "superbwarfare:large_shell_he",
@@ -200,7 +200,7 @@
                                                               "Ammo":  "superbwarfare:medium_anti_ground_missile",
                                                               "Override":  {
                                                                                "Spread":  0.5,
-                                                                               "CrosshairColor":  "0xFFC700",
+                                                                               "CrosshairColor":  "0x66FF00",
                                                                                "Name":  "dragonrise_reforge:9M117M1",
                                                                                "Projectile":  "superbwarfare:wire_guide_missile",
                                                                                "IsArmorPiercingProjectile":  true,
@@ -211,7 +211,7 @@
                                                                                "Gravity":  0.05,
                                                                                "RecoilTime":  18,
                                                                                "RecoilForce":  0.05,
-                                                                               "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
+                                                                               "Crosshair":  "@VehicleCommonMissile",
                                                                                "SoundInfo":  {
                                                                                                  "Fire1P":  "dragonrise_reforge:aps03_fire_1p",
                                                                                                  "Fire3P":  "dragonrise_reforge:aps03_fire_3p",
@@ -255,7 +255,7 @@
                                            "DefaultFireMode":  "Auto",
                                            "AvailableFireModes":  "Auto",
                                            "Spread":  0.25,
-                                           "CrosshairColor":  "0x00ff66",
+                                           "CrosshairColor":  "0x66FF00",
                                            "Projectile":  "superbwarfare:projectile",
                                            "DefaultZoom":  3,
                                            "Magazine":  250,
@@ -278,7 +278,7 @@
                                                                                "Barrel"
                                                                            ]
                                                         },
-                                           "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
+                                           "Crosshair":  "@VehicleRuApc",
                                            "Name":  "dragonrise_reforge:pkt",
                                            "SoundInfo":  {
                                                              "Fire1P":  "dragonrise_reforge:pkt_fire_1p",
@@ -312,7 +312,7 @@
                                    "ShootAnimationTime":  3,
                                    "Spread":  0.25,
                                    "ProjectileLife":  40,
-                                   "Crosshair":  "@VehicleUsApc",
+                                   "Crosshair":  "@VehicleRuApc",
                                    "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:30mm_apt_ap",
                                    "Projectile":  "superbwarfare:small_cannon_shell",
@@ -353,7 +353,7 @@
                                                 }
                                }
                 },
-    "HUDColor":  "0xFFC700",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0.052,

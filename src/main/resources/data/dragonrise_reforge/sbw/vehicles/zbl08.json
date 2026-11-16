@@ -274,7 +274,7 @@
       "ShootAnimationTime":  3,
       "Spread":  0.167,
       "ProjectileLife":  40,
-      "Crosshair":  "@VehicleUsApc",
+      "Crosshair":  "@VehicleCnTank",
       "CrosshairColor":  "0x66FF00",
       "Name":  "dragonrise_reforge:30mm_dtc04_30_apds",
       "Projectile":  "superbwarfare:small_cannon_shell",
@@ -318,7 +318,7 @@
       "DefaultFireMode":  "Auto",
       "AvailableFireModes":  "Auto",
       "Spread":  0.25,
-      "CrosshairColor":  "0x00ff66",
+      "CrosshairColor":  "0x66FF00",
       "Projectile":  "superbwarfare:projectile",
       "DefaultZoom":  3,
       "RPM":  800,
@@ -341,7 +341,7 @@
           "Barrel"
         ]
       },
-      "Crosshair":  "@VehicleCommonGun",
+      "Crosshair":  "@VehicleCnTank",
       "Name":  "dragonrise_reforge:QJT",
       "SoundInfo":  {
         "Fire1P":  "dragonrise_reforge:qjt_fire_1p",
@@ -365,7 +365,7 @@
       "HeatPerShoot":  0.5,
       "Spread":  0.5,
       "RPM":  30,
-      "CrosshairColor":  "0xFFC700",
+      "CrosshairColor":  "0x66FF00",
       "Name":  "dragonrise_reforge:hj73c",
       "AmmoType":  "superbwarfare:medium_anti_ground_missile",
       "Projectile":  "superbwarfare:wire_guide_missile",
@@ -534,5 +534,6 @@
       "Model":  "dragonrise_reforge:models/bedrock/vehicle/zbl08.geo.json",
       "Texture":  "dragonrise_reforge:textures/entity/zbl08.png"
     }
-  ]
+  ],
+  "HUDColor": "0x66FF00"
 }

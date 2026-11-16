@@ -146,7 +146,7 @@
       "ShootAnimationTime": 3,
       "Spread": 0.167,
       "ProjectileLife": 40,
-      "Crosshair": "@VehicleUsApc",
+      "Crosshair": "@VehicleRuApc",
       "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:kord",
       "SoundInfo": {
@@ -180,7 +180,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 650,
@@ -203,7 +203,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleRuApc",
       "Name": "dragonrise_reforge:rpk",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m240_fire_1p",
@@ -221,7 +221,7 @@
       "SoundRadius": 12
     }
   },
-  "HUDColor": "0xFFC700",
+  "HUDColor": "0x66FF00",
   "EngineType": "Wheel",
   "EngineInfo": {
     "Buoyancy": 0,

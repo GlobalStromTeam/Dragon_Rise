@@ -168,7 +168,7 @@
                                                   ],
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  40,
-                                   "Crosshair":  "@VehicleDynamicCross",
+                                   "Crosshair":  "@VehicleCommonCannon",
                                    "CrosshairColor":  "0x00ff66",
                                    "Name":  "dragonrise_reforge:type94",
                                    "AmmoType":  "superbwarfare:small_shell_ap",
@@ -190,7 +190,8 @@
                                                     "Directions":  [
                                                                        "Barrel"
                                                                    ]
-                                                }
+                                                },
+                                   "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
                                },
                     "MachineGun":  {
                                        "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/7_7mm.png",
@@ -225,7 +226,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleDynamicCross",
+                                       "Crosshair":  "@VehicleCommonCannon",
                                        "Name":  "dragonrise_reforge:type11",
                                        "SoundInfo":  {
                                                          "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
@@ -267,7 +268,7 @@
                                                                                     "WeaponStationBarrel"
                                                                                 ]
                                                              },
-                                                "Crosshair":  "@VehicleDynamicCross",
+                                                "Crosshair":  "@VehicleCommonGun",
                                                 "Name":  "dragonrise_reforge:type97_mg",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "superbwarfare:m_2_hb_fire_1p",

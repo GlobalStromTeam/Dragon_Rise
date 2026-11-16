@@ -183,7 +183,7 @@
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0xFF0000",
       "Name": "dragonrise_reforge:dtc10105",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -204,7 +204,7 @@
           "Ammo": "superbwarfare:medium_anti_ground_missile",
           "Override": {
             "Spread": 0.5,
-            "CrosshairColor": "0xFFC700",
+            "CrosshairColor": "0xFF0000",
             "Name": "dragonrise_reforge:gp105",
             "Projectile": "superbwarfare:wire_guide_missile",
             "IsArmorPiercingProjectile": true,
@@ -260,7 +260,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0xFF0000",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 800,
@@ -289,7 +289,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
       "Name": "dragonrise_reforge:QJT",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:qjt_fire_1p",
@@ -311,7 +311,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0xFF0000",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
@@ -495,5 +495,6 @@
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/ztd05.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/ztd05.png"
-  }
+  },
+  "HUDColor": "0xFF0000"
 }

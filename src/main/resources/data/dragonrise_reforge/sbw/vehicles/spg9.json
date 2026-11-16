@@ -43,7 +43,7 @@
       "RecoilForce": 0.09,
       "ShootShake": [6,7,40],
       "ShootAnimationTime": 30,
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleCommonCannon",
       "AmmoType": "superbwarfare:medium_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
@@ -68,7 +68,8 @@
           "dragonrise_reforge:manual_reload_4s"
         ]
       },
-      "SoundRadius": 32
+      "SoundRadius": 32,
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     }
   },
   "ThirdPersonCameraPos": [-0.4,1.1,-1.6],

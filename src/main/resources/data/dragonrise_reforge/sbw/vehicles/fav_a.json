@@ -231,7 +231,7 @@
                                    "ShootAnimationTime":  3,
                                    "Spread":  0.6,
                                    "Crosshair":  "@VehicleCommonGun",
-                                   "CrosshairColor":  "0xFFC700",
+                                   "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:m2hb",
                                    "SoundInfo":  {
                                                      "Fire1P":  "dragonrise_reforge:zbd04a_30mm_fire_1p",
@@ -336,5 +336,6 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/fav_a.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/fav.png"
                    }
-               ]
+               ],
+    "HUDColor": "0x66FF00"
 }

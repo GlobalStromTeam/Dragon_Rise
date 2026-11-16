@@ -242,7 +242,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleCommonGun",
+                                       "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
                                        "Name":  "dragonrise_reforge:coax_fusion_cycler",
                                        "SoundInfo":  {
                                                          "Fire1P":  "dragonrise_reforge:cyborg_tank_fire_coax",

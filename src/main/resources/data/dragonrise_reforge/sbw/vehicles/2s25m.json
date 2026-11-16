@@ -293,7 +293,7 @@
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  35,
                                    "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
-                                   "CrosshairColor":  "0x00ff66",
+                                   "CrosshairColor":  "0xFF0000",
                                    "Name":  "dragonrise_reforge:3BM60",
                                    "AmmoType":  [
                                                     "superbwarfare:large_shell_ap",
@@ -339,8 +339,8 @@
                                        "DefaultFireMode":  "Auto",
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
-                                       "Crosshair":  "@VehicleUsTank",
-                                       "CrosshairColor":  "0x00ff66",
+                                       "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
+                                       "CrosshairColor":  "0xFF0000",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  700,
@@ -384,7 +384,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "#2d6dda",
+                                                "CrosshairColor":  "0xFF0000",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  700,
@@ -425,7 +425,7 @@
                                                 "SoundRadius":  12
                                             }
                 },
-    "HUDColor":  "0x00ff66",
+    "HUDColor":  "0xFF0000",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0,

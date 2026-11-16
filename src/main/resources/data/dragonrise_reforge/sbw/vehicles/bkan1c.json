@@ -52,8 +52,8 @@
       "Spread": 0.06,
       "ProjectileLife": 800,
       "ShootAnimationTime": 30,
-      "Crosshair": "@VehicleRuApc",
-      "CrosshairColor": "0x00ff66",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:155mm_m60",
       "SoundInfo": {
         "Fire1P": "superbwarfare:plz_05_fire_1p",
@@ -114,7 +114,8 @@
         "Directions": [
           "Barrel"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     }
   },
   "Mass": 45,
@@ -151,7 +152,7 @@
     "@superbwarfare:tm_62 * 2.8",
     "$entity.getSourceAngle(source, 0.3) * damage"
   ],
-  "HUDColor": "0x00ff66",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

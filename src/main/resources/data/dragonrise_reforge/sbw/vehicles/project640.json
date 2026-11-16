@@ -223,7 +223,7 @@
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  40,
                                    "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
-                                   "CrosshairColor":  "#da2d2d",
+                                   "CrosshairColor":  "0xFF0000",
                                    "Name":  "dragonrise_reforge:3BM60",
                                    "AmmoType":  [
                                                     "superbwarfare:large_shell_ap",
@@ -269,7 +269,7 @@
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
                                        "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
-                                       "CrosshairColor":  "#da2d2d",
+                                       "CrosshairColor":  "0xFF0000",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  700,
@@ -318,7 +318,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "#da2d2d",
+                                                "CrosshairColor":  "0xFF0000",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  700,
@@ -351,7 +351,7 @@
                                                 "SoundRadius":  16
                                             }
                 },
-    "HUDColor":  "#da2d2d",
+    "HUDColor":  "0xFF0000",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0,

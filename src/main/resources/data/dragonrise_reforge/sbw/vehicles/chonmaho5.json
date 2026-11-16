@@ -127,7 +127,7 @@
       "ShootShake": [0.5,0.5,0.5],
       "Spread": 0.03,
       "ShootAnimationTime": 35,
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "CrosshairColor": "0x8B0000",
       "Name": "dragonrise_reforge:chonmaho5_115mm",
       "AmmoType": [
@@ -198,7 +198,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/ru_tank_cannon_cross.png",
       "Name": "dragonrise_reforge:pkt",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:pkt_fire_1p",

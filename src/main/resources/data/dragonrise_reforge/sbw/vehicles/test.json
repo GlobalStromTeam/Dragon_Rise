@@ -163,7 +163,7 @@
                                    "Spread":  0.02,
                                    "ShootAnimationTime":  40,
                                    "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/fr_tank_cannon_cross.png",
-                                   "CrosshairColor":  "0x00ff66",
+                                   "CrosshairColor":  "0x66FF00",
                                    "Name":  "dragonrise_reforge:ofl120f1",
                                    "AmmoType":  [
                                                     "superbwarfare:large_shell_ap",
@@ -212,7 +212,7 @@
                                        "DefaultFireMode":  "Auto",
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
-                                       "CrosshairColor":  "0x00ff66",
+                                       "CrosshairColor":  "0x66FF00",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  575,
@@ -239,7 +239,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleCommonGun",
+                                       "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/fr_tank_cannon_cross.png",
                                        "Name":  "dragonrise_reforge:crcf1",
                                        "SoundInfo":  {
                                                          "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
@@ -255,7 +255,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "0x00ff66",
+                                                "CrosshairColor":  "0x66FF00",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  600,
@@ -294,7 +294,7 @@
                                                 "SoundRadius":  16
                                             }
                 },
-    "HUDColor":  "0x00ff66",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Track",
     "EngineInfo":  {
                        "Buoyancy":  0,

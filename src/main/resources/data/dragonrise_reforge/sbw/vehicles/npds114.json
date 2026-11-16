@@ -70,7 +70,7 @@
                                                 ],
                                  "Spread":  0.02,
                                  "ShootAnimationTime":  40,
-                                 "Crosshair":  "@VehicleDynamicCross",
+                                 "Crosshair":  "@VehicleCommonCannon",
                                  "CrosshairColor":  "0x00ff66",
                                  "Name":  "dragonrise_reforge:type59ap",
                                  "AmmoType":  "superbwarfare:large_shell_ap",
@@ -92,7 +92,8 @@
                                               },
                                  "SoundInfo":  {
                                                    "FireSoundInstances":  "dragonrise_reforge:fire_sound_57mm"
-                                               }
+                                               },
+                                 "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
                              }
                 },
     "Mass":  30,

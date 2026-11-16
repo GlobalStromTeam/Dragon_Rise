@@ -246,7 +246,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "0x00ff66",
+                                                "CrosshairColor":  "0x66FF00",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  600,
@@ -269,7 +269,7 @@
                                                                                     "Barrel"
                                                                                 ]
                                                              },
-                                                "Crosshair":  "dragonrise_reforge:textures/overlay/vehicle/crosshair/common_gun_little.png",
+                                                "Crosshair":  "@VehicleCommonGun",
                                                 "Name":  "dragonrise_reforge:m2hb",
                                                 "SoundInfo":  {
                                                                   "Fire1P":  "dragonrise_reforge:m2hb_fire_1p",
@@ -287,7 +287,7 @@
                                                 "SoundRadius":  16
                                             }
                 },
-    "HUDColor":  "0xFFC700",
+    "HUDColor":  "0x66FF00",
     "EngineType":  "Wheel",
     "EngineInfo":  {
                        "Buoyancy":  0.052,

@@ -265,7 +265,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleCommonGun",
+                                       "Crosshair":  "@VehicleUsTank",
                                        "Name":  "dragonrise_reforge:M240",
                                        "SoundInfo":  {
                                                          "Fire1P":  "superbwarfare:m_2_hb_fire_1p",
@@ -335,7 +335,8 @@
                                                                             "ExplosionDamage":  0,
                                                                             "ExplosionRadius":  0,
                                                                             "Projectile":  "superbwarfare:projectile",
-                                                                            "Name":  "dragonrise_reforge:30mm_shotgun"
+                                                                            "Name":  "dragonrise_reforge:30mm_shotgun",
+                                                                            "Crosshair": "@VehicleUsTank"
                                                                         }
                                                        }
                                                    ],

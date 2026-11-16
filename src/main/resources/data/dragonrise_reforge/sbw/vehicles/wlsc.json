@@ -270,5 +270,6 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/wlsc.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/wlsc.png"
                    }
-               ]
+               ],
+    "HUDColor": "0x66FF00"
 }

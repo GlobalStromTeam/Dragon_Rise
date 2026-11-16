@@ -346,7 +346,7 @@
                                        "DefaultFireMode":  "Auto",
                                        "AvailableFireModes":  "Auto",
                                        "Spread":  0.25,
-                                       "CrosshairColor":  "0x00ff66",
+                                       "CrosshairColor":  "0x66FF00",
                                        "Projectile":  "superbwarfare:projectile",
                                        "DefaultZoom":  3,
                                        "RPM":  700,
@@ -369,7 +369,7 @@
                                                                            "Barrel"
                                                                        ]
                                                     },
-                                       "Crosshair":  "@VehicleCommonGun",
+                                       "Crosshair":  "@VehicleUsApc",
                                        "Name":  "dragonrise_reforge:t74",
                                        "SoundInfo":  {
                                                          "Fire1P":  "dragonrise_reforge:m240_fire_1p",
@@ -391,7 +391,7 @@
                                                 "DefaultFireMode":  "Auto",
                                                 "AvailableFireModes":  "Auto",
                                                 "Spread":  0.25,
-                                                "CrosshairColor":  "0x00ff66",
+                                                "CrosshairColor":  "0x66FF00",
                                                 "Projectile":  "superbwarfare:projectile",
                                                 "DefaultZoom":  3,
                                                 "RPM":  800,
@@ -575,5 +575,6 @@
                        "Model":  "dragonrise_reforge:models/bedrock/vehicle/cm34.geo.json",
                        "Texture":  "dragonrise_reforge:textures/entity/cm34.png"
                    }
-               ]
+               ],
+    "HUDColor": "0x66FF00"
 }

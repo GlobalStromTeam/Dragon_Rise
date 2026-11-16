@@ -197,7 +197,7 @@
       "RecoilForce": 0.62,
       "ShootAnimationTime": 3,
       "Spread": 0.5,
-      "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
+      "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0xFFC700",
       "Name": "dragonrise_reforge:hyr020",
       "SoundInfo": {

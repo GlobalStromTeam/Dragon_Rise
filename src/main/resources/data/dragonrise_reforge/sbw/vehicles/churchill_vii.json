@@ -141,8 +141,8 @@
       "ShootShake": [10,14,70],
       "Spread": 0.02,
       "ShootAnimationTime": 48,
-      "Crosshair": "@VehicleDynamicCross",
-      "CrosshairColor": "0x8B0000",
+      "Crosshair": "@VehicleCommonCannon",
+      "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:75mmAPHE",
       "AmmoType": [
         "superbwarfare:large_shell_ap",
@@ -178,14 +178,15 @@
         "Directions": [
           "Barrel"
         ]
-      }
+      },
+      "CrosshairZooming": "superbwarfare:textures/overlay/vehicle/crosshair/common_cannon_zooming.png"
     },
     "MachineGun": {
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_7_62mm.png",
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x8B0000",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 900,
@@ -206,7 +207,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleDynamicCross",
+      "Crosshair": "@VehicleCommonCannon",
       "Name": "dragonrise_reforge:besa",
       "SoundInfo": {
         "Fire1P": "superbwarfare:m_2_hb_fire_1p",
@@ -222,7 +223,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x8B0000",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 900,
@@ -257,7 +258,7 @@
       "SoundRadius": 16
     }
   },
-  "HUDColor": "0x8B0000",
+  "HUDColor": "0x66FF00",
   "EngineType": "Track",
   "EngineInfo": {
     "Buoyancy": 0,

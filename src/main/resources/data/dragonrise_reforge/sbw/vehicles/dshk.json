@@ -106,7 +106,8 @@
           "dragonrise_reforge:hmg_reload_5s"
         ]
     },
-      "SoundRadius":  16
+      "SoundRadius":  16,
+      "Crosshair": "@VehicleCommonGun"
     }
   },
   "ThirdPersonCameraPos":  [

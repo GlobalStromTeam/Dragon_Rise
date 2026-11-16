@@ -252,7 +252,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 700,
@@ -275,7 +275,7 @@
           "Barrel"
         ]
       },
-      "Crosshair": "@VehicleCommonGun",
+      "Crosshair": "@VehicleUsApc",
       "Name": "dragonrise_reforge:M240",
       "SoundInfo": {
         "Fire1P": "dragonrise_reforge:m240_fire_1p",
@@ -297,7 +297,7 @@
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "Spread": 0.25,
-      "CrosshairColor": "0x00ff66",
+      "CrosshairColor": "0x66FF00",
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 800,
@@ -447,5 +447,6 @@
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/m1296.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/m1296.png"
-  }
+  },
+  "HUDColor": "0x66FF00"
 }
