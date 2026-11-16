@@ -197,19 +197,22 @@ public class R9M133Entity extends VehicleEntity {
     @Override
     public void vehicleShoot(LivingEntity living, String weaponName, Vec3 targetPos) {
         super.vehicleShoot(living, weaponName, targetPos);
-        onFired(living);
+        com.redabysslucia.dragonrise_reforge.entities.utils.MissileLaunchEffects.afterLaunch(
+                this, getGunData(0), () -> onFired(living));
     }
 
     @Override
     public void vehicleShoot(LivingEntity living, String weaponName, UUID uuid, Vec3 targetPos) {
         super.vehicleShoot(living, weaponName, uuid, targetPos);
-        onFired(living);
+        com.redabysslucia.dragonrise_reforge.entities.utils.MissileLaunchEffects.afterLaunch(
+                this, getGunData(0), () -> onFired(living));
     }
 
     @Override
     public void vehicleShoot(LivingEntity living, UUID uuid, Vec3 targetPos) {
         super.vehicleShoot(living, uuid, targetPos);
-        onFired(living);
+        com.redabysslucia.dragonrise_reforge.entities.utils.MissileLaunchEffects.afterLaunch(
+                this, getGunData(0), () -> onFired(living));
     }
 
     /** 三种开火入口共用的收尾：状态机 + 冷却 + 尾焰 + 粒子 */

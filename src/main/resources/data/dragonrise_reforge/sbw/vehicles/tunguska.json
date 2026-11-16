@@ -255,8 +255,8 @@
         ]
       },
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bomb_release",
-        "Fire3P": "superbwarfare:bomb_release",
+        "Fire1P": "dragonrise_reforge:missile_delay_sbw_bomb_release_fire1p",
+        "Fire3P": "dragonrise_reforge:missile_delay_sbw_bomb_release_fire3p",
         "VehicleReload3p": "minecraft:intentionally_empty",
         "VehicleReloadSoundTime": 0,
         "Change":  "dragonrise_reforge:change_weapon",
@@ -266,7 +266,8 @@
       },
       "CrosshairColor": "0x66FF00",
       "Crosshair": "@VehicleCommonSeekMissile",
-      "SoundRadius": 8
+      "SoundRadius": 8,
+      "ShootDelayTime": 30
     }
   },
   "EngineType": "Track",

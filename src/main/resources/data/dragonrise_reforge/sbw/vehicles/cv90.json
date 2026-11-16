@@ -369,7 +369,8 @@
                                                                                                    "MaxTargetHeight":  32,
                                                                                                    "MinTargetSize":  0.9,
                                                                                                    "OnlyLockBlock":  true
-                                                                                               }
+                                                                                               },
+                                                                          "ShootDelayTime": 30
                                                                       }
                                                      }
                                                  ],
@@ -402,15 +403,16 @@
                                                  },
                                     "Crosshair":  "@VehicleCommonSeekMissile",
                                     "SoundInfo":  {
-                                                      "Fire1P":  "superbwarfare:bmp_2_missile_fire_1p",
-                                                      "Fire3P":  "superbwarfare:bmp_2_missile_fire_3p",
+                                                      "Fire1P":  "dragonrise_reforge:missile_delay_sbw_bmp_2_missile_fire_1p_fire1p",
+                                                      "Fire3P":  "dragonrise_reforge:missile_delay_sbw_bmp_2_missile_fire_3p_fire3p",
                                                       "VehicleReload3p":  "minecraft:intentionally_empty",
                                                       "VehicleReloadSoundTime":  0,
                                                       "Change":  "dragonrise_reforge:change_weapon",
                                                       "VehicleReload": "minecraft:intentionally_empty"
                                                   },
                                     "SoundRadius":  12,
-                                    "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_spike-lr.png"
+                                    "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_spike-lr.png",
+                                    "ShootDelayTime": 30
                                 }
                 },
     "HUDColor":  "0xFF0000",

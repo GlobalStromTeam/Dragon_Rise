@@ -365,18 +365,19 @@
                                                  },
                                     "Crosshair":  "@VehicleCommonMissile",
                                     "SoundInfo":  {
-                                      "Fire1P": "dragonrise_reforge:9m113_fire_1p",
-                                      "Fire3P": "dragonrise_reforge:9m113_fire_3p",
+                                      "Fire1P": "dragonrise_reforge:missile_delay_9m113_fire_1p_fire1p",
+                                      "Fire3P": "dragonrise_reforge:missile_delay_9m113_fire_3p_fire3p",
                                       "VehicleReloadSoundTime": 0,
                                       "Change": "dragonrise_reforge:change_weapon",
-                                      "Fire3PFar": "dragonrise_reforge:9m113_fire_3p_far",
-                                      "Fire3PVeryFar": "dragonrise_reforge:9m113_fire_3p_very_far",
+                                      "Fire3PFar": "dragonrise_reforge:missile_delay_9m113_fire_3p_far_fire3pfar",
+                                      "Fire3PVeryFar": "dragonrise_reforge:missile_delay_9m113_fire_3p_very_far_fire3pveryfar",
                                       "VehicleReload": "minecraft:intentionally_empty",
                                       "CancellableSounds": [],
                                       "VehicleReload3p": "minecraft:intentionally_empty"
                                     },
                                     "SoundRadius":  12,
-                                    "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png"
+                                    "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_9m120.png",
+                                    "ShootDelayTime": 30
                                 }
                 },
     "HUDColor":  "0x66FF00",

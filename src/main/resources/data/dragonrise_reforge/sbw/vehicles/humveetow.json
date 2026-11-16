@@ -268,8 +268,8 @@
                                                                     ]
                                                  },
                                     "SoundInfo":  {
-                                                      "Fire1P":  "dragonrise_reforge:tow_fire_1p",
-                                                      "Fire3P":  "dragonrise_reforge:tow_fire_3p",
+                                                      "Fire1P":  "dragonrise_reforge:missile_delay_tow_fire_1p_fire1p",
+                                                      "Fire3P":  "dragonrise_reforge:missile_delay_tow_fire_3p_fire3p",
                                                       "Change": "dragonrise_reforge:change_weapon",
                                                       "VehicleReload": "minecraft:intentionally_empty",
                                                       "VehicleReload3p": "minecraft:intentionally_empty"
@@ -277,7 +277,8 @@
                                     "SoundRadius":  12,
                                     "Icon":  "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
                                     "Crosshair":  "@VehicleCommonMissile",
-                                    "CrosshairColor": "0x66FF00"
+                                    "CrosshairColor": "0x66FF00",
+                                    "ShootDelayTime": 30
                                 }
                 },
     "HUDColor":  "0x66FF00",

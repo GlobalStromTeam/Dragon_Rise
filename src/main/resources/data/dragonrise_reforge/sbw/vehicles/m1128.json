@@ -180,16 +180,17 @@
             "RecoilForce": 0.05,
             "Crosshair": "@VehicleCommonMissile",
             "SoundInfo": {
-              "Fire1P": "superbwarfare:m_1a_2_fire_1p",
-              "Fire3P": "superbwarfare:m_1a_2_fire_3p",
-              "Fire3PFar": "superbwarfare:m_1a_2_far",
-              "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
+              "Fire1P": "dragonrise_reforge:missile_delay_sbw_m_1a_2_fire_1p_fire1p",
+              "Fire3P": "dragonrise_reforge:missile_delay_sbw_m_1a_2_fire_3p_fire3p",
+              "Fire3PFar": "dragonrise_reforge:missile_delay_sbw_m_1a_2_far_fire3pfar",
+              "Fire3PVeryFar": "dragonrise_reforge:missile_delay_sbw_m_1a_2_veryfar_fire3pveryfar",
               "VehicleReload3p": "superbwarfare:medium_missile_reload",
               "VehicleReloadSoundTime": 28,
               "Change": "dragonrise_reforge:change_weapon"
             },
             "SoundRadius": 12,
-            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_105.png"
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_gp_105.png",
+            "ShootDelayTime": 30
           }
         }
       ],

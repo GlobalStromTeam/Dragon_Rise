@@ -393,15 +393,16 @@
       },
       "Crosshair":  "@VehicleCommonMissile",
       "SoundInfo":  {
-        "Fire1P":  "dragonrise_reforge:hj73c_fire_1p",
-        "Fire3P":  "dragonrise_reforge:hj73c_fire_3p",
+        "Fire1P":  "dragonrise_reforge:missile_delay_hj73c_fire_1p_fire1p",
+        "Fire3P":  "dragonrise_reforge:missile_delay_hj73c_fire_3p_fire3p",
         "VehicleReload3p":  "minecraft:intentionally_empty",
         "VehicleReloadSoundTime":  0,
         "Change":  "dragonrise_reforge:change_weapon",
         "VehicleReload": "minecraft:intentionally_empty"
       },
       "SoundRadius":  12,
-      "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_hj-73c.png"
+      "Icon":  "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_hj-73c.png",
+      "ShootDelayTime": 30
     }
   },
   "EngineType":  "Track",

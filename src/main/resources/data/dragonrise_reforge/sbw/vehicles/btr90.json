@@ -575,10 +575,10 @@
       "CrosshairColor": "0x66FF00",
       "Name": "dragonrise_reforge:9m113",
       "SoundInfo": {
-        "Fire1P": "dragonrise_reforge:9m113_fire_1p",
-        "Fire3P": "dragonrise_reforge:9m113_fire_3p",
-        "Fire3PFar": "dragonrise_reforge:9m113_fire_3p_far",
-        "Fire3PVeryFar": "dragonrise_reforge:9m113_fire_3p_very_far",
+        "Fire1P": "dragonrise_reforge:missile_delay_9m113_fire_1p_fire1p",
+        "Fire3P": "dragonrise_reforge:missile_delay_9m113_fire_3p_fire3p",
+        "Fire3PFar": "dragonrise_reforge:missile_delay_9m113_fire_3p_far_fire3pfar",
+        "Fire3PVeryFar": "dragonrise_reforge:missile_delay_9m113_fire_3p_very_far_fire3pveryfar",
         "VehicleReload": "minecraft:intentionally_empty",
         "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
@@ -593,7 +593,8 @@
         ],
         "BoundUpWithAmmoAmount": true
       },
-      "AmmoType": "superbwarfare:medium_anti_ground_missile"
+      "AmmoType": "superbwarfare:medium_anti_ground_missile",
+      "ShootDelayTime": 30
     },
     "GrenadeLauncher": {
       "DefaultFireMode": "Auto",

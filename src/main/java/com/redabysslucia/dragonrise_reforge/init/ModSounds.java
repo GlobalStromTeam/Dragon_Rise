@@ -68,6 +68,28 @@ public class ModSounds {
     /** 载具音效（开火/装填/引擎等）。仅写 sounds.json 不会被注册进 ForgeRegistries.SOUND_EVENTS，
      *  1.20.1 里 Level.playSound 需要 Holder<SoundEvent>，未注册的事件会静默失败。 */
     private static final String[] VEHICLE_SOUNDS = {
+        // Native 30-tick missile launch timelines: trigger, then unchanged launch audio.
+        "missile_delay_sbw_bomb_release_fire1p",
+        "missile_delay_sbw_bomb_release_fire3p",
+        "missile_delay_9m113_fire_1p_fire1p",
+        "missile_delay_9m113_fire_3p_fire3p",
+        "missile_delay_aps03_fire_1p_fire1p",
+        "missile_delay_aps03_fire_3p_fire3p",
+        "missile_delay_aps03_fire_3p_far_fire3pfar",
+        "missile_delay_aps03_fire_3p_very_far_fire3pveryfar",
+        "missile_delay_9m113_fire_3p_far_fire3pfar",
+        "missile_delay_9m113_fire_3p_very_far_fire3pveryfar",
+        "missile_delay_sbw_bmp_2_missile_fire_1p_fire1p",
+        "missile_delay_sbw_bmp_2_missile_fire_3p_fire3p",
+        "missile_delay_hj8_fire_1p_fire1p",
+        "missile_delay_tow_fire_1p_fire1p",
+        "missile_delay_tow_fire_3p_fire3p",
+        "missile_delay_sbw_m_1a_2_fire_1p_fire1p",
+        "missile_delay_sbw_m_1a_2_fire_3p_fire3p",
+        "missile_delay_sbw_m_1a_2_far_fire3pfar",
+        "missile_delay_sbw_m_1a_2_veryfar_fire3pveryfar",
+        "missile_delay_hj73c_fire_1p_fire1p",
+        "missile_delay_hj73c_fire_3p_fire3p",
         "change_weapon",
         "cyborg_tank_engine",
         "cyborg_tank_fire_1p",
