@@ -30,6 +30,8 @@ public class Dragonrise_reforge {
         public static final Logger LOGGER = LogUtils.getLogger();
 
         public Dragonrise_reforge() {
+        net.minecraftforge.fml.ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.SERVER,
+                com.redabysslucia.dragonrise_reforge.config.GroundMissileConfig.SPEC, "dragonrise_reforge-missiles-server.toml");
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(bus);

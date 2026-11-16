@@ -6,6 +6,11 @@
   "refmap": "dragonrise_reforge.refmap.json",
   "plugin": "com.redabysslucia.dragonrise_reforge.mixin.DragonriseMixinPlugin",
   "mixins": [
+    "GroundMissileLaunchMixin",
+    "GroundMissileTurnMixin",
+    "GroundMissileSpawnDataMixin",
+    "GroundMissileBvrDataMixin",
+    "VehicleMissileLaunchGateMixin",
     "VehicleChangeWeaponSoundMixin",
     "DroneDestroyKeepWreckMixin",
     "VehicleFireMessageRemoteMixin",
@@ -24,6 +29,7 @@
     "DetonatorItemMixin"
   ],
   "client": [
+    "ClientMissileLaunchGateMixin",
     "ClientEventHandlerRemoteGunShootMixin",
     "VehicleMainWeaponHudOverlayRemoteMixin",
     "AircraftHudWeaponNameMixin",

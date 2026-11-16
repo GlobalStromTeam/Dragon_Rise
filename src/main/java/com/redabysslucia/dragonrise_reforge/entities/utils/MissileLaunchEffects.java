@@ -12,6 +12,7 @@ public final class MissileLaunchEffects {
 
     public static void afterLaunch(VehicleEntity vehicle, GunData gun, Runnable effects) {
         if (vehicle.level().isClientSide() || gun == null) return;
+        if (!MissileLaunchGate.claimEffects(vehicle)) return;
         int delay = gun.get(GunProp.SHOOT_DELAY_TIME);
         Runnable launch = () -> {
             if (!vehicle.isRemoved() && !vehicle.isWreck()) effects.run();
