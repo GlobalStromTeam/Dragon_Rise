@@ -713,8 +713,9 @@
   "item.dragonrise_reforge.sawkm1_pants": "SAWKM-1 Soldier Leggings",
   "item.dragonrise_reforge.honf_helmet": "HONF Soldier Helmet",
   "item.dragonrise_reforge.honf_chest": "HONF Soldier Chestplate",
-  "item.dragonrise_reforge.honf_pants": "HONF Soldier Leggings"
+  "item.dragonrise_reforge.honf_pants": "HONF Soldier Leggings",
   "info.dragonrise_reforge.ef2000": "EF-2000 Typhoon: interchangeable air-to-air and guided-bomb stores.",
   "subtitles.dragonrise_reforge.uniform_gear_walk": "Gear rustles",
-  "subtitles.dragonrise_reforge.uniform_gear_sprint": "Clothing and gear rustle"
+  "subtitles.dragonrise_reforge.uniform_gear_sprint": "Clothing and gear rustle",
+  "subtitles.dragonrise_reforge.uniform_gear_land": "Gear hits the ground"
 }

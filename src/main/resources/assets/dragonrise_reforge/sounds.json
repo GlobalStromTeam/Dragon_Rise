@@ -2187,5 +2187,25 @@
         "attenuation_distance": 8
       }
     ]
+  },
+  "uniform_gear_land_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_land_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
   }
 }

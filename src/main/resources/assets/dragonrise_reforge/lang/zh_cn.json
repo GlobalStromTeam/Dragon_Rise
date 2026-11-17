@@ -713,8 +713,9 @@
   "item.dragonrise_reforge.sawkm1_pants": "SAWKM-1 士兵护腿",
   "item.dragonrise_reforge.honf_helmet": "HONF 士兵头盔",
   "item.dragonrise_reforge.honf_chest": "HONF 士兵作战服",
-  "item.dragonrise_reforge.honf_pants": "HONF 士兵护腿"
+  "item.dragonrise_reforge.honf_pants": "HONF 士兵护腿",
   "info.dragonrise_reforge.ef2000": "EF-2000 台风多用途战斗机，配备可更换的空空导弹与制导炸弹挂载。",
   "subtitles.dragonrise_reforge.uniform_gear_walk": "装具摩擦",
-  "subtitles.dragonrise_reforge.uniform_gear_sprint": "衣服与装具晃动"
+  "subtitles.dragonrise_reforge.uniform_gear_sprint": "衣服与装具晃动",
+  "subtitles.dragonrise_reforge.uniform_gear_land": "装具落地"
 }

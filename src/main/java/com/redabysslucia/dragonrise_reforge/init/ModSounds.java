@@ -12,10 +12,16 @@ public class ModSounds {
 
     public static final java.util.List<RegistryObject<SoundEvent>> UNIFORM_GEAR_WALK = registerMovementSounds("uniform_gear_walk");
     public static final java.util.List<RegistryObject<SoundEvent>> UNIFORM_GEAR_SPRINT = registerMovementSounds("uniform_gear_sprint");
+    /** 落地冲击：独立两条采样（BodyFallDown_1/2），不参与行走/疾跑的变体轮转。 */
+    public static final java.util.List<RegistryObject<SoundEvent>> UNIFORM_GEAR_LAND = registerMovementSounds("uniform_gear_land", 2);
 
     private static java.util.List<RegistryObject<SoundEvent>> registerMovementSounds(String prefix) {
+        return registerMovementSounds(prefix, 6);
+    }
+
+    private static java.util.List<RegistryObject<SoundEvent>> registerMovementSounds(String prefix, int variants) {
         java.util.List<RegistryObject<SoundEvent>> sounds = new java.util.ArrayList<>();
-        for (int variant = 1; variant <= 6; variant++) {
+        for (int variant = 1; variant <= variants; variant++) {
             String name = prefix + "_" + variant;
             sounds.add(REGISTRY.register(name, () -> SoundEvent.createFixedRangeEvent(
                     ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, name), 8)));
