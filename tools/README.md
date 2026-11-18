@@ -133,10 +133,52 @@ SBM / GeckoLib **都不读 `uv_rotation`**。180° 用负 `uv_size` 表达；90/
 | `vehicle_icon_render.py` | **Bedrock 离线渲染底座**：`render_icon(geo, tex, out, size, fill, yaw, pitch, near_smaller)`；`make_armor_icons.py` 就是调它 |
 | `vehicle_icon_pipeline.py` | 载具图标四步流程（solve/check/build/sync/review），配 `icon_jobs*.json` |
 | `make_vehicle_icons.py` | 载具图标批处理（含 yaw/pitch 约定：车头朝 −Z 时用 yaw=225） |
+| `batch_container_icons.py` | **载具集装箱图标批量重刷**（128×128，遍历 vehicles/*.json，可 `--ids` 指定） |
+| `icon_preview.py` | 拼图预览 / ASCII 剪影排查（`--cols` 多列、`--ascii` 看缺口） |
+| `angle_scan.py` | 视角扫描，`--ref` 时按剪影 IoU 排序找最佳角度 |
 | `bb_icon_render.js` | Blockbench 侧截图脚本（`__renderIcon/__renderShot`），需要 Blockbench + MCP 离屏预览 |
 | `icon_jobs_armor.json` | 之前那批护甲（chinese_desert / russian_soldier / ukrainian_soldier）的图标任务模板 |
 | `geo_ortho_view.py` / `geo_tex_view.py` / `geo_bone_bbox.py` / `geo_bone_rename.py` | geo 正交视图 / 贴图查看 / 骨骼包围盒 / 骨改名 |
 | `载具图标渲染流程.md` | 载具图标完整流程文档（角度、取景、像素闭环） |
+
+### 4.1 载具集装箱图标：AI 调用契约（改渲染器前必读）
+
+```bash
+# 批量重刷某个版本的全部载具（会自动同步 build/resources/main）
+py tools/batch_container_icons.py
+py tools/batch_container_icons.py --ids m1128,f15e
+py tools/batch_container_icons.py --root E:/Dragon_Rise/Dragon_Rise_1211    # 跨版本
+
+# 单台精修（可调 margin / 是否压国旗）
+py tools/make_vehicle_icons.py <id> [--container-only] [--root ...]
+
+# 出图后自检
+py tools/icon_preview.py <目录> --cols 6 --scale 2 --out audit.png
+py tools/icon_preview.py a.png --ascii        # 看缺口/浮空件
+```
+
+**硬性参数（不要"优化"）**
+
+| 项 | 值 | 原因 |
+|---|---|---|
+| 输出路径 | `assets/superbwarfare/textures/vehicle_icon/container/<id>.png` | SBW 的 `ContainerItemDecorator` 把命名空间写死为 superbwarfare |
+| 尺寸 / 内容占比 | 128×128 / fill 0.85 | 与 SBW 官方图标一致 |
+| yaw | 225（地面载具**和**飞机都是） | 模型机头朝 −Z；飞机不是 +Z，曾用 45 全部方向错 |
+| pitch | 26.565（atan 1/2） | 2:1 等距 |
+| 超采样 | 6 | 细节密的模型 3 倍偏粗 |
+| 深度 | `near_smaller=False` | 反了会渲染成"从模型内部往外看" |
+
+**渲染器里 6 个已修缺陷，改动前逐条对照**（每一条都对应一批坏图）
+
+1. 欧拉角是"以 Y 为镜像轴的左手系"：**X/Z 取负、Y 保持原符号**（三轴全取负会让偏心 pivot 的大角度部件飞出模型）
+2. `poly_mesh` 的 UV 原点在**左下**，v 必须 `1-v`（否则整个自由网格取到贴图空白区，表现为"该部件没渲染"）
+3. `poly_mesh` 顶点索引三元组顺序是 **`[位置, 法线, UV]`**，UV 取 `e[2]`（取 `e[1]` 会让一个四边形横跨大半个贴图，呈现乱色块）
+4. 立方体 `uv` 有两种写法：逐面字典，或 **`[u, v]` 列表（标准 box uv）**；后者要按展开图推导六面矩形，漏了会整面不画
+5. **EAST 面**（face_index=5）在展开条带上的 u 与 WEST 相反，需镜像 u
+6. 辅助骨骼要**沿 parent 链**判断：`Obb` 下的 `left`/`right` 等子骨骼挂着 2×2 UV 的碰撞板，只看自身名字会漏，把机舱整块盖成灰色
+
+**验收标准**：任一旋翼/履带/轮胎不应缺失；机身不应出现整块灰白面；细天线、炮管等 1px 特征应保留（`alpha_composite` 而非 `paste`，否则 alpha 被平方抹掉细节）。
+
 
 ---
 
