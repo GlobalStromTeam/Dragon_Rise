@@ -75,17 +75,22 @@ public final class UniformMovementSoundHandler {
             boolean due = state.cadence.update(player.getX(), player.getZ(), requested);
             state.sounds.removeIf(s -> s.isStopped() || (s.age() > 2 && !client.getSoundManager().isActive(s)));
             state.actionSounds.removeIf(s -> s.isStopped() || (s.age() > 2 && !client.getSoundManager().isActive(s)));
-            if (!eligible) state.actionSounds.forEach(UniformMovementSoundInstance::fadeOut);
+            state.landSounds.removeIf(s -> s.isStopped() || (s.age() > 2 && !client.getSoundManager().isActive(s)));
+            if (!eligible) {
+                state.actionSounds.forEach(UniformMovementSoundInstance::fadeOut);
+                state.landSounds.forEach(UniformMovementSoundInstance::fadeOut);
+            }
             Movement movement = state.cadence.movement();
             if (movement == Movement.IDLE) {
                 state.sounds.forEach(UniformMovementSoundInstance::fadeOut);
                 state.playingMovement = Movement.IDLE;
             } else if (due && state.cadence.movedThisTick() && action != Action.LAND) {
-                state.play(client, movement, false);
+                state.play(client, movement);
                 state.playingMovement = movement;
             }
-            if (action != Action.NONE) state.play(client, Movement.WALK, true);
-            if ((!equipped || !nearby) && state.sounds.isEmpty() && state.actionSounds.isEmpty()) WEARERS.remove(id);
+            if (action != Action.NONE) state.playAction(client, action);
+            if ((!equipped || !nearby) && state.sounds.isEmpty() && state.actionSounds.isEmpty()
+                    && state.landSounds.isEmpty()) WEARERS.remove(id);
         }
         WEARERS.entrySet().removeIf(entry -> {
             if (seen.contains(entry.getKey())) return false;
@@ -115,15 +120,18 @@ public final class UniformMovementSoundHandler {
         private final UniformAirborneTracker airborne = new UniformAirborneTracker();
         private final ArrayDeque<UniformMovementSoundInstance> sounds = new ArrayDeque<>();
         private final ArrayDeque<UniformMovementSoundInstance> actionSounds = new ArrayDeque<>();
+        /** Landing and takeoff rotate independently so each pool keeps its own "never repeat" history. */
+        private final ArrayDeque<UniformMovementSoundInstance> landSounds = new ArrayDeque<>();
         private int lastWalk = -1;
         private int lastSprint = -1;
+        private int lastLand = -1;
         private Movement playingMovement = Movement.IDLE;
 
         private Wearer(Player player) {
             this.player = player;
         }
 
-        private void play(Minecraft client, Movement movement, boolean oneShot) {
+        private void play(Minecraft client, Movement movement) {
             boolean sprint = movement == Movement.SPRINT;
             var events = sprint ? ModSounds.UNIFORM_GEAR_SPRINT : ModSounds.UNIFORM_GEAR_WALK;
             int count = events.size();
@@ -133,19 +141,38 @@ public final class UniformMovementSoundHandler {
             if (sprint) lastSprint = variant;
             else lastWalk = variant;
             // Same-state fragments overlap at full length; only state changes crossfade.
-            if (!oneShot && playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
+            if (playingMovement != movement) sounds.forEach(UniformMovementSoundInstance::fadeOut);
             if (movement == Movement.CROUCH) cadence.fragmentDurationTicks(WALK_FRAGMENT_TICKS[variant]);
             var event = events.get(variant).get();
             UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, movement == Movement.CROUCH);
-            (oneShot ? actionSounds : sounds).addLast(sound);
+            sounds.addLast(sound);
+            client.getSoundManager().play(sound);
+        }
+
+        /** One-shot transition sound: jump uses the walk pool, landing uses its own two BodyFallDown samples. */
+        private void playAction(Minecraft client, Action action) {
+            boolean landing = action == Action.LAND;
+            var events = landing ? ModSounds.UNIFORM_GEAR_LAND : ModSounds.UNIFORM_GEAR_WALK;
+            int count = events.size();
+            int previous = landing ? lastLand : lastWalk;
+            int variant = previous < 0 ? player.getRandom().nextInt(count) :
+                    (previous + 1 + player.getRandom().nextInt(count - 1)) % count;
+            if (landing) lastLand = variant;
+            else lastWalk = variant;
+            var event = events.get(variant).get();
+            // Landing keeps the crouch attenuation it was already heard with while airborne; jump stays full volume.
+            UniformMovementSoundInstance sound = new UniformMovementSoundInstance(player, event, landing && player.isCrouching());
+            (landing ? landSounds : actionSounds).addLast(sound);
             client.getSoundManager().play(sound);
         }
 
         private void stop(Minecraft client) {
             sounds.forEach(s -> client.getSoundManager().stop(s));
             actionSounds.forEach(s -> client.getSoundManager().stop(s));
+            landSounds.forEach(s -> client.getSoundManager().stop(s));
             sounds.clear();
             actionSounds.clear();
+            landSounds.clear();
         }
     }
 }
