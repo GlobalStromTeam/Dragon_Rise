@@ -278,7 +278,8 @@
     "sounds": [
       {
         "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_reload",
-        "stream": false
+        "stream": false,
+        "volume": 1.0
       }
     ]
   },
@@ -568,6 +569,13 @@
       }
     ]
   },
+  "m1a2_hand_reload": {
+    "sounds": [
+      { "name": "dragonrise_reforge:common/manual_reload_4s", "stream": false },
+      { "name": "dragonrise_reforge:common/manual_reload_5s", "stream": false },
+      { "name": "dragonrise_reforge:common/manual_reload_6s", "stream": false }
+    ]
+  },
   "terrorist_idle": {
     "sounds": ["dragonrise_reforge:terrorist/terrorist_idle"]
   },
@@ -697,7 +705,7 @@
   },
   "hand_load": {
     "sounds": [
-      { "name": "dragonrise_reforge:hand_load/hand_load", "stream": false }
+      { "name": "dragonrise_reforge:hand_load/hand_load", "stream": false, "volume": 1.0 }
     ]
   },
   "m2_fire_3p": {
@@ -714,6 +722,1490 @@
       { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_02", "stream": false },
       { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_03", "stream": false },
       { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_04", "stream": false }
+    ]
+  },
+  "m256_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m256_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m256_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m256_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m256/m256_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m240_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m240_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m240_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m240_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m240/m240_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m2hb_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m2hb_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m2hb_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m2hb_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m2hb/m2hb_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_cannon_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_cannon_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_cannon_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zbd04a_100mm_cannon_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zbd04a_100mm_cannon/zbd04a_100mm_cannon_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt99_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt99_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt99_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt99_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt99/zpt99_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjt_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjt_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjt_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjt_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjt/qjt_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "aps03_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "aps03_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "aps03_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "aps03_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/aps03/aps03_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "2a42_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "2a42_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "2a42_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "2a42_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/2a42/2a42_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "pkt_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "pkt_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "pkt_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "pkt_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/pkt/pkt_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "9m113_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "9m113_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "9m113_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "9m113_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/9m113/9m113_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "ag17_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "ag17_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "ag17_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "ag17_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/ag17/ag17_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m242_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m242_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "m242_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "m242_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/m242/m242_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "tow_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/tow/tow_fire_1p_01",
+        "stream": false
+      }
+    ]
+  },
+  "tow_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/tow/tow_fire_3p_01",
+        "stream": false
+      }
+    ]
+  },
+  "hj73c_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/hj73c/hj73c_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/hj73c/hj73c_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/hj73c/hj73c_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "hj73c_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/hj73c/hj73c_fire_3p_01",
+        "stream": false
+      }
+    ]
+  },
+  "zpt98_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt98_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt98_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zpt98_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zpt98/zpt98_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjc88_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjc88_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjc88_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "qjc88_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/qjc88/qjc88_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "coax_reload_8s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/vehicle_coax_reload_8s",
+        "stream": false
+      }
+    ]
+  },
+  "hmg_reload_5s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/vehicle_hmg_reload_5s",
+        "stream": false
+      }
+    ]
+  },
+  "kord_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "kord_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "kord_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "kord_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/kord/kord_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "nsvt_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/nsvt/nsvt_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/nsvt/nsvt_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/nsvt/nsvt_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "auto_loader_4s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/auto_loader_4s",
+        "stream": false
+      }
+    ]
+  },
+  "auto_loader_5s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/auto_loader_5s",
+        "stream": false
+      }
+    ]
+  },
+  "ru_hmg_reload_8s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/ru_hmg_reload_8s",
+        "stream": false
+      }
+    ]
+  },
+  "hmg_reload_8s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/hmg_reload_8s",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_tow_raise_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m3a3_tow/m3a3_tow_raise_1p",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_tow_raise_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m3a3_tow/m3a3_tow_raise_3p",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_tow_lower_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m3a3_tow/m3a3_tow_lower_1p",
+        "stream": false
+      }
+    ]
+  },
+  "m3a3_tow_lower_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/m3a3_tow/m3a3_tow_lower_3p",
+        "stream": false
+      }
+    ]
+  },
+  "dshk12_7_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "dshk12_7_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "dshk12_7_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/dshk/dshk_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "mk19_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "mk19_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/mk19/mk19_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "spg9_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_1p_01",
+        "stream": false
+      }
+    ]
+  },
+  "spg9_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_02",
+        "stream": false
+      }
+    ]
+  },
+  "spg9_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_far_02",
+        "stream": false
+      }
+    ]
+  },
+  "spg9_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/spg9/spg9_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "hj8_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/hj8/hj8_fire_1p_01",
+        "stream": false
+      }
+    ]
+  },
+  "zu23_fire_1p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_1p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zu23_fire_3p": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_03",
+        "stream": false
+      }
+    ]
+  },
+  "zu23_fire_3p_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "zu23_fire_3p_very_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_very_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_very_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:weapons/zu23/zu23_fire_3p_very_far_03",
+        "stream": false
+      }
+    ]
+  },
+  "manual_reload_4s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/manual_reload_4s",
+        "stream": false
+      }
+    ]
+  },
+  "manual_reload_5s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/manual_reload_5s",
+        "stream": false
+      }
+    ]
+  },
+  "manual_reload_6s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/manual_reload_6s",
+        "stream": false
+      }
+    ]
+  },
+  "coax_reload_5s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/coax_reload_5s",
+        "stream": false
+      }
+    ]
+  },
+  "coax_reload_6s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/coax_reload_6s",
+        "stream": false
+      }
+    ]
+  },
+  "breech_reload_4s": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:common/breech_reload_4s",
+        "stream": false
+      }
+    ]
+  },
+  "uniform_gear_walk_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_4": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_4",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_5": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_5",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_6": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_6",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_4": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_4",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_5": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_5",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_6": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_6",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_land_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_land_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
     ]
   }
 }

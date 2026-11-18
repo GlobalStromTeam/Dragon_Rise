@@ -21,7 +21,8 @@
     "MonitorItemServerMixin",
     "VehicleDirectionArmorMixin",
     "GunDataReloadCacheMixin",
-    "DetonatorItemMixin"
+    "DetonatorItemMixin",
+    "VehicleEntityHandbrakeDriftMixin"
   ],
   "client": [
     "ClientEventHandlerRemoteGunShootMixin",

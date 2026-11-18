@@ -1,0 +1,459 @@
+{
+  "ID": "dragonrise_reforge:bm13n",
+  "Type": "Artillery",
+  "HudType": "@Land",
+  "EngineType": "Wheel",
+  "MaxHealth": 120,
+  "MaxEnergy": 5000000,
+  "Mass": 3.0,
+  "UpStep": 1.5,
+  "RotateOffsetHeight": 0.9,
+  "InertiaRotateRate": 1.0,
+  "ThirdPersonCameraPos": [
+    0,
+    2.2,
+    7.5
+  ],
+  "EngineSound": "dragonrise_reforge:wheel_loop1",
+  "HornSound": "superbwarfare:truck_horn",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ussr_land.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/bm13n_icon.png",
+  "VehicleContainerType": "Huge",
+  "EngineInfo": {
+    "Buoyancy": 0,
+    "EnergyCostRate": 64,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": -0.3,
+    "MaxForwardSpeedRate": 0.55,
+    "MaxBackwardSpeedRate": 0.22,
+    "Increment": 0.015,
+    "Decrement": 0.02,
+    "SteeringSpeed": 0.1,
+    "EngineSoundVolume": 0.6
+  },
+  "Weapons": {
+    "Rocket": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/small_rocket.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 16,
+      "EmptyReloadTime": 300,
+      "Projectile": "superbwarfare:medium_rocket",
+      "AmmoType": "superbwarfare:medium_rocket_he",
+      "Spread": 0.9,
+      "Name": "weapon.dragonrise_reforge:bm13n_rocket",
+      "RPM": 90,
+      "Damage": 260,
+      "ExplosionDamage": 200,
+      "ExplosionRadius": 14,
+      "Gravity": 0.03,
+      "Velocity": 9,
+      "ProjectileLife": 80,
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [
+            -2.556,
+            1.369,
+            -1.346
+          ],
+          [
+            -2.209,
+            1.369,
+            -1.346
+          ],
+          [
+            -1.828,
+            1.369,
+            -1.346
+          ],
+          [
+            -1.494,
+            1.369,
+            -1.346
+          ],
+          [
+            -1.116,
+            1.369,
+            -1.346
+          ],
+          [
+            -0.782,
+            1.369,
+            -1.346
+          ],
+          [
+            -0.401,
+            1.369,
+            -1.346
+          ],
+          [
+            -0.054,
+            1.369,
+            -1.346
+          ],
+          [
+            -2.556,
+            0.947,
+            -1.346
+          ],
+          [
+            -2.209,
+            0.947,
+            -1.346
+          ],
+          [
+            -1.828,
+            0.947,
+            -1.346
+          ],
+          [
+            -1.494,
+            0.947,
+            -1.346
+          ],
+          [
+            -1.116,
+            0.947,
+            -1.346
+          ],
+          [
+            -0.782,
+            0.947,
+            -1.346
+          ],
+          [
+            -0.401,
+            0.947,
+            -1.346
+          ],
+          [
+            -0.054,
+            0.947,
+            -1.346
+          ]
+        ],
+        "Directions": [
+          "Barrel"
+        ],
+        "BoundUpWithAmmoAmount": true
+      },
+      "ProjectileDummyInfo": {
+        "Offset": [
+          0,
+          -0.2,
+          0
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "HideDummyWhileZooming": true
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:small_rocket_fire_1p",
+        "Fire3P": "superbwarfare:small_rocket_fire_3p",
+        "VehicleReload3p": "superbwarfare:missile_reload",
+        "VehicleReloadSoundTime": 20,
+        "Change": "superbwarfare:into_missile"
+      },
+      "Crosshair": "@Empty",
+      "SoundRadius": 20
+    }
+  },
+  "Seats": [
+    {
+      "IsEnclosed": false,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "RotateWithVehicle": true,
+      "Position": [
+        0.4204,
+        0.7469,
+        1.231
+      ],
+      "MinPitch": -10,
+      "MaxPitch": 10,
+      "MinYaw": -10,
+      "MaxYaw": 10,
+      "Sensitivity": [
+        0.52,
+        0.75,
+        0.9
+      ],
+      "Weapons": [
+        "Rocket"
+      ]
+    },
+    {
+      "IsEnclosed": false,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "RotateWithVehicle": true,
+      "Position": [
+        -0.4204,
+        0.7469,
+        1.231
+      ],
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    }
+  ],
+  "DamageModifiers": [
+    "minecraft:arrow * 0.2",
+    "minecraft:trident * 0.4",
+    "minecraft:mob_attack * 0.4",
+    "minecraft:mob_attack_no_aggro * 0.4",
+    "minecraft:mob_projectile * 0.4",
+    "minecraft:player_attack * 0.4",
+    "minecraft:lava - -4",
+    "minecraft:lava * 4",
+    "@minecraft:tnt * 3",
+    "@minecraft:tnt_minecart * 3",
+    "minecraft:explosion * 4",
+    "minecraft:player_explosion * 4",
+    "superbwarfare:projectile_hit * 0.8",
+    "superbwarfare:grapeshot_hit * 0.2",
+    "@#superbwarfare:aerial_bomb * 1.4",
+    "#superbwarfare:projectile * 1.0",
+    "@superbwarfare:cannon_shell * 1.6",
+    "@superbwarfare:small_cannon_shell * 1.8",
+    "@superbwarfare:gun_grenade * 1.4",
+    "@superbwarfare:rgo_grenade * 3",
+    "@superbwarfare:hand_grenade * 2.5",
+    "@superbwarfare:mortar_shell * 2",
+    "All * 0.9",
+    "$entity.getSourceAngle(source, 0.05) * damage"
+  ],
+  "DestroyInfo": {
+    "ParticleType": "Huge",
+    "ExplosionDamage": 80,
+    "ExplosionRadius": 8
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/bm13n.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/bm13n.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/bm13n.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/bm13n.png"
+  },
+  "OBB": [
+    {
+      "Size": [
+        1.1686,
+        0.1643,
+        1.1785
+      ],
+      "Position": [
+        0.0,
+        1.1784,
+        -2.0787
+      ]
+    },
+    {
+      "Size": [
+        0.8683,
+        0.4645,
+        0.5029
+      ],
+      "Position": [
+        0.0,
+        1.4786,
+        1.224
+      ]
+    },
+    {
+      "Size": [
+        0.8683,
+        0.0892,
+        0.4278
+      ],
+      "Position": [
+        0.0,
+        2.5295,
+        1.1489
+      ]
+    },
+    {
+      "Size": [
+        1.1686,
+        0.1643,
+        0.7656
+      ],
+      "Position": [
+        0.0,
+        1.1784,
+        2.8378
+      ]
+    },
+    {
+      "Size": [
+        1.5169,
+        1.3138,
+        3.63
+      ],
+      "Position": [
+        0.0,
+        1.3165,
+        0.2557
+      ],
+      "Part": "Collision"
+    },
+    {
+      "Size": [
+        0.7518,
+        0.3843,
+        1.0253
+      ],
+      "Position": [
+        0.0,
+        1.6241,
+        2.5155
+      ],
+      "Part": "MainEngine"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.4834
+      ],
+      "Position": [
+        1.0076,
+        0.4789,
+        2.7605
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.5209
+      ],
+      "Position": [
+        1.0827,
+        0.4789,
+        -1.3664
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.5209
+      ],
+      "Position": [
+        1.0827,
+        0.4789,
+        -2.7476
+      ],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.4834
+      ],
+      "Position": [
+        -1.3079,
+        0.4789,
+        2.7605
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.5209
+      ],
+      "Position": [
+        -1.3079,
+        0.4789,
+        -1.3664
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        0.221,
+        0.4741,
+        0.5209
+      ],
+      "Position": [
+        -1.3079,
+        0.4789,
+        -2.8226
+      ],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [
+        1.3655,
+        0.2225,
+        1.2154
+      ],
+      "Position": [
+        0.0,
+        2.9722,
+        -2.5128
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [
+        0.765,
+        0.5228,
+        1.1403
+      ],
+      "Position": [
+        0.0,
+        2.2216,
+        -2.4752
+      ],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    }
+  ],
+  "TurretPos": [
+    0.0024,
+    1.5581,
+    -3.4065
+  ],
+  "BarrelPos": [
+    1.3039,
+    0.2676,
+    0.0204
+  ],
+  "TurretControllerIndex": 0,
+  "TurretYawRange": [
+    -10,
+    10
+  ],
+  "TurretPitchRange": [
+    -5,
+    45
+  ],
+  "TurretTurnSpeed": [
+    4.0,
+    3.0
+  ]
+}

@@ -187,6 +187,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PZBJY.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TOYOTASEIKI.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.motuo.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SANTANA.get()));
                         //自动炮塔
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS114.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.NPDS514.get()));
@@ -214,6 +215,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.T26B.get()));
                         //苏联 装甲车辆
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BA10.get()));
+                        //苏联 火箭炮
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.BM13N.get()));
 
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MAUS.get()));

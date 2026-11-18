@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:santana",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/santana.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/santana.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/santana.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/santana.png"
+    }
+  ]
+}

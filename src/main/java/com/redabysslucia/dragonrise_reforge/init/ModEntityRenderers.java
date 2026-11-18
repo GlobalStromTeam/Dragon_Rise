@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Bm13nRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.SantanaRenderer;
+
+
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.IedRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.MissileShellRenderer;
@@ -301,5 +307,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.R550.get(), R550Renderer::new);
                 event.registerEntityRenderer(ModEntities.MIG29M.get(), Mig29mRenderer::new);
                 event.registerEntityRenderer(ModEntities.EF2000.get(), Ef2000Renderer::new);
+                event.registerEntityRenderer(ModEntities.SANTANA.get(), SantanaRenderer::new);
+                event.registerEntityRenderer(ModEntities.BM13N.get(), Bm13nRenderer::new);
         }
 }

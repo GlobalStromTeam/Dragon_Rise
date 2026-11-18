@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Bm13nEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.SantanaEntity;
+
+
 import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.AA625EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Aav7a1Entity;
@@ -1872,6 +1878,20 @@ public class ModEntities {
                     .setUpdateInterval(1)
                     .fireImmune()
                     .sized(4.5f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<SantanaEntity>> SANTANA = register("santana",
+            EntityType.Builder.of(SantanaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Bm13nEntity>> BM13N = register("bm13n",
+            EntityType.Builder.of(Bm13nEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
 
 }

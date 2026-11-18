@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:bm13n",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/bm13n.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/bm13n.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/bm13n.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/bm13n.png"
+    }
+  ]
+}

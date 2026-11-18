@@ -5,75 +5,83 @@
   "MaxEnergy": 100000000,
   "OBB": [
     {
-      "Size": [1.973,0.841,5.445],
-      "Position": [0.0,0.836,0.321],
+      "Size": [
+        1.973,
+        0.841,
+        5.445
+      ],
+      "Position": [
+        0,
+        0.836,
+        0.321
+      ],
       "Part": "Collision"
     },
     {
-      "Size":  [
+      "Size": [
         1,
         1.1875,
         5
       ],
-      "Position":  [
+      "Position": [
         0,
         1.125,
         1.3125
       ]
     },
     {
-      "Part":  "WheelLeft",
-      "Size":  [
+      "Part": "WheelLeft",
+      "Size": [
         0.75,
         1.0625,
         6.1875
       ],
-      "Position":  [
+      "Position": [
         -1.75,
         1,
         -0.125
       ]
     },
     {
-      "Part":  "WheelRight",
-      "Size":  [
+      "Part": "WheelRight",
+      "Size": [
         0.75,
         1.0625,
         6.1875
       ],
-      "Position":  [
+      "Position": [
         1.75,
         1,
         -0.125
       ]
     },
     {
-      "Part":  "MainEngine",
-      "Size":  [
+      "Part": "MainEngine",
+      "Size": [
         2,
         1.0625,
         3.3125
       ],
-      "Position":  [
+      "Position": [
         0,
         1.55,
         -3.525
       ]
     },
     {
-      "Part":  "Turret",
-      "Size":  [
+      "Part": "Turret",
+      "Size": [
         2,
         0.53125,
         4.03125
       ],
-      "Position":  [
+      "Position": [
         0,
         -0.28825,
         -1.89625
       ],
-      "Transform":  "Turret",
-      "Rotation":  "Turret"
+      "Transform": "Turret",
+      "Rotation": "Turret"
     }
   ],
   "Seats": [
@@ -84,7 +92,11 @@
         "Direction": "Barrel"
       },
       "Transform": "Turret",
-      "Position": [0.917,-1.612,1.82],
+      "Position": [
+        0.917,
+        -1.612,
+        1.82
+      ],
       "Weapons": [
         "Cannon",
         "MainMachineGun"
@@ -92,7 +104,11 @@
       "CanRotateHead": false,
       "MinPitch": -7,
       "MaxPitch": 15,
-      "Sensitivity": [0.52,0.72,0.9],
+      "Sensitivity": [
+        0.52,
+        0.72,
+        0.9
+      ],
       "HasThermalImaging": true
     },
     {
@@ -102,27 +118,43 @@
         "Transform": "WeaponStationBarrel",
         "Direction": "WeaponStationBarrel"
       },
-      "Position": [0.47,-1.285,0.657],
+      "Position": [
+        0.47,
+        -1.285,
+        0.657
+      ],
       "Weapons": [
         "PassengerMachineGun"
       ],
       "CanRotateHead": false,
       "MinPitch": -6,
       "MaxPitch": 85,
-      "Sensitivity": [0.57,0.75,0.9],
+      "Sensitivity": [
+        0.57,
+        0.75,
+        0.9
+      ],
       "HasThermalImaging": true
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.125,1.578,2.328],
+      "Position": [
+        -0.125,
+        1.578,
+        2.328
+      ],
       "MinYaw": -95,
       "MaxYaw": 95
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.625,0.5,-6.125],
+      "Position": [
+        -1.625,
+        0.5,
+        -6.125
+      ],
       "MinYaw": -95,
       "MaxYaw": 95
     }
@@ -142,8 +174,12 @@
       "ExplosionDamage": 80,
       "ExplosionRadius": 4,
       "RecoilTime": 42,
-      "RecoilForce": 1.0,
-      "ShootShake": [0,0,0],
+      "RecoilForce": 1,
+      "ShootShake": [
+        0,
+        0,
+        0
+      ],
       "Spread": 0.02,
       "ShootAnimationTime": 140,
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/cn_tank_cannon_cross.png",
@@ -180,7 +216,11 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.005,-0.141,7.231]
+          [
+            0.005,
+            -0.141,
+            7.231
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -219,7 +259,11 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-0.584,-0.169,1.606]
+          [
+            -0.584,
+            -0.169,
+            1.606
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -241,8 +285,12 @@
       "ExplosionDamage": 80,
       "ExplosionRadius": 2,
       "RecoilTime": 20,
-      "RecoilForce": 1.0,
-      "ShootShake": [0.1,0.1,0.1],
+      "RecoilForce": 1,
+      "ShootShake": [
+        0.1,
+        0.1,
+        0.1
+      ],
       "Spread": 0.02,
       "ShootAnimationTime": 20,
       "Crosshair": "@VehicleUsApc",
@@ -273,7 +321,11 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [0.031,0.171,3.27]
+          [
+            0.031,
+            0.171,
+            3.27
+          ]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -295,16 +347,44 @@
     "Increment": 0.0087,
     "Decrement": 0.005,
     "SteeringSpeed": 0.13,
-    "EngineSoundVolume": 1.0
+    "EngineSoundVolume": 1
   },
-  "TurretPos": [-0.011,3.33,0.68],
-  "BarrelPos": [0.011,-0.645,1.918],
-  "TurretTurnSpeed": [2.625,3.575],
-  "TurretPitchRange": [-7,15],
-  "PassengerWeaponStationPos": [0.516,0.97,-1.576],
-  "PassengerWeaponStationBarrelPos": [0.0,0.0,0.0],
-  "PassengerWeaponStationTurnSpeed": [15.75,8.47],
-  "PassengerWeaponStationPitchRange": [-6,85],
+  "TurretPos": [
+    -0.011,
+    3.33,
+    0.68
+  ],
+  "BarrelPos": [
+    0.011,
+    -0.645,
+    1.918
+  ],
+  "TurretTurnSpeed": [
+    2.625,
+    3.575
+  ],
+  "TurretPitchRange": [
+    -7,
+    15
+  ],
+  "PassengerWeaponStationPos": [
+    0.516,
+    0.97,
+    -1.576
+  ],
+  "PassengerWeaponStationBarrelPos": [
+    0,
+    0,
+    0
+  ],
+  "PassengerWeaponStationTurnSpeed": [
+    15.75,
+    8.47
+  ],
+  "PassengerWeaponStationPitchRange": [
+    -6,
+    85
+  ],
   "UpStep": 2.25,
   "TurretCustomPitch": 2.5,
   "RotateOffsetHeight": 0.5,
@@ -346,9 +426,13 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [-0.8669625,1.5,4],
+  "ThirdPersonCameraPos": [
+    -0.8669625,
+    1.5,
+    4
+  ],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/hyr0_icon.png",
-  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/land.png",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/blue_land.png",
   "Type": "Tank",
   "CollisionLevel": {
     "Level": 4,
@@ -379,10 +463,26 @@
   "HudType": "@Land",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [1.656,0.038,4.422],
-    [-1.669,0.038,-4.547],
-    [-1.669,0.038,4.359],
-    [1.656,0.038,-4.547]
+    [
+      1.656,
+      0.038,
+      4.422
+    ],
+    [
+      -1.669,
+      0.038,
+      -4.547
+    ],
+    [
+      -1.669,
+      0.038,
+      4.359
+    ],
+    [
+      1.656,
+      0.038,
+      -4.547
+    ]
   ],
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/hyr0.geo.json",

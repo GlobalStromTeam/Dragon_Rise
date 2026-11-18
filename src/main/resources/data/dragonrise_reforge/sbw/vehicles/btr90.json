@@ -41,9 +41,9 @@
         0.9987500623
       ],
       "Position": [
-        0.0,
+        0,
         0.2043428698,
-        -0.0
+        0
       ],
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -170,15 +170,31 @@
     },
     {
       "Part": "Turret",
-      "Size": [0.4532201927, 0.1004299845, 0.2546266402],
-      "Position": [-0.7621073737, 0.2275646768, -0.1256200952],
+      "Size": [
+        0.4532201927,
+        0.1004299845,
+        0.2546266402
+      ],
+      "Position": [
+        -0.7621073737,
+        0.2275646768,
+        -0.1256200952
+      ],
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Part": "Turret",
-      "Size": [0.4532201927, 0.1004299845, 0.2546266402],
-      "Position": [0.7621073737, 0.2275646768, -0.1256200952],
+      "Size": [
+        0.4532201927,
+        0.1004299845,
+        0.2546266402
+      ],
+      "Position": [
+        0.7621073737,
+        0.2275646768,
+        -0.1256200952
+      ],
       "Transform": "Turret",
       "Rotation": "Turret"
     },
@@ -418,7 +434,7 @@
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         0.3233906025,
         -2.5645208033
       ],
@@ -459,7 +475,9 @@
         "Fire3P": "dragonrise_reforge:2a42_fire_3p",
         "Fire3PFar": "dragonrise_reforge:2a42_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:2a42_fire_3p_very_far",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "minecraft:intentionally_empty",
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 24,
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm_ap.png",
@@ -535,7 +553,13 @@
         "Fire3P": "dragonrise_reforge:pkt_fire_3p",
         "Fire3PFar": "dragonrise_reforge:pkt_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:pkt_fire_3p_very_far",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:coax_reload_5s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:coax_reload_5s"
+        ]
       },
       "SoundRadius": 12
     },
@@ -571,14 +595,36 @@
         "Fire3P": "dragonrise_reforge:9m113_fire_3p",
         "Fire3PFar": "dragonrise_reforge:9m113_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:9m113_fire_3p_very_far",
-        "VehicleReload": "dragonrise_reforge:zbd04a_100mm_reload",
+        "VehicleReload": "minecraft:intentionally_empty",
         "VehicleReloadSoundTime": 0,
-        "Change": "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 12,
       "ShootPos": {
         "Transform": "MissileRack",
-        "Positions": [[0.9604180542, 0.178513684, 0.6585569211], [1.1262214478, 0.178513684, 0.6585569211], [-0.9604180542, 0.178513684, 0.6585569211], [-1.1262214478, 0.178513684, 0.6585569211]],
+        "Positions": [
+          [
+            0.9604180542,
+            0.178513684,
+            0.6585569211
+          ],
+          [
+            1.1262214478,
+            0.178513684,
+            0.6585569211
+          ],
+          [
+            -0.9604180542,
+            0.178513684,
+            0.6585569211
+          ],
+          [
+            -1.1262214478,
+            0.178513684,
+            0.6585569211
+          ]
+        ],
         "Directions": [
           "MissileRack"
         ],
@@ -613,7 +659,13 @@
         "Fire3P": "dragonrise_reforge:ag17_fire_3p",
         "Fire3PFar": "dragonrise_reforge:ag17_fire_3p_far",
         "Fire3PVeryFar": "dragonrise_reforge:ag17_fire_3p_very_far",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:hmg_reload_5s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:hmg_reload_5s"
+        ]
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:grenade_40mm",
@@ -646,7 +698,7 @@
     "SteeringSpeed": 0.1
   },
   "TurretPos": [
-    0.0,
+    0,
     1.9920441067,
     1.113971275
   ],
@@ -669,9 +721,9 @@
     -1.0255696784
   ],
   "PassengerWeaponStationBarrelPos": [
-    0.0,
-    0.0,
-    0.0
+    0,
+    0,
+    0
   ],
   "PassengerWeaponStationTurnSpeed": [
     6.125,
@@ -682,7 +734,7 @@
     75
   ],
   "ThirdPersonCameraPos": [
-    0.0,
+    0,
     0.7123668898,
     2.1371006694
   ],
@@ -798,5 +850,6 @@
   ],
   "Animation": "dragonrise_reforge:animations/bedrock/vehicle/btr90.animation.json",
   "TurretControllerIndex": 0,
-  "PassengerWeaponStationControllerIndex": -1
+  "PassengerWeaponStationControllerIndex": -1,
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/btr90_icon.png"
 }

@@ -5,66 +5,154 @@
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.844,0.406,0.469],
-      "Position": [0.0,1.094,3.281]
+      "Size": [
+        1.844,
+        0.406,
+        0.469
+      ],
+      "Position": [
+        0,
+        1.094,
+        3.281
+      ]
     },
     {
-      "Size": [1.844,0.625,3.094],
-      "Position": [0.0,1.063,-0.281]
+      "Size": [
+        1.844,
+        0.625,
+        3.094
+      ],
+      "Position": [
+        0,
+        1.063,
+        -0.281
+      ]
     },
     {
-      "Size": [1.875,0.594,1.156],
-      "Position": [0.0,1.344,-3.156],
+      "Size": [
+        1.875,
+        0.594,
+        1.156
+      ],
+      "Position": [
+        0,
+        1.344,
+        -3.156
+      ],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.406,0.656,3.594],
-      "Position": [1.5,0.656,-0.031],
+      "Size": [
+        0.406,
+        0.656,
+        3.594
+      ],
+      "Position": [
+        1.5,
+        0.656,
+        -0.031
+      ],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.406,0.656,3.594],
-      "Position": [-1.5,0.656,-0.031],
+      "Size": [
+        0.406,
+        0.656,
+        3.594
+      ],
+      "Position": [
+        -1.5,
+        0.656,
+        -0.031
+      ],
       "Part": "WheelLeft"
     },
     {
-      "Size": [0.844,0.719,2.0],
-      "Position": [0.0,0.719,-0.651],
+      "Size": [
+        0.844,
+        0.719,
+        2
+      ],
+      "Position": [
+        0,
+        0.719,
+        -0.651
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [1.406,0.219,1.094],
-      "Position": [0.0,0.219,-0.182],
+      "Size": [
+        1.406,
+        0.219,
+        1.094
+      ],
+      "Position": [
+        0,
+        0.219,
+        -0.182
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [1.75,0.313,1.031],
-      "Position": [0.0,0.938,-0.557],
+      "Size": [
+        1.75,
+        0.313,
+        1.031
+      ],
+      "Position": [
+        0,
+        0.938,
+        -0.557
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [0.469,0.188,0.531],
-      "Position": [0.0,1.625,-1.369],
+      "Size": [
+        0.469,
+        0.188,
+        0.531
+      ],
+      "Position": [
+        0,
+        1.625,
+        -1.369
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [0.469,0.531,0.406],
-      "Position": [0.0,1.969,-2.307],
+      "Size": [
+        0.469,
+        0.531,
+        0.406
+      ],
+      "Position": [
+        0,
+        1.969,
+        -2.307
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [0.469,0.469,0.406],
-      "Position": [0.0,0.781,1.756],
+      "Size": [
+        0.469,
+        0.469,
+        0.406
+      ],
+      "Position": [
+        0,
+        0.781,
+        1.756
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -75,9 +163,17 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [-0.062,2.375,-1.65],
+        "Position": [
+          -0.062,
+          2.375,
+          -1.65
+        ],
         "Transform": "Turret",
-        "ZoomPosition": [-0.062,2.375,-1.65],
+        "ZoomPosition": [
+          -0.062,
+          2.375,
+          -1.65
+        ],
         "Direction": "Barrel"
       },
       "Weapons": [
@@ -85,37 +181,61 @@
         "Missile"
       ],
       "Transform": "Turret",
-      "Position": [0.0,-0.047,0.912],
+      "Position": [
+        0,
+        -0.047,
+        0.912
+      ],
       "CanRotateHead": false,
       "MinPitch": -10,
       "MaxPitch": 70,
-      "Sensitivity": [0.55,0.73,1],
+      "Sensitivity": [
+        0.55,
+        0.73,
+        1
+      ],
       "HasThermalImaging": true
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0.688,0.14,-4.812],
+      "Position": [
+        0.688,
+        0.14,
+        -4.812
+      ],
       "MinYaw": -95,
       "MaxYaw": 95,
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [0.688,1.75,-4.812]
+        "ZoomPosition": [
+          0.688,
+          1.75,
+          -4.812
+        ]
       }
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.687,0.14,-4.812],
+      "Position": [
+        -0.687,
+        0.14,
+        -4.812
+      ],
       "MinYaw": -95,
       "MaxYaw": 95,
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [-0.687,1.75,-4.812]
+        "ZoomPosition": [
+          -0.687,
+          1.75,
+          -4.812
+        ]
       }
     }
   ],
@@ -148,7 +268,9 @@
         "Fire3P": "superbwarfare:lav_150_cannon_fire_3p",
         "Fire3PFar": "superbwarfare:lav_150_cannon_far",
         "Fire3PVeryFar": "superbwarfare:lav_150_cannon_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "minecraft:intentionally_empty",
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 24,
       "AmmoType": "superbwarfare:small_shell_aa",
@@ -157,8 +279,16 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008, 0.053, 4.321],
-          [1.008, 0.053, 4.321]
+          [
+            -1.008,
+            0.053,
+            4.321
+          ],
+          [
+            1.008,
+            0.053,
+            4.321
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -196,7 +326,11 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.008,0.053,4.321]
+          [
+            -1.008,
+            0.053,
+            4.321
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -205,11 +339,11 @@
       "Crosshair": "@VehicleCommonGun",
       "Name": "weapon.superbwarfare.7_62mm_coax",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:coax_fire_1p",
-        "Fire3P": "superbwarfare:m_60_fire_3p",
-        "Fire3PFar": "superbwarfare:m_60_far",
-        "Fire3PVeryFar": "superbwarfare:m_60_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:m240_fire_1p",
+        "Fire3P": "dragonrise_reforge:m240_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m240_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m240_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "SoundRadius": 12
     },
@@ -240,10 +374,26 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [-1.773, 0.178, 1.133],
-          [-1.773, -0.056, 1.133],
-          [1.773, -0.056, 1.133],
-          [1.773, 0.178, 1.133]
+          [
+            -1.773,
+            0.178,
+            1.133
+          ],
+          [
+            -1.773,
+            -0.056,
+            1.133
+          ],
+          [
+            1.773,
+            -0.056,
+            1.133
+          ],
+          [
+            1.773,
+            0.178,
+            1.133
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -252,11 +402,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonSeekMissile",
@@ -277,11 +428,29 @@
     "Decrement": 0.015,
     "SteeringSpeed": 0.1
   },
-  "TurretPos": [0.0,1.75,0.463],
-  "TurretTurnSpeed": [12.5,10],
-  "TurretPitchRange": [-15,70],
-  "BarrelPos": [0.0,0.888,-0.815],
-  "ThirdPersonCameraPos": [0,1,3],
+  "TurretPos": [
+    0,
+    1.75,
+    0.463
+  ],
+  "TurretTurnSpeed": [
+    12.5,
+    10
+  ],
+  "TurretPitchRange": [
+    -15,
+    70
+  ],
+  "BarrelPos": [
+    0,
+    0.888,
+    -0.815
+  ],
+  "ThirdPersonCameraPos": [
+    0,
+    1,
+    3
+  ],
   "HasDecoy": true,
   "UpStep": 1.5,
   "RotateOffsetHeight": 2.2,
@@ -348,10 +517,26 @@
   "EngineSound": "superbwarfare:lav_150_engine",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.5,0.0,3.5],
-    [-1.5,0.0,-3.375],
-    [-1.5,0.0,3.5],
-    [1.5,0.0,-3.375]
+    [
+      1.5,
+      0,
+      3.5
+    ],
+    [
+      -1.5,
+      0,
+      -3.375
+    ],
+    [
+      -1.5,
+      0,
+      3.5
+    ],
+    [
+      1.5,
+      0,
+      -3.375
+    ]
   ],
   "InertiaRotateRate": 1.25,
   "Models": [

@@ -16,7 +16,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -143,7 +142,6 @@ public class HJ8Entity extends VehicleEntity {
         // 只有弹匣真的进了弹才算装填成功
         if (gunData.ammo.get() > magazineBefore) {
             setRoundState(ROUND_LOADED);
-            serverLevel.playSound(null, getOnPos(), ModSounds.TYPE_63_RELOAD.get(), SoundSource.PLAYERS, 1f, random.nextFloat() * 0.1f + 0.9f);
             return InteractionResult.SUCCESS;
         }
 

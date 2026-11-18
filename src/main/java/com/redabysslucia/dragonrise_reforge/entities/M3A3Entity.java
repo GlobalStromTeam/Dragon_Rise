@@ -2,6 +2,7 @@ package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
 import com.atsuishio.superbwarfare.event.ClientEventHandler;
+import com.redabysslucia.dragonrise_reforge.client.sound.M3A3RackSoundInstance;
 import com.atsuishio.superbwarfare.entity.vehicle.base.VehicleEntity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -28,7 +29,11 @@ public class M3A3Entity extends VehicleEntity {
             SynchedEntityData.defineId(M3A3Entity.class, EntityDataSerializers.INT);
 
     // 客户端动画状态机缓存
-    private String lastMissileAnim = "";
+    /** 鍙湪鍙戝皠鏋跺紑濮嬭繍鍔ㄦ垨鍙嶅悜鏃惰Е鍙戜竴娆★紝涓嶅湪淇濇寔濮挎€佹椂閲嶅鎾斁銆?*/
+    private int lastRackSoundState;
+
+    @OnlyIn(Dist.CLIENT)
+    private M3A3RackSoundInstance rackSound;
 
     public M3A3Entity(EntityType<M3A3Entity> type, Level world) {
         super(type, world);

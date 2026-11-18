@@ -4,122 +4,386 @@
   "MaxEnergy": 5000000,
   "OBB": [
     {
-      "Size": [1.192,1.075,3.727],
-      "Position": [0.0,1.726,-0.648],
-      "CustomRotate": [-2.5,0.0,0.0]
+      "Size": [
+        1.192,
+        1.075,
+        3.727
+      ],
+      "Position": [
+        0,
+        1.726,
+        -0.648
+      ],
+      "CustomRotate": [
+        -2.5,
+        0,
+        0
+      ]
     },
     {
-      "Size": [1.192,0.419,0.664],
-      "Position": [0.0,2.333,3.412],
-      "CustomRotate": [22.5,0.0,0.0]
+      "Size": [
+        1.192,
+        0.419,
+        0.664
+      ],
+      "Position": [
+        0,
+        2.333,
+        3.412
+      ],
+      "CustomRotate": [
+        22.5,
+        0,
+        0
+      ]
     },
     {
-      "Size": [1.192,0.325,0.445],
-      "Position": [0.0,2.14,3.74]
+      "Size": [
+        1.192,
+        0.325,
+        0.445
+      ],
+      "Position": [
+        0,
+        2.14,
+        3.74
+      ]
     },
     {
-      "Size": [1.192,0.325,0.977],
-      "Position": [0.0,1.522,3.199],
-      "CustomRotate": [-35.0,0.0,0.0]
+      "Size": [
+        1.192,
+        0.325,
+        0.977
+      ],
+      "Position": [
+        0,
+        1.522,
+        3.199
+      ],
+      "CustomRotate": [
+        -35,
+        0,
+        0
+      ]
     },
     {
-      "Size": [0.536,0.419,2.414],
-      "Position": [1.275,2.077,-1.789],
-      "CustomRotate": [0.0,0.0,-45.0]
+      "Size": [
+        0.536,
+        0.419,
+        2.414
+      ],
+      "Position": [
+        1.275,
+        2.077,
+        -1.789
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        -45
+      ]
     },
     {
-      "Size": [0.442,0.419,3.164],
-      "Position": [1.531,1.585,-1.017],
-      "CustomRotate": [0.0,0.0,-90.0]
+      "Size": [
+        0.442,
+        0.419,
+        3.164
+      ],
+      "Position": [
+        1.531,
+        1.585,
+        -1.017
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        -90
+      ]
     },
     {
-      "Size": [0.348,0.419,0.945],
-      "Position": [1.531,2.472,1.165],
-      "CustomRotate": [0.0,0.0,-90.0]
+      "Size": [
+        0.348,
+        0.419,
+        0.945
+      ],
+      "Position": [
+        1.531,
+        2.472,
+        1.165
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        -90
+      ]
     },
     {
-      "Size": [0.786,0.356,0.852],
-      "Position": [1.295,2.104,2.778],
-      "CustomRotate": [22.5,0.0,-90.0]
+      "Size": [
+        0.786,
+        0.356,
+        0.852
+      ],
+      "Position": [
+        1.295,
+        2.104,
+        2.778
+      ],
+      "CustomRotate": [
+        22.5,
+        0,
+        -90
+      ]
     },
     {
-      "Size": [0.442,0.356,0.852],
-      "Position": [-1.295,1.761,2.793],
-      "CustomRotate": [22.5,0.0,90.0]
+      "Size": [
+        0.442,
+        0.356,
+        0.852
+      ],
+      "Position": [
+        -1.295,
+        1.761,
+        2.793
+      ],
+      "CustomRotate": [
+        22.5,
+        0,
+        90
+      ]
     },
     {
-      "Size": [0.348,0.419,0.945],
-      "Position": [-1.531,2.347,1.165],
-      "CustomRotate": [0.0,0.0,45.0]
+      "Size": [
+        0.348,
+        0.419,
+        0.945
+      ],
+      "Position": [
+        -1.531,
+        2.347,
+        1.165
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        45
+      ]
     },
     {
-      "Size": [0.442,0.419,3.164],
-      "Position": [-1.531,1.585,-1.017],
-      "CustomRotate": [0.0,0.0,90.0]
+      "Size": [
+        0.442,
+        0.419,
+        3.164
+      ],
+      "Position": [
+        -1.531,
+        1.585,
+        -1.017
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        90
+      ]
     },
     {
-      "Size": [0.536,0.419,2.414],
-      "Position": [-1.275,2.077,-1.789],
-      "CustomRotate": [0.0,0.0,45.0]
+      "Size": [
+        0.536,
+        0.419,
+        2.414
+      ],
+      "Position": [
+        -1.275,
+        2.077,
+        -1.789
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        45
+      ]
     },
     {
-      "Size": [1.192,0.325,0.977],
-      "Position": [0.0,1.522,3.199],
-      "CustomRotate": [-35.0,0.0,0.0]
+      "Size": [
+        1.192,
+        0.325,
+        0.977
+      ],
+      "Position": [
+        0,
+        1.522,
+        3.199
+      ],
+      "CustomRotate": [
+        -35,
+        0,
+        0
+      ]
     },
     {
-      "Size": [0.442,0.356,0.852],
-      "Position": [-1.103,2.26,2.692],
-      "CustomRotate": [14.546,17.529,46.757]
+      "Size": [
+        0.442,
+        0.356,
+        0.852
+      ],
+      "Position": [
+        -1.103,
+        2.26,
+        2.692
+      ],
+      "CustomRotate": [
+        14.546,
+        17.529,
+        46.757
+      ]
     },
     {
-      "Size": [0.348,0.419,0.945],
-      "Position": [-1.162,2.541,1.157],
-      "CustomRotate": [0.0,2.5,90.0]
+      "Size": [
+        0.348,
+        0.419,
+        0.945
+      ],
+      "Position": [
+        -1.162,
+        2.541,
+        1.157
+      ],
+      "CustomRotate": [
+        0,
+        2.5,
+        90
+      ]
     },
     {
-      "Size": [0.348,0.481,0.508],
-      "Position": [1.156,2.73,1.415],
-      "CustomRotate": [0.0,0.0,-90.0]
+      "Size": [
+        0.348,
+        0.481,
+        0.508
+      ],
+      "Position": [
+        1.156,
+        2.73,
+        1.415
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        -90
+      ]
     },
     {
-      "Size": [0.411,0.356,0.383],
-      "Position": [1.156,2.792,1.412],
-      "CustomRotate": [0.0,0.0,-90.0]
+      "Size": [
+        0.411,
+        0.356,
+        0.383
+      ],
+      "Position": [
+        1.156,
+        2.792,
+        1.412
+      ],
+      "CustomRotate": [
+        0,
+        0,
+        -90
+      ]
     },
     {
-      "Size": [0.442,0.231,0.289],
-      "Position": [0.469,2.828,1.505],
-      "CustomRotate": [0.0,-2.5,-90.0]
+      "Size": [
+        0.442,
+        0.231,
+        0.289
+      ],
+      "Position": [
+        0.469,
+        2.828,
+        1.505
+      ],
+      "CustomRotate": [
+        0,
+        -2.5,
+        -90
+      ]
     },
     {
-      "Size": [0.411,0.575,0.258],
-      "Position": [0.894,2.798,0.538],
-      "CustomRotate": [0.0,-2.5,-90.0]
+      "Size": [
+        0.411,
+        0.575,
+        0.258
+      ],
+      "Position": [
+        0.894,
+        2.798,
+        0.538
+      ],
+      "CustomRotate": [
+        0,
+        -2.5,
+        -90
+      ]
     },
     {
-      "Size": [1.973,1.294,4.227],
-      "Position": [0.0,1.383,-0.148],
+      "Size": [
+        1.973,
+        1.294,
+        4.227
+      ],
+      "Position": [
+        0,
+        1.383,
+        -0.148
+      ],
       "Part": "Collision"
     },
     {
-      "Size": [0.541,0.82,1.166],
-      "Position": [0.0,1.952,1.578],
+      "Size": [
+        0.541,
+        0.82,
+        1.166
+      ],
+      "Position": [
+        0,
+        1.952,
+        1.578
+      ],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.288,0.611,3.453],
-      "Position": [-1.452,0.617,-0.678],
+      "Size": [
+        0.288,
+        0.611,
+        3.453
+      ],
+      "Position": [
+        -1.452,
+        0.617,
+        -0.678
+      ],
       "Part": "WheelLeft"
     },
     {
-      "Size": [0.288,0.611,3.453],
-      "Position": [1.452,0.617,-0.678],
+      "Size": [
+        0.288,
+        0.611,
+        3.453
+      ],
+      "Position": [
+        1.452,
+        0.617,
+        -0.678
+      ],
       "Part": "WheelRight"
     },
     {
-      "Size": [0.698,0.186,0.956],
-      "Position": [-1.0,3.111,0.928],
+      "Size": [
+        0.698,
+        0.186,
+        0.956
+      ],
+      "Position": [
+        -1,
+        3.111,
+        0.928
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -130,43 +394,71 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.0,1.14,2.938],
+      "Position": [
+        1,
+        1.14,
+        2.938
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [1.0,2.75,2.938]
+        "ZoomPosition": [
+          1,
+          2.75,
+          2.938
+        ]
       }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-1.0,1.703,1.375],
+      "Position": [
+        -1,
+        1.703,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [-1.0,3.313,1.375]
+        "ZoomPosition": [
+          -1,
+          3.313,
+          1.375
+        ]
       }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
         "Direction": "Barrel",
-        "ZoomPosition": [1.125,3.188,1.375]
+        "ZoomPosition": [
+          1.125,
+          3.188,
+          1.375
+        ]
       }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -177,7 +469,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -188,7 +484,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -199,7 +499,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -210,7 +514,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -221,7 +529,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -232,7 +544,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -243,7 +559,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -254,7 +574,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -265,7 +589,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -276,7 +604,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -287,7 +619,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -298,7 +634,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -309,7 +649,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -320,7 +664,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -331,7 +679,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -342,7 +694,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -353,7 +709,11 @@
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [1.125,1.578,1.375],
+      "Position": [
+        1.125,
+        1.578,
+        1.375
+      ],
       "CameraPos": {
         "UseFixedCameraPos": false,
         "Transform": "Turret",
@@ -376,10 +736,24 @@
     "Decrement": 0.015,
     "SteeringSpeed": 0.1
   },
-  "TurretPos": [-1.059,2.849,1.103],
-  "TurretTurnSpeed": [6.125,3.295],
-  "TurretPitchRange": [-6,60],
-  "BarrelPos": [0.103,0.225,0.453],
+  "TurretPos": [
+    -1.059,
+    2.849,
+    1.103
+  ],
+  "TurretTurnSpeed": [
+    6.125,
+    3.295
+  ],
+  "TurretPitchRange": [
+    -6,
+    60
+  ],
+  "BarrelPos": [
+    0.103,
+    0.225,
+    0.453
+  ],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -413,7 +787,11 @@
     "@superbwarfare:gun_grenade * 1.5",
     "@superbwarfare:javelin_missile * 0.8"
   ],
-  "ThirdPersonCameraPos": [0,1,3],
+  "ThirdPersonCameraPos": [
+    0,
+    1,
+    3
+  ],
   "VehicleContainerType": "Medium",
   "DestroyInfo": {
     "ParticleType": "Huge",
@@ -446,10 +824,26 @@
   "EngineSound": "superbwarfare:bmp_2_engine",
   "HudType": "@Land",
   "TerrainCompat": [
-    [1.344,0.038,1.484],
-    [-1.356,0.038,-2.984],
-    [-1.356,0.038,1.484],
-    [1.344,0.038,-3.109]
+    [
+      1.344,
+      0.038,
+      1.484
+    ],
+    [
+      -1.356,
+      0.038,
+      -2.984
+    ],
+    [
+      -1.356,
+      0.038,
+      1.484
+    ],
+    [
+      1.344,
+      0.038,
+      -3.109
+    ]
   ],
   "InertiaRotateRate": 1.75,
   "Models": [

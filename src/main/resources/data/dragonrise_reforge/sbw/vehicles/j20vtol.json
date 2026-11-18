@@ -1,5 +1,5 @@
 {
-  "Animation":  "dragonrise_reforge:animations/bedrock/vehicle/j20vtol.animation.json",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/j20vtol.animation.json",
   "ID": "dragonrise_reforge:j20vtol",
   "MaxHealth": 350,
   "MaxEnergy": 10000000,
@@ -131,8 +131,8 @@
     "IsEnclosed": true,
     "Transform": "Vehicle",
     "Position": [
-      0.0,
-      1.0,
+      0,
+      1,
       6.483425
     ],
     "CanRotateHead": false,
@@ -144,7 +144,7 @@
     "CameraPos": {
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         2.605,
         6.483425
       ],
@@ -239,11 +239,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonSeekMissile",
@@ -314,11 +315,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@VehicleCommonSeekMissile",
       "CrosshairColor": "0x66FF00",

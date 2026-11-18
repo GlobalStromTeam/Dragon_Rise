@@ -11,7 +11,7 @@
         4.464036
       ],
       "Position": [
-        0.0,
+        0,
         0.921609,
         1.091109
       ],
@@ -26,7 +26,7 @@
         1.579319
       ],
       "Position": [
-        0.0,
+        0,
         2.220028,
         9.383819
       ],
@@ -41,7 +41,7 @@
         1.72675
       ],
       "Position": [
-        0.0,
+        0,
         2.832771,
         6.09375
       ],
@@ -56,7 +56,7 @@
         1.41425
       ],
       "Position": [
-        0.0,
+        0,
         2.96675,
         2.96875
       ],
@@ -71,7 +71,7 @@
         2.03925
       ],
       "Position": [
-        0.0,
+        0,
         2.651491,
         -0.46875
       ],
@@ -86,7 +86,7 @@
         1.5705
       ],
       "Position": [
-        0.0,
+        0,
         1.794302,
         -4.0625
       ],
@@ -101,7 +101,7 @@
         1.10175
       ],
       "Position": [
-        0.0,
+        0,
         3.113341,
         -6.71875
       ],
@@ -116,7 +116,7 @@
         1.506037
       ],
       "Position": [
-        0.0,
+        0,
         2.065332,
         -9.310537
       ],
@@ -177,9 +177,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
+        0,
         -42.836858,
-        0.0
+        0
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -197,9 +197,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
+        0,
         42.836858,
-        -0.0
+        0
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -357,9 +357,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -377,9 +377,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -397,9 +397,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -417,9 +417,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -437,9 +437,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -457,9 +457,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -477,9 +477,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -497,9 +497,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -517,9 +517,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -537,9 +537,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -557,9 +557,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -577,9 +577,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -597,9 +597,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -617,9 +617,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        -0.0,
-        90.0
+        21,
+        0,
+        90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -637,9 +637,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -657,9 +657,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -677,9 +677,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -697,9 +697,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -717,9 +717,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -737,9 +737,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -757,9 +757,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        0.0,
-        0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -777,9 +777,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -797,9 +797,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        21.0,
-        0.0,
-        -90.0
+        21,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -817,9 +817,9 @@
       ],
       "Part": "Body",
       "CustomRotate": [
-        -0.0,
-        -0.0,
-        -90.0
+        0,
+        0,
+        -90
       ],
       "Transform": "Vehicle",
       "Rotation": "Vehicle"
@@ -830,7 +830,7 @@
       "IsEnclosed": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         1.79,
         5.64425
       ],
@@ -843,7 +843,7 @@
       "CameraPos": {
         "Transform": "Vehicle",
         "Position": [
-          0.0,
+          0,
           3.39,
           5.64425
         ],
@@ -883,7 +883,7 @@
       "IsEnclosed": true,
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         2.112,
         4.20625
       ],
@@ -896,7 +896,7 @@
       "CameraPos": {
         "Transform": "Vehicle",
         "Position": [
-          0.0,
+          0,
           3.712,
           4.20625
         ],
@@ -1039,11 +1039,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonSeekMissile",
@@ -1137,11 +1138,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftCommon",
@@ -1203,11 +1205,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:javelin_locking",
-              "Locked": "superbwarfare:javelin_locking"
+              "Locked": "superbwarfare:javelin_locking",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "CrosshairColor": "0xFFC700",
             "Crosshair": "@VehicleCommonSeekMissile",
@@ -1307,11 +1310,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftNacelle",
@@ -1410,11 +1414,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:missile_locking",
-              "Locked": "superbwarfare:missile_locked"
+              "Locked": "superbwarfare:missile_locked",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "Crosshair": "@AirCraftMissile",
             "CrosshairZooming": "@AirCraftCommon",
@@ -1494,11 +1499,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
         "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:missile_locking",
-        "Locked": "superbwarfare:missile_locked"
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "Crosshair": "@AirCraftMissile",
       "CrosshairZooming": "@AirCraftCommon",
@@ -1560,11 +1566,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:javelin_locking",
-              "Locked": "superbwarfare:javelin_locking"
+              "Locked": "superbwarfare:javelin_locking",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "CrosshairColor": "0xFFC700",
             "Crosshair": "@VehicleCommonSeekMissile",
@@ -1663,11 +1670,12 @@
             "SoundInfo": {
               "Fire1P": "superbwarfare:bomb_release",
               "Fire3P": "superbwarfare:bomb_release",
-              "VehicleReload3p": "superbwarfare:bomb_reload",
-              "VehicleReloadSoundTime": 11,
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
               "Change": "dragonrise_reforge:change_weapon",
               "Locking": "superbwarfare:missile_locking",
-              "Locked": "superbwarfare:missile_locked"
+              "Locked": "superbwarfare:missile_locked",
+              "VehicleReload": "minecraft:intentionally_empty"
             },
             "Crosshair": "@AirCraftMissile",
             "CrosshairZooming": "@AirCraftNacelle",
@@ -1762,7 +1770,7 @@
   },
   "TerrainCompat": [
     [
-      -0.0,
+      0,
       -0.12095,
       3.237631
     ],
@@ -1783,5 +1791,6 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/su30sm.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/su30sm.png"
     }
-  ]
+  ],
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/su30sm_icon.png"
 }

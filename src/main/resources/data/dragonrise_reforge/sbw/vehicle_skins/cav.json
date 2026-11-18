@@ -1,0 +1,18 @@
+{
+  "Skins": [
+    {
+      "Id": "vanilla",
+      "Name": "默认涂装",
+      "Description": "由北落师门-星吕定制的皮肤",
+      "Texture": "dragonrise_reforge:textures/entity/cav.png",
+      "Priority": 0
+    },
+    {
+      "Id": "blue",
+      "Name": "蓝色涂装",
+      "Description": "由stars行程IL定制的皮肤",
+      "Texture": "dragonrise_reforge:textures/entity/cav_blue.png",
+      "Priority": 0
+    }
+  ]
+}

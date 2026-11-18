@@ -3,7 +3,7 @@
   "MaxHealth": 300,
   "MaxEnergy": 10000000,
   "TurretPos": [
-    0.0,
+    0,
     1.175,
     4.50625
   ],
@@ -16,7 +16,7 @@
     10
   ],
   "BarrelPos": [
-    0.0,
+    0,
     -0.446875,
     0.08125
   ],
@@ -24,24 +24,24 @@
   "OBB": [
     {
       "Size": [
-        1.0,
+        1,
         1.15625,
         3.03125
       ],
       "Position": [
-        0.0,
+        0,
         2.03125,
         2.96875
       ]
     },
     {
       "Size": [
-        1.0,
+        1,
         0.5625,
         3.65625
       ],
       "Position": [
-        0.0,
+        0,
         1.4375,
         -3.71875
       ]
@@ -65,7 +65,7 @@
         0.875
       ],
       "Position": [
-        0.0,
+        0,
         1.84375,
         2.0625
       ]
@@ -101,7 +101,7 @@
     {
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         1,
         3.5
       ],
@@ -113,7 +113,7 @@
       "CameraPos": {
         "Transform": "Vehicle",
         "Position": [
-          0.0,
+          0,
           2.875,
           3.5
         ],
@@ -146,7 +146,7 @@
     {
       "Transform": "Vehicle",
       "Position": [
-        0.0,
+        0,
         0.8,
         4.8125
       ],
@@ -159,12 +159,12 @@
         "Transform": "Vehicle",
         "UseFixedCameraPos": true,
         "Position": [
-          0.0,
+          0,
           2.5625,
           4.8125
         ],
         "ZoomPosition": [
-          0.0,
+          0,
           1.1640625,
           7.2171875
         ],
@@ -215,7 +215,7 @@
         "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
         "Fire3PFar": "superbwarfare:mi_28_cannon_far",
         "Fire3PVeryFar": "superbwarfare:mi_28_cannon_veryfar",
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "Crosshair": "@VehicleCommonGunDynamic",
       "CrosshairColor": "0xFFC700",
@@ -225,7 +225,7 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            0.0,
+            0,
             0.01105625,
             1.5234375
           ]
@@ -289,7 +289,7 @@
         "Fire3P": "superbwarfare:small_rocket_fire_3p",
         "VehicleReload3p": "superbwarfare:missile_reload",
         "VehicleReloadSoundTime": 7,
-        "Change":  "dragonrise_reforge:change_weapon"
+        "Change": "dragonrise_reforge:change_weapon"
       },
       "Crosshair": "@Empty",
       "SoundRadius": 12
@@ -312,9 +312,10 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon"
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "SoundRadius": 8
     },
@@ -456,11 +457,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locked"
+        "Locked": "superbwarfare:javelin_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "dragonrise_reforge:textures/overlay/vehicle/crosshair/z10_missile_crosshair.png",
@@ -527,11 +529,12 @@
       "SoundInfo": {
         "Fire1P": "superbwarfare:bomb_release",
         "Fire3P": "superbwarfare:bomb_release",
-        "VehicleReload3p": "superbwarfare:bomb_reload",
-        "VehicleReloadSoundTime": 11,
-        "Change":  "dragonrise_reforge:change_weapon",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
         "Locking": "superbwarfare:javelin_locking",
-        "Locked": "superbwarfare:javelin_locking"
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
       },
       "CrosshairColor": "0xFFC700",
       "Crosshair": "@VehicleCommonSeekMissile",

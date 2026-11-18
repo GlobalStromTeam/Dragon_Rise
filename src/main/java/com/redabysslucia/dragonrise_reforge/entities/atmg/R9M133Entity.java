@@ -17,7 +17,6 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -148,7 +147,6 @@ public class R9M133Entity extends VehicleEntity {
         // 只有弹匣真的进了弹才算装填成功；空筒状态在这里直接被新的一发取代（不需要先手动卸筒）
         if (gunData.ammo.get() > magazineBefore) {
             setRoundState(ROUND_LOADED);
-            serverLevel.playSound(null, getOnPos(), ModSounds.TYPE_63_RELOAD.get(), SoundSource.PLAYERS, 1f, random.nextFloat() * 0.1f + 0.9f);
             return InteractionResult.SUCCESS;
         }
 

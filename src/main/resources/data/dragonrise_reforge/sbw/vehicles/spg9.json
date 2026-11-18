@@ -3,22 +3,48 @@
   "ID": "dragonrise_reforge:spg9",
   "MaxHealth": 100,
   "MaxEnergy": 0,
-  "TurretPos": [0.0,0.719,-0.278],
-  "TurretTurnSpeed": [5,6],
-  "TurretPitchRange": [-5,30],
-  "BarrelPos": [0.0,0.125,-0.199],
+  "TurretPos": [
+    0,
+    0.719,
+    -0.278
+  ],
+  "TurretTurnSpeed": [
+    5,
+    6
+  ],
+  "TurretPitchRange": [
+    -5,
+    30
+  ],
+  "BarrelPos": [
+    0,
+    0.125,
+    -0.199
+  ],
   "Seats": {
     "Transform": "Turret",
-    "Position": [0.338,-1.179,-0.009],
+    "Position": [
+      0.338,
+      -1.179,
+      -0.009
+    ],
     "MinPitch": -10,
     "MaxPitch": 30,
     "Weapons": [
       "Cannon"
     ],
-    "Sensitivity": [0.55,0.75,1.0],
+    "Sensitivity": [
+      0.55,
+      0.75,
+      1
+    ],
     "DismountInfo": {
       "Transform": "Turret",
-      "Position": [0,0.75,0]
+      "Position": [
+        0,
+        0.75,
+        0
+      ]
     }
   },
   "UsePassengerCreativeAmmoBox": true,
@@ -34,21 +60,29 @@
       "DefaultZoom": 3,
       "Magazine": 1,
       "EmptyReloadTime": 90,
-      "Velocity": 12.0,
+      "Velocity": 12,
       "Gravity": 0.05,
       "Damage": 240,
       "ExplosionDamage": 60,
       "ExplosionRadius": 3.5,
       "RecoilTime": 30,
       "RecoilForce": 0.09,
-      "ShootShake": [6,7,40],
+      "ShootShake": [
+        6,
+        7,
+        40
+      ],
       "ShootAnimationTime": 30,
       "Crosshair": "@VehicleCommonGun",
       "AmmoType": "superbwarfare:medium_shell_ap",
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.005,0.216,1.657]
+          [
+            0.005,
+            0.216,
+            1.657
+          ]
         ],
         "Directions": [
           "Barrel"
@@ -56,16 +90,26 @@
       },
       "Name": "dragonrise_reforge:PG9",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PVeryFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:spg9_fire_1p",
+        "Fire3P": "dragonrise_reforge:spg9_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:spg9_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:spg9_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:manual_reload_4s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:manual_reload_4s"
+        ]
       },
-      "SoundRadius": 24
+      "SoundRadius": 32
     }
   },
-  "ThirdPersonCameraPos": [-0.4,1.1,-1.6],
+  "ThirdPersonCameraPos": [
+    -0.4,
+    1.1,
+    -1.6
+  ],
   "Mass": 0.1,
   "DamageModifiers": [
     "minecraft:lava * 2.667",
@@ -88,17 +132,41 @@
   ],
   "OBB": [
     {
-      "Size": [0.078,0.109,0.294],
-      "Position": [0.0,0.781,-0.193]
+      "Size": [
+        0.078,
+        0.109,
+        0.294
+      ],
+      "Position": [
+        0,
+        0.781,
+        -0.193
+      ]
     },
     {
-      "Size": [0.357,0.633,1.491],
-      "Position": [0.0,0.627,0.119],
+      "Size": [
+        0.357,
+        0.633,
+        1.491
+      ],
+      "Position": [
+        0,
+        0.627,
+        0.119
+      ],
       "Part": "Collision"
     },
     {
-      "Size": [0.078,0.078,1.575],
-      "Position": [0.0,0.343,0.491],
+      "Size": [
+        0.078,
+        0.078,
+        1.575
+      ],
+      "Position": [
+        0,
+        0.343,
+        0.491
+      ],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
