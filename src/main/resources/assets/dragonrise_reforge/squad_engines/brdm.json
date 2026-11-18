@@ -1,0 +1,377 @@
+{
+  "vehicles": [
+    "dragonrise_reforge:brdm2",
+    "dragonrise_reforge:akm"
+  ],
+  "rpm": {
+    "max": 1500,
+    "load": 500,
+    "rise": 75,
+    "fall": 50
+  },
+  "exterior_volume": 0.3333,
+  "interior_volume": 1,
+  "start": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/brdm/exterior_start",
+      "volume": 0.6,
+      "duration": 4.0529
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/brdm/interior_start",
+      "volume": 0.5,
+      "duration": 3.5851
+    }
+  },
+  "stop": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/brdm/exterior_stop",
+      "volume": 0.9,
+      "duration": 3.3615
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/brdm/interior_stop",
+      "volume": 0.5,
+      "duration": 3.5579
+    }
+  },
+  "layers": [
+    {
+      "sound": "dragonrise_reforge:engine/brdm/interior_idle",
+      "interior": true,
+      "gain": 0.9,
+      "fade": [
+        0,
+        0,
+        400,
+        500
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            1,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            0
+          ],
+          "out": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            1000
+          ],
+          "out": [
+            1,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/brdm/interior_idle2",
+      "interior": true,
+      "gain": 0.405,
+      "fade": [
+        200,
+        600,
+        3000,
+        5000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            100
+          ],
+          "out": [
+            0,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            2000
+          ],
+          "out": [
+            0.7,
+            1.3
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/brdm/interior_throttle",
+      "interior": true,
+      "gain": 0.7,
+      "fade": [
+        10,
+        50,
+        4000,
+        6000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0.001,
+            1
+          ],
+          "out": [
+            0,
+            2
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -3,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        },
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            4000
+          ],
+          "out": [
+            0.9,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/brdm/exterior_idle",
+      "gain": 3,
+      "fade": [
+        0,
+        0,
+        400,
+        500
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            1,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            0
+          ],
+          "out": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            800
+          ],
+          "out": [
+            1,
+            1.2
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/brdm/exterior_idle2",
+      "gain": 1,
+      "fade": [
+        200,
+        600,
+        3000,
+        5000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            100
+          ],
+          "out": [
+            0,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            2000
+          ],
+          "out": [
+            0.7,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/brdm/exterior_throttle",
+      "gain": 1.95,
+      "fade": [
+        10,
+        50,
+        4000,
+        6000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0.001,
+            1
+          ],
+          "out": [
+            0,
+            2
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -3,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        },
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            4000
+          ],
+          "out": [
+            0.9,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:movement/tires_exterior",
+      "interior": false,
+      "movement": "land",
+      "gain": 0.4
+    },
+    {
+      "sound": "dragonrise_reforge:movement/tires_cabin_interior",
+      "interior": true,
+      "movement": "land",
+      "gain": 0.34
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_wheeled_exterior",
+      "interior": false,
+      "movement": "water",
+      "gain": 0.5
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_wheeled_interior",
+      "interior": true,
+      "movement": "water",
+      "gain": 0.32
+    }
+  ]
+}

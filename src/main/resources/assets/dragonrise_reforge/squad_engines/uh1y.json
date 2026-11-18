@@ -1,0 +1,135 @@
+{
+  "vehicles": [
+    "dragonrise_reforge:ah1f"
+  ],
+  "mode": "helicopter",
+  "rotor_pitch": [
+    0.85,
+    1.0
+  ],
+  "rpm": {
+    "max": 1500,
+    "load": 500,
+    "rise": 75,
+    "fall": 50
+  },
+  "exterior_volume": 0.4348,
+  "interior_volume": 0.5,
+  "start": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_start",
+      "volume": 3,
+      "duration": 20.7578,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/uh1y/interior_start",
+      "volume": 2,
+      "duration": 20.0
+    },
+    "exterior_mid": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_start_mid",
+      "volume": 2.3,
+      "duration": 20.7578,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    "exterior_far": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_start_far",
+      "volume": 1.5,
+      "duration": 20.7578,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  },
+  "stop": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_stop",
+      "volume": 3,
+      "duration": 20.2452,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/uh1y/interior_stop",
+      "volume": 2,
+      "duration": 16.7022
+    },
+    "exterior_mid": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_stop_mid",
+      "volume": 2.3,
+      "duration": 23.3783,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    "exterior_far": {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_stop_far",
+      "volume": 1.5,
+      "duration": 21.2578,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  },
+  "layers": [
+    {
+      "sound": "dragonrise_reforge:engine/uh1y/interior_idle",
+      "interior": true,
+      "gain": 2
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_close",
+      "gain": 2,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_mid",
+      "gain": 2.3,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh1y/exterior_far",
+      "gain": 1.5,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  ]
+}

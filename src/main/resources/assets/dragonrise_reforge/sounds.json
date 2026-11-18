@@ -2187,5 +2187,2122 @@
         "attenuation_distance": 8
       }
     ]
+  },
+  "engine/abrams/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/abrams/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/abrams/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/abrams/interior_start"
+    ]
+  },
+  "engine/abrams/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/abrams/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/abrams/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/abrams/interior_stop"
+    ]
+  },
+  "engine/abrams/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/abrams/interior_idle"
+    ]
+  },
+  "engine/abrams/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/abrams/interior_idle2"
+    ]
+  },
+  "engine/abrams/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/abrams/interior_throttle"
+    ]
+  },
+  "engine/abrams/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/abrams/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/abrams/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/abrams/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/abrams/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/abrams/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t72/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t72/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t72/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/t72/interior_start"
+    ]
+  },
+  "engine/t72/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t72/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t72/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/t72/interior_stop"
+    ]
+  },
+  "engine/t72/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/t72/interior_idle"
+    ]
+  },
+  "engine/t72/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/t72/interior_idle2"
+    ]
+  },
+  "engine/t72/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/t72/interior_throttle"
+    ]
+  },
+  "engine/t72/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t72/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/t72/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t72/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/t72/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t72/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t62/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t62/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t62/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/t62/interior_start"
+    ]
+  },
+  "engine/t62/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t62/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/t62/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/t62/interior_stop"
+    ]
+  },
+  "engine/t62/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/t62/interior_idle"
+    ]
+  },
+  "engine/t62/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/t62/interior_idle2"
+    ]
+  },
+  "engine/t62/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/t62/interior_throttle"
+    ]
+  },
+  "engine/t62/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t62/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/t62/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t62/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/t62/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/t62/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ztz99/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ztz99/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ztz99/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/ztz99/interior_start"
+    ]
+  },
+  "engine/ztz99/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ztz99/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ztz99/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/ztz99/interior_stop"
+    ]
+  },
+  "engine/ztz99/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/ztz99/interior_idle"
+    ]
+  },
+  "engine/ztz99/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/ztz99/interior_idle2"
+    ]
+  },
+  "engine/ztz99/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/ztz99/interior_throttle"
+    ]
+  },
+  "engine/ztz99/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ztz99/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/ztz99/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ztz99/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/ztz99/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ztz99/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/leopard/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/leopard/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/leopard/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/leopard/interior_start"
+    ]
+  },
+  "engine/leopard/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/leopard/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/leopard/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/leopard/interior_stop"
+    ]
+  },
+  "engine/leopard/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/leopard/interior_idle"
+    ]
+  },
+  "engine/leopard/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/leopard/interior_idle2"
+    ]
+  },
+  "engine/leopard/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/leopard/interior_throttle"
+    ]
+  },
+  "engine/leopard/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/leopard/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/leopard/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/leopard/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/leopard/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/leopard/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bradley/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bradley/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bradley/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/bradley/interior_start"
+    ]
+  },
+  "engine/bradley/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bradley/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bradley/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/bradley/interior_stop"
+    ]
+  },
+  "engine/bradley/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/bradley/interior_idle"
+    ]
+  },
+  "engine/bradley/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/bradley/interior_idle2"
+    ]
+  },
+  "engine/bradley/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/bradley/interior_throttle"
+    ]
+  },
+  "engine/bradley/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bradley/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/bradley/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bradley/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/bradley/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bradley/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/warrior/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/warrior/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/warrior/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/warrior/interior_start"
+    ]
+  },
+  "engine/warrior/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/warrior/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/warrior/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/warrior/interior_stop"
+    ]
+  },
+  "engine/warrior/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/warrior/interior_idle"
+    ]
+  },
+  "engine/warrior/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/warrior/interior_idle2"
+    ]
+  },
+  "engine/warrior/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/warrior/interior_throttle"
+    ]
+  },
+  "engine/warrior/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/warrior/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/warrior/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/warrior/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/warrior/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/warrior/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bmps/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bmps/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bmps/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/bmps/interior_start"
+    ]
+  },
+  "engine/bmps/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bmps/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/bmps/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/bmps/interior_stop"
+    ]
+  },
+  "engine/bmps/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/bmps/interior_idle"
+    ]
+  },
+  "engine/bmps/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/bmps/interior_idle2"
+    ]
+  },
+  "engine/bmps/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/bmps/interior_throttle"
+    ]
+  },
+  "engine/bmps/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bmps/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/bmps/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bmps/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/bmps/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/bmps/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbd04a/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbd04a/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbd04a/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbd04a/interior_start"
+    ]
+  },
+  "engine/zbd04a/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbd04a/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbd04a/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbd04a/interior_stop"
+    ]
+  },
+  "engine/zbd04a/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbd04a/interior_idle"
+    ]
+  },
+  "engine/zbd04a/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbd04a/interior_idle2"
+    ]
+  },
+  "engine/zbd04a/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbd04a/interior_throttle"
+    ]
+  },
+  "engine/zbd04a/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbd04a/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/zbd04a/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbd04a/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/zbd04a/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbd04a/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbl08/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbl08/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbl08/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbl08/interior_start"
+    ]
+  },
+  "engine/zbl08/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbl08/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbl08/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbl08/interior_stop"
+    ]
+  },
+  "engine/zbl08/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbl08/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/zbl08/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbl08/exterior_idle2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbl08/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zbl08/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zbl08/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbl08/interior_idle"
+    ]
+  },
+  "engine/zbl08/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbl08/interior_idle2"
+    ]
+  },
+  "engine/zbl08/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zbl08/interior_throttle"
+    ]
+  },
+  "engine/zsd89/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zsd89/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zsd89/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/zsd89/interior_start"
+    ]
+  },
+  "engine/zsd89/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zsd89/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/zsd89/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/zsd89/interior_stop"
+    ]
+  },
+  "engine/zsd89/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zsd89/interior_idle"
+    ]
+  },
+  "engine/zsd89/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/zsd89/interior_idle2"
+    ]
+  },
+  "engine/zsd89/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/zsd89/interior_throttle"
+    ]
+  },
+  "engine/zsd89/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zsd89/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/zsd89/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zsd89/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/zsd89/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/zsd89/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/aavp/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/aavp/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/aavp/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/aavp/interior_start"
+    ]
+  },
+  "engine/aavp/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/aavp/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/aavp/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/aavp/interior_stop"
+    ]
+  },
+  "engine/aavp/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/aavp/interior_idle"
+    ]
+  },
+  "engine/aavp/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/aavp/interior_idle2"
+    ]
+  },
+  "engine/aavp/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/aavp/interior_throttle"
+    ]
+  },
+  "engine/aavp/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/aavp/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/aavp/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/aavp/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/aavp/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/aavp/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/fvs/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/fvs/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/fvs/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/fvs/interior_start"
+    ]
+  },
+  "engine/fvs/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/fvs/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/fvs/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/fvs/interior_stop"
+    ]
+  },
+  "engine/fvs/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/fvs/interior_idle"
+    ]
+  },
+  "engine/fvs/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/fvs/interior_idle2"
+    ]
+  },
+  "engine/fvs/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/fvs/interior_throttle"
+    ]
+  },
+  "engine/fvs/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/fvs/exterior_idle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/fvs/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/fvs/exterior_idle2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/fvs/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/fvs/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/btr/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/btr/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/btr/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/btr/interior_start"
+    ]
+  },
+  "engine/btr/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/btr/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/btr/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/btr/interior_stop"
+    ]
+  },
+  "engine/btr/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/btr/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/btr/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/btr/exterior_idle2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/btr/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/btr/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/btr/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/btr/interior_idle"
+    ]
+  },
+  "engine/btr/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/btr/interior_idle2"
+    ]
+  },
+  "engine/btr/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/btr/interior_throttle"
+    ]
+  },
+  "engine/lav/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/lav/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/lav/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/lav/interior_start"
+    ]
+  },
+  "engine/lav/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/lav/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/lav/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/lav/interior_stop"
+    ]
+  },
+  "engine/lav/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/lav/interior_idle"
+    ]
+  },
+  "engine/lav/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/lav/interior_idle2"
+    ]
+  },
+  "engine/lav/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/lav/interior_throttle"
+    ]
+  },
+  "engine/lav/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/lav/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/lav/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/lav/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/lav/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/lav/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/stryker/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/stryker/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/stryker/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/stryker/interior_start"
+    ]
+  },
+  "engine/stryker/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/stryker/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/stryker/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/stryker/interior_stop"
+    ]
+  },
+  "engine/stryker/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/stryker/interior_idle"
+    ]
+  },
+  "engine/stryker/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/stryker/interior_idle2"
+    ]
+  },
+  "engine/stryker/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/stryker/interior_throttle"
+    ]
+  },
+  "engine/stryker/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/stryker/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/stryker/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/stryker/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/stryker/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/stryker/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/brdm/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/brdm/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/brdm/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/brdm/interior_start"
+    ]
+  },
+  "engine/brdm/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/brdm/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/brdm/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/brdm/interior_stop"
+    ]
+  },
+  "engine/brdm/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/brdm/interior_idle"
+    ]
+  },
+  "engine/brdm/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/brdm/interior_idle2"
+    ]
+  },
+  "engine/brdm/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/brdm/interior_throttle"
+    ]
+  },
+  "engine/brdm/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/brdm/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/brdm/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/brdm/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/brdm/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/brdm/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/mtlb/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mtlb/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/mtlb/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/mtlb/interior_start"
+    ]
+  },
+  "engine/mtlb/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mtlb/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/mtlb/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/mtlb/interior_stop"
+    ]
+  },
+  "engine/mtlb/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/mtlb/interior_idle"
+    ]
+  },
+  "engine/mtlb/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/mtlb/interior_idle2"
+    ]
+  },
+  "engine/mtlb/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/mtlb/interior_throttle"
+    ]
+  },
+  "engine/mtlb/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mtlb/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/mtlb/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mtlb/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/mtlb/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mtlb/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/csk/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/csk/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/csk/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/csk/interior_start"
+    ]
+  },
+  "engine/csk/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/csk/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/csk/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/csk/interior_stop"
+    ]
+  },
+  "engine/csk/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/csk/interior_idle"
+    ]
+  },
+  "engine/csk/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/csk/interior_idle2"
+    ]
+  },
+  "engine/csk/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/csk/interior_throttle"
+    ]
+  },
+  "engine/csk/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/csk/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/csk/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/csk/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/csk/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/csk/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/humvee/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/humvee/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/humvee/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/humvee/interior_start"
+    ]
+  },
+  "engine/humvee/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/humvee/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/humvee/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/humvee/interior_stop"
+    ]
+  },
+  "engine/humvee/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/humvee/interior_idle"
+    ]
+  },
+  "engine/humvee/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/humvee/interior_idle2"
+    ]
+  },
+  "engine/humvee/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/humvee/interior_throttle"
+    ]
+  },
+  "engine/humvee/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/humvee/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/humvee/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/humvee/exterior_idle2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/humvee/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/humvee/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/technical/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/technical/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/technical/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/technical/interior_start"
+    ]
+  },
+  "engine/technical/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/technical/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/technical/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/technical/interior_stop"
+    ]
+  },
+  "engine/technical/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/technical/interior_idle"
+    ]
+  },
+  "engine/technical/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/technical/interior_idle2"
+    ]
+  },
+  "engine/technical/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/technical/interior_throttle"
+    ]
+  },
+  "engine/technical/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/technical/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/technical/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/technical/exterior_idle2",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/technical/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/technical/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ural/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ural/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ural/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/ural/interior_start"
+    ]
+  },
+  "engine/ural/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ural/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/ural/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/ural/interior_stop"
+    ]
+  },
+  "engine/ural/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/ural/interior_idle"
+    ]
+  },
+  "engine/ural/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/ural/interior_idle2"
+    ]
+  },
+  "engine/ural/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/ural/interior_throttle"
+    ]
+  },
+  "engine/ural/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ural/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/ural/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ural/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/ural/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/ural/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/truck/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/truck/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/truck/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/truck/interior_start"
+    ]
+  },
+  "engine/truck/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/truck/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/truck/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/truck/interior_stop"
+    ]
+  },
+  "engine/truck/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/truck/interior_idle"
+    ]
+  },
+  "engine/truck/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/truck/interior_idle2"
+    ]
+  },
+  "engine/truck/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/truck/interior_throttle"
+    ]
+  },
+  "engine/truck/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/truck/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/truck/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/truck/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/truck/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/truck/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/light/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/light/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/light/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/light/interior_start"
+    ]
+  },
+  "engine/light/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/light/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/light/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/light/interior_stop"
+    ]
+  },
+  "engine/light/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/light/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/light/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/light/interior_idle"
+    ]
+  },
+  "engine/light/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/light/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/light/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/light/interior_idle2"
+    ]
+  },
+  "engine/light/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/light/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/light/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/light/interior_throttle"
+    ]
+  },
+  "engine/motorbike/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/motorbike/exterior_start",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/motorbike/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/motorbike/interior_start"
+    ]
+  },
+  "engine/motorbike/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/motorbike/exterior_stop",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/motorbike/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/motorbike/interior_stop"
+    ]
+  },
+  "engine/motorbike/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/motorbike/exterior_idle",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/motorbike/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/motorbike/interior_idle"
+    ]
+  },
+  "engine/motorbike/exterior_idle2": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/motorbike/exterior_idle2",
+        "attenuation_distance": 24
+      }
+    ]
+  },
+  "engine/motorbike/interior_idle2": {
+    "sounds": [
+      "dragonrise_reforge:engine/motorbike/interior_idle2"
+    ]
+  },
+  "engine/motorbike/exterior_throttle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/motorbike/exterior_throttle",
+        "attenuation_distance": 96
+      }
+    ]
+  },
+  "engine/motorbike/interior_throttle": {
+    "sounds": [
+      "dragonrise_reforge:engine/motorbike/interior_throttle"
+    ]
+  },
+  "engine/uh60/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_start",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh60/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh60/interior_start"
+    ]
+  },
+  "engine/uh60/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_stop",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh60/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh60/interior_stop"
+    ]
+  },
+  "engine/uh60/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh60/interior_idle"
+    ]
+  },
+  "engine/uh60/exterior_close": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_close",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh60/exterior_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh60/exterior_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/uh1y/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_start",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh1y/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh1y/interior_start"
+    ]
+  },
+  "engine/uh1y/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_stop",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh1y/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh1y/interior_stop"
+    ]
+  },
+  "engine/uh1y/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/uh1y/interior_idle"
+    ]
+  },
+  "engine/uh1y/exterior_close": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_close",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/uh1y/exterior_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh1y/exterior_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/mi8/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_start",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/mi8/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/mi8/interior_start"
+    ]
+  },
+  "engine/mi8/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_stop",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/mi8/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/mi8/interior_stop"
+    ]
+  },
+  "engine/mi8/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/mi8/interior_idle"
+    ]
+  },
+  "engine/mi8/exterior_close": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_close",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/mi8/exterior_idle": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_idle",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/mi8/exterior_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/z9/exterior_start": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_start",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/z9/interior_start": {
+    "sounds": [
+      "dragonrise_reforge:engine/z9/interior_start"
+    ]
+  },
+  "engine/z9/exterior_stop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_stop",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/z9/interior_stop": {
+    "sounds": [
+      "dragonrise_reforge:engine/z9/interior_stop"
+    ]
+  },
+  "engine/z9/interior_idle": {
+    "sounds": [
+      "dragonrise_reforge:engine/z9/interior_idle"
+    ]
+  },
+  "engine/z9/exterior_close": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_close",
+        "attenuation_distance": 192
+      }
+    ]
+  },
+  "engine/z9/exterior_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/z9/exterior_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/uh60/exterior_start_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_start_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh60/exterior_start_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_start_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/uh60/exterior_stop_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_stop_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh60/exterior_stop_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh60/exterior_stop_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/mi8/exterior_start_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_start_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/mi8/exterior_start_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_start_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/mi8/exterior_stop_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_stop_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/mi8/exterior_stop_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/mi8/exterior_stop_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/uh1y/exterior_start_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_start_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh1y/exterior_start_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_start_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/uh1y/exterior_stop_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_stop_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/uh1y/exterior_stop_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/uh1y/exterior_stop_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/z9/exterior_start_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_start_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/z9/exterior_start_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_start_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "engine/z9/exterior_stop_mid": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_stop_mid",
+        "attenuation_distance": 400
+      }
+    ]
+  },
+  "engine/z9/exterior_stop_far": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:engine/z9/exterior_stop_far",
+        "attenuation_distance": 512
+      }
+    ]
+  },
+  "movement/bradley_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/bradley_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/bradley_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/bradley_cabin_interior"
+      }
+    ]
+  },
+  "movement/water_tracked_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/water_tracked_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/water_tracked_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/water_tracked_interior"
+      }
+    ]
+  },
+  "movement/abrams_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/abrams_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/tank_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/tank_cabin_interior"
+      }
+    ]
+  },
+  "movement/bmp_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/bmp_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/tires_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/tires_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/tires_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/tires_cabin_interior"
+      }
+    ]
+  },
+  "movement/water_wheeled_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/water_wheeled_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/water_wheeled_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/water_wheeled_interior"
+      }
+    ]
+  },
+  "movement/btr_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/btr_cabin_interior"
+      }
+    ]
+  },
+  "movement/fv432_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/fv432_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/mtlb_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/mtlb_cabin_interior"
+      }
+    ]
+  },
+  "movement/light_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/light_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/mtlb_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/mtlb_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/t62_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/t62_exterior",
+        "attenuation_distance": 48
+      }
+    ]
+  },
+  "movement/technical_cabin_interior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/technical_cabin_interior"
+      }
+    ]
+  },
+  "movement/warrior_exterior": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:movement/warrior_exterior",
+        "attenuation_distance": 48
+      }
+    ]
   }
 }

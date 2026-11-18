@@ -1,0 +1,381 @@
+{
+  "vehicles": [
+    "dragonrise_reforge:m1a1hc",
+    "dragonrise_reforge:m1a2sepv1",
+    "dragonrise_reforge:m1a2sepv2",
+    "dragonrise_reforge:t80",
+    "dragonrise_reforge:t80b",
+    "dragonrise_reforge:project640"
+  ],
+  "rpm": {
+    "max": 1500,
+    "load": 500,
+    "rise": 75,
+    "fall": 50
+  },
+  "exterior_volume": 0.3333,
+  "interior_volume": 1,
+  "start": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/abrams/exterior_start",
+      "volume": 0.9,
+      "duration": 21.6318
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/abrams/interior_start",
+      "volume": 0.7,
+      "duration": 13.0191
+    }
+  },
+  "stop": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/abrams/exterior_stop",
+      "volume": 0.9,
+      "duration": 29.2585
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/abrams/interior_stop",
+      "volume": 0.7,
+      "duration": 7.7263
+    }
+  },
+  "layers": [
+    {
+      "sound": "dragonrise_reforge:engine/abrams/interior_idle",
+      "interior": true,
+      "gain": 0.88,
+      "fade": [
+        0,
+        0,
+        400,
+        500
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            1,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "throttle",
+          "in": [
+            0.2,
+            1
+          ],
+          "out": [
+            0.8,
+            0.2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            1000
+          ],
+          "out": [
+            1,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/abrams/interior_idle2",
+      "interior": true,
+      "gain": 0.176,
+      "fade": [
+        200,
+        600,
+        3000,
+        5000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            100
+          ],
+          "out": [
+            0,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            4000
+          ],
+          "out": [
+            0.7,
+            1.88
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/abrams/interior_throttle",
+      "interior": true,
+      "gain": 0.4,
+      "fade": [
+        10,
+        50,
+        4000,
+        6000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -0.3,
+            1
+          ],
+          "out": [
+            0,
+            2
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -3,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        },
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            4000
+          ],
+          "out": [
+            0.7,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/abrams/exterior_idle",
+      "gain": 2.25,
+      "fade": [
+        0,
+        0,
+        400,
+        500
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            1,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "throttle",
+          "in": [
+            0.2,
+            1
+          ],
+          "out": [
+            0.8,
+            0.2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            1000
+          ],
+          "out": [
+            0.8,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/abrams/exterior_idle2",
+      "gain": 1.68,
+      "fade": [
+        200,
+        600,
+        3000,
+        5000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            100
+          ],
+          "out": [
+            0,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            4000
+          ],
+          "out": [
+            0.7,
+            1.88
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/abrams/exterior_throttle",
+      "gain": 3,
+      "fade": [
+        10,
+        50,
+        4000,
+        6000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -0.3,
+            1
+          ],
+          "out": [
+            0,
+            2
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            -3,
+            1
+          ],
+          "out": [
+            0,
+            1
+          ]
+        },
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            4000
+          ],
+          "out": [
+            0.7,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:movement/abrams_exterior",
+      "interior": false,
+      "movement": "land",
+      "gain": 0.46
+    },
+    {
+      "sound": "dragonrise_reforge:movement/tank_cabin_interior",
+      "interior": true,
+      "movement": "land",
+      "gain": 0.42
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_tracked_exterior",
+      "interior": false,
+      "movement": "water",
+      "gain": 0.5
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_tracked_interior",
+      "interior": true,
+      "movement": "water",
+      "gain": 0.32
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "dragonrise_reforge.keyinfo.engine_toggle": "Hold to start or stop the engine",
   "message.dragonrise_reforge.ammo_loaded": "Loaded %s round(s) into the drone",
   "message.dragonrise_reforge.ammo_no_container": "This drone has no ammo container",
   "CRC F1 12,7mm": "12.7mm CRC-F1 Machine Gun",

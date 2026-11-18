@@ -1,0 +1,138 @@
+{
+  "vehicles": [
+    "dragonrise_reforge:uh60",
+    "dragonrise_reforge:z20",
+    "dragonrise_reforge:ah64",
+    "dragonrise_reforge:nh90"
+  ],
+  "mode": "helicopter",
+  "rotor_pitch": [
+    0.85,
+    1.0
+  ],
+  "rpm": {
+    "max": 1500,
+    "load": 500,
+    "rise": 75,
+    "fall": 50
+  },
+  "exterior_volume": 0.3333,
+  "interior_volume": 0.6667,
+  "start": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_start",
+      "volume": 3,
+      "duration": 20.7578,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/uh60/interior_start",
+      "volume": 2,
+      "duration": 20.0
+    },
+    "exterior_mid": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_start_mid",
+      "volume": 3,
+      "duration": 20.0,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    "exterior_far": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_start_far",
+      "volume": 1.5,
+      "duration": 20.0084,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  },
+  "stop": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_stop",
+      "volume": 3,
+      "duration": 27.4039,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/uh60/interior_stop",
+      "volume": 2,
+      "duration": 23.1015
+    },
+    "exterior_mid": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_stop_mid",
+      "volume": 3,
+      "duration": 20.5958,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    "exterior_far": {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_stop_far",
+      "volume": 1.5,
+      "duration": 6.2616,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  },
+  "layers": [
+    {
+      "sound": "dragonrise_reforge:engine/uh60/interior_idle",
+      "interior": true,
+      "gain": 1.5
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_close",
+      "gain": 3,
+      "distance_fade": [
+        0,
+        0,
+        110,
+        160
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_mid",
+      "gain": 3,
+      "distance_fade": [
+        100,
+        130,
+        300,
+        400
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/uh60/exterior_far",
+      "gain": 1.5,
+      "distance_fade": [
+        250,
+        280,
+        600,
+        9000
+      ]
+    }
+  ]
+}

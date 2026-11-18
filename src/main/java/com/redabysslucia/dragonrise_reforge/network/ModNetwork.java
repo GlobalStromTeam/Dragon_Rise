@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 
 @SuppressWarnings("removal")
 public class ModNetwork {
-    private static final String PROTOCOL_VERSION = "1";
+    private static final String PROTOCOL_VERSION = "2";
     public static final SimpleChannel PACKET_HANDLER = net.minecraftforge.network.NetworkRegistry.newSimpleChannel(new ResourceLocation(Dragonrise_reforge.MODID, Dragonrise_reforge.MODID), () -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 
     public static int messageID = 0;
@@ -27,6 +27,7 @@ public class ModNetwork {
         playToClient(com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage.class, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage::handle);
         playToClient(com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSyncMessage.class, com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSyncMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSyncMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSyncMessage::handle);
         playToClient(com.redabysslucia.dragonrise_reforge.network.message.MissileLaunchStateMessage.class, com.redabysslucia.dragonrise_reforge.network.message.MissileLaunchStateMessage::encode, com.redabysslucia.dragonrise_reforge.network.message.MissileLaunchStateMessage::decode, com.redabysslucia.dragonrise_reforge.network.message.MissileLaunchStateMessage::handle);
+        playToServer(EngineControlPacket.class, EngineControlPacket::encode, EngineControlPacket::decode, EngineControlPacket::handle);
     }
 
     public static <T> void playToClient(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder, BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {

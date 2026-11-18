@@ -1,0 +1,310 @@
+{
+  "vehicles": [
+    "dragonrise_reforge:motuo"
+  ],
+  "rpm": {
+    "max": 750,
+    "load": 250,
+    "rise": 38,
+    "fall": 25
+  },
+  "exterior_volume": 0.6667,
+  "interior_volume": 0.6667,
+  "start": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/motorbike/exterior_start",
+      "volume": 0.6,
+      "duration": 0.8
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/motorbike/interior_start",
+      "volume": 0.6,
+      "duration": 0.8
+    }
+  },
+  "stop": {
+    "exterior": {
+      "sound": "dragonrise_reforge:engine/motorbike/exterior_stop",
+      "volume": 0.6,
+      "duration": 3.3365
+    },
+    "interior": {
+      "sound": "dragonrise_reforge:engine/motorbike/interior_stop",
+      "volume": 0.6,
+      "duration": 3.3365
+    }
+  },
+  "layers": [
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/exterior_idle",
+      "gain": 1,
+      "fade": [
+        0,
+        0,
+        100,
+        800
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0.4
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            0
+          ],
+          "out": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            800
+          ],
+          "out": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/interior_idle",
+      "interior": true,
+      "gain": 1,
+      "fade": [
+        0,
+        0,
+        100,
+        800
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0.4
+          ]
+        },
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            0
+          ],
+          "out": [
+            1,
+            2
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            800
+          ],
+          "out": [
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/exterior_idle2",
+      "gain": 1.4,
+      "fade": [
+        100,
+        200,
+        1000,
+        2000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0.4
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            2000
+          ],
+          "out": [
+            0.8,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/interior_idle2",
+      "interior": true,
+      "gain": 1.4,
+      "fade": [
+        100,
+        200,
+        1000,
+        2000
+      ],
+      "volume_mods": [
+        {
+          "param": "throttle",
+          "in": [
+            0,
+            1
+          ],
+          "out": [
+            1,
+            0.4
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            20,
+            2000
+          ],
+          "out": [
+            0.8,
+            1.5
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/exterior_throttle",
+      "gain": 1.5,
+      "fade": [
+        500,
+        1000,
+        2000,
+        4500
+      ],
+      "volume_mods": [
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            2000
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            2000
+          ],
+          "out": [
+            0.2,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:engine/motorbike/interior_throttle",
+      "interior": true,
+      "gain": 1.5,
+      "fade": [
+        500,
+        1000,
+        2000,
+        4500
+      ],
+      "volume_mods": [
+        {
+          "param": "rpm",
+          "in": [
+            0,
+            2000
+          ],
+          "out": [
+            0,
+            1
+          ]
+        }
+      ],
+      "pitch_mods": [
+        {
+          "param": "rpm",
+          "abs": true,
+          "in": [
+            0,
+            2000
+          ],
+          "out": [
+            0.2,
+            1.1
+          ]
+        }
+      ]
+    },
+    {
+      "sound": "dragonrise_reforge:movement/light_exterior",
+      "interior": false,
+      "movement": "land",
+      "gain": 0.4
+    },
+    {
+      "sound": "dragonrise_reforge:movement/tires_cabin_interior",
+      "interior": true,
+      "movement": "land",
+      "gain": 0.34
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_wheeled_exterior",
+      "interior": false,
+      "movement": "water",
+      "gain": 0.5
+    },
+    {
+      "sound": "dragonrise_reforge:movement/water_wheeled_interior",
+      "interior": true,
+      "movement": "water",
+      "gain": 0.32
+    }
+  ]
+}
