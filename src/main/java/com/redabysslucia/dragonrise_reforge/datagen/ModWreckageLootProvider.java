@@ -108,6 +108,8 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.J15T.get(), createAircraftLoot(5));
         add(ModEntities.J16.get(), createAircraftLoot(6));
         add(ModEntities.MIG29M.get(), createAircraftLoot(6));
+        add(ModEntities.SU25.get(), createAircraftLoot(6));
+        add(ModEntities.MIRAGE2000.get(), createAircraftLoot(6));
         add(ModEntities.EF2000.get(), createAircraftLoot(6));
         add(ModEntities.SU30SM.get(), createAircraftLoot(6));
         add(ModEntities.JH7.get(), createAircraftLoot(6));

@@ -1,0 +1,10 @@
+{
+  "ID": "dragonrise_reforge:mirage2000",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/mirage2000.animation.json",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/mirage2000.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/mirage2000.png"
+    }
+  ]
+}

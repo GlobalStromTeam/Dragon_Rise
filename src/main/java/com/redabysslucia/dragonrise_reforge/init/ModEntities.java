@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.atsuishio.superbwarfare.entity.projectile.Mk82Entity;
+import com.redabysslucia.dragonrise_reforge.entities.FixedWingJetEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Ef2000Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Mig29mEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.R550Entity;
@@ -1780,6 +1782,18 @@ public class ModEntities {
     public static final RegistryObject<EntityType<Mig29mEntity>> MIG29M = register("mig29m",
             EntityType.Builder.<Mig29mEntity>of(Mig29mEntity::new, MobCategory.MISC)
                     .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
+
+    public static final RegistryObject<EntityType<FixedWingJetEntity>> SU25 = register("su25",
+            EntityType.Builder.<FixedWingJetEntity>of(FixedWingJetEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
+
+    public static final RegistryObject<EntityType<FixedWingJetEntity>> MIRAGE2000 = register("mirage2000",
+            EntityType.Builder.<FixedWingJetEntity>of(FixedWingJetEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
+
+    public static final RegistryObject<EntityType<Mk82Entity>> FAB500 = register("fab500",
+            EntityType.Builder.<Mk82Entity>of(Mk82Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(0.5f, 0.5f));
 
     public static final RegistryObject<EntityType<Ef2000Entity>> EF2000 = register("ef2000",
             EntityType.Builder.<Ef2000Entity>of(Ef2000Entity::new, MobCategory.MISC)

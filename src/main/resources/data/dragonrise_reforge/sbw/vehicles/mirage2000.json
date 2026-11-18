@@ -1,0 +1,1060 @@
+{
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/mirage2000.animation.json",
+  "ID": "dragonrise_reforge:mirage2000",
+  "MaxHealth": 250,
+  "MaxEnergy": 10000000,
+  "OBB": [
+    {
+      "Part": "Collision",
+      "Position": [
+        -0.003125,
+        1.3731407,
+        0.8732524
+      ],
+      "Size": [
+        1.7459231,
+        1.4730915,
+        7.5145463
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        1.5810833,
+        7.7563994
+      ],
+      "Size": [
+        0.308442,
+        0.3097542,
+        0.6313994
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -0.0717782,
+        1.951506,
+        5.9375
+      ],
+      "Size": [
+        0.5267475,
+        0.7442354,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        2.0185542,
+        3.5625
+      ],
+      "Size": [
+        1.1965364,
+        0.827678,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        1.9684947,
+        1.1875
+      ],
+      "Size": [
+        1.2809982,
+        0.7938073,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        1.9270261,
+        -1.1875
+      ],
+      "Size": [
+        1.2809982,
+        0.7523391,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        1.9553958,
+        -3.5625
+      ],
+      "Size": [
+        1.0605162,
+        0.7715557,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0,
+        2.0137218,
+        -5.0933775
+      ],
+      "Size": [
+        0.9364483,
+        0.7181092,
+        0.3433775
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "MainEngine",
+      "Position": [
+        0.0,
+        1.4758387,
+        -4.6400589
+      ],
+      "Size": [
+        0.5806293,
+        0.2109318,
+        0.1099411
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "MainEngine",
+      "Position": [
+        0.0,
+        1.9829924,
+        -5.695647
+      ],
+      "Size": [
+        0.7003553,
+        0.7049283,
+        0.945647
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -0.8121021,
+        1.6009645,
+        2.6158524
+      ],
+      "Size": [
+        0.3535722,
+        0.1256079,
+        0.2408524
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -2.1267626,
+        1.6265315,
+        1.1875
+      ],
+      "Size": [
+        2.1267626,
+        0.214672,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -2.5205589,
+        1.6000373,
+        -1.1875
+      ],
+      "Size": [
+        1.7535327,
+        0.2237121,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -2.6386135,
+        1.5620067,
+        -3.4098056
+      ],
+      "Size": [
+        2.151393,
+        0.2046096,
+        1.0348056
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.8121021,
+        1.6009645,
+        2.6158524
+      ],
+      "Size": [
+        0.3535722,
+        0.1256079,
+        0.2408524
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        2.1267626,
+        1.6265315,
+        1.1875
+      ],
+      "Size": [
+        2.1267626,
+        0.214672,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        2.5205589,
+        1.6000373,
+        -1.1875
+      ],
+      "Size": [
+        1.7535327,
+        0.2237121,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        2.6386135,
+        1.5620067,
+        -3.4098056
+      ],
+      "Size": [
+        2.151393,
+        0.2046096,
+        1.0348056
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -0.041414,
+        2.656523,
+        -1.9342397
+      ],
+      "Size": [
+        0.041414,
+        0.400074,
+        0.4407603
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -0.0621419,
+        3.6115357,
+        -3.5625
+      ],
+      "Size": [
+        0.0621419,
+        1.0434201,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        -0.105,
+        3.9978515,
+        -5.5775
+      ],
+      "Size": [
+        0.105,
+        1.313789,
+        0.8275
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.041414,
+        2.656523,
+        -1.9342397
+      ],
+      "Size": [
+        0.041414,
+        0.400074,
+        0.4407603
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.0621419,
+        3.6115357,
+        -3.5625
+      ],
+      "Size": [
+        0.0621419,
+        1.0434201,
+        1.1875
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    },
+    {
+      "Part": "Body",
+      "Position": [
+        0.105,
+        3.9978515,
+        -5.5775
+      ],
+      "Size": [
+        0.105,
+        1.313789,
+        0.8275
+      ],
+      "Transform": "Vehicle",
+      "Rotation": "Vehicle"
+    }
+  ],
+  "Seats": [
+    {
+      "IsEnclosed": true,
+      "Transform": "Vehicle",
+      "Position": [
+        0.0,
+        0.9625,
+        4.375
+      ],
+      "CanRotateHead": false,
+      "Sensitivity": [
+        0,
+        0,
+        0
+      ],
+      "CameraPos": {
+        "Transform": "Vehicle",
+        "Position": [
+          0.0,
+          2.5625,
+          4.375
+        ],
+        "UseFixedCameraPos": true,
+        "UseAircraftCamera": true,
+        "AircraftCameraPos": [
+          0,
+          3,
+          -14
+        ]
+      },
+      "DismountInfo": {
+        "Transform": "Vehicle",
+        "Position": [
+          2.0,
+          0.0,
+          4.375
+        ],
+        "CanEject": true,
+        "EjectPosition": [
+          0.0,
+          4.0625,
+          4.375
+        ],
+        "EjectDirection": "Up",
+        "EjectForce": 4
+      },
+      "Weapons": [
+        "Cannon",
+        "Pylon1",
+        "Pylon2",
+        "Pylon3"
+      ],
+      "Pose": "Pilot",
+      "HasThermalImaging": true
+    }
+  ],
+  "HudType": "@Aircraft",
+  "Weapons": {
+    "Cannon": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_30mm.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "AmmoType": "superbwarfare:small_shell_ap",
+      "Projectile": "superbwarfare:small_cannon_shell",
+      "DefaultZoom": 2,
+      "RPM": 1200,
+      "Velocity": 34,
+      "Gravity": 0.05,
+      "Damage": 35,
+      "ExplosionDamage": 10,
+      "ExplosionRadius": 4,
+      "HeatPerShoot": 1.5,
+      "NaturalCooldown": 0.5,
+      "Spread": 0.5,
+      "Name": "dragonrise_reforge:mirage2000_cannon",
+      "SoundInfo": {
+        "FireSoundInstances": "dragonrise_reforge:fire_sound_30mm",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
+      "Crosshair": "@AirCraftCommon",
+      "CrosshairColor": "0x66FF00",
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "Positions": [
+          [
+            -0.2195561,
+            1.2733502,
+            2.6501645
+          ],
+          [
+            0.2195561,
+            1.2733502,
+            2.6501645
+          ]
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "ShootDirectionForHud": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "Pylon1": {
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl10.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 2,
+      "EmptyReloadTime": 260,
+      "Projectile": "dragonrise_reforge:r550",
+      "Name": "dragonrise_reforge:r550",
+      "Damage": 260,
+      "ExplosionDamage": 90,
+      "ExplosionRadius": 6,
+      "Velocity": 10,
+      "Gravity": 0.05,
+      "SeekWeaponInfo": {
+        "SeekDirection": "ClientCamera",
+        "SeekRange": 512,
+        "SeekAngle": 20,
+        "SeekTime": 5,
+        "MinTargetHeight": 10,
+        "MinTargetSize": 0.1,
+        "OnlyLockEntity": true
+      },
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ViewDirection": "Default",
+        "Positions": [
+          [
+            3.4673461,
+            0.537668,
+            -4.7994822
+          ],
+          [
+            -3.4703114,
+            0.537668,
+            -4.7994822
+          ]
+        ],
+        "BoundUpWithAmmoAmount": true,
+        "ShootPositionForHud": [
+          3.4673461,
+          0.537668,
+          -4.7994822
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
+        "Locking": "superbwarfare:javelin_locking",
+        "Locked": "superbwarfare:javelin_locking",
+        "VehicleReload": "minecraft:intentionally_empty"
+      },
+      "CrosshairColor": "0xFFC700",
+      "Crosshair": "@VehicleCommonSeekMissile",
+      "SoundRadius": 8,
+      "ProjectileDummyInfo": {
+        "Offset": [
+          -0.0014826,
+          -0.591082,
+          -2.0421853
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "AddShooterDeltaMovement": false,
+      "ProjectileLife": 400,
+      "UseNacelleCamera": false,
+      "CrosshairZooming": "@Empty",
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false
+        },
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false,
+          "Override": {
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl12.png",
+            "DefaultZoom": 2,
+            "DefaultFireMode": "Semi",
+            "AvailableFireModes": "Semi",
+            "Magazine": 2,
+            "EmptyReloadTime": 200,
+            "Projectile": "dragonrise_reforge:mica",
+            "Name": "dragonrise_reforge:mica",
+            "Damage": 1100,
+            "ExplosionDamage": 180,
+            "ExplosionRadius": 12,
+            "AddShooterDeltaMovement": true,
+            "Velocity": 3.75,
+            "ProjectileLife": 3600,
+            "SeekWeaponInfo": {
+              "SeekDirection": "ClientCamera",
+              "MaxGuidedRange": 48000,
+              "MaxTargetHeight": 32,
+              "SeekRange": 1536,
+              "SeekAngle": 20,
+              "SeekTime": 10,
+              "MinTargetSize": 0.9,
+              "OnlyLockEntity": true
+            },
+            "ProjectileDummyInfo": {
+              "Offset": [
+                -0.0021581,
+                -0.4920158,
+                -1.5903695
+              ],
+              "Rotate": [
+                0,
+                0,
+                0
+              ],
+              "Scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "ShootPos": {
+              "Transform": "Vehicle",
+              "ViewDirection": "Default",
+              "Positions": [
+                [
+                  3.4666706,
+                  0.6367342,
+                  -4.3476664
+                ],
+                [
+                  -3.4709869,
+                  0.6367342,
+                  -4.3476664
+                ]
+              ],
+              "BoundUpWithAmmoAmount": true,
+              "ShootPositionForHud": [
+                3.4666706,
+                0.6367342,
+                -4.3476664
+              ],
+              "Directions": [
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ]
+            },
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:bomb_release",
+              "Fire3P": "superbwarfare:bomb_release",
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
+              "Change": "dragonrise_reforge:change_weapon",
+              "Locking": "superbwarfare:missile_locking",
+              "Locked": "superbwarfare:missile_locked",
+              "VehicleReload": "minecraft:intentionally_empty"
+            },
+            "Crosshair": "@AirCraftMissile",
+            "CrosshairZooming": "@AirCraftCommon",
+            "CrosshairColor": "0x66FF00",
+            "SoundRadius": 8,
+            "Gravity": 0.05,
+            "UseNacelleCamera": false
+          }
+        }
+      ]
+    },
+    "Pylon2": {
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl12.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 2,
+      "EmptyReloadTime": 200,
+      "Projectile": "dragonrise_reforge:mica",
+      "Name": "dragonrise_reforge:mica",
+      "Damage": 1100,
+      "ExplosionDamage": 180,
+      "ExplosionRadius": 12,
+      "AddShooterDeltaMovement": true,
+      "Velocity": 3.75,
+      "ProjectileLife": 3600,
+      "SeekWeaponInfo": {
+        "SeekDirection": "ClientCamera",
+        "MaxGuidedRange": 48000,
+        "MaxTargetHeight": 32,
+        "SeekRange": 1536,
+        "SeekAngle": 20,
+        "SeekTime": 10,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
+      "ProjectileDummyInfo": {
+        "Offset": [
+          -0.0021581,
+          -0.4920158,
+          -1.5903695
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ViewDirection": "Default",
+        "Positions": [
+          [
+            2.4363581,
+            0.6039217,
+            -3.2681351
+          ],
+          [
+            -2.4406744,
+            0.6039217,
+            -3.2681351
+          ]
+        ],
+        "BoundUpWithAmmoAmount": true,
+        "ShootPositionForHud": [
+          2.4363581,
+          0.6039217,
+          -3.2681351
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
+        "Locking": "superbwarfare:missile_locking",
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
+      },
+      "Crosshair": "@AirCraftMissile",
+      "CrosshairZooming": "@AirCraftCommon",
+      "CrosshairColor": "0x66FF00",
+      "SoundRadius": 8,
+      "Gravity": 0.05,
+      "UseNacelleCamera": false,
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false
+        },
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false,
+          "Override": {
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl10.png",
+            "DefaultZoom": 2,
+            "DefaultFireMode": "Semi",
+            "AvailableFireModes": "Semi",
+            "Magazine": 2,
+            "EmptyReloadTime": 260,
+            "Projectile": "dragonrise_reforge:r550",
+            "Name": "dragonrise_reforge:r550",
+            "Damage": 260,
+            "ExplosionDamage": 90,
+            "ExplosionRadius": 6,
+            "Velocity": 10,
+            "Gravity": 0.05,
+            "SeekWeaponInfo": {
+              "SeekDirection": "ClientCamera",
+              "SeekRange": 512,
+              "SeekAngle": 20,
+              "SeekTime": 5,
+              "MinTargetHeight": 10,
+              "MinTargetSize": 0.1,
+              "OnlyLockEntity": true
+            },
+            "ShootPos": {
+              "Transform": "Vehicle",
+              "ViewDirection": "Default",
+              "Positions": [
+                [
+                  2.4370336,
+                  0.5048555,
+                  -3.7199509
+                ],
+                [
+                  -2.4399989,
+                  0.5048555,
+                  -3.7199509
+                ]
+              ],
+              "BoundUpWithAmmoAmount": true,
+              "ShootPositionForHud": [
+                2.4370336,
+                0.5048555,
+                -3.7199509
+              ],
+              "Directions": [
+                [
+                  0,
+                  0,
+                  1
+                ]
+              ]
+            },
+            "SoundInfo": {
+              "Fire1P": "superbwarfare:bomb_release",
+              "Fire3P": "superbwarfare:bomb_release",
+              "VehicleReload3p": "minecraft:intentionally_empty",
+              "VehicleReloadSoundTime": 0,
+              "Change": "dragonrise_reforge:change_weapon",
+              "Locking": "superbwarfare:javelin_locking",
+              "Locked": "superbwarfare:javelin_locking",
+              "VehicleReload": "minecraft:intentionally_empty"
+            },
+            "CrosshairColor": "0xFFC700",
+            "Crosshair": "@VehicleCommonSeekMissile",
+            "SoundRadius": 8,
+            "ProjectileDummyInfo": {
+              "Offset": [
+                -0.0014826,
+                -0.591082,
+                -2.0421853
+              ],
+              "Rotate": [
+                0,
+                0,
+                0
+              ],
+              "Scale": [
+                1,
+                1,
+                1
+              ]
+            },
+            "AddShooterDeltaMovement": false,
+            "ProjectileLife": 400,
+            "UseNacelleCamera": false,
+            "CrosshairZooming": "@Empty"
+          }
+        }
+      ]
+    },
+    "Pylon3": {
+      "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/missile_pl12.png",
+      "DefaultZoom": 2,
+      "DefaultFireMode": "Semi",
+      "AvailableFireModes": "Semi",
+      "Magazine": 2,
+      "EmptyReloadTime": 200,
+      "Projectile": "dragonrise_reforge:mica",
+      "Name": "dragonrise_reforge:mica",
+      "Damage": 1100,
+      "ExplosionDamage": 180,
+      "ExplosionRadius": 12,
+      "AddShooterDeltaMovement": true,
+      "Velocity": 3.75,
+      "ProjectileLife": 3600,
+      "SeekWeaponInfo": {
+        "SeekDirection": "ClientCamera",
+        "MaxGuidedRange": 48000,
+        "MaxTargetHeight": 32,
+        "SeekRange": 1536,
+        "SeekAngle": 20,
+        "SeekTime": 10,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
+      "ProjectileDummyInfo": {
+        "Offset": [
+          -0.0021581,
+          -0.4920158,
+          -1.5903695
+        ],
+        "Rotate": [
+          0,
+          0,
+          0
+        ],
+        "Scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "ShootPos": {
+        "Transform": "Vehicle",
+        "ViewDirection": "Default",
+        "Positions": [
+          [
+            0.9790613,
+            0.5796945,
+            -4.2878051
+          ],
+          [
+            -0.9833775,
+            0.5796945,
+            -4.2878051
+          ]
+        ],
+        "BoundUpWithAmmoAmount": true,
+        "ShootPositionForHud": [
+          0.9790613,
+          0.5796945,
+          -4.2878051
+        ],
+        "Directions": [
+          [
+            0,
+            0,
+            1
+          ]
+        ]
+      },
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:bomb_release",
+        "Fire3P": "superbwarfare:bomb_release",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "Change": "dragonrise_reforge:change_weapon",
+        "Locking": "superbwarfare:missile_locking",
+        "Locked": "superbwarfare:missile_locked",
+        "VehicleReload": "minecraft:intentionally_empty"
+      },
+      "Crosshair": "@AirCraftMissile",
+      "CrosshairZooming": "@AirCraftCommon",
+      "CrosshairColor": "0x66FF00",
+      "SoundRadius": 8,
+      "Gravity": 0.05,
+      "UseNacelleCamera": false,
+      "AmmoType": [
+        {
+          "Ammo": "superbwarfare:medium_anti_air_missile",
+          "ShouldUnload": false
+        }
+      ]
+    }
+  },
+  "TurretPos": [
+    0,
+    0,
+    0
+  ],
+  "BarrelPos": [
+    0,
+    0,
+    0
+  ],
+  "TurretTurnSpeed": [
+    5,
+    5
+  ],
+  "TurretPitchRange": [
+    -90,
+    90
+  ],
+  "UpStep": 1.1,
+  "Mass": 20,
+  "AllowFreeCam": true,
+  "HasDecoy": true,
+  "SmokeDecoy": false,
+  "SendHitParticles": false,
+  "DamageModifiers": [
+    "minecraft:arrow * 1.5",
+    "minecraft:trident * 1.5",
+    "minecraft:mob_attack * 2.5",
+    "minecraft:mob_attack_no_aggro * 2",
+    "minecraft:mob_projectile * 1.5",
+    "minecraft:lava - -7",
+    "minecraft:lava * 2.66",
+    "@minecraft:tnt * 5",
+    "@minecraft:tnt_minecart * 5",
+    "minecraft:explosion * 6",
+    "minecraft:player_explosion * 6",
+    "superbwarfare:custom_explosion * 3.4",
+    "superbwarfare:projectile_explosion * 3",
+    "superbwarfare:mine * 0.75",
+    "superbwarfare:projectile_hit * 1.5",
+    "superbwarfare:grapeshot_hit * 0.75",
+    "superbwarfare:laser * 0.75",
+    "#superbwarfare:projectile * 0.25",
+    "#superbwarfare:projectile_absolute * 0.85",
+    "superbwarfare:vehicle_strike * 6",
+    "@superbwarfare:rgo_grenade * 5",
+    "@superbwarfare:hand_grenade * 5",
+    "@superbwarfare:mortar_shell * 5",
+    "@superbwarfare:igla_9k38_missile * 1.3",
+    "@superbwarfare:gun_grenade * 1.5",
+    "@#superbwarfare:at_rocket * 3",
+    "$entity.getSourceAngle(source, 0.25) * damage * (entity.getHealth() > 0.1 ? 0.4 : 0.05)"
+  ],
+  "RotateOffsetHeight": 1.5375,
+  "DestroyInfo": {
+    "ParticleType": "Giant",
+    "ExplosionDamage": 800,
+    "ExplosionRadius": 16,
+    "CrashPassengers": true
+  },
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/fr_aircraft.png",
+  "Type": "Airplane",
+  "EngineType": "Aircraft",
+  "EngineInfo": {
+    "HasGear": true,
+    "EnergyCostRate": 512,
+    "Increment": 0.5,
+    "Decrement": 0.5,
+    "PitchSpeed": 1.25,
+    "YawSpeed": 1.25,
+    "RollSpeed": 1.25,
+    "LiftSpeed": 1.25,
+    "SpeedRate": 1.2,
+    "GearRotateAngle": 85,
+    "EngineStartSound": "dragonrise_reforge:jet_engine_start",
+    "EngineSoundVolume": 0.8
+  },
+  "TerrainCompat": [
+    [
+      1.7427981,
+      -0.0999509,
+      -0.8417138
+    ],
+    [
+      -1.7490481,
+      -0.0999509,
+      -0.8417138
+    ],
+    [
+      -0.0,
+      -0.0732239,
+      4.4611992
+    ]
+  ],
+  "EngineSound": "dragonrise_reforge:jet_engine",
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/mirage2000.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/mirage2000.png"
+    }
+  ],
+  "TurretControllerIndex": 0,
+  "PassengerWeaponStationControllerIndex": 0,
+  "PassengerWeaponStationPitchRange": [
+    -90,
+    90
+  ],
+  "PassengerWeaponStationPos": [
+    -0.7708738,
+    0.8986262,
+    3.0886456
+  ],
+  "PassengerWeaponStationBarrelPos": [
+    0,
+    0,
+    0
+  ],
+  "MouseSensitivity": 0.25
+}

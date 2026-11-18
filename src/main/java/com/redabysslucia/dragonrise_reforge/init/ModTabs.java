@@ -103,6 +103,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.MIG29M.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SU30SM.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SU24M.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.SU25.get()));
 
                         //朝鲜 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CHONMAHO5.get()));
@@ -143,6 +144,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.EC665.get()));
                         //法国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALE.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.MIRAGE2000.get()));
 
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));

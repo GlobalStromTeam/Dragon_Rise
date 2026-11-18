@@ -1,5 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
+import com.atsuishio.superbwarfare.client.renderer.projectile.BasicProjectileRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Ef2000Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Mig29mRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.R550Renderer;
@@ -170,6 +172,9 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.ammo.IedRenderer;
 public class ModEntityRenderers {
         @SubscribeEvent
         public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+                event.registerEntityRenderer(ModEntities.SU25.get(), GeoVehicleRenderer::new);
+                event.registerEntityRenderer(ModEntities.MIRAGE2000.get(), GeoVehicleRenderer::new);
+                event.registerEntityRenderer(ModEntities.FAB500.get(), BasicProjectileRenderer::new);
                 event.registerEntityRenderer(ModEntities.EF2000.get(), Ef2000Renderer::new);
         event.registerEntityRenderer(ModEntities.MIG29M.get(), Mig29mRenderer::new);
         event.registerEntityRenderer(ModEntities.R550.get(), R550Renderer::new);
