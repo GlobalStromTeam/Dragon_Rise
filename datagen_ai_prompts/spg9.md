@@ -191,13 +191,19 @@ ussr_water.png
       },
       "Name": "dragonrise_reforge:PG9",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bmp_2_cannon_fire_1p",
-        "Fire3P": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Fire3PVeryFar": "superbwarfare:bmp_2_cannon_fire_3p",
-        "Change": "dragonrise_reforge:change_weapon"
+        "Fire1P": "dragonrise_reforge:spg9_fire_1p",
+        "Fire3P": "dragonrise_reforge:spg9_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:spg9_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:spg9_fire_3p_very_far",
+        "Change": "dragonrise_reforge:change_weapon",
+        "VehicleReload": "dragonrise_reforge:manual_reload_4s",
+        "VehicleReload3p": "minecraft:intentionally_empty",
+        "VehicleReloadSoundTime": 0,
+        "CancellableSounds": [
+          "dragonrise_reforge:manual_reload_4s"
+        ]
       },
-      "SoundRadius": 24
+      "SoundRadius": 32
     }
   },
   "ThirdPersonCameraPos": [-0.4,1.1,-1.6],

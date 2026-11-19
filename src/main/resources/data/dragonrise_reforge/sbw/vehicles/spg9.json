@@ -92,7 +92,24 @@
       "Texture": "dragonrise_reforge:textures/entity/spg9.png"
     }
   ],
-  "OBB": [],
+  "OBB": [
+    {
+      "Size": [0.078,0.109,0.294],
+      "Position": [0.0,0.781,-0.193]
+    },
+    {
+      "Size": [0.357,0.633,1.491],
+      "Position": [0.0,0.627,0.119],
+      "Part": "Collision"
+    },
+    {
+      "Size": [0.078,0.078,1.575],
+      "Position": [0.0,0.343,0.491],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    }
+  ],
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/spg9.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/spg9.png"

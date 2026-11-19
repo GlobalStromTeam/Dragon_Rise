@@ -36,21 +36,21 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "Vehicle",
-      "Position": [-0.3952377, -2.1255005, 1.5809508],
+      "Position": [-0.395,-0.907,1.581],
       "CanRotateHead": false,
       "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0, -0.7904754, 8.8708905],
+        "Position": [0.0,-0.7904754,8.8708905],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0.0, 4.830683, -24.5925679]
+        "AircraftCameraPos": [0.0,4.830683,-24.5925679]
       },
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [1.5809508, -2.1255005, 1.5809508],
+        "Position": [1.5809508,-2.1255005,1.5809508],
         "CanEject": true,
-        "EjectPosition": [0.0, 5.269836, 0.0],
+        "EjectPosition": [0.0,5.269836,0.0],
         "EjectDirection": "Up",
         "EjectForce": 3
       },
@@ -65,21 +65,21 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "Vehicle",
-      "Position": [0.0, -0.5269836, 0.5269836],
+      "Position": [0.0,-0.5269836,0.5269836],
       "CanRotateHead": false,
       "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0, 2.195765, 0.878306],
+        "Position": [0.0,2.195765,0.878306],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0.0, 4.830683, -24.5925679]
+        "AircraftCameraPos": [0.0,4.830683,-24.5925679]
       },
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [1.5809508, -0.5269836, 0.5269836],
+        "Position": [1.5809508,-0.5269836,0.5269836],
         "CanEject": true,
-        "EjectPosition": [0.0, 5.269836, 0.0],
+        "EjectPosition": [0.0,5.269836,0.0],
         "EjectDirection": "Up",
         "EjectForce": 3
       },
@@ -89,21 +89,21 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "Vehicle",
-      "Position": [0.0, -1.2296284, 2.4592568],
+      "Position": [0.0,-1.2296284,2.4592568],
       "CanRotateHead": false,
       "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0, -2.634918, 2.8105792],
+        "Position": [0.0,-2.634918,2.8105792],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0.0, 4.830683, -24.5925679]
+        "AircraftCameraPos": [0.0,4.830683,-24.5925679]
       },
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [1.5809508, -1.2296284, 2.4592568],
+        "Position": [1.5809508,-1.2296284,2.4592568],
         "CanEject": true,
-        "EjectPosition": [0.0, 5.269836, 0.0],
+        "EjectPosition": [0.0,5.269836,0.0],
         "EjectDirection": "Up",
         "EjectForce": 3
       },
@@ -113,25 +113,29 @@
       "IsEnclosed": true,
       "HidePassenger": true,
       "Transform": "Vehicle",
-      "Position": [0.0, -0.3513224, -4.5671912],
+      "Position": [0.0,-0.3513224,-4.5671912],
       "CanRotateHead": false,
       "Sensitivity": [0,0,0],
       "CameraPos": {
         "Transform": "Vehicle",
-        "Position": [0.0, 3.7767158, -10.5396719],
+        "Position": [0.0,3.7767158,-10.5396719],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
-        "AircraftCameraPos": [0.0, 4.830683, -24.5925679]
+        "AircraftCameraPos": [0.0,4.830683,-24.5925679]
       },
       "DismountInfo": {
         "Transform": "Vehicle",
-        "Position": [1.5809508, -0.3513224, -4.5671912],
+        "Position": [1.5809508,-0.3513224,-4.5671912],
         "CanEject": true,
-        "EjectPosition": [0.0, 5.269836, 0.0],
+        "EjectPosition": [0.0,5.269836,0.0],
         "EjectDirection": "Up",
         "EjectForce": 3
       },
-      "TerrainCompat": [[-0.4268567, 0.0, 8.1331135], [-4.5320589, 0.0, -1.2998929], [4.5320589, 0.0, -1.2998929]],
+      "TerrainCompat": [
+        [-0.4268567,0.0,8.1331135],
+        [-4.5320589,0.0,-1.2998929],
+        [4.5320589,0.0,-1.2998929]
+      ],
       "Weapons": []
     }
   ],
@@ -161,7 +165,9 @@
       "CrosshairColor": "0x66FF00",
       "ShootPos": {
         "Transform": "Vehicle",
-        "Positions": [[-1.0978825, 2.8544945, 0.0]],
+        "Positions": [
+          [-1.0978825,2.8544945,0.0]
+        ],
         "Directions": [
           [0,-0.02,1]
         ],
@@ -189,9 +195,12 @@
       "Velocity": 24.6333,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0.0, 2.7736903, 0.2248463],
+        "ShootPositionForHud": [0.0,2.7736903,0.2248463],
         "ShootDirectionForHud": [0,-0.03,1],
-        "Positions": [[-4.5671912, 1.8093103, 7.3953365], [4.5671912, 1.8093103, 7.3953365]],
+        "Positions": [
+          [-4.5671912,1.8093103,7.3953365],
+          [4.5671912,1.8093103,7.3953365]
+        ],
         "Directions": [
           [0.02,0,8.21],
           [-0.02,0,8.21]
@@ -226,14 +235,17 @@
       "Velocity": 0.6333,
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0.0, 2.0585297, 0.1097882],
+        "ShootPositionForHud": [0.0,2.0585297,0.1097882],
         "ShootDirectionForHud": "Bomb",
-        "Positions": [[-2.8105792, 1.8093103, 7.3953365], [2.8105792, 1.8093103, 7.3953365]],
+        "Positions": [
+          [-2.8105792,1.8093103,7.3953365],
+          [2.8105792,1.8093103,7.3953365]
+        ],
         "BoundUpWithAmmoAmount": true,
         "Directions": [
           "DeltaMovement"
         ],
-        "ViewPosition": [0.0, 2.0585297, 0.1097882],
+        "ViewPosition": [0.0,2.0585297,0.1097882],
         "ViewDirection": "Bomb"
       },
       "SoundInfo": {
@@ -273,8 +285,11 @@
       },
       "ShootPos": {
         "Transform": "Vehicle",
-        "ShootPositionForHud": [0.0, 1.8664002, 9.8809424],
-        "Positions": [[5.6914228, 1.8093103, 7.3953365], [-5.6914228, 1.8093103, 7.3953365]],
+        "ShootPositionForHud": [0.0,1.8664002,9.8809424],
+        "Positions": [
+          [5.6914228,1.8093103,7.3953365],
+          [-5.6914228,1.8093103,7.3953365]
+        ],
         "BoundUpWithAmmoAmount": true
       },
       "SoundInfo": {
@@ -294,42 +309,42 @@
   },
   "OBB": [
     {
-      "Size": [0.556846, 0.5146873, 5.0168838],
-      "Position": [0.0, 1.3648875, 1.5282524]
+      "Size": [0.556,0.515,5.017],
+      "Position": [0.0,1.365,1.528]
     },
     {
-      "Size": [0.3372695, 0.4356398, 2.7930131],
-      "Position": [-2.0306435, 1.4685276, -1.937543]
+      "Size": [0.337,0.436,2.793],
+      "Position": [-2.031,1.468,-1.938]
     },
     {
-      "Size": [0.3372695, 0.4356398, 2.7930131],
-      "Position": [2.0306435, 1.4685276, -1.937543]
+      "Size": [0.337,0.436,2.793],
+      "Position": [2.031,1.468,-1.938]
     },
     {
-      "Size": [1.9832149, 0.0509417, 0.5427931],
-      "Position": [0.0825608, 2.9493515, -5.6158885]
+      "Size": [1.984,0.051,0.542],
+      "Position": [0.082,2.95,-5.616]
     },
     {
-      "Size": [0.117693, 1.1488242, 0.5427931],
-      "Position": [-2.0042943, 2.1817121, -5.6158885]
+      "Size": [0.117,1.149,0.542],
+      "Position": [-2.004,2.181,-5.616]
     },
     {
-      "Size": [0.117693, 1.1488242, 0.5427931],
-      "Position": [2.0042943, 2.1817121, -5.6158885]
+      "Size": [0.117,1.149,0.542],
+      "Position": [2.004,2.181,-5.616]
     },
     {
-      "Size": [2.109691, 1.44010812, 5.858301],
-      "Position": [0.0, 1.43195248, 0.0439153],
+      "Size": [2.109,1.386,5.858],
+      "Position": [0.0,1.486,0.045],
       "Part": "Collision"
     },
     {
-      "Size": [0.3319997, 0.4532059, 1.2261152],
-      "Position": [1.9480827, 1.4000198, 1.9797017],
+      "Size": [0.331,0.452,1.225],
+      "Position": [1.949,1.399,1.979],
       "Part": "MainEngine"
     },
     {
-      "Size": [0.3319997, 0.4532059, 1.2261152],
-      "Position": [-1.9480827, 1.4000198, 1.9797017],
+      "Size": [0.331,0.452,1.225],
+      "Position": [-1.949,1.399,1.979],
       "Part": "SubEngine"
     }
   ],
