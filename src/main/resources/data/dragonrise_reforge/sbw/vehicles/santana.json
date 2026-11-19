@@ -1,0 +1,183 @@
+{
+  "ID": "dragonrise_reforge:santana",
+  "MaxHealth": 100,
+  "MaxEnergy": 5000000,
+  "Seats": [
+    {
+      "IsEnclosed": false,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0.538,0.196,-0.1],
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": false,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.537,0.196,-0.1],
+      "MinPitch": -60,
+      "MaxPitch": 60,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [-0.537,0.196,-1.35],
+      "CanRotateBody": true,
+      "MinPitch": -5,
+      "MaxPitch": 45,
+      "MinYaw": -30,
+      "MaxYaw": 30
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [0.538,0.196,-1.35],
+      "CanRotateBody": true,
+      "MinPitch": -5,
+      "MaxPitch": 45,
+      "MinYaw": -30,
+      "MaxYaw": 30
+    },
+    {
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [0.0,0.196,-1.35],
+      "CanRotateBody": true,
+      "MinPitch": -5,
+      "MaxPitch": 45,
+      "MinYaw": -30,
+      "MaxYaw": 30
+    }
+  ],
+  "EngineType": "Wheel",
+  "EngineInfo": {
+    "Buoyancy": 0,
+    "EnergyCostRate": 64,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": -0.3,
+    "MaxForwardSpeedRate": 1.55,
+    "MaxBackwardSpeedRate": 0.35,
+    "Increment": 0.015,
+    "Decrement": 0.1,
+    "SteeringSpeed": 0.13,
+    "EngineSoundVolume": 0.6
+  },
+  "UpStep": 1.5,
+  "Mass": 0.85,
+  "RotateOffsetHeight": 0.5,
+  "DamageModifiers": [
+    "minecraft:arrow * 0.2",
+    "minecraft:trident * 0.4",
+    "minecraft:mob_attack * 0.4",
+    "minecraft:mob_attack_no_aggro * 0.4",
+    "minecraft:mob_projectile * 0.4",
+    "minecraft:player_attack * 0.4",
+    "minecraft:lava - -4",
+    "minecraft:lava * 4",
+    "@minecraft:tnt * 3",
+    "@minecraft:tnt_minecart * 3",
+    "minecraft:explosion * 4",
+    "minecraft:player_explosion * 4",
+    "superbwarfare:projectile_hit * 0.8",
+    "superbwarfare:grapeshot_hit * 0.2",
+    "@#superbwarfare:aerial_bomb * 1.4",
+    "#superbwarfare:projectile * 1.0",
+    "@superbwarfare:cannon_shell * 1.6",
+    "@superbwarfare:small_cannon_shell * 1.8",
+    "@superbwarfare:gun_grenade * 1.4",
+    "@superbwarfare:rgo_grenade * 3",
+    "@superbwarfare:hand_grenade * 2.5",
+    "@superbwarfare:mortar_shell * 2",
+    "All * 0.9",
+    "$entity.getSourceAngle(source, 0.05) * damage"
+  ],
+  "VehicleContainerType": "Huge",
+  "DestroyInfo": {
+    "ParticleType": "Huge",
+    "ExplosionDamage": 40,
+    "ExplosionRadius": 5
+  },
+  "ThirdPersonCameraPos": [0,1.2,5.2],
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/santana_icon.png",
+  "ContainerIcon": "superbwarfare:textures/gui/vehicle/type/civilian.png",
+  "Type": "Car",
+  "EngineSound": "dragonrise_reforge:wheel_loop1",
+  "HornSound": "superbwarfare:truck_horn",
+  "InertiaRotateRate": 0.9,
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/santana.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/santana.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/santana.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/santana.png"
+  },
+  "OBB": [
+    {
+      "Size": [1.223,0.512,1.95],
+      "Position": [0.0,0.95,-0.637]
+    },
+    {
+      "Size": [0.973,0.074,1.044],
+      "Position": [0.0,2.075,-0.668]
+    },
+    {
+      "Size": [1.223,0.449,0.606],
+      "Position": [0.0,0.95,-3.041],
+      "CustomRotate": [5.0,0.0,0.0]
+    },
+    {
+      "Size": [1.223,0.324,0.513],
+      "Position": [0.0,1.202,-3.037],
+      "CustomRotate": [-5.0,0.0,0.0]
+    },
+    {
+      "Size": [0.973,0.074,0.325],
+      "Position": [0.0,2.325,-0.7]
+    },
+    {
+      "Size": [1.263,0.821,3.429],
+      "Position": [0.0,0.846,-0.037],
+      "Part": "Collision"
+    },
+    {
+      "Size": [1.189,0.383,0.948],
+      "Position": [0.0,0.935,2.268],
+      "CustomRotate": [7.5,0.0,0.0],
+      "Part": "MainEngine"
+    },
+    {
+      "Size": [0.184,0.473,0.449],
+      "Position": [1.089,0.477,1.972],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.184,0.473,0.449],
+      "Position": [1.089,0.477,-2.028],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.184,0.473,0.449],
+      "Position": [-1.089,0.477,-2.028],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.184,0.473,0.449],
+      "Position": [-1.089,0.477,1.972],
+      "Part": "WheelRight"
+    }
+  ],
+  "TerrainCompat": [
+    [1.0875,0.0,1.969],
+    [-1.0875,0.0,1.969],
+    [1.0875,0.0,-2.031],
+    [-1.0875,0.0,-2.031]
+  ]
+}

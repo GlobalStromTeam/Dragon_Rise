@@ -1,0 +1,13 @@
+{
+  "type": "superbwarfare:vehicle_assembling",
+  "category": "land",
+  "inputs": [
+    "2 superbwarfare:steel_block",
+    "superbwarfare:motor",
+    "4 superbwarfare:wheel",
+    "superbwarfare:light_armament_module"
+  ],
+  "result": {
+    "entity": "dragonrise_reforge:santana"
+  }
+}
