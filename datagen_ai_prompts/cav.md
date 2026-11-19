@@ -143,30 +143,32 @@ ussr_water.png
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
       "DefaultZoom": 3,
-      "RPM": 250,
-      "Velocity": 18,
-      "Damage": 65,
-      "ExplosionDamage": 8,
-      "ExplosionRadius": 2,
+      "RPM": 300,
+      "Velocity": 48,
+      "Damage": 325,
       "HeatPerShoot": 8,
       "NaturalCooldown": 1,
       "RecoilTime": 31,
       "RecoilForce": 0.62,
       "ShootAnimationTime": 3,
-      "Spread": 0.5,
+      "Spread": 0.1,
       "ProjectileLife": 40,
       "Crosshair": "@VehicleUsApc",
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.25mm_cannon_ap",
+      "Name": "weapon.dragonrise_reforge.EMgun",
       "Projectile": "superbwarfare:small_cannon_shell",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:bradley_cannon_fire_1p",
-        "Fire3P": "superbwarfare:bradley_cannon_fire_3p",
-        "Fire3PFar": "superbwarfare:bradley_cannon_far",
-        "Fire3PVeryFar": "superbwarfare:bradley_cannon_veryfar",
-        "Change": "superbwarfare:into_missile"
+        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
+        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
+        "Fire3PFar": "superbwarfare:m_1a_2_far",
+        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
+        "VehicleReload": "dragonrise_reforge:hand_load",
+        "Change": "dragonrise_reforge:change_weapon",
+        "CancellableSounds": [
+          "dragonrise_reforge:hand_load"
+        ]
       },
-      "SoundRadius": 24,
+      "SoundRadius": 32,
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_ap.png",
       "AmmoType": [
         "superbwarfare:small_shell_ap",
@@ -202,7 +204,7 @@ ussr_water.png
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [0.451,-0.002,1.676]
+          [0.452,-0.004,1.677]
         ],
         "Directions": [
           "Barrel"
@@ -232,7 +234,7 @@ ussr_water.png
       "ShootPos": {
         "Transform": "Turret",
         "Positions": [
-          [-1.166,0.725,0.573]
+          [-1.166,0.723,0.574]
         ],
         "Directions": [
           "Turret"
@@ -297,7 +299,7 @@ ussr_water.png
     {
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [-0.459,-0.367,0.295],
+      "Position": [-0.459,-0.369,0.296],
       "Weapons": [
         "Cannon",
         "Missile"
@@ -412,39 +414,39 @@ ussr_water.png
     },
     {
       "Size": [0.2,0.154,1.106],
-      "Position": [0.001,0.739,0.365],
+      "Position": [0.001,0.737,0.366],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.543,0.243,0.542],
-      "Position": [-0.843,0.718,-0.149],
+      "Position": [-0.843,0.716,-0.148],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
       "Size": [0.592,0.12,0.608],
-      "Position": [0.003,0.033,-0.003],
+      "Position": [0.003,0.031,-0.002],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     }
   ],
-  "TurretPos": [-0.003,2.079,-0.582],
-  "BarrelPos": [-0.443,0.655,-0.023],
+  "TurretPos": [-0.003,2.081,-0.583],
+  "BarrelPos": [-0.444,0.655,-0.023],
   "TerrainCompat": [
-    [1.703,0.0,3.286],
-    [-1.702,0.0,3.286],
-    [1.703,0.0,1.243],
-    [-1.702,0.0,1.243],
-    [1.703,0.0,-1.301],
-    [-1.702,0.0,-1.301],
-    [1.703,0.0,-3.345],
-    [-1.702,0.0,-3.345]
+    [1.703,0,3.286],
+    [-1.702,0,3.286],
+    [1.703,0,1.243],
+    [-1.702,0,1.243],
+    [1.703,0,-1.301],
+    [-1.702,0,-1.301],
+    [1.703,0,-3.345],
+    [-1.702,0,-3.345]
   ],
-  "PassengerWeaponStationTurnSpeed": [10.0,10.0],
+  "PassengerWeaponStationTurnSpeed": [10,10],
   "PassengerWeaponStationPitchRange": [-9,60],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/cav_icon.png",
   "Model": {
@@ -457,8 +459,9 @@ ussr_water.png
       "Texture": "dragonrise_reforge:textures/entity/cav.png"
     }
   ],
-  "PassengerWeaponStationPos": [-0.693,-0.007,1.333],
-  "PassengerWeaponStationBarrelPos": [-0.034,0.31,-0.2]
+  "PassengerWeaponStationPos": [-0.694,-0.007,1.334],
+  "PassengerWeaponStationBarrelPos": [-0.112,0.309,-0.19],
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/cn_land.png"
 }
 ```
 

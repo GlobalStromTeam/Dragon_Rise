@@ -4,292 +4,100 @@
   "MaxEnergy": 20000000,
   "OBB": [
     {
-      "Size": [
-        2.125,
-        1.366,
-        3.813
-      ],
-      "Position": [
-        0,
-        1.447,
-        0.438
-      ],
+      "Size": [2.125,1.366,3.813],
+      "Position": [0.0,1.447,0.438],
       "Part": "Collision"
     },
     {
-      "Size": [
-        1.75,
-        1.35,
-        1.5
-      ],
-      "Position": [
-        0,
-        1.9,
-        1.313
-      ]
+      "Size": [1.75,1.35,1.5],
+      "Position": [0.0,1.9,1.313]
     },
     {
-      "Size": [
-        1.25,
-        1.35,
-        2.031
-      ],
-      "Position": [
-        0,
-        1.9,
-        1.344
-      ]
+      "Size": [1.25,1.35,2.031],
+      "Position": [0.0,1.9,1.344]
     },
     {
-      "Size": [
-        0.354,
-        1.35,
-        0.469
-      ],
-      "Position": [
-        1.169,
-        1.9,
-        -0.106
-      ],
-      "CustomRotate": [
-        0,
-        -45,
-        0
-      ]
+      "Size": [0.354,1.35,0.469],
+      "Position": [1.169,1.9,-0.106],
+      "CustomRotate": [0.0,-45.0,0.0]
     },
     {
-      "Size": [
-        0.354,
-        1.35,
-        0.469
-      ],
-      "Position": [
-        -1.169,
-        1.9,
-        -0.106
-      ],
-      "CustomRotate": [
-        0,
-        45,
-        0
-      ]
+      "Size": [0.354,1.35,0.469],
+      "Position": [-1.169,1.9,-0.106],
+      "CustomRotate": [0.0,45.0,0.0]
     },
     {
-      "Size": [
-        0.354,
-        1.35,
-        0.469
-      ],
-      "Position": [
-        -1.169,
-        1.9,
-        2.731
-      ],
-      "CustomRotate": [
-        0,
-        -45,
-        0
-      ]
+      "Size": [0.354,1.35,0.469],
+      "Position": [-1.169,1.9,2.731],
+      "CustomRotate": [0.0,-45.0,0.0]
     },
     {
-      "Size": [
-        0.354,
-        1.35,
-        0.469
-      ],
-      "Position": [
-        1.169,
-        1.9,
-        2.731
-      ],
-      "CustomRotate": [
-        0,
-        45,
-        0
-      ]
+      "Size": [0.354,1.35,0.469],
+      "Position": [1.169,1.9,2.731],
+      "CustomRotate": [0.0,45.0,0.0]
     },
     {
-      "Size": [
-        0.438,
-        1.319,
-        0.438
-      ],
-      "Position": [
-        0.625,
-        1.994,
-        3.375
-      ]
+      "Size": [0.438,1.319,0.438],
+      "Position": [0.625,1.994,3.375]
     },
     {
-      "Size": [
-        0.469,
-        0.819,
-        0.688
-      ],
-      "Position": [
-        -0.594,
-        2.431,
-        3.625
-      ]
+      "Size": [0.469,0.819,0.688],
+      "Position": [-0.594,2.431,3.625]
     },
     {
-      "Size": [
-        0.406,
-        0.819,
-        0.688
-      ],
-      "Position": [
-        -0.835,
-        2.431,
-        3.474
-      ],
-      "CustomRotate": [
-        0,
-        22.5,
-        0
-      ]
+      "Size": [0.406,0.819,0.688],
+      "Position": [-0.835,2.431,3.474],
+      "CustomRotate": [0.0,22.5,0.0]
     },
     {
-      "Size": [
-        0.406,
-        0.819,
-        0.688
-      ],
-      "Position": [
-        -0.353,
-        2.431,
-        3.474
-      ],
-      "CustomRotate": [
-        0,
-        -22.5,
-        0
-      ]
+      "Size": [0.406,0.819,0.688],
+      "Position": [-0.353,2.431,3.474],
+      "CustomRotate": [0.0,-22.5,0.0]
     },
     {
-      "Size": [
-        1.75,
-        0.631,
-        0.75
-      ],
-      "Position": [
-        0,
-        1.369,
-        3.563
-      ]
+      "Size": [1.75,0.631,0.75],
+      "Position": [0.0,1.369,3.563]
     },
     {
-      "Size": [
-        1.219,
-        0.875,
-        1.594
-      ],
-      "Position": [
-        0,
-        1.438,
-        -2.531
-      ],
+      "Size": [1.219,0.875,1.594],
+      "Position": [0.0,1.438,-2.531],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        1.219,
-        0.375,
-        0.531
-      ],
-      "Position": [
-        0,
-        1.211,
-        -3.985
-      ],
-      "CustomRotate": [
-        45,
-        0,
-        0
-      ],
+      "Size": [1.219,0.375,0.531],
+      "Position": [0.0,1.211,-3.985],
+      "CustomRotate": [45.0,0.0,0.0],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        1.219,
-        0.313,
-        0.656
-      ],
-      "Position": [
-        0,
-        2.011,
-        -3.464
-      ],
-      "CustomRotate": [
-        50,
-        0,
-        0
-      ],
+      "Size": [1.219,0.313,0.656],
+      "Position": [0.0,2.011,-3.464],
+      "CustomRotate": [50.0,0.0,0.0],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        1.219,
-        1.063,
-        1.594
-      ],
-      "Position": [
-        0,
-        1.652,
-        -2.052
-      ],
+      "Size": [1.219,1.063,1.594],
+      "Position": [0.0,1.652,-2.052],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        1.031,
-        1.219,
-        0.563
-      ],
-      "Position": [
-        0,
-        1.808,
-        -1.021
-      ],
+      "Size": [1.031,1.219,0.563],
+      "Position": [0.0,1.808,-1.021],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        0.481,
-        1.259,
-        4.469
-      ],
-      "Position": [
-        1.706,
-        1.25,
-        0.281
-      ],
+      "Size": [0.481,1.259,4.469],
+      "Position": [1.706,1.25,0.281],
       "Part": "WheelLeft"
     },
     {
-      "Size": [
-        0.481,
-        1.259,
-        4.469
-      ],
-      "Position": [
-        -1.706,
-        1.25,
-        0.281
-      ],
+      "Size": [0.481,1.259,4.469],
+      "Position": [-1.706,1.25,0.281],
       "Part": "WheelRight"
     },
     {
-      "Size": [
-        1.344,
-        0.453,
-        1.344
-      ],
-      "Position": [
-        0.016,
-        0.497,
-        0.025
-      ],
+      "Size": [1.344,0.453,1.344],
+      "Position": [0.016,0.497,0.025],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
@@ -299,32 +107,20 @@
     {
       "HidePassenger": true,
       "Transform": "Turret",
-      "Position": [
-        0.438,
-        -1.067,
-        1.432
-      ],
+      "Position": [0.438,-1.067,1.432],
       "Weapons": [
         "Cannon"
       ],
       "CanRotateHead": false,
       "MinPitch": -35,
       "MaxPitch": 15,
-      "Sensitivity": [
-        0.42,
-        0.7,
-        0.9
-      ]
+      "Sensitivity": [0.42,0.7,0.9]
     },
     {
       "HidePassenger": true,
       "Transform": "Vehicle",
       "RotateWithVehicle": true,
-      "Position": [
-        0.6,
-        1.328,
-        3.875
-      ],
+      "Position": [0.6,1.328,3.875],
       "Weapons": [
         "MachineGun"
       ],
@@ -332,11 +128,7 @@
       "MaxYaw": 30,
       "MinPitch": -12,
       "MaxPitch": 25,
-      "Sensitivity": [
-        0.58,
-        0.77,
-        0.9
-      ]
+      "Sensitivity": [0.58,0.77,0.9]
     }
   ],
   "Weapons": {
@@ -355,11 +147,7 @@
       "ExplosionRadius": 5,
       "RecoilTime": 32,
       "RecoilForce": 0.07,
-      "ShootShake": [
-        5,
-        7,
-        40
-      ],
+      "ShootShake": [5,7,40],
       "Spread": 0.04,
       "ShootAnimationTime": 32,
       "Crosshair": "@VehicleDynamicCross",
@@ -396,11 +184,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            0,
-            0.038,
-            2.457
-          ]
+          [0.0,0.038,2.457]
         ],
         "Directions": [
           "Barrel"
@@ -428,11 +212,7 @@
       "ExplosionRadius": 4,
       "RecoilTime": 38,
       "RecoilForce": 0.09,
-      "ShootShake": [
-        7,
-        9,
-        50
-      ],
+      "ShootShake": [7,9,50],
       "Spread": 0.02,
       "ShootAnimationTime": 38,
       "Crosshair": "@VehicleDynamicCross",
@@ -466,18 +246,10 @@
       "ShootPos": {
         "Transform": "Vehicle",
         "Positions": [
-          [
-            -0.587,
-            2.406,
-            5.5
-          ]
+          [-0.587,2.406,5.5]
         ],
         "DefaultTransform": "Default",
-        "DefaultBarrelDirection": [
-          0,
-          0,
-          1
-        ],
+        "DefaultBarrelDirection": [0,0,1],
         "Directions": [
           "Passenger"
         ]
@@ -500,24 +272,10 @@
     "SteeringSpeed": 0.04,
     "EngineSoundVolume": 1
   },
-  "TurretPos": [
-    0,
-    3.269,
-    1.506
-  ],
-  "BarrelPos": [
-    0,
-    0.693,
-    0.85
-  ],
-  "TurretTurnSpeed": [
-    0.6,
-    1
-  ],
-  "TurretPitchRange": [
-    -10,
-    50
-  ],
+  "TurretPos": [0.0,3.269,1.506],
+  "BarrelPos": [0.0,0.693,0.85],
+  "TurretTurnSpeed": [0.6,1],
+  "TurretPitchRange": [-10,50],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 1.5,
@@ -561,11 +319,7 @@
     "ExplosionDamage": 300,
     "ExplosionRadius": 22
   },
-  "ThirdPersonCameraPos": [
-    0,
-    2.6,
-    5.8
-  ],
+  "ThirdPersonCameraPos": [0,2.6,5.8],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/silverhand_mk_iv_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/blue_land.png",
   "Type": "Tank",
@@ -598,26 +352,10 @@
   "HudType": "@Land",
   "InertiaRotateRate": 1.7,
   "TerrainCompat": [
-    [
-      1.875,
-      -0.7,
-      4.375
-    ],
-    [
-      -1.875,
-      -0.7,
-      4.375
-    ],
-    [
-      1.875,
-      -0.7,
-      -4.062
-    ],
-    [
-      -1.875,
-      -0.7,
-      -4.062
-    ]
+    [1.875,-0.7,4.375],
+    [-1.875,-0.7,4.375],
+    [1.875,-0.7,-4.062],
+    [-1.875,-0.7,-4.062]
   ],
   "Models": [
     {

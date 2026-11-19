@@ -7,24 +7,12 @@
       "HidePassenger": true,
       "CameraPos": {
         "UseFixedCameraPos": true,
-        "Position": [
-          0.16128125,
-          -0.0114,
-          0.3359375
-        ],
+        "Position": [0.16128125,-0.0114,0.3359375],
         "Transform": "Barrel",
-        "ZoomPosition": [
-          0.16128125,
-          -0.0114,
-          0.3359375
-        ]
+        "ZoomPosition": [0.16128125,-0.0114,0.3359375]
       },
       "Transform": "Turret",
-      "Position": [
-        0.4,
-        1.352,
-        0.275
-      ],
+      "Position": [0.4,1.352,0.275],
       "Weapons": [
         "Cannon",
         "MachineGun"
@@ -32,11 +20,7 @@
       "CanRotateHead": false,
       "MinPitch": -9,
       "MaxPitch": 25,
-      "Sensitivity": [
-        0.42,
-        0.7,
-        0.9
-      ],
+      "Sensitivity": [0.42,0.7,0.9],
       "HasThermalImaging": true
     }
   ],
@@ -57,11 +41,7 @@
       "ExplosionRadius": 4,
       "RecoilTime": 42,
       "RecoilForce": 0.5,
-      "ShootShake": [
-        8,
-        10,
-        60
-      ],
+      "ShootShake": [8,10,60],
       "Spread": 0.02,
       "ShootAnimationTime": 40,
       "Crosshair": "@VehicleDynamicCross",
@@ -83,11 +63,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            0.005,
-            -0.012,
-            1.027
-          ]
+          [0.005,-0.012,1.027]
         ],
         "Directions": [
           "Barrel"
@@ -118,11 +94,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.14900625,
-            0.0018625,
-            0.3125
-          ]
+          [-0.14900625,0.0018625,0.3125]
         ],
         "Directions": [
           "Barrel"
@@ -161,11 +133,7 @@
       "ShootPos": {
         "Transform": "WeaponStationBarrel",
         "Positions": [
-          [
-            -0.008925,
-            0.1546875,
-            0.4275
-          ]
+          [-0.008925,0.1546875,0.4275]
         ],
         "Directions": [
           "WeaponStationBarrel"
@@ -199,34 +167,12 @@
     "SteeringSpeed": 0.1,
     "EngineSoundVolume": 1
   },
-  "TurretPos": [
-    0,
-    0,
-    0
-  ],
-  "BarrelPos": [
-    0,
-    2.603,
-    0.653
-  ],
-  "TurretTurnSpeed": [
-    0.6,
-    0.675
-  ],
-  "TurretPitchRange": [
-    -8,
-    25
-  ],
-  "PassengerWeaponStationPos": [
-    -0.5,
-    2.5984875,
-    0.138825
-  ],
-  "PassengerWeaponStationBarrelPos": [
-    0,
-    0.145625,
-    0
-  ],
+  "TurretPos": [0.0,0.0,0.0],
+  "BarrelPos": [0.0,2.603,0.653],
+  "TurretTurnSpeed": [0.6,0.675],
+  "TurretPitchRange": [-8,25],
+  "PassengerWeaponStationPos": [-0.5,2.5984875,0.138825],
+  "PassengerWeaponStationBarrelPos": [0,0.145625,0],
   "HasDecoy": true,
   "UpStep": 2.25,
   "RotateOffsetHeight": 0.5,
@@ -268,11 +214,7 @@
     "ExplosionDamage": 200,
     "ExplosionRadius": 16
   },
-  "ThirdPersonCameraPos": [
-    -0.8669625,
-    1.5,
-    4
-  ],
+  "ThirdPersonCameraPos": [-0.8669625,1.5,4],
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/lvt_icon.png",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/us_land.png",
   "Type": "Tank",
@@ -304,76 +246,20 @@
   "EngineSound": "dragonrise_reforge:m2a3_engine_loop",
   "InertiaRotateRate": 1.2,
   "TerrainCompat": [
-    [
-      2,
-      0,
-      3.0625
-    ],
-    [
-      -2,
-      0,
-      3.0625
-    ],
-    [
-      2,
-      0,
-      1.0625
-    ],
-    [
-      -2,
-      0,
-      1.0625
-    ],
-    [
-      2,
-      0,
-      1.125
-    ],
-    [
-      -2,
-      0,
-      1.125
-    ],
-    [
-      2,
-      0,
-      0.1875
-    ],
-    [
-      -2,
-      0,
-      0.1875
-    ],
-    [
-      2,
-      0,
-      -0.8125
-    ],
-    [
-      -2,
-      0,
-      -0.8125
-    ],
-    [
-      2,
-      0,
-      -1.8125
-    ],
-    [
-      -2,
-      0,
-      -1.8125
-    ],
-    [
-      2,
-      0,
-      -2.8125
-    ],
-    [
-      -2,
-      0,
-      -2.8125
-    ]
+    [2,0,3.0625],
+    [-2,0,3.0625],
+    [2,0,1.0625],
+    [-2,0,1.0625],
+    [2,0,1.125],
+    [-2,0,1.125],
+    [2,0,0.1875],
+    [-2,0,0.1875],
+    [2,0,-0.8125],
+    [-2,0,-0.8125],
+    [2,0,-1.8125],
+    [-2,0,-1.8125],
+    [2,0,-2.8125],
+    [-2,0,-2.8125]
   ],
   "Models": [
     {
@@ -383,97 +269,37 @@
   ],
   "OBB": [
     {
-      "Size": [
-        1.129,
-        0.918,
-        1.575
-      ],
-      "Position": [
-        0.031,
-        1.402,
-        0.838
-      ]
+      "Size": [1.129,0.918,1.575],
+      "Position": [0.031,1.402,0.838]
     },
     {
-      "Size": [
-        1.286,
-        0.467,
-        1.34
-      ],
-      "Position": [
-        0,
-        1.475,
-        2.494
-      ],
-      "CustomRotate": [
-        5.5,
-        0,
-        0
-      ]
+      "Size": [1.286,0.467,1.34],
+      "Position": [0.0,1.475,2.494],
+      "CustomRotate": [5.5,0.0,0.0]
     },
     {
-      "Size": [
-        1.701,
-        1.321,
-        3.335
-      ],
-      "Position": [
-        0,
-        1.315,
-        0.025
-      ],
+      "Size": [1.701,1.321,3.335],
+      "Position": [0.0,1.315,0.025],
       "Part": "Collision"
     },
     {
-      "Size": [
-        1.22,
-        0.82,
-        1.51
-      ],
-      "Position": [
-        0.016,
-        1.234,
-        -1.686
-      ],
+      "Size": [1.22,0.82,1.51],
+      "Position": [0.016,1.234,-1.686],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        0.215,
-        0.989,
-        3.309
-      ],
-      "Position": [
-        1.37,
-        0.993,
-        0.142
-      ],
+      "Size": [0.215,0.989,3.309],
+      "Position": [1.37,0.993,0.142],
       "Part": "WheelLeft"
     },
     {
-      "Size": [
-        0.215,
-        0.989,
-        3.309
-      ],
-      "Position": [
-        -1.37,
-        0.993,
-        0.142
-      ],
+      "Size": [0.215,0.989,3.309],
+      "Position": [-1.37,0.993,0.142],
       "Part": "WheelRight"
     },
     {
-      "Size": [
-        0.637,
-        0.373,
-        0.731
-      ],
-      "Position": [
-        0,
-        2.6,
-        0.095
-      ],
+      "Size": [0.637,0.373,0.731],
+      "Position": [0.0,2.6,0.095],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
