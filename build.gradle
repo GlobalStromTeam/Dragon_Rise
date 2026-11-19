@@ -190,6 +190,24 @@ tasks.named('jar', Jar).configure {
     finalizedBy 'reobfJar'
 }
 
+// ── 生产可用的 jar ────────────────────────────────────────────────────────────
+// ForgeGradle 6 的 reobfJar 只把重混淆结果写到 build/reobfJar/output.jar，
+// build/libs/<name>.jar 是「开发端命名（official）」的，装进正式客户端会
+// NoSuchMethodError（例如 EntityType$Builder.of(...) 在生产端叫 m_20704_）。
+// 这个任务把重混淆产物复制成 build/libs 下带 -forge 后缀的文件，避免拿错。
+tasks.register('forgeJar', Copy) {
+    group = 'build'
+    description = '把 reobfJar 的重混淆产物复制到 build/libs/<name>-<version>-forge.jar'
+    dependsOn 'reobfJar'
+    from(layout.buildDirectory.file('reobfJar/output.jar'))
+    into(layout.buildDirectory.dir('libs'))
+    rename { "${project.name}-${project.version}-forge.jar" }
+}
+
+tasks.named('build').configure {
+    finalizedBy 'forgeJar'
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     // 忽略过时 API 的警告，包括 ResourceLocation(String, String) 的警告
