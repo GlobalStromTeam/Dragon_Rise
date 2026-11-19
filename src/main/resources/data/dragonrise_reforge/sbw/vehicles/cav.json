@@ -3,6 +3,21 @@
   "Type": "APC",
   "HudType": "@Land",
   "EngineType": "Wheel",
+  "RotateOffsetHeight": 2.2,
+  "Mass": 23,
+  "UpStep": 1.5,
+  "EngineSound": "superbwarfare:lav_150_engine",
+  "EngineInfo": {
+    "Buoyancy": 0.052,
+    "EnergyCostRate": 64,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": 0.3,
+    "MaxForwardSpeedRate": 1.1,
+    "MaxBackwardSpeedRate": 0.5,
+    "Increment": 0.01,
+    "Decrement": 0.01,
+    "SteeringSpeed": 0.1
+  },
   "Weapons": {
     "Cannon": {
       "DefaultFireMode": "Auto",
@@ -23,15 +38,13 @@
       "Name": "weapon.dragonrise_reforge.EMgun",
       "Projectile": "superbwarfare:small_cannon_shell",
       "SoundInfo": {
-        "Fire1P": "superbwarfare:m_1a_2_fire_1p",
-        "Fire3P": "superbwarfare:m_1a_2_fire_3p",
-        "Fire3PFar": "superbwarfare:m_1a_2_far",
-        "Fire3PVeryFar": "superbwarfare:m_1a_2_veryfar",
-        "VehicleReload": "dragonrise_reforge:hand_load",
+        "Fire1P": "dragonrise_reforge:m242_fire_1p",
+        "Fire3P": "dragonrise_reforge:m242_fire_3p",
+        "Fire3PFar": "dragonrise_reforge:m242_fire_3p_far",
+        "Fire3PVeryFar": "dragonrise_reforge:m242_fire_3p_very_far",
         "Change": "dragonrise_reforge:change_weapon",
-        "CancellableSounds": [
-          "dragonrise_reforge:hand_load"
-        ]
+        "VehicleReload": "minecraft:intentionally_empty",
+        "VehicleReload3p": "minecraft:intentionally_empty"
       },
       "SoundRadius": 32,
       "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/cannon_25mm_ap.png",
@@ -208,6 +221,38 @@
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.533,1.022,-2.55],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0,1.022,1.425],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0,1.022,1.425],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0,1.022,1.425],
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0,1.022,1.425],
       "MinYaw": -95,
       "MaxYaw": 95
     }
