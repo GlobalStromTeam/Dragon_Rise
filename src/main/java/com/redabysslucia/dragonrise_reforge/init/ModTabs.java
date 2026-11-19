@@ -42,6 +42,8 @@ public class ModTabs {
                         //中国 轮式装甲车
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZSL10.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
+        output.accept(ContainerBlockItem.createInstance(ModEntities.SANTANA.get()));
+        output.accept(ContainerBlockItem.createInstance(ModEntities.BM13N.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.ZLT_11.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CSK181.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CM34.get()));

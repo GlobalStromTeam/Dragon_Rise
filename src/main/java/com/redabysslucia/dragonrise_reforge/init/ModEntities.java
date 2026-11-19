@@ -22,6 +22,8 @@ import com.redabysslucia.dragonrise_reforge.entities.projectile.TjgcBombEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Jh7Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Su30smEntity;
 import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
+import com.redabysslucia.dragonrise_reforge.entities.SantanaEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Bm13nEntity;
 
 
 import com.redabysslucia.dragonrise_reforge.entities.Zsd05Entity;
@@ -1711,6 +1713,22 @@ public class ModEntities {
 
         public static final RegistryObject<EntityType<CavEntity>> CAV = register("cav",
             EntityType.Builder.of(CavEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<SantanaEntity>> SANTANA = register("santana",
+            EntityType.Builder.of(SantanaEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+    public static final RegistryObject<EntityType<Bm13nEntity>> BM13N = register("bm13n",
+            EntityType.Builder.of(Bm13nEntity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()

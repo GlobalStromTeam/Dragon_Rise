@@ -279,7 +279,7 @@
       {
         "name": "dragonrise_reforge:zbd04a/100mm/zbd04a_100mm_reload",
         "stream": false,
-        "volume": 1.0
+        "volume": 1
       }
     ]
   },
@@ -571,25 +571,44 @@
   },
   "m1a2_hand_reload": {
     "sounds": [
-      { "name": "dragonrise_reforge:common/manual_reload_4s", "stream": false },
-      { "name": "dragonrise_reforge:common/manual_reload_5s", "stream": false },
-      { "name": "dragonrise_reforge:common/manual_reload_6s", "stream": false }
+      {
+        "name": "dragonrise_reforge:common/manual_reload_4s",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/manual_reload_5s",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/manual_reload_6s",
+        "stream": false
+      }
     ]
   },
   "terrorist_idle": {
-    "sounds": ["dragonrise_reforge:terrorist/terrorist_idle"]
+    "sounds": [
+      "dragonrise_reforge:terrorist/terrorist_idle"
+    ]
   },
   "terrorist_step": {
-    "sounds": ["dragonrise_reforge:terrorist/terrorist_step"]
+    "sounds": [
+      "dragonrise_reforge:terrorist/terrorist_step"
+    ]
   },
   "terrorist_hurt": {
-    "sounds": ["dragonrise_reforge:terrorist/terrorist_hurt"]
+    "sounds": [
+      "dragonrise_reforge:terrorist/terrorist_hurt"
+    ]
   },
   "terrorist_death": {
-    "sounds": ["dragonrise_reforge:terrorist/terrorist_death"]
+    "sounds": [
+      "dragonrise_reforge:terrorist/terrorist_death"
+    ]
   },
   "terrorist_shoot": {
-    "sounds": ["dragonrise_reforge:terrorist/terrorist_shoot"]
+    "sounds": [
+      "dragonrise_reforge:terrorist/terrorist_shoot"
+    ]
   },
   "supply_station_charging": {
     "sounds": [
@@ -606,122 +625,282 @@
         "stream": false
       }
     ]
-  }
-,    "auto_loader": {
+  },
+  "auto_loader": {
     "sounds": [
-      { "name": "dragonrise_reforge:common/auto_loader", "stream": false }
+      {
+        "name": "dragonrise_reforge:common/auto_loader",
+        "stream": false
+      }
     ]
   },
   "change_weapon": {
     "sounds": [
-      { "name": "dragonrise_reforge:common/change_weapon_01", "stream": false },
-      { "name": "dragonrise_reforge:common/change_weapon_02", "stream": false },
-      { "name": "dragonrise_reforge:common/change_weapon_03", "stream": false }
+      {
+        "name": "dragonrise_reforge:common/change_weapon_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/change_weapon_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:common/change_weapon_03",
+        "stream": false
+      }
     ]
   },
   "cannon_25mm_fire_1p": {
     "sounds": [
-      { "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_01", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_02", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_03", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_1p/cannon_25mm_1p_04",
+        "stream": false
+      }
     ]
   },
   "cannon_25mm_fire_3p": {
     "sounds": [
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_01", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_02", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_03", "stream": false }
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_near/bradley_25mm_initial_close_03",
+        "stream": false
+      }
     ]
   },
   "cannon_25mm_fire_3p_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_01", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_02", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_03", "stream": false }
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_mid/cannon_25mm_mid_03",
+        "stream": false
+      }
     ]
   },
   "cannon_25mm_fire_3p_very_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_01", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_02", "stream": false },
-      { "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_03", "stream": false }
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_25mm/fire_3p_far/bradley_25mm_far_03",
+        "stream": false
+      }
     ]
   },
   "cannon_30mm_fire_1p": {
     "sounds": [
-      { "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_01", "stream": false },
-      { "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_02", "stream": false },
-      { "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_03", "stream": false }
+      {
+        "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:cannon_30mm/fire_1p/cannon_30mm_fire_1p_03",
+        "stream": false
+      }
     ]
   },
   "dshk_fire_1p": {
     "sounds": [
-      { "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_01", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_02", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_03", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_1p/dshk_fire_1p_04",
+        "stream": false
+      }
     ]
   },
   "dshk_fire_3p": {
     "sounds": [
-      { "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_1", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_2", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_3", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_4", "stream": false }
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_3",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_near/dshk_fire_close_4",
+        "stream": false
+      }
     ]
   },
   "dshk_fire_3p_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_01", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_02", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_03", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_04",
+        "stream": false
+      }
     ]
   },
   "m2_fire_1p": {
     "sounds": [
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_01", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_02", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_03", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_04",
+        "stream": false
+      }
     ]
   },
   "m2_fire_3p_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_01", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_02", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_03", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_mid/m2_fire_mid_3p_04",
+        "stream": false
+      }
     ]
   },
   "m2_fire_3p_very_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_1", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_2", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_3", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_4", "stream": false }
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_1",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_2",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_3",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_3p_far/m2_fire_3p_far_4",
+        "stream": false
+      }
     ]
   },
   "hand_load": {
     "sounds": [
-      { "name": "dragonrise_reforge:hand_load/hand_load", "stream": false, "volume": 1.0 }
+      {
+        "name": "dragonrise_reforge:hand_load/hand_load",
+        "stream": false,
+        "volume": 1
+      }
     ]
   },
   "m2_fire_3p": {
     "sounds": [
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_01", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_02", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_03", "stream": false },
-      { "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:m2/fire_1p/m2_fire_1p_04",
+        "stream": false
+      }
     ]
   },
   "dshk_fire_3p_very_far": {
     "sounds": [
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_01", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_02", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_03", "stream": false },
-      { "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_04", "stream": false }
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_01",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_02",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_03",
+        "stream": false
+      },
+      {
+        "name": "dragonrise_reforge:dshk/fire_3p_mid/dshk_3p_mid_04",
+        "stream": false
+      }
     ]
   },
   "m256_fire_1p": {
@@ -2065,6 +2244,146 @@
       {
         "name": "dragonrise_reforge:common/breech_reload_4s",
         "stream": false
+      }
+    ]
+  },
+  "uniform_gear_walk_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_2",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_3": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_3",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_4": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_4",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_5": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_5",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_walk_6": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_walk",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_walk_6",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_4": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_4",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_5": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_5",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_sprint_6": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_sprint",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/uniform_gear_sprint_6",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_land_1": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_1",
+        "stream": false,
+        "attenuation_distance": 8
+      }
+    ]
+  },
+  "uniform_gear_land_2": {
+    "subtitle": "subtitles.dragonrise_reforge.uniform_gear_land",
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:armor/body_fall_down_2",
+        "stream": false,
+        "attenuation_distance": 8
       }
     ]
   }

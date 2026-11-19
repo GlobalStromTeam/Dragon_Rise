@@ -20,6 +20,8 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.Le
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Btr90Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.projectile.TjgcBombRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.CavRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.SantanaRenderer;
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Bm13nRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.DgswMkL2Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Jh7Renderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.MerkavaMk4Renderer;
@@ -384,6 +386,8 @@ public class ModEntityRenderers {
                 // 直接 NPE 崩客户端 —— 这就是测试世界（存档里有 jh7/su30sm/zsd05）一进去就闪退的原因。
                 event.registerEntityRenderer(ModEntities.DGSW_MK_L2.get(), DgswMkL2Renderer::new);
                 event.registerEntityRenderer(ModEntities.CAV.get(), CavRenderer::new);
+        event.registerEntityRenderer(ModEntities.SANTANA.get(), SantanaRenderer::new);
+        event.registerEntityRenderer(ModEntities.BM13N.get(), Bm13nRenderer::new);
                 event.registerEntityRenderer(ModEntities.ZSD05.get(), Zsd05Renderer::new);
                 event.registerEntityRenderer(ModEntities.TESTSHIP.get(), TestShipRenderer::new);
                 event.registerEntityRenderer(ModEntities.JH7.get(), Jh7Renderer::new);

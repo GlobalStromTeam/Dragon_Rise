@@ -1,0 +1,264 @@
+package com.redabysslucia.dragonrise_reforge.entities;
+
+import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.Level;
+
+/**
+ * 大众桑塔纳（VW Santana，民用量产轿车）。
+ * 5 座、无武装；轮子骨骼已按 SBW 约定改名：LeftFrontWheel→wheelL0Turn、RightFrontWheel→wheelR0Turn、
+ * LeftBackWheel→wheelL1、RightBackWheel→wheelR1（前轮带 Turn 后缀负责转向）。
+ *
+ * <p><b>驾驶手感：速度敏感转向</b>
+ * <ul>
+ *   <li>车速越快，<b>最大舵角越小</b>：低速满舵 0.6 rad（SBW 原值），接近 {@link #steerSpeedRef()}
+ *       时只剩 {@link #steerAngleFactorHigh()} 倍 —— 高速一把打不死方向。</li>
+ *   <li>车速越快，<b>转向速度越慢</b>：舵角每 tick 的移动量按车速缩放
+ *       （{@link #steerRateLow()} → {@link #steerRateHigh()}），所以高速打方向是"慢慢压过去"，
+ *       回中同理也是慢慢回。</li>
+ *   <li>轮胎（前轮 Turn 骨骼）与方向盘（{@code move_control}）都读 {@code rudderRot}，
+ *       所以这两个角度会跟着舵角一起变小、变慢，不用额外改渲染。</li>
+ * </ul>
+ *
+ * <p><b>漂移相关代码已停用</b>：本类不再继承 {@code HandbrakeDriftVehicle}，
+ * 原先手刹漂移的一整套参数覆写都注释在文件末尾留档；按住空格现在只是 SBW 原版的手刹 / 刹车行为。
+ */
+@SuppressWarnings("removal")
+public class SantanaEntity extends DragonriseVehicleBase {
+
+    /** SBW {@code wheelEngine} 的舵角上限：{@code clamp(..., -0.8, 0.8) * 0.75}。 */
+    private static final float STEER_MAX_ANGLE = 0.6f;
+
+    /** SBW 每 tick 的偏航系数：{@code yRot -= 12 × 车速 × rudderRot}。 */
+    private static final double SUPERB_YAW_RATE = 12.0;
+
+    /* ---- 速度敏感转向的参数 ---- */
+
+    /** 本类自己维护的平滑舵角（rad）。渲染和物理都改用它，见 {@link #applySpeedSensitiveSteering()}。 */
+    private float steerAngle;
+
+    public SantanaEntity(EntityType<?> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+    }
+
+    @Override
+    public float getTurretMaxHealth() {
+        return 20;
+    }
+
+    @Override
+    public float getWheelMaxHealth() {
+        return 30;
+    }
+
+    @Override
+    public float getEngineMaxHealth() {
+        return 50;
+    }
+
+    /**
+     * 速度敏感转向的接入点：先让 SBW 正常算一遍（油门 / 转向 / 抓地），
+     * 再把它的舵角换成"受车速限制的角度"，并把车头因为差量多转 / 少转的部分补回去。
+     */
+    @Override
+    public void travel() {
+        super.travel();
+        this.applySpeedSensitiveSteering();
+    }
+
+    /* ==================== 速度敏感转向 ==================== */
+
+    /** 舵角 / 转向速率开始衰减的参考车速（格/tick）。1.0 ≈ 72 km/h。 */
+    protected double steerSpeedRef() {
+        return 1.0;
+    }
+
+    /** 低速时的舵角系数（1.0 = SBW 原值 0.6 rad 满舵）。 */
+    protected float steerAngleFactorLow() {
+        return 1.5f;
+    }
+
+    /** 接近参考车速时的舵角系数：0.32 表示只剩三成舵角。 */
+    protected float steerAngleFactorHigh() {
+        return 0.2f;
+    }
+
+    /** 低速时每 tick 舵角能走多少（0.055 rad ≈ 11 tick 打满）。 */
+    protected float steerRateLow() {
+        return 0.030f;
+    }
+
+    /** 高速时每 tick 舵角能走多少（0.010 rad ≈ 打满要 20+ tick，明显"变重变慢"）。 */
+    protected float steerRateHigh() {
+        return 0.030f;
+    }
+
+    /** 当前车速系数 0~1：舵角上限与转向速率都按它缩放。 */
+    public float getSteerSpeedFactor() {
+        double hs = getDeltaMovement().horizontalDistance();
+        return (float) Mth.clamp(hs / Math.max(steerSpeedRef(), 1.0E-3), 0.0, 1.0);
+    }
+
+    /** 当前车速下的最大舵角（rad，带符号由输入决定，这里返回幅值）。 */
+    public float getSteerMaxAngle() {
+        return STEER_MAX_ANGLE * Mth.lerp(getSteerSpeedFactor(), steerAngleFactorLow(), steerAngleFactorHigh());
+    }
+
+    /** 转向输入（+1 = 左 / -1 = 右 / 0 = 直行）。与 SBW 的 rudderRot 符号一致。 */
+    private float steerInput() {
+        if (rightInputDown()) return -1f;
+        if (leftInputDown()) return 1f;
+        return 0f;
+    }
+
+    /**
+     * 每秒重算一次舵角：目标角 = 输入 × 速度限制后的最大舵角，
+     * 每 tick 最多走近 {@code rate}（高速更小），然后：
+     * <ol>
+     *   <li>把 SBW 本 tick 按它自己的 rudderRot 转掉的车头角度换成我们的舵角
+     *       （差值 = {@code 12 × 车速 × (原舵角 − 新舵角)}，直接反向补回 yRot）；</li>
+     *   <li>把 {@code rudderRot} 写成我们的舵角，轮胎骨骼与方向盘渲染都读它。</li>
+     * </ol>
+     */
+    private void applySpeedSensitiveSteering() {
+        if (level() == null) return;
+
+        double hs = getDeltaMovement().horizontalDistance();
+        float f = getSteerSpeedFactor();
+
+        float maxAngle = getSteerMaxAngle();
+        float rate = Mth.lerp(f, steerRateLow(), steerRateHigh());
+
+        float target = steerInput() * maxAngle;
+        this.steerAngle += Mth.clamp(target - this.steerAngle, -rate, rate);
+        // 数值兜底：别让角度超过当前车速允许的上限
+        this.steerAngle = Mth.clamp(this.steerAngle, -maxAngle, maxAngle);
+
+        float rawRudder = getRudderRot();
+        double sign = getPower() > 0f ? 1.0 : -1.0;
+        double correction = SUPERB_YAW_RATE * hs * sign * (rawRudder - this.steerAngle);
+        setYRot((float) (getYRot() + correction));
+        setRudderRot(this.steerAngle);
+    }
+
+    /* ==================== 漂移代码（已停用，留档） ==================== */
+    //
+    // 说明：下面这些是此前"按住空格 = 漂移"时的参数覆写，它们属于
+    // HandbrakeDriftVehicle。现在桑塔纳不再继承那个基类，全部注释掉。
+    // 想恢复漂移：把类声明改回 extends HandbrakeDriftVehicle，再把这些方法取消注释即可。
+    //
+    // /** 约 13 km/h（0.18 格/tick）以上才进入漂移；低于此速度按住空格就是纯手刹。 */
+    // @Override
+    // protected double driftMinSpeed() {
+    //     return 0.18;
+    // }
+    //
+    // /** 低速端目标侧滑角 8 度。 */
+    // @Override
+    // protected float driftSlipLowSpeed() {
+    //     return 8f;
+    // }
+    //
+    // /** 高速端目标侧滑角 24 度。 */
+    // @Override
+    // protected float driftSlipHighSpeed() {
+    //     return 24f;
+    // }
+    //
+    // /** 参考车速 0.85 格/tick（约 61 km/h）：到这个速度才张开到 24 度、偏航给满。 */
+    // @Override
+    // protected double driftSlipSpeedRef() {
+    //     return 0.85;
+    // }
+    //
+    // /** 伺服增益 1.15。 */
+    // @Override
+    // protected double driftYawGain() {
+    //     return 1.15;
+    // }
+    //
+    // /** 速率上限 5.5 度/tick。 */
+    // @Override
+    // protected double driftMaxYawRate() {
+    //     return 5.5;
+    // }
+    //
+    // /** 介入基础速率 0.08/tick。 */
+    // @Override
+    // protected double driftBlendIn() {
+    //     return 0.08;
+    // }
+    //
+    // /** 侧向冲量 0.022。 */
+    // @Override
+    // protected double driftLateralPush() {
+    //     return 0.022;
+    // }
+    //
+    // /** 沿车头净保留 0.992。 */
+    // @Override
+    // protected double driftDrag() {
+    //     return 0.992;
+    // }
+    //
+    // /** 侧向净保留 0.995。 */
+    // @Override
+    // protected double driftLateralGain() {
+    //     return 0.995;
+    // }
+    //
+    // /** 补推力上限 0.05。 */
+    // @Override
+    // protected double driftThrust() {
+    //     return 0.05;
+    // }
+    //
+    // /** 补推力增益 0.25。 */
+    // @Override
+    // protected double driftHoldGain() {
+    //     return 0.25;
+    // }
+    //
+    // /** 漂移时仍能加速到的车速上限 0.75（约 54 km/h）。 */
+    // @Override
+    // protected double driftSpeedCap() {
+    //     return 0.75;
+    // }
+    //
+    // /** 进入速度作为保速下限，每 tick 衰减 0.995。 */
+    // @Override
+    // protected double driftHoldDecay() {
+    //     return 0.995;
+    // }
+    //
+    // /** 纯手刹捏合速度 0.15/tick。 */
+    // @Override
+    // protected double handbrakeBlendIn() {
+    //     return 0.15;
+    // }
+    //
+    // /** 侧滑上限 72 度。 */
+    // @Override
+    // protected float maxSlipAngle() {
+    //     return 72f;
+    // }
+    //
+    // /** 松手回正 0.22。 */
+    // @Override
+    // protected double recoverGrip() {
+    //     return 0.22;
+    // }
+    //
+    // /** 回正期每 tick 保速 0.95。 */
+    // @Override
+    // protected double recoverScrub() {
+    //     return 0.95;
+    // }
+    //
+    // /** 纯手刹锁死 0.92。 */
+    // @Override
+    // protected double handbrakeLockDrag() {
+    //     return 0.92;
+    // }
+}
