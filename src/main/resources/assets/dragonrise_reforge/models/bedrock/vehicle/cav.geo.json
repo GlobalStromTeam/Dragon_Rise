@@ -1582,7 +1582,7 @@
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "wheelL0Turn1",
+					"name": "wheelL1Turn",
 					"parent": "wheel2",
 					"pivot": [17.7149, 8.8897, -34.1957],
 					"cubes": [
@@ -1705,7 +1705,7 @@
 					]
 				},
 				{
-					"name": "wheelL0Turn2",
+					"name": "wheelL2Turn",
 					"parent": "wheel2",
 					"pivot": [17.7149, 8.8897, -12.9276],
 					"cubes": [
@@ -1828,7 +1828,7 @@
 					]
 				},
 				{
-					"name": "wheelL2",
+					"name": "wheelL3",
 					"parent": "wheel2",
 					"pivot": [17.7149, 8.8897, 13.5437],
 					"cubes": [
@@ -1951,7 +1951,7 @@
 					]
 				},
 				{
-					"name": "wheelL3",
+					"name": "wheelL4",
 					"parent": "wheel2",
 					"pivot": [17.7149, 8.8897, 34.8117],
 					"cubes": [
@@ -2074,7 +2074,7 @@
 					]
 				},
 				{
-					"name": "wheelR2",
+					"name": "wheelR4",
 					"parent": "wheel2",
 					"pivot": [-17.7149, 8.8897, 34.8117],
 					"cubes": [
@@ -2197,7 +2197,7 @@
 					]
 				},
 				{
-					"name": "wheelR0Turn1",
+					"name": "wheelR1Turn",
 					"parent": "wheel2",
 					"pivot": [-17.7149, 8.8897, -34.1957],
 					"cubes": [
@@ -2320,7 +2320,7 @@
 					]
 				},
 				{
-					"name": "wheelR0Turn2",
+					"name": "wheelR2Turn",
 					"parent": "wheel2",
 					"pivot": [-17.7149, 8.8897, -12.9276],
 					"cubes": [
@@ -2443,7 +2443,7 @@
 					]
 				},
 				{
-					"name": "wheelR1",
+					"name": "wheelR3",
 					"parent": "wheel2",
 					"pivot": [-17.7149, 8.8897, 13.5437],
 					"cubes": [
