@@ -118,16 +118,16 @@
         "OnlyLockEntity": true
       },
       "Magazine": 2,
-      "EmptyReloadTime": 200,
-      "Damage": 600,
+      "EmptyReloadTime": 100,
+      "Damage": 400,
       "ExplosionDamage": 60,
       "ExplosionRadius": 8,
       "RPM": 60,
-      "Velocity": 3,
+      "Velocity": 2,
       "RecoilTime": 18,
       "RecoilForce": 0.05,
       "ShootPos": {
-        "Transform": "Turret",
+        "Transform": "Barrel",
         "Positions": [
           [
             -1.166,
@@ -136,7 +136,11 @@
           ]
         ],
         "Directions": [
-          "Turret"
+          [
+            0,
+            0.342,
+            0.94
+          ]
         ],
         "ViewDirection": "Barrel"
       },
