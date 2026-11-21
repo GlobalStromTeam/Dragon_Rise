@@ -1,6 +1,8 @@
 {
   "ID": "dragonrise_reforge:santana",
+  "Animation": "dragonrise_reforge:animations/bedrock/vehicle/santana.animation.json",
   "Model": {
+    "Animation": "dragonrise_reforge:animations/bedrock/vehicle/santana.animation.json",
     "Model": "dragonrise_reforge:models/bedrock/vehicle/santana.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/santana.png"
   },
