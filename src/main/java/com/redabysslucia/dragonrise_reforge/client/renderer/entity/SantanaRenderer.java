@@ -3,8 +3,10 @@ package com.redabysslucia.dragonrise_reforge.client.renderer.entity;
 import com.atsuishio.superbwarfare.client.model.entity.VehicleModelInstance;
 import com.atsuishio.superbwarfare.client.renderer.entity.GeoVehicleRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.redabysslucia.dragonrise_reforge.Dragonrise_reforge;
 import com.redabysslucia.dragonrise_reforge.entities.SantanaEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 
 /**
@@ -31,6 +33,22 @@ public class SantanaRenderer extends GeoVehicleRenderer<SantanaEntity> {
 
     /** 转向方向若与视觉相反，把它改成 -1。 */
     private static final float STEER_WHEEL_SIGN = 1.0f;
+
+    /** 「点灯」时叠加的自发光贴图（V 键开关驱动，见 SantanaEntity#dr$isLightOn()）。 */
+    private static final ResourceLocation LIGHT_GLOW_TEXTURE =
+            new ResourceLocation(Dragonrise_reforge.MODID, "textures/entity/glow/santana_glow.png");
+
+    /**
+     * 发光贴图：点灯时返回 {@code textures/entity/glow/santana_glow.png}，关灯走父类（返回 null）。
+     * <p>superb 的 {@code renderEmissive} 拿到 null 就直接跳过，所以关灯时不会有额外绘制。
+     */
+    @Override
+    public ResourceLocation getEmissiveTextureLocation(PoseStack poseStack, SantanaEntity entity) {
+        if (entity.dr$isLightOn()) {
+            return LIGHT_GLOW_TEXTURE;
+        }
+        return super.getEmissiveTextureLocation(poseStack, entity);
+    }
 
     public SantanaRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager);
