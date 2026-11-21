@@ -13541,7 +13541,7 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStationYaw",
+					"name": "move_mk19a",
 					"parent": "passengerWeaponStation",
 					"pivot": [-11.1445, 33.1806, -12.014],
 					"cubes": [
@@ -13928,8 +13928,8 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStationPitch",
-					"parent": "passengerWeaponStationYaw",
+					"name": "move_mk19b",
+					"parent": "move_mk19a",
 					"pivot": [-12.9388, 38.1209, -8.971],
 					"cubes": [
 						{

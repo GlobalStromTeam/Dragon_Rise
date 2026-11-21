@@ -162,6 +162,12 @@
     "PassengerMachineGun": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
+      "BoundBonesYaw": [
+        "move_mk19a"
+      ],
+      "BoundBonesPitch": [
+        "move_mk19b"
+      ],
       "Projectile": "superbwarfare:gun_grenade",
       "DefaultZoom": 3,
       "RPM": 280,
