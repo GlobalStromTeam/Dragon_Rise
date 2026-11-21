@@ -162,6 +162,12 @@
     "PassengerMachineGun": {
       "DefaultFireMode": "Auto",
       "AvailableFireModes": "Auto",
+      "BoundBonesYaw": [
+        "move_mk19Yaw"
+      ],
+      "BoundBonesPitch": [
+        "move_mk19Pitch"
+      ],
       "Projectile": "superbwarfare:gun_grenade",
       "DefaultZoom": 3,
       "RPM": 280,
@@ -192,16 +198,22 @@
       "AmmoType": "superbwarfare:grenade_40mm",
       "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/grenade.png",
       "ShootPos": {
-        "Transform": "WeaponStationBarrel",
+        "Transform": "Vehicle",
         "Positions": [
           [
-            -0.0473,
-            -0.0166,
-            0.5553
+            -0.856,
+            2.366,
+            1.116
           ]
         ],
+        "DefaultTransform": "Default",
+        "DefaultBarrelDirection": [
+          0,
+          0,
+          1
+        ],
         "Directions": [
-          "WeaponStationBarrel"
+          "Passenger"
         ]
       }
     },

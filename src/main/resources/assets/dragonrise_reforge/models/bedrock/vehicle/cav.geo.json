@@ -13541,8 +13541,8 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStationYaw",
-					"parent": "passengerWeaponStation",
+					"name": "move_mk19Yaw",
+					"parent": "move_mk19",
 					"pivot": [-11.1445, 33.1806, -12.014],
 					"cubes": [
 						{
@@ -13928,8 +13928,8 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStationPitch",
-					"parent": "passengerWeaponStationYaw",
+					"name": "move_mk19Pitch",
+					"parent": "move_mk19Yaw",
 					"pivot": [-12.9388, 38.1209, -8.971],
 					"cubes": [
 						{
@@ -15042,7 +15042,7 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStation",
+					"name": "move_mk19",
 					"parent": "CAV",
 					"pivot": [-11.1445, 33.1806, -12.014]
 				},
