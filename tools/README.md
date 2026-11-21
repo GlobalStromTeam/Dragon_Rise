@@ -193,3 +193,25 @@ py tools/icon_preview.py a.png --ascii        # 看缺口/浮空件
 | 模型被压成"平板" | `free` 格式 cube 旋转未剥离 → 加 `--strip-rotation` |
 | 图标像从模型内部往外看 | 渲染时漏了 `near_smaller=False` |
 | 护甲不跟随动作 | 骨骼名拼错（必须精确 `armorBody` 等） |
+
+
+---
+
+## 六、武器站（副武器 / 车顶机枪）
+
+**先读 [`docs/武器站骨骼绑定.md`](../docs/武器站骨骼绑定.md)**，那里写了三种可用写法、SBW 的硬编码骨骼名、坐标换算与排错表。
+
+```bash
+node tools/check_weapon_station.mjs <项目根目录>          # 校验 data ↔ 模型骨骼引用
+node tools/check_weapon_station.mjs <项目根目录> --strict  # 把"提示"也算错误
+```
+
+三种写法速查：
+
+| 写法 | 模型骨骼 | 数据关键字段 | 模型跟不跟视角转 |
+|---|---|---|---|
+| A 绑定骨骼（银手5 / CAV MK19） | `<前缀>Yaw` → `<前缀>Pitch` | `BoundBonesYaw` / `BoundBonesPitch` + `Transform: Vehicle` | 转 |
+| B 标准武器站（2s25m 等） | `passengerWeaponStationYaw` / `...Pitch`（名字写死） | `Transform: WeaponStationBarrel` + 根级 `PassengerWeaponStation*` | 转 |
+| C 车体固定（M2HB、AC-130 各炮） | 无要求 | `Transform: Vehicle` + `Directions: ["Passenger"]` | 不转，只跟随开火方向 |
+
+**硬要求**：A 方案的骨骼名必须以 `Yaw` / `Pitch` 结尾（`move_xxxa` 这种不会转）。
