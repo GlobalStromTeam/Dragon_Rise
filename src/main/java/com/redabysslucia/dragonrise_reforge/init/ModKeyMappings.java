@@ -17,7 +17,9 @@ import java.util.function.BiConsumer;
 public enum ModKeyMappings {
 
     // NIGHT_VISION("nightvisionkey",GLFW.GLFW_KEY_X,"Toggle Realistic Night Vision Mode"),
-    ENGINE_CHANGE_MODE_TOGGLE("enginechangekey",GLFW.GLFW_KEY_V,"Toggle Engine Change Mode")
+    ENGINE_CHANGE_MODE_TOGGLE("enginechangekey",GLFW.GLFW_KEY_V,"Toggle Engine Change Mode"),
+    /** 桑塔纳：开/关循环动画 + 循环音效（默认 V，只在自己驾驶桑塔纳时生效） */
+    SANTANA_ANIMATION("santanaanimationkey",GLFW.GLFW_KEY_V,"Toggle Santana Loop Animation")
     ;
 
     private final String description;

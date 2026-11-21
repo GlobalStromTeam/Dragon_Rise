@@ -25,6 +25,10 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> TERRORIST_SHOOT = REGISTRY.register("terrorist_shoot", () -> 
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "terrorist_shoot")));
 
+    /** 桑塔纳「点灯」循环音（V 键开关） */
+    public static final RegistryObject<SoundEvent> SANTANA_LOOP = REGISTRY.register("santana_loop", () ->
+        SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "santana_loop")));
+
     public static final RegistryObject<SoundEvent> SUPPLY_STATION_CHARGING = REGISTRY.register("supply_station_charging", () ->
         SoundEvent.createVariableRangeEvent(new ResourceLocation(Dragonrise_reforge.MODID, "supply_station_charging")));
 

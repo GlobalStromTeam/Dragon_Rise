@@ -2386,5 +2386,13 @@
         "attenuation_distance": 8
       }
     ]
+  },
+  "santana_loop": {
+    "sounds": [
+      {
+        "name": "dragonrise_reforge:santana/santana_loop",
+        "stream": true
+      }
+    ]
   }
 }

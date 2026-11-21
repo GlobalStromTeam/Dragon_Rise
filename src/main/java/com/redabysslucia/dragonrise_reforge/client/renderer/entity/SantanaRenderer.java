@@ -16,10 +16,11 @@ import net.minecraft.util.Mth;
  * 方向盘轴向：模型里轮圈由 11 段"薄 Y + 绕 Z 旋转"的方块组成，轮盘位于 XY 平面，
  * 因此旋转轴是 <b>局部 Z</b>（{@code rotateZ}）。
  * <p>
- * <b>转角来源</b>：只用 {@code rudderRot}。实体侧已经做过"速度敏感转向"
- * （车速越高舵角上限越小、转向动作越慢，见 {@link SantanaEntity#getSteerMaxAngle()}），
+ * <b>转角来源</b>：只用 {@code rudderRot}，也就是 SBW 原生转向的舵角
+ * （实体侧已停用"速度敏感转向"，不再改写 {@code rudderRot}；舵角上限 0.6 rad，
+ * 每 tick 转速由 santana.json 的 {@code SteeringSpeed} 决定），
  * 而前轮 Turn 骨骼在 {@code GeoVehicleRenderer} 里同样读 {@code rudderRot} ——
- * 所以方向盘与前轮会一起变小、变慢，不需要在这里再乘额外系数。
+ * 所以方向盘与前轮天然同步，不需要在这里再乘额外系数。
  * <p>
  * 原有的漂移视觉（车身侧倾 / 反打方向）已随漂移功能一起停用。
  */
@@ -59,7 +60,7 @@ public class SantanaRenderer extends GeoVehicleRenderer<SantanaEntity> {
             return;
         }
 
-        // rudderRot 已由实体按车速限幅 / 限速，这里直接取用（插值保证 60fps 顺滑）
+        // rudderRot 即 SBW 原生舵角，这里直接取用（插值保证 60fps 顺滑）
         float steer = Mth.lerp(partialTicks, entity.getRudderRotO(), entity.getRudderRot());
         wheel.rotation.rotateZ(steer * STEER_WHEEL_RATIO * STEER_WHEEL_SIGN * Mth.DEG_TO_RAD);
     }
