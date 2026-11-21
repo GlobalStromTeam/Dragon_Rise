@@ -13542,7 +13542,7 @@
 				},
 				{
 					"name": "move_mk19a",
-					"parent": "passengerWeaponStation",
+					"parent": "move_mk19",
 					"pivot": [-11.1445, 33.1806, -12.014],
 					"cubes": [
 						{
@@ -15042,7 +15042,7 @@
 					]
 				},
 				{
-					"name": "passengerWeaponStation",
+					"name": "move_mk19",
 					"parent": "CAV",
 					"pivot": [-11.1445, 33.1806, -12.014]
 				},
