@@ -366,5 +366,7 @@
   "Model": {
     "Model": "dragonrise_reforge:models/bedrock/vehicle/silverhand_mk_iv.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/silverhand_mk_iv.png"
-  }
+  },
+  "PassengerWeaponStationPos": [-0.59,-0.859,2.496],
+  "PassengerWeaponStationBarrelPos": [0.0,0.0,0.063]
 }
