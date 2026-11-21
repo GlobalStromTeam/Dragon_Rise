@@ -2491,13 +2491,13 @@
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "passengerWeaponStationYaw",
+					"name": "move_hullGunYaw",
 					"parent": "body",
 					"pivot": [-9.43243, 38.54883, -64.02033]
 				},
 				{
-					"name": "passengerWeaponStationPitch",
-					"parent": "passengerWeaponStationYaw",
+					"name": "move_hullGunPitch",
+					"parent": "move_hullGunYaw",
 					"pivot": [-9.43243, 38.54883, -65.02033],
 					"cubes": [
 						{
