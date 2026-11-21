@@ -1,9 +1,16 @@
 package com.redabysslucia.dragonrise_reforge.entities;
 
 import com.redabysslucia.dragonrise_reforge.entities.utils.DragonriseVehicleBase;
+import com.atsuishio.superbwarfare.client.animation.AnimationPlayType;
+import com.redabysslucia.dragonrise_reforge.client.sound.SantanaLoopSoundInstance;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 /**
  * 大众桑塔纳（VW Santana，民用量产轿车）。
@@ -40,6 +47,82 @@ public class SantanaEntity extends DragonriseVehicleBase {
 
     public SantanaEntity(EntityType<?> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
+    }
+
+    /* ==================== V 键循环动画 + 循环音 ==================== */
+
+    /** 动画名（assets/dragonrise_reforge/animations/santana.animation.json） */
+    public static final String LIGHT_ANIMATION = "animation.santana.lighton";
+
+    /** 是否正在播放点灯循环动画 / 循环音（同步字段，旁观者也能看到听到） */
+    private static final EntityDataAccessor<Boolean> DR$LIGHT_ON =
+            SynchedEntityData.defineId(SantanaEntity.class, EntityDataSerializers.BOOLEAN);
+
+    @OnlyIn(Dist.CLIENT)
+    private SantanaLoopSoundInstance dr$loopSound;
+
+    @OnlyIn(Dist.CLIENT)
+    private boolean dr$animPlaying;
+
+    @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DR$LIGHT_ON, false);
+    }
+
+    public boolean dr$isLightOn() {
+        return this.entityData.get(DR$LIGHT_ON);
+    }
+
+    /** 服务端调用：翻转开关，客户端通过同步字段收到 */
+    public void dr$toggleLight() {
+        this.entityData.set(DR$LIGHT_ON, !this.dr$isLightOn());
+    }
+
+    @Override
+    public void baseTick() {
+        super.baseTick();
+        if (this.level().isClientSide()) {
+            this.dr$tickLight();
+        }
+    }
+
+    /** 客户端每 tick：按开关状态起停循环动画与循环音 */
+    @OnlyIn(Dist.CLIENT)
+    private void dr$tickLight() {
+        boolean on = this.dr$isLightOn();
+
+        if (on != this.dr$animPlaying) {
+            var animationInstance = this.getAnimationInstance();
+            if (animationInstance != null) {
+                var ctx = animationInstance.getContext();
+                if (on) {
+                    ctx.playAnimation(LIGHT_ANIMATION, AnimationPlayType.LOOP, 0);
+                } else {
+                    ctx.stopAnimation(LIGHT_ANIMATION, 0);
+                }
+                this.dr$animPlaying = on;
+            }
+        }
+
+        if (on) {
+            if (this.dr$loopSound == null) {
+                this.dr$loopSound = new SantanaLoopSoundInstance(this);
+                net.minecraft.client.Minecraft.getInstance().getSoundManager().play(this.dr$loopSound);
+            }
+        } else if (this.dr$loopSound != null) {
+            net.minecraft.client.Minecraft.getInstance().getSoundManager().stop(this.dr$loopSound);
+            this.dr$loopSound = null;
+        }
+    }
+
+    @Override
+    public void remove(RemovalReason reason) {
+        if (this.level().isClientSide() && this.dr$loopSound != null) {
+            net.minecraft.client.Minecraft.getInstance().getSoundManager().stop(this.dr$loopSound);
+            this.dr$loopSound = null;
+        }
+        super.remove(reason);
     }
 
     @Override

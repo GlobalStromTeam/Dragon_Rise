@@ -10,7 +10,7 @@
     {
       "Id": "blue",
       "Name": "蓝色涂装",
-      "Description": "由stars行程IL定制的皮肤",
+      "Description": "由stars星辰IL定制的皮肤",
       "Texture": "dragonrise_reforge:textures/entity/cav_blue.png",
       "Priority": 0
     }

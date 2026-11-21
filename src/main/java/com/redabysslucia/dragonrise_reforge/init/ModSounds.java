@@ -11,6 +11,9 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 public class ModSounds {
     public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(Registries.SOUND_EVENT, Dragonrise_reforge.MODID);
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> SANTANA_LOOP = REGISTRY.register("santana_loop", () ->
+        SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "santana_loop")));
+    
     public static final DeferredHolder<SoundEvent, SoundEvent> M3A3_TOW_RAISE_1P = REGISTRY.register("m3a3_tow_raise_1p", () ->
         SoundEvent.createVariableRangeEvent(ResourceLocation.fromNamespaceAndPath(Dragonrise_reforge.MODID, "m3a3_tow_raise_1p")));
     public static final DeferredHolder<SoundEvent, SoundEvent> M3A3_TOW_RAISE_3P = REGISTRY.register("m3a3_tow_raise_3p", () ->

@@ -384,7 +384,7 @@
 					]
 				},
 				{
-					"name": "wheelR1",
+					"name": "deco",
 					"parent": "CarCore",
 					"pivot": [-20.8892, 7.76673, 23.76276],
 					"cubes": [
@@ -534,7 +534,7 @@
 				},
 				{
 					"name": "11",
-					"parent": "wheelR1",
+					"parent": "deco",
 					"pivot": [14.97681, 8.85873, -42.72204],
 					"cubes": [
 						{

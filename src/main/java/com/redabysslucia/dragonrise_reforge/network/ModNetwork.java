@@ -3,6 +3,7 @@ package com.redabysslucia.dragonrise_reforge.network;
 import com.redabysslucia.dragonrise_reforge.network.message.OwnBombMessage;
 import com.redabysslucia.dragonrise_reforge.network.message.R6DroneControlMessage;
 import com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSwitchMessage;
+import com.redabysslucia.dragonrise_reforge.network.message.SantanaLightMessage;
 import com.redabysslucia.dragonrise_reforge.network.message.RemoteSeatSyncMessage;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
@@ -40,6 +41,7 @@ public class ModNetwork {
         registrar.playToServer(EngineChangeModeMessage.TYPE, EngineChangeModeMessage.STREAM_CODEC, EngineChangeModeMessage::handle);
         registrar.playToServer(R6DroneControlMessage.TYPE, R6DroneControlMessage.STREAM_CODEC, R6DroneControlMessage::handle);
         registrar.playToServer(RemoteSeatSwitchMessage.TYPE, RemoteSeatSwitchMessage.STREAM_CODEC, RemoteSeatSwitchMessage::handle);
+        registrar.playToServer(SantanaLightMessage.TYPE, SantanaLightMessage.STREAM_CODEC, SantanaLightMessage::handle);
 
         // 服务端 -> 客户端
         registrar.playToClient(OwnBombMessage.TYPE, OwnBombMessage.STREAM_CODEC, OwnBombMessage::handle);
