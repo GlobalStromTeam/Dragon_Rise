@@ -105,10 +105,18 @@
       "HeatPerShoot": 0.5,
       "Spread": 0.5,
       "CrosshairColor": "0x66FF00",
-      "Name": "weapon.superbwarfare.tow_missile",
       "AmmoType": "superbwarfare:medium_anti_ground_missile",
-      "Projectile": "superbwarfare:wire_guide_missile",
       "ProjectileLife": 400,
+      "Projectile": "superbwarfare:kh_39",
+      "SeekWeaponInfo": {
+        "SeekDirection": "Barrel",
+        "SeekRange": 384,
+        "SeekAngle": 20,
+        "SeekTime": 20,
+        "MaxTargetHeight": 32,
+        "MinTargetSize": 0.9,
+        "OnlyLockEntity": true
+      },
       "Magazine": 2,
       "EmptyReloadTime": 200,
       "Damage": 600,
@@ -132,16 +140,19 @@
         ],
         "ViewDirection": "Barrel"
       },
-      "Crosshair": "@VehicleCommonMissile",
+      "SoundRadius": 12,
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png",
+      "Name": "weapon.dragonrise_reforge.tr325",
+      "Crosshair": "@VehicleCommonSeekMissile",
       "SoundInfo": {
         "Fire1P": "superbwarfare:bmp_2_missile_fire_1p",
         "Fire3P": "superbwarfare:bmp_2_missile_fire_3p",
         "VehicleReload3p": "superbwarfare:medium_missile_reload",
         "VehicleReloadSoundTime": 28,
-        "Change": "superbwarfare:into_missile"
-      },
-      "SoundRadius": 12,
-      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/missile_tow.png"
+        "Change": "superbwarfare:into_missile",
+        "Locking": "superbwarfare:javelin_locking",
+        "Locked": "superbwarfare:javelin_locked"
+      }
     },
     "PassengerMachineGun": {
       "DefaultFireMode": "Auto",
