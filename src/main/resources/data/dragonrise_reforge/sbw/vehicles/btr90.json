@@ -194,8 +194,8 @@
         0.178513684,
         0.0554067836
       ],
-      "Transform": "MissileRack",
-      "Rotation": "MissileRack"
+      "Transform": "move_missileRack",
+      "Rotation": "move_missileRack"
     },
     {
       "Part": "Turret",
@@ -209,8 +209,8 @@
         0.178513684,
         0.0554067836
       ],
-      "Transform": "MissileRack",
-      "Rotation": "MissileRack"
+      "Transform": "move_missileRack",
+      "Rotation": "move_missileRack"
     }
   ],
   "Seats": [
@@ -586,10 +586,10 @@
       },
       "SoundRadius": 12,
       "ShootPos": {
-        "Transform": "MissileRack",
+        "Transform": "move_missileRack",
         "Positions": [[0.9604180542, 0.178513684, 0.6585569211], [1.1262214478, 0.178513684, 0.6585569211], [-0.9604180542, 0.178513684, 0.6585569211], [-1.1262214478, 0.178513684, 0.6585569211]],
         "Directions": [
-          "MissileRack"
+          "move_missileRack"
         ],
         "BoundUpWithAmmoAmount": true
       },
