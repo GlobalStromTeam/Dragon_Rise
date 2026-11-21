@@ -82,6 +82,22 @@
             "Projectile": "superbwarfare:projectile",
             "Name": "weapon.dragonrise_reforge.um20_gs"
           }
+        },
+        {
+          "Ammo": "superbwarfare:grenade_40mm",
+          "Override": {
+            "Icon": "dragonrise_reforge:textures/overlay/vehicle/weapon/icons/grenade.png",
+            "Crosshair": "@VehicleCommonGun",
+            "CrosshairColor": "0xFFC700",
+            "Projectile": "superbwarfare:gun_grenade",
+            "Velocity": 12,
+            "Gravity": 0.05,
+            "Damage": 40,
+            "ExplosionDamage": 22,
+            "ExplosionRadius": 4,
+            "Spread": 1,
+            "Name": "weapon.dragonrise_reforge.um40_he_i"
+          }
         }
       ],
       "ShootPos": {
