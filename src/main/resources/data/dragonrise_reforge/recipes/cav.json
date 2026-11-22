@@ -2,12 +2,14 @@
   "type": "superbwarfare:vehicle_assembling",
   "category": "land",
   "inputs": [
-    "8 superbwarfare:steel_block",
-    "superbwarfare:heavy_armament_module",
-    "superbwarfare:medium_battery_pack",
+    "16 superbwarfare:steel_block",
+    "2 superbwarfare:heavy_armament_module",
+    "superbwarfare:large_battery_pack",
     "8 superbwarfare:wheel",
-    "superbwarfare:large_motor",
-    "superbwarfare:armor_plate"
+    "2 superbwarfare:large_motor",
+    "4 superbwarfare:armor_plate",
+    "2 superbwarfare:ancient_cpu",
+    "superbwarfare:intelligent_chip"
   ],
   "result": {
     "entity": "dragonrise_reforge:cav"
