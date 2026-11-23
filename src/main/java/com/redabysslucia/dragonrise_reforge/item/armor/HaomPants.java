@@ -20,11 +20,9 @@ import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorRender
 import net.minecraft.resources.ResourceLocation;
 
 /**
- * Haom 护甲（护腿）。整套模型共用同一份 geo：{@code models/bedrock/armor/haom.geo.json}，
- * 由 SBM 的按槽位可见性（armorHead / armorBody+双臂 / 双腿+boots）决定显示哪一部分。
+ * Haom 护甲（护腿）。SBM 模型：{@code models/bedrock/armor/haom.geo.json}。
  *
- * <p>数值对齐下界合金：护甲 6、韧性 3.0、击退抗性 0.1、附魔能力 15、
- * 耐久 Type.LEGGINGS.getDurability(37)。
+ * <p>对齐下界合金：护甲 7/8/6（头盔 +4）、韧性 3.0、击退抗性 0.1、附魔能力 15、耐久 ×37；耐久 = Type.LEGGINGS.getDurability(37)。
  */
 public class HaomPants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/haom.geo.json */
@@ -34,7 +32,7 @@ public class HaomPants extends ArmorItem {
 
     public HaomPants() {
         super(ModArmorMaterials.NETHERITE_HEAVY, Type.LEGGINGS,
-                new Properties().durability(Type.LEGGINGS.getDurability(ModArmorMaterials.NETHERITE_DURABILITY_FACTOR)));
+                new Properties().durability(Type.LEGGINGS.getDurability(37)));
     }
 
     @Override

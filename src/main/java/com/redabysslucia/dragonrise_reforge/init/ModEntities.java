@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.KamazTyphoonEntity;
+
+
+import com.redabysslucia.dragonrise_reforge.entities.Kozak5Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Bm13nEntity;
 
 
@@ -25,6 +31,7 @@ import com.redabysslucia.dragonrise_reforge.entities.BMP3Entity;
 import com.redabysslucia.dragonrise_reforge.entities.BMPT72Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Brdm2Entity;
 import com.redabysslucia.dragonrise_reforge.entities.CamelEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Ch53EEntity;
 import com.redabysslucia.dragonrise_reforge.entities.CavEntity;
 import com.redabysslucia.dragonrise_reforge.entities.ChallengerDsEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Chonmaho5Entity;
@@ -359,6 +366,14 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.0f, 2.9f)
+    );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Ch53EEntity>> CH53E = register("ch53e",
+            EntityType.Builder.of(Ch53EEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(5.6f, 3.6f)
     );
 
     public static final DeferredHolder<EntityType<?>, EntityType<BMPT72Entity>> BMPT72 = register("bmpt72",
@@ -1893,6 +1908,19 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
+    public static final DeferredHolder<EntityType<?>, EntityType<Kozak5Entity>> KOZAK5 = register("kozak5",
+            EntityType.Builder.of(Kozak5Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<KamazTyphoonEntity>> KAMAZ_TYPHOON = register("kamaz_typhoon",
+            EntityType.Builder.of(KamazTyphoonEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
 
 }
-

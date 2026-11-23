@@ -1,0 +1,255 @@
+{
+  "ID": "dragonrise_reforge:kozak5",
+  "Type": "APC",
+  "HudType": "@Land",
+  "EngineType": "Wheel",
+  "MaxHealth": 250,
+  "MaxEnergy": 5000000,
+  "Mass": 8.0,
+  "UpStep": 1.5,
+  "RotateOffsetHeight": 1.0,
+  "InertiaRotateRate": 1.1,
+  "ThirdPersonCameraPos": [0,2.6,7.5],
+  "EngineSound": "dragonrise_reforge:wheel_loop1",
+  "HornSound": "superbwarfare:truck_horn",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/blue_land.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/kozak5_icon.png",
+  "VehicleContainerType": "Medium",
+  "TurretControllerIndex": 1,
+  "TurretTurnSpeed": [3.6,3.2],
+  "TurretYawRange": [-180,180],
+  "TurretPitchRange": [-10,45],
+  "EngineInfo": {
+    "Buoyancy": 0,
+    "EnergyCostRate": 64,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": -0.3,
+    "MaxForwardSpeedRate": 1.0,
+    "MaxBackwardSpeedRate": 0.35,
+    "Increment": 0.015,
+    "Decrement": 0.02,
+    "SteeringSpeed": 0.12,
+    "EngineSoundVolume": 0.6
+  },
+  "Weapons": {
+    "MachineGun": {
+      "Icon": "superbwarfare:textures/overlay/vehicle/weapon/icons/gun_12_7mm.png",
+      "DefaultFireMode": "Auto",
+      "AvailableFireModes": "Auto",
+      "Projectile": "superbwarfare:projectile",
+      "DefaultZoom": 3,
+      "RPM": 600,
+      "Damage": 40,
+      "BypassesArmor": 0.6,
+      "Velocity": 25.0,
+      "RecoilTime": 16,
+      "RecoilForce": 0.05,
+      "HeatPerShoot": 5,
+      "NaturalCooldown": 1,
+      "ShootAnimationTime": 1,
+      "AmmoType": "@HeavyAmmo",
+      "Crosshair": "@VehicleCommonGun",
+      "CrosshairColor": "0x66FF00",
+      "Name": "weapon.dragonrise_reforge:kozak5_hmg",
+      "SoundInfo": {
+        "Fire1P": "superbwarfare:m_2_hb_fire_1p",
+        "Fire3P": "superbwarfare:m_2_hb_fire_3p",
+        "Fire3PFar": "superbwarfare:m_2_hb_far",
+        "Fire3PVeryFar": "superbwarfare:m_2_hb_veryfar",
+        "Change": "dragonrise_reforge:change_weapon"
+      },
+      "SoundRadius": 16,
+      "ShootPos": {
+        "Transform": "Barrel",
+        "Positions": [
+          [-0.036,0.225,1.265]
+        ],
+        "Directions": [
+          "Barrel"
+        ]
+      }
+    }
+  },
+  "Seats": [
+    {
+      "HidePassenger": true,
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [-0.759,3.894,-0.864],
+      "MinPitch": -10,
+      "MaxPitch": 45,
+      "Sensitivity": [0.52,0.75,0.9]
+    },
+    {
+      "HidePassenger": true,
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [-1.031,2.541,0.829],
+      "MinPitch": -20,
+      "MaxPitch": 50,
+      "MinYaw": -30,
+      "MaxYaw": 30,
+      "Weapons": [
+        "MachineGun"
+      ]
+    },
+    {
+      "HidePassenger": true,
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [-1.18,2.756,-4.391],
+      "MinPitch": -10,
+      "MaxPitch": 45,
+      "Sensitivity": [0.52,0.75,0.9]
+    },
+    {
+      "HidePassenger": true,
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [0.883,2.756,-4.597],
+      "MinPitch": -10,
+      "MaxPitch": 45,
+      "Sensitivity": [0.52,0.75,0.9]
+    },
+    {
+      "HidePassenger": true,
+      "IsEnclosed": false,
+      "Transform": "Vehicle",
+      "Position": [-0.046,1.931,1.59],
+      "MinPitch": -10,
+      "MaxPitch": 45,
+      "Sensitivity": [0.52,0.75,0.9]
+    }
+  ],
+  "DamageModifiers": [
+    "minecraft:arrow * 0.2",
+    "minecraft:trident * 0.4",
+    "minecraft:mob_attack * 0.4",
+    "minecraft:mob_attack_no_aggro * 0.4",
+    "minecraft:mob_projectile * 0.4",
+    "minecraft:player_attack * 0.4",
+    "minecraft:lava - -4",
+    "minecraft:lava * 4",
+    "@minecraft:tnt * 3",
+    "@minecraft:tnt_minecart * 3",
+    "minecraft:explosion * 4",
+    "minecraft:player_explosion * 4",
+    "superbwarfare:projectile_hit * 0.8",
+    "superbwarfare:grapeshot_hit * 0.2",
+    "@#superbwarfare:aerial_bomb * 1.4",
+    "#superbwarfare:projectile * 1.0",
+    "@superbwarfare:cannon_shell * 1.6",
+    "@superbwarfare:small_cannon_shell * 1.8",
+    "@superbwarfare:gun_grenade * 1.4",
+    "@superbwarfare:rgo_grenade * 3",
+    "@superbwarfare:hand_grenade * 2.5",
+    "@superbwarfare:mortar_shell * 2",
+    "All * 0.9",
+    "$entity.getSourceAngle(source, 0.05) * damage"
+  ],
+  "DestroyInfo": {
+    "ParticleType": "Huge",
+    "ExplosionDamage": 60,
+    "ExplosionRadius": 6
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
+  },
+  "TurretPos": [0.037,2.956,-0.023],
+  "BarrelPos": [-0.002,-0.009,0.148],
+  "OBB": [
+    {
+      "Size": [1.296,0.999,2.444],
+      "Position": [0.037,2.312,-1.492]
+    },
+    {
+      "Size": [0.78,0.483,0.072],
+      "Position": [0.004,3.034,-2.111]
+    },
+    {
+      "Size": [0.059,0.432,0.588],
+      "Position": [0.726,2.982,-1.595]
+    },
+    {
+      "Size": [0.059,0.432,0.33],
+      "Position": [0.51,2.982,-0.816],
+      "CustomRotate": [0.0,-45.0,0.0]
+    },
+    {
+      "Size": [0.033,0.432,0.433],
+      "Position": [-0.502,2.982,-0.816],
+      "CustomRotate": [0.0,35.0,0.0]
+    },
+    {
+      "Size": [0.059,0.432,0.588],
+      "Position": [-0.718,2.982,-1.595]
+    },
+    {
+      "Size": [1.362,1.315,3.182],
+      "Position": [0.004,1.303,-0.605],
+      "Part": "Collision"
+    },
+    {
+      "Size": [1.188,0.683,0.893],
+      "Position": [0.004,1.285,1.366],
+      "Part": "MainEngine"
+    },
+    {
+      "Size": [0.2,0.548,0.561],
+      "Position": [1.182,0.577,1.444],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.2,0.548,0.561],
+      "Position": [-1.174,0.577,1.444],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.2,0.548,0.561],
+      "Position": [-1.174,0.577,-2.733],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.2,0.548,0.561],
+      "Position": [1.182,0.577,-2.733],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.226,0.409,0.046],
+      "Position": [-0.347,0.024,-0.016],
+      "CustomRotate": [-15.0,0.0,0.0],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [0.226,0.409,0.046],
+      "Position": [0.28,0.024,-0.016],
+      "CustomRotate": [-15.0,0.0,0.0],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    },
+    {
+      "Size": [0.123,0.177,0.046],
+      "Position": [-0.029,-0.175,0.037],
+      "CustomRotate": [-15.0,0.0,0.0],
+      "Part": "Turret",
+      "Transform": "Turret",
+      "Rotation": "Turret"
+    }
+  ],
+  "TerrainCompat": [
+    [1.1821,0.0,-2.733],
+    [-1.1741,0.0,-2.733],
+    [1.1821,0.0,1.4436],
+    [-1.1741,0.0,1.4436]
+  ]
+}

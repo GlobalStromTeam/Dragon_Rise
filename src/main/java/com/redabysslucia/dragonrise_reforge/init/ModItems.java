@@ -86,6 +86,15 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_HELMET = REGISTRY.register("russian_soldier_helmet", RussianSoldierHelmet::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_CHEST = REGISTRY.register("russian_soldier_chest", RussianSoldierChest::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_PANTS = REGISTRY.register("russian_soldier_pants", RussianSoldierPants::new);
+    public static final DeferredHolder<Item, Item> GM_HELMET = REGISTRY.register("gm_helmet", GmHelmet::new);
+    public static final DeferredHolder<Item, Item> GM_CHEST = REGISTRY.register("gm_chest", GmChest::new);
+    public static final DeferredHolder<Item, Item> GM_PANTS = REGISTRY.register("gm_pants", GmPants::new);
+    public static final DeferredHolder<Item, Item> UKRAINE_SOLDIER_HELMET = REGISTRY.register("ukraine_soldier_helmet", UkraineSoldierHelmet::new);
+    public static final DeferredHolder<Item, Item> UKRAINE_SOLDIER_CHEST = REGISTRY.register("ukraine_soldier_chest", UkraineSoldierChest::new);
+    public static final DeferredHolder<Item, Item> UKRAINE_SOLDIER_PANTS = REGISTRY.register("ukraine_soldier_pants", UkraineSoldierPants::new);
+    public static final DeferredHolder<Item, Item> USA_ARMY_HELMET = REGISTRY.register("usa_army_helmet", UsaArmyHelmet::new);
+    public static final DeferredHolder<Item, Item> USA_ARMY_CHEST = REGISTRY.register("usa_army_chest", UsaArmyChest::new);
+    public static final DeferredHolder<Item, Item> USA_ARMY_PANTS = REGISTRY.register("usa_army_pants", UsaArmyPants::new);
     public static final DeferredHolder<Item, Item> HAOM_HELMET = REGISTRY.register("haom_helmet", HaomHelmet::new);
     public static final DeferredHolder<Item, Item> HAOM_CHEST = REGISTRY.register("haom_chest", HaomChest::new);
     public static final DeferredHolder<Item, Item> HAOM_PANTS = REGISTRY.register("haom_pants", HaomPants::new);

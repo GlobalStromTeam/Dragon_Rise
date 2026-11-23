@@ -1,5 +1,11 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.KamazTyphoonRenderer;
+
+
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Kozak5Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Bm13nRenderer;
 
 
@@ -158,6 +164,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.EC665.get(), EC665Renderer::new);
                 event.registerEntityRenderer(ModEntities.AH64.get(), AH64Renderer::new);
                 event.registerEntityRenderer(ModEntities.UH60.get(), UH60Renderer::new);
+                event.registerEntityRenderer(ModEntities.CH53E.get(), Ch53ERenderer::new);
                 event.registerEntityRenderer(ModEntities.SHIELD.get(), SHIELDRenderer::new);
                 event.registerEntityRenderer(ModEntities.AMMO_SUPPLY_STATION.get(), AmmoSupplyStationRenderer::new);
                 event.registerEntityRenderer(ModEntities.GENERATOR.get(), GeneratorRenderer::new);
@@ -309,5 +316,7 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.EF2000.get(), Ef2000Renderer::new);
                 event.registerEntityRenderer(ModEntities.SANTANA.get(), SantanaRenderer::new);
                 event.registerEntityRenderer(ModEntities.BM13N.get(), Bm13nRenderer::new);
+                event.registerEntityRenderer(ModEntities.KOZAK5.get(), Kozak5Renderer::new);
+                event.registerEntityRenderer(ModEntities.KAMAZ_TYPHOON.get(), KamazTyphoonRenderer::new);
         }
 }

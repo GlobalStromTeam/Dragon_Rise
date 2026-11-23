@@ -81,6 +81,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BMD4M.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.R2S25M.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.PROJECT640.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.KAMAZ_TYPHOON.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AKM.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.BRDM2.get()));
                         //俄罗斯 车辆
@@ -123,6 +124,7 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH64.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AH1F.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.UH60.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.CH53E.get()));
                         //美国 固定翼
                         output.accept(ContainerBlockItem.createInstance(ModEntities.AC130.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.F14.get()));
@@ -181,6 +183,8 @@ public class ModTabs {
                         output.accept(ContainerBlockItem.createInstance(ModEntities.SPACEBAG.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.TEST.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.CAV.get()));
+                        //乌克兰 车辆
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.KOZAK5.get()));
                         //中国 民用/娱乐
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLHGZU23.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.WLSC.get()));
@@ -309,6 +313,15 @@ public class ModTabs {
                         output.accept(ModItems.RUSSIAN_SOLDIER_HELMET.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_CHEST.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_PANTS.get());
+        output.accept(ModItems.GM_HELMET.get());
+        output.accept(ModItems.GM_CHEST.get());
+        output.accept(ModItems.GM_PANTS.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_HELMET.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_CHEST.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_PANTS.get());
+        output.accept(ModItems.USA_ARMY_HELMET.get());
+        output.accept(ModItems.USA_ARMY_CHEST.get());
+        output.accept(ModItems.USA_ARMY_PANTS.get());
         output.accept(ModItems.HAOM_HELMET.get());
         output.accept(ModItems.HAOM_CHEST.get());
         output.accept(ModItems.HAOM_PANTS.get());

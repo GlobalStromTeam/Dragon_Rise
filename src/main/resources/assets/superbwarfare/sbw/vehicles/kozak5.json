@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:kozak5",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
+    }
+  ]
+}

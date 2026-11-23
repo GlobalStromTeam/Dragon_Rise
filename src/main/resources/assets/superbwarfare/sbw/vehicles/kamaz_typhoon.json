@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:kamaz_typhoon",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/kamaz_typhoon.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/kamaz_typhoon.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/kamaz_typhoon.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/kamaz_typhoon.png"
+    }
+  ]
+}
