@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Sba60k2Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.KamazTyphoonEntity;
 import com.redabysslucia.dragonrise_reforge.entities.Leopard2a7Entity;
 
@@ -1930,6 +1933,13 @@ public class ModEntities {
                     .setUpdateInterval(2)
                     .fireImmune()
                     .sized(4.1f, 3.2f)
+    );
+    public static final DeferredHolder<EntityType<?>, EntityType<Sba60k2Entity>> SBA60K2 = register("sba60k2",
+            EntityType.Builder.of(Sba60k2Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
     );
 
 

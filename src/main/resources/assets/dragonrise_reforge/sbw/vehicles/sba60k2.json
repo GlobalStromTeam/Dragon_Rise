@@ -1,0 +1,13 @@
+{
+  "ID": "dragonrise_reforge:sba60k2",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/sba60k2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/sba60k2.png"
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/sba60k2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/sba60k2.png"
+    }
+  ]
+}

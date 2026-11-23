@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Sba60k2Renderer;
+
+
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.KamazTyphoonRenderer;
 import com.redabysslucia.dragonrise_reforge.client.renderer.entity.Leopard2a7Renderer;
 
@@ -320,5 +323,6 @@ public class ModEntityRenderers {
                 event.registerEntityRenderer(ModEntities.KOZAK5.get(), Kozak5Renderer::new);
                 event.registerEntityRenderer(ModEntities.KAMAZ_TYPHOON.get(), KamazTyphoonRenderer::new);
         event.registerEntityRenderer(ModEntities.LEOPARD2A7.get(), Leopard2a7Renderer::new);
+        event.registerEntityRenderer(ModEntities.SBA60K2.get(), Sba60k2Renderer::new);
         }
 }
