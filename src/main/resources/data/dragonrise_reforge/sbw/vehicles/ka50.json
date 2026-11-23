@@ -137,9 +137,9 @@
       "CameraPos": {
         "Transform": "Vehicle",
         "Position": [
-          0,
-          2,
-          2
+          0.0,
+          2.198511,
+          2.0
         ],
         "UseFixedCameraPos": true,
         "UseAircraftCamera": true,
@@ -207,8 +207,8 @@
         "Positions": [
           [
             -0.9,
-            0.402,
-            0.513
+            1.046369,
+            2.089191
           ]
         ]
       }

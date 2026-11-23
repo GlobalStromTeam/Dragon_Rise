@@ -188,9 +188,9 @@
           3.8125
         ],
         "ZoomPosition": [
-          0,
+          0.0,
           1.0625,
-          0.625
+          3.215205
         ],
         "ZoomDirection": "Barrel"
       },
@@ -249,9 +249,9 @@
         "Transform": "Barrel",
         "Positions": [
           [
-            0,
-            0,
-            -0.675
+            0.0,
+            0.0,
+            0.614735
           ]
         ],
         "Directions": [
