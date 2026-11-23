@@ -9,5 +9,6 @@
       "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
       "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
     }
-  ]
+  ],
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ukr_land.png"
 }
