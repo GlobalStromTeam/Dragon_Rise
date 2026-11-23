@@ -743,5 +743,13 @@
   "item.dragonrise_reforge.ukraine_soldier_pants": "Ukrainian Soldier Leggings",
   "item.dragonrise_reforge.gm_helmet": "GM Soldier Helmet",
   "item.dragonrise_reforge.gm_chest": "GM Soldier Chestplate",
-  "item.dragonrise_reforge.gm_pants": "GM Soldier Leggings"
+  "item.dragonrise_reforge.gm_pants": "GM Soldier Leggings",
+  "dragonrise_reforge:PKTM": "7.62mm PKTM Coaxial Machine Gun",
+  "entity.dragonrise_reforge.ch53e": "CH-53E Super Stallion",
+  "entity.dragonrise_reforge.kamaz_typhoon": "KamAZ Typhoon-K",
+  "entity.dragonrise_reforge.kozak5": "Kozak-5 Armored Vehicle",
+  "info.dragonrise_reforge.ch53e": "CH-53E Super Stallion heavy-lift transport helicopter: three engines, seven-blade main rotor, capable of sling-loading light armored vehicles and heavy cargo.",
+  "info.dragonrise_reforge.kamaz_typhoon": "The KamAZ Typhoon-K is a Russian 6x6 MRAP of the Typhoon family, with a V-shaped hull and a modular armoured capsule. At about 20 tonnes and roughly 105 km/h on roads, it carries a full squad of infantry and can mount a machine gun or remote weapon station on the roof.",
+  "info.dragonrise_reforge.kozak5": "The Kozak-5 is a Ukrainian 4x4 MRAP developed from the Kozak-2, with a V-shaped hull and armoured cab and a roof mount that can carry a 12.7mm heavy machine gun. At roughly eight tonnes and about 120 km/h on roads, it is used for troop transport and patrol escort.",
+  "weapon.dragonrise_reforge:kozak5_hmg": "12.7mm Heavy Machine Gun"
 }

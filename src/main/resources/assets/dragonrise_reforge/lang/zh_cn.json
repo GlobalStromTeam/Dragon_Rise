@@ -743,5 +743,13 @@
   "item.dragonrise_reforge.ukraine_soldier_pants": "乌克兰 士兵护腿",
   "item.dragonrise_reforge.gm_helmet": "GM 士兵头盔",
   "item.dragonrise_reforge.gm_chest": "GM 士兵作战服",
-  "item.dragonrise_reforge.gm_pants": "GM 士兵护腿"
+  "item.dragonrise_reforge.gm_pants": "GM 士兵护腿",
+  "dragonrise_reforge:PKTM": "7.62mm PKTM 同轴机枪",
+  "entity.dragonrise_reforge.ch53e": "CH-53E",
+  "entity.dragonrise_reforge.kamaz_typhoon": "卡玛斯 台风-K 装甲车",
+  "entity.dragonrise_reforge.kozak5": "哥萨克-5 装甲车",
+  "info.dragonrise_reforge.ch53e": "CH-53E 超级种马重型运输直升机，美军现役最大的重型运输直升机之一，三发七桨，可吊运轻型装甲车辆与重型物资。",
+  "info.dragonrise_reforge.kamaz_typhoon": "卡玛斯 台风-K（KamAZ Typhoon-K）是俄罗斯“台风”系列 6×6 防雷反伏击车，采用 V 形车底与模块化装甲舱，整车约 20 吨，公路时速约 105 km/h，可运送十余名步兵或在车顶加装机枪/遥控武器站。",
+  "info.dragonrise_reforge.kozak5": "哥萨克-5 是乌克兰基于哥萨克-2 发展而来的 4×4 防雷反伏击车（MRAP），采用 V 形车底与装甲驾驶室，车顶可加装 12.7mm 高射机枪战斗模块。整车约 8 吨、公路最高时速约 120 km/h，主要用于兵力输送与巡逻护卫。",
+  "weapon.dragonrise_reforge:kozak5_hmg": "12.7mm 高射机枪"
 }

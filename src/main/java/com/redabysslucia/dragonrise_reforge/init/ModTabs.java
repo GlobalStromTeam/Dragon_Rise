@@ -315,6 +315,9 @@ public class ModTabs {
                         output.accept(ModItems.CHINESE_DESERT_CHEST.get());
                         output.accept(ModItems.CHINESE_DESERT_PANTS.get());
                         output.accept(ContainerBlockItem.createInstance(ModEntities.REFALEAA.get()));
+        output.accept(ContainerBlockItem.createInstance(ModEntities.CH53E.get()));
+        output.accept(ContainerBlockItem.createInstance(ModEntities.KOZAK5.get()));
+        output.accept(ContainerBlockItem.createInstance(ModEntities.KAMAZ_TYPHOON.get()));
                         output.accept(ModItems.HAOM_HELMET.get());
                         output.accept(ModItems.HAOM_CHEST.get());
                         output.accept(ModItems.HAOM_PANTS.get());

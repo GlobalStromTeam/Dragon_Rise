@@ -1814,6 +1814,33 @@ public class ModEntities {
                     // 车体 4.37×3.38 格（A4 是 4.27×3.08 → 4.0×2.9 的比例套过来）
                     .sized(4.1f, 3.2f));
 
+    public static final RegistryObject<EntityType<Ch53EEntity>> CH53E = register("ch53e",
+            EntityType.Builder.of(Ch53EEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(5.6f, 3.6f)
+    );
+
+
+    public static final RegistryObject<EntityType<Kozak5Entity>> KOZAK5 = register("kozak5",
+            EntityType.Builder.of(Kozak5Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+
+    public static final RegistryObject<EntityType<KamazTyphoonEntity>> KAMAZ_TYPHOON = register("kamaz_typhoon",
+            EntityType.Builder.of(KamazTyphoonEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+
+
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));
     }

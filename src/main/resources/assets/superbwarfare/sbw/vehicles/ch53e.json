@@ -1,0 +1,14 @@
+{
+  "ID": "dragonrise_reforge:ch53e",
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/ch53e.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/ch53e.png"
+  },
+  "MouseSpeed": [0.3,0.3],
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/ch53e.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/ch53e.png"
+    }
+  ]
+}
