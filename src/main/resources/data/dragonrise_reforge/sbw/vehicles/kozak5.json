@@ -39,13 +39,13 @@
       "Projectile": "superbwarfare:projectile",
       "DefaultZoom": 3,
       "RPM": 600,
-      "Damage": 40,
+      "Damage": 80,
       "BypassesArmor": 0.6,
       "Velocity": 25.0,
       "RecoilTime": 16,
       "RecoilForce": 0.05,
       "HeatPerShoot": 5,
-      "NaturalCooldown": 1,
+      "NaturalCooldown": 2,
       "ShootAnimationTime": 1,
       "AmmoType": "@HeavyAmmo",
       "Crosshair": "@VehicleCommonGun",
@@ -72,19 +72,17 @@
   },
   "Seats": [
     {
-      "HidePassenger": true,
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-0.759,3.894,-0.864],
+      "Position": [0.616,0.644,-0.114],
       "MinPitch": -10,
       "MaxPitch": 45,
       "Sensitivity": [0.52,0.75,0.9]
     },
     {
-      "HidePassenger": true,
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-1.031,2.541,0.829],
+      "Position": [-0.009,1.894,-1.364],
       "MinPitch": -20,
       "MaxPitch": 50,
       "MinYaw": -30,
@@ -94,28 +92,25 @@
       ]
     },
     {
-      "HidePassenger": true,
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-1.18,2.756,-4.391],
+      "Position": [-0.616,0.644,-0.114],
       "MinPitch": -10,
       "MaxPitch": 45,
       "Sensitivity": [0.52,0.75,0.9]
     },
     {
-      "HidePassenger": true,
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [0.883,2.756,-4.597],
+      "Position": [-0.616,0.644,-1.551],
       "MinPitch": -10,
       "MaxPitch": 45,
       "Sensitivity": [0.52,0.75,0.9]
     },
     {
-      "HidePassenger": true,
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [-0.046,1.931,1.59],
+      "Position": [0.616,0.644,-1.489],
       "MinPitch": -10,
       "MaxPitch": 45,
       "Sensitivity": [0.52,0.75,0.9]
