@@ -1,0 +1,227 @@
+{
+  "ID": "dragonrise_reforge:sba60k2",
+  "Type": "APC",
+  "HudType": "@Land",
+  "EngineType": "Wheel",
+  "MaxHealth": 300,
+  "MaxEnergy": 6000000,
+  "Mass": 9.5,
+  "UpStep": 1.5,
+  "RotateOffsetHeight": 1.0,
+  "InertiaRotateRate": 1.1,
+  "ThirdPersonCameraPos": [0,2.6,7.5],
+  "EngineSound": "dragonrise_reforge:wheel_loop1",
+  "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ru_land.png",
+  "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/sba60k2_icon.png",
+  "CollisionLevel": {
+    "Level": 3,
+    "PowerLimits": [
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0,
+        0,
+        true
+      ],
+      [
+        0.12,
+        0.07,
+        false
+      ]
+    ]
+  },
+  "HUDColor": "0xFFC700",
+  "HasDecoy": true,
+  "EngineInfo": {
+    "Buoyancy": 0,
+    "EnergyCostRate": 64,
+    "WheelRotSpeed": 1.25,
+    "WheelDifferential": -0.3,
+    "MaxForwardSpeedRate": 1.0,
+    "MaxBackwardSpeedRate": 0.35,
+    "Increment": 0.015,
+    "Decrement": 0.02,
+    "SteeringSpeed": 0.12
+  },
+  "Seats": [
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0.56,0.413,1.536],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.56,0.413,1.536],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.66,0.413,0.386],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.66,0.413,-0.414],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.66,0.413,-1.314],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [-0.66,0.413,-2.114],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0.66,0.413,-2.114],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    },
+    {
+      "HidePassenger": true,
+      "BanHand": true,
+      "Transform": "Vehicle",
+      "Position": [0.66,0.413,0.386],
+      "MinPitch": -20,
+      "MaxPitch": 30,
+      "MinYaw": -95,
+      "MaxYaw": 95
+    }
+  ],
+  "TerrainCompat": [
+    [0.8071,0.0,1.4733],
+    [-0.8071,0.0,1.4733],
+    [0.8071,0.0,-0.5892],
+    [-0.8071,0.0,-0.5892],
+    [0.8071,0.0,-1.4017],
+    [-0.8071,0.0,-1.4017]
+  ],
+  "DamageModifiers": [
+    "minecraft:arrow * 0.2",
+    "minecraft:trident * 0.4",
+    "minecraft:mob_attack * 0.4",
+    "minecraft:mob_attack_no_aggro * 0.4",
+    "minecraft:mob_projectile * 0.4",
+    "minecraft:player_attack * 0.4",
+    "minecraft:lava - -4",
+    "minecraft:lava * 4",
+    "@minecraft:tnt * 3",
+    "@minecraft:tnt_minecart * 3",
+    "minecraft:explosion * 4",
+    "minecraft:player_explosion * 4",
+    "superbwarfare:projectile_hit * 0.8",
+    "superbwarfare:grapeshot_hit * 0.2",
+    "@#superbwarfare:aerial_bomb * 1.4",
+    "#superbwarfare:projectile * 1.0",
+    "@superbwarfare:cannon_shell * 1.6",
+    "@superbwarfare:small_cannon_shell * 1.8",
+    "@superbwarfare:gun_grenade * 1.4",
+    "@superbwarfare:rgo_grenade * 3",
+    "@superbwarfare:hand_grenade * 2.5",
+    "@superbwarfare:mortar_shell * 2",
+    "All * 0.9",
+    ".getSourceAngle(source, 0.05) * damage"
+  ],
+  "DestroyInfo": {
+    "ParticleType": "Huge",
+    "ExplosionDamage": 70,
+    "ExplosionRadius": 7
+  },
+  "Models": [
+    {
+      "Model": "dragonrise_reforge:models/bedrock/vehicle/sba60k2.geo.json",
+      "Texture": "dragonrise_reforge:textures/entity/sba60k2.png"
+    }
+  ],
+  "OBB": [
+    {
+      "Size": [1.524,0.899,2.511],
+      "Position": [0.0,1.526,-0.435]
+    },
+    {
+      "Size": [1.479,1.204,3.592],
+      "Position": [0.0,1.202,0.749],
+      "Part": "Collision"
+    },
+    {
+      "Size": [0.9,0.542,1.029],
+      "Position": [-0.05,1.254,3.21],
+      "CustomRotate": [10.0,0.0,0.0],
+      "Part": "MainEngine"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [1.291,0.614,3.075],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [-1.291,0.614,3.075],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [-1.291,0.614,-0.225],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [1.291,0.614,-0.225],
+      "Part": "WheelLeft"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [-1.291,0.614,-1.525],
+      "Part": "WheelRight"
+    },
+    {
+      "Size": [0.221,0.6,0.6],
+      "Position": [1.291,0.614,-1.525],
+      "Part": "WheelLeft"
+    }
+  ],
+  "Model": {
+    "Model": "dragonrise_reforge:models/bedrock/vehicle/sba60k2.geo.json",
+    "Texture": "dragonrise_reforge:textures/entity/sba60k2.png"
+  }
+}

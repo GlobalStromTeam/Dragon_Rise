@@ -44,6 +44,7 @@ public class ModWreckageLootProvider extends SbwWreckageLootProvider {
         add(ModEntities.M1296.get(), createLightTankLoot(3));
         add(ModEntities.M1128.get(), createLightTankLoot(4));
         add(ModEntities.BA10.get(), createLightVehicleLoot(2));
+        add(ModEntities.SBA60K2.get(), createLightVehicleLoot(3));
         add(ModEntities.T26B.get(), createLightTankLoot(3));
         add(ModEntities.KV2.get(), createTankLoot(5, 1));
         add(ModEntities.LCM.get(), createLightVehicleLoot(3));

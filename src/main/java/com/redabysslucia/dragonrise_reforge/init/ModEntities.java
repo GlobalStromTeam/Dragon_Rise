@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Sba60k2Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Leopard2a7Entity;
 
 
@@ -1834,6 +1837,13 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<KamazTyphoonEntity>> KAMAZ_TYPHOON = register("kamaz_typhoon",
             EntityType.Builder.of(KamazTyphoonEntity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.0f, 2.9f)
+    );
+    public static final RegistryObject<EntityType<Sba60k2Entity>> SBA60K2 = register("sba60k2",
+            EntityType.Builder.of(Sba60k2Entity::new, MobCategory.MISC)
                     .setTrackingRange(512)
                     .setUpdateInterval(2)
                     .fireImmune()
