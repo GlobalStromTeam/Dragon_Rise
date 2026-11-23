@@ -1,5 +1,8 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
+import com.redabysslucia.dragonrise_reforge.entities.Leopard2a7Entity;
+
+
 import com.redabysslucia.dragonrise_reforge.entities.Ef2000Entity;
 import com.redabysslucia.dragonrise_reforge.entities.Mig29mEntity;
 import com.redabysslucia.dragonrise_reforge.entities.projectile.R550Entity;
@@ -1802,6 +1805,14 @@ public class ModEntities {
     public static final RegistryObject<EntityType<Ef2000Entity>> EF2000 = register("ef2000",
             EntityType.Builder.<Ef2000Entity>of(Ef2000Entity::new, MobCategory.MISC)
                     .setTrackingRange(512).setUpdateInterval(1).fireImmune().sized(4.5f, 2.9f));
+
+    public static final RegistryObject<EntityType<Leopard2a7Entity>> LEOPARD2A7 = register("leopard2a7",
+            EntityType.Builder.<Leopard2a7Entity>of(Leopard2a7Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    // 车体 4.37×3.38 格（A4 是 4.27×3.08 → 4.0×2.9 的比例套过来）
+                    .sized(4.1f, 3.2f));
 
     private static <T extends Entity> RegistryObject<EntityType<T>> register(String name, EntityType.Builder<T> entityTypeBuilder) {
         return REGISTRY.register(name, () -> entityTypeBuilder.build(Dragonrise_reforge.MODID + ":" + name));

@@ -149,6 +149,7 @@ public class ModTabs {
                         //德国 坦克
                         output.accept(ContainerBlockItem.createInstance(ModEntities.L1A2.get()));
                         output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A4.get()));
+                        output.accept(ContainerBlockItem.createInstance(ModEntities.LEOPARD2A7.get()));
                         //德国 防空
                         output.accept(ContainerBlockItem.createInstance(ModEntities.FLARAKPZ1.get()));
 
@@ -329,6 +330,15 @@ public class ModTabs {
                         output.accept(ModItems.HONF_HELMET.get());
                         output.accept(ModItems.HONF_CHEST.get());
                         output.accept(ModItems.HONF_PANTS.get());
+        output.accept(ModItems.GM_HELMET.get());
+        output.accept(ModItems.GM_CHEST.get());
+        output.accept(ModItems.GM_PANTS.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_HELMET.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_CHEST.get());
+        output.accept(ModItems.UKRAINE_SOLDIER_PANTS.get());
+        output.accept(ModItems.USA_ARMY_HELMET.get());
+        output.accept(ModItems.USA_ARMY_CHEST.get());
+        output.accept(ModItems.USA_ARMY_PANTS.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_HELMET.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_CHEST.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_PANTS.get());

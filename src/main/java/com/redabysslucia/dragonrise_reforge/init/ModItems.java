@@ -109,12 +109,21 @@ public class ModItems {
     public static final RegistryObject<Item> HONF_HELMET = REGISTRY.register("honf_helmet", () -> new HonfHelmet());
     public static final RegistryObject<Item> HONF_CHEST = REGISTRY.register("honf_chest", () -> new HonfChest());
     public static final RegistryObject<Item> HONF_PANTS = REGISTRY.register("honf_pants", () -> new HonfPants());
+public static final RegistryObject<Item> USA_ARMY_HELMET = REGISTRY.register("usa_army_helmet", () -> new UsaArmyHelmet());
+public static final RegistryObject<Item> USA_ARMY_CHEST = REGISTRY.register("usa_army_chest", () -> new UsaArmyChest());
+public static final RegistryObject<Item> USA_ARMY_PANTS = REGISTRY.register("usa_army_pants", () -> new UsaArmyPants());
     public static final RegistryObject<Item> JUAW_HELMET = REGISTRY.register("juaw_helmet", () -> new JuawHelmet());
     public static final RegistryObject<Item> JUAW_CHEST = REGISTRY.register("juaw_chest", () -> new JuawChest());
     public static final RegistryObject<Item> JUAW_PANTS = REGISTRY.register("juaw_pants", () -> new JuawPants());
     public static final RegistryObject<Item> SAWKM1_HELMET = REGISTRY.register("sawkm1_helmet", () -> new Sawkm1Helmet());
     public static final RegistryObject<Item> SAWKM1_CHEST = REGISTRY.register("sawkm1_chest", () -> new Sawkm1Chest());
     public static final RegistryObject<Item> SAWKM1_PANTS = REGISTRY.register("sawkm1_pants", () -> new Sawkm1Pants());
+public static final RegistryObject<Item> GM_HELMET = REGISTRY.register("gm_helmet", () -> new GmHelmet());
+public static final RegistryObject<Item> GM_CHEST = REGISTRY.register("gm_chest", () -> new GmChest());
+public static final RegistryObject<Item> GM_PANTS = REGISTRY.register("gm_pants", () -> new GmPants());
+public static final RegistryObject<Item> UKRAINE_SOLDIER_HELMET = REGISTRY.register("ukraine_soldier_helmet", () -> new UkraineSoldierHelmet());
+public static final RegistryObject<Item> UKRAINE_SOLDIER_CHEST = REGISTRY.register("ukraine_soldier_chest", () -> new UkraineSoldierChest());
+public static final RegistryObject<Item> UKRAINE_SOLDIER_PANTS = REGISTRY.register("ukraine_soldier_pants", () -> new UkraineSoldierPants());
     public static final RegistryObject<Item> ADDON_ARMOR_REMOVAL_KIT = REGISTRY.register("addon_armor_removal_kit",
             () -> new AddonArmorRemovalKitItem(new Item.Properties().stacksTo(1)));
 

@@ -33,6 +33,7 @@
     "GameRendererMixin",
     "LandVehicleHudMixin",
     "VehicleAssemblingScreenMixin",
+    "CreativeInventoryScreenSideTabsMixin",
     "MinecraftRemoteSeatMixin",
     "MonitorItemCameraMixin",
     "MonitorItemMixin",
