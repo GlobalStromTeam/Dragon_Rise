@@ -1,6 +1,7 @@
 package com.redabysslucia.dragonrise_reforge.init;
 
 import com.redabysslucia.dragonrise_reforge.entities.KamazTyphoonEntity;
+import com.redabysslucia.dragonrise_reforge.entities.Leopard2a7Entity;
 
 
 import com.redabysslucia.dragonrise_reforge.entities.Kozak5Entity;
@@ -1922,5 +1923,14 @@ public class ModEntities {
                     .fireImmune()
                     .sized(4.0f, 2.9f)
     );
+
+    public static final DeferredHolder<EntityType<?>, EntityType<Leopard2a7Entity>> LEOPARD2A7 = register("leopard2a7",
+            EntityType.Builder.of(Leopard2a7Entity::new, MobCategory.MISC)
+                    .setTrackingRange(512)
+                    .setUpdateInterval(2)
+                    .fireImmune()
+                    .sized(4.1f, 3.2f)
+    );
+
 
 }

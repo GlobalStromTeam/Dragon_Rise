@@ -47,7 +47,8 @@
     "VehicleMainWeaponHudOverlayDualSeekMixin",
     "DynamicLightsHandlerMixin",
     "DynamicLightsLevelMixin",
-    "DynamicLightsUpdateMixin"
+    "DynamicLightsUpdateMixin",
+    "CreativeInventoryScreenSideTabsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
