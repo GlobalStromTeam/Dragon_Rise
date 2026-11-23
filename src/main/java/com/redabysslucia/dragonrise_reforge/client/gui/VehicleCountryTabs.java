@@ -316,7 +316,7 @@ public final class VehicleCountryTabs {
 
     /**
      * 图标前缀 -> 侧栏桶：
-     * 中(cn) / 美(us) / 俄(ru) / 欧(gm fr uk se eu) 各归各的；
+     * 中(cn) / 美(us) / 俄(ru) / 欧(gm fr uk ukr se eu) 各归各的；
      * 日(jp)、韩(kr)、蓝方(blue) 并进 美；
      * 红方(red，朝鲜那类) 同时进 中 和 俄；
      * 其余（虚构 dr、工事 defense/civilian/land/aircraft、无图标）只出现在「全部」。
@@ -329,6 +329,7 @@ public final class VehicleCountryTabs {
             case "us" -> Set.of("us");
             case "ru", "ussr" -> Set.of("ru");
             case "gm", "fr", "uk", "se", "eu" -> Set.of("eu");
+            case "ukr" -> Set.of("eu");
             case "jp", "kr", "blue" -> Set.of("us");
             case "red" -> Set.of("cn", "ru");
             default -> Set.of();
