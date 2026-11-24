@@ -104,6 +104,7 @@ se_land.png
 uk_aircraft.png
 uk_land.png
 uk_water.png
+ukr_land.png
 us_aircraft.png
 us_land.png
 us_water.png

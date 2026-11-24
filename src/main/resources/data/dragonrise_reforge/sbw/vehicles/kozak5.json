@@ -9,29 +9,16 @@
   "UpStep": 1.5,
   "RotateOffsetHeight": 1,
   "InertiaRotateRate": 1.1,
-  "ThirdPersonCameraPos": [
-    0,
-    2.6,
-    7.5
-  ],
+  "ThirdPersonCameraPos": [0,2.6,7.5],
   "EngineSound": "dragonrise_reforge:wheel_loop1",
   "HornSound": "superbwarfare:truck_horn",
   "ContainerIcon": "dragonrise_reforge:textures/gui/vehicle/type/ukr_land.png",
   "VehicleIcon": "dragonrise_reforge:textures/vehicle_icon/kozak5_icon.png",
   "VehicleContainerType": "Medium",
   "TurretControllerIndex": 1,
-  "TurretTurnSpeed": [
-    3.6,
-    3.2
-  ],
-  "TurretYawRange": [
-    -180,
-    180
-  ],
-  "TurretPitchRange": [
-    -10,
-    45
-  ],
+  "TurretTurnSpeed": [3.6,3.2],
+  "TurretYawRange": [-180,180],
+  "TurretPitchRange": [-10,45],
   "EngineInfo": {
     "Buoyancy": 0,
     "EnergyCostRate": 64,
@@ -75,11 +62,7 @@
       "ShootPos": {
         "Transform": "Barrel",
         "Positions": [
-          [
-            -0.036,
-            0.225,
-            1.265
-          ]
+          [-0.036,0.225,1.265]
         ],
         "Directions": [
           "Barrel"
@@ -91,27 +74,15 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        0.616,
-        0.644,
-        -0.114
-      ],
+      "Position": [0.616,0.644,-0.114],
       "MinPitch": -10,
       "MaxPitch": 45,
-      "Sensitivity": [
-        0.52,
-        0.75,
-        0.9
-      ]
+      "Sensitivity": [0.52,0.75,0.9]
     },
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        -0.009,
-        1.894,
-        -1.364
-      ],
+      "Position": [-0.009,1.894,-1.364],
       "MinPitch": -20,
       "MaxPitch": 50,
       "MinYaw": -30,
@@ -123,50 +94,26 @@
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        -0.616,
-        0.644,
-        -0.114
-      ],
+      "Position": [-0.616,0.644,-0.114],
       "MinPitch": -10,
       "MaxPitch": 45,
-      "Sensitivity": [
-        0.52,
-        0.75,
-        0.9
-      ]
+      "Sensitivity": [0.52,0.75,0.9]
     },
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        -0.616,
-        0.644,
-        -1.551
-      ],
+      "Position": [-0.616,0.644,-1.551],
       "MinPitch": -10,
       "MaxPitch": 45,
-      "Sensitivity": [
-        0.52,
-        0.75,
-        0.9
-      ]
+      "Sensitivity": [0.52,0.75,0.9]
     },
     {
       "IsEnclosed": false,
       "Transform": "Vehicle",
-      "Position": [
-        0.616,
-        0.644,
-        -1.489
-      ],
+      "Position": [0.616,0.644,-1.489],
       "MinPitch": -10,
       "MaxPitch": 45,
-      "Sensitivity": [
-        0.52,
-        0.75,
-        0.9
-      ]
+      "Sensitivity": [0.52,0.75,0.9]
     }
   ],
   "DamageModifiers": [
@@ -210,258 +157,94 @@
     "Model": "dragonrise_reforge:models/bedrock/vehicle/kozak5.geo.json",
     "Texture": "dragonrise_reforge:textures/entity/kozak5.png"
   },
-  "TurretPos": [
-    0.037,
-    2.956,
-    -0.023
-  ],
-  "BarrelPos": [
-    -0.002,
-    -0.009,
-    0.148
-  ],
+  "TurretPos": [0.037,2.956,-0.023],
+  "BarrelPos": [-0.002,-0.009,0.148],
   "OBB": [
     {
-      "Size": [
-        1.296,
-        0.999,
-        2.444
-      ],
-      "Position": [
-        0.037,
-        2.312,
-        -1.492
-      ]
+      "Size": [1.296,0.999,2.444],
+      "Position": [0.037,2.312,-1.492]
     },
     {
-      "Size": [
-        0.78,
-        0.483,
-        0.072
-      ],
-      "Position": [
-        0.004,
-        3.034,
-        -2.111
-      ]
+      "Size": [0.78,0.483,0.072],
+      "Position": [0.004,3.034,-2.111]
     },
     {
-      "Size": [
-        0.059,
-        0.432,
-        0.588
-      ],
-      "Position": [
-        0.726,
-        2.982,
-        -1.595
-      ]
+      "Size": [0.059,0.432,0.588],
+      "Position": [0.726,2.982,-1.595]
     },
     {
-      "Size": [
-        0.059,
-        0.432,
-        0.33
-      ],
-      "Position": [
-        0.51,
-        2.982,
-        -0.816
-      ],
-      "CustomRotate": [
-        0,
-        -45,
-        0
-      ]
+      "Size": [0.059,0.432,0.33],
+      "Position": [0.51,2.982,-0.816],
+      "CustomRotate": [0.0,-45.0,0.0]
     },
     {
-      "Size": [
-        0.033,
-        0.432,
-        0.433
-      ],
-      "Position": [
-        -0.502,
-        2.982,
-        -0.816
-      ],
-      "CustomRotate": [
-        0,
-        35,
-        0
-      ]
+      "Size": [0.033,0.432,0.433],
+      "Position": [-0.502,2.982,-0.816],
+      "CustomRotate": [0.0,35.0,0.0]
     },
     {
-      "Size": [
-        0.059,
-        0.432,
-        0.588
-      ],
-      "Position": [
-        -0.718,
-        2.982,
-        -1.595
-      ]
+      "Size": [0.059,0.432,0.588],
+      "Position": [-0.718,2.982,-1.595]
     },
     {
-      "Size": [
-        1.362,
-        1.315,
-        3.182
-      ],
-      "Position": [
-        0.004,
-        1.303,
-        -0.605
-      ],
+      "Size": [1.362,1.315,3.182],
+      "Position": [0.004,1.303,-0.605],
       "Part": "Collision"
     },
     {
-      "Size": [
-        1.188,
-        0.683,
-        0.893
-      ],
-      "Position": [
-        0.004,
-        1.285,
-        1.366
-      ],
+      "Size": [1.188,0.683,0.893],
+      "Position": [0.004,1.285,1.366],
       "Part": "MainEngine"
     },
     {
-      "Size": [
-        0.2,
-        0.548,
-        0.561
-      ],
-      "Position": [
-        1.182,
-        0.577,
-        1.444
-      ],
+      "Size": [0.2,0.548,0.561],
+      "Position": [1.182,0.577,1.444],
       "Part": "WheelLeft"
     },
     {
-      "Size": [
-        0.2,
-        0.548,
-        0.561
-      ],
-      "Position": [
-        -1.174,
-        0.577,
-        1.444
-      ],
+      "Size": [0.2,0.548,0.561],
+      "Position": [-1.174,0.577,1.444],
       "Part": "WheelRight"
     },
     {
-      "Size": [
-        0.2,
-        0.548,
-        0.561
-      ],
-      "Position": [
-        -1.174,
-        0.577,
-        -2.733
-      ],
+      "Size": [0.2,0.548,0.561],
+      "Position": [-1.174,0.577,-2.733],
       "Part": "WheelRight"
     },
     {
-      "Size": [
-        0.2,
-        0.548,
-        0.561
-      ],
-      "Position": [
-        1.182,
-        0.577,
-        -2.733
-      ],
+      "Size": [0.2,0.548,0.561],
+      "Position": [1.182,0.577,-2.733],
       "Part": "WheelLeft"
     },
     {
-      "Size": [
-        0.226,
-        0.409,
-        0.046
-      ],
-      "Position": [
-        -0.347,
-        0.024,
-        -0.016
-      ],
-      "CustomRotate": [
-        -15,
-        0,
-        0
-      ],
+      "Size": [0.226,0.409,0.046],
+      "Position": [-0.347,0.024,-0.016],
+      "CustomRotate": [-15.0,0.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [
-        0.226,
-        0.409,
-        0.046
-      ],
-      "Position": [
-        0.28,
-        0.024,
-        -0.016
-      ],
-      "CustomRotate": [
-        -15,
-        0,
-        0
-      ],
+      "Size": [0.226,0.409,0.046],
+      "Position": [0.28,0.024,-0.016],
+      "CustomRotate": [-15.0,0.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     },
     {
-      "Size": [
-        0.123,
-        0.177,
-        0.046
-      ],
-      "Position": [
-        -0.029,
-        -0.175,
-        0.037
-      ],
-      "CustomRotate": [
-        -15,
-        0,
-        0
-      ],
+      "Size": [0.123,0.177,0.046],
+      "Position": [-0.029,-0.175,0.037],
+      "CustomRotate": [-15.0,0.0,0.0],
       "Part": "Turret",
       "Transform": "Turret",
       "Rotation": "Turret"
     }
   ],
   "TerrainCompat": [
-    [
-      1.1821,
-      0,
-      -2.733
-    ],
-    [
-      -1.1741,
-      0,
-      -2.733
-    ],
-    [
-      1.1821,
-      0,
-      1.4436
-    ],
-    [
-      -1.1741,
-      0,
-      1.4436
-    ]
+    [1.1821,0,-2.733],
+    [-1.1741,0,-2.733],
+    [1.1821,0,1.4436],
+    [-1.1741,0,1.4436]
   ]
 }
