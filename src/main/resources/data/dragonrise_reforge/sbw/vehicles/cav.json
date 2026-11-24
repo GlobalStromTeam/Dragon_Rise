@@ -285,52 +285,70 @@
       }
     },
     {
-      "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.717,1.022,-2.425],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "MinYaw": 180,
+      "MaxYaw": 360
     },
     {
-      "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.533,1.022,-2.55],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "MinYaw": 360,
+      "MaxYaw": -180
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [-0.03,0.522,1.2],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "Position": [0,1.022,-3.425],
+      "CameraPos":  {
+        "UseSimulate3P":  true,
+        "Simulate3PPos":  [
+          6,
+          1
+        ]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0,1.022,1.425],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "Position": [0,1.022,-3.425],
+      "CameraPos":  {
+        "UseSimulate3P":  true,
+        "Simulate3PPos":  [
+          6,
+          1
+        ]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0,1.022,1.425],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "Position": [0,1.022,-3.425],
+      "CameraPos":  {
+        "UseSimulate3P":  true,
+        "Simulate3PPos":  [
+          6,
+          1
+        ]
+      }
     },
     {
       "HidePassenger": true,
       "BanHand": true,
       "Transform": "Vehicle",
-      "Position": [0,1.022,1.425],
-      "MinYaw": -95,
-      "MaxYaw": 95
+      "Position": [0,1.022,-3.425],
+      "CameraPos":  {
+        "UseSimulate3P":  true,
+        "Simulate3PPos":  [
+          6,
+          1
+        ]
+      }
     }
   ],
   "OBB": [
