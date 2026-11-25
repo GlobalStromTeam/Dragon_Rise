@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.item.armor;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
-import net.minecraft.world.item.ArmorMaterials;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorItemRenderer;
@@ -21,6 +21,11 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+/**
+ * HonfPants —— 重装组 C（HONF）：韧性 2.0、击退抗性 1.0、护甲 6、子弹抗性满耐久 0.5（随损伤线性衰减）。
+ *
+ * <p>SBM 模型：{@code models/bedrock/armor/honf.geo.json}。
+ */
 public class HonfPants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/honf.geo.json */
     public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/armor/honf.geo.json");
@@ -28,7 +33,7 @@ public class HonfPants extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/honf.png");
 
     public HonfPants() {
-        super(ArmorMaterials.NETHERITE, Type.LEGGINGS, new Properties().durability(555));
+        super(ModArmorMaterials.HEAVY_C, Type.LEGGINGS, new Properties().durability(555));
     }
 
     @Override

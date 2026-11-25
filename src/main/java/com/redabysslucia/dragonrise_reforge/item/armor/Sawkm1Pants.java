@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.item.armor;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
-import net.minecraft.world.item.ArmorMaterials;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorItemRenderer;
@@ -21,6 +21,11 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+/**
+ * Sawkm1Pants —— 重装组 A（HAOM / ADE3 / SAWKM-1）：韧性 5.0、击退抗性 1.0、护甲 8、子弹抗性满耐久 0.5（随损伤线性衰减）。
+ *
+ * <p>SBM 模型：{@code models/bedrock/armor/sawkm1.geo.json}。
+ */
 public class Sawkm1Pants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/sawkm1.geo.json */
     public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/armor/sawkm1.geo.json");
@@ -28,7 +33,7 @@ public class Sawkm1Pants extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/sawkm1.png");
 
     public Sawkm1Pants() {
-        super(ArmorMaterials.NETHERITE, Type.LEGGINGS, new Properties().durability(555));
+        super(ModArmorMaterials.HEAVY_A, Type.LEGGINGS, new Properties().durability(555));
     }
 
     @Override

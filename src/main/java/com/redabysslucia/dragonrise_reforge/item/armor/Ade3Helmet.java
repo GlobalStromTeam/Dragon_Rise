@@ -2,7 +2,7 @@ package com.redabysslucia.dragonrise_reforge.item.armor;
 
 import com.atsuishio.superbwarfare.Mod;
 import com.atsuishio.superbwarfare.init.ModAttributes;
-import net.minecraft.world.item.ArmorMaterials;
+import com.redabysslucia.dragonrise_reforge.init.ModArmorMaterials;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.redabysslucia.dragonrise_reforge.client.renderer.armor.SbmArmorItemRenderer;
@@ -14,6 +14,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
@@ -21,14 +22,22 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import java.util.UUID;
 import java.util.function.Consumer;
 
+/**
+ * Ade3Helmet —— 重装组 A（HAOM / ADE3 / SAWKM-1）：韧性 5.0、击退抗性 1.0、护甲 4.5（材质 4 + 头盔 +0.5）、子弹抗性满耐久 0.5（随损伤线性衰减）。
+ *
+ * <p>SBM 模型：{@code models/bedrock/armor/ade3.geo.json}。
+ */
 public class Ade3Helmet extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/ade3.geo.json */
     public static final ResourceLocation GEO = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "models/bedrock/armor/ade3.geo.json");
     /** SBM armor texture: assets/dragonrise_reforge/textures/armor/ade3.png */
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/ade3.png");
 
+    /** 头盔额外护甲值修正（材质 4 + 0.5 = 4.5）。 */
+    private static final UUID ARMOR_BONUS_UUID = UUID.fromString("4C2A1E52-9B7F-4C8E-9F3A-1D6B7E0C5A11");
+
     public Ade3Helmet() {
-        super(ArmorMaterials.NETHERITE, Type.HELMET, new Properties().durability(407));
+        super(ModArmorMaterials.HEAVY_A, Type.HELMET, new Properties().durability(407));
     }
 
     @Override
@@ -57,6 +66,7 @@ public class Ade3Helmet extends ArmorItem {
         UUID uuid = new UUID(slot.toString().hashCode(), 0);
         if (slot == EquipmentSlot.HEAD) {
             map = HashMultimap.create(map);
+            map.put(Attributes.ARMOR, new AttributeModifier(ARMOR_BONUS_UUID, "head_armor_bonus", 0.5, AttributeModifier.Operation.ADDITION));
             map.put(ModAttributes.BULLET_RESISTANCE.get(), new AttributeModifier(uuid, Mod.ATTRIBUTE_MODIFIER,
                     0.5 * Math.max(0, 1 - (double) stack.getDamageValue() / stack.getMaxDamage()), AttributeModifier.Operation.ADDITION));
         }
