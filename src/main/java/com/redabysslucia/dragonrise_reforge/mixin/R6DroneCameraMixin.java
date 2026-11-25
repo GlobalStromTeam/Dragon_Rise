@@ -33,10 +33,10 @@ import java.util.UUID;
 @Mixin(Camera.class)
 public abstract class R6DroneCameraMixin {
 
-    @Shadow(aliases = "Lnet/minecraft/client/Camera;setRotation(FF)V")
+    @Shadow
     protected abstract void setRotation(float yRot, float xRot);
 
-    @Shadow(aliases = "Lnet/minecraft/client/Camera;setPosition(DDD)V")
+    @Shadow
     protected abstract void setPosition(double x, double y, double z);
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/Camera;setRotation(FF)V", ordinal = 0),

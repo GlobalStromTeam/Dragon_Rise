@@ -34,10 +34,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = Camera.class, priority = 1500)
 public abstract class RemoteAircraftCameraMixin {
 
-    @Shadow(aliases = "Lnet/minecraft/client/Camera;setRotation(FF)V")
+    @Shadow
     protected abstract void setRotation(float yRot, float xRot);
 
-    @Shadow(aliases = "Lnet/minecraft/client/Camera;setPosition(DDD)V")
+    @Shadow
     protected abstract void setPosition(double x, double y, double z);
 
     /** vanilla {@code Camera.setup} 的前四个字段赋值 —— cancel 会跳过它们，这里补齐 */

@@ -29,13 +29,13 @@ import java.util.Collection;
 public abstract class CreativeInventoryScreenSideTabsMixin {
 
     // 本工程的 refmap 只输出方法映射，字段靠 aliases 直接钉 SRG 名（与 RemoteAircraftCameraMixin 等同一写法）
-    @Shadow(aliases = {"f_98507_"})
+    @Shadow
     private static CreativeModeTab selectedTab;
 
-    @Shadow(aliases = {"f_98510_"})
+    @Shadow
     private EditBox searchBox;
 
-    @Shadow(aliases = {"f_98508_"})
+    @Shadow
     private float scrollOffs;
 
     /** 未选中的侧栏 tab：画在面板之前，交叠的 4px 由面板盖住。 */
