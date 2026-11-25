@@ -34,20 +34,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(value = Camera.class, priority = 1500)
 public abstract class RemoteAircraftCameraMixin {
 
-    @Shadow(aliases = {"m_90572_"})
+    @Shadow
     protected abstract void setRotation(float yRot, float xRot);
 
-    @Shadow(aliases = {"m_90584_"})
+    @Shadow
     protected abstract void setPosition(double x, double y, double z);
 
     /** vanilla {@code Camera.setup} 的前四个字段赋值 —— cancel 会跳过它们，这里补齐 */
-    @Shadow(aliases = {"f_90549_"})
+    @Shadow
     private boolean initialized;
-    @Shadow(aliases = {"f_90550_"})
+    @Shadow
     private BlockGetter level;
-    @Shadow(aliases = {"f_90551_"})
+    @Shadow
     private Entity entity;
-    @Shadow(aliases = {"f_90560_"})
+    @Shadow
     private boolean detached;
 
     @Inject(at = @At("HEAD"), cancellable = true,
