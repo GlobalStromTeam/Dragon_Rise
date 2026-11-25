@@ -22,7 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Honf 护甲（头盔）。SBM 模型：{@code models/bedrock/armor/honf.geo.json}。
  *
- * <p>对齐下界合金：护甲 7/8/6（头盔 +4）、韧性 3.0、击退抗性 0.1、附魔能力 15、耐久 ×37；耐久 = Type.HELMET.getDurability(37)。
+ * <p>重装组 C（HONF）：韧性 2.0、击退抗性 1.0、护甲 3、子弹抗性满耐久 0.5（随损伤线性衰减）、附魔能力 15、耐久 ×37；耐久 = Type.HELMET.getDurability(37)。
  */
 public class HonfHelmet extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/honf.geo.json */
@@ -31,7 +31,7 @@ public class HonfHelmet extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/honf.png");
 
     public HonfHelmet() {
-        super(ModArmorMaterials.NETHERITE_HEAVY, Type.HELMET,
+        super(ModArmorMaterials.HEAVY_C, Type.HELMET,
                 new Properties().durability(Type.HELMET.getDurability(37)));
     }
 

@@ -22,7 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Sawkm1 护甲（护腿）。SBM 模型：{@code models/bedrock/armor/sawkm1.geo.json}。
  *
- * <p>对齐下界合金：护甲 7/8/6（头盔 +4）、韧性 3.0、击退抗性 0.1、附魔能力 15、耐久 ×37；耐久 = Type.LEGGINGS.getDurability(37)。
+ * <p>重装组 A（HAOM / ADE3 / SAWKM-1）：韧性 5.0、击退抗性 1.0、护甲 8、子弹抗性满耐久 0.5（随损伤线性衰减）、附魔能力 15、耐久 ×37；耐久 = Type.LEGGINGS.getDurability(37)。
  */
 public class Sawkm1Pants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/sawkm1.geo.json */
@@ -31,7 +31,7 @@ public class Sawkm1Pants extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/sawkm1.png");
 
     public Sawkm1Pants() {
-        super(ModArmorMaterials.NETHERITE_HEAVY, Type.LEGGINGS,
+        super(ModArmorMaterials.HEAVY_A, Type.LEGGINGS,
                 new Properties().durability(Type.LEGGINGS.getDurability(37)));
     }
 

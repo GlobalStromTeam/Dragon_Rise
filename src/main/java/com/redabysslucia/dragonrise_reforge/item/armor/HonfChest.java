@@ -22,7 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Honf 护甲（作战服）。SBM 模型：{@code models/bedrock/armor/honf.geo.json}。
  *
- * <p>对齐下界合金：护甲 7/8/6（头盔 +4）、韧性 3.0、击退抗性 0.1、附魔能力 15、耐久 ×37；耐久 = Type.CHESTPLATE.getDurability(37)。
+ * <p>重装组 C（HONF）：韧性 2.0、击退抗性 1.0、护甲 8、子弹抗性满耐久 0.5（随损伤线性衰减）、附魔能力 15、耐久 ×37；耐久 = Type.CHESTPLATE.getDurability(37)。
  */
 public class HonfChest extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/honf.geo.json */
@@ -31,7 +31,7 @@ public class HonfChest extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/honf.png");
 
     public HonfChest() {
-        super(ModArmorMaterials.NETHERITE_HEAVY, Type.CHESTPLATE,
+        super(ModArmorMaterials.HEAVY_C, Type.CHESTPLATE,
                 new Properties().durability(Type.CHESTPLATE.getDurability(37)));
     }
 

@@ -22,7 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 /**
  * Juaw 护甲（护腿）。SBM 模型：{@code models/bedrock/armor/juaw.geo.json}。
  *
- * <p>对齐下界合金：护甲 7/8/6（头盔 +4）、韧性 3.0、击退抗性 0.1、附魔能力 15、耐久 ×37；耐久 = Type.LEGGINGS.getDurability(37)。
+ * <p>重装组 B（JUAW）：韧性 6.0、击退抗性 1.0、护甲 10、子弹抗性满耐久 0.6（随损伤线性衰减）、附魔能力 15、耐久 ×37；耐久 = Type.LEGGINGS.getDurability(37)。
  */
 public class JuawPants extends ArmorItem {
     /** SBM armor model: assets/dragonrise_reforge/models/bedrock/armor/juaw.geo.json */
@@ -31,7 +31,7 @@ public class JuawPants extends ArmorItem {
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath("dragonrise_reforge", "textures/armor/juaw.png");
 
     public JuawPants() {
-        super(ModArmorMaterials.NETHERITE_HEAVY, Type.LEGGINGS,
+        super(ModArmorMaterials.HEAVY_B, Type.LEGGINGS,
                 new Properties().durability(Type.LEGGINGS.getDurability(37)));
     }
 
@@ -58,7 +58,7 @@ public class JuawPants extends ArmorItem {
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
         ItemAttributeModifiers base = super.getDefaultAttributeModifiers(stack);
-        double factor = 0.5 * Math.max(0, 1 - (double) stack.getDamageValue() / stack.getMaxDamage());
+        double factor = 0.6 * Math.max(0, 1 - (double) stack.getDamageValue() / stack.getMaxDamage());
         return base.withModifierAdded(
                 ModAttributes.BULLET_RESISTANCE,
                 new AttributeModifier(Mod.ATTRIBUTE_MODIFIER, factor, AttributeModifier.Operation.ADD_VALUE),

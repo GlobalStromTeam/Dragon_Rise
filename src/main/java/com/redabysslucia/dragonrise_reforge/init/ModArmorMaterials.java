@@ -52,6 +52,70 @@ public final class ModArmorMaterials {
                     3.0F,
                     0.1F));
 
+    /**
+     * 重装组 A —— HAOM / ADE3 / SAWKM-1 三套共用。
+     *
+     * <p>韧性 5.0、击退抗性 1.0（满值）；护甲 头盔 4（物品侧再叠 +0.5 = 4.5）/ 胸甲 11 / 护腿 8。
+     * 子弹抗性由各物品 {@code getDefaultAttributeModifiers} 叠加（满耐久 0.5，随损伤线性衰减）。
+     */
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> HEAVY_A = REGISTRY.register(
+            "heavy_a",
+            () -> new ArmorMaterial(
+                    Map.of(
+                            ArmorItem.Type.HELMET, 4,
+                            ArmorItem.Type.CHESTPLATE, 11,
+                            ArmorItem.Type.LEGGINGS, 8,
+                            ArmorItem.Type.BOOTS, 3,
+                            ArmorItem.Type.BODY, 11),
+                    15,
+                    SoundEvents.ARMOR_EQUIP_NETHERITE,
+                    () -> Ingredient.of(Items.NETHERITE_INGOT),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace("netherite"))),
+                    5.0F,
+                    1.0F));
+
+    /**
+     * 重装组 B —— JUAW 专用。
+     *
+     * <p>韧性 6.0、击退抗性 1.0；护甲 头盔 6 / 胸甲 13 / 护腿 10；子弹抗性满耐久 0.6。
+     */
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> HEAVY_B = REGISTRY.register(
+            "heavy_b",
+            () -> new ArmorMaterial(
+                    Map.of(
+                            ArmorItem.Type.HELMET, 6,
+                            ArmorItem.Type.CHESTPLATE, 13,
+                            ArmorItem.Type.LEGGINGS, 10,
+                            ArmorItem.Type.BOOTS, 4,
+                            ArmorItem.Type.BODY, 13),
+                    15,
+                    SoundEvents.ARMOR_EQUIP_NETHERITE,
+                    () -> Ingredient.of(Items.NETHERITE_INGOT),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace("netherite"))),
+                    6.0F,
+                    1.0F));
+
+    /**
+     * 重装组 C —— HONF 专用。
+     *
+     * <p>韧性 2.0、击退抗性 1.0；护甲 头盔 3 / 胸甲 8 / 护腿 6；子弹抗性满耐久 0.5。
+     */
+    public static final DeferredHolder<ArmorMaterial, ArmorMaterial> HEAVY_C = REGISTRY.register(
+            "heavy_c",
+            () -> new ArmorMaterial(
+                    Map.of(
+                            ArmorItem.Type.HELMET, 3,
+                            ArmorItem.Type.CHESTPLATE, 8,
+                            ArmorItem.Type.LEGGINGS, 6,
+                            ArmorItem.Type.BOOTS, 2,
+                            ArmorItem.Type.BODY, 8),
+                    15,
+                    SoundEvents.ARMOR_EQUIP_NETHERITE,
+                    () -> Ingredient.of(Items.NETHERITE_INGOT),
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.withDefaultNamespace("netherite"))),
+                    2.0F,
+                    1.0F));
+
     public static void register(IEventBus bus) {
         REGISTRY.register(bus);
     }
