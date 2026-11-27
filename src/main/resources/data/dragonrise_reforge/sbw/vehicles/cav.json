@@ -288,15 +288,21 @@
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [-0.717,1.022,-2.425],
-      "MinYaw": 180,
-      "MaxYaw": 360
+      "Orientation": 180,
+      "MinPitch": -40,
+      "MaxPitch": 40,
+      "MinYaw": -50,
+      "MaxYaw": 50
     },
     {
       "BanHand": true,
       "Transform": "Vehicle",
       "Position": [0.533,1.022,-2.55],
-      "MinYaw": 360,
-      "MaxYaw": -180
+      "Orientation": 180,
+      "MinPitch": -40,
+      "MaxPitch": 40,
+      "MinYaw": -50,
+      "MaxYaw": 50
     },
     {
       "HidePassenger": true,
