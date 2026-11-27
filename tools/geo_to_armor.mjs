@@ -33,7 +33,8 @@ const CANON_NAMES = new Set(CANON.map((c) => c[0]));
 /** 旧的左右腿约定（右=-2 / 左=+2）需要按实际几何翻转时，靠这个判断 */
 const ARMOR_OF_BIPED = new Map(CANON.filter((c) => c[1]).map((c) => [c[0], c[1]]));
 
-function normalize(geoJson, id) {
+function normalize(geoJson, id, opts = {}) {
+  const mirrorLegs = !!opts.mirrorLegs;
   const src = geoJson['minecraft:geometry'][0];
   const byName = new Map();
   const notes = [];
@@ -88,6 +89,19 @@ function normalize(geoJson, id) {
     }
   }
 
+  // 4) 单腿模型补全：一侧有几何、另一侧为空 → 镜像过去
+  if (mirrorLegs) {
+    for (const [from, to] of [['armorLeftLeg', 'armorRightLeg'], ['armorRightLeg', 'armorLeftLeg'],
+                              ['armorLeftBoot', 'armorRightBoot'], ['armorRightBoot', 'armorLeftBoot']]) {
+      const a = bones.find((b) => b.name === from);
+      const b = bones.find((x) => x.name === to);
+      if (a && b && a.cubes.length && !b.cubes.length) {
+        b.cubes = a.cubes.map(mirrorCubeX);
+        notes.push(`${from} → ${to} 镜像补全 ${b.cubes.length} 块`);
+      }
+    }
+  }
+
   return {
     geo: {
       format_version: '1.12.0',
@@ -116,13 +130,30 @@ function cloneCube(c) {
 }
 
 function keyFromName(file) {
-  const n = path.basename(file).toLowerCase();
+  const stem = path.basename(file).replace(/\.geo\.json$/i, '');
+  const n = stem.toLowerCase();
   if (n.includes('haom')) return 'haom';
   if (n.includes('juaw')) return 'juaw';
   if (n.includes('ade3')) return 'ade3';
   if (n.includes('sawkm')) return 'sawkm1';
   if (n.includes('ｈｏｎｆ') || n.includes('honf')) return 'honf';
+  // 分件导出（xxx_helmet / xxx_chest / xxx_pants）：保持原名，一槽一份 geo
+  if (/_(helmet|chest|pants|leggings|boots)$/i.test(stem)) return n;
   return null;
+}
+
+/** 镜像单件几何到另一侧（模型只做了一条腿时补全） */
+function mirrorCubeX(c) {
+  const out = JSON.parse(JSON.stringify(c));
+  const [x, y, z] = c.origin;
+  const [sx] = c.size;
+  out.origin = [-(x + sx), y, z];
+  if (out.pivot) out.pivot = [-out.pivot[0], out.pivot[1], out.pivot[2]];
+  if (out.rotation) out.rotation = [out.rotation[0], -out.rotation[1], -out.rotation[2]];
+  for (const f of Object.values(out.uv || {})) {
+    if (f && Array.isArray(f.uv_size)) f.uv_size = [-f.uv_size[0], f.uv_size[1]];
+  }
+  return out;
 }
 
 const argv = process.argv.slice(2);
@@ -139,7 +170,7 @@ if (argv.includes('--all')) {
     const key = keyFromName(f);
     if (!key) continue;
     const json = JSON.parse(fs.readFileSync(path.join(srcDir, f), 'utf8'));
-    const { geo, extra, notes, counts } = normalize(json, `geometry.${key}`);
+    const { geo, extra, notes, counts } = normalize(json, `geometry.${key}`, { mirrorLegs: argv.includes('--mirror-legs') });
     const out = path.join(dstDir, `${key}.geo.json`);
     fs.writeFileSync(out, JSON.stringify(geo, null, '\t') + '\n', 'utf8');
     console.log(
@@ -158,7 +189,7 @@ if (argv.includes('--all')) {
     process.exit(2);
   }
   const json = JSON.parse(fs.readFileSync(IN, 'utf8'));
-  const { geo, extra, notes, counts } = normalize(json, get('--id', null));
+  const { geo, extra, notes, counts } = normalize(json, get('--id', null), { mirrorLegs: argv.includes('--mirror-legs') });
   fs.mkdirSync(path.dirname(OUT), { recursive: true });
   fs.writeFileSync(OUT, JSON.stringify(geo, null, '\t') + '\n', 'utf8');
   console.log(JSON.stringify({ out: OUT, counts, extra, notes }, null, 2));

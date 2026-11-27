@@ -19,6 +19,7 @@ def main():
     ap.add_argument('geo')
     ap.add_argument('texture')
     ap.add_argument('--dry', action='store_true')
+    ap.add_argument('--keep-unsupported', action='store_true', help='无法就地烘焙的面保留 uv_rotation（默认直接移除）')
     args = ap.parse_args()
 
     geo_path = Path(args.geo)
@@ -32,6 +33,7 @@ def main():
     sy = img.height / decl_h
 
     changed = 0
+    stripped = 0
     skipped = []
     for bone in g['bones']:
         for cube in bone.get('cubes') or []:
@@ -52,7 +54,11 @@ def main():
                 py0, py1 = int(round(y0 * sy)), int(round(y1 * sy))
                 bw, bh = px1 - px0, py1 - py0
                 if bw != bh or bw <= 0:
+                    # 非正方形 / 非整数像素：无法就地旋转，直接丢掉该字段（SBM 本来也不读它），仅记录
                     skipped.append((bone['name'], face_name, (bw, bh)))
+                    if not args.keep_unsupported:
+                        face.pop('uv_rotation', None)
+                        stripped += 1
                     continue
                 piece = img.crop((px0, py0, px1, py1))
                 # uv_rotation=90 表示贴图在面上顺时针转 90°；烘焙时把图块逆时针转回去
@@ -62,8 +68,8 @@ def main():
                 changed += 1
 
     if skipped:
-        print('跳过（非正方形/非整数像素）:', skipped)
-    print(f'烘焙 {changed} 个面')
+        print('无法就地烘焙（非正方形/非整数像素，已改为直接移除字段）:', skipped)
+    print(f'烘焙 {changed} 个面，直接移除 {stripped} 个面')
     if args.dry:
         return
     if changed:

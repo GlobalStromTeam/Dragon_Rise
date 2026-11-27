@@ -1,6 +1,6 @@
 # 载具数据完整性报告
 
-生成时间：2026-11-19 12:48:58
+生成时间：2026-11-23 20:06:37
 
 前提：仅统计**模型含 Build 骨骼**的载具（防止误报/覆盖已完成载具）；本报告只读，不修改任何数据。
 
@@ -10,13 +10,14 @@
 
 | 载具 | 缺失字段数 | 缺失字段 |
 |---|---|---|
-| cav | 48 | MaxHealth, RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, MaxEnergy, Radar, UpStep, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, DamageModifiers, Mass, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, VehicleContainerType, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, EngineInfo, EngineSound, HornSound, ThirdPersonCameraPos, HasLowHealthWarning, ForwardTowed, RotateOffsetHeight, CollisionLevel, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretControllerIndex, TurretCustomPitch, PassengerWeaponStationYawRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate, InertiaRotateRate |
+| kamaz_typhoon | 42 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HasLowHealthWarning, ForwardTowed, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretControllerIndex, TurretCustomPitch, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
 | santana | 43 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HasLowHealthWarning, ForwardTowed, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretControllerIndex, TurretCustomPitch, HudType, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
+| sba60k2 | 42 | RepairCooldown, RepairAmount, SelfHurtPercent, SelfHurtAmount, Radar, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, HasLowHealthWarning, ForwardTowed, Weapons, CollisionLevel, TurretPos, TurretTurnSpeed, TurretYawRange, TurretPitchRange, TurretControllerIndex, TurretCustomPitch, BarrelPos, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, UsePassengerCreativeAmmoBox, Gravity, TerrainCompatRotateRate |
 | spg9 | 43 | RepairCooldown, RepairAmount, SelfHurtAmount, Radar, UpStep, TrackDistanceMultiply, KeepChunkLoaded, MouseSensitivity, PassengerRenderScale, AllowFreeCam, HasDecoy, SmokeDecoy, ApplyDefaultDamageModifiers, SendHitParticles, TowForceFactor, DecoyMagazineSize, DecoyReloadTime, DestroyInfo, SeekInfo, HasUpgradeSlots, HUDColor, LaserColor, LaserScale, EngineInfo, EngineSound, HornSound, ForwardTowed, RotateOffsetHeight, CollisionLevel, TurretYawRange, TurretControllerIndex, TurretCustomPitch, HudType, PassengerWeaponStationPos, PassengerWeaponStationBarrelPos, PassengerWeaponStationTurnSpeed, PassengerWeaponStationYawRange, PassengerWeaponStationPitchRange, PassengerWeaponStationControllerIndex, Gravity, TerrainCompat, TerrainCompatRotateRate, InertiaRotateRate |
 
 ## 二、核心字段齐全的载具
 
-bkan1c, chonmaho5, k1a1, kv2, lcm, lvt, shuangweixie, silverhand_mk_iv, t26b
+bkan1c, cav, ch53e, chonmaho5, k1a1, kozak5, kv2, lcm, leopard2a7, lvt, shuangweixie, silverhand_mk_iv, t26b
 
 ## 三、跳过（模型缺失或无 Build 骨骼）
 

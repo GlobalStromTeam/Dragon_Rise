@@ -23,7 +23,7 @@ ARMOR_TEX = ROOT / 'src/main/resources/assets/dragonrise_reforge/textures/armor'
 ITEM_TEX = ROOT / 'src/main/resources/assets/dragonrise_reforge/textures/item'
 DEFAULT_RENDERER = Path(r'E:\Dragon_Rise\Dragon_Rise_1201\tools\vehicle_icon_render.py')
 
-NEW_SETS = ['haom', 'juaw', 'ade3', 'sawkm1', 'honf']
+NEW_SETS = ['haom', 'juaw', 'ade3', 'sawkm1', 'honf', 'usa_army', 'ukraine_soldier', 'gm', 'british_soldier']
 
 # 槽位 -> 该槽位在 SBM 里会显示的骨骼
 SLOTS = {
@@ -72,20 +72,32 @@ def main():
     for name in sets:
         geo_path = ARMOR_GEO / f'{name}.geo.json'
         tex_path = ARMOR_TEX / (args.texture or f'{name}.png')
-        if not geo_path.exists():
+        solo_any = any((ARMOR_GEO / f'{name}_{s}.geo.json').exists() for s in SLOTS)
+        if not geo_path.exists() and not solo_any:
             print(f'skip {name}: 缺 geo')
             continue
-        if not tex_path.exists():
-            print(f'skip {name}: 缺贴图 {tex_path.name}')
+        tex_any = any((ARMOR_TEX / f'{name}_{s}.png').exists() for s in SLOTS)
+        if not tex_path.exists() and not tex_any:
+            print(f'skip {name}: 缺贴图')
             continue
-        geo = json.loads(geo_path.read_text(encoding='utf-8'))
+        geo = json.loads(geo_path.read_text(encoding='utf-8')) if geo_path.exists() else None
         for slot, bones in SLOTS.items():
-            sub = filter_geo(geo, bones)
-            sub_path = tmp / f'{name}_{slot}.geo.json'
-            sub_path.write_text(json.dumps(sub), encoding='utf-8')
+            # 分件导出（xxx_helmet.geo.json）直接用它；共用 geo 的按槽位过滤骨骼
+            solo = ARMOR_GEO / f'{name}_{slot}.geo.json'
+            if solo.exists():
+                sub_path = solo
+            else:
+                if geo is None:
+                    print(f'skip {name}_{slot}: 既无分件 geo 也无共用 geo')
+                    continue
+                sub = filter_geo(geo, bones)
+                sub_path = tmp / f'{name}_{slot}.geo.json'
+                sub_path.write_text(json.dumps(sub), encoding='utf-8')
+            tex_slot = ARMOR_TEX / f'{name}_{slot}.png'
+            tex_use = tex_slot if tex_slot.exists() else tex_path
             out = ITEM_TEX / f'{name}_{slot}.png'
             # near_smaller=False：depth 越大越近；否则会渲染出背面（看起来像从里往外看）
-            renderer.render_icon(str(sub_path), str(tex_path), str(out), size=args.size, fill=args.fill,
+            renderer.render_icon(str(sub_path), str(tex_use), str(out), size=args.size, fill=args.fill,
                                  yaw=args.yaw, pitch=args.pitch, near_smaller=False)
             made.append((f'{name}_{slot}', out.stat().st_size))
     shutil.rmtree(tmp, ignore_errors=True)
