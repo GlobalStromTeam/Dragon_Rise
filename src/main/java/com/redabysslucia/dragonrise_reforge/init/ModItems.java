@@ -86,6 +86,9 @@ public class ModItems {
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_HELMET = REGISTRY.register("russian_soldier_helmet", RussianSoldierHelmet::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_CHEST = REGISTRY.register("russian_soldier_chest", RussianSoldierChest::new);
     public static final DeferredHolder<Item, Item> RUSSIAN_SOLDIER_PANTS = REGISTRY.register("russian_soldier_pants", RussianSoldierPants::new);
+    public static final DeferredHolder<Item, Item> BRITISH_SOLDIER_HELMET = REGISTRY.register("british_soldier_helmet", BritishSoldierHelmet::new);
+    public static final DeferredHolder<Item, Item> BRITISH_SOLDIER_CHEST = REGISTRY.register("british_soldier_chest", BritishSoldierChest::new);
+    public static final DeferredHolder<Item, Item> BRITISH_SOLDIER_PANTS = REGISTRY.register("british_soldier_pants", BritishSoldierPants::new);
     public static final DeferredHolder<Item, Item> GM_HELMET = REGISTRY.register("gm_helmet", GmHelmet::new);
     public static final DeferredHolder<Item, Item> GM_CHEST = REGISTRY.register("gm_chest", GmChest::new);
     public static final DeferredHolder<Item, Item> GM_PANTS = REGISTRY.register("gm_pants", GmPants::new);

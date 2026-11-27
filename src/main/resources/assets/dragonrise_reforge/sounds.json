@@ -11,6 +11,7 @@
   "r6_drone_moving": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:r6_drone/moving",
         "stream": true
       }
@@ -19,6 +20,7 @@
   "r6_drone_fast": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:r6_drone/fast",
         "stream": true
       }
@@ -51,6 +53,7 @@
   "tank_engine_loop3": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:tankengine/tank_engine_loop_3",
         "stream": false
       }
@@ -59,6 +62,7 @@
   "m2a3_engine_loop": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:tankengine/m2a3_engine_loop",
         "stream": false
       }
@@ -109,6 +113,7 @@
   "wheel_loop1": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:tankengine/wheel_engine_loop_1",
         "stream": false
       }
@@ -141,6 +146,7 @@
   "type100_engine": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:type100/type100_engine",
         "stream": false
       }
@@ -197,6 +203,7 @@
   "m1a2_engine": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:m1a2/m1a2_engine",
         "stream": false
       }
@@ -253,6 +260,7 @@
   "t80_engine": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:t80/t80_engine",
         "stream": false
       }
@@ -269,6 +277,7 @@
   "ztz99a_engine": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:ztz99a/ztz99a_engine",
         "stream": false
       }
@@ -412,6 +421,7 @@
   "cyborg_tank_engine": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:cyborg_tank/cyborg_tank_engine",
         "stream": false
       }
@@ -2390,6 +2400,7 @@
   "santana_loop": {
     "sounds": [
       {
+        "attenuation_distance": 64,
         "name": "dragonrise_reforge:santana/santana_loop",
         "stream": true
       }

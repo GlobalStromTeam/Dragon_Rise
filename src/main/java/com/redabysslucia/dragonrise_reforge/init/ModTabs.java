@@ -315,6 +315,9 @@ public class ModTabs {
                         output.accept(ModItems.RUSSIAN_SOLDIER_HELMET.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_CHEST.get());
                         output.accept(ModItems.RUSSIAN_SOLDIER_PANTS.get());
+        output.accept(ModItems.BRITISH_SOLDIER_HELMET.get());
+        output.accept(ModItems.BRITISH_SOLDIER_CHEST.get());
+        output.accept(ModItems.BRITISH_SOLDIER_PANTS.get());
         output.accept(ModItems.GM_HELMET.get());
         output.accept(ModItems.GM_CHEST.get());
         output.accept(ModItems.GM_PANTS.get());
